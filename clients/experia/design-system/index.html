@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experia — Design System & Brandbook</title>
+  <meta name="description" content="Sala de Controle Edition V1.0 — Single source of truth para identidade visual, componentes UI, padrões de design e a voz da Experia.">
+  
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="components.css">
+  
+  <style>
+    /* Page-specific styles */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: var(--gradient-glow);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: pulse 6s var(--ease-in-out) infinite;
+    }
+    
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    
+    .hero__badge {
+      margin-bottom: var(--space-6);
+    }
+    
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: var(--text-7xl);
+      font-weight: var(--font-black);
+      line-height: 1.05;
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero__title .bracket {
+      color: var(--color-primary);
+    }
+    
+    .hero__subtitle {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      line-height: var(--leading-relaxed);
+      max-width: 600px;
+      margin-bottom: var(--space-8);
+    }
+    
+    .hero__actions {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    
+    /* Pillar cards */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+    
+    .pillar-card {
+      padding: var(--space-8);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pillar-card::after {
+      content: 'Explorar →';
+      position: absolute;
+      bottom: var(--space-6);
+      right: var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-primary);
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all var(--transition-base);
+    }
+    
+    .pillar-card:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .pillar-card__icon {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--space-4);
+    }
+    
+    .pillar-card__title {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: var(--font-bold);
+      margin-bottom: var(--space-2);
+    }
+    
+    .pillar-card__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+    
+    /* Color palette display */
+    .palette-row {
+      display: flex;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    
+    .palette-chip {
+      flex: 1;
+      height: 72px;
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-2);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: rgba(255,255,255,0.7);
+      transition: flex var(--transition-base);
+    }
+    
+    .palette-chip:hover {
+      flex: 2;
+    }
+    
+    .palette-chip--dark { color: rgba(255,255,255,0.9); }
+    .palette-chip--light { color: rgba(0,0,0,0.6); }
+    
+    /* Typography specimen */    
+    .type-specimen {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      padding: var(--space-8);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+    
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-8);
+    }
+    
+    .type-label {
+      flex-shrink: 0;
+      width: 100px;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+    
+    /* Component showcase grid */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+    }
+    
+    .showcase-panel {
+      padding: var(--space-6);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+    
+    .showcase-panel__title {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      letter-spacing: var(--tracking-caps);
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border);
+    }
+    
+    /* Section header */
+    .section-header {
+      margin-bottom: var(--space-12);
+    }
+    
+    .section-header__number {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      letter-spacing: var(--tracking-wider);
+      margin-bottom: var(--space-3);
+    }
+    
+    .section-header__title {
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: var(--font-bold);
+      margin-bottom: var(--space-4);
+    }
+    
+    .section-header__desc {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      max-width: 600px;
+    }
+
+    /* Manifesto block */
+    .manifesto {
+      position: relative;
+      padding: var(--space-10) var(--space-8);
+      border-left: 3px solid var(--color-primary);
+      background: var(--gradient-card);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    }
+    
+    .manifesto__text {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: var(--font-medium);
+      line-height: var(--leading-snug);
+      color: var(--color-text);
+    }
+    
+    .manifesto__author {
+      margin-top: var(--space-4);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    /* Page index */
+    .page-index {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-3);
+    }
+    
+    .page-index__item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+    
+    .page-index__item:hover {
+      border-color: var(--color-primary-600);
+      background: var(--color-surface-hover);
+    }
+    
+    .page-index__code {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-primary);
+      font-weight: var(--font-semibold);
+    }
+
+    @media (max-width: 768px) {
+      .hero__title { font-size: var(--text-4xl); }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .type-row { flex-direction: column; gap: var(--space-2); }
+      .type-label { width: auto; }
+      .palette-chip { font-size: 0; height: 56px; }
+      .palette-chip:hover { font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav class="nav" id="nav">
+    <div class="nav__brand">
+      <span class="text-primary" style="font-size: var(--text-2xl);">◆</span>
+      <span>Experia</span>
+      <span class="badge badge-primary">V1.0</span>
+    </div>
+    <div class="nav__links">
+      <a href="#brandbook" class="nav__link">Brandbook</a>
+      <a href="#foundations" class="nav__link">Foundations</a>
+      <a href="#components" class="nav__link nav__link--active">Components</a>
+      <a href="#showcase" class="nav__link">Showcase</a>
+    </div>
+    <div>
+      <button class="btn btn-primary btn-sm" id="btn-open-guidelines">Abrir Guidelines</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [00] HERO
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="hero section" id="hero">
+    <div class="container">
+      <div class="hero__content animate-fade-in">
+        <div class="hero__badge">
+          <span class="badge badge-primary">Sala de Controle Edition V1.0</span>
+        </div>
+        <h1 class="hero__title">
+          O <span class="bracket">[</span>Experia<span class="bracket">]</span> brand<br>
+          design system.
+        </h1>
+        <p class="hero__subtitle">
+          Single source of truth para identidade visual, componentes UI, 
+          padrões de design, motion e a voz do movimento Experia.
+        </p>
+        <div class="hero__actions">
+          <a href="#brandbook" class="btn btn-primary btn-lg">Abrir Brandbook</a>
+          <a href="#components" class="btn btn-outline btn-lg">Ver Componentes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [01] PILLARS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="pillars">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="card card-interactive pillar-card animate-fade-in-up delay-1">
+          <div class="pillar-card__icon">📋</div>
+          <div class="card__number">[01]</div>
+          <div class="pillar-card__title">Guidelines</div>
+          <div class="pillar-card__desc">Brand identity, manifesto, posicionamento e a voz da Experia.</div>
+        </div>
+        <div class="card card-interactive pillar-card animate-fade-in-up delay-2">
+          <div class="pillar-card__icon">🎨</div>
+          <div class="card__number">[02]</div>
+          <div class="pillar-card__title">Foundations</div>
+          <div class="pillar-card__desc">Tokens de design, cores, tipografia, espaçamento e motion.</div>
+        </div>
+        <div class="card card-interactive pillar-card animate-fade-in-up delay-3">
+          <div class="pillar-card__icon">🧩</div>
+          <div class="card__number">[03]</div>
+          <div class="pillar-card__title">Components</div>
+          <div class="pillar-card__desc">Catálogo de componentes UI para interfaces de governança.</div>
+        </div>
+        <div class="card card-interactive pillar-card animate-fade-in-up delay-4">
+          <div class="pillar-card__icon">✨</div>
+          <div class="card__number">[04]</div>
+          <div class="pillar-card__title">Patterns</div>
+          <div class="pillar-card__desc">Grids, frames, texturas e padrões visuais da marca.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [02] SYSTEM OVERVIEW — METRICS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <div class="section-header__number">[02] SYSTEM OVERVIEW</div>
+        <h2 class="section-header__title">
+          Um sistema de <span class="gradient-text">DESIGN</span> construído para <span class="gradient-text-accent">ESCALA</span>.
+        </h2>
+      </div>
+      
+      <div class="grid-4 gap-6" style="margin-bottom: var(--space-8);">
+        <div class="metric surface animate-fade-in-up delay-1">
+          <div class="metric__value metric__value--primary" id="counter-components">40+</div>
+          <div class="metric__label">Componentes</div>
+        </div>
+        <div class="metric surface animate-fade-in-up delay-2">
+          <div class="metric__value metric__value--accent" id="counter-pages">20</div>
+          <div class="metric__label">Páginas</div>
+        </div>
+        <div class="metric surface animate-fade-in-up delay-3">
+          <div class="metric__value metric__value--primary">4</div>
+          <div class="metric__label">Pilares</div>
+        </div>
+        <div class="metric surface animate-fade-in-up delay-4">
+          <div class="metric__value metric__value--accent">100%</div>
+          <div class="metric__label">Token Coverage</div>
+        </div>
+      </div>
+      
+      <div class="coverage-bar" style="max-width: 600px; margin: 0 auto;">
+        <div class="coverage-bar__fill" style="width: 100%;"></div>
+      </div>
+      <p class="text-sm text-muted" style="text-align: center; margin-top: var(--space-3);">
+        Token Coverage — 130+ CSS custom properties
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [03] BRANDBOOK — MANIFESTO & VOICE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="brandbook">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__number">[03] BRANDBOOK</div>
+        <h2 class="section-header__title">Manifesto & Voz da Marca</h2>
+        <p class="section-header__desc">A Experia existe para quem constrói negócios reais. Sem hype. Sem promessas vazias. Apenas governança autônoma que funciona.</p>
+      </div>
+      
+      <div class="manifesto animate-fade-in-up">
+        <p class="manifesto__text">
+          "Cada negócio tem um dono que precisa ver tudo de uma vez.<br>
+          O sistema da Experia foi construído para quem toma decisões,<br>
+          não para quem decora paredes."
+        </p>
+        <p class="manifesto__author">— Sala de Controle Edition</p>
+      </div>
+      
+      <div class="grid-3 gap-6" style="margin-top: var(--space-12);">
+        <div class="card">
+          <div class="card__number">[03.1]</div>
+          <div class="card__title">Arquétipo</div>
+          <div class="card__description">O Guardião. Não vende sonhos — protege negócios. Dá as ferramentas certas para quem já está construindo.</div>
+        </div>
+        <div class="card">
+          <div class="card__number">[03.2]</div>
+          <div class="card__title">Tom de Voz</div>
+          <div class="card__description">Humano-premium. Direto sem ser frio. Técnico sem ser inacessível. Sempre em português, com termos precisos.</div>
+        </div>
+        <div class="card">
+          <div class="card__number">[03.3]</div>
+          <div class="card__title">Promessa</div>
+          <div class="card__description">Reduzir 75% do tempo operacional. 55 micro-tarefas orquestradas. Visibilidade total. Zero achismo.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [04] FOUNDATIONS — COLORS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="foundations">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__number">[04] FOUNDATIONS</div>
+        <h2 class="section-header__title">Design Foundations</h2>
+        <p class="section-header__desc">Cores, tipografia, espaçamento, motion, superfícies e tokens semânticos.</p>
+      </div>
+      
+      <!-- Color Palettes -->
+      <h3 class="h4" style="margin-bottom: var(--space-6);">Paleta Primária — Emerald</h3>
+      <div class="palette-row" style="margin-bottom: var(--space-6);">
+        <div class="palette-chip palette-chip--light" style="background: #ecfdf5;">50</div>
+        <div class="palette-chip palette-chip--light" style="background: #d1fae5;">100</div>
+        <div class="palette-chip palette-chip--light" style="background: #a7f3d0;">200</div>
+        <div class="palette-chip palette-chip--light" style="background: #6ee7b7;">300</div>
+        <div class="palette-chip palette-chip--light" style="background: #34d399;">400</div>
+        <div class="palette-chip palette-chip--dark" style="background: #10b981;">500 ●</div>
+        <div class="palette-chip palette-chip--dark" style="background: #059669;">600</div>
+        <div class="palette-chip palette-chip--dark" style="background: #047857;">700</div>
+        <div class="palette-chip palette-chip--dark" style="background: #065f46;">800</div>
+        <div class="palette-chip palette-chip--dark" style="background: #064e3b;">900</div>
+      </div>
+      
+      <h3 class="h4" style="margin-bottom: var(--space-6);">Paleta de Destaque — Warm Gold</h3>
+      <div class="palette-row" style="margin-bottom: var(--space-6);">
+        <div class="palette-chip palette-chip--light" style="background: #fffbeb;">50</div>
+        <div class="palette-chip palette-chip--light" style="background: #fef3c7;">100</div>
+        <div class="palette-chip palette-chip--light" style="background: #fde68a;">200</div>
+        <div class="palette-chip palette-chip--light" style="background: #fcd34d;">300</div>
+        <div class="palette-chip palette-chip--light" style="background: #fbbf24;">400</div>
+        <div class="palette-chip palette-chip--dark" style="background: #f59e0b;">500 ●</div>
+        <div class="palette-chip palette-chip--dark" style="background: #d97706;">600</div>
+        <div class="palette-chip palette-chip--dark" style="background: #b45309;">700</div>
+      </div>
+      
+      <h3 class="h4" style="margin-bottom: var(--space-6);">Superfícies — Dark System</h3>
+      <div class="palette-row" style="margin-bottom: var(--space-12);">
+        <div class="palette-chip palette-chip--dark" style="background: #0a0a0f;">BG</div>
+        <div class="palette-chip palette-chip--dark" style="background: #111118;">Elevated</div>
+        <div class="palette-chip palette-chip--dark" style="background: #16161f;">Surface</div>
+        <div class="palette-chip palette-chip--dark" style="background: #1e1e2a;">Hover</div>
+        <div class="palette-chip palette-chip--dark" style="background: #252535;">Active</div>
+      </div>
+      
+      <!-- Typography -->
+      <h3 class="h4" style="margin-bottom: var(--space-6);">Tipografia</h3>
+      <div class="type-specimen" style="margin-bottom: var(--space-12);">
+        <div class="type-row">
+          <div class="type-label">Display</div>
+          <span class="font-display text-4xl font-bold">Outfit — Para títulos que impactam</span>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Body</div>
+          <span class="font-body text-lg">Inter — Para textos que comunicam com clareza e legibilidade</span>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Mono</div>
+          <span class="font-mono text-base">JetBrains Mono — Para dados, métricas e código</span>
+        </div>
+      </div>
+      
+      <div class="type-specimen">
+        <div class="type-row"><div class="type-label">7xl / 72px</div><span class="font-display text-7xl font-black leading-tight">Aa</span></div>
+        <div class="type-row"><div class="type-label">6xl / 60px</div><span class="font-display text-6xl font-bold leading-tight">Aa Bb Cc</span></div>
+        <div class="type-row"><div class="type-label">5xl / 48px</div><span class="font-display text-5xl font-bold leading-tight">Governança Autônoma</span></div>
+        <div class="type-row"><div class="type-label">4xl / 36px</div><span class="font-display text-4xl font-bold">Sala de Controle</span></div>
+        <div class="type-row"><div class="type-label">3xl / 30px</div><span class="font-display text-3xl font-semibold">75% de Redução</span></div>
+        <div class="type-row"><div class="type-label">2xl / 24px</div><span class="font-display text-2xl">55 Micro-tarefas</span></div>
+        <div class="type-row"><div class="type-label">xl / 20px</div><span class="text-xl">Orquestração inteligente de executores</span></div>
+        <div class="type-row"><div class="type-label">lg / 18px</div><span class="text-lg">Cada negócio tem um dono que precisa ver tudo</span></div>
+        <div class="type-row"><div class="type-label">base / 16px</div><span class="text-base">O sistema da Experia foi construído para quem toma decisões, não para quem decora paredes.</span></div>
+        <div class="type-row"><div class="type-label">sm / 14px</div><span class="text-sm text-secondary">Componente secundário de informação contextual</span></div>
+        <div class="type-row"><div class="type-label">xs / 12px</div><span class="text-xs text-muted font-mono">SECTION [04.2] — TYPOGRAPHY SYSTEM</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [05] COMPONENTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="components">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__number">[05] COMPONENTS</div>
+        <h2 class="section-header__title">Catálogo de Componentes UI</h2>
+        <p class="section-header__desc">Cada componente construído com tokens. Mude um token, mude o sistema inteiro.</p>
+      </div>
+      
+      <div class="showcase-grid">
+        <!-- BUTTONS -->
+        <div class="showcase-panel">
+          <div class="showcase-panel__title">Buttons</div>
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-3 flex-wrap">
+              <button class="btn btn-primary">Primary</button>
+              <button class="btn btn-accent">Accent</button>
+              <button class="btn btn-outline">Outline</button>
+              <button class="btn btn-ghost">Ghost</button>
+            </div>
+            <div class="flex gap-3 flex-wrap">
+              <button class="btn btn-primary btn-lg">Large</button>
+              <button class="btn btn-primary">Default</button>
+              <button class="btn btn-primary btn-sm">Small</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- BADGES -->
+        <div class="showcase-panel">
+          <div class="showcase-panel__title">Badges</div>
+          <div class="flex gap-3 flex-wrap">
+            <span class="badge badge-primary">● Ativo</span>
+            <span class="badge badge-accent">⚡ Premium</span>
+            <span class="badge badge-neutral">v1.0</span>
+            <span class="badge badge-primary">ROI +250%</span>
+            <span class="badge badge-accent">75% Redução</span>
+          </div>
+        </div>
+        
+        <!-- INPUTS -->
+        <div class="showcase-panel">
+          <div class="showcase-panel__title">Form Inputs</div>
+          <div class="flex flex-col gap-4">
+            <div class="input-group">
+              <label>Nome do Negócio</label>
+              <input type="text" class="input" placeholder="Ex: Padaria do José">
+            </div>
+            <div class="input-group">
+              <label>Ticket Médio (R$)</label>
+              <input type="number" class="input" placeholder="Ex: 150">
+            </div>
+          </div>
+        </div>
+        
+        <!-- ALERTS -->
+        <div class="showcase-panel">
+          <div class="showcase-panel__title">Alerts & Feedback</div>
+          <div class="flex flex-col gap-3">
+            <div class="alert alert-success">✅ Lead convertido com sucesso — ROI calculado</div>
+            <div class="alert alert-warning">⚠️ 3 handoffs pendentes de aprovação</div>
+            <div class="alert alert-error">❌ Timeout na conexão com o executor</div>
+            <div class="alert alert-info">ℹ️ Nova versão do KAIROS disponível (v5.0.1)</div>
+          </div>
+        </div>
+        
+        <!-- PROGRESS -->
+        <div class="showcase-panel">
+          <div class="showcase-panel__title">Progress Bars</div>
+          <div class="flex flex-col gap-4">
+            <div>
+              <div class="flex justify-between text-sm" style="margin-bottom: var(--space-2);">
+                <span>Automação Operacional</span>
+                <span class="text-primary font-mono">67%</span>
+              </div>
+              <div class="progress"><div class="progress__bar" style="width: 67%;"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm" style="margin-bottom: var(--space-2);">
+                <span>ROI Projetado</span>
+                <span class="text-accent font-mono">+250%</span>
+              </div>
+              <div class="progress"><div class="progress__bar progress__bar--accent" style="width: 85%;"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm" style="margin-bottom: var(--space-2);">
+                <span>Quality Gates</span>
+                <span class="text-primary font-mono">5/5</span>
+              </div>
+              <div class="progress"><div class="progress__bar" style="width: 100%;"></div></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- METRICS -->
+        <div class="showcase-panel">
+          <div class="showcase-panel__title">Metric Cards</div>
+          <div class="grid-2 gap-4">
+            <div class="metric">
+              <div class="metric__value metric__value--primary">75%</div>
+              <div class="metric__label">Redução de Tempo</div>
+            </div>
+            <div class="metric">
+              <div class="metric__value metric__value--accent">R$2.9K</div>
+              <div class="metric__label">MRR Médio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [06] SHOWCASE — CARDS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="showcase">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__number">[06] SHOWCASE</div>
+        <h2 class="section-header__title">Cards de Negócio</h2>
+        <p class="section-header__desc">Cards otimizados para apresentar serviços, propostas e ROI.</p>
+      </div>
+      
+      <div class="grid-3 gap-6">
+        <!-- Market Card 1 -->
+        <div class="card card-interactive card-gradient">
+          <div class="card__header">
+            <span class="badge badge-primary">Mercado Local</span>
+          </div>
+          <div class="card__title">Pacote Vizinhança</div>
+          <div class="card__description">
+            Para padarias, petshops, bazares e assistências técnicas. 
+            Entrada com permuta — zero risco financeiro.
+          </div>
+          <div class="card__footer">
+            <span class="font-mono text-primary font-bold text-2xl">R$297</span>
+            <span class="text-muted text-sm">/mês + permuta</span>
+          </div>
+        </div>
+        
+        <!-- Market Card 2 -->
+        <div class="card card-interactive card-gradient">
+          <div class="card__header">
+            <span class="badge badge-accent">Mercado Regional</span>
+          </div>
+          <div class="card__title">Pacote Governança</div>
+          <div class="card__description">
+            Para clínicas, escritórios, imobiliárias e distribuidoras.
+            55 micro-tarefas automatizadas. 75% de redução operacional.
+          </div>
+          <div class="card__footer">
+            <span class="font-mono text-accent font-bold text-2xl">R$2.997</span>
+            <span class="text-muted text-sm">/mês mínimo</span>
+          </div>
+        </div>
+        
+        <!-- Market Card 3 -->
+        <div class="card card-interactive card-gradient">
+          <div class="card__header">
+            <span class="badge badge-primary">Mercado Industrial</span>
+          </div>
+          <div class="card__title">Pacote Enterprise</div>
+          <div class="card__description">
+            Para indústrias médias (50-500 funcionários). Elimina caos operacional
+            e entrega visibilidade total em 6 semanas.
+          </div>
+          <div class="card__footer">
+            <span class="font-mono text-primary font-bold text-2xl">R$10K+</span>
+            <span class="text-muted text-sm">/mês (sem teto)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [07] TABLE EXAMPLE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="tables">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__number">[07] DATA TABLES</div>
+        <h2 class="section-header__title">Tabelas & Relatórios</h2>
+      </div>
+      
+      <div class="table-wrapper">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Métrica</th>
+              <th>Manual</th>
+              <th>Com Experia</th>
+              <th>Ganho</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Micro-tarefas</td>
+              <td>55</td>
+              <td>55 ✓</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Executadas por IA</td>
+              <td class="text-muted">0</td>
+              <td class="text-primary font-semibold">30</td>
+              <td><span class="badge badge-primary">+67%</span></td>
+            </tr>
+            <tr>
+              <td>Executadas por Humano</td>
+              <td>55</td>
+              <td class="text-accent">10</td>
+              <td><span class="badge badge-accent">↓78%</span></td>
+            </tr>
+            <tr>
+              <td>Quality Gates</td>
+              <td class="text-muted">0</td>
+              <td class="text-primary font-semibold">5</td>
+              <td><span class="badge badge-primary">∞</span></td>
+            </tr>
+            <tr>
+              <td>Visibilidade</td>
+              <td class="text-muted">0%</td>
+              <td class="text-primary font-semibold">100%</td>
+              <td><span class="badge badge-primary">Total</span></td>
+            </tr>
+            <tr>
+              <td class="font-semibold">Tempo Total</td>
+              <td>17-25 dias</td>
+              <td class="text-primary font-bold">4-6 dias</td>
+              <td><span class="badge badge-accent">⚡ 75% redução</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       [08] PAGE INDEX
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="index">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-header__number">[08] FULL INDEX</div>
+        <h2 class="section-header__title">Todas as Páginas do Sistema</h2>
+      </div>
+      
+      <div class="grid-2 gap-10">
+        <div>
+          <h3 class="h5 text-primary" style="margin-bottom: var(--space-4);">BRANDBOOK</h3>
+          <div class="page-index">
+            <div class="page-index__item"><span class="page-index__code">0.0</span> Manifesto & Voz</div>
+            <div class="page-index__item"><span class="page-index__code">1.0</span> Movimento Experia</div>
+            <div class="page-index__item"><span class="page-index__code">2.0</span> Foundations</div>
+            <div class="page-index__item"><span class="page-index__code">3.0</span> Logo System</div>
+            <div class="page-index__item"><span class="page-index__code">4.0</span> Moodboard</div>
+            <div class="page-index__item"><span class="page-index__code">5.0</span> Estratégia de Marca</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="h5 text-accent" style="margin-bottom: var(--space-4);">DESIGN SYSTEM</h3>
+          <div class="page-index">
+            <div class="page-index__item"><span class="page-index__code">0.0</span> Componentes</div>
+            <div class="page-index__item"><span class="page-index__code">1.0</span> Botões & CTAs</div>
+            <div class="page-index__item"><span class="page-index__code">2.0</span> Cards de Negócio</div>
+            <div class="page-index__item"><span class="page-index__code">3.0</span> Formulários</div>
+            <div class="page-index__item"><span class="page-index__code">4.0</span> Feedback & Alertas</div>
+            <div class="page-index__item"><span class="page-index__code">5.0</span> Estados do Sistema</div>
+            <div class="page-index__item"><span class="page-index__code">6.0</span> Tabelas & Relatórios</div>
+            <div class="page-index__item"><span class="page-index__code">7.0</span> Gráficos & ROI</div>
+            <div class="page-index__item"><span class="page-index__code">8.0</span> Seções de Landing Page</div>
+            <div class="page-index__item"><span class="page-index__code">9.0</span> Templates de Proposta</div>
+            <div class="page-index__item"><span class="page-index__code">10.0</span> Motion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="flex gap-3 items-center" style="margin-bottom: var(--space-4);">
+            <span class="text-primary" style="font-size: var(--text-3xl);">◆</span>
+            <span class="font-display font-bold text-xl">Experia</span>
+          </div>
+          <p class="text-sm text-muted" style="max-width: 280px; line-height: var(--leading-relaxed);">
+            Design System & Brandbook<br>
+            Sala de Controle Edition V1.0
+          </p>
+          <div class="flex gap-3" style="margin-top: var(--space-6);">
+            <div class="metric" style="padding: var(--space-3);">
+              <div class="metric__value metric__value--primary" style="font-size: var(--text-xl);">40+</div>
+              <div class="metric__label" style="font-size: 10px;">Components</div>
+            </div>
+            <div class="metric" style="padding: var(--space-3);">
+              <div class="metric__value metric__value--accent" style="font-size: var(--text-xl);">20</div>
+              <div class="metric__label" style="font-size: 10px;">Pages</div>
+            </div>
+            <div class="metric" style="padding: var(--space-3);">
+              <div class="metric__value metric__value--primary" style="font-size: var(--text-xl);">4</div>
+              <div class="metric__label" style="font-size: 10px;">Pilares</div>
+            </div>
+            <div class="metric" style="padding: var(--space-3);">
+              <div class="metric__value metric__value--accent" style="font-size: var(--text-xl);">100%</div>
+              <div class="metric__label" style="font-size: 10px;">Tokens</div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <div class="footer__heading">Brandbook</div>
+          <a href="#" class="footer__link">0.0 Manifesto</a>
+          <a href="#" class="footer__link">1.0 Movimento</a>
+          <a href="#" class="footer__link">2.0 Foundations</a>
+          <a href="#" class="footer__link">3.0 Logo System</a>
+          <a href="#" class="footer__link">4.0 Moodboard</a>
+          <a href="#" class="footer__link">5.0 Brand Strategy</a>
+        </div>
+        
+        <div>
+          <div class="footer__heading">Design System</div>
+          <a href="#" class="footer__link">0.0 Components</a>
+          <a href="#" class="footer__link">1.0 Buttons</a>
+          <a href="#" class="footer__link">2.0 Cards</a>
+          <a href="#" class="footer__link">3.0 Forms</a>
+          <a href="#" class="footer__link">4.0 Feedback</a>
+          <a href="#" class="footer__link">5.0 Tables</a>
+          <a href="#" class="footer__link">6.0 Motion</a>
+        </div>
+        
+        <div>
+          <div class="footer__heading">Showcase</div>
+          <a href="#" class="footer__link">0.0 Index</a>
+          <a href="#" class="footer__link">1.0 Demo</a>
+          <a href="#" class="footer__link">2.0 Cases</a>
+          <div class="footer__heading" style="margin-top: var(--space-6);">Social</div>
+          <a href="#" class="footer__link">Instagram</a>
+          <a href="#" class="footer__link">LinkedIn</a>
+          <a href="#" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <span>© 2026 Experia. Todos os direitos reservados.</span>
+        <span>Built with KAIROS in São Paulo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-fade-in, .animate-fade-in-up').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav__link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      for (const section of sections) {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      }
+
+      for (const link of navLinks) {
+        link.classList.remove('nav__link--active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('nav__link--active');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

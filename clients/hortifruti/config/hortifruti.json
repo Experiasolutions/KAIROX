@@ -1,0 +1,130 @@
+{
+    "client": "hortifruti",
+    "brandLine": "Hortifruti — Frescor direto do campo para sua mesa",
+    "agentLabel": "Safra Assistente",
+    "engineLabel": "powered by KAIROS · Experia",
+    "units": [
+        {
+            "id": "unit-1",
+            "name": "Unidade Principal",
+            "owner": "Elaine",
+            "role": "owner"
+        },
+        {
+            "id": "unit-2",
+            "name": "Segunda Unidade",
+            "manager": "Douglas",
+            "role": "manager"
+        }
+    ],
+    "agents": {
+        "totalAgents": 4,
+        "squad": "hortifruti",
+        "members": [
+            "safra-master",
+            "atendente",
+            "estoquista",
+            "social-media"
+        ]
+    },
+    "businessModel": {
+        "type": "barter",
+        "exchange": "Soluções Experia × Alimentos frescos",
+        "goal": "Case real + showcase + permuta alimentar"
+    },
+    "assistantPersona": {
+        "name": "Safra",
+        "role": "Assistente + Sócia Digital",
+        "tone": "Amigável, prática, eficiente. Como uma gerente jovem e organizada.",
+        "language": "Simples e direta — sem jargão técnico",
+        "emojiStyle": "🥬🍎📦🚚📊",
+        "maxResponseLength": "3 parágrafos ou listas curtas",
+        "greeting": "Oi! Sou a Safra 🥬, assistente digital do Hortifruti. Como posso te ajudar?",
+        "systemPrompt": "Você é Safra, a assistente digital do Hortifruti. Seja sempre simpática, objetiva e use linguagem simples. Você conhece todos os produtos, preços e promoções. Para donos (Elaine/Douglas), você também ajuda com estoque, entregas e relatórios. Use emojis de frutas e legumes com moderação. Nunca invente preços — se não souber, diga que vai confirmar."
+    },
+    "productCategories": [
+        "Frutas",
+        "Verduras",
+        "Legumes",
+        "Temperos/Ervas",
+        "Ovos/Laticínios",
+        "Cestas Prontas",
+        "Ofertas da Semana"
+    ],
+    "whatsappFlows": {
+        "customerKeywords": {
+            "cardapio": [
+                "cardápio",
+                "o que tem",
+                "produtos",
+                "lista",
+                "frutas",
+                "verduras"
+            ],
+            "pedido": [
+                "quero",
+                "pedir",
+                "encomendar",
+                "reservar",
+                "separar"
+            ],
+            "promo": [
+                "promoção",
+                "oferta",
+                "desconto",
+                "grupo"
+            ],
+            "horario": [
+                "horário",
+                "abre",
+                "fecha",
+                "endereço",
+                "onde fica"
+            ],
+            "entrega": [
+                "entrega",
+                "delivery",
+                "levar",
+                "motoboy"
+            ]
+        },
+        "ownerKeywords": {
+            "estoque": [
+                "estoque",
+                "quantidade",
+                "acabou",
+                "repor",
+                "entrada"
+            ],
+            "entregas": [
+                "entregas hoje",
+                "pendentes",
+                "saiu",
+                "despachar"
+            ],
+            "relatorio": [
+                "relatório",
+                "vendas",
+                "resumo",
+                "como foi"
+            ],
+            "promo": [
+                "criar oferta",
+                "nova promoção",
+                "disparar"
+            ]
+        }
+    },
+    "testMessages": [
+        "Oi, o que tem de fruta hoje?",
+        "Quero encomendar uma cesta de verduras",
+        "Qual o horário de funcionamento?",
+        "Estoque: quanto tem de banana?",
+        "Cria uma promoção de abacaxi a R$3,99"
+    ],
+    "futureIntegration": {
+        "status": "pending",
+        "system": "A ser identificado",
+        "notes": "Sistema será instalado nas unidades. KAIROS se adaptará via bridge quando identificado."
+    }
+}

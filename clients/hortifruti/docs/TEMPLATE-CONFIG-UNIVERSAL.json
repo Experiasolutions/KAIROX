@@ -1,0 +1,90 @@
+{
+    "template_version": "1.0",
+    "instructions": "Substituir TODOS os campos entre [COLCHETES] com dados do negócio. Salvar como clients/[nome]/config/[nome].json",
+    "client": "[nome_negocio]",
+    "brandLine": "[nome_negocio] — [slogan]",
+    "agentLabel": "[nome_persona] Assistente",
+    "engineLabel": "powered by Experia",
+    "owner": {
+        "name": "[nome_dono]",
+        "phone": "[telefone]",
+        "role": "owner"
+    },
+    "assistantPersona": {
+        "name": "[nome_persona]",
+        "role": "Assistente Digital",
+        "tone": "Amigável, prática, eficiente.",
+        "language": "Simples e direta — sem jargão técnico",
+        "greeting": "Oi! Sou [nome_persona] 👋, assistente digital do [nome_negocio]. Como posso te ajudar?",
+        "systemPrompt": "Você é [nome_persona], assistente digital do [nome_negocio]. Seja simpática e objetiva. Você conhece todos os produtos/serviços, preços e horários. Nunca invente preços — se não souber, diga que vai confirmar com [nome_dono]."
+    },
+    "businessInfo": {
+        "type": "[tipo: hortifruti/marmitaria/petshop/padaria/açougue/bazar/assistência]",
+        "address": "[endereço]",
+        "hours": "[horário de funcionamento]",
+        "payment": "Dinheiro, PIX, Cartão",
+        "delivery": "[true/false]",
+        "deliveryFee": "[valor ou 'grátis']"
+    },
+    "topProducts": [
+        {
+            "name": "[produto1]",
+            "price": 0.00,
+            "unit": "[kg/un/prato]"
+        },
+        {
+            "name": "[produto2]",
+            "price": 0.00,
+            "unit": "[kg/un/prato]"
+        },
+        {
+            "name": "[produto3]",
+            "price": 0.00,
+            "unit": "[kg/un/prato]"
+        },
+        {
+            "name": "[produto4]",
+            "price": 0.00,
+            "unit": "[kg/un/prato]"
+        },
+        {
+            "name": "[produto5]",
+            "price": 0.00,
+            "unit": "[kg/un/prato]"
+        }
+    ],
+    "faq": [
+        {
+            "question": "Qual o horário?",
+            "answer": "[resposta]"
+        },
+        {
+            "question": "Vocês entregam?",
+            "answer": "[resposta]"
+        },
+        {
+            "question": "Qual o endereço?",
+            "answer": "[resposta]"
+        },
+        {
+            "question": "[pergunta4]",
+            "answer": "[resposta]"
+        },
+        {
+            "question": "[pergunta5]",
+            "answer": "[resposta]"
+        }
+    ],
+    "barterDeal": {
+        "type": "permuta",
+        "exchange": "Serviço digital Experia ↔ [produtos/serviços] ao preço de venda",
+        "weeklyValue": "R$[valor]/semana equivalente"
+    },
+    "testMessages": [
+        "Oi, o que vocês têm hoje?",
+        "Qual o preço de [produto principal]?",
+        "Vocês entregam?",
+        "Qual o horário de funcionamento?",
+        "Quero fazer um pedido"
+    ]
+}

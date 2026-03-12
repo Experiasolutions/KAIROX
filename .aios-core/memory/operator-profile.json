@@ -1,0 +1,67 @@
+{
+  "operatorId": "gabriel",
+  "role": "founder-operator",
+  "organization": "Experia Technologies / SynkraAI",
+  "behavioral": {
+    "workHours": {
+      "avgBootHour": 17,
+      "pattern": "evening-worker",
+      "evidence": 12
+    },
+    "bootPreference": {
+      "quickRatio": 0.12,
+      "interpretation": "Prefers comprehensive boots",
+      "evidence": 12
+    },
+    "commitPatterns": {
+      "avgCommitHour": 16,
+      "dominantType": "chore",
+      "recentActivity": 30,
+      "evidence": 12
+    }
+  },
+  "decisional": {
+    "focusAllocation": {
+      "features": 0.17,
+      "fixes": 0.2,
+      "docs": 0.1,
+      "maintenance": 0.3,
+      "interpretation": "Balanced — no single dominant commit type",
+      "evidence": 12
+    },
+    "directoryFocus": {
+      "top3": [
+        "docs",
+        "squads",
+        "data"
+      ],
+      "interpretation": "Primary focus on: docs, squads, data",
+      "evidence": 12
+    }
+  },
+  "declarative": {
+    "systemPerformance": {
+      "avgScore": 7.12,
+      "avgDepth": 4,
+      "sessionCount": 1,
+      "strengths": 1,
+      "blindspots": 0,
+      "driftAlerts": 0,
+      "evidence": 12
+    }
+  },
+  "omission": {
+    "neglectedAreas": {
+      "directories": [],
+      "interpretation": "Coverage looks healthy",
+      "evidence": 12
+    }
+  },
+  "insights": [],
+  "_meta": {
+    "version": "1.0.0",
+    "lastEnriched": "2026-03-05T06:00:12.756Z",
+    "observationCompleteness": 1,
+    "enrichmentCycles": 12
+  }
+}

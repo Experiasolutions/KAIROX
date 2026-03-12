@@ -1,0 +1,509 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+@layer base {
+  :root {
+    /* Cyberpunk Dark Core */
+    --background: 220 20% 4%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 25% 6%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 25% 5%;
+    --popover-foreground: 180 100% 95%;
+
+    /* Neon Cyan - Primary Actions */
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 20% 4%;
+
+    /* Neon Magenta - Accent */
+    --secondary: 320 100% 60%;
+    --secondary-foreground: 220 20% 4%;
+
+    /* Dark Charcoal */
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 15% 55%;
+
+    /* Electric Purple Accent */
+    --accent: 270 100% 65%;
+    --accent-foreground: 180 100% 95%;
+
+    /* Red Alert */
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 220 30% 18%;
+    --input: 220 25% 12%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Cyberpunk Custom Tokens */
+    --neon-cyan: 180 100% 50%;
+    --neon-magenta: 320 100% 60%;
+    --neon-purple: 270 100% 65%;
+    --neon-green: 150 100% 50%;
+    --neon-orange: 25 100% 55%;
+    --neon-yellow: 55 100% 55%;
+    
+    --cyber-dark: 220 25% 4%;
+    --cyber-darker: 220 30% 2%;
+    --cyber-grid: 220 30% 10%;
+    
+    --energy-high: 150 100% 50%;
+    --energy-medium: 55 100% 55%;
+    --energy-low: 0 85% 55%;
+    
+    --xp-bar: 270 100% 60%;
+    --hp-bar: 0 85% 55%;
+    --gold-cyber: 45 100% 55%;
+    
+    --glass-bg: 220 25% 8%;
+    --glass-border: 220 30% 20%;
+
+    /* Sidebar - Cyber Command */
+    --sidebar-background: 220 30% 3%;
+    --sidebar-foreground: 180 40% 70%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 270 100% 50%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 220 30% 12%;
+    --sidebar-ring: 180 100% 50%;
+  }
+
+  .dark {
+    --background: 220 20% 4%;
+    --foreground: 180 100% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Rajdhani', sans-serif;
+    background-image: 
+      linear-gradient(rgba(0, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-mono {
+    font-family: 'Share Tech Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Cyber Glass Card */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border rounded-lg relative overflow-hidden;
+    border-color: hsl(var(--neon-cyan) / 0.2);
+    box-shadow: 
+      0 0 20px hsl(var(--neon-cyan) / 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(135deg, hsl(var(--neon-cyan) / 0.05) 0%, transparent 50%);
+  }
+
+  .glass-card-gold {
+    @apply glass-card;
+    border-color: hsl(var(--gold-cyber) / 0.4);
+    box-shadow: 
+      0 0 30px hsl(var(--gold-cyber) / 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-gold::before {
+    background: linear-gradient(135deg, hsl(var(--gold-cyber) / 0.1) 0%, transparent 50%);
+  }
+
+  .glass-card-purple {
+    @apply glass-card;
+    border-color: hsl(var(--neon-purple) / 0.4);
+    box-shadow: 
+      0 0 30px hsl(var(--neon-purple) / 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-purple::before {
+    background: linear-gradient(135deg, hsl(var(--neon-purple) / 0.1) 0%, transparent 50%);
+  }
+
+  .glass-card-magenta {
+    @apply glass-card;
+    border-color: hsl(var(--neon-magenta) / 0.4);
+    box-shadow: 
+      0 0 30px hsl(var(--neon-magenta) / 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* Cyber Frame */
+  .cyber-frame {
+    @apply relative;
+  }
+
+  .cyber-frame::before,
+  .cyber-frame::after {
+    content: '';
+    @apply absolute w-4 h-4 border-2;
+    border-color: hsl(var(--neon-cyan));
+  }
+
+  .cyber-frame::before {
+    @apply top-0 left-0 border-r-0 border-b-0;
+  }
+
+  .cyber-frame::after {
+    @apply bottom-0 right-0 border-l-0 border-t-0;
+  }
+
+  /* Progress Bars */
+  .progress-bar {
+    @apply h-2 rounded-full overflow-hidden bg-muted relative;
+  }
+
+  .progress-bar::before {
+    content: '';
+    @apply absolute inset-0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 4px,
+      hsl(var(--background) / 0.3) 4px,
+      hsl(var(--background) / 0.3) 6px
+    );
+  }
+
+  .progress-fill-cyan {
+    @apply h-full rounded-full transition-all duration-500 relative;
+    background: linear-gradient(90deg, hsl(var(--neon-cyan) / 0.6), hsl(var(--neon-cyan)));
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.7);
+  }
+
+  .progress-fill-purple {
+    @apply h-full rounded-full transition-all duration-500;
+    background: linear-gradient(90deg, hsl(var(--neon-purple) / 0.6), hsl(var(--neon-purple)));
+    box-shadow: 0 0 20px hsl(var(--neon-purple) / 0.7);
+  }
+
+  .progress-fill-gold {
+    @apply h-full rounded-full transition-all duration-500;
+    background: linear-gradient(90deg, hsl(var(--gold-cyber) / 0.6), hsl(var(--gold-cyber)));
+    box-shadow: 0 0 20px hsl(var(--gold-cyber) / 0.7);
+  }
+
+  .progress-fill-hp {
+    @apply h-full rounded-full transition-all duration-500;
+    background: linear-gradient(90deg, hsl(var(--hp-bar) / 0.6), hsl(var(--hp-bar)));
+    box-shadow: 0 0 15px hsl(var(--hp-bar) / 0.7);
+  }
+
+  .progress-fill-energy {
+    @apply h-full rounded-full transition-all duration-500;
+    background: linear-gradient(90deg, hsl(var(--energy-high) / 0.6), hsl(var(--energy-high)));
+    box-shadow: 0 0 15px hsl(var(--energy-high) / 0.7);
+  }
+
+  /* Neon Glow Effects */
+  .glow-cyan {
+    text-shadow: 
+      0 0 10px hsl(var(--neon-cyan)),
+      0 0 20px hsl(var(--neon-cyan) / 0.8),
+      0 0 40px hsl(var(--neon-cyan) / 0.5);
+  }
+
+  .glow-magenta {
+    text-shadow: 
+      0 0 10px hsl(var(--neon-magenta)),
+      0 0 20px hsl(var(--neon-magenta) / 0.8),
+      0 0 40px hsl(var(--neon-magenta) / 0.5);
+  }
+
+  .glow-purple {
+    text-shadow: 
+      0 0 10px hsl(var(--neon-purple)),
+      0 0 20px hsl(var(--neon-purple) / 0.8),
+      0 0 40px hsl(var(--neon-purple) / 0.5);
+  }
+
+  .glow-gold {
+    text-shadow: 
+      0 0 10px hsl(var(--gold-cyber)),
+      0 0 20px hsl(var(--gold-cyber) / 0.8),
+      0 0 40px hsl(var(--gold-cyber) / 0.5);
+  }
+
+  /* Icon Buttons - Cyber Style */
+  .icon-btn {
+    @apply p-3 rounded-lg transition-all duration-300 flex items-center justify-center relative;
+    @apply text-muted-foreground hover:text-primary;
+  }
+
+  .icon-btn::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity;
+    background: linear-gradient(135deg, hsl(var(--neon-cyan) / 0.1), transparent);
+    border: 1px solid hsl(var(--neon-cyan) / 0.3);
+  }
+
+  .icon-btn:hover::before {
+    @apply opacity-100;
+  }
+
+  .icon-btn-active {
+    @apply icon-btn text-primary;
+  }
+
+  .icon-btn-active::before {
+    @apply opacity-100;
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.3);
+  }
+
+  /* Boss Card - Cyber */
+  .boss-card {
+    @apply glass-card p-6 relative overflow-hidden;
+  }
+
+  .boss-card::after {
+    content: '';
+    @apply absolute inset-0 opacity-20 pointer-events-none;
+    background: 
+      linear-gradient(180deg, transparent 0%, hsl(var(--hp-bar) / 0.3) 100%),
+      repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(var(--hp-bar) / 0.1) 2px, hsl(var(--hp-bar) / 0.1) 4px);
+  }
+
+  /* Quest Item - Cyber */
+  .quest-item {
+    @apply glass-card p-4 flex items-center gap-4 transition-all duration-300 cursor-pointer;
+  }
+
+  .quest-item:hover {
+    border-color: hsl(var(--neon-cyan) / 0.5);
+    box-shadow: 0 0 25px hsl(var(--neon-cyan) / 0.2);
+  }
+
+  .quest-item-completed {
+    @apply quest-item opacity-60;
+    border-color: hsl(var(--energy-high) / 0.4);
+  }
+
+  /* Loot Item */
+  .loot-item {
+    @apply glass-card p-4 text-center transition-all duration-300;
+  }
+
+  .loot-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px hsl(var(--neon-purple) / 0.2);
+  }
+
+  .loot-item-locked {
+    @apply loot-item opacity-40 grayscale;
+  }
+
+  .loot-item-unlocked {
+    @apply loot-item;
+    border-color: hsl(var(--gold-cyber) / 0.5);
+    box-shadow: 0 0 30px hsl(var(--gold-cyber) / 0.2);
+  }
+
+  /* Agent Card */
+  .agent-card {
+    @apply glass-card-purple p-4;
+  }
+
+  .agent-status-active {
+    @apply w-3 h-3 rounded-full;
+    background: hsl(var(--neon-green));
+    box-shadow: 0 0 15px hsl(var(--neon-green));
+    animation: pulse-glow 2s infinite;
+  }
+
+  .agent-status-idle {
+    @apply w-3 h-3 rounded-full;
+    background: hsl(var(--neon-orange));
+    box-shadow: 0 0 10px hsl(var(--neon-orange));
+  }
+
+  /* Cyber Button */
+  .cyber-btn {
+    @apply relative px-6 py-3 font-semibold uppercase tracking-wider transition-all duration-300;
+    @apply bg-transparent border-2 border-primary text-primary;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  }
+
+  .cyber-btn:hover {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: 0 0 30px hsl(var(--neon-cyan) / 0.5);
+  }
+
+  .cyber-btn-magenta {
+    @apply cyber-btn border-secondary text-secondary;
+  }
+
+  .cyber-btn-magenta:hover {
+    @apply bg-secondary text-secondary-foreground;
+    box-shadow: 0 0 30px hsl(var(--neon-magenta) / 0.5);
+  }
+
+  /* Scanline Effect */
+  .scanlines {
+    @apply pointer-events-none fixed inset-0 z-50;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+  }
+
+  /* Cyber Input */
+  .cyber-input {
+    @apply w-full px-4 py-3 bg-muted/50 border border-border rounded-lg;
+    @apply focus:outline-none focus:border-primary transition-all duration-300;
+    @apply font-mono text-foreground placeholder:text-muted-foreground;
+  }
+
+  .cyber-input:focus {
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.2);
+  }
+}
+
+@layer utilities {
+  .text-neon-cyan {
+    color: hsl(var(--neon-cyan));
+  }
+
+  .text-neon-magenta {
+    color: hsl(var(--neon-magenta));
+  }
+
+  .text-neon-purple {
+    color: hsl(var(--neon-purple));
+  }
+
+  .text-neon-green {
+    color: hsl(var(--neon-green));
+  }
+
+  .text-gold-cyber {
+    color: hsl(var(--gold-cyber));
+  }
+
+  .bg-cyber-grid {
+    background-color: hsl(var(--cyber-grid));
+  }
+
+  .border-neon-cyan {
+    border-color: hsl(var(--neon-cyan));
+  }
+
+  .border-neon-magenta {
+    border-color: hsl(var(--neon-magenta));
+  }
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 15px hsl(var(--neon-green));
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 25px hsl(var(--neon-green));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 2px);
+  }
+  94% {
+    transform: translate(2px, -2px);
+  }
+  96% {
+    transform: translate(-2px, -2px);
+  }
+  98% {
+    transform: translate(2px, 2px);
+  }
+}
+
+@keyframes data-stream {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.5s ease-in-out;
+}
+
+.animate-flicker {
+  animation: neon-flicker 3s linear infinite;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--neon-cyan) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--neon-cyan) / 0.5);
+}

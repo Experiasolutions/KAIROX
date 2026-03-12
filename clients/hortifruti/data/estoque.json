@@ -1,0 +1,158 @@
+{
+    "lastUpdated": "2026-03-05T03:00:00Z",
+    "items": [
+        {
+            "name": "Banana Prata",
+            "category": "Frutas",
+            "unit": "kg",
+            "qty": 50,
+            "minQty": 10,
+            "pricePerUnit": 5.99,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Maçã Fuji",
+            "category": "Frutas",
+            "unit": "kg",
+            "qty": 30,
+            "minQty": 10,
+            "pricePerUnit": 8.99,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Abacaxi Pérola",
+            "category": "Frutas",
+            "unit": "un",
+            "qty": 25,
+            "minQty": 5,
+            "pricePerUnit": 6.99,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Manga Palmer",
+            "category": "Frutas",
+            "unit": "kg",
+            "qty": 40,
+            "minQty": 10,
+            "pricePerUnit": 7.99,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Laranja Pera",
+            "category": "Frutas",
+            "unit": "kg",
+            "qty": 60,
+            "minQty": 15,
+            "pricePerUnit": 4.99,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Alface Crespa",
+            "category": "Verduras",
+            "unit": "un",
+            "qty": 40,
+            "minQty": 10,
+            "pricePerUnit": 3.50,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Rúcula",
+            "category": "Verduras",
+            "unit": "maço",
+            "qty": 20,
+            "minQty": 5,
+            "pricePerUnit": 4.00,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Couve Manteiga",
+            "category": "Verduras",
+            "unit": "maço",
+            "qty": 30,
+            "minQty": 8,
+            "pricePerUnit": 4.50,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Espinafre",
+            "category": "Verduras",
+            "unit": "maço",
+            "qty": 15,
+            "minQty": 5,
+            "pricePerUnit": 5.00,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Tomate Italiano",
+            "category": "Legumes",
+            "unit": "kg",
+            "qty": 80,
+            "minQty": 15,
+            "pricePerUnit": 6.99,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Batata Lavada",
+            "category": "Legumes",
+            "unit": "kg",
+            "qty": 100,
+            "minQty": 20,
+            "pricePerUnit": 5.49,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Cenoura",
+            "category": "Legumes",
+            "unit": "kg",
+            "qty": 35,
+            "minQty": 10,
+            "pricePerUnit": 4.99,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Cebola",
+            "category": "Legumes",
+            "unit": "kg",
+            "qty": 45,
+            "minQty": 10,
+            "pricePerUnit": 5.99,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Abóbora Cabotiá",
+            "category": "Legumes",
+            "unit": "kg",
+            "qty": 25,
+            "minQty": 5,
+            "pricePerUnit": 4.49,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Salsinha",
+            "category": "Temperos",
+            "unit": "maço",
+            "qty": 20,
+            "minQty": 5,
+            "pricePerUnit": 2.50,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Cebolinha",
+            "category": "Temperos",
+            "unit": "maço",
+            "qty": 20,
+            "minQty": 5,
+            "pricePerUnit": 2.50,
+            "unitId": "unit-1"
+        },
+        {
+            "name": "Ovos Caipira",
+            "category": "Ovos",
+            "unit": "dz",
+            "qty": 30,
+            "minQty": 10,
+            "pricePerUnit": 12.99,
+            "unitId": "unit-1"
+        }
+    ]
+}
