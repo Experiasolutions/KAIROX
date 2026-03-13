@@ -711,15 +711,18 @@ function evaluateDistillation(systemState, cycleContext = {}) {
                 const curatedCount = roadmap.curated || 0;
                 const target = roadmap.target || 500;
 
-                if (traceCount < 50) {
+                if (traceCount === 0) {
                     gaps.push({
-                        id: 'DST-ROADMAP-LOW',
-                        description: `Only ${traceCount} traces captured (${curatedCount} curated). Need ~${target} for viable 3B model fine-tune.`,
-                        severity: 4,
-                        evidence: `${traceCount}/${target} captured, ${curatedCount} curated (${(traceCount / target * 100).toFixed(1)}%)`,
-                        impact30d: 'Insufficient data for local model training',
+                        id: 'DST-ROADMAP-ZERO',
+                        description: `0 traces captured. Need ~${target} for viable 3B model fine-tune.`,
+                        severity: 5,
+                        evidence: `0/${target} captured, ${curatedCount} curated`,
+                        impact30d: 'No progress toward local model training',
                     });
                     score -= 0.5;
+                } else {
+                    // It's progress, not a gap.
+                    distillationReport.status = `Progressing: ${traceCount}/${target} traces captured`;
                 }
             } catch {
                 // Invalid JSON in roadmap
