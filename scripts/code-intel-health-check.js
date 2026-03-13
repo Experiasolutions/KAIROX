@@ -1,3 +1,4 @@
+/** @purpose Health check for code intelligence subsystem */
 #!/usr/bin/env node
 
 /**

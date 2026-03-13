@@ -1,3 +1,4 @@
+/** @purpose Validate team manifest structure and completeness */
 #!/usr/bin/env node
 /**
  * Validate Install Manifest

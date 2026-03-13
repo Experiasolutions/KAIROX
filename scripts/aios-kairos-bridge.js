@@ -1,3 +1,4 @@
+/** @purpose Bridge between AIOX engine and KAIROS brain extensions */
 #!/usr/bin/env node
 
 /**

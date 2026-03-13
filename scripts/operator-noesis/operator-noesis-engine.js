@@ -1,3 +1,4 @@
+/** @purpose KAIROS script: operator-noesis-engine */
 /**
  * operator-noesis-engine.js — Orchestrator for Operator Noesis
  * 

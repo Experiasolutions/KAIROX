@@ -1,3 +1,4 @@
+/** @purpose Enrich operator profile based on interaction patterns */
 #!/usr/bin/env node
 
 /**

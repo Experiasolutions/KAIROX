@@ -1,3 +1,4 @@
+/** @purpose Schedule and orchestrate night shift automation cycles */
 /**
  * KAIROS Night Shift Scheduler
  * 

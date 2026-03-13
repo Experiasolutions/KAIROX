@@ -1,3 +1,4 @@
+/** @purpose Core Jarvis engine: morning brief, night check-in, operator profiling */
 #!/usr/bin/env node
 
 /**

@@ -1,3 +1,4 @@
+/** @purpose Extract and transcribe content from livestream recordings */
 const fs = require('fs');
 const path = require('path');
 const { spawn, execSync } = require('child_process');

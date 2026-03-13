@@ -1,3 +1,4 @@
+/** @purpose KAIROS script: model-updater */
 /**
  * model-updater.js — Applies adaptive adjustments to the learning model
  * 

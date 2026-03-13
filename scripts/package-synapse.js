@@ -1,3 +1,4 @@
+/** @purpose Synapse connector for reasoning package injection */
 #!/usr/bin/env node
 
 /**

@@ -1,3 +1,4 @@
+/** @purpose KAIROS script: operator-noesis-gate */
 /**
  * operator-noesis-gate.js — Checkpoint for Operator Noesis health
  * 

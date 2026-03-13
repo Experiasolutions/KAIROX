@@ -1,3 +1,4 @@
+/** @purpose Generate installation manifest for AIOX deployments */
 #!/usr/bin/env node
 /**
  * Generate Install Manifest

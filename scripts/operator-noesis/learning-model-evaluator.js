@@ -1,3 +1,4 @@
+/** @purpose KAIROS script: learning-model-evaluator */
 /**
  * learning-model-evaluator.js — Evaluates which data sources are most predictive
  * 

@@ -1,3 +1,4 @@
+/** @purpose Run the IA Council (8 chairs) deep audit on the entire system */
 const fs = require('fs');
 const path = require('path');
 

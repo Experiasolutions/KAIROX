@@ -1,3 +1,4 @@
+/** @purpose Automated nightly tasks: sanitization, doc organization, RAG re-index */
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');

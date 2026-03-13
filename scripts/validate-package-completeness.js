@@ -1,3 +1,4 @@
+/** @purpose KAIROS script: validate-package-completeness */
 #!/usr/bin/env node
 /**
  * Validate Package Completeness for npm Publishing

@@ -1,3 +1,4 @@
+/** @purpose Ensure team manifest exists and is properly structured */
 #!/usr/bin/env node
 'use strict';
 

@@ -1,3 +1,4 @@
+/** @purpose KAIROS script: semantic-lint */
 #!/usr/bin/env node
 'use strict';
 

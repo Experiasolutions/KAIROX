@@ -1,3 +1,4 @@
+/** @purpose KAIROS script: validate-aiox-core-deps */
 #!/usr/bin/env node
 'use strict';
 

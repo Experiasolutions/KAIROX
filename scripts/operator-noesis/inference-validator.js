@@ -1,3 +1,4 @@
+/** @purpose KAIROS script: inference-validator */
 /**
  * inference-validator.js — Tests and validates predictions about the operator
  * 
