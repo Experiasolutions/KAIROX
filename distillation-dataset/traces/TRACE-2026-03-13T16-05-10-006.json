@@ -1,0 +1,47 @@
+{
+    "id": "TRACE-2026-03-13T16-05-10-006",
+    "type": "council-audit",
+    "source": "ia-council-engine",
+    "timestamp": "2026-03-13T16:05:10.558Z",
+    "input": {
+        "task": "IA Council full system evaluation",
+        "context": "Council evaluated system with 119 total gaps"
+    },
+    "reasoning": "8-member council evaluated the system. Overall score: 4.9/10. Top gaps: ILS-CONST-INCOMPLETE, ILS-PROTO-INCOMPLETE, HAS-BASELINE-ZERO. Convergences detected: 0.",
+    "output": {
+        "totalGaps": 119,
+        "overallScore": 4.9,
+        "topGaps": [
+            {
+                "id": "ILS-CONST-INCOMPLETE",
+                "description": "Constitutional Layer missing one or more of the 5 Core Rules",
+                "severity": 9,
+                "evidence": "Not all RULE 1-5 markers found in constitutional-layer-v3.md",
+                "impact30d": "Degraded reasoning quality; outputs may lack depth or evidence",
+                "reportedBy": "sutskever"
+            },
+            {
+                "id": "ILS-PROTO-INCOMPLETE",
+                "description": "Constitutional Layer missing Protocol Extensions",
+                "severity": 7,
+                "evidence": "Not all P1-P5 protocol markers found",
+                "impact30d": "Missing Karpathy anchoring, Ng workflows, or Nakajima self-improvement signals",
+                "reportedBy": "sutskever"
+            },
+            {
+                "id": "HAS-BASELINE-ZERO",
+                "description": "Quality baseline not yet established — no session scores recorded",
+                "severity": 7,
+                "evidence": "current_baseline: 4.9, trend: establishing",
+                "impact30d": "No quality trend tracking; unable to detect regression or improvement",
+                "reportedBy": "hassabis"
+            }
+        ]
+    },
+    "quality": 4.9,
+    "tags": [
+        "council",
+        "audit",
+        "auto-harvest"
+    ]
+}

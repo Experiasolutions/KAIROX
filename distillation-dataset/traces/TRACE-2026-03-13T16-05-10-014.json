@@ -1,0 +1,22 @@
+{
+    "id": "TRACE-2026-03-13T16-05-10-014",
+    "type": "golden-example",
+    "source": "golden-examples/pm2/2026-02-19-cross-squad-a2a-event-bus.md",
+    "timestamp": "2026-03-13T16:05:10.681Z",
+    "input": {
+        "task": "Golden example: 2026-02-19-cross-squad-a2a-event-bus",
+        "context": "PM category: pm2"
+    },
+    "reasoning": "# GOLDEN EXAMPLE: Cross-squad A2A event bus with pub-sub channels wildcard matching and persistent event log\n**Score:** 10/10  **Date:** 2026-02-19  **Mode:** PM2\n**Tags:** pm2, event-driven, squad\n**Why golden:** PM3 score 10/10 — auto-harvested by noesis-pipeline\n\n## THE TASK\nCross-squad A2A event bus with pub-sub channels wildcard matching and persistent event log\n\n## THE REASONING TRACE\n[Reasoning trace not captured — reconstruct from output patterns]\n\n## THE OUTPUT\n/**\n * @module event-bus\n",
+    "output": {
+        "file": "2026-02-19-cross-squad-a2a-event-bus.md",
+        "category": "pm2",
+        "length": 9786
+    },
+    "quality": 9,
+    "tags": [
+        "golden-example",
+        "pm2",
+        "auto-harvest"
+    ]
+}

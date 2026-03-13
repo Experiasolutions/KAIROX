@@ -1,0 +1,22 @@
+{
+    "id": "TRACE-2026-03-13T16-05-10-009",
+    "type": "golden-example",
+    "source": "golden-examples/pm1/2026-02-18-engine-architecture.md",
+    "timestamp": "2026-03-13T16:05:10.609Z",
+    "input": {
+        "task": "Golden example: 2026-02-18-engine-architecture",
+        "context": "PM category: pm1"
+    },
+    "reasoning": "# GOLDEN EXAMPLE: Engine Architecture Decision\n**Score:** 9.1/10  **Date:** 2026-02-18  **Mode:** PM1\n**Tags:** architecture, engine, kernel, domain-agnostic, decomposition\n**Why golden:** Resolves ENGINE vs CLIENT separation with architectural evidence, maps kernel dependencies, identifies domain contamination as the #1 anti-pattern.\n\n## THE TASK\nArchitect the AIOS engine's cognitive reasoning layer (Noesis) as a domain-agnostic substrate that operates independently of any client implementation",
+    "output": {
+        "file": "2026-02-18-engine-architecture.md",
+        "category": "pm1",
+        "length": 3464
+    },
+    "quality": 9,
+    "tags": [
+        "golden-example",
+        "pm1",
+        "auto-harvest"
+    ]
+}

@@ -1,30 +1,30 @@
 {
-  "version": "1.0.0",
-  "purpose": "Track progress toward local model fine-tuning",
-  "target": 500,
-  "captured": 13,
-  "curated": 8,
-  "milestones": [
-    {
-      "name": "Prototype",
-      "traces": 50,
-      "status": "pending"
-    },
-    {
-      "name": "Alpha",
-      "traces": 200,
-      "status": "pending"
-    },
-    {
-      "name": "Beta",
-      "traces": 500,
-      "status": "pending"
-    },
-    {
-      "name": "Production",
-      "traces": 1000,
-      "status": "pending"
-    }
-  ],
-  "lastUpdated": "2026-02-20T01:41:00-03:00"
+    "version": "1.0.0",
+    "purpose": "Track progress toward local model fine-tuning",
+    "target": 500,
+    "captured": 26,
+    "curated": 8,
+    "milestones": [
+        {
+            "name": "Prototype",
+            "traces": 50,
+            "status": "pending"
+        },
+        {
+            "name": "Alpha",
+            "traces": 200,
+            "status": "pending"
+        },
+        {
+            "name": "Beta",
+            "traces": 500,
+            "status": "pending"
+        },
+        {
+            "name": "Production",
+            "traces": 1000,
+            "status": "pending"
+        }
+    ],
+    "lastUpdated": "2026-03-13T16:05:10.826Z"
 }

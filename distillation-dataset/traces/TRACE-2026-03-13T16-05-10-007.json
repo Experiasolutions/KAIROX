@@ -1,0 +1,21 @@
+{
+    "id": "TRACE-2026-03-13T16-05-10-007",
+    "type": "observation",
+    "source": "noesis-observations/2026-02-19.jsonl",
+    "timestamp": "2026-03-13T16:05:10.567Z",
+    "input": {
+        "task": "Process observations from 2026-02-19.jsonl",
+        "context": "16 observations recorded"
+    },
+    "reasoning": "Harvested 16 cognitive observations from NOESIS engine session.",
+    "output": {
+        "observationCount": 16,
+        "file": "2026-02-19.jsonl"
+    },
+    "quality": 7,
+    "tags": [
+        "observation",
+        "noesis",
+        "auto-harvest"
+    ]
+}

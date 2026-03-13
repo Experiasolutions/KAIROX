@@ -1,0 +1,22 @@
+{
+    "id": "TRACE-2026-03-13T16-05-10-011",
+    "type": "golden-example",
+    "source": "golden-examples/pm2/2026-02-18-kernel-bridge.md",
+    "timestamp": "2026-03-13T16:05:10.639Z",
+    "input": {
+        "task": "Golden example: 2026-02-18-kernel-bridge",
+        "context": "PM category: pm2"
+    },
+    "reasoning": "# GOLDEN EXAMPLE: Kernel Bridge Implementation\n**Score:** 9.4/10  **Date:** 2026-02-18  **Mode:** PM2\n**Tags:** node.js, kernel, bridge-pattern, singleton, domain-agnostic\n**Why golden:** Perfect interface abstraction with graceful degradation, zero domain vocabulary, exemplary WHY-not-WHAT comments, singleton pattern for resource efficiency.\n\n## THE TASK\nImplement kernel-bridge.js: unified API connecting scripts layer to three kernel modules (Synapse, IDS, WIS) with graceful fallback when modul",
+    "output": {
+        "file": "2026-02-18-kernel-bridge.md",
+        "category": "pm2",
+        "length": 3679
+    },
+    "quality": 9,
+    "tags": [
+        "golden-example",
+        "pm2",
+        "auto-harvest"
+    ]
+}

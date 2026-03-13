@@ -1,0 +1,21 @@
+{
+    "id": "TRACE-2026-03-13T16-04-35-005",
+    "type": "test",
+    "source": "distill-trace-self-test",
+    "timestamp": "2026-03-13T16:04:35.939Z",
+    "input": {
+        "task": "Validate distillation pipeline",
+        "context": "Self-test to verify trace capture, storage, and roadmap update"
+    },
+    "reasoning": "Generated a test trace to validate the pipeline. Verified: trace ID generation, JSON serialization, file write, roadmap counter increment, milestone status check.",
+    "output": {
+        "validation": "passed",
+        "timestamp": "2026-03-13T16:04:35.935Z"
+    },
+    "quality": 10,
+    "tags": [
+        "test",
+        "validation",
+        "pipeline"
+    ]
+}

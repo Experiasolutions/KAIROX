@@ -1,0 +1,22 @@
+{
+    "id": "TRACE-2026-03-13T16-05-10-015",
+    "type": "golden-example",
+    "source": "golden-examples/pm2/2026-02-19-evolution-engine-for-self-improvement.md",
+    "timestamp": "2026-03-13T16:05:10.692Z",
+    "input": {
+        "task": "Golden example: 2026-02-19-evolution-engine-for-self-improvement",
+        "context": "PM category: pm2"
+    },
+    "reasoning": "# GOLDEN EXAMPLE: Evolution engine for self-improvement cycles with council deliberation and automated code proposals\n**Score:** 8.6/10  **Date:** 2026-02-19  **Mode:** PM2\n**Tags:** pm2\n**Why golden:** PM3 score 8.6/10 — auto-harvested by noesis-pipeline\n\n## THE TASK\nEvolution engine for self-improvement cycles with council deliberation and automated code proposals\n\n## THE REASONING TRACE\n[Reasoning trace not captured — reconstruct from output patterns]\n\n## THE OUTPUT\n/**\n * @module evolution-e",
+    "output": {
+        "file": "2026-02-19-evolution-engine-for-self-improvement.md",
+        "category": "pm2",
+        "length": 13634
+    },
+    "quality": 9,
+    "tags": [
+        "golden-example",
+        "pm2",
+        "auto-harvest"
+    ]
+}

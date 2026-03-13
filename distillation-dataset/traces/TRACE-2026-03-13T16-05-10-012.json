@@ -1,0 +1,22 @@
+{
+    "id": "TRACE-2026-03-13T16-05-10-012",
+    "type": "golden-example",
+    "source": "golden-examples/pm2/2026-02-19-convergence-guard-for-council.md",
+    "timestamp": "2026-03-13T16:05:10.659Z",
+    "input": {
+        "task": "Golden example: 2026-02-19-convergence-guard-for-council",
+        "context": "PM category: pm2"
+    },
+    "reasoning": "# GOLDEN EXAMPLE: Convergence guard for council voting with quorum detection and consensus enforcement\n**Score:** 9.8/10  **Date:** 2026-02-19  **Mode:** PM2\n**Tags:** pm2\n**Why golden:** PM3 score 9.8/10 — auto-harvested by noesis-pipeline\n\n## THE TASK\nConvergence guard for council voting with quorum detection and consensus enforcement\n\n## THE REASONING TRACE\n[Reasoning trace not captured — reconstruct from output patterns]\n\n## THE OUTPUT\n/**\n * @module convergence-guard\n * @purpose Anti-loop p",
+    "output": {
+        "file": "2026-02-19-convergence-guard-for-council.md",
+        "category": "pm2",
+        "length": 10487
+    },
+    "quality": 9,
+    "tags": [
+        "golden-example",
+        "pm2",
+        "auto-harvest"
+    ]
+}

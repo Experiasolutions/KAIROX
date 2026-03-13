@@ -22,7 +22,7 @@ const fs = require('fs');
 const https = require('https');
 
 const ROOT = path.resolve(__dirname, '..');
-const REPORT_DIR = path.join(ROOT, '.aios-core', 'night-reports');
+const REPORT_DIR = path.join(ROOT, 'engine', 'night-reports');
 const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_ALLOWED_USER_ID;
 
@@ -92,6 +92,16 @@ const nightTasks = [
         label: 'KAIROS: Evolution Cycle',
         cmd: 'node scripts/evolution/evolution-engine.js --dry-run',
         timeout: 60000,
+    },
+    {
+        label: 'KAIROS: IA Council Scan',
+        cmd: 'node scripts/dump-council.js',
+        timeout: 60000,
+    },
+    {
+        label: 'KAIROS: Distillation Auto-Harvest',
+        cmd: 'node scripts/distill-trace.js --auto-harvest',
+        timeout: 30000,
     },
     {
         label: 'KAIROS: Cognitive State Compression',
