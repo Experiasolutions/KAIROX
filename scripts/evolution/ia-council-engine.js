@@ -440,7 +440,9 @@ function evaluatePedro(systemState) {
     }
 
     // Check 2: Structure is Sacred compliance
-    const requiredDirs = ['scripts', 'squads', 'docs', 'reasoning-packages', '.aios-core'];
+    // engine/ is the KAIROS-specific equivalent of .aios-core/ (migrated in v3.1)
+    const requiredDirs = ['scripts', 'squads', 'docs', 'reasoning-packages'];
+    const alternativeDirs = { '.aios-core': 'engine' };
     for (const dir of requiredDirs) {
         const hasDir = (systemState.files || []).some(f => f.path.startsWith(dir + '/'));
         if (!hasDir) {
@@ -453,6 +455,19 @@ function evaluatePedro(systemState) {
             });
             score -= 1;
         }
+    }
+    // Check .aios-core OR engine/ (both are valid)
+    const hasAiosCore = (systemState.files || []).some(f => f.path.startsWith('.aios-core/'));
+    const hasEngine = (systemState.files || []).some(f => f.path.startsWith('engine/'));
+    if (!hasAiosCore && !hasEngine) {
+        gaps.push({
+            id: 'PED-STRUCT-engine',
+            description: 'Neither ".aios-core" nor "engine/" directory found in project structure',
+            severity: 7,
+            evidence: 'No files found with either prefix',
+            impact30d: 'Breaks the "Structure is Sacred" principle from AIOS philosophy',
+        });
+        score -= 1;
     }
 
     return { memberId: 'pedro', gaps, score: Math.max(0, Math.min(10, score)) };

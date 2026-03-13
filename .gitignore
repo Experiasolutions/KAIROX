@@ -369,3 +369,6 @@ build/
 .aiox/install-log.txt
 d a t a / l i v e s t r e a m s / * . m 4 a  
  
+# Large media files
+data/livestreams/full_audio.m4a
+*.m4a

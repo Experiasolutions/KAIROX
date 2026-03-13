@@ -6,19 +6,27 @@
       "tasks_completed": 0,
       "golden_examples_harvested": 3,
       "anti_patterns_added": 5,
-      "notes": "Bootstrap session — seed examples and anti-patterns catalog created. Baseline not yet established (no PM3 audit run)."
+      "notes": "Bootstrap session — seed examples and anti-patterns catalog created."
     },
     {
       "date": "2026-02-19",
-      "average_score": 9.719999999999999,
+      "average_score": 9.72,
       "tasks_completed": 10,
       "golden_examples_harvested": 6,
       "anti_patterns_added": 0,
-      "notes": ""
+      "notes": "High quality session — 10 tasks, 6 golden examples harvested."
+    },
+    {
+      "date": "2026-03-13",
+      "average_score": 7.5,
+      "tasks_completed": 15,
+      "golden_examples_harvested": 12,
+      "anti_patterns_added": 0,
+      "notes": "KairoX consolidation: 750+ files restored, engine/ created, IA Council activated (120 gaps), Distillation Pipeline online (17 traces), Night Shift + WhatsApp Bridge added."
     }
   ],
-  "current_baseline": 4.9,
-  "trend": "establishing",
+  "current_baseline": 5.74,
+  "trend": "improving",
   "five_session_rule_trigger": false,
-  "last_updated": "2026-02-19"
+  "last_updated": "2026-03-13"
 }

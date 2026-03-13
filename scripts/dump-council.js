@@ -14,7 +14,8 @@ function scanDirForCouncil(dir, prefix) {
             const relPath = `${prefix}/${entry.name}`;
             if (entry.isFile() && (entry.name.endsWith('.js') || entry.name.endsWith('.md') || entry.name.endsWith('.json'))) {
                 try {
-                    const content = fs.readFileSync(path.join(dir, entry.name), 'utf8').slice(0, 500);
+                    const contentLimit = entry.name.endsWith('.md') ? 2000 : 500;
+                    const content = fs.readFileSync(path.join(dir, entry.name), 'utf8').slice(0, contentLimit);
                     results.push({ path: relPath, content });
                 } catch (e) { /* skip unreadable */ }
             } else if (entry.isDirectory()) {
@@ -54,11 +55,27 @@ try {
         ['clients/experia/config', 'clients/experia/config'],
         ['.agent/workflows', '.agent/workflows'],
         ['kairos-orchestrator', 'kairos-orchestrator'],
+        ['data', 'data'],
+        ['distillation-dataset', 'distillation-dataset'],
+        ['distillation-dataset/traces', 'distillation-dataset/traces'],
+        ['distillation-dataset/curated', 'distillation-dataset/curated'],
     ];
 
     for (const [dir, prefix] of dirsToScan) {
         const fullPath = path.join(AIOS_ROOT, dir);
         files = files.concat(scanDirForCouncil(fullPath, prefix));
+    }
+
+    // Scan root-level files (README.md, etc)
+    const rootFiles = ['README.md', 'SELF_CONTEXT.md', 'STATUS.md', '.gitignore', 'package.json'];
+    for (const rootFile of rootFiles) {
+        const rootPath = path.join(AIOS_ROOT, rootFile);
+        if (fs.existsSync(rootPath)) {
+            try {
+                const content = fs.readFileSync(rootPath, 'utf8').slice(0, 2000);
+                files.push({ path: rootFile, content });
+            } catch (e) { /* skip */ }
+        }
     }
 
     let qualityBaseline = {};
