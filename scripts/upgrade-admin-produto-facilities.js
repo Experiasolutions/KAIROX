@@ -11,12 +11,7 @@
 const fs = require('fs');
 const path = require('path');
 
-function write(file, content) {
-  const dir = path.dirname(file);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(file, content);
-  console.log('  OK: ' + file);
-}
+const { write } = require('./utils/file-writer');
 
 const base = 'squads';
 

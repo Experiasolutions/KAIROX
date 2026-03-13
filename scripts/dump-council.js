@@ -5,6 +5,12 @@ const path = require('path');
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const AIOS_ROOT = PROJECT_ROOT;
 
+/**
+ * @purpose Scan a directory for files to feed the IA Council evaluation
+ * @inputs {string} dir - absolute directory path
+ * @inputs {string} prefix - relative prefix for file paths
+ * @outputs {Array} array of { path, content } objects
+ */
 function scanDirForCouncil(dir, prefix) {
     const results = [];
     if (!fs.existsSync(dir)) return results;
@@ -20,17 +26,20 @@ function scanDirForCouncil(dir, prefix) {
                     results.push({ path: relPath, content });
                 } catch (e) { /* skip unreadable */ }
             } else if (entry.isDirectory()) {
-                // 1-level deep scan for structure detection
+                // Full sub-scan for structure detection (no limit on sub-entries)
                 results.push({ path: relPath + '/', content: '' });
-                const subEntries = fs.readdirSync(path.join(dir, entry.name), { withFileTypes: true }).slice(0, 5);
-                for (const sub of subEntries) {
-                    if (sub.isFile()) {
-                        try {
-                            const subContent = fs.readFileSync(path.join(dir, entry.name, sub.name), 'utf8').slice(0, 300);
-                            results.push({ path: `${relPath}/${sub.name}`, content: subContent });
-                        } catch (e) { /* skip */ }
+                try {
+                    const subEntries = fs.readdirSync(path.join(dir, entry.name), { withFileTypes: true });
+                    for (const sub of subEntries) {
+                        if (sub.isFile() && (sub.name.endsWith('.js') || sub.name.endsWith('.md') || sub.name.endsWith('.json'))) {
+                            try {
+                                const subLimit = sub.name.endsWith('.md') ? 8000 : (sub.name.endsWith('.json') ? 4000 : 500);
+                                const subContent = fs.readFileSync(path.join(dir, entry.name, sub.name), 'utf8').slice(0, subLimit);
+                                results.push({ path: `${relPath}/${sub.name}`, content: subContent });
+                            } catch (e) { /* skip */ }
+                        }
                     }
-                }
+                } catch (e) { /* skip inaccessible subdirectory */ }
             }
         }
     } catch (e) { /* skip inaccessible */ }
@@ -41,6 +50,7 @@ try {
     const councilPath = path.join(AIOS_ROOT, 'scripts', 'evolution', 'ia-council-engine.js');
     const council = require(councilPath);
 
+    const seenPaths = new Set();
     let files = [];
     const dirsToScan = [
         ['scripts', 'scripts'],
@@ -64,17 +74,27 @@ try {
 
     for (const [dir, prefix] of dirsToScan) {
         const fullPath = path.join(AIOS_ROOT, dir);
-        files = files.concat(scanDirForCouncil(fullPath, prefix));
+        const scanned = scanDirForCouncil(fullPath, prefix);
+        // Deduplicate: skip files already seen from another scan path
+        for (const file of scanned) {
+            if (!seenPaths.has(file.path)) {
+                seenPaths.add(file.path);
+                files.push(file);
+            }
+        }
     }
 
     // Scan root-level files (README.md, etc)
     const rootFiles = ['README.md', 'SELF_CONTEXT.md', 'STATUS.md', '.gitignore', 'package.json'];
     for (const rootFile of rootFiles) {
+        if (seenPaths.has(rootFile)) continue;
         const rootPath = path.join(AIOS_ROOT, rootFile);
         if (fs.existsSync(rootPath)) {
             try {
-                const content = fs.readFileSync(rootPath, 'utf8').slice(0, 2000);
+                const contentLimit = rootFile.endsWith('.md') ? 8000 : 2000;
+                const content = fs.readFileSync(rootPath, 'utf8').slice(0, contentLimit);
                 files.push({ path: rootFile, content });
+                seenPaths.add(rootFile);
             } catch (e) { /* skip */ }
         }
     }

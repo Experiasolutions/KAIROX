@@ -1,3 +1,7 @@
+PATTERN: Documentation template for golden examples collection
+PATTERN_TYPE: meta-documentation
+GENERALIZABLE: true
+
 # Golden Examples
 
 This directory contains reference outputs that serve as quality benchmarks.
