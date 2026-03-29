@@ -53,10 +53,10 @@ credentials/
 .claude/commands/mmosMapper/
 .claude/commands/hybridOps/
 
-# Private local squads (not for repository)
-squads/*
-!squads/.gitkeep
-!squads/_example/
+# Private local squads (now tracked for multi-terminal sync)
+# squads/*
+# !squads/.gitkeep
+# !squads/_example/
 # Published squads (whitelisted for repository)
 !squads/claude-code-mastery/
 keys/
@@ -230,26 +230,24 @@ test-sample-*.md
 .eslintcache
 
 # ============================================
-# INTERNAL DOCS (not for GitHub or npm install)
+# INTERNAL DOCS (Tracked for Hivemind Multi-Terminal sync)
 # ============================================
-# Development artifacts, internal strategy, and proprietary content.
-# These stay local only — not published to GitHub or npm.
 
-docs/stories/
-docs/research/
-docs/qa/
-docs/epics/
-docs/prd/
-docs/decisions/
-docs/one-pagers/
-docs/strategy/
-docs/handoffs/
-docs/requirements/
-docs/releases/
-docs/standards/
-docs/architecture/
-docs/agents/
-docs/private/
+# docs/stories/
+# docs/research/
+# docs/qa/
+# docs/epics/
+# docs/prd/
+# docs/decisions/
+# docs/one-pagers/
+# docs/strategy/
+# docs/handoffs/
+# docs/requirements/
+# docs/releases/
+# docs/standards/
+# docs/architecture/
+# docs/agents/
+# docs/private/
 
 # Squad Design Files (test artifacts)
 squads/.designs/
