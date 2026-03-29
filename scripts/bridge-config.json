@@ -1,0 +1,134 @@
+{
+    "version": "1.0.0",
+    "description": "Mapeamento UiPath Project → AIOS Agent/Task + configurações de segurança",
+    "providers": {
+        "jan-local": {
+            "envKey": "",
+            "baseUrl": "http://127.0.0.1:1337/v1",
+            "model": "llama-3.3-70b-versatile",
+            "maxTokens": 1024,
+            "description": "Jan.ai local API server — OpenAI compatible"
+        },
+        "gemini": {
+            "envKey": "GEMINI_API_KEY",
+            "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+            "model": "gemini-2.0-flash",
+            "maxTokens": 1024
+        },
+        "groq": {
+            "envKey": "GROQ_API_KEY",
+            "baseUrl": "https://api.groq.com/openai/v1",
+            "model": "llama-3.3-70b-versatile",
+            "maxTokens": 1024
+        },
+        "deepseek": {
+            "envKey": "DEEPSEEK_API_KEY",
+            "baseUrl": "https://api.deepseek.com/v1",
+            "model": "deepseek-chat",
+            "maxTokens": 1024
+        },
+        "openai": {
+            "envKey": "OPENAI_API_KEY",
+            "baseUrl": "https://api.openai.com/v1",
+            "model": "gpt-4o-mini",
+            "maxTokens": 1024
+        }
+    },
+    "providerPriority": [
+        "jan-local",
+        "gemini",
+        "groq",
+        "deepseek",
+        "openai"
+    ],
+    "routes": {
+        "whatsapp-autoreply": {
+            "agent": "experia-copy",
+            "task": "process-whatsapp.md",
+            "squad": "experia",
+            "description": "Processar mensagens WhatsApp e gerar respostas",
+            "allowedActions": [
+                "reply_message",
+                "mark_as_unread",
+                "schedule_appointment"
+            ]
+        },
+        "lead-scoring": {
+            "agent": "doom-strategist",
+            "task": "score-lead.md",
+            "squad": "experia",
+            "description": "Avaliar e pontuar leads para priorização",
+            "allowedActions": [
+                "score_lead",
+                "tag_lead",
+                "notify_team"
+            ]
+        },
+        "financial-report": {
+            "agent": "doom-revenue",
+            "task": "generate-financial-report.md",
+            "squad": "experia",
+            "description": "Gerar relatórios financeiros Auto-P&L",
+            "allowedActions": [
+                "generate_report",
+                "save_file",
+                "notify_team"
+            ]
+        },
+        "health-check": {
+            "agent": "experia-validator",
+            "task": "run-health-check.md",
+            "squad": "experia",
+            "description": "Verificação de saúde operacional",
+            "allowedActions": [
+                "check_status",
+                "generate_report",
+                "send_alert"
+            ]
+        },
+        "preventive-maintenance": {
+            "agent": "experia-automations",
+            "task": "run-maintenance.md",
+            "squad": "experia",
+            "description": "Manutenção preventiva de sistemas",
+            "allowedActions": [
+                "run_cleanup",
+                "backup_data",
+                "generate_report",
+                "send_alert"
+            ]
+        }
+    },
+    "security": {
+        "maxTokensPerRequest": 2048,
+        "maxRequestsPerMinute": 15,
+        "logAllRequests": true,
+        "logDirectory": "logs",
+        "blockedPatterns": [
+            "senha",
+            "password",
+            "cpf",
+            "credit_card",
+            "cartão",
+            "DELETE FROM",
+            "DROP TABLE",
+            "eval(",
+            "exec("
+        ],
+        "requireConfirmationFor": [
+            "schedule_appointment",
+            "send_alert",
+            "backup_data"
+        ],
+        "privacyBudget": {
+            "enabled": true,
+            "maxPIIPerHour": 50,
+            "fallbackOnExceed": "anonymize"
+        }
+    },
+    "fallback": {
+        "enabled": true,
+        "description": "Keyword-matching simples quando nenhuma LLM está disponível",
+        "defaultResponse": "Recebi sua mensagem. Um atendente humano vai responder em breve."
+    }
+}

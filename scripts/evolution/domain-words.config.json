@@ -1,0 +1,14 @@
+{
+    "_comment": "Domain-specific words for AP-001 contamination detection. Loaded by ia-council-engine.js and self-correction.js. Add client-specific terms here instead of hardcoding in engine files.",
+    "version": "1.0.0",
+    "words": [
+        "patient",
+        "clinic",
+        "appointment",
+        "scheduling",
+        "fisio",
+        "consulta",
+        "whatsapp",
+        "evolution.api"
+    ]
+}

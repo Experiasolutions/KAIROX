@@ -1,0 +1,91 @@
+{
+  "version": "1.0.0",
+  "created": "2026-02-20T02:25:00-03:00",
+  "lastUpdated": "2026-03-26T13:10:19.420Z",
+  "status": "initialized",
+  "operator": {
+    "id": "gabriel",
+    "role": "founder-operator",
+    "organization": "Experia Technologies / SynkraAI"
+  },
+  "dataSources": {
+    "declarative": {
+      "weight": 0.25,
+      "reliability": "medium-low",
+      "description": "What Gabriel explicitly says about himself, his goals, preferences",
+      "examples": [
+        "Meu foco é crescimento",
+        "Quero automação total"
+      ],
+      "evidenceCount": 0
+    },
+    "behavioral": {
+      "weight": 0.45,
+      "reliability": "high",
+      "description": "What Gabriel actually does — time allocation, task choices, interaction patterns",
+      "examples": [
+        "70% do tempo em produto, não em vendas"
+      ],
+      "evidenceCount": 0
+    },
+    "decisional": {
+      "weight": 0.2,
+      "reliability": "very-high",
+      "description": "What Gabriel chooses when forced to prioritize — reveals true values",
+      "examples": [
+        "Quando precisa escolher, o que escolhe?"
+      ],
+      "evidenceCount": 0
+    },
+    "omission": {
+      "weight": 0.1,
+      "reliability": "high-blind-spots",
+      "description": "What Gabriel never mentions or avoids — reveals blind spots",
+      "examples": [
+        "Nunca menciona concorrentes"
+      ],
+      "evidenceCount": 0
+    }
+  },
+  "activePredictions": [],
+  "predictionRules": {
+    "maxSimultaneous": 5,
+    "mustBeFalsifiable": true,
+    "mustHaveTimeframe": true,
+    "initialConfidence": 0.5,
+    "establishedThreshold": {
+      "confidence": 0.75,
+      "minEvidence": 5
+    }
+  },
+  "patterns": {
+    "established": [],
+    "candidates": [],
+    "rejected": []
+  },
+  "metrics": {
+    "modelAccuracy": null,
+    "sessionsObserved": 1,
+    "predictionsTotal": 0,
+    "predictionsCorrect": 0,
+    "coherenceScore": null,
+    "lastEvaluation": "2026-03-26T13:10:19.412Z"
+  },
+  "privacyCeiling": {
+    "definedBy": "gabriel",
+    "maxInferenceDepth": "behavioral-patterns-only",
+    "excludedTopics": [],
+    "note": "Operator defines what the model is allowed to learn. No personal data beyond work patterns."
+  },
+  "dependencies": {
+    "jarvisLayer": {
+      "status": "not-installed",
+      "requiredFiles": [
+        "scripts/jarvis-core.js",
+        "scripts/profile-enricher.js",
+        ".aios-core/memory/operator-profile.json"
+      ],
+      "note": "Operator Noesis reads FROM Jarvis Layer, never writes TO it"
+    }
+  }
+}

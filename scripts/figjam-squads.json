@@ -1,0 +1,299 @@
+{
+    "version": "2.0.0",
+    "description": "FigJam Blueprint → AIOS Squad-Route Mapping — 7 departamentos completos",
+    "source": "FigJam Live 12/02/2026",
+    "squads": {
+        "ops": {
+            "name": "OPS",
+            "aiHead": "AI Head de OPS",
+            "agents": [
+                "process-mapper",
+                "architect",
+                "automation-architect",
+                "qa"
+            ],
+            "philosophy": "OPS = Arquiteto — define processos, outros squads executam",
+            "routes": {
+                "build-process": {
+                    "task": "build-process.md",
+                    "description": "Mapear e otimizar processos operacionais",
+                    "allowedActions": [
+                        "create_process",
+                        "map_workflow",
+                        "generate_report",
+                        "notify_team"
+                    ]
+                }
+            }
+        },
+        "marketing": {
+            "name": "Marketing",
+            "aiHead": "AI Head de Marketing",
+            "agents": [
+                "trafego-pago",
+                "email-strategist",
+                "content-manager",
+                "social-media"
+            ],
+            "routes": {
+                "marketing-campaign": {
+                    "task": "run-campaign.md",
+                    "description": "Criar e executar campanhas de marketing",
+                    "allowedActions": [
+                        "create_campaign",
+                        "schedule_post",
+                        "generate_copy",
+                        "analyze_metrics",
+                        "generate_report"
+                    ]
+                }
+            }
+        },
+        "vendas": {
+            "name": "Vendas",
+            "aiHead": "AI Head de Vendas",
+            "agents": [
+                "sdr",
+                "closer"
+            ],
+            "routes": {
+                "sales-pipeline": {
+                    "task": "manage-pipeline.md",
+                    "description": "Gerenciar pipeline de vendas, qualificar leads, fechar deals",
+                    "allowedActions": [
+                        "score_lead",
+                        "qualify_lead",
+                        "schedule_call",
+                        "send_proposal",
+                        "generate_report"
+                    ]
+                }
+            }
+        },
+        "produto": {
+            "name": "Produto",
+            "aiHead": "AI Head de Produto",
+            "agents": [
+                "product-manager",
+                "content-creator",
+                "cs-retencao"
+            ],
+            "routes": {
+                "product-creation": {
+                    "task": "create-product.md",
+                    "description": "Criar e iterar produtos/serviços da clínica",
+                    "allowedActions": [
+                        "create_product",
+                        "update_pricing",
+                        "generate_report",
+                        "notify_team"
+                    ]
+                }
+            }
+        },
+        "customer-success": {
+            "name": "Customer Success",
+            "aiHead": "AI Head de CS",
+            "agents": [
+                "suporte",
+                "cs-retencao",
+                "escalate",
+                "report",
+                "health-check",
+                "engagement",
+                "upsell-detection",
+                "churn-prevention",
+                "discovery"
+            ],
+            "routes": {
+                "customer-journey": {
+                    "task": "manage-customer.md",
+                    "description": "Gerenciar jornada do cliente, retenção e upsell",
+                    "allowedActions": [
+                        "check_health",
+                        "detect_churn",
+                        "suggest_upsell",
+                        "escalate_issue",
+                        "send_survey",
+                        "generate_report"
+                    ]
+                }
+            }
+        },
+        "administracao": {
+            "name": "Administração",
+            "aiHead": "AI Head de Admin",
+            "agents": [
+                "rh-report",
+                "rh-recrutamento",
+                "rh-onboarding",
+                "rh-gestao",
+                "rh-offboarding",
+                "fin-contas-pagar",
+                "fin-contas-receber",
+                "fin-fluxo-caixa",
+                "fin-report",
+                "juridico-contratos",
+                "juridico-compliance"
+            ],
+            "routes": {
+                "admin-operations": {
+                    "task": "admin-ops.md",
+                    "description": "RH, Financeiro e Jurídico — operações administrativas",
+                    "allowedActions": [
+                        "generate_report",
+                        "process_payment",
+                        "review_contract",
+                        "onboard_employee",
+                        "check_compliance",
+                        "notify_team"
+                    ]
+                }
+            }
+        },
+        "facilities": {
+            "name": "Facilities",
+            "aiHead": "AI Head de Facilities",
+            "agents": [
+                "disputas",
+                "ferramentas",
+                "acessos",
+                "fornecedores",
+                "auditorias",
+                "politicas",
+                "lgpd"
+            ],
+            "routes": {
+                "facilities-management": {
+                    "task": "manage-facilities.md",
+                    "description": "Disputas, ferramentas, acessos, LGPD e auditorias",
+                    "allowedActions": [
+                        "manage_access",
+                        "audit_system",
+                        "check_lgpd",
+                        "manage_vendor",
+                        "generate_report",
+                        "send_alert"
+                    ]
+                }
+            }
+        }
+    },
+    "workflows": [
+        {
+            "id": "build-process",
+            "squad": "ops",
+            "name": "Build Process"
+        },
+        {
+            "id": "marketing-campaign",
+            "squad": "marketing",
+            "name": "Marketing Campaign"
+        },
+        {
+            "id": "sales-pipeline",
+            "squad": "vendas",
+            "name": "Sales Pipeline"
+        },
+        {
+            "id": "product-creation",
+            "squad": "produto",
+            "name": "Product Creation"
+        },
+        {
+            "id": "customer-journey",
+            "squad": "customer-success",
+            "name": "Customer Journey"
+        },
+        {
+            "id": "admin-operations",
+            "squad": "administracao",
+            "name": "Admin Operations"
+        }
+    ],
+    "qualityGates": {
+        "minimumScore": 70,
+        "requireReview": true,
+        "escalateBelow": 50
+    },
+    "decisionTree": {
+        "description": "Roteamento automático de tasks entre squads",
+        "rules": [
+            {
+                "keywords": [
+                    "processo",
+                    "workflow",
+                    "mapear",
+                    "otimizar"
+                ],
+                "route": "build-process"
+            },
+            {
+                "keywords": [
+                    "campanha",
+                    "marketing",
+                    "instagram",
+                    "post",
+                    "anuncio",
+                    "trafego"
+                ],
+                "route": "marketing-campaign"
+            },
+            {
+                "keywords": [
+                    "venda",
+                    "pipeline",
+                    "lead",
+                    "proposta",
+                    "fechar",
+                    "sdr",
+                    "closer"
+                ],
+                "route": "sales-pipeline"
+            },
+            {
+                "keywords": [
+                    "produto",
+                    "servico",
+                    "preco",
+                    "criar",
+                    "lancar"
+                ],
+                "route": "product-creation"
+            },
+            {
+                "keywords": [
+                    "cliente",
+                    "retencao",
+                    "churn",
+                    "upsell",
+                    "suporte",
+                    "satisfacao"
+                ],
+                "route": "customer-journey"
+            },
+            {
+                "keywords": [
+                    "rh",
+                    "financeiro",
+                    "juridico",
+                    "contrato",
+                    "pagamento",
+                    "folha"
+                ],
+                "route": "admin-operations"
+            },
+            {
+                "keywords": [
+                    "disputa",
+                    "ferramenta",
+                    "acesso",
+                    "lgpd",
+                    "auditoria",
+                    "fornecedor"
+                ],
+                "route": "facilities-management"
+            }
+        ]
+    }
+}

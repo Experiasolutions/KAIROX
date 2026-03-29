@@ -1,0 +1,64 @@
+{
+    "_comment": "IMMUTABLE BASELINE — Created once, never modified. All future comparisons are against this snapshot.",
+    "version": "1.0.0",
+    "created": "2026-02-18T21:56:00-03:00",
+    "created_by": "Evolution Engine Bootstrap",
+    "total_components": 11,
+    "components": {
+        ".aios-core/opus-replicator/constitutional-layer-v3.md": {
+            "hash": "6cd5a3b5d3285b129d9624ac4bfe3934d0ac825ff5f6f13c17a9f362576286a7",
+            "size": 8082,
+            "exists": true
+        },
+        ".aios-core/opus-replicator/SELF_CONTEXT.md": {
+            "hash": "c1cf953183606b4941d326fb611a9ff0507c3d0fb6acfd3d76de3e783b7789f8",
+            "size": 14363,
+            "exists": true
+        },
+        ".aios-core/memory/quality-baseline.json": {
+            "hash": "d72381ff045f15e3e30d1866445c15ce54b59483c7413ba413fb072594f55d0f",
+            "size": 446,
+            "exists": true
+        },
+        ".aios-core/memory/anti-patterns.md": {
+            "hash": "f4c3c78e9ce30f694eafa3877018445dee247a32267d9d54e8518d521c949258",
+            "size": 4019,
+            "exists": true
+        },
+        "scripts/kernel-bridge.js": {
+            "hash": "d505fdae215c0d60957d57977af4723d706a548905b0d0475560d1456e5e52b9",
+            "size": 10605,
+            "exists": true
+        },
+        "scripts/event-bus.js": {
+            "hash": "14f47b93e1cd7ed84582ca713cfd37b27e8339a8b00d75dde0bbf1d390003f5d",
+            "size": 8937,
+            "exists": true
+        },
+        "scripts/input-refiner.js": {
+            "hash": "fde6383629ed5a787c06d40808bdd6aee26fd5804e776a62840b0dd18fe73cda",
+            "size": 13578,
+            "exists": true
+        },
+        "scripts/self-correction.js": {
+            "hash": "2791ac21ebf2ea188638e8fe97e4e7213078fbf425eaeef36725889eec9ec1fb",
+            "size": 15899,
+            "exists": true
+        },
+        "OPUS_ENGINEERING_BIBLE.md": {
+            "hash": "f08fb3085d66a6f23fd6acbfa65798b0f010720d5d1ac3299590b5a326cae6ae",
+            "size": 68725,
+            "exists": true
+        },
+        "OPUS_ENGINEERING_BIBLE_v2.md": {
+            "hash": "24c1d15ed212d22d3ed7ca4ca78600d8ed6bdaff88791c387c82f825bb91e335",
+            "size": 10940,
+            "exists": true
+        },
+        "scripts/evolution/circuit-breaker.config.js": {
+            "hash": "b83365978e88568b2e3fc0573f087ef6e33d6c1a11fcf914deb204ec76477b5f",
+            "size": 15259,
+            "exists": true
+        }
+    }
+}
