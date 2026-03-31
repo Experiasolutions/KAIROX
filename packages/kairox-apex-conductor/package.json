@@ -1,0 +1,14 @@
+{
+  "name": "@kairox/apex-conductor",
+  "version": "1.0.0",
+  "description": "Motor de triagem e priorização da OS KAIROX, baseado em Pareto",
+  "main": "src/core/pareto-engine.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.1.2"
+  },
+  "author": "KAIROX OS Team",
+  "license": "MIT"
+}

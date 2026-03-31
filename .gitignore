@@ -117,7 +117,8 @@ sample-project/*
 aiox-memory-layer-mvp/        # Separate memory layer project
 memory/                       # Memory squad
 performance/                  # Performance squad
-scripts/                      # Project-specific scripts (not part of core)
+# scripts/ is now TRACKED — contains KAIROX operational scripts
+# scripts/                    # (was: Project-specific scripts)
 security/                     # Security squad
 telemetry/                    # Telemetry squad
 tests/                        # Test files for expansion projects
@@ -147,7 +148,10 @@ aiox-core/index.esm.js
 aiox-core/*.map
 
 # Applications (separate deployments, NOT part of npm package)
-apps/
+# apps/ is now TRACKED — contains SKYROS Dashboard
+# apps/
+apps/*/node_modules/
+apps/*/.next/
 
 # External projects (separate repositories)
 aiox-guide-app/
@@ -365,12 +369,23 @@ build/
 .aiox-core/local/
 .claude/settings.local.json
 .aiox/install-log.txt
-d a t a / l i v e s t r e a m s / * . m 4 a  
- 
+
 # Large media files
-data/livestreams/full_audio.m4a
+data/livestreams/
 *.m4a
 
 tools/oc.exe
 tools/bin/oc.exe
 tools/oc.zip
+
+# ============================================
+# KAIROX INFRASTRUCTURE
+# ============================================
+# Syncthing binary (27MB, download via script)
+packages/kairos-syncthing-bridge/syncthing-windows-amd64-*/
+# Packages node_modules
+packages/*/node_modules/
+
+# Antigravity artifacts
+.antigravity/
+.gemini/
