@@ -377,3 +377,7 @@ data/livestreams/full_audio.m4a
 tools/oc.exe
 tools/bin/oc.exe
 tools/oc.zip
+
+
+# Syncthing
+.stfolder/
