@@ -8,14 +8,16 @@ const path = require('path');
 
 const statusPath = path.join(__dirname, '..', '..', 'STATUS.md');
 
-function engageIsolationMode() {
-    console.log("=======================================");
-    console.log("🔴 SKYROS V1.0: ISOLATION MODE ENGAGED");
-    console.log("=======================================\n");
+function engageIsolationMode(silent = false) {
+    if (!silent) {
+        console.log("=======================================");
+        console.log("🔴 SKYROS V1.0: ISOLATION MODE ENGAGED");
+        console.log("=======================================\n");
+    }
 
     if (!fs.existsSync(statusPath)) {
-        console.error(" STATUS.md não encontrado. O coração do KAIROS está offline.");
-        return;
+        if (!silent) console.error(" STATUS.md não encontrado. O coração do KAIROS está offline.");
+        return { success: false, reason: 'missing_status' };
     }
 
     try {
@@ -27,19 +29,30 @@ function engageIsolationMode() {
         if (!statusContent.includes("ISOLATION MODE ENGAGED")) {
             statusContent = isolationTag + "\n\n" + statusContent;
             fs.writeFileSync(statusPath, statusContent);
-            console.log("  [SISTEMA]: STATUS.md Injetado com o protocolo de Foco Máximo.");
-            console.log("  [IA]: A partir deste momento, o AIOX negará solicitações fora do escopo do projeto ativo.");
+            if (!silent) {
+                console.log("  [SISTEMA]: STATUS.md Injetado com o protocolo de Foco Máximo.");
+                console.log("  [IA]: A partir deste momento, o AIOX negará solicitações fora do escopo do projeto ativo.");
+            }
+            return { success: true, engaged: true };
         } else {
-            console.log("  [SISTEMA]: O Isolation Mode já estava ativo no STATUS.md.");
+            if (!silent) console.log("  [SISTEMA]: O Isolation Mode já estava ativo no STATUS.md.");
+            return { success: true, engaged: false };
         }
     } catch(err) {
-         console.error("  [ERRO]: Falha ao tentar injetar o Protocolo de Isolamento: ", err.message);
+         if (!silent) console.error("  [ERRO]: Falha ao tentar injetar o Protocolo de Isolamento: ", err.message);
+         return { success: false, error: err.message };
     }
     
     // Sugestão de bloqueio nativo do SO
-    console.log("\n  [OPERADOR]: Feche todas as abas não essenciais de navegação.");
-    console.log("  Execute apenas as ferramentas do IDE. Modo de foco cego ativado.");
-    console.log("\n=======================================");
+    if (!silent) {
+        console.log("\n  [OPERADOR]: Feche todas as abas não essenciais de navegação.");
+        console.log("  Execute apenas as ferramentas do IDE. Modo de foco cego ativado.");
+        console.log("\n=======================================");
+    }
 }
 
-engageIsolationMode();
+if (require.main === module) {
+    engageIsolationMode();
+}
+
+module.exports = { engageIsolationMode };

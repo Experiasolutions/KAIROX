@@ -218,6 +218,57 @@ function phase1_5_jarvis() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// PHASE 1.8: SKYROS (Personal OS)
+// ═══════════════════════════════════════════════════════════════
+function phase1_8_skyros() {
+    phaseHeader('1.8', 'SKYROS (Personal OS)', '🧠');
+
+    try {
+        const triagePath = path.join(AIOS_ROOT, 'scripts', 'skyros', 'triage-matinal.js');
+        const isolationPath = path.join(AIOS_ROOT, 'scripts', 'skyros', 'isolation-mode.js');
+
+        if (!fs.existsSync(triagePath)) {
+            warn('SKYROS Triage: Module not found');
+            return { status: 'SKIPPED' };
+        }
+
+        // Run Triage silently to get data
+        const { runTriage } = require(triagePath);
+        const triageResult = runTriage(true);
+
+        if (triageResult.p0Count > 0) {
+            ok(`SKYROS Triage: ${triageResult.p0Count} P0 Task(s) Active => Deep Work Required.`);
+            // Show targets
+            triageResult.p0Tasks.slice(0, 2).forEach((task, i) => info(`  🔥 ALVO ${i + 1}: ${task}`));
+            
+            // Auto Engage Isolation Mode
+            if (fs.existsSync(isolationPath)) {
+                const { engageIsolationMode } = require(isolationPath);
+                const isoResult = engageIsolationMode(true);
+                if (isoResult.success) {
+                    ok(isoResult.engaged ? `Isolation Mode: ENGAGED [Protocolo Injetado]` : `Isolation Mode: ACTIVE [Manteve estado]`);
+                } else {
+                    fail(`Isolation Mode: Failed - ${isoResult.reason || isoResult.error}`);
+                }
+            }
+        } else {
+            ok(`SKYROS Triage: No P0 active. Free exploration mode.`);
+        }
+
+        if (triageResult.anamnesisReady) {
+            ok(`SKYROS Anamnesis: Vault connected. Esvazie sua mente antes da sessão.`);
+        } else {
+            warn(`SKYROS Anamnesis: Vault pending setup.`);
+        }
+
+        return { status: 'OK', p0Count: triageResult.p0Count };
+    } catch (err) {
+        warn(`SKYROS: ${err.message}`);
+        return { status: 'DEGRADED', error: err.message };
+    }
+}
+
+// ═══════════════════════════════════════════════════════════════
 // PHASE 2: KNOWLEDGE (RAG)
 // ═══════════════════════════════════════════════════════════════
 function phase2_knowledge() {
@@ -560,6 +611,8 @@ function main() {
     results.consciousness = timePhase('1_consciousness', phase1_consciousness);
     console.log('');
     results.jarvis = timePhase('1.5_jarvis', phase1_5_jarvis);
+    console.log('');
+    results.skyros = timePhase('1.8_skyros', phase1_8_skyros);
     console.log('');
     results.knowledge = timePhase('2_knowledge', phase2_knowledge);
     console.log('');
