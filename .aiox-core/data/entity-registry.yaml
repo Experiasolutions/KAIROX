@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  lastUpdated: '2026-03-26T12:54:00.746Z'
+  lastUpdated: '2026-03-31T19:52:00.431Z'
   entityCount: 750
   checksumAlgorithm: sha256
   resolutionRate: 100
@@ -317,10 +317,13 @@ entities:
       path: .aiox-core/development/tasks/audit-utilities.md
       layer: L2
       type: task
-      purpose: Entity at .aiox-core\development\tasks\audit-utilities.md
+      purpose: >-
+        Systematically audit all utilities in `.aiox-core/scripts/` to determine their functional status, classify them
+        as WORKING/FIXABLE/DEPRECATED, and generate actionable recommendations for maintenance a
       keywords:
         - audit
         - utilities
+        - audit-utilities
       usedBy: []
       dependencies: []
       externalDeps: []
@@ -333,8 +336,8 @@ entities:
         score: 0.8
         constraints: []
         extensionPoints: []
-      checksum: sha256:deefd19c8fe1885b06b4d646d3a643b06bf6534eb8f157c01bf5bc3e0092385e
-      lastVerified: '2026-03-26T12:54:00.661Z'
+      checksum: sha256:1a1e4cb6be031f144d223321c6977a88108843b05b933143784ce8340198acd3
+      lastVerified: '2026-03-31T19:52:00.409Z'
     bootstrap-shadcn-library:
       path: .aiox-core/development/tasks/bootstrap-shadcn-library.md
       layer: L2
