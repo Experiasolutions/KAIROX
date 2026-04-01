@@ -1,6 +1,6 @@
 metadata:
   version: 1.0.0
-  lastUpdated: '2026-03-31T20:54:58.242Z'
+  lastUpdated: '2026-03-31T19:52:00.431Z'
   entityCount: 750
   checksumAlgorithm: sha256
   resolutionRate: 100
@@ -337,7 +337,7 @@ entities:
         constraints: []
         extensionPoints: []
       checksum: sha256:1a1e4cb6be031f144d223321c6977a88108843b05b933143784ce8340198acd3
-      lastVerified: '2026-03-31T20:54:58.215Z'
+      lastVerified: '2026-03-31T19:52:00.409Z'
     bootstrap-shadcn-library:
       path: .aiox-core/development/tasks/bootstrap-shadcn-library.md
       layer: L2
