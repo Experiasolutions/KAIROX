@@ -3,41 +3,36 @@
     "pc-chatA-root": {
       "id": "ac48d935",
       "machine": "PC-GABS",
-      "label": "Root Node (Orchestrator)",
-      "last_active": "2026-04-03T13:18:00-03:00",
-      "focus": "Consolidação Mestre + Squads SynkraAI",
+      "label": "Root Node (Orchestrator) — PC",
+      "last_active": "2026-04-04T00:16:00-03:00",
+      "focus": "Hivemind Daemon PM2 + Supabase Realtime",
       "status": "active"
     },
-    "pc-chatB": {
+    "note-chatB": {
       "id": "50970a92",
+      "machine": "NOTEBOOK-MAYMO",
+      "label": "Notebook Node B — Skortex CLI + Sync",
+      "last_active": "2026-04-03T21:31:00-03:00",
+      "focus": "Skortex CLI v1.0 entregue — criando /sync workflow",
+      "status": "active"
+    },
+    "pc-chatC": {
+      "id": "pending-registration",
       "machine": "PC-GABS",
-      "label": "Handoff & Research Node",
-      "last_active": "2026-04-03T14:51:00-03:00",
-      "focus": "Hivemind Sync + Skortex Architecture + CLI Free-Tier",
-      "status": "active"
-    },
-    "note-chatC": {
-      "id": "unknown-c",
-      "machine": "NOTEBOOK-MAYMO",
-      "label": "Sub-node C",
+      "label": "PC Sub-node C (awaiting first activation)",
       "last_active": "unknown",
-      "focus": "unknown",
+      "focus": "unassigned",
       "status": "idle"
     },
-    "note-chatD": {
-      "id": "unknown-d",
-      "machine": "NOTEBOOK-MAYMO",
-      "label": "Sub-node D",
+    "pc-chatD": {
+      "id": "pending-registration",
+      "machine": "PC-GABS",
+      "label": "PC Sub-node D (awaiting first activation)",
       "last_active": "unknown",
-      "focus": "unknown",
+      "focus": "unassigned",
       "status": "idle"
-    },
-    "test-agent": {
-      "last_active": "2026-04-03T18:51:30.953Z",
-      "focus": "self-test",
-      "status": "active"
     }
   },
   "protocol_version": "1.0",
-  "last_sync": "2026-04-03T18:51:30.953Z"
+  "last_sync": "2026-04-04T00:31:00.000Z"
 }
