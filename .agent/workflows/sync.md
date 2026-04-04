@@ -1,4 +1,89 @@
 ---
+<<<<<<< HEAD
+description: Sincroniza contexto entre agentes — lê estado global e registra sessão ativa
+---
+
+# /sync — Shared Brain Sync Protocol
+
+// turbo-all
+
+**Execute este workflow ao iniciar QUALQUER sessão de trabalho.**
+Garante que todos os agentes estejam "na mesma página".
+
+## Passo 1 — Canonical Truth (Estado do Sistema)
+
+```
+Leia o arquivo SELF_CONTEXT.md
+```
+
+```
+Leia o arquivo STATUS.md
+```
+
+## Passo 2 — Sessões Ativas (Quem está trabalhando?)
+
+```
+Leia o arquivo ACTIVE_WORK.md
+```
+
+> Se houver outro agente com status 🟢 ACTIVE trabalhando no MESMO componente que você pretende mexer, **PARE e informe o operador** antes de prosseguir.
+
+## Passo 3 — Decisões Recentes (O que mudou?)
+
+```
+Leia o arquivo SESSION_LOG.md
+```
+
+> Foque nas últimas 10 entradas. Elas contêm as decisões mais recentes de outros agentes.
+
+## Passo 4 — Roadmap (Prioridades)
+
+```
+Leia o arquivo roadmap.md
+```
+
+## Passo 5 — Registrar Sessão no ACTIVE_WORK.md
+
+Adicione uma nova linha na tabela do `ACTIVE_WORK.md` com:
+- **Agent ID:** seu conversation ID (disponível nos metadados do sistema)
+- **Machine:** PC ou Notebook (pergunte ao operador se não souber)
+- **Started:** timestamp atual
+- **Task:** descrição curta do que vai fazer
+- **Files Touched:** arquivos que pretende modificar
+- **Status:** 🟢 ACTIVE
+
+## Passo 6 — Supabase Event Bus (se disponível)
+
+```bash
+node scripts/shared-brain-bus.js publish --event session_started --agent $AGENT_ID --task "$TASK_DESCRIPTION"
+```
+
+## Passo 7 — Reportar ao Operador
+
+Mostre em **português**:
+
+1. **Identidade:** KAIROS — NOESIS ativo
+2. **Sessões ativas:** listar todos os agentes do ACTIVE_WORK.md
+3. **Últimas decisões:** últimas 5 linhas do SESSION_LOG.md
+4. **Conflitos detectados:** se 2+ agentes tocam os mesmos arquivos
+5. **Próximo Boss Fight:** P0 do roadmap.md
+
+---
+
+## Ao ENCERRAR a sessão
+
+Antes de finalizar, SEMPRE:
+
+1. **Remova** sua entrada do `ACTIVE_WORK.md` (ou mude status para ⬛ DONE)
+2. **Adicione** uma linha no `SESSION_LOG.md` com o que foi feito
+3. **Atualize** `SELF_CONTEXT.md` se decisões arquiteturais foram tomadas
+4. **Atualize** `STATUS.md` se tasks mudaram de estado
+5. **Publique** evento de encerramento no Supabase (se disponível):
+
+```bash
+node scripts/shared-brain-bus.js publish --event session_ended --agent $AGENT_ID --summary "$SUMMARY"
+```
+=======
 description: Sincroniza o agente com o estado completo da Hivemind — garante que todos os 4 nós estão na mesma página antes de continuar o trabalho
 ---
 
@@ -103,3 +188,4 @@ Pronto para continuar. Aguardando instrução.
 2. **Se houver tasks atribuídas a você**, relate-as antes de aguardar instrução
 3. **Se detectar divergências** (ex: você sabia de algo diferente do Hivemind), logue a correção com `hivemind_log_decision`
 4. **Em sincronia = qualquer agente pode continuar de onde o outro parou**
+>>>>>>> 231e45bb7a9594137b7cd6d0559577c49767737d

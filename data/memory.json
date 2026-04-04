@@ -2,7 +2,7 @@
   "version": "1.0",
   "system": "KAIROS OS v3.1",
   "created": "2026-03-13T14:50:00-03:00",
-  "lastUpdated": "2026-03-19T15:32:26.528Z",
+  "lastUpdated": "2026-04-01T13:08:54.526Z",
   "memories": [
     {
       "id": "mem_1773635041996_5ljyc2",
@@ -331,6 +331,19 @@
         "up",
         "team",
         "1"
+      ]
+    },
+    {
+      "id": "mem_1775048934510_5ac1ak",
+      "category": "context",
+      "content": "SKYROS PGT v6.0 iniciado na porta 3000",
+      "metadata": {
+        "source": "pgt"
+      },
+      "timestamp": "2026-04-01T13:08:54.510Z",
+      "tags": [
+        "6.0",
+        "3000"
       ]
     }
   ],

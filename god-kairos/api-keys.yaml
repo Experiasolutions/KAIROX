@@ -9,15 +9,15 @@ gemini:
   fallback_on_429: true
   keys:
     - id: "lemellomodel"
-      key: "AIzaSyAiEkpxe5nZLEB_wtOkuJ1E7PJBWT97Ncg"
+      key: "REDACTED"
     - id: "krauserg31"
-      key: "AIzaSyAt7ZwWcT6U7YXnDeSSlTrV0C4MgF9UUVI"
+      key: "REDACTED"
     - id: "brooklynalexia2025"
-      key: "AIzaSyCADsQ6Ybehb0pGeE9UU0ATZnS_p4Tg3UU"
+      key: "REDACTED"
     - id: "redfield20251"
-      key: "AIzaSyDWVZ9_l936vtR5gRrfAhuF10x_9gJ0F4E"
+      key: "REDACTED"
     - id: "redfield20252"
-      key: "AIzaSyAdICYNH461MvPII5X0lCv7oMHugXZHGCs"
+      key: "REDACTED"
   rate_limits:
     per_key_rpm: 15
     pool_total_rpm: 75
@@ -31,12 +31,33 @@ groq:
   role: "fallback"
   keys:
     - id: "groq-1"
-      key: "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"
+      key: "REDACTED"
     - id: "groq-2"
-      key: "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"
+      key: "REDACTED"
   rate_limits:
     per_key_rpm: 30
     pool_total_rpm: 60
+
+# HuggingFace — Inference Router
+huggingface:
+  provider: "huggingface"
+  model_default: "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive"
+  role: "uncensored"
+  keys:
+    - id: "hf-main"
+      key: "" # Preencher com HF token
+  rate_limits:
+    per_key_rpm: 10
+
+# Red Hat OpenShift AI — Inference Server
+redhat:
+  provider: "redhat"
+  role: "sovereign"
+  endpoint: "" # Ex: https://inference.apps.openshift.example.com/v1
+  model_default: "qwen3.5-40b-thinking"
+  keys:
+    - id: "internal"
+      key: "" # Preencher se auth via bearer for necessário
 
 # Opus 4.6 (Antigravity) — free tier, este terminal
 opus:

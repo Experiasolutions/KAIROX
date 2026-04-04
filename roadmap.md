@@ -7,15 +7,15 @@
 
 ## Sprint Atual (Q1 2026 — Semana 14)
 
-| # | Projeto | Task | Priority | Status | Owner |
-|---|---------|------|----------|--------|-------|
-| 1 | SKYROS | Materializar framework, workflows e integração MCP | P0 | 🔧 Em progresso | NOESIS |
-| 2 | SKYDRA | Deploy OpenShift — Squads distribuídos via containers | P0 | 📋 Planejado | @devops |
-| 3 | Experia | Landing page v2 + Design System tokens | P1 | 📋 Planejado | @dev |
-| 4 | Hortifruti | WhatsApp bot — catálogo digital + pedidos | P1 | 🔧 Em progresso | @dev |
-| 5 | KAIROS Infra | Syncthing P2P Brain Sync — validar pareamento | P1 | ⏳ Aguardando | Operador |
-| 6 | Master Pumps | Trojan Horse via RH — proposta comercial | P2 | 📋 Planejado | @pm |
-| 7 | Pessoal | Organização financeira + controle de gastos | P2 | 📋 Planejado | Operador |
+| # | Área / Projeto | Task | Priority | Status | Owner |
+|---|----------------|------|----------|--------|-------|
+| 1 | KAIROS | Finalizar SKYROS PGT Dashboard (Visuais e Integração) | P0 | ✅ Concluído | NOESIS |
+| 2 | Self Care | Preencher 35 Perguntas da Anamnesis (Mapeamento RPG) | P0 | 📋 Planejado | Operador |
+| 3 | Money Talks | Ajustar carteira e metas financeiras (Meta R$ 30k) | P1 | 📋 Planejado | Operador |
+| 4 | SKYDRA | Deploy OpenShift — Squads distribuídos via containers | P1 | 🧊 Icebox | @devops |
+| 5 | Experia | Landing page v2 + Design System tokens | P1 | 📋 Planejado | @dev |
+| 6 | Hortifruti | WhatsApp bot — catálogo digital + pedidos | P2 | 🔧 Em progresso | @dev |
+| 7 | Master Pumps | Trojan Horse via RH — proposta comercial | P2 | 📋 Planejado | @pm |
 
 ---
 

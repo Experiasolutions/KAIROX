@@ -120,5 +120,101 @@
       "1.5_jarvis": 4563,
       "2_knowledge": 66
     }
+  },
+  {
+    "timestamp": "2026-03-31T18:03:57.939Z",
+    "bootTimeMs": 8612,
+    "mode": "quick",
+    "councilScore": null,
+    "councilGaps": null,
+    "phases": {
+      "0_identity": 10,
+      "0.5_mcp_sync": 1,
+      "1_consciousness": 8,
+      "1.5_jarvis": 8468,
+      "1.8_skyros": 18,
+      "2_knowledge": 57
+    }
+  },
+  {
+    "timestamp": "2026-04-01T12:44:10.208Z",
+    "bootTimeMs": 32144,
+    "mode": "full",
+    "councilScore": 5.65,
+    "councilGaps": 98,
+    "phases": {
+      "0_identity": 29,
+      "0.5_mcp_sync": 1614,
+      "1_consciousness": 13,
+      "1.5_jarvis": 10983,
+      "1.8_skyros": 48,
+      "2_knowledge": 23,
+      "3_intelligence": 19269,
+      "4_reflexion": 44
+    }
+  },
+  {
+    "timestamp": "2026-04-01T12:46:46.235Z",
+    "bootTimeMs": 62334,
+    "mode": "full",
+    "councilScore": 5.65,
+    "councilGaps": 98,
+    "phases": {
+      "0_identity": 9,
+      "0.5_mcp_sync": 1159,
+      "1_consciousness": 8,
+      "1.5_jarvis": 19035,
+      "1.8_skyros": 58,
+      "2_knowledge": 142,
+      "3_intelligence": 41856,
+      "4_reflexion": 30
+    }
+  },
+  {
+    "timestamp": "2026-04-01T15:02:02.513Z",
+    "bootTimeMs": 32195,
+    "mode": "full",
+    "councilScore": 5.65,
+    "councilGaps": 99,
+    "phases": {
+      "0_identity": 16,
+      "0.5_mcp_sync": 1125,
+      "1_consciousness": 17,
+      "1.5_jarvis": 10994,
+      "1.8_skyros": 26,
+      "2_knowledge": 25,
+      "3_intelligence": 19905,
+      "4_reflexion": 19
+    }
+  },
+  {
+    "timestamp": "2026-04-03T17:57:11.933Z",
+    "bootTimeMs": 6858,
+    "mode": "quick",
+    "councilScore": null,
+    "councilGaps": null,
+    "phases": {
+      "0_identity": 9,
+      "0.5_mcp_sync": 1,
+      "1_consciousness": 10,
+      "1.5_jarvis": 6768,
+      "1.8_skyros": 19,
+      "2_knowledge": 30
+    }
+  },
+  {
+    "timestamp": "2026-04-03T23:26:44.405Z",
+    "bootTimeMs": 43933,
+    "mode": "quick",
+    "councilScore": null,
+    "councilGaps": null,
+    "phases": {
+      "0_identity": 26,
+      "0.5_mcp_sync": 0,
+      "1_consciousness": 20,
+      "1.5_jarvis": 43804,
+      "1.8_skyros": 34,
+      "2_knowledge": 22
+    }
   }
 ]

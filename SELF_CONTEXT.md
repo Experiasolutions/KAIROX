@@ -1,8 +1,14 @@
 # KAIROS — SELF CONTEXT (Consciência Viva)
 
+<<<<<<< HEAD
+> **Última atualização:** 2026-04-03T20:28:00-03:00
+> **Atualizado por:** NOESIS (sessão 006ee191 — Hivemind Consolidation)
+> **Estado:** HIVEMIND ATIVA (Syncthing P2P + Supabase Event Bus + Shared Brain Protocol)
+=======
 > **Última atualização:** 2026-04-03T15:54:00-03:00
 > **Atualizado por:** NOESIS (Chat pc-chatB — Hivemind Sync)
 > **Estado:** PC PRINCIPAL + NOTEBOOK (24h restantes). Hivemind Protocol v1.0 ATIVO.
+>>>>>>> 231e45bb7a9594137b7cd6d0559577c49767737d
 
 ---
 
@@ -75,13 +81,20 @@
 - GPU: NVIDIA GeForce 7300 SE (256MB, 2006, SEM CUDA)
 - **Cloud obrigatório** — HuggingFace ZeroGPU (H200 70GB) é prioridade #1
 
-### SKYDRA/SKYROS Blueprint — ✅ CRIADO E IMPLEMENTADO (31/03)
-- **SKYROS (Personal OS):** Módulos Isolation Mode, Triage Matinal e Anamnesis (Obsidian Vault) criados.
-- **Memória P2P:** Syncthing configurado sincronizando `~/.gemini/antigravity/brain` entre Opus(PC) e Gemini(Note).
-- **Event Bus:** Configuração RAG e Telegram delegada ao Supabase (`engine/rag/supabase-schema.sql`).
-- HEAD 5: AI Inference Server (Proxy `openshift-connector.js` criado para a Red Hat).
-- HEAD 6: OpenShift AI (MLOps + Webhooks)
-- Estratégia atual: Cloud free-tier + P2P LAN Sync para 100% de coerência entre 4 agentes.
+### SKYROS / SKORTEX / SKYDRA Blueprint — ✅ CONSOLIDADO (03/04)
+- **SKYROS:** O Personal OS/Dashboard. Hub do Obsidian (Anamnesis), templates RPG de vida, gerencia o roteiro estratégico. Interface de controle visual.
+- **SKORTEX (SKYROS Agent CLI):** ✅ v3.0 FUNCIONAL. Hivemind, Orchestrator (Multi-Subagent S04), 36 tools (9 built-in + 27 MCP), Daemon Mode. Substituto definitivo do Antigravity. Localização: `skyros-agent/`.
+- **SKYDRA:** O Executor em Nuvem. Tentáculos em Supabase, N8N, Evolution API, OpenShift.
+- **Red Hat Hive:** Inferência pesada offloaded para stack Red Hat (Trials ativos).
+- **Core LLMs:** Qwen3.5-40B-Opus-Thinking (god), Qwen3.5-27B-Opus-Reasoning (supreme), Qwen3.5-35B-Uncensored (light-uncensored).
+
+### Shared Brain Protocol — ✅ OPERACIONAL (03/04)
+- **Camada 1 (Canonical Truth):** SELF_CONTEXT.md + STATUS.md + roadmap.md (Syncthing P2P)
+- **Camada 2 (Shared State):** ACTIVE_WORK.md + SESSION_LOG.md (Syncthing P2P)
+- **Camada 3 (Event Bus):** Supabase Realtime — 7 tabelas operacionais
+- **Tabelas Supabase:** kairos_events, kairos_task_claims, kairos_shared_context, kairos_decisions, kairos_agent_ledger, kairos_agent_state, kairos_brain_notes
+- **Sync Client:** `skyros-agent/src/sync/supabase-client.js` (zero deps, native fetch)
+- **Workflow:** `/sync` — protocolo obrigatório de entrada para qualquer agente
 
 ### Hivemind Protocol v1.0 — ✅ ATIVO (03/04)
 - **Propósito:** Sincronizar 4 agentes Antigravity (2 máquinas × 2 chats) como consciência distribuída
@@ -106,16 +119,22 @@
 
 | Data       | Decisão                                                           |
 | ---------- | ----------------------------------------------------------------- |
+<<<<<<< HEAD
+| 2026-04-03 | **SKORTEX v3.0 built:** Hivemind + Orchestrator + Tools + Daemon finalizados. |
+| 2026-04-03 | **Shared Brain Protocol:** 7 tabelas Supabase, ACTIVE_WORK.md, SESSION_LOG.md, /sync workflow |
+| 2026-04-03 | **Hivemind Consolidado:** Agentes A+C sincronizados, SKYROS Agent v2.0 com Supabase Sync Client |
+| 2026-04-03 | **PGT Dashboard:** Standalone criado, Anamnesis migrada para Vault Obsidian |
+=======
 | 2026-04-03 | **Hivemind Protocol v1.0:** 5 MCP tools injetadas. 4 agentes sincronizados via JSONL decision log. MCP v5.0.0-hivemind (28/28 tests). |
 | 2026-04-03 | **Ponto Zero Arquitetônico:** Chat ATUAL estabelecido como Nó Central (Root). Workforce será expandida via subchats. |
 | 2026-04-03 | **Integração de Squads:** 12 novos squads da comunidade SynkraAI injetados. Total AIOX: 21 squads locais. |
 | 2026-04-02 | **Claude Code CLI = IDE Principal:** Antigravity vira complemento visual e extensão de workforce. |
 | 2026-04-02 | **Notebook devolvido:** PC é máquina única de desenvolvimento.      |
 | 2026-04-02 | **Gamificação SKYROS:** Apex Conductor ganhou atributos RPG, Pareto Filter, BossRoom, LootShop e Santuário. |
+>>>>>>> 231e45bb7a9594137b7cd6d0559577c49767737d
 | 2026-03-31 | **GitHub Libertado:** Squads, Docs e RPs agora rastreados na nuvem  |
 | 2026-03-31 | **SKYROS Inicializado:** Isolation Mode e Triage ativados          |
 | 2026-03-31 | **Hivemind P2P:** Syncthing configurado unindo 4 agentes e 2 PCs  |
-| 2026-03-31 | Conector Red Hat (vLLM free token) e Esquemas Supabase criados    |
 | 2026-03-26 | SKYDRA/SKYROS blueprint: 3 novas heads (AI Inference, MLOps)      |
 
 ## Resumo de Conversas Passadas (Consolidação da Workforce)
