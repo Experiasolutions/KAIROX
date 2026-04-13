@@ -4,55 +4,58 @@
   "behavioral": {
     "commitPatterns": {
       "avgCommitHour": 15,
-      "dominantType": "chore",
+      "dominantType": "feat",
       "recentActivity": 30,
-      "evidence": 14
+      "evidence": 22
     },
     "workHours": {
       "avgBootHour": 0,
       "pattern": "night-owl",
-      "evidence": 13
+      "evidence": 21
     },
     "bootPreference": {
       "quickRatio": 0,
       "interpretation": "Prefers comprehensive boots",
-      "evidence": 13
+      "evidence": 21
     }
   },
   "decisional": {
     "focusAllocation": {
-      "features": 0.2,
-      "fixes": 0.27,
+      "features": 0.43,
+      "fixes": 0.03,
       "docs": 0.07,
-      "maintenance": 0.3,
+      "maintenance": 0.4,
       "interpretation": "Balanced — no single dominant commit type",
-      "evidence": 14
+      "evidence": 22
     },
     "directoryFocus": {
       "top3": [
-        "JDK",
-        "clients",
-        ".aios-core-deprecated"
+        "pgt-ui",
+        "skyros-agent",
+        "apps"
       ],
-      "interpretation": "Primary focus on: JDK, clients, .aios-core-deprecated",
-      "evidence": 14
+      "interpretation": "Primary focus on: pgt-ui, skyros-agent, apps",
+      "evidence": 22
     }
   },
   "declarative": {},
   "omission": {
     "neglectedAreas": {
       "directories": [
-        "tests"
+        "tests",
+        ".aios-core",
+        "squads",
+        "clients"
       ],
-      "interpretation": "Coverage looks healthy",
-      "evidence": 14
+      "interpretation": "4 important areas not recently touched — consider review",
+      "evidence": 22
     }
   },
   "insights": [],
   "_meta": {
     "version": "1.0.0",
-    "lastEnriched": "2026-04-03T23:26:43.972Z",
+    "lastEnriched": "2026-04-09T21:51:10.140Z",
     "observationCompleteness": 0.75,
-    "enrichmentCycles": 14
+    "enrichmentCycles": 22
   }
 }

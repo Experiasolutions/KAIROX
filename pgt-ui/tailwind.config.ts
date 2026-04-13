@@ -14,9 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Orbitron', 'sans-serif'],
-        sans: ['Rajdhani', 'sans-serif'],
-        mono: ['Share Tech Mono', 'monospace'],
+        display: ['Cinzel', 'Georgia', 'serif'],
+        hud: ['Orbitron', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Share Tech Mono', 'monospace'],
+        serif: ['Cinzel', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -58,14 +60,18 @@ export default {
           purple: "hsl(var(--neon-purple))",
           green: "hsl(var(--neon-green))",
           orange: "hsl(var(--neon-orange))",
-          yellow: "hsl(var(--neon-yellow))",
         },
-        gold: "hsl(var(--gold-cyber))",
-        cyber: {
-          dark: "hsl(var(--cyber-dark))",
-          darker: "hsl(var(--cyber-darker))",
-          grid: "hsl(var(--cyber-grid))",
+        arcane: {
+          gold: "hsl(var(--arcane-gold))",
+          amber: "hsl(var(--arcane-amber))",
+          light: "hsl(var(--arcane-light))",
         },
+        stone: {
+          dark: "hsl(var(--stone-dark))",
+          mid: "hsl(var(--stone-mid))",
+          border: "hsl(var(--stone-border))",
+        },
+        gold: "hsl(var(--arcane-gold))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -100,8 +106,16 @@ export default {
           "100%": { transform: "scale(1)", opacity: "1" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--neon-cyan) / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(var(--neon-cyan) / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--arcane-gold) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--arcane-gold) / 0.6)" },
+        },
+        "arcane-pulse": {
+          "0%, 100%": { boxShadow: "0 0 10px hsl(var(--arcane-gold) / 0.3)" },
+          "50%": { boxShadow: "0 0 25px hsl(var(--arcane-gold) / 0.6), 0 0 50px hsl(var(--arcane-gold) / 0.2)" },
+        },
+        "ember": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.85", transform: "scale(1.08) rotate(-2deg)" },
         },
         "cyber-scan": {
           "0%": { transform: "translateY(-100%)" },
@@ -114,6 +128,8 @@ export default {
         "fade-in": "fade-in 0.4s ease-out",
         "scale-in": "scale-in 0.3s ease-out",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "arcane-pulse": "arcane-pulse 2.5s ease-in-out infinite",
+        "ember": "ember 1.5s ease-in-out infinite",
         "cyber-scan": "cyber-scan 3s linear infinite",
       },
     },

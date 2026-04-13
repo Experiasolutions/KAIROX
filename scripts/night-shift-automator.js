@@ -14,9 +14,7 @@ const { execSync } = require('child_process');
 
 const ROOT_DIR = process.cwd();
 const DOCS_DIR = 'C:\\Users\\Gabriel\\Documents';
-const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
-const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const GROQ_MODEL = 'llama3-8b-8192';
+// Groq variables removed: now fully integrated into the SKORTEX Sovereign Engine (via ProviderRouter)
 
 const IS_DRY_RUN = process.argv.includes('--dry-run');
 
@@ -79,10 +77,7 @@ function sanitizeWorkspace() {
 async function semanticOrganizer() {
     logInfo('Starting Phase 2: Windows Documents Semantic Organization (Groq API)...');
 
-    if (!GROQ_API_KEY) {
-        logWarn('GROQ_API_KEY is not set. Skipping Phase 2.');
-        return;
-    }
+    logInfo('Initializing Sovereign SKORTEX Router for Night Shift...');
 
     const categories = ['Financial', 'Personal', 'Work', 'KAIROS', 'AIOS', 'Megabrain', 'Other'];
     const destBase = path.join(DOCS_DIR, 'Organized_by_Groq');
@@ -138,27 +133,29 @@ ${snippet.substring(0, 500)}
         `.trim();
 
         try {
-            const resp = await fetch(GROQ_API_URL, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${GROQ_API_KEY}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    model: GROQ_MODEL,
-                    messages: [{ role: 'user', content: prompt }],
-                    temperature: 0.1,
-                    max_tokens: 10
-                })
-            });
+            // Instantiate SKORTEX Sovereign Router (dynamic import due to CommonJS script vs ESM local module)
+            const { ProviderRouter } = await import('file:///' + path.join(ROOT_DIR, 'skyros-agent', 'src', 'providers', 'router.js'));
+            const { config } = await import('file:///' + path.join(ROOT_DIR, 'skyros-agent', 'src', 'core', 'config.js'));
+            
+            const router = new ProviderRouter(config);
 
-            if (!resp.ok) {
-                logWarn(`Groq API error for ${file.name}: ${resp.statusText}`);
-                continue;
+            const aiResponse = await router.complete(
+                [{ role: 'user', content: prompt }], 
+                [], 
+                { tier: 'night' } // Router will try Red Hat and fallback to free pool gracefully!
+            );
+
+            // Extract category robustly in case LLM is chatty
+            let category = 'Other';
+            const rawOutput = (aiResponse || '').trim().replace(/['"]/g, '');
+            
+            // Search inside the string for one of the categories
+            for (const cat of categories) {
+                if (rawOutput.includes(cat)) {
+                    category = cat;
+                    break;
+                }
             }
-
-            const data = await resp.json();
-            let category = (data.choices[0]?.message?.content || '').trim().replace(/['"]/g, '');
 
             if (!categories.includes(category)) category = 'Other';
 

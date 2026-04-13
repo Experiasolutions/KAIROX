@@ -395,5 +395,28 @@ packages/*/node_modules/
 
 # Syncthing
 .stfolder/
-g o d - k a i r o s / a p i - k e y s . y a m l  
- 
+
+# ============================================
+# KAIROS SECRETS & GENERATED (NEVER COMMIT)
+# ============================================
+god-kairos/api-keys.yaml
+god-kairos/Keys.md
+Groq/
+kairos-orchestrator/venv/
+kairos-orchestrator/__pycache__/
+kairos-orchestrator/workers/__pycache__/
+kairos-orchestrator/tg_bot/__pycache__/
+__pycache__/
+*.pyc
+tmp_aiox/
+tmp_scraper.js
+test-spawner.ts
+photo_*.jpg
+photo_*.png
+
+# ============================================
+# EMBEDDED GIT REPOS (separate projects — use submodules if needed)
+# ============================================
+skyros-agent-v4/
+tools/integrations/openclaude/
+skyros-agent-legacy/sessions/

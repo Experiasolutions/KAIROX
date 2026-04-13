@@ -10,7 +10,7 @@
 | # | Área / Projeto | Task | Priority | Status | Owner |
 |---|----------------|------|----------|--------|-------|
 | 1 | KAIROS | Finalizar SKYROS PGT Dashboard (Visuais e Integração) | P0 | ✅ Concluído | NOESIS |
-| 2 | Self Care | Preencher 35 Perguntas da Anamnesis (Mapeamento RPG) | P0 | 📋 Planejado | Operador |
+| 2 | Self Care | Preencher 35 Perguntas da Anamnesis (Mapeamento RPG) | P0 | ✅ Concluído | Operador |
 | 3 | Money Talks | Ajustar carteira e metas financeiras (Meta R$ 30k) | P1 | 📋 Planejado | Operador |
 | 4 | SKYDRA | Deploy OpenShift — Squads distribuídos via containers | P1 | 🧊 Icebox | @devops |
 | 5 | Experia | Landing page v2 + Design System tokens | P1 | 📋 Planejado | @dev |

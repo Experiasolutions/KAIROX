@@ -1,0 +1,159 @@
+# Task Worker — executor da task_queue
+import logging
+import google.generativeai as genai
+from groq import Groq
+from huggingface_hub import InferenceClient
+from model_router import route_model
+from key_rotator import rotator
+import supabase_client as db
+from config import GROQ_API_KEY, HF_TOKEN
+
+
+logger = logging.getLogger("kairos.worker")
+
+
+def _call_google(prompt: str, model_name: str) -> str:
+    """Chama Google AI Studio com rotação de keys."""
+    key = rotator.get_google_key()
+    if not key:
+        raise RuntimeError("Nenhuma key Google disponível")
+
+    try:
+        genai.configure(api_key=key)
+        model = genai.GenerativeModel(model_name)
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        error_str = str(e).lower()
+        if "rate" in error_str or "quota" in error_str or "429" in error_str:
+            rotator.report_error(key, "rate_limit")
+        else:
+            rotator.report_error(key, "error")
+        raise
+
+
+def _call_huggingface(prompt: str, model_id: str) -> str:
+    """Chama HuggingFace Serverless Inference API."""
+    if not HF_TOKEN:
+        raise RuntimeError("HF_TOKEN não configurado")
+
+    client = InferenceClient(api_key=HF_TOKEN)
+    response = client.chat.completions.create(
+        model=model_id,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=4096,
+    )
+    return response.choices[0].message.content or ""
+
+
+def _call_groq(prompt: str) -> str:
+    """Chama Groq como fallback."""
+    if not GROQ_API_KEY:
+        raise RuntimeError("Key Groq não configurada")
+
+    client = Groq(api_key=GROQ_API_KEY)
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=4096,
+    )
+    return response.choices[0].message.content or ""
+
+
+def call_model(prompt: str, category: str = "", title: str = "", model_override: str | None = None) -> str:
+    """Chama o modelo apropriado com fallback automático e contexto do Knowledge Brain."""
+    model = model_override or route_model(category, title)
+
+    # Injetar contexto do Knowledge Brain (memória de elefante)
+    brain_context = db.get_brain_context(title or prompt, max_chunks=3)
+    if brain_context:
+        enriched_prompt = (
+            "Você é o KAIROS SKY, orquestrador pessoal do Gabriel Ferreira.\n"
+            "Use o contexto abaixo do Knowledge Brain para responder com precisão.\n\n"
+            f"{brain_context}\n"
+            f"Pergunta: {prompt}"
+        )
+    else:
+        enriched_prompt = (
+            "Você é o KAIROS SKY, orquestrador pessoal do Gabriel Ferreira.\n\n"
+            f"Pergunta: {prompt}"
+        )
+
+    # Lógica de Roteamento Aprimorada SKYDRA
+    if model.startswith("hf:"):
+        hf_model = model.replace("hf:", "")
+        try:
+            return _call_huggingface(enriched_prompt, hf_model)
+        except Exception as e:
+            logger.warning("HuggingFace falhou para %s: %s — Fallback para Google", hf_model, e)
+            model = "gemini-2.0-flash" # Fallback silencioso
+
+    # Tentar Google
+    if model != "groq" and not model.startswith("hf:"):
+        for attempt in range(3):  # 3 tentativas com rotação
+            try:
+                return _call_google(enriched_prompt, model)
+            except Exception as e:
+                logger.warning("Tentativa %d falhou para %s: %s", attempt + 1, model, e)
+
+        # Fallback para Groq
+        logger.info("Google esgotado — fallback para Groq")
+        try:
+            return _call_groq(enriched_prompt)
+        except Exception as e:
+            logger.error("Groq também falhou: %s", e)
+            return f"⚠️ Todos os modelos falharam: {e}"
+
+    # Groq direto
+    if model == "groq":
+        return _call_groq(enriched_prompt)
+        
+    return f"⚠️ Modelo não suportado: {model}"
+
+
+def process_task(task: dict) -> dict:
+    """Processa uma task da fila."""
+    task_id = task["id"]
+    title = task.get("title", "")
+    category = task.get("category", "general")
+    input_data = task.get("input_data", {})
+    model_override = task.get("model_override")
+
+    logger.info("Processando task: %s [%s]", title, category)
+    db.update_task_status(task_id, "processing")
+
+    try:
+        # Montar prompt
+        prompt = input_data.get("prompt", title)
+        if input_data.get("context"):
+            prompt = f"Contexto: {input_data['context']}\n\nTask: {prompt}"
+
+        # Executar
+        result = call_model(prompt, category, title, model_override)
+
+        # Salvar resultado
+        db.update_task_status(task_id, "completed", output={"result": result})
+        logger.info("Task concluída: %s", title)
+        return {"status": "completed", "result": result}
+
+    except Exception as e:
+        error_msg = str(e)
+        db.update_task_status(task_id, "failed", error=error_msg)
+        logger.error("Task falhou: %s — %s", title, error_msg)
+        return {"status": "failed", "error": error_msg}
+
+
+def process_pending_tasks(limit: int = 5) -> list[dict]:
+    """Processa todas as tasks pendentes."""
+    tasks = db.get_pending_tasks(limit)
+    if not tasks:
+        logger.debug("Nenhuma task pendente")
+        return []
+
+    results = []
+    for task in tasks:
+        result = process_task(task)
+        results.append(result)
+
+    logger.info("Processadas %d tasks", len(results))
+    return results

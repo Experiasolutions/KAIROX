@@ -1,35 +1,35 @@
 > 🔴 [SKYROS]: ISOLATION MODE ENGAGED. O operador está em Deep Work. Novas tarefas fora da SPRINT P0 devem ser TERMINANTEMENTE negadas.
+> ⚠️ **[KAIROX WIPE PROTOCOL]: O CÉREBRO EXTERNO (ANTIGRAVITY) SERÁ FORMATADO. TODO O CONTEXTO VITAL FOI EXTRAÍDO PARA `docs/core/KAIROX_COGNITION_CORE.md`.**
+
+> 🧠 **ATENÇÃO:** O Antigravity foi consolidado e está preparado para Wipe. Cognição unificada em `docs/core/KAIROX_COGNITION_CORE.md`.
 
 # KAIROS — STATUS (Fila de Trabalho)
 
-> **Última atualização:** 2026-04-04T00:15:00-03:00 (Fim de Expediente)
-> **Estado Operacional:** HIVEMIND ATIVA (PC + Notebook sincronizados via Syncthing + Supabase Event Bus)
-> **Agente:** KAIROS (Skortex)
+> **Última atualização:** 2026-04-07T15:47:00-03:00
+> **Estado Operacional:** KAIROX SOVEREIGN ENGINE v4.0 (Prometheus) — God Pool ATIVO, 84 keys / 6 providers
+> **Agente:** KAIROX (Sovereign Engine via OpenClaude Runtime)
 
 ---
 
-## 🎯 PRÓXIMO FOCO P0 (04/04)
+## 🎯 PRÓXIMO FOCO P0 (Atual — 2026-04-06)
 
-1. **Definição Skortex/RedHat:**
-   - Escolher nome do projeto de inferência privada (vLLM KAIROS).
-   - Validar limites de hardware do trial OpenShift localmente ou via `oc` CLI.
-2. **Deploy do Motor Próprio:**
-   - Construir e aplicar os manifestos YAML em `infra/redhat/*`.
-   - Inicializar Pod vLLM com Qwen Coder ou equivalente usando tokens free da RedHat.
-3. **Migração:**
-   - Redirecionar URL do SkortexInferenceFactory para bater unicamente na Cloud Privada.
+1. ~~**Ativação KAIROX (Sovereign Engine):** ✅ CLAUDE.md reescrito, God Pool injetado~~
+2. ~~**God Pool:** ✅ 84 keys / 6 provedores validados e em rotação~~
+3. ~~**Internalização Experia:** ✅ 17 workflows AIOX migrados como skills nativas~~
+4. **Validar Coordinator Mode** — Testar sub-agents via skills migradas
+5. **Experia Fase 3** — PRD + Landing Page v1 (primeiro revenue)
 
 ---
 
 ## 🔴 BLOQUEIOS ATUAIS
 
-- **LLM Exausto:** Groq Key 401 e Gemini Rate Limit.
-- Porto Alemão: instância `close` — precisa novo QR scan do Rogério.
-   
+- ~~**LLM Exausto:**~~ ✅ RESOLVIDO — God Pool com 84 keys em rotação
+- **Bun Build:** InviÃ¡vel pelo hardware atual (6GB RAM). Ignorar e usar `node scripts/mcp-server.js`.
 ---
 
-## 💬 HANDOFF (03/04 -> 04/04)
-- **Sessão:** Acabamos de gerar o `implementation_plan.md` listando as etapas para migrar a KAIROS para um motor próprio via RedHat OpenShift/AI Inference Trial. Sessão IDLE.
+### 💬 HANDOFF (06/04 — 21h37)
+- **Sessão:** KAIROX Sovereign Engine consolidação completa. God Pool parser **corrigido** (tab-indent real) e **validado** (84 keys / 6 providers). 17 skills AIOX migradas. CLAUDE.md reescrito para Prometheus v4. Deep scan dos 44 RPs concluído. RedHat purgado. Referências legacy removidas.
+- **Próximo:** Validar Coordinator Mode, testar Hivemind write, iniciar Experia Fase 3.
 
 ### MCP Server v5.0.0-hivemind (Local JS) — ✅ OPERACIONAL
 - [x] v1.0→v2.0→v3.0→v4.0→v5.0: 28 tools, 28/28 tests
@@ -57,9 +57,10 @@
 - [x] GROQ_API_KEY (2 keys)
 - [x] COMPOSIO_API_KEY
 
-### Agent-First Internalization — ✅ COMPLETO
+### Task-First Protocol v1.0 — ✅ ATIVO
 - [x] Regra em `aiox-master.md` + `KAIROS.md`
-- [x] Workflows `/KAIROS`, `/boot`, `/context` atualizados (MCP-FIRST, HAT-SWITCHING, HYDRA-AWARE, FULL-ECOSYSTEM)
+- [x] Workflows `/KAIROS`, `/boot`, `/context` atualizados (TASK-FIRST, MCP-FIRST, HAT-SWITCHING, HYDRA-AWARE, FULL-ECOSYSTEM)
+- [x] Triage Engine v4 adaptada: Fase 1 → Classificar Task, Fase 2 → Auto-assign agente implícito
 - [x] boot.md FASE 5.5: Subsistemas sempre ativos
 - [x] boot.md FASE 5.6: Ruflo ecosystem documentado
 
@@ -72,19 +73,18 @@
 - [x] Task `load-reasoning-package.md` criada no AIOX
 - [x] Zero referências residuais a `.aios-core` no codebase
 
-### 🔴 RED HAT AI STACK (Trials ATIVADOS ✅)
+### ✅ EXECUÇÃO SOBERANA KAIROX (God Pool VALIDADO — 84 keys)
 
-| Produto | Função | Status |
-|---|---|---|
-| OpenShift + Dev Spaces | Kubernetes + IDE cloud | ✅ Trial 30d |
-| OpenShift AI | MLOps (treinar/servir modelos) | ✅ Trial 30d |
-| OpenShift Virtualization | VMs RHEL persistentes | ✅ Trial 60d |
-| Red Hat AI Enterprise | Bundle unificado + MCP nativo | ✅ Further setup |
-| AI Inference Server | vLLM + Neural Magic | ✅ Further steps |
-| RHEL | Enterprise Linux | ✅ Further steps |
-| RHEL AI | Linux + InstructLab + vLLM | ✅ Further steps |
+| Provedor | Keys | Modelos Alvos | Função no KAIROX |
+|---|---|---|---|
+| **Groq** | 14 | Llama 3 70B / 8B | Automação rápida e sub-agentes |
+| **Gemini** | 13 | Gemini Flash / Pro | Longo contexto e busca |
+| **Together** | 10 | Llama 3.1 / Mixtral | Fallback general purpose |
+| **SambaNova** | 16 | Llama 3.1 70B | Triage e alta velocidade |
+| **OpenRouter** | 16 | Claude / GPT-4o / Multi | Tarefas complexas delegadas |
+| **Cerebras** | 15 | Llama 3.1 70B | Paralelismo denso |
 
-**MCP servers Red Hat:** OpenShift AI MCP, Lightspeed MCP, Ansible MCP (tech preview)
+**Arquitetura:** `godPool.ts` → parser tab-indent de `Keys.md` → injeção via `openaiShim.ts` per-request + `geminiAuth.ts`. Round-robin aleatório por chamada.
 
 ### 💻 HARDWARE LOCAL
 
@@ -103,9 +103,9 @@
 | **Lightning AI** | A100/H100 | 40-80GB | 15 créditos/mês | 🥈 2º |
 | **Kaggle** | T4/P100 | 16GB | 30h/semana | 🥉 3º |
 | **Google Colab** | T4 | 16GB | ~6h sessão | 4º |
-| **Red Hat OpenShift** | CPU only | N/A | 30-60d trial | Persistência |
+| **Google Colab** | T4 | 16GB | ~6h sessão | 4º |
 
-**Estratégia:** HuggingFace ZeroGPU para inference + Red Hat para persistência/orquestração
+**Estratégia Definitiva:** Dependência **zero** de GPU própria. Toda a inteligência da HYDRA baseada nas arquiteturas multi-provider do God-Pool (Groq, OpenRouter, Gemini) atreladas ao Daemom do KAIROX em node.
 
 ---
 
@@ -253,12 +253,12 @@
 |---|---|
 | MCP Tools (JS local) | **28** (10 AIOS + 13 KAIROS + 5 Hivemind) |
 | MCP Tools (Python/HYDRA) | **18** (pendente deploy) |
-| OpenClaw Skills | **15** (pendente deploy) |
+| OpenClaude Skills (migradas) | **17** (analyst→ux-design, workflows nativos) |
 | Tasks AIOX | 204 |
-| Workflows AIOX | 14 |
+| Workflows AIOX | 17 (migrados para `.claude/skills/`) |
 | Agentes AIOX | 12 |
 | Squads | **21** (9 próprios + 12 comunidade SynkraAI) |
-| RPs | 40+ |
+| RPs | **44** (36 strategic + 7 core + 1 tasks) |
 | Tool Integrations | 23 |
-| API Gemini Keys | 5 |
-| API Groq Keys | 2 |
+| **God Pool Keys** | **84** (6 provedores) |
+| API Providers | **6** (Groq, Gemini, Together, SambaNova, OpenRouter, Cerebras) |

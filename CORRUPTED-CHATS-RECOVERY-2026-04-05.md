@@ -1,6 +1,7 @@
 # 🔴 RECOVERY: Corrupted Chats Deep Scrape — 2026-04-05
 
 > **Motivo:** 3 conversas do Antigravity corromperam seus arquivos `.pb` no workspace "My KAIROS", travando completamente o Agent Manager (infinite loading). Este arquivo preserva TUDO que existia nos 3 chats antes da remoção dos arquivos corrompidos.
+> **Caminho do Backup Físico Seguro:** `C:\Users\GABS\.gemini\antigravity\conversations_backup\` (13 conversas isoladas)
 
 > **Data:** 2026-04-05T11:24:00-03:00
 > **Agente Recovery:** Antigravity (Opus 4.6 Thinking) — Chat ba4e0ada no workspace Haha²

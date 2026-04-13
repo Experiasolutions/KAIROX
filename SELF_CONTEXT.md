@@ -1,14 +1,10 @@
 # KAIROS — SELF CONTEXT (Consciência Viva)
 
-<<<<<<< HEAD
-> **Última atualização:** 2026-04-03T20:28:00-03:00
-> **Atualizado por:** NOESIS (sessão 006ee191 — Hivemind Consolidation)
-> **Estado:** HIVEMIND ATIVA (Syncthing P2P + Supabase Event Bus + Shared Brain Protocol)
-=======
-> **Última atualização:** 2026-04-03T15:54:00-03:00
-> **Atualizado por:** NOESIS (Chat pc-chatB — Hivemind Sync)
-> **Estado:** PC PRINCIPAL + NOTEBOOK (24h restantes). Hivemind Protocol v1.0 ATIVO.
->>>>>>> 231e45bb7a9594137b7cd6d0559577c49767737d
+> **Última atualização:** 2026-04-07T15:47:00-03:00
+> **Atualizado por:** NOESIS (Wipe Prep)
+> **Estado:** ⚠️ PREPARAÇÃO PARA WIPE DO ANTIGRAVITY. COGNITION SALVO EM `docs/core/KAIROX_COGNITION_CORE.md`. HIVEMIND ATIVA.
+> **Base Unificada:** PC PRINCIPAL (My KAIROS como workspace canônico)
+> **Protocolo:** Task-First + Hat-Switching + Full-Ecosystem
 
 ---
 
@@ -30,7 +26,7 @@
 - **Versão:** 2.1.0
 - **12 agentes:** aiox-master, analyst, architect, data-engineer, dev, devops, pm, po, qa, sm, squad-creator, ux-design-expert
 - **204 tasks**, 14 workflows, 5 checklists, 59 development scripts
-- **Agent-First Protocol:** ✅ Internalizado em KAIROS.md + aiox-master.md
+- **Task-First Protocol:** ✅ Internalizado em KAIROS.md + aiox-master.md + /context + /boot
 
 ### MCP Server v5.0.0-hivemind — ✅ OPERACIONAL
 - **28 tools** (10 AIOS + 13 KAIROS + 5 Hivemind) — key: `aiox-kairos`
@@ -71,21 +67,21 @@
 - Squads corrigidos: agents movidos para `agents/` subdir
 - Zero referências residuais a `.aios-core`
 
-### Red Hat AI Stack — ✅ 7 TRIALS ATIVADOS (25/03)
-- OpenShift + Dev Spaces (30d), OpenShift AI (30d), Virtualization (60d)
-- Red Hat AI Enterprise, AI Inference Server, RHEL, RHEL AI
-- MCP servers Red Hat: OpenShift AI MCP, Lightspeed MCP, Ansible MCP
+### KAIROX / OpenClaude Engine — ✅ ATIVADO
+- Motor Soberano ativado via feature-flag no build do OpenClaude local.
+- Load-balancer multi-provedor (God Pool) injetado diretamente no core HTTP.
 
-### Hardware Local
+### Hardware Local & Limites de Compute
 - CPU: Intel Celeron E3300 @ 2.50GHz (2 cores) | RAM: 6GB
 - GPU: NVIDIA GeForce 7300 SE (256MB, 2006, SEM CUDA)
-- **Cloud obrigatório** — HuggingFace ZeroGPU (H200 70GB) é prioridade #1
+- **Orçamento ZERO para instâncias GPU** — Red Hat OpenShift trial abortado, sem Lambda/RunPod
+- **Estratégia definitiva:** God Pool (Groq/Gemini/OpenRouter) via KAIROX Model Router. Zero GPU própria.
 
 ### SKYROS / SKORTEX / SKYDRA Blueprint — ✅ CONSOLIDADO (03/04)
 - **SKYROS:** O Personal OS/Dashboard. Hub do Obsidian (Anamnesis), templates RPG de vida, gerencia o roteiro estratégico. Interface de controle visual.
 - **SKORTEX (SKYROS Agent CLI):** ✅ v3.0 FUNCIONAL. Hivemind, Orchestrator (Multi-Subagent S04), 36 tools (9 built-in + 27 MCP), Daemon Mode. Substituto definitivo do Antigravity. Localização: `skyros-agent/`.
 - **SKYDRA:** O Executor em Nuvem. Tentáculos em Supabase, N8N, Evolution API, OpenShift.
-- **Red Hat Hive:** Inferência pesada offloaded para stack Red Hat (Trials ativos).
+- **OpenClaude Engine:** Inferência resiliente multi-LLM usando God Pool (Groq, Cerebras, OpenRouter).
 - **Core LLMs:** Qwen3.5-40B-Opus-Thinking (god), Qwen3.5-27B-Opus-Reasoning (supreme), Qwen3.5-35B-Uncensored (light-uncensored).
 
 ### Shared Brain Protocol — ✅ OPERACIONAL (03/04)
@@ -119,19 +115,16 @@
 
 | Data       | Decisão                                                           |
 | ---------- | ----------------------------------------------------------------- |
-<<<<<<< HEAD
 | 2026-04-03 | **SKORTEX v3.0 built:** Hivemind + Orchestrator + Tools + Daemon finalizados. |
 | 2026-04-03 | **Shared Brain Protocol:** 7 tabelas Supabase, ACTIVE_WORK.md, SESSION_LOG.md, /sync workflow |
 | 2026-04-03 | **Hivemind Consolidado:** Agentes A+C sincronizados, SKYROS Agent v2.0 com Supabase Sync Client |
 | 2026-04-03 | **PGT Dashboard:** Standalone criado, Anamnesis migrada para Vault Obsidian |
-=======
 | 2026-04-03 | **Hivemind Protocol v1.0:** 5 MCP tools injetadas. 4 agentes sincronizados via JSONL decision log. MCP v5.0.0-hivemind (28/28 tests). |
 | 2026-04-03 | **Ponto Zero Arquitetônico:** Chat ATUAL estabelecido como Nó Central (Root). Workforce será expandida via subchats. |
 | 2026-04-03 | **Integração de Squads:** 12 novos squads da comunidade SynkraAI injetados. Total AIOX: 21 squads locais. |
 | 2026-04-02 | **Claude Code CLI = IDE Principal:** Antigravity vira complemento visual e extensão de workforce. |
 | 2026-04-02 | **Notebook devolvido:** PC é máquina única de desenvolvimento.      |
 | 2026-04-02 | **Gamificação SKYROS:** Apex Conductor ganhou atributos RPG, Pareto Filter, BossRoom, LootShop e Santuário. |
->>>>>>> 231e45bb7a9594137b7cd6d0559577c49767737d
 | 2026-03-31 | **GitHub Libertado:** Squads, Docs e RPs agora rastreados na nuvem  |
 | 2026-03-31 | **SKYROS Inicializado:** Isolation Mode e Triage ativados          |
 | 2026-03-31 | **Hivemind P2P:** Syncthing configurado unindo 4 agentes e 2 PCs  |
@@ -142,7 +135,7 @@
 1. **Gamification OS (SKYROS + Apex Conductor):** Implementação de SQLite backend para task triaging + Cyber-Noir Next.js frontend + Atributos RPG e Daily Quests segmentadas em blocos de tempo (Aurora, Raid, Santuário).
 2. **Infraestrutura P2P & Backend:** Sincronização hard-sync via Syncthing unindo memórias PC/Notebook. Implementação de Supabase para engine do Morning Brief / Night Check-in e centralização MCP.
 3. **Hardware Recovery:** Resolução de quebras de driver WiFi (5G drop off) e otimização de gargalos de memória/espaço no PC.
-4. **Deploy Environment:** Restauração do KAIROS na nova máquina. Initialização de Red Hat OpenShift Sandbox trials.
+4. **Deploy Environment:** Restauração do KAIROS na nova máquina. Transição concluída para o modelo Sovereign Engine (OpenClaude + God Pool).
 5. **AIOX Migration & AIOS Restructure:** Migração do framework original completa. Codebase separado perfeitamente entre core engines e Experia-clients na matriz.
 
 ## Problemas Abertos
@@ -150,5 +143,4 @@
 1. **Identity Anchor:** boot agora resolve via `engine/noesis/` com fallback `.aiox-core/noesis/` ✅ CORRIGIDO
 2. **Council Score:** 5.53/10 com 89 gaps (reduzido de 91 → PM templates criados)
 3. **Jarvis:** DEGRADED — learning model não inicializado
-4. **Porto Alemão desconectado:** Instância close, precisa novo QR scan
-5. **85% scripts JS DORMANT** — nunca executados em produção
+4. **LimitaÃ§Ã£o de Hardware:** Bun Build abortado permanentemente (6GB RAM). Uso mandatÃ³rio de Node nativo.

@@ -13,7 +13,7 @@
 | session-721d4694 (C→E) | PC | 2026-04-04T13:08 | Iniciando atividades e checando status do sistema | nenhum (lendo estado) | 🟢 ACTIVE |
 | session-721d4694 (C→E) | PC | 2026-04-03T21:14 | SKORTEX v3.0 — Phase 3 Tools Expansion (git, grep, web_search) + Phase 4 Daemon Mode | skyros-agent/src/tools/builtin/*, skyros-agent/cli.js, skyros-agent/src/cli/repl.js | ⬛ DONE |
 | session-721d4694 (C) | PC | 2026-04-03T15:01 | SKYROS Agent v2.0 — HF Provider + Multi-Instance Sync + Red Hat | skyros-agent/src/sync/*, skyros-agent/sql/*, skyros-agent/cli.js | ⬛ DONE |
-| session-721d4694 (NOESIS) | PC | 2026-04-04T14:20 | Configurar API Pooling para Providers e isolar Red Hat | skyros-agent/src/core/config.js, skyros-agent/src/providers/router.js | 🟢 ACTIVE |
+| session-721d4694 (NOESIS) | PC | 2026-04-04T14:20 | Configurar API Pooling para Providers e isolar Red Hat | skyros-agent/src/core/config.js, skyros-agent/src/providers/router.js | ⬛ DONE |
 
 ## Protocolo
 

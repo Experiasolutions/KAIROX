@@ -2,7 +2,7 @@
 SKYDRA Night Shift Worker v1.0 — Railway HEAD 3
 ================================================
 
-Loop autônomo que consome tasks da fila Supabase (kairos_task_claims)
+Loop autônomo que consome tasks da fila Supabase (task_queue)
 e as processa via God Pool (Gemini/Groq/HuggingFace).
 
 Este worker já roda no Railway HEAD 3 (kairos-sky service).
@@ -11,7 +11,7 @@ via tool MCP `hydra_queue_task`.
 
 Fluxo:
   Antigravity (hydra_queue_task)
-    → Supabase (kairos_task_claims: status=pending)
+    → Supabase (task_queue: status=pending)
     → Night Shift Worker (polling a cada POLL_INTERVAL segundos)
     → processa via call_model()
     → atualiza status=completed + output
@@ -45,13 +45,13 @@ def get_supabase() -> Client:
     return create_client(SUPABASE_URL, SUPABASE_KEY)
 
 
-# ─── Task Queue (tabela kairos_task_claims) ───────────────────────────────────
+# ─── Task Queue (tabela task_queue) ───────────────────────────────────
 
 def fetch_pending_tasks(db: Client, limit: int = BATCH_SIZE) -> list[dict]:
     """Busca tasks pendentes ordenadas por prioridade (P0 > P1 > P2)."""
     try:
         resp = (
-            db.table("kairos_task_claims")
+            db.table("task_queue")
             .select("*")
             .eq("status", "pending")
             .order("priority", desc=False)   # P0 vem antes de P1
@@ -69,7 +69,7 @@ def claim_task(db: Client, task_id: str) -> bool:
     """Marca a task como 'processing' (claim atômico para evitar double-processing)."""
     try:
         resp = (
-            db.table("kairos_task_claims")
+            db.table("task_queue")
             .update({
                 "status": "processing",
                 "claimed_by": WORKER_ID,
@@ -88,7 +88,7 @@ def claim_task(db: Client, task_id: str) -> bool:
 def complete_task(db: Client, task_id: str, result: str, status: str = "completed") -> None:
     """Marca task como concluída e salva o resultado."""
     try:
-        db.table("kairos_task_claims").update({
+        db.table("task_queue").update({
             "status": status,
             "output_data": {"result": result},
             "completed_at": datetime.utcnow().isoformat(),

@@ -78,8 +78,9 @@ export class ProviderRouter {
     }
 
     // Fallback chain (Pool de APIs - isolamos o redhat para não ser usado de fallback de dia)
+    // Se o night shift (Red Hat) falhar, caímos suavemente no pool de Free Tier (Groq/Gemini) para não quebrar a automação.
     const fallbackPool = tier === 'night' 
-      ? [] // Night shift é exclusivamente redhat, se morrer, falha sem gastar quota cloud
+      ? ['groq', 'gemini'] 
       : ['huggingface', 'gemini', 'groq']; // Pool diurno
 
     const fallbackOrder = fallbackPool.filter(n => n !== preferredProvider && !this.deadProviders.has(n));
@@ -128,7 +129,7 @@ export class ProviderRouter {
 
         // Determine fallback pool based on tier
         const tier = options.tier || this.defaultTier;
-        const fallbackPool = tier === 'night' ? [] : ['huggingface', 'gemini', 'groq'];
+        const fallbackPool = tier === 'night' ? ['groq', 'gemini'] : ['huggingface', 'gemini', 'groq'];
         const fallbackOrder = fallbackPool.filter(n => n !== provider.name && !this.deadProviders.has(n));
         
         for (const fallbackName of fallbackOrder) {
