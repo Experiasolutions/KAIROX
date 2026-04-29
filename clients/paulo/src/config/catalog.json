@@ -1,0 +1,95 @@
+{
+  "_info": "Catálogo de Tecidos — Ateliê Paulo Tapeceiro",
+  "_usage": "Paulo envia '!catalogo linho' ou '!catalogo cinza' e o bot busca aqui e envia as imagens via WhatsApp",
+  "_update": "Adicione tecidos aqui e faça redeploy. URL deve ser uma imagem pública acessível.",
+  "tecidos": [
+    {
+      "id": "linho-natural",
+      "nome": "Linho Natural",
+      "categoria": "linho",
+      "cor": "bege",
+      "tags": ["linho", "bege", "natural", "neutro", "claro"],
+      "descricao": "Linho natural em tom bege. Clássico, elegante, fácil de combinar.",
+      "ref": "LN-001",
+      "imageUrl": "https://placehold.co/600x400/d4c5a9/5c4a2a?text=Linho+Natural+LN-001",
+      "available": true
+    },
+    {
+      "id": "veludo-grafite",
+      "nome": "Veludo Grafite",
+      "categoria": "veludo",
+      "cor": "grafite",
+      "tags": ["veludo", "grafite", "cinza", "escuro", "luxo"],
+      "descricao": "Veludo grafite. Sofisticado e aveludado, ideal para poltronas e sofás de destaque.",
+      "ref": "VG-002",
+      "imageUrl": "https://placehold.co/600x400/4a4a4a/ffffff?text=Veludo+Grafite+VG-002",
+      "available": true
+    },
+    {
+      "id": "suede-caramelo",
+      "nome": "Suede Caramelo",
+      "categoria": "suede",
+      "cor": "caramelo",
+      "tags": ["suede", "caramelo", "marrom", "quente", "aconchegante"],
+      "descricao": "Suede caramelo. Textura macia, tom quente e aconchegante.",
+      "ref": "SC-003",
+      "imageUrl": "https://placehold.co/600x400/c68642/ffffff?text=Suede+Caramelo+SC-003",
+      "available": true
+    },
+    {
+      "id": "courino-preto",
+      "nome": "Courino Preto",
+      "categoria": "courino",
+      "cor": "preto",
+      "tags": ["courino", "preto", "couro", "moderno", "lavavel"],
+      "descricao": "Courino preto. Resistente, fácil de limpar. Moderno e durável.",
+      "ref": "CP-004",
+      "imageUrl": "https://placehold.co/600x400/1a1a1a/ffffff?text=Courino+Preto+CP-004",
+      "available": true
+    },
+    {
+      "id": "chenille-verde",
+      "nome": "Chenille Verde Musgo",
+      "categoria": "chenille",
+      "cor": "verde",
+      "tags": ["chenille", "verde", "musgo", "natural", "diferente"],
+      "descricao": "Chenille verde musgo. Tendência atual, textura rica e incomum.",
+      "ref": "CV-005",
+      "imageUrl": "https://placehold.co/600x400/4a7c59/ffffff?text=Chenille+Verde+CV-005",
+      "available": true
+    },
+    {
+      "id": "impermeavel-branco",
+      "nome": "Impermeável Branco Neve",
+      "categoria": "impermeavel",
+      "cor": "branco",
+      "tags": ["impermeavel", "branco", "lavavel", "familia", "pet", "criança"],
+      "descricao": "Tecido impermeável branco neve. Ideal para famílias com crianças ou pets.",
+      "ref": "IB-006",
+      "imageUrl": "https://placehold.co/600x400/f5f5f5/999999?text=Impermeavel+Branco+IB-006",
+      "available": true
+    },
+    {
+      "id": "linho-cinza",
+      "nome": "Linho Cinza Chumbo",
+      "categoria": "linho",
+      "cor": "cinza",
+      "tags": ["linho", "cinza", "chumbo", "moderno", "neutro"],
+      "descricao": "Linho cinza chumbo. Moderno e versátil, combina com qualquer ambiente.",
+      "ref": "LC-007",
+      "imageUrl": "https://placehold.co/600x400/7a7a7a/ffffff?text=Linho+Cinza+LC-007",
+      "available": true
+    },
+    {
+      "id": "veludo-azul",
+      "nome": "Veludo Azul Royal",
+      "categoria": "veludo",
+      "cor": "azul",
+      "tags": ["veludo", "azul", "royal", "luxo", "destaque"],
+      "descricao": "Veludo azul royal. Peça de destaque em qualquer ambiente. Alta sofisticação.",
+      "ref": "VA-008",
+      "imageUrl": "https://placehold.co/600x400/1a3a6b/ffffff?text=Veludo+Azul+VA-008",
+      "available": true
+    }
+  ]
+}
