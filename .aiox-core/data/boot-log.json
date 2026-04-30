@@ -348,5 +348,95 @@
       "3_intelligence": 18437,
       "4_reflexion": 24
     }
+  },
+  {
+    "timestamp": "2026-04-15T11:54:48.198Z",
+    "bootTimeMs": 184053,
+    "mode": "full",
+    "councilScore": 5.53,
+    "councilGaps": 115,
+    "phases": {
+      "0_identity": 16,
+      "0.5_mcp_sync": 20291,
+      "1_consciousness": 9,
+      "1.5_jarvis": 47256,
+      "1.8_skyros": 63,
+      "2_knowledge": 306,
+      "3_intelligence": 115472,
+      "4_reflexion": 263
+    }
+  },
+  {
+    "timestamp": "2026-04-15T20:09:09.756Z",
+    "bootTimeMs": 166,
+    "mode": "quick",
+    "councilScore": null,
+    "councilGaps": null,
+    "phases": {
+      "identity": 20,
+      "knowledge": 31
+    }
+  },
+  {
+    "timestamp": "2026-04-20T20:29:49.149Z",
+    "bootTimeMs": 71004,
+    "mode": "full",
+    "councilScore": 5.4,
+    "councilGaps": 116,
+    "phases": {
+      "0_identity": 7,
+      "0.5_mcp_sync": 10924,
+      "1_consciousness": 32,
+      "1.5_jarvis": 27314,
+      "1.8_skyros": 35,
+      "2_knowledge": 136,
+      "3_intelligence": 32413,
+      "4_reflexion": 33
+    }
+  },
+  {
+    "timestamp": "2026-04-25T14:30:35.730Z",
+    "bootTimeMs": 142,
+    "mode": "quick",
+    "councilScore": null,
+    "councilGaps": null,
+    "phases": {
+      "identity": 7,
+      "knowledge": 87
+    }
+  },
+  {
+    "timestamp": "2026-04-29T15:52:32.799Z",
+    "bootTimeMs": 32157,
+    "mode": "full",
+    "councilScore": 5.53,
+    "councilGaps": 118,
+    "phases": {
+      "0_identity": 5,
+      "0.5_mcp_sync": 9395,
+      "1_consciousness": 11,
+      "1.5_jarvis": 4257,
+      "1.8_skyros": 23,
+      "2_knowledge": 399,
+      "3_intelligence": 17916,
+      "4_reflexion": 52
+    }
+  },
+  {
+    "timestamp": "2026-04-29T16:05:56.556Z",
+    "bootTimeMs": 32951,
+    "mode": "full",
+    "councilScore": 5.77,
+    "councilGaps": 124,
+    "phases": {
+      "0_identity": 13,
+      "0.5_mcp_sync": 767,
+      "1_consciousness": 11,
+      "1.5_jarvis": 2009,
+      "1.8_skyros": 22,
+      "2_knowledge": 38,
+      "3_intelligence": 30028,
+      "4_reflexion": 28
+    }
   }
 ]

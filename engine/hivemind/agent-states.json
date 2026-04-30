@@ -36,8 +36,18 @@
       "last_active": "2026-04-08T18:43:04.919Z",
       "focus": "KAIROX Sovereign Engine Deployment & Experia Phase 3 Readiness",
       "status": "active"
+    },
+    "test-agent": {
+      "last_active": "2026-04-16T03:28:40.611Z",
+      "focus": "self-test",
+      "status": "active"
+    },
+    "antigravity-root": {
+      "last_active": "2026-04-19T19:42:33.790Z",
+      "focus": "Aguardando comando do Operator (troca de conta/cota Opus 4.6) para iniciar o design da Extensão Antigravity-SKORTEX (MCP Spawner).",
+      "status": "idle"
     }
   },
   "protocol_version": "1.0",
-  "last_sync": "2026-04-08T19:49:34.387Z"
+  "last_sync": "2026-04-19T19:42:33.790Z"
 }

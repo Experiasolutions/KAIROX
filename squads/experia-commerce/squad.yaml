@@ -1,0 +1,100 @@
+name: experia-commerce
+version: 1.0.0
+description: "Squad de Governança Digital Autônoma para Comércios Locais — Experia Solutions"
+author: Gabriel Ferreira (KAIROS)
+license: UNLICENSED
+
+slashPrefix: commerce
+
+aiox:
+  minVersion: "2.1.0"
+  type: squad
+
+domain: commerce-governance
+
+dna_sources:
+  - clone-hormozi: "Offer design, pricing psychology, resultado mensurável"
+  - clone-seth-godin: "Brand tribal, voz autêntica, marketing como storytelling"
+  - clone-tim-ferriss: "SOPs, delegação, automação — eliminar antes de automatizar"
+  - clone-simon-sinek: "Start with WHY — o cliente compra o porquê"
+  - clone-brunson: "Hook, Story, Offer — funil e script de conversão"
+
+target_segments:
+  - padaria_confeitaria
+  - hortifruti_mercadinho
+  - petshop
+  - restaurante_lanchonete
+  - bazar_loja_roupas
+  - salao_beleza_barbearia
+  - farmacia_drogaria
+  - academia_fitness
+
+go_to_market:
+  strategy: "Free Trial → Case Building → MRR Escalável"
+  phase_0: "3-5 comércios locais via permuta (caso Hortifruti/Elaine já ativo)"
+  meta_case: "1 operador humano + squads de agentes = output de 10+ pessoas"
+
+components:
+  agents:
+    - commerce-master.md    # Orquestrador Central
+    - commerce-clone.md     # Voz & Persona (WhatsApp)
+    - commerce-analyst.md   # Dados & Relatórios
+    - commerce-worker.md    # Automações & SOPs
+    - commerce-sales.md     # Pitch & Free Trial
+  tasks:
+    - onboard-comercio.md
+    - diagnose-comercio.md
+    - create-whatsapp-script.md
+    - create-morning-report.md
+    - create-sop.md
+    - free-trial-pitch.md
+  workflows: []
+  checklists: []
+  templates:
+    - brief-comercio.md
+  tools: []
+  scripts: []
+
+config:
+  extends: extend
+  coding-standards: ../../docs/framework/CODING-STANDARDS.md
+  tech-stack: ../../docs/framework/TECH-STACK.md
+
+dependencies:
+  node: []
+  python: []
+  squads:
+    - mind-clones  # DNA sources
+    - experia      # Base squad (clínicas) — referência de padrão
+
+integrations:
+  whatsapp: "Evolution API (já ativa)"
+  crm_minimo: "Google Sheets (zero custo para free trial)"
+  agendamento: "Google Calendar / link de agendamento"
+  relatorio: "WhatsApp direto para o dono"
+
+quality_gates:
+  - "Script de WhatsApp testado nos 5 cenários: interesse, preço, sumiço, reclamação, urgência"
+  - "Relatório aprovado pelo dono antes de automatizar"
+  - "SOP documentado antes de implementar"
+  - "Free trial tem métrica de sucesso definida antes de começar"
+  - "Handoff manual sempre disponível — o dono pode desligar tudo"
+
+metrics:
+  primarias:
+    - "Redução de tempo de resposta (meta: < 5 min em horário comercial)"
+    - "Aumento de conversão de mensagens em vendas/agendamentos"
+    - "Redução de clientes perdidos por falta de follow-up"
+  secundarias:
+    - "Satisfação do dono (NPS mensal)"
+    - "Horas salvas por semana"
+    - "ROI calculado ($ recuperado - $ investido)"
+
+tags:
+  - experia
+  - commerce
+  - whatsapp
+  - automation
+  - free-trial
+  - local-business
+  - brazil

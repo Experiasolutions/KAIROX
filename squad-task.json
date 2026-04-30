@@ -1,0 +1,12 @@
+[
+  {
+    "task": "Leia experia/index.html e experia/style.css. Você é o Copywriter de Elite. Reescreva todo o conteúdo em português para ser visceral, persuasivo, focado em alta dor (B2B) e promessa 'High Player'. Transforme a seção de 'Manifesto' em algo grandioso. Reescreva os benefícios como 'Features Tecnológicas'. Salve o novo BODY do HTML melhorado no arquivo experia/LP-COPY.html",
+    "persona": "marketing-copywriter",
+    "tier": "heavy"
+  },
+  {
+    "task": "Leia o experia/style.css e o DESIGN-SYSTEM.md. Você é o Arquiteto UX. Crie um CSS extremamente avaçado com micro-interações (hover dinâmico no background, bordas com glow neon Emerald, gradients subtis de fundo nas seções, animações de entrada stagger). Não use bibliotecas externas. Use apenas CSS puro nível Awwwards. Salve o CSS revisado como experia/elite-style.css",
+    "persona": "ux-design-expert",
+    "tier": "heavy"
+  }
+]

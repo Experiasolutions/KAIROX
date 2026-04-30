@@ -1,35 +1,87 @@
-> 🔴 [SKYROS]: ISOLATION MODE ENGAGED. O operador está em Deep Work. Novas tarefas fora da SPRINT P0 devem ser TERMINANTEMENTE negadas.
-> ⚠️ **[KAIROX WIPE PROTOCOL]: O CÉREBRO EXTERNO (ANTIGRAVITY) SERÁ FORMATADO. TODO O CONTEXTO VITAL FOI EXTRAÍDO PARA `docs/core/KAIROX_COGNITION_CORE.md`.**
-
-> 🧠 **ATENÇÃO:** O Antigravity foi consolidado e está preparado para Wipe. Cognição unificada em `docs/core/KAIROX_COGNITION_CORE.md`.
+> 🔴 [SKYROS]: ISOLATION MODE ENGAGED. O operador está em Deep Work. Novas tarefas, brainstorms paralelos ou pesquisas que fujam da SPRINT atual devem ser TERMINANTEMENTE negadas até o término da sessão.
 
 # KAIROS — STATUS (Fila de Trabalho)
 
-> **Última atualização:** 2026-04-07T15:47:00-03:00
-> **Estado Operacional:** KAIROX SOVEREIGN ENGINE v4.0 (Prometheus) — God Pool ATIVO, 84 keys / 6 providers
-> **Agente:** KAIROX (Sovereign Engine via OpenClaude Runtime)
+> **Última atualização:** 2026-04-29T12:42:00-03:00
+> **Estado Operacional:** 🚀 MVP AI OPS SPRINT | Engine Triage v4 EMBEDDED | God Pool 84 keys ATIVO | IA Council: 6.9/10
+> **Agente:** NOESIS (KAIROS) · Hat: @aiox-master (Orchestrator)
+> **Sprint:** MVP Template → Cases Leticia + Paulo (HOJE) → Squads Internos → Dashboard 360
 
 ---
 
-## 🎯 PRÓXIMO FOCO P0 (Atual — 2026-04-06)
+## 🔬 INTEGRITY RUN — 2026-04-25
 
-1. ~~**Ativação KAIROX (Sovereign Engine):** ✅ CLAUDE.md reescrito, God Pool injetado~~
-2. ~~**God Pool:** ✅ 84 keys / 6 provedores validados e em rotação~~
-3. ~~**Internalização Experia:** ✅ 17 workflows AIOX migrados como skills nativas~~
-4. **Validar Coordinator Mode** — Testar sub-agents via skills migradas
-5. **Experia Fase 3** — PRD + Landing Page v1 (primeiro revenue)
+> **17 tasks AIOX executadas via Engine Triage v4 (10 Fases)**
+> Relatório completo: `docs/reports/kairox-integrity-report-2026-04-25.md`
+
+### ✅ P0 Actions — CONCLUÍDAS HOJE
+
+- [x] **RAG Reindexado:** 1787 files · 58.152 chunks · 56.085 termos únicos (era 721h stale)
+- [x] **IA Council ativado:** Score 6.9/10 · 26 gaps · `council-gaps.json` gerado
+- [x] **Migration SQL criada:** `supabase/migrations/001_initial_schema.sql` (8 tabelas + extensões + índices)
+- [x] **SELF_CONTEXT.md atualizado:** Problemas abertos, Council Score, RAG status
+- [x] **Relatório de integridade:** `docs/reports/kairox-integrity-report-2026-04-25.md`
+- [x] **package.json:** `"type": "module"` revertido (scripts KAIROS usam CJS — migração necessária)
+
+### 🟡 P1 Actions — Próximos 7 dias
+
+- [ ] Refatorar tasks legadas para Triage v4 (914 arquivos — script de migração automática)
+- [ ] Criar `squads/*/squad.json` para 21 squads sem manifesto
+- [ ] Ativar Scheduler (`scripts/scheduler.js`) — automação 24/7
+- [ ] Criar `docs/reports/task-usage-map.md` — curadoria do ecossistema
+- [ ] Deploy HEAD 1 N8N + Postgres (RAILWAY_API_TOKEN pendente)
+- [ ] Error handling em `scripts/skyros/isolation-mode.js` e `triage-matinal.js` (Council sev=4)
+- [ ] Try-catch em `scripts/mcp-sse-bridge.js` (Council sev=6 — risco de falha silenciosa)
+- [ ] PM templates: `pm1-reasoning`, `pm2-execution`, `pm3-evaluation` (Council sev=8 — TOP GAP)
+
+---
+
+## 🔴 BOSS FIGHTS — MVP AI OPS (2026-04-29)
+
+> **Engine Triage v4 ATIVA:** Toda ação abaixo já passou pelas 10 fases. Executar sem cerimônia.
+
+### BOSS FIGHT 1 — Leticia (Esteticista Autônoma) 💅 [APRESENTAÇÃO HOJE]
+- **Objetivo:** Brief completo + scripts de atendimento prontos para apresentar hoje
+- **Dores mapeadas:** Agendamentos perdidos, clientes sumidos, sem follow-up pós-atendimento
+- **Canais-alvo:** WhatsApp (principal), Instagram (secundário)
+- **Entrega MVP:** Script de atendimento WhatsApp + lembretes automáticos + reativação de sumidas
+- **Owner:** @commerce-sales + @commerce-clone + Operador
+
+### BOSS FIGHT 2 — Paulo (Tapeceiro / Ateliê) 🧵 [APRESENTAÇÃO HOJE]
+- **Objetivo:** Brief completo + scripts adaptados para ateliê artesanal
+- **Contexto:** Em transição para WhatsApp Business
+- **Dores mapeadas:** Triagem de pedidos no WA, status de serviço, combinar entrega/retirada
+- **Entrega MVP:** Script triagem + acompanhamento de status + confirmação de entrega
+- **Owner:** @commerce-sales + @commerce-clone + Operador
+
+### BOSS FIGHT 3 — Hortifruti (Elaine) 🥦 [TRIAL ATIVO]
+- **Objetivo:** Manter trial ativo + calibrar persona bot
+- **Ação:** Morning Report configurado + calibração de respostas
+- **Ticket alvo:** R$ 497–997/mês
+- **Owner:** @commerce-clone + Operador
+
+### BOSS FIGHT 4 — Porto Alemão 🍺 [MAPEADO]
+- **Objetivo:** Reconectar QR Code + retomar atendimento
+- **Owner:** @commerce-sales
+
+### BOSS FIGHT 5 — Felix Cell 📱 [MAPEADO]
+- **Objetivo:** Setup Onboarding + Bot Clone + IG Posts
+- **Owner:** @commerce-clone + @mvp-media (a criar)
 
 ---
 
 ## 🔴 BLOQUEIOS ATUAIS
 
-- ~~**LLM Exausto:**~~ ✅ RESOLVIDO — God Pool com 84 keys em rotação
-- **Bun Build:** InviÃ¡vel pelo hardware atual (6GB RAM). Ignorar e usar `node scripts/mcp-server.js`.
+- **Bun Build:** Inviável pelo hardware atual (6GB RAM). Usar `node scripts/mcp-server.js`.
+- **RAILWAY_API_TOKEN:** Pendente — HEAD 1 (N8N + Postgres) não deployado.
+- **Cases Leticia/Paulo:** Briefing não capturado ainda. Coletar antes das apresentações hoje.
+
 ---
 
-### 💬 HANDOFF (06/04 — 21h37)
-- **Sessão:** KAIROX Sovereign Engine consolidação completa. God Pool parser **corrigido** (tab-indent real) e **validado** (84 keys / 6 providers). 17 skills AIOX migradas. CLAUDE.md reescrito para Prometheus v4. Deep scan dos 44 RPs concluído. RedHat purgado. Referências legacy removidas.
-- **Próximo:** Validar Coordinator Mode, testar Hivemind write, iniciar Experia Fase 3.
+### 💬 HANDOFF (2026-04-29 — 12h42)
+- **Sessão:** MVP AI OPS Sprint iniciado. Estratégia de agência postergada. Novos cases: Leticia + Paulo (apresentação hoje). Engine Triage v4 embedded nos workflows core. /triage eliminado.
+- **Plano:** `implementation_plan.md` criado no brain (Antigravity). Aguardando aprovação para FASE 0.
+- **Próximo:** Criar cases Leticia + Paulo (FASE 0) + Criar squads internos MVP (FASE 1).
 
 ### MCP Server v5.0.0-hivemind (Local JS) — ✅ OPERACIONAL
 - [x] v1.0→v2.0→v3.0→v4.0→v5.0: 28 tools, 28/28 tests
@@ -228,6 +280,12 @@
 
 | Data | O que |
 |---|---|
+| 2026-04-29 | **Estratégia AI OPS definida:** Experia agência postergada indefinidamente. Foco: solopreneur AI OPS com free trials 20 dias → case studies → freelas → agência. |
+| 2026-04-29 | **Engine Triage v4 EMBEDDED:** /triage workflow deletado. Triage v4 nativa em /boot (FASE 5.7) + /context (Passo 4.6) + /KAIROS. Permanente. |
+| 2026-04-29 | **SELF_CONTEXT + STATUS atualizados:** nova estratégia, novos clientes Leticia/Paulo, Boss Fights reformulados, bloqueios atualizados. |
+| 2026-04-29 | **RP Session Handoff criado:** `reasoning-packages/tasks/RP-20260429-MVP-AIOPS-SESSION-HANDOFF-v1.0.md` — contexto completo para retomar sessão ou contextualizar nova LLM. |
+| 2026-04-29 | **Plano MVP AI OPS criado:** implementation_plan.md no Antigravity brain — 4 fases, 10 tasks mapeadas, stack técnica definida (Gemini pool + N8N + OpenClaw). |
+| 2026-04-29 | **context.md atualizado:** Passo 4.6 Triage v4 embedded + clientes Leticia/Paulo + MCP v5.0.0 (28 tools). |
 | 2026-04-04 | **Skortex CLI v1.0** (`9b0c59ad`): InferenceFactory (Qwen→Groq→Gemini), Pre-Flight Engine (auto-contexto), Autopilot Save. TS: 0 erros. |
 | 2026-04-03 | **SKORTEX v3.0 Sovereign Engine** — Hivemind P2P, Orchestrator para sub-agentes, 4 novas tools, Daemon mode |
 | 2026-04-03 | **Shared Brain Protocol COMPLETO** — 7 tabelas Supabase, ACTIVE_WORK.md, SESSION_LOG.md, /sync workflow, shared-brain-bus.js v2 |

@@ -1,4 +1,4 @@
-import { Lock, Unlock, ShoppingBag, Gem, Laptop, Home, Dumbbell, Sparkles, Smartphone, Shirt, Coffee, Wrench } from "lucide-react";
+import { Lock, Unlock, ShoppingBag, Gem, Laptop, Home, Dumbbell, Sparkles, Smartphone, Shirt, Coffee, Wrench, Wifi, Monitor, Headphones, Globe, Gamepad2, GraduationCap } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -51,7 +51,7 @@ const lootItems: LootItem[] = [
     tier: 1,
     category: "utility",
     icon: Shirt,
-    unlocked: true, // Pode fazer agora
+    unlocked: false, // Ainda não feito
   },
   // PERSONAL TIER 1 — Primeiros R$
   {
@@ -175,6 +175,91 @@ const lootItems: LootItem[] = [
     tier: 4,
     category: "castle",
     icon: Home,
+    unlocked: false,
+  },
+  // ═══ NOVOS ITENS ═══
+  {
+    id: "n1",
+    name: "Internet Fibra Upgrade",
+    description: "Conexão estável para trabalho sério. Sem cair no meio de call.",
+    currency: "REAL",
+    cost: 150,
+    requirement: "R$150/mês disponível + dono pesquisado",
+    tier: 2,
+    category: "work",
+    icon: Wifi,
+    unlocked: false,
+  },
+  {
+    id: "n2",
+    name: "Mesa de Trabalho Nova",
+    description: "Superfície decente para o setup. Fim da gambiarra.",
+    currency: "REAL",
+    cost: 600,
+    requirement: "2ª recorrência ativa (R$1K+ MRR)",
+    tier: 3,
+    category: "work",
+    icon: Monitor,
+    unlocked: false,
+  },
+  {
+    id: "n3",
+    name: "Headset / Microfone Pro",
+    description: "Buff de Voz. Para gravações, calls, narrações da Experia.",
+    currency: "REAL",
+    cost: 400,
+    requirement: "Skill 'Voz' nível 2+ desbloqueada",
+    tier: 3,
+    category: "work",
+    icon: Headphones,
+    unlocked: false,
+  },
+  {
+    id: "n4",
+    name: "Domínio + Hospedagem Experia",
+    description: "experia.com.br — presença digital oficial. Profissionalismo instantâneo.",
+    currency: "REAL",
+    cost: 100,
+    requirement: "Landing Page v1 pronta + R$100 disponível",
+    tier: 1,
+    category: "work",
+    icon: Globe,
+    unlocked: false,
+  },
+  {
+    id: "n5",
+    name: "Escape Room / Experiência",
+    description: "Recompensa imersiva. Saída da rotina, dopamina controlada.",
+    currency: "GEMS",
+    cost: 800,
+    requirement: "Streak de 14 dias + 800 GEMS acumulados",
+    tier: 4,
+    category: "dopamine",
+    icon: Gamepad2,
+    unlocked: false,
+  },
+  {
+    id: "n6",
+    name: "Curso Online Premium",
+    description: "Investimento em conhecimento selecionado. Alan Nicolas, Hormozi, etc.",
+    currency: "SEEDS",
+    cost: 300,
+    requirement: "20 SEEDS acumulados + área de estudo definida",
+    tier: 3,
+    category: "personal",
+    icon: GraduationCap,
+    unlocked: false,
+  },
+  {
+    id: "n7",
+    name: "Dia de Folga Sem Culpa",
+    description: "24h de zero obrigações. Só prazer. Merecido.",
+    currency: "GEMS",
+    cost: 1000,
+    requirement: "100% das dailies por 14 dias consecutivos",
+    tier: 5,
+    category: "dopamine",
+    icon: Coffee,
     unlocked: false,
   },
 ];

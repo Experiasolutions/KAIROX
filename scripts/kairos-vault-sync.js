@@ -24,15 +24,15 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 // ═══════════════════════════════════════════════
 
 const CONFIG = {
-  // Supabase
-  supabaseUrl: 'https://ptpojwbdxgmvykwwzatl.supabase.co',
+  // Supabase — via variáveis de ambiente (nunca hardcoded)
+  supabaseUrl: process.env.SUPABASE_URL || '',
   supabaseKey: process.env.SUPABASE_SERVICE_ROLE_KEY || '',
   bucket: 'obsidian-vaults',
   // Prefixo dentro do bucket (para isolar múltiplos vaults)
   remotePrefix: 'oh-yeah/',
 
-  // Local
-  vaultPath: 'C:\\Users\\maymo\\OneDrive\\Documentos\\Oh yeah',
+  // Local — via variável de ambiente (nunca hardcoded)
+  vaultPath: process.env.KAIROS_VAULT_PATH || 'C:\\Users\\GABS\\Documents\\My KAIROS\\vault',
 
   // Pastas/arquivos a ignorar
   ignore: [
@@ -210,12 +210,14 @@ async function scanRemoteBucket() {
 
     for (const item of data) {
       if (item.id && item.metadata) {
+        const timestamp = item.updated_at || item.created_at || new Date().toISOString();
+        const lastModifiedMs = new Date(timestamp).getTime() || Date.now();
         results.push({
           remotePath: CONFIG.remotePrefix + item.name,
           relativePath: item.name,
           size: item.metadata?.size || 0,
-          lastModified: item.updated_at || item.created_at,
-          lastModifiedMs: new Date(item.updated_at || item.created_at).getTime(),
+          lastModified: timestamp,
+          lastModifiedMs,
         });
       }
     }
@@ -296,7 +298,19 @@ async function uploadFile(localFile) {
 // ═══════════════════════════════════════════════
 
 async function downloadFile(remoteFile) {
-  const localPath = path.join(CONFIG.vaultPath, remoteFile.relativePath.split('/').join(path.sep));
+  // Security: sanitize path and prevent traversal
+  const sanitizedRelPath = path.normalize(remoteFile.relativePath)
+    .replace(/^(\.\.(\/|\\))+/g, '')  // Remove leading ../
+    .replace(/[:?*<>|"]/g, '_');       // Remove invalid Windows chars
+  const localPath = path.join(CONFIG.vaultPath, sanitizedRelPath.split('/').join(path.sep));
+  
+  // Validate resolved path is within vaultPath
+  const resolvedLocal = path.resolve(localPath);
+  const resolvedVault = path.resolve(CONFIG.vaultPath);
+  if (!resolvedLocal.startsWith(resolvedVault)) {
+    console.error(`  ❌ Security: Path traversal blocked for ${remoteFile.relativePath}`);
+    return false;
+  }
 
   const { data, error } = await supabase.storage
     .from(CONFIG.bucket)

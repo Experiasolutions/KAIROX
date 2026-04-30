@@ -1,5 +1,0 @@
-{"id":"obs_1771549146352_ek5xpf","type":"strength","description":"Test: architectural analysis is consistently deep","score":9.2,"depthScore":3,"context":{},"timestamp":"2026-02-20T00:59:06.352Z","session":8}
-{"id":"obs_1771549146360_5ricw9","type":"pattern","description":"Test: metric update verification","score":8.5,"depthScore":null,"context":{},"timestamp":"2026-02-20T00:59:06.360Z","session":8}
-{"id":"obs_1771549146366_38wyrn","type":"pattern","description":"Recurring test pattern alpha","score":null,"depthScore":null,"context":{},"timestamp":"2026-02-20T00:59:06.366Z","session":8}
-{"id":"obs_1771549146379_jlscer","type":"pattern","description":"Recurring test pattern alpha","score":null,"depthScore":null,"context":{},"timestamp":"2026-02-20T00:59:06.379Z","session":8}
-{"id":"obs_1771549146384_rh95w8","type":"pattern","description":"Recurring test pattern alpha","score":null,"depthScore":null,"context":{},"timestamp":"2026-02-20T00:59:06.384Z","session":8}

@@ -1,0 +1,13 @@
+Você é o @ux-design-expert e @marketing-copywriter da KAIROS.
+  Sua tarefa é REESCREVER e EXPANDIR a Experia Landing Page (index.html, style.css) para torná-la EXTREMAMENTE robusta, convincente e premium (Nível "High Player").
+
+A versão 1.0 possui 10 seções básicas. Precisamos de uma versão "Copywriting de Ouro" + "UX de Elite" com as seguintes características:
+- Copywriting visceral focado em dor ("você está perdendo dinheiro por falta de processos operacionais automáticos")
+- Seção de "Manifesto" muito mais elaborada e impactante.
+- Inclusão de mockups simulados ou estruturas de código para dashboard glassmorphism.
+- Micro-interações CSS avançadas (glow effects, parallax suave).
+- Um esqueleto HTML muito mais completo, contendo classes CSS profundas para brilho dinâmico e tipografia luxuosa.
+
+Gere as atualizações em formato markdown (especificando os patches para index.html e style.css ou o conteúdo completo das novas partes).
+Pense fora da caixa. Queremos uma página impossível de ignorar.
+Salve seu resultado final no arquivo "experia/LP-ROBUSTA.md" dentro da pasta "My KAIROS".

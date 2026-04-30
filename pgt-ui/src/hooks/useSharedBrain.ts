@@ -16,6 +16,10 @@ export interface QuestBlock {
   quests: Quest[];
 }
 
+// ── SKYROS Score constants ──
+const REVENUE_GOAL = 30000; // R$ 30k meta
+const MAX_STREAK_FOR_SCORE = 14; // 14 days = full streak score
+
 export function useSharedBrain() {
   const [xp, setXp] = useState(0);
   const [focoGems, setFocoGems] = useState(0);
@@ -24,11 +28,35 @@ export function useSharedBrain() {
   const [growSeeds, setGrowSeeds] = useState(0);
   const [skillPoints, setSkillPoints] = useState<Record<string, number>>({}); // skill_id -> level
   const [availableAttributePoints, setAvailableAttributePoints] = useState(0);
+  const [streakBroken, setStreakBroken] = useState(false);
+  const [bossesCompleted, setBossesCompleted] = useState(0);
+  const [bossesTotal, setBossesTotal] = useState(0);
+  const [questsCompletedToday, setQuestsCompletedToday] = useState(0);
 
   const level = Math.floor(xp / 100);
 
   // Calculate used attribute points from skill levels
   const usedPoints = Object.values(skillPoints).reduce((a, b) => a + b, 0);
+
+  // ── SKYROS SCORE (0-100) ──
+  // Formula: streak_weight(30) + bosses_%(40) + faturamento_%(30)
+  const streakScore = Math.min(streak / MAX_STREAK_FOR_SCORE, 1) * 30;
+  const bossScore = bossesTotal > 0 ? (bossesCompleted / bossesTotal) * 40 : 0;
+  const revenueScore = Math.min(realCoins / REVENUE_GOAL, 1) * 30;
+  const skyrosScore = Math.round(streakScore + bossScore + revenueScore);
+
+  const skyrosScoreColor =
+    skyrosScore >= 80 ? "text-green-400" :
+    skyrosScore >= 50 ? "text-yellow-400" :
+    "text-red-400";
+
+  const skyrosScoreBorderColor =
+    skyrosScore >= 80 ? "border-green-500/30" :
+    skyrosScore >= 50 ? "border-yellow-500/30" :
+    "border-red-500/30";
+
+  // Revenue progress
+  const revenueProgress = Math.min((realCoins / REVENUE_GOAL) * 100, 100);
 
   useEffect(() => {
     async function loadState() {
@@ -53,6 +81,13 @@ export function useSharedBrain() {
         setXp(totalXp);
         setFocoGems(totalFoco);
         setGrowSeeds(totalSeeds);
+
+        // Count today's completions
+        const todayStr = new Date().toISOString().split("T")[0];
+        const todayCount = questEvents.filter(
+          (e) => e.payload?.timestamp?.startsWith(todayStr)
+        ).length;
+        setQuestsCompletedToday(todayCount);
 
         // Available attribute points = level - usedPoints (calculated after state updates)
         const currentLevel = Math.floor(totalXp / 100);
@@ -86,7 +121,7 @@ export function useSharedBrain() {
         setSkillPoints(points);
       }
 
-      // Load streak from last consecutive days
+      // Load streak from last consecutive days + LOSS AVERSION
       const { data: streakEvents } = await supabase
         .from("kairos_events")
         .select("*")
@@ -104,7 +139,56 @@ export function useSharedBrain() {
           else break;
         }
         setStreak(s);
+
+        // ── LOSS AVERSION: Check if streak was broken ──
+        const lastCheckin = new Date(streakEvents[0].created_at);
+        const daysSinceLastCheckin = Math.floor(
+          (today.getTime() - lastCheckin.getTime()) / (1000 * 60 * 60 * 24)
+        );
+
+        if (daysSinceLastCheckin > 1) {
+          setStreakBroken(true);
+          setStreak(0);
+
+          // Check if penalty was already applied today
+          const todayStr = today.toISOString().split("T")[0];
+          const { data: penaltyCheck } = await supabase
+            .from("kairos_events")
+            .select("id")
+            .eq("event_type", "streak_broken")
+            .gte("created_at", todayStr)
+            .limit(1);
+
+          if (!penaltyCheck || penaltyCheck.length === 0) {
+            // Apply penalty once
+            await supabase.from("kairos_events").insert({
+              event_type: "streak_broken",
+              agent_id: "gabriel-os",
+              machine: "pgt-ui",
+              payload: {
+                penalty: -50,
+                lastCheckin: lastCheckin.toISOString(),
+                gap: daysSinceLastCheckin,
+                timestamp: new Date().toISOString(),
+              },
+            });
+            setXp((prev) => Math.max(0, prev - 50));
+          }
+        }
+      } else {
+        // No checkins at all = new user, no penalty
+        setStreak(0);
       }
+
+      // Load boss completion data (from roadmap events or manual tracking)
+      const { data: bossEvents } = await supabase
+        .from("kairos_events")
+        .select("*")
+        .eq("event_type", "boss_completed");
+
+      setBossesCompleted(bossEvents?.length ?? 0);
+      // Total bosses from roadmap — using a reasonable default
+      setBossesTotal(7); // matches roadmap.md 7 active tasks
     }
 
     loadState();
@@ -114,6 +198,7 @@ export function useSharedBrain() {
     if (rewardType === "XP") setXp((prev) => prev + amount);
     if (rewardType === "GEMS") setFocoGems((prev) => prev + amount);
     if (rewardType === "SEEDS") setGrowSeeds((prev) => prev + amount);
+    setQuestsCompletedToday((prev) => prev + 1);
 
     await supabase.from("kairos_events").insert({
       event_type: "quest_completed",
@@ -159,6 +244,16 @@ export function useSharedBrain() {
     skillPoints,
     availableAttributePoints: Math.max(0, level - usedPoints),
     paretoDecisions: { genialidade: 0, excelencia: 0, impacto: 0, vortex: 0 },
+    // ── AlphaLab injections ──
+    skyrosScore,
+    skyrosScoreColor,
+    skyrosScoreBorderColor,
+    streakBroken,
+    revenueProgress,
+    revenueGoal: REVENUE_GOAL,
+    questsCompletedToday,
+    bossesCompleted,
+    bossesTotal,
     completeQuest,
     addRealCoin,
     allocateSkillPoint,

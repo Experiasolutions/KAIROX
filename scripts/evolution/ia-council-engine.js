@@ -802,8 +802,42 @@ function metamindSynthesize(evaluations) {
     // Top 3 gaps for proposal phase
     const topGaps = allGaps.slice(0, 3);
 
-    // Overall score (weighted average of member scores)
-    const overallScore = evaluations.reduce((sum, e) => sum + e.score, 0) / evaluations.length;
+    // v2.0: Weighted scoring — business-critical chairs weigh more
+    const WEIGHTS = {
+        hormozi: 2.0,      // Revenue is king (Money Rush)
+        torvalds: 1.5,     // Framework integrity is non-negotiable
+        conway: 1.5,       // Squad governance enables scale
+        jarvis: 1.3,       // Ops readiness keeps things running
+        karpathy: 1.0,
+        sutskever: 0.8,
+        ng: 1.0,
+        hinton: 0.8,
+        hassabis: 0.8,
+        pedro: 0.8,
+        alan: 1.0,
+        distillation: 0.6,
+    };
+
+    let weightedSum = 0;
+    let weightTotal = 0;
+    for (const e of evaluations) {
+        const w = WEIGHTS[e.memberId] || 1.0;
+        weightedSum += e.score * w;
+        weightTotal += w;
+    }
+    const overallScore = weightTotal > 0 ? weightedSum / weightTotal : 0;
+
+    // Categorize gaps
+    const categories = {};
+    for (const gap of allGaps) {
+        let cat = 'QUALITY';
+        if (gap.reportedBy === 'hormozi') cat = 'REVENUE';
+        else if (gap.reportedBy === 'torvalds') cat = 'INTEGRITY';
+        else if (gap.reportedBy === 'conway') cat = 'GOVERNANCE';
+        else if (gap.reportedBy === 'jarvis') cat = 'INFRA';
+        if (!categories[cat]) categories[cat] = 0;
+        categories[cat]++;
+    }
 
     return {
         allGaps,
@@ -811,8 +845,10 @@ function metamindSynthesize(evaluations) {
         convergences,
         divergences,
         overallScore: Math.round(overallScore * 100) / 100,
-        memberScores: evaluations.map(e => ({ memberId: e.memberId, score: e.score, gapCount: e.gaps.length })),
+        memberScores: evaluations.map(e => ({ memberId: e.memberId, score: e.score, gapCount: e.gaps.length, weight: WEIGHTS[e.memberId] || 1.0 })),
+        gapCategories: categories,
         totalGaps: allGaps.length,
+        councilVersion: '2.0',
         timestamp: new Date().toISOString(),
     };
 }
@@ -842,6 +878,12 @@ function runCouncil(systemState, cycleContext = {}) {
     // Chair 8 (Distillation) runs with optional cycleContext
     const distillationEval = evaluateDistillation(systemState, cycleContext);
     evaluations.push(distillationEval);
+
+    // v2.0: New chairs (9-12)
+    evaluations.push(evaluateHormozi(systemState));
+    evaluations.push(evaluateConway(systemState));
+    evaluations.push(evaluateTorvalds(systemState));
+    evaluations.push(evaluateJarvis(systemState));
 
     return metamindSynthesize(evaluations);
 }
@@ -960,6 +1002,310 @@ function evaluateProposal(member, proposal, systemState) {
 }
 
 // ─────────────────────────────────────────────────────────────
+// NEW CHAIRS v2.0 — KAIROS UPGRADE SUPREMO
+// ─────────────────────────────────────────────────────────────
+
+/**
+ * @purpose Chair 9 — Hormozi: Revenue & Delivery — cases, trials, MRR pipeline
+ * @inputs {Object} systemState
+ * @outputs {Object} { gaps: Array, score: number }
+ */
+function evaluateHormozi(systemState) {
+    const gaps = [];
+    let score = 8;
+
+    // Check 1: Client directories have config files
+    const clientDirs = (systemState.files || []).filter(f =>
+        f.path.startsWith('clients/') && f.path.includes('/config/')
+    );
+    const clientRoots = [...new Set((systemState.files || [])
+        .filter(f => f.path.startsWith('clients/') && f.path.split('/').length >= 2)
+        .map(f => f.path.split('/')[1])
+    )].filter(c => c !== 'kairos-bot-template');
+
+    const clientsWithConfig = [...new Set(clientDirs.map(f => f.path.split('/')[1]))];
+    const clientsMissingConfig = clientRoots.filter(c => !clientsWithConfig.includes(c));
+
+    if (clientsMissingConfig.length > 0) {
+        gaps.push({
+            id: 'HMZ-CONFIG-MISSING',
+            description: `${clientsMissingConfig.length} client(s) without config/: ${clientsMissingConfig.join(', ')}`,
+            severity: 7,
+            evidence: `${clientsWithConfig.length}/${clientRoots.length} clients have config`,
+            impact30d: 'Clients without config cannot be automated — manual work persists',
+        });
+        score -= 1;
+    }
+
+    // Check 2: Client directories have pitch/docs
+    const clientsWithDocs = [...new Set((systemState.files || [])
+        .filter(f => f.path.startsWith('clients/') && (f.path.includes('/docs/') || f.path.includes('pitch')))
+        .map(f => f.path.split('/')[1])
+    )];
+    const clientsMissingDocs = clientRoots.filter(c => !clientsWithDocs.includes(c));
+
+    if (clientsMissingDocs.length > 0) {
+        gaps.push({
+            id: 'HMZ-DOCS-MISSING',
+            description: `${clientsMissingDocs.length} client(s) without pitch/docs: ${clientsMissingDocs.join(', ')}`,
+            severity: 6,
+            evidence: `${clientsWithDocs.length}/${clientRoots.length} clients have docs`,
+            impact30d: 'No documented case study — cannot convert to paid or use as portfolio',
+        });
+        score -= 0.8;
+    }
+
+    // Check 3: STATUS.md has MONEY RUSH section
+    const statusFile = (systemState.files || []).find(f => f.path === 'STATUS.md' || f.path.includes('STATUS.md'));
+    if (statusFile && statusFile.content) {
+        if (!statusFile.content.includes('MONEY RUSH')) {
+            gaps.push({
+                id: 'HMZ-RUSH-MISSING',
+                description: 'STATUS.md does not contain MONEY RUSH section — revenue tracking absent',
+                severity: 5,
+                evidence: 'No MONEY RUSH keyword found in STATUS.md',
+                impact30d: 'Operator loses focus on revenue generation; infrastructure creep takes over',
+            });
+            score -= 0.5;
+        }
+    }
+
+    // Check 4: Zero clients = zero revenue potential
+    if (clientRoots.length === 0) {
+        gaps.push({
+            id: 'HMZ-ZERO-CLIENTS',
+            description: 'No client directories found — zero revenue pipeline',
+            severity: 9,
+            evidence: 'clients/ directory empty',
+            impact30d: 'System generates zero revenue; all work is infrastructure without ROI',
+        });
+        score -= 2;
+    }
+
+    return { memberId: 'hormozi', gaps, score: Math.max(0, Math.min(10, score)) };
+}
+
+/**
+ * @purpose Chair 10 — Conway: Squad Governance — structure, personas, coverage
+ * @inputs {Object} systemState
+ * @outputs {Object} { gaps: Array, score: number }
+ */
+function evaluateConway(systemState) {
+    const gaps = [];
+    let score = 8;
+
+    // Check 1: Squad directories with squad.yaml or squad.json
+    const squadFiles = (systemState.files || []).filter(f => f.path.startsWith('squads/'));
+    const squadDirs = [...new Set(squadFiles.map(f => f.path.split('/')[1]))];
+    const squadsWithManifest = squadDirs.filter(s =>
+        squadFiles.some(f => f.path === `squads/${s}/squad.yaml` || f.path === `squads/${s}/squad.json` || f.path === `squads/${s}/squad.yml`)
+    );
+    const squadsMissing = squadDirs.filter(s => !squadsWithManifest.includes(s));
+
+    if (squadsMissing.length > 0) {
+        gaps.push({
+            id: 'CNW-MANIFEST-MISSING',
+            description: `${squadsMissing.length} squad(s) without squad.yaml: ${squadsMissing.slice(0, 5).join(', ')}${squadsMissing.length > 5 ? '...' : ''}`,
+            severity: 6,
+            evidence: `${squadsWithManifest.length}/${squadDirs.length} squads have manifest`,
+            impact30d: 'Squads without manifests cannot be invoked programmatically',
+        });
+        score -= Math.min(2, squadsMissing.length * 0.2);
+    }
+
+    // Check 2: Agent files have persona defined
+    const agentFiles = squadFiles.filter(f => f.path.includes('/agents/') && f.path.endsWith('.md') && f.content);
+    let agentsWithoutPersona = 0;
+    for (const agent of agentFiles) {
+        if (!agent.content.includes('persona') && !agent.content.includes('Persona') && !agent.content.includes('PERSONA')) {
+            agentsWithoutPersona++;
+        }
+    }
+    if (agentsWithoutPersona > 0) {
+        gaps.push({
+            id: 'CNW-PERSONA-MISSING',
+            description: `${agentsWithoutPersona} agent(s) without persona definition`,
+            severity: 5,
+            evidence: `${agentFiles.length - agentsWithoutPersona}/${agentFiles.length} agents have persona`,
+            impact30d: 'Agents without personas behave generically — output quality suffers',
+        });
+        score -= Math.min(1.5, agentsWithoutPersona * 0.1);
+    }
+
+    // Check 3: Empty squads (directory exists but no agents)
+    const emptySquads = squadDirs.filter(s =>
+        !squadFiles.some(f => f.path.startsWith(`squads/${s}/agents/`) && f.path.endsWith('.md'))
+    );
+    if (emptySquads.length > 0) {
+        gaps.push({
+            id: 'CNW-EMPTY-SQUAD',
+            description: `${emptySquads.length} empty squad(s) with no agents: ${emptySquads.slice(0, 5).join(', ')}`,
+            severity: 7,
+            evidence: `${emptySquads.length} squads have zero agent files`,
+            impact30d: 'Ghost squads waste cognitive load and pollute the ecosystem',
+        });
+        score -= Math.min(1.5, emptySquads.length * 0.3);
+    }
+
+    return { memberId: 'conway', gaps, score: Math.max(0, Math.min(10, score)) };
+}
+
+/**
+ * @purpose Chair 11 — Torvalds: AIOX Framework Integrity — protecting the base
+ * @inputs {Object} systemState
+ * @outputs {Object} { gaps: Array, score: number }
+ */
+function evaluateTorvalds(systemState) {
+    const gaps = [];
+    let score = 10; // Start at 10 — integrity is pass/fail
+
+    // Check 1: All 12 framework agents present
+    const expectedAgents = ['aiox-master', 'analyst', 'architect', 'data-engineer', 'dev', 'devops', 'pm', 'po', 'qa', 'sm', 'squad-creator', 'ux-design-expert'];
+    const agentFiles = (systemState.files || []).filter(f =>
+        f.path.startsWith('.aiox-core/development/agents/') && f.path.endsWith('.md')
+    );
+    const foundAgents = agentFiles.map(f => path.basename(f.path, '.md'));
+    const missingAgents = expectedAgents.filter(a => !foundAgents.includes(a));
+
+    if (missingAgents.length > 0) {
+        gaps.push({
+            id: 'TRV-AGENTS-MISSING',
+            description: `CRITICAL: ${missingAgents.length} AIOX framework agent(s) missing: ${missingAgents.join(', ')}`,
+            severity: 10,
+            evidence: `${foundAgents.length}/12 agents found`,
+            impact30d: 'Framework integrity compromised — core capabilities lost',
+        });
+        score -= missingAgents.length * 2;
+    }
+
+    // Check 2: Tasks baseline (>= 200)
+    const taskFiles = (systemState.files || []).filter(f =>
+        f.path.startsWith('.aiox-core/development/tasks/') && f.path.endsWith('.md')
+    );
+    if (taskFiles.length < 200) {
+        gaps.push({
+            id: 'TRV-TASKS-DEPLETED',
+            description: `Task count ${taskFiles.length} below baseline (200). Tasks may have been accidentally deleted.`,
+            severity: 8,
+            evidence: `${taskFiles.length} tasks found`,
+            impact30d: 'Reduced operational capability — missing executable workflows',
+        });
+        score -= 1.5;
+    }
+
+    // Check 3: Workflows baseline (>= 14)
+    const workflowFiles = (systemState.files || []).filter(f =>
+        f.path.startsWith('.aiox-core/development/workflows/') && f.path.endsWith('.yaml')
+    );
+    if (workflowFiles.length < 14) {
+        gaps.push({
+            id: 'TRV-WORKFLOWS-DEPLETED',
+            description: `Workflow count ${workflowFiles.length} below baseline (14).`,
+            severity: 7,
+            evidence: `${workflowFiles.length} workflows found`,
+            impact30d: 'Missing development pipelines — manual work increases',
+        });
+        score -= 1;
+    }
+
+    // Check 4: Checklists baseline (>= 5)
+    const checklistFiles = (systemState.files || []).filter(f =>
+        f.path.startsWith('.aiox-core/development/checklists/') && f.path.endsWith('.md')
+    );
+    if (checklistFiles.length < 5) {
+        gaps.push({
+            id: 'TRV-CHECKLISTS-DEPLETED',
+            description: `Checklist count ${checklistFiles.length} below baseline (5).`,
+            severity: 5,
+            evidence: `${checklistFiles.length} checklists found`,
+            impact30d: 'Quality gates weakened',
+        });
+        score -= 0.5;
+    }
+
+    return { memberId: 'torvalds', gaps, score: Math.max(0, Math.min(10, score)) };
+}
+
+/**
+ * @purpose Chair 12 — Jarvis: Operational Readiness — infra, MCP, Hivemind
+ * @inputs {Object} systemState
+ * @outputs {Object} { gaps: Array, score: number }
+ */
+function evaluateJarvis(systemState) {
+    const gaps = [];
+    let score = 8;
+
+    // Check 1: MCP server exists
+    const mcpServer = (systemState.files || []).find(f =>
+        f.path === 'scripts/mcp-server.js' || f.path.includes('mcp-server.js')
+    );
+    if (!mcpServer) {
+        gaps.push({
+            id: 'JRV-MCP-MISSING',
+            description: 'MCP server file not found — agent connectivity broken',
+            severity: 9,
+            evidence: 'scripts/mcp-server.js not found in scan',
+            impact30d: 'No MCP tools available — Antigravity/Claude/Manus cannot access KAIROS',
+        });
+        score -= 2;
+    }
+
+    // Check 2: Hivemind decision log exists and has entries
+    const hivemindLog = (systemState.files || []).find(f =>
+        f.path.includes('hivemind/decisions.jsonl') || f.path.includes('hivemind\\decisions.jsonl')
+    );
+    if (!hivemindLog) {
+        gaps.push({
+            id: 'JRV-HIVEMIND-MISSING',
+            description: 'Hivemind decision log not found — multi-agent sync broken',
+            severity: 6,
+            evidence: 'engine/hivemind/decisions.jsonl not found',
+            impact30d: 'Agents cannot share decisions — each session starts from zero',
+        });
+        score -= 1;
+    }
+
+    // Check 3: SELF_CONTEXT freshness
+    const selfContext = (systemState.files || []).find(f => f.path === 'SELF_CONTEXT.md');
+    if (selfContext && selfContext.content) {
+        const dateMatch = selfContext.content.match(/Última atualização:\*{0,2}\s*([\dT:.Z+-]+)/);
+        if (dateMatch) {
+            const lastUpdate = new Date(dateMatch[1]);
+            if (!isNaN(lastUpdate.getTime())) {
+                const hoursSince = (Date.now() - lastUpdate.getTime()) / (1000 * 60 * 60);
+                if (hoursSince > 48) {
+                    gaps.push({
+                        id: 'JRV-CTX-STALE',
+                        description: `SELF_CONTEXT.md last updated ${Math.floor(hoursSince)}h ago (>48h threshold)`,
+                        severity: 7,
+                        evidence: `Last update: ${dateMatch[1]}`,
+                        impact30d: 'Sessions boot with outdated brain — decisions based on stale data',
+                    });
+                    score -= 1;
+                }
+            }
+        }
+    }
+
+    // Check 4: Boot log freshness
+    const bootLog = (systemState.files || []).find(f =>
+        f.path.includes('boot-log.json')
+    );
+    if (!bootLog) {
+        gaps.push({
+            id: 'JRV-BOOT-MISSING',
+            description: 'Boot log not found — system health untracked',
+            severity: 4,
+            evidence: '.aiox-core/data/boot-log.json not found',
+            impact30d: 'No historical boot data for trend analysis',
+        });
+        score -= 0.5;
+    }
+
+    return { memberId: 'jarvis', gaps, score: Math.max(0, Math.min(10, score)) };
+}
+
+// ─────────────────────────────────────────────────────────────
 // EXPORTS
 // ─────────────────────────────────────────────────────────────
 module.exports = {
@@ -971,6 +1317,10 @@ module.exports = {
     evaluatePedro,
     evaluateAlan,
     evaluateDistillation,
+    evaluateHormozi,
+    evaluateConway,
+    evaluateTorvalds,
+    evaluateJarvis,
     metamindSynthesize,
     runCouncil,
     runCouncilVoting,

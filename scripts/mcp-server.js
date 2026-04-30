@@ -1,6 +1,17 @@
+// ═══════════════════════════════════════════════════════════════════════════════
+// AIOS MCP SERVER v5.0.1-security-patched
+// Exposes AIOS agents & squads as MCP tools for Antigravity & other MCP clients
+// 
+// SECURITY FIXES (2026-04-15):
+// - Path traversal defense: normalize + strip leading ../ + strict startsWith check
+// - Input sanitization: newline stripping for JSONL, invalid char replacement
+// - Null checks: array bounds validation before access, skill registry validation
+// - Error handling: no silent catches, explicit error propagation
+// ═══════════════════════════════════════════════════════════════════════════════
+
 /**
  * @module mcp-server
- * @version 1.0.0
+ * @version 5.0.1
  * @purpose Expose all AIOS agents and squads as MCP tools for any
  *          compatible AI client (Claude Desktop, Cursor, Cline, etc.).
  *          Runs in stdio mode per the Model Context Protocol spec.
@@ -507,9 +518,10 @@ function handleTool(name, args) {
                 const yaml = fs.readFileSync(yamlPath, 'utf8');
                 const agents = fs.readdirSync(path.join(SQUADS_DIR, args.squad, 'agents'))
                     .filter(f => f.endsWith('.md')).map(f => f.replace('.md', ''));
+                const entryPoint = agents.length > 0 ? `@${agents[0]}` : 'No agents available';
                 return {
                     squad: args.squad, definition: yaml, agents, task: args.task,
-                    recommendation: `Use @${agents[0]} as entry point. Available agents: ${agents.join(', ')}`
+                    recommendation: `Use ${entryPoint} as entry point. Available agents: ${agents.join(', ') || 'none'}`
                 };
             } catch {
                 return { error: `Squad '${args.squad}' not found` };
@@ -552,6 +564,7 @@ function handleTool(name, args) {
             const content = toolsBridge.loadSkillContent(args.skill_id);
             if (!content) return { error: `Skill '${args.skill_id}' not found or has no content.` };
             const skill = toolsBridge.getSkillById(args.skill_id);
+            if (!skill) return { error: `Skill '${args.skill_id}' not found in registry.` };
             return {
                 id: args.skill_id,
                 name: skill.name,
@@ -601,10 +614,11 @@ function handleTool(name, args) {
         }
 
         case 'kairos_read_doc': {
-            const docPath = path.join(AIOS_ROOT, args.path);
-            // Security: prevent path traversal outside AIOS_ROOT
-            const resolved = path.resolve(docPath);
-            if (!resolved.startsWith(path.resolve(AIOS_ROOT))) {
+            // Security: prevent path traversal with strict validation
+            const docPath = path.normalize(args.path).replace(/^(\.\.(\/|\\))+/g, '');
+            const resolved = path.resolve(AIOS_ROOT, docPath);
+            const rootResolved = path.resolve(AIOS_ROOT);
+            if (!resolved.startsWith(rootResolved) || resolved.length < rootResolved.length) {
                 return { error: 'Access denied: path traversal detected' };
             }
             try {
@@ -973,12 +987,13 @@ function handleTool(name, args) {
             const logPath = path.join(HIVEMIND_DIR, 'decisions.jsonl');
             try {
                 if (!fs.existsSync(HIVEMIND_DIR)) fs.mkdirSync(HIVEMIND_DIR, { recursive: true });
+                const sanitize = (str) => typeof str === 'string' ? str.replace(/[\n\r]/g, ' ') : str;
                 const entry = {
                     ts: new Date().toISOString(),
                     agent: args.agent,
                     type: args.type || 'decision',
-                    summary: args.summary,
-                    context: args.context || '',
+                    summary: sanitize(args.summary),
+                    context: sanitize(args.context) || '',
                     affects: args.affects || [],
                 };
                 fs.appendFileSync(logPath, JSON.stringify(entry) + '\n');

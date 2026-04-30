@@ -50,11 +50,13 @@ Leia as linhas 42-50 do arquivo .env
 
 Verifique status dos clientes em andamento:
 
-| Cliente      | Verificar                                             |
-| :----------- | :---------------------------------------------------- |
-| Hortifruti   | `clients/hortifruti/config/hortifruti.json` + `docs/` |
-| Experia      | `clients/experia/`                                    |
-| Master Pumps | `clients/master-pumps/`                               |
+| Cliente      | Verificar                                                |
+| :----------- | :------------------------------------------------------- |
+| Leticia      | `clients/leticia/config/leticia.json` (criar se não existe) |
+| Paulo        | `clients/paulo/config/paulo.json` (criar se não existe)  |
+| Hortifruti   | `clients/hortifruti/config/hortifruti.json` + `docs/`    |
+| Master Pumps | `clients/master-pumps/`                                  |
+| Felix Cell   | `clients/felix-cell/` (se existir)                       |
 
 ## Passo 4.5 — MCP + Agent-First + Engine Triage v4 (OBRIGATÓRIO)
 
@@ -86,6 +88,23 @@ Antes de reportar ao operador, internalize estas regras de operação:
 - HEAD 3: SKY Python (55+ tools) | HEAD 4: Evolution API (WhatsApp)
 
 **Full-Ecosystem:** SEMPRE utilize agentes + flows + tasks + workflows + squads + engines + RPs + mindclones. Não opere como assistente genérico.
+
+## Passo 4.6 — ENGINE TRIAGE v4 (EMBEDDED — Ativa por padrão)
+
+> ⚠️ **Não existe mais o workflow `/triage`.** A Engine Triage v4 é nativa. Execute as 10 fases mentalmente a cada demanda — sem precisar acionar nenhum comando externo.
+
+| Fase | Nome | Ação |
+|---|---|---|
+| 1 | Classificar Intenção | Criação / Modificação / Análise / Deploy / Pesquisa / Planejamento / QA |
+| 2 | Persona Ignition | Hat-switch → @architect, @dev, @qa, @pm, @devops |
+| 3 | Mindclone Advisory | 1-3 conselheiros dos 66 clones para perspectiva estratégica |
+| 4 | Squad Activation | Cross-funcional → ativar squad. Task única → SKIP |
+| 5 | Surface Check | Bob C001-C007: custo, risco, opções, erros, destrutivo, escopo, dependência |
+| 6 | Ecosystem Matching | 13 workflows + 204 tasks + 52 RPs + 6 checklists. Reusar antes de criar. |
+| 7 | Executar | MATCH → auto-execute. NO MATCH → `*create task` |
+| 8 | Quality Gate | @qa ≠ executor. Validar ACs, patterns, regressões |
+| 9 | Session State | SELF_CONTEXT + STATUS atualizados. Crash recovery. |
+| 10 | Output Encapsulado | Task rastreável, replicável, auditável. |
 
 ## Passo 5 — Relatório ao Operador
 

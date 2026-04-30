@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>EXPERIA | Diagnóstico Operacional Gamificado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-wrapper {
+            display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; padding: 2rem;
+            position: relative; z-index: 10;
+        }
+        .w-100 { width: 100%; text-align: center; }
+        .quiz-card {
+            background: var(--bg-surface); padding: 3rem; border: 1px solid var(--border-glass); 
+            border-radius: 16px; width: 100%; max-width: 600px; position: relative; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .quiz-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-emerald), transparent);
+        }
+        .quiz-btn {
+            background: var(--bg-root); border: 1px solid var(--border-glass); color: var(--text-primary);
+            padding: 1.25rem; border-radius: 8px; font-weight: 600; font-family: var(--font-primary);
+            cursor: pointer; transition: all 0.3s; margin-bottom: 1rem; width: 100%; display: block;
+        }
+        .quiz-btn:hover { background: rgba(16, 185, 129, 0.1); border-color: var(--accent-emerald); transform: translateX(5px); }
+        .progress-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; margin-bottom: 2rem; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--accent-emerald); width: 0%; transition: width 0.4s ease; }
+    </style>
+</head>
+<body>
+    <div class="matrix-overlay"></div>
+    <div class="quiz-wrapper">
+        <div class="text-center" style="margin-bottom: 3rem;">
+            <div class="badge">DIAGNÓSTICO KAIROX</div>
+            <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem;">O seu negócio governa <span class="gradient-text">você?</span></h1>
+            <p class="subtitle" style="margin: 0 auto;">Descubra em 6 cliques qual o seu Grau de Caos Operacional.</p>
+        </div>
+        
+        <div class="quiz-card" id="quiz-container">
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            <div id="quiz-question" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 2rem;">Loading...</div>
+            <div id="quiz-options"></div>
+        </div>
+
+        <div class="quiz-card text-center" id="result-container" style="display: none;">
+            <div class="badge" id="result-badge">RESULTADO DO DIAGNÓSTICO</div>
+            <h2 id="result-title" style="font-size: 3rem; margin: 1.5rem 0;">...</h2>
+            <p id="result-desc" class="text-secondary" style="font-size: 1.1rem; margin-bottom: 3rem;"></p>
+            <a href="index.html#contato" class="btn-primary large">SOLICITAR REUNIÃO DE RESGATE (ONBOARDING)</a>
+            <a href="index.html" class="btn-secondary" style="display: block; margin-top: 1rem; text-decoration: none;">&larr; Voltar para Experia</a>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { q: "Quão dependente a operação é da sua presença física?", opts: [ {t:"Totalmente. Se eu não for, o negócio para.", v:20}, {t:"Parcialmente. Algumas coisas andam sem mim.", v:10}, {t:"Funciona sem mim. Apenas gerencio a estratégia.", v:0} ] },
+            { q: "Qual o seu tempo médio para responder clientes no WhatsApp?", opts: [ {t:"Deixo acumular. Perco mensagens.", v:20}, {t:"Tento responder na hora, mas sofro.", v:10}, {t:"Tenho um robô ou equipe dedicada.", v:0} ] },
+            { q: "Com que frequência você realiza handoffs (passar o cliente de um setor para outro) sem perdas?", opts: [ {t:"Sempre perdemos contexto. É no boca-a-boca.", v:15}, {t:"Anotamos num papel ou grupo de WA solto.", v:10}, {t:"Processo fluído via CRM/Sistema.", v:0} ] },
+            { q: "Se 3 funcionários ficarem doentes hoje, o que acontece?", opts: [ {t:"Pânico. Caos absoluto.", v:15}, {t:"Eu dobro ou triplico minha carga horária.", v:10}, {t:"O sistema absorve o choque normal.", v:0} ] },
+            { q: "Quantas tarefas repetitivas (fazer orçamentos iguais, responder dúvidas básicas) você faz por dia?", opts: [ {t:"Mais de 30. O dia todo.", v:15}, {t:"De 10 a 30. É cansativo.", v:8}, {t:"Quase nenhuma.", v:0} ] },
+            { q: "Como você vê a sua capacidade de aceitar o dobro de clientes no mês que vem?", opts: [ {t:"A operação quebra. Não dou conta.", v:15}, {t:"Teria que contratar um monte de gente às pressas.", v:10}, {t:"Absorveria perfeitamente via governança.", v:0} ] },
+        ];
+        
+        let score = 0;
+        let pos = 0;
+
+        function renderQuestion() {
+            if (pos >= questions.length) {
+                showResult();
+                return;
+            }
+            const q = questions[pos];
+            document.getElementById('quiz-question').innerText = `${pos+1}. ${q.q}`;
+            document.getElementById('progress-fill').style.width = `${(pos / questions.length) * 100}%`;
+            
+            const cont = document.getElementById('quiz-options');
+            cont.innerHTML = '';
+            q.opts.forEach(opt => {
+                const b = document.createElement('button');
+                b.className = 'quiz-btn';
+                b.innerText = opt.t;
+                b.onclick = () => {
+                    score += opt.v;
+                    pos++;
+                    renderQuestion();
+                };
+                cont.appendChild(b);
+            });
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('result-container').style.display = 'block';
+            
+            const title = document.getElementById('result-title');
+            const desc = document.getElementById('result-desc');
+
+            if (score >= 60) {
+                title.innerText = "ESTADO CRÍTICO";
+                title.style.color = "#f87171";
+                title.style.textShadow = "0 0 30px rgba(248,113,113, 0.4)";
+                desc.innerText = "Sua empresa está gerindo você. O nível de caos operacional é agudo e está custando muito dinheiro, tempo e a sua sanidade. Nós da Experia podemos estancar este sangramento hoje mesmo com os Executores Sócio-Digitais.";
+            } else if (score >= 30) {
+                title.innerText = "ZONA DE RISCO";
+                title.style.color = "#f59e0b";
+                title.style.textShadow = "0 0 30px rgba(245,158,11, 0.4)";
+                desc.innerText = "Você até consegue manter a bola rodando, mas com um sacrifício pessoal imenso. O crescimento está travado. Injetar a Governança KAIROX no seu WhatsApp faria você comprar suas madrugadas de volta.";
+            } else {
+                title.innerText = "OPERAÇÃO CONTROLADA";
+                title.style.color = "#10b981";
+                title.style.textShadow = "0 0 30px rgba(16,185,129, 0.4)";
+                desc.innerText = "Você tem a casa em ordem. Está preparado para escalar sem quebrar. Entrar com o sistema da Experia agora seria o aditivo final para multiplicar resultados com zero perda por falha humana.";
+            }
+        }
+
+        renderQuestion();
+    </script>
+</body>
+</html>

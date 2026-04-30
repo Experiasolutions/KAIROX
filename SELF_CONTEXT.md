@@ -1,10 +1,10 @@
 # KAIROS — SELF CONTEXT (Consciência Viva)
 
-> **Última atualização:** 2026-04-07T15:47:00-03:00
-> **Atualizado por:** NOESIS (Wipe Prep)
-> **Estado:** ⚠️ PREPARAÇÃO PARA WIPE DO ANTIGRAVITY. COGNITION SALVO EM `docs/core/KAIROX_COGNITION_CORE.md`. HIVEMIND ATIVA.
+> **Última atualização:** 2026-04-29T12:42:00-03:00
+> **Atualizado por:** NOESIS (Engine Triage v4 — MVP AI OPS Sprint)
+> **Estado:** 🚀 MVP AI OPS EM ANDAMENTO. Estratégia: AI OPS solopreneur para validação de mão de obra. Novos cases: Leticia (esteticista) + Paulo (tapeceiro) — apresentação hoje. Triage Engine v4 embedded no core (sem /triage externo).
 > **Base Unificada:** PC PRINCIPAL (My KAIROS como workspace canônico)
-> **Protocolo:** Task-First + Hat-Switching + Full-Ecosystem
+> **Protocolo:** Task-First + Engine Triage v4 EMBEDDED (10 Fases) + Hat-Switching + Full-Ecosystem
 
 ---
 
@@ -12,7 +12,9 @@
 
 - **Sistema:** KAIROS OS v3.1 (fork AIOX v5.0.0 by SynkraAI)
 - **Operador:** Gabriel Ferreira — Arquiteto-Comunicador, Voice of the Dragonborn
-- **Empresa:** Experia Solutions — Governança Digital Autônoma para comércio
+- **Empresa:** Experia Solutions — AI OPS Solopreneur (agência postergada indefinidamente — foco em validação de mão de obra via cases)
+- **Modelo:** Free Trial 20 dias → Case Studies → Freelas de IA → (futuro) Agência Grande ABC
+- **Meta de capacidade:** ~10 cases simultâneos (1 operador humano + squads de agentes = output de equipe inteira)
 - **Base PC:** `C:\Users\GABS\Documents\My KAIROS`
 - **Base Notebook (devolvido):** `C:\Users\maymo\OneDrive\Documentos\MY KAIROS`
 - **IDE Principal:** Claude Code CLI (Antigravity = complemento)
@@ -103,18 +105,24 @@
 
 ## Clientes
 
-| Cliente             | Status                           | Próximo                                         |
-| ------------------- | -------------------------------- | ----------------------------------------------- |
-| Experia (próprio)   | 🔴 Parado — precisa PRD do zero  | PRD + Design System + LP                        |
-| Hortifruti (Elaine) | 🟡 Bot deployado, webhook OK     | Calibrar persona, apresentar para Elaine        |
-| Porto Alemão        | 🟡 Instância close               | QR Code + reconexão (Rogério)                   |
-| Master Pumps        | 🟡 Pipeline                      | Trojan Horse via RH                             |
-| KAIROS Bot Template | 🟢 Template criado               | Replicar para ~10 comércios                     |
+| Cliente               | Status                               | Próximo                                         |
+| --------------------- | ------------------------------------ | ----------------------------------------------- |
+| Leticia (esteticista) | 🔴 NOVO — Apresentação HOJE          | Case MVP: agendamento, reativação, lembretes    |
+| Paulo (tapeceiro)     | 🔴 NOVO — Apresentação HOJE          | Case MVP: triagem pedidos, status serviço, WA   |
+| Hortifruti (Elaine)   | 🟢 Bot Trial Ativo                   | Calibrar persona, Morning Report                |
+| Porto Alemão          | 🟡 Mapeado (Bot Inativo)             | Reconectar QR Code                              |
+| Felix Cell            | 🟡 Mapeado (Trial 15 dias aprovado)  | Setup Onboarding, Bot Clone & IG Posts          |
+| Master Pumps          | 🟡 Pipeline                          | Trojan Horse via RH                             |
+| Experia (próprio)     | ⏸️ POSTERGADA (agência)              | Reabrir após ter autoridade via cases           |
 
 ## Decisões Tomadas
 
 | Data       | Decisão                                                           |
 | ---------- | ----------------------------------------------------------------- |
+| 2026-04-29 | **Estratégia AI OPS:** Abertura da agência Experia postergada indefinidamente. Foco: validar mão de obra como solopreneur AI OPS via free trials 20 dias → case studies → freelas. Meta: ~10 cases simultâneos. |
+| 2026-04-29 | **Engine Triage v4 EMBEDDED:** /triage workflow eliminado. Triage v4 (10 fases) está agora nativa em /boot, /context e /KAIROS. Nunca mais acionar manualmente. |
+| 2026-04-29 | **MVP Template em padronização:** squads internos (admin, analytics, media) + externos (experia-commerce) + dashboard 360 + processo de onboarding formal. |
+| 2026-04-29 | **Novos cases (apresentação hoje):** Leticia (esteticista autônoma) + Paulo (tapeceiro/ateliê em transição para WhatsApp Business). |
 | 2026-04-03 | **SKORTEX v3.0 built:** Hivemind + Orchestrator + Tools + Daemon finalizados. |
 | 2026-04-03 | **Shared Brain Protocol:** 7 tabelas Supabase, ACTIVE_WORK.md, SESSION_LOG.md, /sync workflow |
 | 2026-04-03 | **Hivemind Consolidado:** Agentes A+C sincronizados, SKYROS Agent v2.0 com Supabase Sync Client |
@@ -141,6 +149,11 @@
 ## Problemas Abertos
 
 1. **Identity Anchor:** boot agora resolve via `engine/noesis/` com fallback `.aiox-core/noesis/` ✅ CORRIGIDO
-2. **Council Score:** 5.53/10 com 89 gaps (reduzido de 91 → PM templates criados)
+2. **Council Score:** 6.9/10 com 26 gaps (Integrity Run 2026-04-25). Top gap: `ILS-PM-MISSING` (PM templates) sev=8.
 3. **Jarvis:** DEGRADED — learning model não inicializado
-4. **LimitaÃ§Ã£o de Hardware:** Bun Build abortado permanentemente (6GB RAM). Uso mandatÃ³rio de Node nativo.
+4. **Limitação de Hardware:** Bun Build abortado permanentemente (6GB RAM). Uso mandatório de Node nativo.
+5. **Scripts DORMANT:** 85% dos scripts em `scripts/` nunca ativados. `mcp-sse-bridge.js` com risco de falha silenciosa.
+6. **RAG:** ✅ REINDEXADO (2026-04-25) — 1787 files / 58.152 chunks / 56.085 termos únicos.
+7. **Supabase Local:** Docker não disponível no contexto atual. Usar conexão remota via `SUPABASE_DB_URL`.
+8. **MVP AI OPS:** squads mvp-admin, mvp-analytics, mvp-media ainda não criados. Cases Leticia/Paulo pendentes de brief + scripts. Dashboard 360 em planejamento.
+9. **/triage workflow:** ✅ ELIMINADO (2026-04-29) — Engine Triage v4 agora embedded em /boot + /context + /KAIROS.

@@ -86,7 +86,11 @@
     "validate:publish": "node bin/utils/validate-publish.js",
     "prepublishOnly": "node bin/utils/validate-publish.js && npm run generate:manifest && npm run validate:manifest",
     "prepare": "husky",
-    "sync:vault": "node scripts/kairos-vault-sync.js"
+    "sync:vault": "node scripts/kairos-vault-sync.js",
+    "god-pool:start": "node god-kairos/god-pool-proxy.js",
+    "god-pool:validate": "node validate-god-pool.js",
+    "god-pool:check-keys": "node god-kairos/key-health-check.js",
+    "god-pool:fix-keys": "node god-kairos/key-health-check.js --fix"
   },
   "dependencies": {
     "@clack/prompts": "^0.11.0",

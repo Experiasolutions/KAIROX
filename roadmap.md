@@ -5,17 +5,15 @@
 
 ---
 
-## Sprint Atual (Q2 2026 — Semana 15)
+## Sprint Atual — 💸 MONEY RUSH (Q2 2026 — 17/04)
 
 | # | Área / Projeto | Task | Priority | Status | Owner |
 |---|----------------|------|----------|--------|-------|
-| 1 | SKORTEX | Validar SKORTEX CLI end-to-end (REPL + Hivemind write) | P0 | 🔥 Em andamento | @dev |
-| 2 | Experia | Landing Page v1 — 10 seções, Design System, deploy Vercel | P0 | 🔥 Em andamento | @dev |
-| 3 | Money Talks | Ajustar carteira e metas financeiras (Meta R$ 30k) | P1 | 📋 Planejado | Operador |
-| 4 | SKYDRA | Deploy OpenShift — Squads distribuídos via containers | P1 | 🧊 Icebox | @devops |
-| 5 | Experia | Quiz diagnóstico (6 perguntas + resultado personalizado) | P1 | 📋 Planejado | @dev |
-| 6 | Hortifruti | WhatsApp bot — catálogo digital + pedidos | P2 | 🔧 Em progresso | @dev |
-| 7 | Master Pumps | Trojan Horse via RH — proposta comercial | P2 | 📋 Planejado | @pm |
+| 1 | Hortifruti 🥦 | Entregar WhatsApp bot funcional → fechar contrato (R$497–997/mês) | P0 | 🔥 Em andamento | @commerce-clone |
+| 2 | Porto Alemão 🍺 | Gerar + enviar proposta comercial hoje (pitch 3min + doc) | P0 | 🔥 Em andamento | @commerce-sales |
+| 3 | Master Pumps 🔧 | Abordagem Trojan Horse via RH — e-mail proposta corporativa | P0 | 📋 Iniciar agora | @commerce-master |
+| 4 | Experia | Landing Page — deploy Vercel (argumento de vendas) | P0 | 🔥 Em andamento | @dev |
+| 5 | Novo Prospect | Mapear + abordar 1 negócio local novo hoje | P1 | 📋 Planejado | Operador |
 
 ---
 

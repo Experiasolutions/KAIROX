@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { CurrentQuestPanel } from "./CurrentQuestPanel";
-import { JarvisTerminal } from "@/components/jarvis/JarvisTerminal";
+import { DataMatrix } from "./DataMatrix";
 import { useKAIROS } from "@/hooks/useKAIROS";
 import { useSharedBrain } from "@/hooks/useSharedBrain";
 import {
   Cpu, Activity, Flame, Target, Zap, TrendingUp,
   AlertCircle, ChevronRight, Calendar, Bot, Loader2,
-  Wifi, WifiOff, Skull, Shield, RotateCcw
+  Wifi, WifiOff, Skull, Shield, RotateCcw, Trophy
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -17,10 +17,14 @@ interface DashboardProps {
 const coldCallDeadline = new Date("2026-04-26");
 
 export function Dashboard({ onQuestlineClick }: DashboardProps = {}) {
-  const { xp, focoGems, streak, realCoins, availableAttributePoints, level } = useSharedBrain();
+  const brain = useSharedBrain();
+  const {
+    xp, focoGems, streak, realCoins, availableAttributePoints, level, growSeeds,
+    skyrosScore, skyrosScoreColor, skyrosScoreBorderColor, streakBroken,
+    revenueProgress, revenueGoal, questsCompletedToday, bossesCompleted, bossesTotal,
+  } = brain;
   const kairos = useKAIROS(30000);
   const [daysUntilCalls, setDaysUntilCalls] = useState(0);
-  const [showJarvis, setShowJarvis] = useState(false);
 
   useEffect(() => {
     const diff = Math.ceil((coldCallDeadline.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
@@ -34,6 +38,15 @@ export function Dashboard({ onQuestlineClick }: DashboardProps = {}) {
   // Bosses from roadmap.md via API (dynamic)
   const activeBosses = kairos.bosses.filter(b => !b.status.includes("✅"));
   const completedBosses = kairos.bosses.filter(b => b.status.includes("✅"));
+
+  // ── BADGES ──
+  const badges = [
+    { id: "first-blood", emoji: "🔥", name: "First Blood", desc: "Completou ≥1 quest", unlocked: xp > 0 },
+    { id: "deep-worker", emoji: "⚡", name: "Deep Worker", desc: "Streak ≥ 3 dias", unlocked: streak >= 3 },
+    { id: "boss-slayer", emoji: "💀", name: "Boss Slayer", desc: "≥1 P0 eliminado", unlocked: completedBosses.length > 0 || bossesCompleted > 0 },
+    { id: "first-coin", emoji: "💰", name: "First Coin", desc: "Primeiro R$ faturado", unlocked: realCoins > 0 },
+    { id: "war-machine", emoji: "🏆", name: "War Machine", desc: "Streak ≥ 7 dias", unlocked: streak >= 7 },
+  ];
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
@@ -54,8 +67,24 @@ export function Dashboard({ onQuestlineClick }: DashboardProps = {}) {
 
   return (
     <div className="space-y-6">
+      {/* ══ LOSS AVERSION ALERT ══ */}
+      {streakBroken && (
+        <div className="glass-card p-4 border-2 border-red-500/50 bg-red-500/10 animate-pulse">
+          <div className="flex items-center gap-3">
+            <Skull className="w-6 h-6 text-red-400" />
+            <div>
+              <p className="font-mono text-sm text-red-400 font-bold">💀 STREAK QUEBRADO · -50 XP</p>
+              <p className="text-xs text-red-400/60 font-mono">Você perdeu a consistência. Reconstrua hoje ou afunde.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* War Banner */}
-      <div className="glass-card p-8 relative overflow-hidden animate-fade-in">
+      <div className={cn(
+        "glass-card p-8 relative overflow-hidden animate-fade-in",
+        skyrosScore <= 30 && "border-red-500/30 shadow-[0_0_30px_rgba(239,68,68,0.1)]"
+      )}>
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `linear-gradient(hsl(var(--neon-cyan) / 0.15) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--neon-cyan) / 0.15) 1px, transparent 1px)`,
           backgroundSize: "20px 20px"
@@ -67,7 +96,7 @@ export function Dashboard({ onQuestlineClick }: DashboardProps = {}) {
             <div className="flex items-center gap-3 mb-3">
               <Cpu className="w-6 h-6 text-primary" />
               <span className="text-sm font-mono text-primary">
-                GABRIEL OS v4.1 // LVL {level} // T1-2026 · DIA {seasonDay}/90
+                GABRIEL OS v4.2 // LVL {level} // T1-2026 · DIA {seasonDay}/90
               </span>
               <Activity className="w-4 h-4 text-neon-green animate-pulse" />
               {/* Backend status indicator */}
@@ -97,22 +126,47 @@ export function Dashboard({ onQuestlineClick }: DashboardProps = {}) {
             </div>
 
             <div className="flex items-center gap-3 mt-4 flex-wrap">
-              <StatPill icon={Flame} value={`${streak}d`} label="streak" color="text-neon-orange" borderColor="border-neon-orange/30" bgColor="bg-neon-orange/10" />
+              <StatPill icon={Flame} value={`${streak}d`} label="streak" color={streakBroken ? "text-red-400" : "text-neon-orange"} borderColor={streakBroken ? "border-red-500/30" : "border-neon-orange/30"} bgColor={streakBroken ? "bg-red-500/10" : "bg-neon-orange/10"} />
               <StatPill icon={Zap} value={`${focoGems} GEMS`} label="foco" color="text-blue-400" borderColor="border-blue-400/30" bgColor="bg-blue-500/10" />
               <StatPill icon={Target} value={`R$ ${realCoins.toLocaleString("pt-BR")}`} label="faturado" color="text-green-400" borderColor="border-green-500/30" bgColor="bg-green-500/10" />
               {availableAttributePoints > 0 && (
                 <StatPill icon={TrendingUp} value={`${availableAttributePoints} pts`} label="skill pts" color="text-yellow-400" borderColor="border-yellow-500/30" bgColor="bg-yellow-500/10" />
               )}
             </div>
+
+            {/* ══ REVENUE PROGRESS BAR (Meta R$ 30k) ══ */}
+            <div className="mt-4 w-full max-w-md">
+              <div className="flex justify-between items-center mb-1.5">
+                <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">Meta Faturamento</span>
+                <span className="text-[10px] font-mono text-primary">
+                  R$ {realCoins.toLocaleString("pt-BR")} / R$ {revenueGoal.toLocaleString("pt-BR")} — {Math.round(revenueProgress)}%
+                </span>
+              </div>
+              <div className="h-2.5 w-full bg-muted/20 rounded-full overflow-hidden border border-border/30">
+                <div
+                  className={cn(
+                    "h-full bg-gradient-to-r from-primary via-primary/80 to-primary/50 transition-all duration-1000 ease-out rounded-full",
+                    revenueProgress > 50 && "shadow-[0_0_15px_rgba(201,168,76,0.6)]"
+                  )}
+                  style={{ width: `${revenueProgress}%` }}
+                />
+              </div>
+            </div>
           </div>
 
-          {/* XP Orb */}
+          {/* ══ SKYROS SCORE ORB (replaces old XP Orb) ══ */}
           <div className="hidden xl:block relative text-center flex-shrink-0">
-            <div className="w-32 h-32 border-2 border-primary/30 rounded-full flex items-center justify-center relative">
+            <div className={cn(
+              "w-32 h-32 border-2 rounded-full flex items-center justify-center relative transition-all duration-500",
+              skyrosScoreBorderColor,
+              skyrosScore <= 30 && "animate-pulse"
+            )}>
               <div className="text-center">
-                <span className="font-display text-2xl text-primary block">{xp}</span>
-                <div className="text-[10px] text-muted-foreground uppercase font-mono">XP Total</div>
-                <div className="text-[10px] text-primary/70 font-mono">Nível {level}</div>
+                <span className={cn("font-display text-3xl block", skyrosScoreColor)}>{skyrosScore}</span>
+                <div className="text-[10px] text-muted-foreground uppercase font-mono">SKYROS</div>
+                <div className={cn("text-[10px] font-mono", skyrosScoreColor)}>
+                  {skyrosScore >= 80 ? "ELITE" : skyrosScore >= 50 ? "EM RISCO" : "CRÍTICO"}
+                </div>
               </div>
               <svg className="absolute inset-0 w-full h-full -rotate-90">
                 <circle cx="64" cy="64" r="60" stroke="currentColor" strokeWidth="2" fill="transparent" className="text-muted/20" />
@@ -120,8 +174,8 @@ export function Dashboard({ onQuestlineClick }: DashboardProps = {}) {
                   cx="64" cy="64" r="60"
                   stroke="currentColor" strokeWidth="4" fill="transparent"
                   strokeDasharray="377"
-                  strokeDashoffset={377 - (377 * (xpInLevel / 100))}
-                  className="text-primary transition-all duration-1000"
+                  strokeDashoffset={377 - (377 * (skyrosScore / 100))}
+                  className={cn("transition-all duration-1000", skyrosScoreColor)}
                 />
               </svg>
             </div>
@@ -221,19 +275,55 @@ export function Dashboard({ onQuestlineClick }: DashboardProps = {}) {
         )}
       </div>
 
-      {/* Main Content + JARVIS Terminal lado a lado */}
-      <div className="grid grid-cols-1 xl:grid-cols-5 gap-6">
-        {/* Quest Panel — 3 colunas */}
-        <div className="xl:col-span-3">
-          <CurrentQuestPanel />
-        </div>
+      {/* ══ DATA MATRIX — 4 Charts ══ */}
+      <DataMatrix
+        skyrosScore={skyrosScore}
+        streak={streak}
+        xp={xp}
+        realCoins={realCoins}
+        focoGems={focoGems}
+        growSeeds={growSeeds}
+        questsCompletedToday={questsCompletedToday}
+        bossesCompleted={bossesCompleted}
+        bossesTotal={bossesTotal}
+        revenueGoal={revenueGoal}
+      />
 
-        {/* JARVIS Terminal — 2 colunas */}
-        <div className="xl:col-span-2">
-          <JarvisTerminal
-            isolationActive={kairos.isolationActive}
-            className="h-full min-h-[460px]"
-          />
+      {/* Main Content */}
+      <div className="w-full">
+        {/* Quest Panel */}
+        <CurrentQuestPanel />
+      </div>
+
+      {/* ══ BADGES / CONQUISTAS ══ */}
+      <div className="glass-card p-6 animate-fade-in">
+        <div className="flex items-center gap-3 mb-4">
+          <Trophy className="w-5 h-5 text-primary" />
+          <div>
+            <h3 className="font-display text-lg text-primary uppercase tracking-wide">Conquistas</h3>
+            <p className="text-xs text-muted-foreground">{badges.filter(b => b.unlocked).length}/{badges.length} desbloqueadas</p>
+          </div>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          {badges.map((badge) => (
+            <div
+              key={badge.id}
+              className={cn(
+                "flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all",
+                badge.unlocked
+                  ? "bg-primary/5 border-primary/30 shadow-[0_0_15px_rgba(201,168,76,0.08)]"
+                  : "bg-muted/5 border-border/30 opacity-30 grayscale"
+              )}
+            >
+              <span className="text-lg">{badge.emoji}</span>
+              <div>
+                <p className={cn("text-xs font-mono font-bold", badge.unlocked ? "text-primary" : "text-muted-foreground")}>
+                  {badge.name}
+                </p>
+                <p className="text-[9px] text-muted-foreground">{badge.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

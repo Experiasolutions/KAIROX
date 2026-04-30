@@ -611,3 +611,190 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--arcane-gold) / 0.45);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   STELLAR HUB — Doctor Strange × JARVIS Central Navigation
+   ═══════════════════════════════════════════════════════════ */
+
+/* Mandala rings — concentric circles around the center orb */
+.stellar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid hsl(var(--arcane-gold) / 0.08);
+  pointer-events: none;
+}
+
+.stellar-ring--inner {
+  width: 280px;
+  height: 280px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: hsl(var(--arcane-gold) / 0.15);
+}
+
+.stellar-ring--mid {
+  width: 480px;
+  height: 480px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: hsl(var(--arcane-gold) / 0.08);
+  border-style: dashed;
+}
+
+.stellar-ring--outer {
+  width: 680px;
+  height: 680px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: hsl(var(--arcane-gold) / 0.04);
+}
+
+/* Center orb */
+.stellar-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(222 28% 10%) 0%, hsl(222 28% 6%) 70%);
+  border: 2px solid hsl(var(--arcane-gold) / 0.4);
+  box-shadow:
+    0 0 40px hsl(var(--arcane-gold) / 0.15),
+    0 0 80px hsl(var(--arcane-gold) / 0.05),
+    inset 0 0 30px hsl(var(--arcane-gold) / 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.stellar-core:hover {
+  border-color: hsl(var(--arcane-gold) / 0.7);
+  box-shadow:
+    0 0 60px hsl(var(--arcane-gold) / 0.25),
+    0 0 120px hsl(var(--arcane-gold) / 0.08),
+    inset 0 0 40px hsl(var(--arcane-gold) / 0.12);
+}
+
+/* Orbital navigation node */
+.stellar-node {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: hsl(222 28% 8% / 0.9);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid hsl(var(--arcane-gold) / 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 15;
+}
+
+.stellar-node:hover {
+  border-color: hsl(var(--arcane-gold) / 0.7);
+  background: hsl(222 28% 10% / 0.95);
+  box-shadow:
+    0 0 25px hsl(var(--arcane-gold) / 0.2),
+    inset 0 0 15px hsl(var(--arcane-gold) / 0.06);
+  transform: scale(1.1);
+}
+
+.stellar-node--active {
+  border-color: hsl(var(--arcane-gold) / 0.8);
+  box-shadow:
+    0 0 30px hsl(var(--arcane-gold) / 0.3),
+    inset 0 0 20px hsl(var(--arcane-gold) / 0.1);
+}
+
+.stellar-node--p0 {
+  border-color: hsl(var(--blood-red) / 0.6);
+  box-shadow: 0 0 15px hsl(var(--blood-red) / 0.2);
+}
+
+.stellar-node--p0:hover {
+  border-color: hsl(var(--blood-red) / 0.9);
+  box-shadow: 0 0 30px hsl(var(--blood-red) / 0.3);
+}
+
+/* SVG connection lines */
+.stellar-line {
+  stroke: hsl(var(--arcane-gold) / 0.12);
+  stroke-width: 1;
+  fill: none;
+}
+
+.stellar-line--active {
+  stroke: hsl(var(--arcane-gold) / 0.35);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+}
+
+/* Hub header (compact) */
+.hub-header {
+  height: 48px;
+  background: hsl(222 28% 5% / 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid hsl(var(--arcane-gold) / 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 30;
+}
+
+/* Section back button */
+.section-back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--arcane-gold) / 0.2);
+  background: hsl(222 28% 8% / 0.8);
+  color: hsl(var(--arcane-gold));
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.section-back:hover {
+  border-color: hsl(var(--arcane-gold) / 0.5);
+  background: hsl(222 28% 10%);
+}
+
+/* Skill tree SVG styles */
+.skill-tree-line {
+  stroke: hsl(var(--stone-border));
+  stroke-width: 2;
+  fill: none;
+  transition: stroke 0.3s;
+}
+
+.skill-tree-line--unlocked {
+  stroke: hsl(var(--arcane-gold) / 0.5);
+  filter: drop-shadow(0 0 4px hsl(var(--arcane-gold) / 0.3));
+}
+
+.skill-tree-node {
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.skill-tree-node:hover {
+  filter: drop-shadow(0 0 12px hsl(var(--arcane-gold) / 0.4));
+}
+

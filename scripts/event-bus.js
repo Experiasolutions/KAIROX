@@ -42,10 +42,12 @@ class AIOSEventBus extends EventEmitter {
         }
         try {
             this.subscriptions.get(channel).push({ subscriber, handler });
-        } catch(e) {}
-        this.on(channel, handler);
-
-        this._log('subscribe', { channel, subscriber });
+            this.on(channel, handler);
+            this._log('subscribe', { channel, subscriber, status: 'success' });
+        } catch(e) {
+            this._log('subscribe', { channel, subscriber, status: 'error', error: e.message });
+            throw new Error(`Failed to subscribe ${subscriber} to ${channel}: ${e.message}`);
+        }
         return this;
     }
 

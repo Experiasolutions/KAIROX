@@ -53,21 +53,52 @@ const ENV = loadEnv();
 
 const parseKeyList = (envVar) => (envVar || '').split(',').map(k => k.trim()).filter(Boolean);
 
-// Simples parser de YAML para extrair chaves (regex based para manter zero-dependencies)
+// Parser YAML linha-a-linha (state-machine por indentação — robusto e zero-deps)
 function loadYamlKeys(providerName) {
   try {
     const yamlPath = path.join(WORKSPACE, 'god-kairos', 'api-keys.yaml');
     if (!fs.existsSync(yamlPath)) return [];
-    const content = fs.readFileSync(yamlPath, 'utf8');
-    
-    // Procura o bloco do provider e extrai o campo "key:"
-    const providerRegex = new RegExp(`${providerName}:[\\s\\S]+?keys:([\\s\\S]+?)(?:\\n\\w|$)`);
-    const match = content.match(providerRegex);
-    if (!match) return [];
-    
-    const keysBlock = match[1];
-    const keyMatches = keysBlock.match(/key:\s*["']?([^"'\n\r\s]+)["']?/g) || [];
-    return keyMatches.map(m => m.replace(/key:\s*["']?/, '').replace(/["']?$/, ''));
+    const lines = fs.readFileSync(yamlPath, 'utf8').split('\n');
+
+    const keys = [];
+    let inProvider = false;
+    let inKeys = false;
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+
+      const indent = line.search(/\S/);
+
+      // Seção top-level (indent 0) — identifica qual provider estamos dentro
+      if (indent === 0) {
+        inProvider = trimmed === `${providerName}:`;
+        inKeys = false;
+        continue;
+      }
+
+      if (!inProvider) continue;
+
+      // Subseção do provider (indent 2) — identifica o bloco "keys:"
+      if (indent <= 2 && trimmed.startsWith('keys')) {
+        inKeys = true;
+        continue;
+      }
+
+      // Qualquer outra subseção no nível 2 encerra o bloco de keys
+      if (indent <= 2 && !trimmed.startsWith('-') && !trimmed.startsWith('key')) {
+        inKeys = false;
+        continue;
+      }
+
+      // Dentro do bloco de keys — extrai o valor de "key:"
+      if (inKeys) {
+        const m = line.match(/^\s+key:\s*["']?([^"'\s]+)["']?\s*$/);
+        if (m && m[1]) keys.push(m[1]);
+      }
+    }
+
+    return keys;
   } catch (e) {
     log(`[YAML] Erro ao carregar chaves para ${providerName}: ${e.message}`);
     return [];
@@ -90,18 +121,66 @@ const GEMINI_KEYS = [
 ].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
 
 // 3. TOGETHER / SAMBANOVA / OPENROUTER
-const TOGETHER_KEYS = [...parseKeyList(ENV.TOGETHER_API_KEYS), ENV.TOGETHER_API_KEY].filter(Boolean);
-const SAMBANOVA_KEYS = [...parseKeyList(ENV.SAMBANOVA_API_KEYS), ENV.SAMBANOVA_API_KEY].filter(Boolean);
-const OPENROUTER_KEYS = [...parseKeyList(ENV.OPENROUTER_API_KEYS), ENV.OPENROUTER_API_KEY].filter(Boolean);
-const CEREBRAS_KEYS = [...parseKeyList(ENV.CEREBRAS_API_KEYS), ENV.CEREBRAS_API_KEY].filter(Boolean);
+const TOGETHER_KEYS = [...parseKeyList(ENV.TOGETHER_API_KEYS), ENV.TOGETHER_API_KEY, ...loadYamlKeys('together')].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
+const SAMBANOVA_KEYS = [...parseKeyList(ENV.SAMBANOVA_API_KEYS), ENV.SAMBANOVA_API_KEY, ...loadYamlKeys('sambanova')].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
+const OPENROUTER_KEYS = [...parseKeyList(ENV.OPENROUTER_API_KEYS), ENV.OPENROUTER_API_KEY, ...loadYamlKeys('openrouter')].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
+const CEREBRAS_KEYS = [...parseKeyList(ENV.CEREBRAS_API_KEYS), ENV.CEREBRAS_API_KEY, ...loadYamlKeys('cerebras')].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
+const GITHUB_KEYS = [...parseKeyList(ENV.GITHUB_API_KEYS), ENV.GITHUB_TOKEN].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
 
 // ─── ROUND-ROBIN STATE ─────────────────────────────────────────────────────
 
-const counters = { gemini: 0, groqFast: 0, groqHeavy: 0, github: 0, together: 0, sambanova: 0, cerebras: 0, openrouter: 0 };
+const counters = {
+  gemini:     0,
+  groqFast:   0,
+  groqHeavy:  0,
+  sambanova:  0,
+  cerebras:   0,
+  together:   0,
+  openrouter: 0,
+  github:     0,
+};
+
+// ─── DEAD KEY TRACKING ─────────────────────────────────────────────────────
+// Keys marcadas como mortas (401/403/quota) — nunca mais usadas nesta sessão
+const deadKeys = new Set();
+// Keys em cooldown de 429 temporário — Map<key, timestamp_expiry>
+const rateLimited = new Map();
+
+function markDead(apiKey, reason) {
+  if (!deadKeys.has(apiKey)) {
+    deadKeys.add(apiKey);
+    log(`[DEAD KEY] ...${apiKey.slice(-8)} → ${reason} (total mortas: ${deadKeys.size})`);
+  }
+}
+
+function markRateLimited(apiKey, cooldownMs = 60000) {
+  rateLimited.set(apiKey, Date.now() + cooldownMs);
+  log(`[RATE LIMIT] ...${apiKey.slice(-8)} → cooldown ${cooldownMs / 1000}s`);
+}
 
 function nextKey(pool, counterKey) {
   if (!pool.length) return null;
-  const key = pool[counters[counterKey] % pool.length];
+  const now = Date.now();
+
+  // Limpa entradas expiradas do rate-limit
+  for (const [k, exp] of rateLimited.entries()) {
+    if (now > exp) rateLimited.delete(k);
+  }
+
+  // Filtra keys mortas e em cooldown
+  const available = pool.filter(k => !deadKeys.has(k) && !rateLimited.has(k));
+
+  if (available.length === 0) {
+    // Todas mortas ou em limite — retorna null para forçar fallback de provider
+    const anyAlive = pool.filter(k => !deadKeys.has(k));
+    if (anyAlive.length === 0) return null;
+    // Usa keys em cooldown como último recurso
+    const key = anyAlive[counters[counterKey] % anyAlive.length];
+    counters[counterKey]++;
+    return key;
+  }
+
+  const key = available[counters[counterKey] % available.length];
   counters[counterKey]++;
   return key;
 }
@@ -150,6 +229,15 @@ const PROVIDERS = {
     getKey: () => nextKey(TOGETHER_KEYS, 'together'),
   },
 
+  // Tier 2: Cerebras (alta velocidade, Llama 70B)
+  cerebras: {
+    label: 'Cerebras (Llama 70B)',
+    baseUrl: 'https://api.cerebras.ai/v1',
+    model: 'llama3.1-70b',
+    tier: 2,
+    getKey: () => nextKey(CEREBRAS_KEYS, 'cerebras'),
+  },
+
   // Tier 4: Premium (Sonnet/Opus via OpenRouter)
   openrouter: {
     label: 'OpenRouter (Sonnet 3.5)',
@@ -187,12 +275,13 @@ function routeProvider(anthropicModel) {
 // ─── FALLBACK CHAINS ───────────────────────────────────────────────────────
 
 const FALLBACK_ORDER = {
-  groqFast:   ['groqFast', 'sambanova', 'gemini', 'groqHeavy', 'together', 'openrouter'],
-  sambanova:  ['sambanova', 'groqFast', 'gemini', 'groqHeavy', 'together', 'openrouter'],
-  gemini:     ['gemini', 'groqHeavy', 'together', 'openrouter', 'sambanova', 'groqFast'],
-  groqHeavy:  ['groqHeavy', 'together', 'gemini', 'openrouter', 'sambanova', 'groqFast'],
-  together:   ['together', 'groqHeavy', 'gemini', 'openrouter', 'sambanova', 'groqFast'],
-  openrouter: ['openrouter', 'together', 'groqHeavy', 'gemini', 'sambanova', 'groqFast'],
+  groqFast:   ['groqFast',   'cerebras',  'sambanova', 'gemini',    'groqHeavy', 'together',  'openrouter'],
+  sambanova:  ['sambanova',  'groqFast',  'cerebras',  'gemini',    'groqHeavy', 'together',  'openrouter'],
+  cerebras:   ['cerebras',  'groqFast',  'sambanova', 'gemini',    'groqHeavy', 'together',  'openrouter'],
+  gemini:     ['gemini',    'cerebras',  'groqHeavy', 'together',  'openrouter','sambanova', 'groqFast'],
+  groqHeavy:  ['groqHeavy', 'together',  'cerebras',  'gemini',    'openrouter','sambanova', 'groqFast'],
+  together:   ['together',  'groqHeavy', 'cerebras',  'gemini',    'openrouter','sambanova', 'groqFast'],
+  openrouter: ['openrouter','together',  'groqHeavy', 'cerebras',  'gemini',    'sambanova', 'groqFast'],
 };
 
 // ─── FORMAT TRANSLATION ────────────────────────────────────────────────────
@@ -430,6 +519,12 @@ async function handleMessages(body, res) {
 
       if (isStream) {
         if (result.status >= 400) {
+          // Detecta key morta no stream
+          if (result.status === 401 || result.status === 403) {
+            markDead(apiKey, `HTTP ${result.status}`);
+          } else if (result.status === 429) {
+            markRateLimited(apiKey);
+          }
           log(`[${provider.label}] HTTP ${result.status} stream — fallback`);
           lastError = `HTTP ${result.status}`;
           continue;
@@ -438,7 +533,20 @@ async function handleMessages(body, res) {
         return;
       } else {
         if (result.status >= 400) {
-          log(`[${provider.label}] HTTP ${result.status}: ${(result.body || '').slice(0, 200)}`);
+          const bodyText = result.body || '';
+          // 401/403 → key inválida, morta permanentemente
+          if (result.status === 401 || result.status === 403) {
+            markDead(apiKey, `HTTP ${result.status}`);
+          } else if (result.status === 429) {
+            // Verifica se é quota esgotada (mensal) ou apenas rate limit temporário
+            const isQuotaGone = /quota|exhausted|exceeded|billing|monthly|daily limit/i.test(bodyText);
+            if (isQuotaGone) {
+              markDead(apiKey, 'quota esgotada');
+            } else {
+              markRateLimited(apiKey, 60000);
+            }
+          }
+          log(`[${provider.label}] HTTP ${result.status}: ${bodyText.slice(0, 200)}`);
           lastError = `HTTP ${result.status}`;
           continue;
         }
@@ -487,15 +595,43 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // Key status endpoint
+  if (req.url === '/keys/status') {
+    const now = Date.now();
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      dead_keys: deadKeys.size,
+      rate_limited_keys: rateLimited.size,
+      dead_list: [...deadKeys].map(k => '...' + k.slice(-8)),
+      rate_limited_list: [...rateLimited.entries()].map(([k, exp]) => ({
+        key: '...' + k.slice(-8),
+        expires_in_s: Math.max(0, Math.round((exp - now) / 1000)),
+      })),
+    }));
+    return;
+  }
+
   // Health check
   if (req.url === '/health' || req.url === '/') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
-      status: 'ok', service: 'kairox-god-pool-proxy', port: PORT,
+      status: 'ok',
+      service: 'kairox-god-pool-proxy',
+      version: '2.0',
+      port: PORT,
       providers: Object.fromEntries(
-        Object.entries(PROVIDERS).map(([k, p]) => [k, { model: p.model, label: p.label }])
+        Object.entries(PROVIDERS).map(([k, p]) => [k, { model: p.model, label: p.label, tier: p.tier }])
       ),
-      keys: { gemini: GEMINI_KEYS.length, groq: GROQ_KEYS.length, github: GITHUB_KEYS.length },
+      keys: {
+        gemini: GEMINI_KEYS.length,
+        groq: GROQ_KEYS.length,
+        together: TOGETHER_KEYS.length,
+        sambanova: SAMBANOVA_KEYS.length,
+        cerebras: CEREBRAS_KEYS.length,
+        openrouter: OPENROUTER_KEYS.length,
+        github: GITHUB_KEYS.length,
+      },
+      total_keys: GEMINI_KEYS.length + GROQ_KEYS.length + TOGETHER_KEYS.length + SAMBANOVA_KEYS.length + CEREBRAS_KEYS.length + OPENROUTER_KEYS.length + GITHUB_KEYS.length,
       counters,
     }));
     return;
@@ -538,12 +674,17 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, '127.0.0.1', () => {
+  const totalKeys = GEMINI_KEYS.length + GROQ_KEYS.length + TOGETHER_KEYS.length + SAMBANOVA_KEYS.length + CEREBRAS_KEYS.length + OPENROUTER_KEYS.length + GITHUB_KEYS.length;
   console.log('');
   console.log('╔══════════════════════════════════════════════════╗');
-  console.log('║  🔱 KAIROX GOD POOL PROXY — ONLINE              ║');
-  console.log(`║  Porta: ${PORT}  |  Providers: ${Object.keys(PROVIDERS).length}                       ║`);
-  console.log(`║  Gemini: ${GEMINI_KEYS.length} keys | Groq: ${GROQ_KEYS.length} keys | GH: ${GITHUB_KEYS.length} key  ║`);
-  console.log('║  Routing: haiku→Groq | default→Gemini | opus→Heavy ║');
+  console.log('║  🔱 KAIROX GOD POOL PROXY v2.0 — ONLINE        ║');
+  console.log(`║  Porta: ${PORT}  |  Providers: ${Object.keys(PROVIDERS).length}  |  Keys: ${totalKeys} ║`);
+  console.log('║  ─────────────────────────────────────────────── ║');
+  console.log(`║  Gemini: ${GEMINI_KEYS.length} | Groq: ${GROQ_KEYS.length} | Together: ${TOGETHER_KEYS.length} | SambaNova: ${SAMBANOVA_KEYS.length} ║`);
+  console.log(`║  Cerebras: ${CEREBRAS_KEYS.length} | OpenRouter: ${OPENROUTER_KEYS.length} | GitHub: ${GITHUB_KEYS.length} ║`);
+  console.log('║  ─────────────────────────────────────────────── ║');
+  console.log('║  Routing: haiku→Tier1 | sonnet→Tier2 | opus→Tier4 ║');
+  console.log('║  Smart Fallback: 8 chains per provider           ║');
   console.log('╚══════════════════════════════════════════════════╝');
   console.log('');
   log('Aguardando chamadas do Claude Code...');

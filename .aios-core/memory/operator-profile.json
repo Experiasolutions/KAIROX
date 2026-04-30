@@ -6,36 +6,26 @@
       "avgCommitHour": 15,
       "dominantType": "feat",
       "recentActivity": 30,
-      "evidence": 22
-    },
-    "workHours": {
-      "avgBootHour": 0,
-      "pattern": "night-owl",
-      "evidence": 21
-    },
-    "bootPreference": {
-      "quickRatio": 0,
-      "interpretation": "Prefers comprehensive boots",
-      "evidence": 21
+      "evidence": 3
     }
   },
   "decisional": {
     "focusAllocation": {
-      "features": 0.43,
+      "features": 0.47,
       "fixes": 0.03,
-      "docs": 0.07,
-      "maintenance": 0.4,
+      "docs": 0.1,
+      "maintenance": 0.33,
       "interpretation": "Balanced — no single dominant commit type",
-      "evidence": 22
+      "evidence": 3
     },
     "directoryFocus": {
       "top3": [
         "pgt-ui",
-        "skyros-agent",
-        "apps"
+        ".codex",
+        "skyros-agent"
       ],
-      "interpretation": "Primary focus on: pgt-ui, skyros-agent, apps",
-      "evidence": 22
+      "interpretation": "Primary focus on: pgt-ui, .codex, skyros-agent",
+      "evidence": 3
     }
   },
   "declarative": {},
@@ -44,18 +34,20 @@
       "directories": [
         "tests",
         ".aios-core",
+        "scripts",
         "squads",
+        "reasoning-packages",
         "clients"
       ],
-      "interpretation": "4 important areas not recently touched — consider review",
-      "evidence": 22
+      "interpretation": "6 important areas not recently touched — consider review",
+      "evidence": 3
     }
   },
   "insights": [],
   "_meta": {
     "version": "1.0.0",
-    "lastEnriched": "2026-04-09T21:51:10.140Z",
-    "observationCompleteness": 0.75,
-    "enrichmentCycles": 22
+    "lastEnriched": "2026-04-29T16:05:25.577Z",
+    "observationCompleteness": 0.5,
+    "enrichmentCycles": 3
   }
 }
