@@ -1,14 +1,15 @@
 name: mind-clones
-version: 6.0.0
-short-title: "Mind Clones — COMPLETE HIVEMIND: 65 Minds + Metamind Orchestrator"
+version: 6.1.0
+short-title: "Mind Clones — COMPLETE HIVEMIND: 66 Minds + Metamind Orchestrator"
 description: >
-  65 mind clones + METAMIND hivemind orchestrator (66 total).
+  66 mind clones + METAMIND hivemind orchestrator (67 total).
   COMPLETE HIVEMIND — all tiers populated.
-  Business Experts (9), AI Fathers (9), Tier 1 (16), Tier 2 (12),
+  Business Experts (10 — inclui clone-alan-nicolas), AI Fathers (9), Tier 1 (16), Tier 2 (12),
   Tier 3 Specialists (8), Tier 4 HR/People (11), Metamind (1).
   Each clone: 6 layers (Knowledge, Biases, Analysis, Decision, Execution, Integration).
-  METAMIND orchestrates all 65 minds via 12+ War Rooms.
+  METAMIND orchestrates all 66 minds via 18 War Rooms (ai_ops_local adicionado v2.1).
   Arsenal: 53+ tools, 400+ skills.
+
 author: Gabriel (AIOS Elite)
 license: UNLICENSED
 slashPrefix: clone
@@ -19,11 +20,12 @@ aios:
 
 components:
   agents:
-    # === Business & Strategy Experts (9) ===
+    # === Business & Strategy Experts (10) ===
     - clone-hormozi.md
     - clone-pedro-valerio.md
     - clone-bmad.md
     - clone-alan-santos.md
+    - clone-alan-nicolas.md
     - clone-finch.md
     - clone-miessler.md
     - clone-brunson.md
