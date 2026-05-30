@@ -25,6 +25,17 @@ Checklist:
   - "[ ] Criar 5 casos de teste"
   - "[ ] Executar quality gates"
   - "[ ] Aprovar com o dono"
+veto_conditions:
+  - "SOP sem rollback documentado → bloqueado"
+  - "Menos de 5 casos de teste → não aprovar"
+  - "Automação não idempotente (rodar 2x gera 2x resultado) → refazer"
+  - "Dono não aprovou o fluxo em test mode → não publicar"
+  - "Sem logs ativos → não deployar"
+completion_criteria:
+  - "SOP documentado com trigger/passos/exceções/rollback/métricas"
+  - "5 casos de teste executados sem erro"
+  - "Rollback testado e funcional (<5 min para desligar)"
+  - "Dono entendeu e aprovou o fluxo"
 ---
 
 # create-sop

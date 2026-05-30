@@ -25,6 +25,18 @@ Checklist:
   - "[ ] Preparar respostas para as 3 objeções mais prováveis"
   - "[ ] Definir métrica de sucesso acordada com o dono"
   - "[ ] Próximo passo claro: 'Preciso de 30 min seu nos próximos 3 dias'"
+veto_conditions:
+  - "Pitch começa falando de IA/tecnologia → reescrever (começa pela dor)"
+  - "Free trial sem prazo (30 dias) → definir deadline"
+  - "Sem métrica de sucesso acordada → não iniciar trial"
+  - "Cold call para desconhecido → vetado (só relação existente)"
+  - "Conversão sem ROI calculado → não apresentar proposta"
+completion_criteria:
+  - "Hook personalizado para o prospect"
+  - "Story com case real (não hipotético)"
+  - "Offer com prazo 30 dias e entrega clara"
+  - "3 objeções antecipadas com respostas"
+  - "Métrica de sucesso definida e acordada"
 ---
 
 # free-trial-pitch

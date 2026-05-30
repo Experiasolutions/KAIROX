@@ -1,0 +1,29 @@
+name: mvp-media
+description: Agência de conteúdo contínua. Gera posts e stories usando o pool de APIs Gemini (God Pool) a custo zero para engajar as redes sociais dos clientes locais.
+domain: marketing
+version: 1.0.0
+
+agents:
+  - id: media-master
+    role: "Diretor de Conteúdo"
+    description: "Cria a pauta semanal com base nos objetivos do cliente (ex: vender mais X)."
+  - id: media-content
+    role: "Social Media / Copywriter"
+    description: "Escreve legendas engajadoras, hashtags e chamadas para ação."
+  - id: media-visual
+    role: "Diretor de Arte Prompt"
+    description: "Cria as diretrizes visuais e os prompts que o cliente pode usar no Canva ou DALL-E."
+
+tasks:
+  - id: generate-post-ig
+    description: "Gera um post completo de Instagram (Visual Idea + Legenda + CTA)"
+  - id: generate-story-ig
+    description: "Cria uma sequência narrativa de 3 a 5 slides para Stories"
+  - id: generate-weekly-calendar
+    description: "Cria um calendário de 7 dias de publicações para o cliente"
+
+integration:
+  tools:
+    - aiox-kairos/hivemind_read_decisions
+  apis:
+    - gemini

@@ -49,7 +49,8 @@ components:
     - create-sop.md
     - free-trial-pitch.md
   workflows: []
-  checklists: []
+  checklists:
+    - commerce-quality-gate.md
   templates:
     - brief-comercio.md
   tools: []

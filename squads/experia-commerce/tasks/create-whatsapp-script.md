@@ -27,6 +27,17 @@ Checklist:
   - "[ ] Definir handoff humano (quando bot cede para dono)"
   - "[ ] Teste dos 5 cenários: interesse, preço, sumiço, reclamação, urgência"
   - "[ ] Aprovação do dono: 'Parece eu falando?'"
+veto_conditions:
+  - "Script não lido em voz alta → refazer"
+  - "Dono não aprovou a voz como sua → não implementar"
+  - "Sem handoff humano configurado → bloqueado"
+  - "Frase 'sou um assistente virtual' encontrada → vetado"
+  - "Sem teste dos 5 cenários → não aprovar"
+completion_criteria:
+  - "Script de recepção + FAQ + follow-up + reativação escritos"
+  - "5 cenários testados (interesse, preço, sumiço, reclamação, urgência)"
+  - "Dono reconhece a voz como sua"
+  - "Handoff humano mapeado e funcional"
 ---
 
 # create-whatsapp-script

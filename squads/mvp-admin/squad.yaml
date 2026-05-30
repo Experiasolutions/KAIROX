@@ -1,0 +1,31 @@
+name: mvp-admin
+description: Back-office digital invisível. Garante que os processos internos rodem e que o cliente receba reports diários sem precisar pedir.
+domain: operations
+version: 1.0.0
+
+agents:
+  - id: admin-master
+    role: "Orquestrador de Back-Office"
+    description: "Coordena a rotina matinal e noturna. Cobra relatórios dos outros agentes."
+  - id: admin-sop
+    role: "Especialista em Processos (SOP)"
+    description: "Captura fluxos implícitos do negócio e formaliza em checklists."
+  - id: admin-ops
+    role: "Operador de Tarefas"
+    description: "Executa lembretes, organiza arquivos recebidos pelo WA e checa filas."
+
+tasks:
+  - id: create-daily-brief
+    description: "Gerar resumo matinal das pendências de hoje para o dono"
+  - id: create-sop-interno
+    description: "Documentar um processo do negócio"
+  - id: create-weekly-summary
+    description: "Gerar relatório de fechamento da semana"
+
+integration:
+  tools:
+    - aiox-kairos/hivemind_read_decisions
+    - aiox-kairos/hivemind_log_decision
+  apis:
+    - supabase
+    - evolution

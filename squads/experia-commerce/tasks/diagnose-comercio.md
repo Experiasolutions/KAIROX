@@ -23,6 +23,16 @@ Checklist:
   - "[ ] Definir P0 (maior impacto, menor esforço de implementar)"
   - "[ ] Indicar Executor correto para cada problema"
   - "[ ] Apresentar diagnóstico ao dono em linguagem simples"
+veto_conditions:
+  - "Dados de volume/ticket baseados em chute → refazer com dados reais do dono"
+  - "Menos de 3 vazamentos identificados → pesquisar mais"
+  - "Nenhum P0 definido → não encerrar diagnóstico"
+  - "Dono não foi consultado → diagnóstico é inválido"
+completion_criteria:
+  - "3 vazamentos identificados com impacto em R$/mês"
+  - "P0/P1/P2 definidos com justificativa de ROI"
+  - "Executor indicado para cada problema"
+  - "Script de apresentação redigido para o dono"
 ---
 
 # diagnose-comercio

@@ -22,6 +22,17 @@ triage_fase_3_advisory: ["Hormozi", "Finch"]
 triage_fase_4_squad: "experia-commerce"
 triage_fase_5_surface: "C004, C005"
 triage_fase_6_ecosystem: ["diagnose-comercio", "create-whatsapp-script", "brief-comercio"]
+veto_conditions:
+  - "Brief com campos vazios → NÃO prosseguir para diagnóstico"
+  - "Diagnóstico financeiro sem dados reais do dono → NÃO apresentar"
+  - "Plano P0 sem executor designado → NÃO iniciar trial"
+  - "Dono não deu OK explícito → NÃO ativar nenhuma automação"
+completion_criteria:
+  - "Brief 100% preenchido (todos os 8 campos)"
+  - "Diagnóstico com 3 vazamentos em R$"
+  - "Plano P0/P1/P2 com executores designados"
+  - "Dono aprovou verbalmente o plano"
+  - "Check-in de 7 dias agendado"
 ---
 
 # onboard-comercio

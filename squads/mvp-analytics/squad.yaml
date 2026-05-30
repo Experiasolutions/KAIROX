@@ -1,0 +1,26 @@
+name: mvp-analytics
+description: Esquadrão focado em extrair valor dos dados operacionais e de mensagens, convertendo-os em insights de negócio e relatórios visuais.
+domain: data
+version: 1.0.0
+
+agents:
+  - id: analytics-master
+    role: "Analista de Dados Chefe"
+    description: "Consolida os dados do Supabase e Evolution API para identificar gargalos operacionais e padrões."
+  - id: analytics-report
+    role: "Formatador de Relatórios"
+    description: "Converte dados brutos em templates legíveis (Markdown/HTML) para o cliente final."
+
+tasks:
+  - id: generate-weekly-report
+    description: "KPIs da semana (msgs, leads, conversões)"
+  - id: generate-client-insights
+    description: "Mapeamento de horários de pico e serviços mais buscados"
+  - id: generate-monthly-review
+    description: "Revisão mensal com recomendações acionáveis de negócio"
+
+integration:
+  tools:
+    - aiox-kairos/hivemind_read_decisions
+  apis:
+    - supabase

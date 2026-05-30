@@ -23,6 +23,16 @@ triage_fase_3_advisory: ["Godin", "Hormozi"]
 triage_fase_4_squad: "experia-commerce"
 triage_fase_5_surface: "C001, C002"
 triage_fase_6_ecosystem: ["onboard-comercio", "RP-Zero-Budget-Revenue"]
+veto_conditions:
+  - "Relatório com mais de 10 linhas → reduzir"
+  - "Tom robótico (jargão de TI, markdown, tabelas) → reescrever humano"
+  - "Dono não sabe agir com os KPIs → trocar métricas"
+  - "Sem comparativo temporal → adicionar vs. ontem/semana passada"
+completion_criteria:
+  - "Template cabe em 1 tela de celular"
+  - "3-5 KPIs definidos com fórmula de cálculo"
+  - "Primeiro envio manual aprovado pelo dono"
+  - "Instruções de coleta e envio documentadas"
 ---
 
 # create-morning-report
