@@ -432,6 +432,83 @@ function scanTools() {
         },
     });
 
+
+    // ============================================================
+    // RAILWAY API TOOLS v1.0
+    // ============================================================
+
+    // Tool: railway_list_services
+    tools.push({
+        name: 'railway_list_services',
+        description: 'Lista todos os serviços de um projeto Railway. Retorna nome, status e ID de cada serviço.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                project_id: { type: 'string', description: 'ID do projeto Railway (opcional — usa RAILWAY_PROJECT_ID do .env se omitido)' },
+            },
+            required: [],
+        },
+    });
+
+    // Tool: railway_service_status
+    tools.push({
+        name: 'railway_service_status',
+        description: 'Verifica o status de deploy de um serviço Railway específico: ambiente, última versão, URL pública e status de saúde.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                service_id: { type: 'string', description: 'ID do serviço Railway' },
+                project_id: { type: 'string', description: 'ID do projeto Railway (opcional — usa RAILWAY_PROJECT_ID do .env se omitido)' },
+            },
+            required: ['service_id'],
+        },
+    });
+
+    // Tool: railway_deploy_service
+    tools.push({
+        name: 'railway_deploy_service',
+        description: 'Dispara um redeploy de um serviço Railway. Útil após alterar variáveis de ambiente ou para forçar um reinício.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                service_id: { type: 'string', description: 'ID do serviço Railway a ser redeployado' },
+                environment_id: { type: 'string', description: 'ID do ambiente Railway (opcional — usa o ambiente production por padrão)' },
+            },
+            required: ['service_id'],
+        },
+    });
+
+    // Tool: railway_set_variable
+    tools.push({
+        name: 'railway_set_variable',
+        description: 'Define ou atualiza uma variável de ambiente em um serviço Railway sem precisar acessar o dashboard.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                service_id: { type: 'string', description: 'ID do serviço Railway' },
+                environment_id: { type: 'string', description: 'ID do ambiente Railway (opcional — usa production por padrão)' },
+                name: { type: 'string', description: 'Nome da variável (ex: GROQ_API_KEY, PROMPT_BASE)' },
+                value: { type: 'string', description: 'Valor da variável' },
+            },
+            required: ['service_id', 'name', 'value'],
+        },
+    });
+
+    // Tool: railway_get_logs
+    tools.push({
+        name: 'railway_get_logs',
+        description: 'Busca os logs mais recentes de um serviço Railway para debug e monitoramento.',
+        inputSchema: {
+            type: 'object',
+            properties: {
+                service_id: { type: 'string', description: 'ID do serviço Railway' },
+                environment_id: { type: 'string', description: 'ID do ambiente Railway (opcional — usa production por padrão)' },
+                limit: { type: 'number', description: 'Número de linhas de log a retornar (padrão: 50, máx: 500)' },
+            },
+            required: ['service_id'],
+        },
+    });
+
     return tools;
 }
 
@@ -439,7 +516,7 @@ function scanTools() {
 // TOOL HANDLERS
 // ============================================================
 
-function handleTool(name, args) {
+async function handleTool(name, args) {
     switch (name) {
         case 'aios_list_squads': {
             const squads = fs.readdirSync(SQUADS_DIR)
@@ -1076,6 +1153,290 @@ function handleTool(name, args) {
             }
         }
 
+        // ============================================================
+        // RAILWAY API HANDLERS v1.0
+        // ============================================================
+
+        case 'railway_list_services': {
+            const token = process.env.RAILWAY_TOKEN || process.env.RAILWAY_API_TOKEN;
+            if (!token) return { error: 'RAILWAY_TOKEN não configurado no .env. Adicione: RAILWAY_TOKEN=seu_token_aqui' };
+
+            const projectId = args.project_id || process.env.RAILWAY_PROJECT_ID;
+            if (!projectId) return { error: 'project_id não fornecido e RAILWAY_PROJECT_ID não está no .env' };
+
+            const query = `query { project(id: "${projectId}") { services { edges { node { id name createdAt } } } } }`;
+
+            try {
+                const https = require('https');
+                const body = JSON.stringify({ query });
+                const result = await new Promise((resolve, reject) => {
+                    const req = https.request({
+                        hostname: 'backboard.railway.com',
+                        path: '/graphql/v2',
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Length': Buffer.byteLength(body),
+                        },
+                    }, (res) => {
+                        let data = '';
+                        res.on('data', chunk => data += chunk);
+                        res.on('end', () => resolve(JSON.parse(data)));
+                    });
+                    req.on('error', reject);
+                    req.write(body);
+                    req.end();
+                });
+                if (result.errors) return { error: result.errors[0].message, details: result.errors };
+                const services = result.data.project.services.edges.map(e => e.node);
+                return { project_id: projectId, services, count: services.length };
+            } catch (e) {
+                return { error: `Falha na chamada Railway API: ${e.message}` };
+            }
+        }
+
+        case 'railway_service_status': {
+            const token = process.env.RAILWAY_TOKEN || process.env.RAILWAY_API_TOKEN;
+            if (!token) return { error: 'RAILWAY_TOKEN não configurado no .env' };
+
+            const projectId = args.project_id || process.env.RAILWAY_PROJECT_ID;
+            const serviceId = args.service_id;
+
+            const query = `query {
+                deployments(input: { serviceId: "${serviceId}" }) {
+                    edges {
+                        node {
+                            id
+                            status
+                            createdAt
+                            url
+                            meta
+                        }
+                    }
+                }
+            }`;
+
+            try {
+                const https = require('https');
+                const body = JSON.stringify({ query });
+                const result = await new Promise((resolve, reject) => {
+                    const req = https.request({
+                        hostname: 'backboard.railway.com',
+                        path: '/graphql/v2',
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Length': Buffer.byteLength(body),
+                        },
+                    }, (res) => {
+                        let data = '';
+                        res.on('data', chunk => data += chunk);
+                        res.on('end', () => resolve(JSON.parse(data)));
+                    });
+                    req.on('error', reject);
+                    req.write(body);
+                    req.end();
+                });
+                if (result.errors) return { error: result.errors[0].message };
+                const deployments = result.data.deployments.edges.map(e => e.node);
+                const latest = deployments[0] || null;
+                return {
+                    service_id: serviceId,
+                    latest_deployment: latest,
+                    all_deployments_count: deployments.length,
+                };
+            } catch (e) {
+                return { error: `Falha na chamada Railway API: ${e.message}` };
+            }
+        }
+
+        case 'railway_deploy_service': {
+            const token = process.env.RAILWAY_TOKEN || process.env.RAILWAY_API_TOKEN;
+            if (!token) return { error: 'RAILWAY_TOKEN não configurado no .env' };
+
+            const serviceId = args.service_id;
+            const environmentId = args.environment_id || process.env.RAILWAY_ENVIRONMENT_ID;
+            if (!environmentId) return { error: 'environment_id não fornecido e RAILWAY_ENVIRONMENT_ID não está no .env' };
+
+            const mutation = `mutation {
+                serviceInstanceRedeploy(environmentId: "${environmentId}", serviceId: "${serviceId}")
+            }`;
+
+            try {
+                const https = require('https');
+                const body = JSON.stringify({ query: mutation });
+                const result = await new Promise((resolve, reject) => {
+                    const req = https.request({
+                        hostname: 'backboard.railway.com',
+                        path: '/graphql/v2',
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Length': Buffer.byteLength(body),
+                        },
+                    }, (res) => {
+                        let data = '';
+                        res.on('data', chunk => data += chunk);
+                        res.on('end', () => resolve(JSON.parse(data)));
+                    });
+                    req.on('error', reject);
+                    req.write(body);
+                    req.end();
+                });
+                if (result.errors) return { error: result.errors[0].message };
+                return {
+                    redeployed: true,
+                    service_id: serviceId,
+                    environment_id: environmentId,
+                    timestamp: new Date().toISOString(),
+                    message: 'Redeploy disparado com sucesso. Use railway_service_status para acompanhar.',
+                };
+            } catch (e) {
+                return { error: `Falha no redeploy: ${e.message}` };
+            }
+        }
+
+        case 'railway_set_variable': {
+            const token = process.env.RAILWAY_TOKEN || process.env.RAILWAY_API_TOKEN;
+            if (!token) return { error: 'RAILWAY_TOKEN não configurado no .env' };
+
+            const projectId = args.project_id || process.env.RAILWAY_PROJECT_ID;
+            const environmentId = args.environment_id || process.env.RAILWAY_ENVIRONMENT_ID;
+            if (!environmentId) return { error: 'environment_id não fornecido e RAILWAY_ENVIRONMENT_ID não está no .env' };
+
+            const mutation = `mutation {
+                variableUpsert(input: {
+                    projectId: "${projectId}"
+                    environmentId: "${environmentId}"
+                    serviceId: "${args.service_id}"
+                    name: "${args.name.replace(/"/g, '\\"')}"
+                    value: "${args.value.replace(/"/g, '\\"')}"
+                })
+            }`;
+
+            try {
+                const https = require('https');
+                const body = JSON.stringify({ query: mutation });
+                const result = await new Promise((resolve, reject) => {
+                    const req = https.request({
+                        hostname: 'backboard.railway.com',
+                        path: '/graphql/v2',
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Length': Buffer.byteLength(body),
+                        },
+                    }, (res) => {
+                        let data = '';
+                        res.on('data', chunk => data += chunk);
+                        res.on('end', () => resolve(JSON.parse(data)));
+                    });
+                    req.on('error', reject);
+                    req.write(body);
+                    req.end();
+                });
+                if (result.errors) return { error: result.errors[0].message };
+                return {
+                    set: true,
+                    variable: args.name,
+                    service_id: args.service_id,
+                    message: `Variável '${args.name}' definida. Faça redeploy via railway_deploy_service para aplicar.`,
+                };
+            } catch (e) {
+                return { error: `Falha ao definir variável: ${e.message}` };
+            }
+        }
+
+        case 'railway_get_logs': {
+            const token = process.env.RAILWAY_TOKEN || process.env.RAILWAY_API_TOKEN;
+            if (!token) return { error: 'RAILWAY_TOKEN não configurado no .env' };
+
+            const environmentId = args.environment_id || process.env.RAILWAY_ENVIRONMENT_ID;
+            if (!environmentId) return { error: 'environment_id não fornecido e RAILWAY_ENVIRONMENT_ID não está no .env' };
+
+            const limit = Math.min(args.limit || 50, 500);
+
+            const query = `query {
+                deploymentLogs(
+                    deploymentId: ""
+                    filter: ""
+                    limit: ${limit}
+                ) {
+                    timestamp
+                    message
+                    severity
+                }
+            }`;
+
+            // Busca o último deployment ID primeiro
+            const deployQuery = `query {
+                deployments(input: { serviceId: "${args.service_id}" }) {
+                    edges { node { id status } }
+                }
+            }`;
+
+            try {
+                const https = require('https');
+
+                const makeRequest = (body) => new Promise((resolve, reject) => {
+                    const req = https.request({
+                        hostname: 'backboard.railway.com',
+                        path: '/graphql/v2',
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Length': Buffer.byteLength(body),
+                        },
+                    }, (res) => {
+                        let data = '';
+                        res.on('data', chunk => data += chunk);
+                        res.on('end', () => resolve(JSON.parse(data)));
+                    });
+                    req.on('error', reject);
+                    req.write(body);
+                    req.end();
+                });
+
+                const deployResult = await makeRequest(JSON.stringify({ query: deployQuery }));
+                if (deployResult.errors) return { error: deployResult.errors[0].message };
+
+                const deployments = deployResult.data?.deployments?.edges || [];
+                if (!deployments.length) return { error: 'Nenhum deployment encontrado para este serviço', service_id: args.service_id };
+
+                const latestDeployId = deployments[0].node.id;
+                const logQuery = `query {
+                    deploymentLogs(
+                        deploymentId: "${latestDeployId}"
+                        filter: ""
+                        limit: ${limit}
+                    ) {
+                        timestamp
+                        message
+                        severity
+                    }
+                }`;
+
+                const logResult = await makeRequest(JSON.stringify({ query: logQuery }));
+                if (logResult.errors) return { error: logResult.errors[0].message };
+
+                const logs = logResult.data?.deploymentLogs || [];
+                return {
+                    service_id: args.service_id,
+                    deployment_id: latestDeployId,
+                    deployment_status: deployments[0].node.status,
+                    logs,
+                    log_count: logs.length,
+                };
+            } catch (e) {
+                return { error: `Falha ao buscar logs: ${e.message}` };
+            }
+        }
+
         default:
             return { error: `Unknown tool: ${name}` };
     }
@@ -1167,10 +1528,10 @@ if (!process.argv.includes('--list') && !process.argv.includes('--test')) {
         const lines = buffer.split('\n');
         buffer = lines.pop() || '';
 
-        lines.filter(l => l.trim()).forEach(line => {
+        lines.filter(l => l.trim()).forEach(async line => {
             try {
                 const msg = JSON.parse(line);
-                const response = handleMessage(msg, tools);
+                const response = await handleMessage(msg, tools);
                 if (response) {
                     process.stdout.write(JSON.stringify(response) + '\n');
                 }
@@ -1180,7 +1541,7 @@ if (!process.argv.includes('--list') && !process.argv.includes('--test')) {
         });
     });
 
-    function handleMessage(msg, tools) {
+    async function handleMessage(msg, tools) {
         const { id, method, params } = msg;
 
         switch (method) {
@@ -1197,7 +1558,7 @@ if (!process.argv.includes('--list') && !process.argv.includes('--test')) {
                 return { jsonrpc: '2.0', id, result: { tools } };
 
             case 'tools/call':
-                const result = handleTool(params.name, params.arguments || {});
+                const result = await Promise.resolve(handleTool(params.name, params.arguments || {}));
                 return {
                     jsonrpc: '2.0', id, result: {
                         content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
@@ -1213,6 +1574,6 @@ if (!process.argv.includes('--list') && !process.argv.includes('--test')) {
     }
 
     // Log to stderr (MCP standard)
-    process.stderr.write('🔧 AIOS + KAIROS MCP Server v5.0.0-hivemind started (stdio mode)\n');
-    process.stderr.write(`   ${tools.length} tools exposed (10 AIOS + 13 KAIROS + 5 Hivemind)\n`);
+    process.stderr.write('🔧 AIOS + KAIROS MCP Server v5.1.0-railway started (stdio mode)\n');
+    process.stderr.write(`   ${tools.length} tools exposed (10 AIOS + 13 KAIROS + 5 Hivemind + 5 Railway)\n`);
 }

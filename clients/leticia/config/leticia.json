@@ -1,0 +1,31 @@
+{
+  "client_id": "leticia_estetica",
+  "name": "Leticia Esteticista",
+  "niche": "Estética Corporal e Facial",
+  "status": "onboarding_mvp",
+  "channels": {
+    "whatsapp": {
+      "type": "personal",
+      "provider": "evolution_api",
+      "active": true
+    },
+    "instagram": {
+      "type": "professional_personal",
+      "active": true
+    }
+  },
+  "persona": {
+    "tone": "informal, jovem, empático, alto-astral",
+    "forbidden_services": ["sobrancelhas", "cílios", "extensões"],
+    "core_services": ["estética corporal", "estética facial"]
+  },
+  "business_goals": {
+    "primary": "captação de novos clientes",
+    "secondary": "reativação de clientes inativas",
+    "tertiary": "lembretes de agendamento"
+  },
+  "schedule": {
+    "type": "highly_flexible",
+    "fixed_hours": false
+  }
+}

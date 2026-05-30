@@ -1,0 +1,267 @@
+@evolutionUrl = http://COLOQUE_O_IP_DA_VPS_AQUI:8080
+@globalApiKey = COLOQUE_SUA_GLOBAL_API_KEY_AQUI
+@n8nWebhookBase = https://n8n-production-e77a.up.railway.app/webhook
+
+### ============================================================
+### PASSO 1: Verificar se a VPS está de pé
+### ============================================================
+GET {{evolutionUrl}}/
+apikey: {{globalApiKey}}
+
+### ============================================================
+### PASSO 2: Criar todas as 7 instâncias (rodar uma a uma)
+### ============================================================
+
+### 2.1 Porto Alemão
+POST {{evolutionUrl}}/instance/create
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "instanceName": "porto-alemao",
+  "qrcode": true,
+  "integration": "WHATSAPP-BAILEYS"
+}
+
+###
+
+### 2.2 Paulo (Tapeceiro)
+POST {{evolutionUrl}}/instance/create
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "instanceName": "paulo-tapeceiro",
+  "qrcode": true,
+  "integration": "WHATSAPP-BAILEYS"
+}
+
+###
+
+### 2.3 Felix Cell (Técnico de Celular)
+POST {{evolutionUrl}}/instance/create
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "instanceName": "felix-cell",
+  "qrcode": true,
+  "integration": "WHATSAPP-BAILEYS"
+}
+
+###
+
+### 2.4 Leandro (Bazar & Perfumaria)
+POST {{evolutionUrl}}/instance/create
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "instanceName": "leandro-bazar",
+  "qrcode": true,
+  "integration": "WHATSAPP-BAILEYS"
+}
+
+###
+
+### 2.5 Miranda (Técnico de Informática)
+POST {{evolutionUrl}}/instance/create
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "instanceName": "miranda-informatica",
+  "qrcode": true,
+  "integration": "WHATSAPP-BAILEYS"
+}
+
+###
+
+### 2.6 Marmitaria da Cleo
+POST {{evolutionUrl}}/instance/create
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "instanceName": "marmitaria-cleo",
+  "qrcode": true,
+  "integration": "WHATSAPP-BAILEYS"
+}
+
+###
+
+### 2.7 Padaria São Jorge
+POST {{evolutionUrl}}/instance/create
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "instanceName": "padaria-sao-jorge",
+  "qrcode": true,
+  "integration": "WHATSAPP-BAILEYS"
+}
+
+### ============================================================
+### PASSO 3: Configurar Webhooks (N8N) — rodar após criar instâncias
+### A URL do webhook deve ser única por instância para o N8N rotear
+### ============================================================
+
+### 3.1 Webhook Porto Alemão
+POST {{evolutionUrl}}/webhook/set/porto-alemao
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "webhook": {
+    "url": "{{n8nWebhookBase}}/whatsapp-bots",
+    "byEvents": false,
+    "base64": false,
+    "events": ["MESSAGES_UPSERT"]
+  }
+}
+
+###
+
+### 3.2 Webhook Paulo Tapeceiro
+POST {{evolutionUrl}}/webhook/set/paulo-tapeceiro
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "webhook": {
+    "url": "{{n8nWebhookBase}}/whatsapp-bots",
+    "byEvents": false,
+    "base64": false,
+    "events": ["MESSAGES_UPSERT"]
+  }
+}
+
+###
+
+### 3.3 Webhook Felix Cell
+POST {{evolutionUrl}}/webhook/set/felix-cell
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "webhook": {
+    "url": "{{n8nWebhookBase}}/whatsapp-bots",
+    "byEvents": false,
+    "base64": false,
+    "events": ["MESSAGES_UPSERT"]
+  }
+}
+
+###
+
+### 3.4 Webhook Leandro Bazar
+POST {{evolutionUrl}}/webhook/set/leandro-bazar
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "webhook": {
+    "url": "{{n8nWebhookBase}}/whatsapp-bots",
+    "byEvents": false,
+    "base64": false,
+    "events": ["MESSAGES_UPSERT"]
+  }
+}
+
+###
+
+### 3.5 Webhook Miranda Informática
+POST {{evolutionUrl}}/webhook/set/miranda-informatica
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "webhook": {
+    "url": "{{n8nWebhookBase}}/whatsapp-bots",
+    "byEvents": false,
+    "base64": false,
+    "events": ["MESSAGES_UPSERT"]
+  }
+}
+
+###
+
+### 3.6 Webhook Marmitaria Cleo
+POST {{evolutionUrl}}/webhook/set/marmitaria-cleo
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "webhook": {
+    "url": "{{n8nWebhookBase}}/whatsapp-bots",
+    "byEvents": false,
+    "base64": false,
+    "events": ["MESSAGES_UPSERT"]
+  }
+}
+
+###
+
+### 3.7 Webhook Padaria São Jorge
+POST {{evolutionUrl}}/webhook/set/padaria-sao-jorge
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "webhook": {
+    "url": "{{n8nWebhookBase}}/whatsapp-bots",
+    "byEvents": false,
+    "base64": false,
+    "events": ["MESSAGES_UPSERT"]
+  }
+}
+
+### ============================================================
+### PASSO 4: Gerar QR Codes para conexão (rodar no cliente)
+### ============================================================
+
+### QR Porto Alemão
+GET {{evolutionUrl}}/instance/connect/porto-alemao
+apikey: {{globalApiKey}}
+
+###
+
+### QR Felix Cell
+GET {{evolutionUrl}}/instance/connect/felix-cell
+apikey: {{globalApiKey}}
+
+###
+
+### QR Miranda Informática  
+GET {{evolutionUrl}}/instance/connect/miranda-informatica
+apikey: {{globalApiKey}}
+
+###
+
+### QR Leandro Bazar
+GET {{evolutionUrl}}/instance/connect/leandro-bazar
+apikey: {{globalApiKey}}
+
+###
+
+### QR Marmitaria Cleo
+GET {{evolutionUrl}}/instance/connect/marmitaria-cleo
+apikey: {{globalApiKey}}
+
+###
+
+### QR Padaria São Jorge
+GET {{evolutionUrl}}/instance/connect/padaria-sao-jorge
+apikey: {{globalApiKey}}
+
+###
+
+### QR Paulo Tapeceiro
+GET {{evolutionUrl}}/instance/connect/paulo-tapeceiro
+apikey: {{globalApiKey}}
+
+### ============================================================
+### PASSO 5: Verificar status de todas as instâncias
+### ============================================================
+GET {{evolutionUrl}}/instance/fetchInstances
+apikey: {{globalApiKey}}

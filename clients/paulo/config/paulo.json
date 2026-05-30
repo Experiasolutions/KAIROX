@@ -1,0 +1,32 @@
+{
+  "client_id": "paulo_tapeceiro",
+  "name": "Paulo Tapeçaria",
+  "niche": "Tapeçaria High Ticket (Sofás, Poltronas, Cadeiras)",
+  "status": "onboarding_mvp",
+  "channels": {
+    "whatsapp": {
+      "type": "business_transition",
+      "provider": "evolution_api",
+      "active": true
+    },
+    "instagram": {
+      "active": false
+    },
+    "facebook": {
+      "active": false
+    }
+  },
+  "persona": {
+    "tone": "profissional, artesanal, consultivo, respeitoso",
+    "core_services": ["reforma de sofás", "reforma de poltronas", "reforma de cadeiras", "estofados high ticket"]
+  },
+  "business_goals": {
+    "primary": "triagem de pedidos e orçamentos via WhatsApp",
+    "secondary": "status de andamento de serviço",
+    "tertiary": "logística (agendamento de retirada/entrega)"
+  },
+  "schedule": {
+    "type": "business_hours",
+    "fixed_hours": true
+  }
+}

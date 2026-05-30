@@ -1,0 +1,64 @@
+@evolutionUrl = http://COLOQUE_O_IP_DA_VPS_AQUI:8080
+@globalApiKey = COLOQUE_SUA_GLOBAL_API_KEY_AQUI
+@instanceName = tecnico-celular
+@n8nWebhookUrl = https://n8n-production-e77a.up.railway.app/webhook/tecnico-celular
+
+### 1. Verificar Status da API
+GET {{evolutionUrl}}/
+apikey: {{globalApiKey}}
+
+### 2. Criar Instância para o Técnico
+POST {{evolutionUrl}}/instance/create
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "instanceName": "{{instanceName}}",
+  "qrcode": true,
+  "integration": "WHATSAPP-BAILEYS"
+}
+
+### 3. Conectar Instância (Gerar QR Code se não estiver conectado)
+GET {{evolutionUrl}}/instance/connect/{{instanceName}}
+apikey: {{globalApiKey}}
+
+### 4. Configurar Webhook para o N8N
+POST {{evolutionUrl}}/webhook/set/{{instanceName}}
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "webhook": {
+    "url": "{{n8nWebhookUrl}}",
+    "byEvents": false,
+    "base64": false,
+    "events": [
+      "MESSAGES_UPSERT",
+      "SEND_MESSAGE"
+    ]
+  }
+}
+
+### 5. Consultar Status da Conexão
+GET {{evolutionUrl}}/instance/connectionState/{{instanceName}}
+apikey: {{globalApiKey}}
+
+### 6. Enviar Mensagem de Teste (Substitua number pelo seu número com DDI, ex: 5511999999999)
+POST {{evolutionUrl}}/message/sendText/{{instanceName}}
+Content-Type: application/json
+apikey: {{globalApiKey}}
+
+{
+  "number": "5511976162450",
+  "options": {
+    "delay": 1200,
+    "presence": "composing"
+  },
+  "textMessage": {
+    "text": "🤖 Teste de conexão do bot do Técnico! A Evolution API está rodando perfeitamente."
+  }
+}
+
+### 7. Listar Todas as Instâncias
+GET {{evolutionUrl}}/instance/fetchInstances
+apikey: {{globalApiKey}}
