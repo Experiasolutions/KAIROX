@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI OPS - Dashboard 360</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo"></div>
+                <h2>AI OPS MVP</h2>
+            </div>
+            <nav>
+                <a href="#" class="active"><span class="icon">📊</span> Visão Geral</a>
+                <a href="#"><span class="icon">👥</span> Clientes Ativos</a>
+                <a href="#"><span class="icon">💬</span> Logs de WhatsApp</a>
+                <a href="#"><span class="icon">⚙️</span> Configurações</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Dashboard 360</h1>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=KAIROS&background=1d1d1f&color=fff" alt="Admin">
+                    <span>Admin Supremo</span>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total de Leads (Mês)</h3>
+                    <p class="value">482</p>
+                    <span class="trend positive">+12% vs último mês</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Automação (Taxa de Resolução)</h3>
+                    <p class="value">84%</p>
+                    <span class="trend positive">Bots rodando liso</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Handoffs (Para Humano)</h3>
+                    <p class="value">76</p>
+                    <span class="trend negative">Atenção requerida</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Receita Estimada Gerada</h3>
+                    <p class="value">R$ 14.500</p>
+                    <span class="trend positive">+ Parete ao Cubo</span>
+                </div>
+            </section>
+
+            <section class="clients-section">
+                <h2>Status dos Clientes (Real-Time)</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Nicho</th>
+                                <th>Status do Bot</th>
+                                <th>Último Morning Report</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clients-table-body">
+                            <tr>
+                                <td>Leticia Esteticista</td>
+                                <td>Estética Facial/Corporal</td>
+                                <td><span class="badge active">Online</span></td>
+                                <td>Hoje, 08:00</td>
+                            </tr>
+                            <tr>
+                                <td>Paulo Tapeçaria</td>
+                                <td>Reforma High Ticket</td>
+                                <td><span class="badge active">Online</span></td>
+                                <td>Hoje, 08:05</td>
+                            </tr>
+                            <tr>
+                                <td>Hortifruti Delivery</td>
+                                <td>Alimentação</td>
+                                <td><span class="badge warning">Reativando</span></td>
+                                <td>Ontem, 08:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

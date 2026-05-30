@@ -183,6 +183,39 @@ export function Dashboard({ onQuestlineClick }: DashboardProps = {}) {
         </div>
       </div>
 
+      {/* ══ SPRINT / BATTLE PASS MINI WIDGET ══ */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* OP 1 */}
+        <div className="glass-card p-4 border border-blue-500/20 bg-blue-500/5 hover:border-blue-500/40 transition-all cursor-pointer" onClick={() => onQuestlineClick?.("experia")}>
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <Trophy className="w-4 h-4 text-blue-400" />
+              <span className="font-mono text-xs uppercase tracking-wide text-blue-400">OP1: Experia MVP</span>
+            </div>
+            <span className="font-mono text-xs text-blue-400">33%</span>
+          </div>
+          <div className="h-1.5 w-full bg-muted/30 rounded-full overflow-hidden">
+            <div className="h-full bg-blue-500 rounded-full" style={{ width: "33%" }} />
+          </div>
+          <p className="text-[10px] text-muted-foreground mt-2">1/3 Trials Entregues</p>
+        </div>
+
+        {/* OP 2 */}
+        <div className="glass-card p-4 border border-green-500/20 bg-green-500/5 hover:border-green-500/40 transition-all cursor-pointer" onClick={() => onQuestlineClick?.("english")}>
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <Zap className="w-4 h-4 text-green-400" />
+              <span className="font-mono text-xs uppercase tracking-wide text-green-400">OP2: AI English Classes</span>
+            </div>
+            <span className="font-mono text-xs text-green-400">0%</span>
+          </div>
+          <div className="h-1.5 w-full bg-muted/30 rounded-full overflow-hidden">
+            <div className="h-full bg-green-500 rounded-full" style={{ width: "0%" }} />
+          </div>
+          <p className="text-[10px] text-muted-foreground mt-2">R$ 0 / R$ 3.000 (Caixa Rápido)</p>
+        </div>
+      </div>
+
       {/* ══ BOSS FIGHTS — Dynamic from roadmap.md ══ */}
       <div className="glass-card p-6 border border-red-500/20 animate-fade-in">
         <div className="flex items-center justify-between mb-4">

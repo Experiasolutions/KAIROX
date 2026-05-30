@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAIROS 360 | AI OPS Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="glow-bg glow-bg-2"></div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="brand">
+                <span class="logo-icon">⚡</span>
+                <h1>KAIROS<span class="accent">360</span></h1>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="#" class="nav-item active" data-view="overview">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Overview
+                </a>
+                <a href="#" class="nav-item" data-view="clients">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Clientes Ativos
+                </a>
+                <a href="#" class="nav-item" data-view="infrastructure">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    Infraestrutura
+                </a>
+            </nav>
+
+            <div class="user-profile">
+                <div class="avatar">G</div>
+                <div class="info">
+                    <span class="name">Gabriel Ferreira</span>
+                    <span class="role">Operador AI OPS</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <h2>Visão Geral da Operação</h2>
+                <div class="actions">
+                    <button class="btn btn-outline" onclick="location.reload()">🔄 Sincronizar</button>
+                    <button class="btn btn-primary" id="btn-add-client">+ Novo Cliente</button>
+                </div>
+            </header>
+
+            <!-- Metrics Grid -->
+            <section class="metrics-grid">
+                <div class="metric-card glass-panel">
+                    <div class="metric-header">
+                        <h3>Clientes Ativos</h3>
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <div class="metric-value" id="val-clients">--</div>
+                    <div class="metric-trend positive">↑ Meta: 10</div>
+                </div>
+                
+                <div class="metric-card glass-panel">
+                    <div class="metric-header">
+                        <h3>Follow-ups Pendentes</h3>
+                        <span class="status-indicator warning"></span>
+                    </div>
+                    <div class="metric-value" id="val-followups">--</div>
+                    <div class="metric-trend neutral">Fila de processamento</div>
+                </div>
+
+                <div class="metric-card glass-panel">
+                    <div class="metric-header">
+                        <h3>Mensagens Processadas (24h)</h3>
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <div class="metric-value" id="val-messages">--</div>
+                    <div class="metric-trend positive">Via God Pool</div>
+                </div>
+            </section>
+
+            <!-- Clients Section -->
+            <section class="clients-section mt-8">
+                <div class="section-header">
+                    <h3>Status dos Bots (Evolution API)</h3>
+                </div>
+                
+                <div class="table-container glass-panel">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Nicho</th>
+                                <th>Instância Evolution</th>
+                                <th>Status Bot</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clients-table-body">
+                            <!-- Populated via JS -->
+                            <tr><td colspan="5" style="text-align: center; padding: 2rem;">Carregando dados do Supabase...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section class="system-logs mt-8">
+                <div class="section-header">
+                    <h3>Decisões Recentes (Hivemind)</h3>
+                </div>
+                <div class="terminal-window glass-panel">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">engine/hivemind/decisions.jsonl</span>
+                    </div>
+                    <div class="terminal-body" id="hivemind-logs">
+                        > Inicializando KAIROX Link...
+                        > Conectando ao shared-brain protocol...
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script de Inicialização -->
+    <script>
+        // Configuração fictícia para preview. O Operador deve inserir as chaves reais.
+        const SUPABASE_URL = localStorage.getItem('supabase_url') || 'INSERIR_URL_AQUI';
+        const SUPABASE_KEY = localStorage.getItem('supabase_key') || 'INSERIR_KEY_AQUI';
+        
+        // Mock data para exibição inicial caso o Supabase não esteja configurado
+        const MOCK_CLIENTS = [
+            { name: "Leticia", niche: "Estética", instance: "leticia-estetica", status: "🟡 Trial Novo", active: true },
+            { name: "Paulo", niche: "Tapeçaria", instance: "paulo-tapecaria", status: "🟡 Trial Novo", active: true },
+            { name: "Hortifruti da Elaine", niche: "Comércio", instance: "hortifruti-elaine", status: "🟢 Ativo", active: true },
+            { name: "Porto Alemão", niche: "Restaurante", instance: "porto-alemao", status: "🔴 Offline (QR)", active: false }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderClients(MOCK_CLIENTS);
+            
+            // Simulação de contadores
+            document.getElementById('val-clients').innerText = "3";
+            document.getElementById('val-followups').innerText = "12";
+            document.getElementById('val-messages').innerText = "847";
+            
+            // Simulação de logs do terminal
+            const logsContainer = document.getElementById('hivemind-logs');
+            setTimeout(() => {
+                logsContainer.innerHTML += `<br><span style="color: #10b981;">[2026-04-30 08:00]</span> [mvp-admin] Disparo do Morning Briefing para 3 clientes concluído.`;
+                setTimeout(() => {
+                    logsContainer.innerHTML += `<br><span style="color: #3b82f6;">[2026-04-30 09:15]</span> [experia-commerce] Novo lead detectado na instância 'leticia-estetica'. Triagem iniciada.`;
+                }, 1500);
+            }, 1000);
+        });
+
+        function renderClients(clients) {
+            const tbody = document.getElementById('clients-table-body');
+            tbody.innerHTML = '';
+            
+            clients.forEach(client => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-weight: 500; color: #fff;">${client.name}</td>
+                    <td><span class="badge badge-outline">${client.niche}</span></td>
+                    <td class="font-mono" style="color: #94a3b8; font-size: 0.85rem;">${client.instance}</td>
+                    <td>${client.status}</td>
+                    <td>
+                        <button class="btn btn-icon" title="Ver Relatório">📊</button>
+                        <button class="btn btn-icon" title="Pausar Bot">⏸️</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -9,6 +9,10 @@ import { Sanctuary } from "@/components/sanctuary/Sanctuary";
 import { AgendaCalendar } from "@/components/agenda/AgendaCalendar";
 import { SkillsPage } from "@/components/skills/SkillsPage";
 import { QuestlinesPage } from "@/components/questlines/QuestlinesPage";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { FinancesPage } from "@/components/finances/FinancesPage";
+import { CharSheetPage } from "@/components/charsheet/CharSheetPage";
+import { BattlePassPage } from "@/components/battlepass/BattlePassPage";
 
 const sectionLabels: Record<string, string> = {
   hub: "Gabriel OS",
@@ -20,10 +24,13 @@ const sectionLabels: Record<string, string> = {
   loot: "Arsenal de Recompensas",
   sanctuary: "Santuário",
   agenda: "Agenda",
+  finances: "Finances & Treasury",
+  charsheet: "Character Sheet",
+  battlepass: "Battle Pass",
 };
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState("hub");
+  const [activeSection, setActiveSection] = useState("dashboard");
   const [expandedQuestline, setExpandedQuestline] = useState<string | null>(null);
 
   const handleNavigate = (section: string) => {
@@ -31,7 +38,7 @@ const Index = () => {
   };
 
   const handleBack = () => {
-    setActiveSection("hub");
+    setActiveSection("dashboard");
   };
 
   const handleQuestlineClick = (questlineId: string) => {
@@ -59,22 +66,32 @@ const Index = () => {
         return <LootShop />;
       case "sanctuary":
         return <Sanctuary />;
+      case "finances":
+        return <FinancesPage />;
+      case "charsheet":
+        return <CharSheetPage />;
+      case "battlepass":
+        return <BattlePassPage />;
       default:
-        return <StellarHub onNavigate={handleNavigate} />;
+        return <Dashboard onQuestlineClick={handleQuestlineClick} />;
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col w-full bg-background">
-      <HubHeader
-        activeSection={activeSection}
-        onBack={handleBack}
-        sectionLabel={sectionLabels[activeSection]}
-      />
+    <div className="min-h-screen flex w-full bg-background">
+      <Sidebar activeSection={activeSection} onSectionChange={handleNavigate} />
+      
+      <div className="flex-1 flex flex-col min-w-0">
+        <HubHeader
+          activeSection={activeSection}
+          onBack={handleBack}
+          sectionLabel={sectionLabels[activeSection]}
+        />
 
-      <main className="flex-1 p-6 overflow-auto">
-        {renderSection()}
-      </main>
+        <main className="flex-1 p-6 overflow-auto">
+          {renderSection()}
+        </main>
+      </div>
     </div>
   );
 };

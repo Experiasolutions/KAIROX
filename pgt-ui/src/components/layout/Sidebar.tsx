@@ -7,6 +7,10 @@ import {
   Calendar,
   TrendingUp,
   Scroll,
+  Wallet,
+  UserCircle,
+  Home,
+  Trophy
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,12 +20,15 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { id: "dashboard", icon: LayoutDashboard, label: "Command Center" },
+  { id: "dashboard", icon: Home, label: "Command Center" },
+  { id: "battlepass", icon: Trophy, label: "Season Pass" },
+  { id: "charsheet", icon: UserCircle, label: "Char Sheet" },
   { id: "agenda", icon: Calendar, label: "Agenda" },
   { id: "quests", icon: Scroll, label: "Daily Quests" },
   { id: "questlines", icon: LayoutDashboard, label: "Questlines" },
   { id: "skills", icon: TrendingUp, label: "Skill Tree" },
   { id: "bosses", icon: Swords, label: "Boss Room" },
+  { id: "finances", icon: Wallet, label: "Finances" },
   { id: "loot", icon: ShoppingBag, label: "Arsenal" },
   { id: "sanctuary", icon: Sparkles, label: "Santuário" },
 ];
