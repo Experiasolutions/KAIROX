@@ -42,7 +42,8 @@ app.get('/health', (req, res) => {
 });
 
 // ── Webhook Evolution API (WhatsApp) ─────────────────────────────────────────
-app.post('/webhook', async (req, res) => {
+// Suporta tanto /webhook (standalone) quanto /api/webhook/paulo (KAIROX multi-tenant)
+async function handleEvolutionWebhook(req, res) {
     try {
         const body = req.body;
 
@@ -123,7 +124,11 @@ app.post('/webhook', async (req, res) => {
         console.error('[Webhook] Erro:', error.message || error);
         res.status(500).send('Erro Interno');
     }
-});
+}
+
+// Registra em ambas as rotas (standalone e KAIROX multi-tenant)
+app.post('/webhook', handleEvolutionWebhook);
+app.post('/api/webhook/paulo', handleEvolutionWebhook);
 
 // ── Cron: Morning Brief (08h) ─────────────────────────────────────────────────
 cron.schedule('0 8 * * 1-5', () => {
