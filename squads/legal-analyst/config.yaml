@@ -16,7 +16,7 @@ pack:
     Pesquisa, classifica e analisa processos judiciais aplicando rigorosamente
     diretrizes do CNJ, jurisprudencias consolidadas e precedentes dos Relatores.
     Pipeline: Triagem -> Pesquisa -> Analise -> Fundamentacao -> Validacao -> Entrega.
-  author: AIOS
+  author: AIOX
   icon: "⚖"
   slashPrefix: legalAnalyst
 

@@ -62,7 +62,7 @@ function parseArgs() {
 
 function printHelp() {
     console.log(`
-🧬 AIOS Evolution Engine — CLI
+🧬 AIOX Evolution Engine — CLI
 
 USAGE:
   node scripts/run-evolution-cycle.js [options]
@@ -115,7 +115,7 @@ async function main() {
         console.log('');
     }
 
-    console.log('🧬 AIOS Evolution Engine starting...');
+    console.log('🧬 AIOX Evolution Engine starting...');
     console.log(`   Mode:    ${options.dryRun ? 'DRY-RUN (safe)' : '⚠️  LIVE'}`);
     console.log(`   Scope:   ${options.scope}`);
     console.log(`   Trigger: ${options.trigger}`);

@@ -340,7 +340,7 @@ handoff_protocols:
     rules:
       - "apex-lead MUST sign off before handoff (QG-AX-010, non-waivable)"
       - "All other quality gates MUST pass"
-      - "Handoff artifact saved to .aios/handoffs/"
+      - "Handoff artifact saved to .aiox/handoffs/"
 
 # ==============================================================================
 # 2. ARBITRATION RULES — When agents disagree

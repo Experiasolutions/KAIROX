@@ -83,7 +83,7 @@
             "requiredFiles": [
                 "scripts/jarvis-core.js",
                 "scripts/profile-enricher.js",
-                ".aios-core/memory/operator-profile.json"
+                ".aiox-core/memory/operator-profile.json"
             ],
             "note": "Operator Noesis reads FROM Jarvis Layer, never writes TO it"
         }

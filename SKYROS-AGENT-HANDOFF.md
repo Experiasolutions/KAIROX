@@ -23,7 +23,7 @@ Através do nosso pareamento recente no KAIROS, estabilizamos a infraestrutura c
 
 Antes da interrupção do contexto, arquitetamos o plano mestre (via Artefatos do Antigravity) de pegar o arquivo `scripts/dashboard.js` e modificá-lo da água para o vinho.
 
-Historicamente, esse dashboard rodava sob uma lógica corporativa ampla (Enterprise AIOS / Squads / Analytics B2B). Ele deve ser reimaginado em uma interface **Pessoal, Gamificada e Cyber-Minimalista**. Em resumo: um RPG para a vida real do Operador (GABS).
+Historicamente, esse dashboard rodava sob uma lógica corporativa ampla (Enterprise AIOX / Squads / Analytics B2B). Ele deve ser reimaginado em uma interface **Pessoal, Gamificada e Cyber-Minimalista**. Em resumo: um RPG para a vida real do Operador (GABS).
 
 ### 🎮 Como os artefatos de UX e Negócios foram Mapeados:
 - **Questlines Universais:** Pastas e focos da Anamnese (Sua saúde, Infrastrutura KAIROS/SKYDRA, Projetos Experia).

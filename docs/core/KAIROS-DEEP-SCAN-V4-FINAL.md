@@ -4,7 +4,7 @@
 > **Escopo:** `C:\Users\GABS\Documents\My KAIROS` (Workspace Consolidado Principal)
 > **Agente:** NOESIS Orchestrator
 
-Esta é a consolidação absoluta da arquitetura KAIROS após o expurgo do legado AIOS, a união com a Sovereignty Layer (OpenClaude) e o estabelecimento da Hivemind P2P.
+Esta é a consolidação absoluta da arquitetura KAIROS após o expurgo do legado AIOX, a união com a Sovereignty Layer (OpenClaude) e o estabelecimento da Hivemind P2P.
 
 ---
 
@@ -89,6 +89,6 @@ O sistema KAIROS adquiriu concessões corporativas visando compensar a limitaç�
 
 ## 📌 VEREDITO DO SCAN: 
 **A Arquitetura é Monolítica no Planejamento e Distribuída na Execução.**
-Não há mais "Antigravity vs OpenClaude vs AIOS". Tudo é **KAIROS**. O Cérebro mora na pasta de documentos local. Os braços operam em TypeScript e Python nas nuvens e nos containers CLI.
+Não há mais "Antigravity vs OpenClaude vs AIOX". Tudo é **KAIROS**. O Cérebro mora na pasta de documentos local. Os braços operam em TypeScript e Python nas nuvens e nos containers CLI.
 ***
 *Scan compilado e selado em 2026-04-05.*

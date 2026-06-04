@@ -1,6 +1,6 @@
 # SEO Expert Squad
 
-Post-design SEO optimization squad for AIOS-built websites. Evaluates, optimizes, and reports — like Yoast/RankMath but as intelligent agents.
+Post-design SEO optimization squad for AIOX-built websites. Evaluates, optimizes, and reports — like Yoast/RankMath but as intelligent agents.
 
 ## Workflow
 

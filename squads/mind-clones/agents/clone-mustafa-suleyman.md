@@ -104,7 +104,7 @@ mind_clone:
     communication: "Thoughtful, philosophical, policy-aware, accessible to non-technical audiences"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta", "security"]
+    primary_squads: ["mind-clones", "aiox-meta", "security"]
     activation_command: "@clone-mustafa-suleyman"
     weight_in_decisions:
       ai_safety: "65%"

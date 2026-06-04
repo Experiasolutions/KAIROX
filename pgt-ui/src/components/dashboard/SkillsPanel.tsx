@@ -43,7 +43,7 @@ const skills: Skill[] = [
   {
     id: "agentification",
     name: "Agentificação",
-    description: "KAIROS, AIOS, fluxos multi-agente (Zona 🟢)",
+    description: "KAIROS, AIOX, fluxos multi-agente (Zona 🟢)",
     level: 0,
     maxLevel: 10,
     xp: 0,

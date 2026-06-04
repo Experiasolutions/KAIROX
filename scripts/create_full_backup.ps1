@@ -1,9 +1,9 @@
-# AIOS Full Portable Backup Script (With History)
-$sourceProject = "C:\Users\Gabriel\Documents\aios-core-main\aios-core\meu-projeto-ai"
+# AIOX Full Portable Backup Script (With History)
+$sourceProject = "C:\Users\Gabriel\Documents\aiox-core-main\aiox-core\meu-projeto-ai"
 $sourceSkills = "C:\Users\Gabriel\.openclaw"
 $sourceMemory = "C:\Users\Gabriel\.gemini"
-$destDir = "$HOME\Documents\AIOS_FULL_BACKUP"
-$zipPath = "$HOME\Documents\AIOS_FULL_BACKUP.zip"
+$destDir = "$HOME\Documents\AIOX_FULL_BACKUP"
+$zipPath = "$HOME\Documents\AIOX_FULL_BACKUP.zip"
 
 Write-Host "Iniciando backup COMPLETO (com histórico)..."
 
@@ -29,7 +29,7 @@ Copy-Item -Path $sourceMemory -Destination "$destDir\user_data\.gemini" -Recurse
 
 # 5. Criar Script de Restauração Automática (restore.ps1)
 $restoreScript = @"
-Write-Host "Iniciando restauração do ambiente AIOS..."
+Write-Host "Iniciando restauração do ambiente AIOX..."
 
 # 1. Restaurar Skills e Memória para a pasta do Usuário atual
 \$userHome = [System.Environment]::GetFolderPath('UserProfile')

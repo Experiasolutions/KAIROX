@@ -264,7 +264,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/a11y-cache.yaml"
+  location: ".aiox/apex-context/a11y-cache.yaml"
   ttl: "Until component files change"
   invalidate_on:
     - "Any .tsx/.jsx file modified"

@@ -644,7 +644,7 @@ INSERT INTO conversations (user_id, session_id, role, content) VALUES
   ('test@example.com', '2026-02-18-test', 'assistant', 'Olá! Como posso ajudar?');
 
 INSERT INTO projects (user_id, name, description, status, priority) VALUES
-  ('test@example.com', 'AIOS Development', 'Sistema multi-agente', 'active', 10);
+  ('test@example.com', 'AIOX Development', 'Sistema multi-agente', 'active', 10);
 */
 
 -- ============================================================================

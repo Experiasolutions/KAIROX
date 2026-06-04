@@ -34,7 +34,7 @@ function scanProject(projectRoot, options = {}) {
 
     const dirsToScan = scope === 'targeted' && focusPath
         ? [focusPath]
-        : ['scripts', 'squads', 'docs', '.aios-core', 'reasoning-packages', 'clients', 'distillation-dataset'];
+        : ['scripts', 'squads', 'docs', '.aiox-core', 'reasoning-packages', 'clients', 'distillation-dataset'];
 
     const ignoreDirs = ['node_modules', '.git', 'dist', 'build', '.next', '__pycache__', 'archive'];
     const scanExtensions = ['.js', '.md', '.json', '.yaml', '.yml'];

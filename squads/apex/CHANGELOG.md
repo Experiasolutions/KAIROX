@@ -277,4 +277,4 @@
 - Pipeline executor with 7 phases, 6 checkpoints, 8 commands
 - Discovery tools: *discover-components, *discover-design
 - Single entry point: @apex {natural language}
-- AIOS integration with handoff artifacts
+- AIOX integration with handoff artifacts

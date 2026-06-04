@@ -162,7 +162,7 @@ Emil declares scope lock:
 git stash push -m "apex-snapshot-$(date +%s)" -- {files_in_scope}
 
 # If git stash fails (e.g., untracked files):
-git diff -- {files_in_scope} > .aios/apex-snapshots/fix-{timestamp}.patch
+git diff -- {files_in_scope} > .aiox/apex-snapshots/fix-{timestamp}.patch
 ```
 
 **Veto:** `VC-SNAPSHOT-001` — Cannot start fix without snapshot.
@@ -271,7 +271,7 @@ If user says "volta", "revert", "desfaz", "nao gostei":
 git stash pop
 
 # OR if patch was used:
-git apply --reverse .aios/apex-snapshots/fix-{timestamp}.patch
+git apply --reverse .aiox/apex-snapshots/fix-{timestamp}.patch
 ```
 
 Show: "⏪ Revertido. Arquivos restaurados ao estado anterior ao fix."

@@ -45,6 +45,7 @@
     "LICENSE"
   ],
   "scripts": {
+    "setup:lavamoat": "allow-scripts setup",
     "format": "prettier --write \"**/*.md\"",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -161,6 +162,7 @@
     "npm": ">=9.0.0"
   },
   "devDependencies": {
+    "@lavamoat/allow-scripts": "^3.0.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/jest": "^30.0.0",

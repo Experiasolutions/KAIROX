@@ -3,13 +3,13 @@
 
 **Criado por:** Claude Opus 4.6 (meta-análise do próprio modelo)
 **Target:** Gemini 3 Pro via Antigravity
-**Contexto:** Projeto AIOS (178 agentes, 16 squads, kernel neural)
+**Contexto:** Projeto AIOX (178 agentes, 16 squads, kernel neural)
 
 ---
 
 # 🎯 OBJETIVO CORE
 
-Elevar Gemini 3 Pro a **90-95% da capacidade do Opus 4.6** através de prompt engineering estrutural, metacognição explícita e compensação inteligente de limitações, mantendo sustentabilidade de tokens para desenvolvimento contínuo do AIOS.
+Elevar Gemini 3 Pro a **90-95% da capacidade do Opus 4.6** através de prompt engineering estrutural, metacognição explícita e compensação inteligente de limitações, mantendo sustentabilidade de tokens para desenvolvimento contínuo do AIOX.
 
 ---
 
@@ -445,11 +445,11 @@ try {
 ✅ Snippet de 5 linhas + "// ... resto similar"
 ```
 
-## 6. CONTEXTO AIOS (Integração Específica)
+## 6. CONTEXTO AIOX (Integração Específica)
 
-**Regra:** Todo output deve ser AIOS-aware quando relevante
+**Regra:** Todo output deve ser AIOX-aware quando relevante
 
-**Checklist de Integração AIOS:**
+**Checklist de Integração AIOX:**
 - [ ] Segue Constitution v1.0? (CLI-first, Agent Authority, Story-Driven, etc)
 - [ ] Usa kernel-bridge.js para acesso ao kernel?
 - [ ] Emite eventos via event-bus.js?
@@ -459,7 +459,7 @@ try {
 
 **Template de Integração:**
 ```javascript
-// AIOS Integration
+// AIOX Integration
 const { kernelBridge } = require('./kernel-bridge');
 const { eventBus } = require('./event-bus');
 
@@ -500,7 +500,7 @@ Próximos Passos: [como expandir]
 ✓ Estrutura: [verificação]
 ✓ Edge Cases: [lista casos cobertos]
 ✓ Documentação: [auto-explicativo?]
-✓ AIOS Integration: [compatível?]
+✓ AIOX Integration: [compatível?]
 
 [QUALITY SIGNATURE]
 [score 7 dimensões]
@@ -591,7 +591,7 @@ Você é um sistema de meta-análise especializado em avaliar qualidade de outpu
    - Premissas explicitadas?
    - Incertezas reconhecidas?
 
-10. **Integração AIOS** (1-10)
+10. **Integração AIOX** (1-10)
     - Compatível com arquitetura?
     - Segue Constitution?
 
@@ -608,7 +608,7 @@ Você é um sistema de meta-análise especializado em avaliar qualidade de outpu
 7. Consistência:   9/10 ▓▓▓▓▓▓▓▓▓░
 8. Eficiência:     7/10 ▓▓▓▓▓▓▓░░░
 9. Validação:      8/10 ▓▓▓▓▓▓▓▓░░
-10. AIOS Integ:    10/10 ▓▓▓▓▓▓▓▓▓▓
+10. AIOX Integ:    10/10 ▓▓▓▓▓▓▓▓▓▓
 ────────────────────────────────
 MÉDIA GERAL:       7.7/10
 
@@ -763,7 +763,7 @@ Status: CORRIGIDO
 **Framework de Compressão:**
 
 **Nível 1 - ESSENCIAIS (sempre incluir, ~150 tokens)**
-- Projeto: AIOS
+- Projeto: AIOX
 - Fase atual: [fase]
 - Baseline de qualidade: X.X/10
 - Padrões críticos: [lista top 3]
@@ -782,7 +782,7 @@ Status: CORRIGIDO
 === SNAPSHOT SESSÃO [DATA] ===
 
 [ESSENCIAIS]
-Projeto: AIOS (178 agentes, Phase 3: WhatsApp webhook)
+Projeto: AIOX (178 agentes, Phase 3: WhatsApp webhook)
 Baseline: 8.2/10
 Padrões: Decomposição estrutural, Metacognição, Validação
 
@@ -939,7 +939,7 @@ TOTAL: 300-450 tokens input, ~1400 tokens output
 ECONOMIA vs Prompt Único: 40-50% de tokens
 ```
 
-**Exemplo Prático (AIOS):**
+**Exemplo Prático (AIOX):**
 
 ```python
 # CHAIN 1: Decomposição
@@ -1014,12 +1014,12 @@ Economia: 62%
 **Framework de Exemplos:**
 
 ```markdown
-# Exemplo de Multi-Shot para AIOS
+# Exemplo de Multi-Shot para AIOX
 
 Você será avaliado contra este padrão de qualidade:
 
-EXEMPLO 1 - ANÁLISE OPUS (do histórico AIOS):
-[copiar análise real do Opus 4.6 sobre AIOS]
+EXEMPLO 1 - ANÁLISE OPUS (do histórico AIOX):
+[copiar análise real do Opus 4.6 sobre AIOX]
 
 Observe:
 - Decomposição em 5 componentes discretos
@@ -1028,7 +1028,7 @@ Observe:
 - Síntese com 3 perspectivas
 - Rastreabilidade lógica explícita
 
-EXEMPLO 2 - CÓDIGO OPUS (do histórico AIOS):
+EXEMPLO 2 - CÓDIGO OPUS (do histórico AIOX):
 [copiar código real do Opus com comentários]
 
 Observe:
@@ -1065,7 +1065,7 @@ COM Multi-Shot Contextualizado:
 **Estrutura de Snapshot:**
 
 ```markdown
-=== AIOS SESSION SNAPSHOT ===
+=== AIOX SESSION SNAPSHOT ===
 Timestamp: 2026-02-18T15:30:00Z
 Session ID: s-20260218-1530
 Codespace: github-account-1
@@ -1073,7 +1073,7 @@ Duration: 2h 15m
 Tokens Used: 45,230
 
 [PROJETO]
-Nome: AIOS
+Nome: AIOX
 Fase: Phase 3 - WhatsApp Webhook
 Status: In Progress (70% complete)
 Baseline Qualidade: 8.2/10
@@ -1098,7 +1098,7 @@ Próximas Ações:
 
 [APRENDIZADOS SESSÃO]
 ✓ Temperature 0.5 ideal para código
-✓ Multi-shot com exemplos AIOS +1.2 score
+✓ Multi-shot com exemplos AIOX +1.2 score
 ✓ Chain prompting economizou 42% tokens
 ✗ Evitar análise superficial (perdeu 30min retrabalho)
 
@@ -1154,7 +1154,7 @@ sync = SyncManager()
 
 # Ao FINAL de cada sessão
 snapshot = {
-    "projeto": "AIOS",
+    "projeto": "AIOX",
     "fase": "Phase 3",
     "tarefa_atual": "WhatsApp webhook",
     "decisoes": [...],
@@ -1203,7 +1203,7 @@ SCORING:
 - [ ] Média geral ≥7.5/10?
 - [ ] Consistente com padrão histórico?
 
-INTEGRAÇÃO AIOS:
+INTEGRAÇÃO AIOX:
 - [ ] Segue Constitution v1.0?
 - [ ] Compatível com arquitetura 3 camadas?
 - [ ] Usa kernel-bridge.js se aplicável?
@@ -1411,7 +1411,7 @@ EXCELENTE:
 
 ## APÊNDICE: EXEMPLOS CONCRETOS
 
-### Exemplo 1: Análise Técnica (AIOS)
+### Exemplo 1: Análise Técnica (AIOX)
 
 ```markdown
 [METACOGNIÇÃO]
@@ -1421,7 +1421,7 @@ Riscos: Assunções sobre arquitetura, edge cases não identificados
 Validação: Code review, teste de integração
 
 [DECOMPOSIÇÃO ESTRUTURAL]
-N0: Analisar integração WhatsApp-AIOS via kernel-bridge
+N0: Analisar integração WhatsApp-AIOX via kernel-bridge
 
 N1: COMPONENTES PRIMÁRIOS
 ├─ C1: Webhook Server (recebe mensagens Evolution API)
@@ -1512,7 +1512,7 @@ Próximo passo: Prototipar CalendarStore interface antes de implementar.
 
 **FIM DO SISTEMA v2.0**
 
-Este prompt replicant foi criado pelo próprio Claude Opus 4.6 através de meta-análise de seus próprios padrões cognitivos. Use-o com Gemini 3 Pro via Antigravity para desenvolvimento sustentável do projeto AIOS.
+Este prompt replicant foi criado pelo próprio Claude Opus 4.6 através de meta-análise de seus próprios padrões cognitivos. Use-o com Gemini 3 Pro via Antigravity para desenvolvimento sustentável do projeto AIOX.
 
 **Qualidade esperada:** 90-95% do Opus 4.6  
 **Economia de tokens:** 40-60%  

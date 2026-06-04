@@ -160,7 +160,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - New squad, no migration needed
 - Based on PRD: `plan/prd/PRD-squad-education-engineer.md` (2026-02-14)
-- Follows AIOS Framework v3.0 standards
+- Follows AIOX Framework v3.0 standards
 
 ---
 
@@ -189,5 +189,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Reference:**
 - PRD: `plan/prd/PRD-squad-education-engineer.md`
-- AIOS Framework: `.aios-core/constitution.md`, `.aios-core/SYSTEM-SPEC.md`
-- Squad Standards: `.aios-core/development/agents/README.md`
+- AIOX Framework: `.aiox-core/constitution.md`, `.aiox-core/SYSTEM-SPEC.md`
+- Squad Standards: `.aiox-core/development/agents/README.md`

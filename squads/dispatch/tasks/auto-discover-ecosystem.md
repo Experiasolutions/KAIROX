@@ -19,7 +19,7 @@ Scans the entire project ecosystem and rebuilds both registries (command-registr
 |---------|--------|
 | New squad added to `squads/` | Run full discovery |
 | New agent/task added to any squad | Run full discovery |
-| `.aios-core/` agents changed | Run full discovery |
+| `.aiox-core/` agents changed | Run full discovery |
 | First time activating dispatch | Auto-run on `*discover` |
 | Before any dispatch with stale registries | Auto-run |
 | After `*sync` or `install-commands` | Run full discovery |
@@ -59,7 +59,7 @@ pre_actions:
   ```bash
   python squads/dispatch/scripts/build-domain-registry.py --output squads/dispatch/data/domain-registry.yaml
   ```
-  - Expected: domain-registry.yaml generated with all domains from squads + .aios-core
+  - Expected: domain-registry.yaml generated with all domains from squads + .aiox-core
   - Verify: File exists and is non-empty
 
 ### Phase 2: Validate
@@ -111,12 +111,12 @@ pre_actions:
   - Total squads: {count}
   - Total agents: {count}
   - Total tasks: {count}
-  - Sources scanned: squads/, .claude/commands/, .aios-core/
+  - Sources scanned: squads/, .claude/commands/, .aiox-core/
 
   **Domain Registry:**
   - Total domains: {count}
   - From squads: {count}
-  - From .aios-core: {count}
+  - From .aiox-core: {count}
   - Built-in: {count}
   - Manual overrides applied: {count}
 
@@ -161,12 +161,12 @@ post_actions:
 | # | Criterion | Verification |
 |---|-----------|-------------|
 | 1 | command-registry.yaml contains ALL squads from squads/ | Count matches `ls squads/` directories with config.yaml |
-| 2 | command-registry.yaml contains .aios-core agents (if .aios-core exists) | AIOS section present with agents |
+| 2 | command-registry.yaml contains .aiox-core agents (if .aiox-core exists) | AIOX section present with agents |
 | 3 | domain-registry.yaml contains domains for each squad (except dispatch itself) | Domain count >= squad count - 1 |
-| 4 | domain-registry.yaml contains .aios-core domains (if .aios-core exists) | @dev, @qa, @architect etc. present |
+| 4 | domain-registry.yaml contains .aiox-core domains (if .aiox-core exists) | @dev, @qa, @architect etc. present |
 | 5 | All file paths in both registries point to real files | Zero broken paths in validation |
 | 6 | Manual overrides preserved | manual-overrides.yaml entries appear in output |
-| 7 | Works without .aios-core | Run with --project-root on dir without .aios-core, no errors |
+| 7 | Works without .aiox-core | Run with --project-root on dir without .aiox-core, no errors |
 | 8 | Works without squads/ | Run with --project-root on dir without squads/, no errors |
 
 ---

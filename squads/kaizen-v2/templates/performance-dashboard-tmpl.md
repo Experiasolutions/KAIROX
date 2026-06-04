@@ -6,7 +6,7 @@
 
 ---
 
-## DORA Metrics (Adapted for AIOS)
+## DORA Metrics (Adapted for AIOX)
 
 | Squad | Task Freq | Lead Time | MTTR | Rework Rate | Elite/High/Med/Low |
 |-------|-----------|-----------|------|-------------|-------------------|

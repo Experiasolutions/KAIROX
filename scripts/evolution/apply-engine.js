@@ -173,7 +173,7 @@ function checkBudget(proposal, budgetUsed) {
     // Determine which layer this file belongs to
     let layer = 'documentation'; // Default: unlimited
 
-    if (/^\.aios-core\/opus-replicator\//.test(filePath)) {
+    if (/^\.aiox-core\/opus-replicator\//.test(filePath)) {
         layer = 'constitutional_layer';
     } else if (/^scripts\//.test(filePath) && !/^scripts\/evolution\//.test(filePath)) {
         layer = 'critical_scripts';

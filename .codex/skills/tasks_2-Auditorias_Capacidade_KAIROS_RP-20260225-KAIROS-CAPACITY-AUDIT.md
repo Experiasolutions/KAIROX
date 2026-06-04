@@ -1,6 +1,6 @@
 # 🧠 KAIROS ENGINE — CAPACITY AUDIT
 
-**Data:** 25/02/2026 | **Auditor:** Noesis (AIOS Master Orchestrator)
+**Data:** 25/02/2026 | **Auditor:** Noesis (AIOX Master Orchestrator)
 **Escopo:** Todo o motor KAIROS — scripts, agents, core, evolution, bridges
 
 ---
@@ -23,12 +23,12 @@ DORMINDO:      ~85% dos subsistemas nunca foram executados em produção
 
 | Subsistema                    | O que faz                                        |       Status       |
 | :---------------------------- | :----------------------------------------------- | :----------------: |
-| `generate-context.js`         | Gera `SELF_CONTEXT.md` — consciência do AIOS     |     ✅ Funciona     |
+| `generate-context.js`         | Gera `SELF_CONTEXT.md` — consciência do AIOX     |     ✅ Funciona     |
 | `SELF_CONTEXT.md`             | Identidade + estado cognitivo + fila de trabalho |    ✅ Atualizado    |
 | `identity-anchor.json`        | 7 declarações imutáveis da identidade            |      ✅ Ativo       |
 | `.antigravity/agents/*.md`    | 21 agentes com personas especializadas           | ✅ Parcial (usa ~3) |
 | `experia-persona-engine.json` | Voz + Quality Gates da Experia                   |   ✅ Recém-criado   |
-| `/aios-master` workflow       | Ativação da persona Noesis                       |      ✅ Ativo       |
+| `/aiox-master` workflow       | Ativação da persona Noesis                       |      ✅ Ativo       |
 
 ### 🟡 CONSTRUÍDO MAS DORMINDO (Alto impacto se ativado)
 
@@ -36,7 +36,7 @@ DORMINDO:      ~85% dos subsistemas nunca foram executados em produção
 | :------------------------- | :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------ |
 | **IA Council Engine**      | 953 linhas | 8 cadeiras de IA (Karpathy, Sutskever, Ng, Hinton, Hassabis + Creators) avaliam cada output de 8 perspectivas, votam propostas, sintetizam veredicto via MetaMind     | 🔥🔥🔥 Cada output auditable |
 | **Noesis Pipeline**        | 857 linhas | Loop cognitivo de 6 fases: Context → Evaluate → Reflect → Harvest → Trace → Signal. Auto-harvest de outputs excelentes                                                | 🔥🔥🔥 Cognição contínua     |
-| **Metacognition Layer**    | 822 linhas | O AIOS pensa sobre como pensa. Detecta anti-patterns, mede profundidade de raciocínio, identifica tendências cognitivas                                               | 🔥🔥🔥 Auto-melhoria         |
+| **Metacognition Layer**    | 822 linhas | O AIOX pensa sobre como pensa. Detecta anti-patterns, mede profundidade de raciocínio, identifica tendências cognitivas                                               | 🔥🔥🔥 Auto-melhoria         |
 | **Cognitive State Engine** | 33K        | Boot, observe, compress, drift detection, snapshots cognitivos                                                                                                        | 🔥🔥 Memória de sessão      |
 | **RAG Engine**             | 460 linhas | Vector store TF-IDF local, chunking, indexação de todos os docs, busca semântica                                                                                      | 🔥🔥🔥 Contexto automático   |
 | **Dashboard JARVIS v5**    | 774 linhas | Web UI com chat Orion (Groq), status de sistema, enterprise data, kernel health                                                                                       | 🔥🔥 Visualização           |
@@ -67,11 +67,11 @@ DORMINDO:      ~85% dos subsistemas nunca foram executados em produção
 
 ## 🎯 OS 18 AGENTS DORMINDO
 
-Você tem **21 agents** definidos. Usa ~3 (aios-master, eventualmente dev/architect).
+Você tem **21 agents** definidos. Usa ~3 (aiox-master, eventualmente dev/architect).
 
 | Agent                  | Especialidade                        | Está usando? |
 | :--------------------- | :----------------------------------- | :----------: |
-| `aios-master` (Noesis) | Orquestração + Framework             |    ✅ Sim     |
+| `aiox-master` (Noesis) | Orquestração + Framework             |    ✅ Sim     |
 | `dev`                  | Implementação de código              |  ⚠️ Às vezes  |
 | `architect`            | Arquitetura de sistema               |  ⚠️ Às vezes  |
 | `analyst`              | Pesquisa e análise                   |  ❌ Dormindo  |

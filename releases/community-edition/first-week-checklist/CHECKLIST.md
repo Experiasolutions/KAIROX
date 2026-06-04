@@ -1,15 +1,15 @@
 # 📋 First Week Checklist — Do Zero ao Operacional em 7 Dias
 
-> Todo dia uma ação concreta. No final da semana, você tem um sistema AIOS funcionando.
+> Todo dia uma ação concreta. No final da semana, você tem um sistema AIOX funcionando.
 
 ---
 
 ## Dia 1 — Conhecer a Casa
 
-- [ ] Instalar o AIOS (seguir documentação oficial)
-- [ ] Rodar qualquer script existente para confirmar que o Node.js funciona (ex: `node -e "console.log('AIOS OK')"`)  
+- [ ] Instalar o AIOX (seguir documentação oficial)
+- [ ] Rodar qualquer script existente para confirmar que o Node.js funciona (ex: `node -e "console.log('AIOX OK')"`)  
   > **Dica Windows:** Se `grep` não funcionar, use `findstr /S /I` como alternativa
-- [ ] Ler a seção "Nível 1" do AIOS Father
+- [ ] Ler a seção "Nível 1" do AIOX Father
 
 **Tempo estimado:** 1-2 horas
 **Meta do dia:** Entender onde cada coisa fica
@@ -18,7 +18,7 @@
 
 ## Dia 2 — Criar Seu Primeiro Agente
 
-- [ ] Criar `.antigravity/agents/meu-assistente.md` (copiar template do AIOS Father)
+- [ ] Criar `.antigravity/agents/meu-assistente.md` (copiar template do AIOX Father)
 - [ ] Ativar o agente e testar 3 conversas
 - [ ] Ajustar `core_principles` até ele responder como você quer
 - [ ] Entender: agente = definição de persona + regras + comandos
@@ -33,7 +33,7 @@
 - [ ] Criar pasta `squads/meu-squad/agents/`
 - [ ] Criar 2 agentes complementares (ex: writer + reviewer, ou pesquisador + sintetizador)
 - [ ] Testar o fluxo: agente 1 produz → agente 2 revisa/complementa
-- [ ] Ler a seção "Nível 2" do AIOS Father
+- [ ] Ler a seção "Nível 2" do AIOX Father
 
 **Tempo estimado:** 1-2 horas
 **Meta do dia:** 2 agentes que trabalham em sequência
@@ -80,7 +80,7 @@
 
 - [ ] Listar o que funcionou e o que não funcionou
 - [ ] Decidir: quero continuar evoluindo? quero atender clientes com isso?
-- [ ] Se sim: ler os Níveis 4-5 do AIOS Father
+- [ ] Se sim: ler os Níveis 4-5 do AIOX Father
 - [ ] Se sim para clientes: ler o guide de Engine/Client Separation
 
 **Tempo estimado:** 1 hora
@@ -92,7 +92,7 @@
 
 | Item                                     | Status |
 | :--------------------------------------- | :----: |
-| AIOS instalado e funcionando             |   ✅    |
+| AIOX instalado e funcionando             |   ✅    |
 | 1 agente personalizado                   |   ✅    |
 | 1 squad com 2+ agentes                   |   ✅    |
 | Separação engine/client                  |   ✅    |

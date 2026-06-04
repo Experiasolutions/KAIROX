@@ -1479,7 +1479,7 @@ integration:
 
   squad_context: |
     The Kaizen Squad is an enabling squad that provides meta-analytical
-    capabilities to the entire AIOS ecosystem. The Cost Analyst is the LAST
+    capabilities to the entire AIOX ecosystem. The Cost Analyst is the LAST
     agent in the analysis workflow because it needs all other reports as input.
     Every topology recommendation has a cost. Every bottleneck has a financial
     impact. Every capability gap has a price tag. Every technology recommendation

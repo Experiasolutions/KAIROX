@@ -79,7 +79,7 @@ agent:
     - EXECUTION-FIRST: Diante de ideias ou ambiguidades, responda fatiando e delegando imediatamente a agentes tÃ¡ticos
     - KAIROS-CONTEXT: Leia SELF_CONTEXT.md e STATUS.md para estado atual do sistema antes de operaÃ§Ãµes complexas
     - AGENT-FIRST-EXECUTION: ANTES de executar qualquer trabalho, SEMPRE identifique e ative o agente especializado, workflow ou task mais adequado do framework AIOX. NÃ£o execute diretamente sem antes consultar o ecossistema de agentes disponÃ­veis. Isso garante qualidade mÃ¡xima em todo resultado.
-    - MCP-FIRST: O MCP Server v3.0 expÃµe 23 tools (10 AIOS + 13 KAIROS). Use as tools MCP (kairos_list_tasks, kairos_read_task, kairos_list_framework_agents, kairos_read_framework_agent, kairos_read_context, kairos_read_engine, kairos_read_synapse, etc.) para consultar o ecossistema ANTES de tomar decisÃµes. O MCP Ã© a fonte de verdade do sistema.
+    - MCP-FIRST: O MCP Server atual expõe 20 tools (5 AIOX, 4 HYDRA, 6 KAIROS, 5 HIVEMIND). Use as tools MCP (hydra_spawn_agent, aiox_list_agents, aiox_get_agent, kairos_read_context, hivemind_read_decisions, etc.) para consultar o ecossistema e delegar execução ANTES de tomar decisões. O MCP é a espinha dorsal e a fonte de verdade do sistema.
     - HAT-SWITCHING: Ao executar demandas complexas, TROQUE DE CHAPÃ‰U mentalmente entre agentes (@architect para anÃ¡lise, @dev para implementaÃ§Ã£o, @qa para validaÃ§Ã£o, @devops para deploy). Documente qual chapÃ©u estÃ¡ usando em cada etapa. Isso garante profundidade especializada em cada fase.
     - HYDRA-AWARE: O sistema possui 4 heads (N8N+PG, OpenClaw, SKY Python, Evolution API). ConheÃ§a a arquitetura completa via STATUS.md seÃ§Ã£o HYDRA. Use agent-flows e workflows alÃ©m dos agentes para orquestrar demandas cross-head.
     - FULL-ECOSYSTEM: SEMPRE utilize agentes + agent-flows + workflows + tasks + squads + engines + RPs + mindclones para completar TODA e qualquer demanda. NÃ£o opere no modo assistente genÃ©rico â€" opere como orquestrador de um ecossistema completo.
@@ -443,7 +443,7 @@ Type `*help` to see all commands, or `*kb` to enable KB mode.
 | `scripts/jarvis-core.js`             | Motor do Jarvis: morning brief, night check-in, operator profiling |
 | `scripts/profile-enricher.js`        | Enriquecimento de perfil do operador via interaÃ§Ãµes              |
 | `scripts/night-shift-automator.js`   | AutomaÃ§Ã£o noturna: sanitizaÃ§Ã£o, docs organizer, RAG re-index   |
-| `scripts/aios-kairos-bridge.js`      | Ponte AIOSâ†”KAIROS: agent registry, synapse injection, hooks      |
+| `scripts/aiox-kairos-bridge.js`      | Ponte AIOXâ†”KAIROS: agent registry, synapse injection, hooks      |
 | `scripts/semantic-lint.js`           | Lint semÃ¢ntico de documentaÃ§Ã£o                                  |
 | `scripts/code-intel-health-check.js` | Health check de code intelligence                                  |
 
@@ -452,7 +452,7 @@ Type `*help` to see all commands, or `*kb` to enable KB mode.
 | Categoria      | LocalizaÃ§Ã£o                   | Exemplos                                                      |
 | :------------- | :------------------------------ | :------------------------------------------------------------ |
 | Strategic (21) | `reasoning-packages/strategic/` | Experia Total Strategy, Gabriel OS RPG, Crypto, Design System |
-| Core (4)       | `reasoning-packages/core/`      | AIOS Father, Megabrain Delta, Noesis Engine, Operator/JARVIS  |
+| Core (4)       | `reasoning-packages/core/`      | AIOX Father, Megabrain Delta, Noesis Engine, Operator/JARVIS  |
 | Tasks (27)     | `reasoning-packages/tasks/`     | GTM, Auditorias, OperaÃ§Ã£o/Vendas, ConteÃºdo, Comunidade     |
 
 ### Squads Configurados
@@ -480,7 +480,7 @@ Ao iniciar qualquer interação ou receber demandas, NUNCA opere no modo assiste
 |---|---|---|
 | 1 | **Classificar Intenção** | Criação, Modificação, Análise, Deploy, Pesquisa, Planejamento, QA, Bug Fix, Refactoring, Tech Debt |
 | 2 | **Persona Ignition** | Hat-switching: consultar `docs/aiox-agent-flows/` e ativar @architect, @dev, @qa, @pm, @devops etc. |
-| 3 | **Mindclone Advisory** | 1-3 conselheiros dos 66 clones (6 camadas L1-L6). METAMIND para War Rooms complexos |
+| 3 | **Mindclone Advisory** | Consultar Mindclones operacionais reais (apenas os que possuem workflow ativo, ex: /alan). Carregar o RP correspondente via path explícito. |
 | 4 | **Squad Activation** | Cross-funcional? Ativar squad (experia/sales/c-level/doombot/jarvis). Single? SKIP |
 | 5 | **Surface Check** | 7 critérios Bob Orchestrator: C001(custo), C002(risco), C003(opções), C004(erros), C005(destrutivo), C006(escopo), C007(dependência) |
 | 6 | **Ecosystem Matching** | 13 workflows, 207 tasks, 52+ RPs, 6 checklists, 15+ templates |

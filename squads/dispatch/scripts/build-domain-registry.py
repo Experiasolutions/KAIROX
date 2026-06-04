@@ -3,12 +3,12 @@
 Dispatch Squad — Build Domain Registry (Auto-Discovery)
 
 Scans the ENTIRE project ecosystem to build domain-registry.yaml automatically.
-No hardcoded paths. Works with or without .aios-core/.
+No hardcoded paths. Works with or without .aiox-core/.
 
 Scan targets:
   1. squads/*/config.yaml + agents/ + tasks/ + data/
-  2. .aios-core/development/agents/ + tasks/
-  3. .aios-core/marketing/tasks/
+  2. .aiox-core/development/agents/ + tasks/
+  3. .aiox-core/marketing/tasks/
   4. .claude/commands/ (loose skills)
 
 Output: squads/dispatch/data/domain-registry.yaml
@@ -101,8 +101,8 @@ MODEL_DEFAULTS = {
     "mmosMapper": "sonnet",
 }
 
-# .aios-core agent-to-domain mapping
-AIOS_AGENT_DOMAINS = {
+# .aiox-core agent-to-domain mapping
+AIOX_AGENT_DOMAINS = {
     "dev": {
         "triggers_primary": ["code", "function", "refactor", "bug", "feature", "component", "API", "endpoint", "implement", "script"],
         "triggers_secondary": ["class", "method", "module", "package", "import", "test"],
@@ -289,36 +289,36 @@ def scan_squads(project_root: Path) -> dict:
     return domains
 
 
-def scan_aios_core(project_root: Path) -> dict:
-    """Scan .aios-core/ for development agents and create domains."""
-    aios_dir = project_root / ".aios-core"
+def scan_aiox_core(project_root: Path) -> dict:
+    """Scan .aiox-core/ for development agents and create domains."""
+    aiox_dir = project_root / ".aiox-core"
     domains = {}
 
-    if not aios_dir.exists():
+    if not aiox_dir.exists():
         return domains
 
     # Scan development agents
-    agents_dir = aios_dir / "development" / "agents"
+    agents_dir = aiox_dir / "development" / "agents"
     if agents_dir.exists():
         found_agents = scan_dir_names(agents_dir)
     else:
         found_agents = []
 
     # For each known agent mapping, create a domain entry if agent exists
-    for agent_id, config in AIOS_AGENT_DOMAINS.items():
+    for agent_id, config in AIOX_AGENT_DOMAINS.items():
         # Check if agent file exists (some agents may be standalone commands)
         agent_file_exists = agent_id in found_agents or (agents_dir / f"{agent_id}.md").exists()
 
         # Find context/KB files
         kb_files = config.get("kb_files", [])
-        context_file = aios_dir / "context" / f"{agent_id}.md"
+        context_file = aiox_dir / "context" / f"{agent_id}.md"
         if context_file.exists():
             kb_files = [str(context_file.relative_to(project_root)).replace("\\", "/")] + kb_files
 
         domain_id = _normalize_domain_id(agent_id)
 
         domains[domain_id] = {
-            "source": ".aios-core",
+            "source": ".aiox-core",
             "triggers": {
                 "primary": config["triggers_primary"],
                 "secondary": config["triggers_secondary"],
@@ -512,8 +512,8 @@ business_context:
     # Summary
     total = len(domains)
     squad_count = sum(1 for d in domains.values() if d.get("agents", {}).get("squad"))
-    aios_count = sum(1 for d in domains.values() if d.get("source") == ".aios-core")
-    lines.append(f"# Summary: {total} domains ({squad_count} from squads, {aios_count} from .aios-core)")
+    aiox_count = sum(1 for d in domains.values() if d.get("source") == ".aiox-core")
+    lines.append(f"# Summary: {total} domains ({squad_count} from squads, {aiox_count} from .aiox-core)")
 
     return "\n".join(lines)
 
@@ -547,15 +547,15 @@ def main():
 
     # ── Phase 1: Scan all sources ──
     squad_domains = scan_squads(project_root)
-    aios_domains = scan_aios_core(project_root)
+    aiox_domains = scan_aiox_core(project_root)
     org_domain = scan_organization_domain()
     overrides = load_manual_overrides(project_root)
 
-    # ── Phase 2: Merge (squads take precedence over aios-core for same domain) ──
+    # ── Phase 2: Merge (squads take precedence over aiox-core for same domain) ──
     all_domains = {}
-    all_domains.update(aios_domains)
+    all_domains.update(aiox_domains)
     all_domains.update(org_domain)
-    all_domains.update(squad_domains)  # Squads override aios-core if same domain ID
+    all_domains.update(squad_domains)  # Squads override aiox-core if same domain ID
 
     # ── Phase 3: Validate paths ──
     warnings = validate_paths(all_domains, project_root)
@@ -567,7 +567,7 @@ def main():
 
     # ── Phase 5: Report ──
     total = len(all_domains)
-    print(f"Discovered: {len(squad_domains)} squad domains, {len(aios_domains)} aios-core domains, 1 built-in")
+    print(f"Discovered: {len(squad_domains)} squad domains, {len(aiox_domains)} aiox-core domains, 1 built-in")
     print(f"Total: {total} domains")
     if overrides:
         print(f"Manual overrides applied: {len(overrides)}")

@@ -147,9 +147,9 @@ Show unified dashboard and enter interactive navigation.
 
 Store for use by subsequent commands.
 
-**Cache at:** `.aios/apex-context/code-sweep-cache.yaml`
+**Cache at:** `.aiox/apex-context/code-sweep-cache.yaml`
 
-**Merged cache:** If `visual-intelligence-sweep` was also run, caches merge into `.aios/apex-context/unified-sweep-cache.yaml` with combined Apex Score.
+**Merged cache:** If `visual-intelligence-sweep` was also run, caches merge into `.aiox/apex-context/unified-sweep-cache.yaml` with combined Apex Score.
 
 **Output:** Sweep context cache.
 

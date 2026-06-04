@@ -64,7 +64,7 @@ lifecycle:
   # Persist DNA to avoid re-extraction every session.
   cache:
     purpose: "Persist extracted DNA to avoid redundant re-scanning"
-    location: ".aios/{squad-id}-context/project-dna.yaml"
+    location: ".aiox/{squad-id}-context/project-dna.yaml"
     format: "YAML — human-readable, diffable, editable for overrides"
     ttl: "Until source files change (modification-time based)"
 
@@ -230,7 +230,7 @@ cross_squad:
       - "globals.css"
       - "index.css"
       - "app/globals.css"
-    cache_path: ".aios/apex-context/project-dna.yaml"
+    cache_path: ".aiox/apex-context/project-dna.yaml"
     agent_context_examples:
       css-eng:
         styling_lib: "{tailwind | css-modules | styled-components}"
@@ -267,7 +267,7 @@ cross_squad:
     invalidation:
       - "n8n config files"
       - "workflow export JSONs"
-    cache_path: ".aios/n8n-forge-context/project-dna.yaml"
+    cache_path: ".aiox/n8n-forge-context/project-dna.yaml"
 
   squad_creator:
     squad_id: "squad-creator"
@@ -284,7 +284,7 @@ cross_squad:
     invalidation:
       - "squads/*/agents/*.md"
       - "core-config.yaml"
-    cache_path: ".aios/squad-creator-context/project-dna.yaml"
+    cache_path: ".aiox/squad-creator-context/project-dna.yaml"
 
 # ---------------------------------------------------------------------------
 # Implementation checklist

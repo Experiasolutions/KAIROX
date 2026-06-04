@@ -176,4 +176,4 @@ squads/brand/
 **Built with strategy first, identity second. Every output distinctive, emotionally powerful, and designed for long-term brand equity.**
 
 _Version: 1.0.0_
-_Compatible with: AIOS v4+_
+_Compatible with: AIOX v4+_

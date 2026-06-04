@@ -32,7 +32,7 @@ agent:
   activation: "@admin-head"
 
 hierarchy:
-  reports_to: "@aios-master (Orion)"
+  reports_to: "@aiox-master (Orion)"
   manages:
     - "@admin-rh (Talent) \u2014 Recursos Humanos"
     - "@admin-financeiro (Vault) \u2014 Financeiro"
@@ -95,7 +95,7 @@ commands:
   - command: "@policies"
     o_que_faz: "Pol\u00edticas vigentes"
   - command: "@escalate {issue}"
-    o_que_faz: "Escalar para @aios-master"
+    o_que_faz: "Escalar para @aiox-master"
 
 dna_sources:
   - expert: "ISO 37001 / ISO 37301"
@@ -498,7 +498,7 @@ agent:
   activation: "@produto-head"
 
 hierarchy:
-  reports_to: "@aios-master (Orion)"
+  reports_to: "@aiox-master (Orion)"
   manages:
     - "@produto-pm (Compass) \u2014 Product Manager"
     - "@produto-creator (Maker) \u2014 Product Creator"
@@ -744,7 +744,7 @@ agent:
   activation: "@facilities-head"
 
 hierarchy:
-  reports_to: "@aios-master (Orion)"
+  reports_to: "@aiox-master (Orion)"
   manages:
     - "@facilities-manutencao (Fix) \u2014 Manuten\u00e7\u00e3o"
     - "@facilities-seguranca (Guard) \u2014 Seguran\u00e7a"
@@ -797,7 +797,7 @@ commands:
   - command: "@incident {descri\u00e7\u00e3o}"
     o_que_faz: "Abrir incidente"
   - command: "@escalate {issue}"
-    o_que_faz: "Escalar para @aios-master"
+    o_que_faz: "Escalar para @aiox-master"
 
 dna_sources:
   - expert: "IFMA (Facility Management)"

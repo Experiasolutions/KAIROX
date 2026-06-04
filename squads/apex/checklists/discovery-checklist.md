@@ -39,7 +39,7 @@ Checklist for `*discover-components` and `*discover-design` operations.
 
 ## Post-Discovery
 
-- [ ] Results cached in `.aios/apex-context/`
+- [ ] Results cached in `.aiox/apex-context/`
 - [ ] `*apex-suggest` enriched with discovery data (if applicable)
 - [ ] Proactive suggestions appended to report (if issues found)
 

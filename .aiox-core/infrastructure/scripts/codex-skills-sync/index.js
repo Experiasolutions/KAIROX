@@ -5,6 +5,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
 
+// summary: Sync local Codex skills for core AIOX agents.
+
 const {
   parseAllAgents,
   normalizeCommands,
@@ -40,6 +42,15 @@ function trimText(text, max = 220) {
 function getSkillId(agentId) {
   const id = String(agentId || '').trim();
   if (id.startsWith('aiox-')) return id;
+  if (id.startsWith('aiox-')) return id.replace(/^aiox-/, 'aiox-');
+  return `aiox-${id}`;
+}
+
+function getLegacySkillId(agentId) {
+  const id = String(agentId || '').trim();
+  if (!id) return 'aiox-unknown';
+  if (id.startsWith('aiox-')) return id;
+  if (id.startsWith('aiox-')) return id.replace(/^aiox-/, 'aiox-');
   return `aiox-${id}`;
 }
 
@@ -179,4 +190,5 @@ module.exports = {
   parseArgs,
   getCodexHome,
   getSkillId,
+  getLegacySkillId,
 };

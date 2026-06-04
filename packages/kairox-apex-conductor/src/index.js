@@ -18,5 +18,11 @@ export {
   saveNightCheckin,
   getRecentCheckins,
   getUserStats,
-  closeDB
+  closeDB,
+  getTodayQuests,
+  saveTodayQuests,
+  completeDailyQuest,
+  getLootShop,
+  buyLoot,
+  applyPunishment
 } from './core/database.js';

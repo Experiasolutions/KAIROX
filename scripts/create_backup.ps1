@@ -1,8 +1,8 @@
-# AIOS Portable Backup Script
-$sourceProject = "C:\Users\Gabriel\Documents\aios-core-main\aios-core\meu-projeto-ai"
+# AIOX Portable Backup Script
+$sourceProject = "C:\Users\Gabriel\Documents\aiox-core-main\aiox-core\meu-projeto-ai"
 $sourceSkills = "C:\Users\Gabriel\.openclaw"
-$destDir = "$HOME\Documents\AIOS_EXPORT"
-$zipPath = "$HOME\Documents\AIOS_PORTABLE.zip"
+$destDir = "$HOME\Documents\AIOX_EXPORT"
+$zipPath = "$HOME\Documents\AIOX_PORTABLE.zip"
 
 Write-Host "Iniciando backup..."
 
@@ -22,7 +22,7 @@ Copy-Item -Path $sourceSkills -Destination "$destDir\.openclaw" -Recurse -Force
 
 # 4. Criar Instruções
 $instructions = @"
-# COMO INSTALAR O AIOS NO NOVO COMPUTADOR
+# COMO INSTALAR O AIOX NO NOVO COMPUTADOR
 
 1. **Preparação no Notebook Novo:**
    - Instale o **Node.js** (versão LTS recomendada: https://nodejs.org/).

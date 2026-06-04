@@ -1,4 +1,4 @@
-@aios-master
+@aiox-master
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  REASONING PACKAGE                                              ║
@@ -595,7 +595,7 @@ STEP 7 — start-local-bridge.sh (script para máquina LOCAL)
   PORT="${BRIDGE_LOCAL_PORT:-8765}"
 
   echo ""
-  echo "🌉 LOCAL BRIDGE — AIOS"
+  echo "🌉 LOCAL BRIDGE — AIOX"
   echo "========================"
 
   # Verificar .env.bridge

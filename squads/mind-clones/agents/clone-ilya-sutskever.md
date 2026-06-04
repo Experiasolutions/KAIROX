@@ -108,7 +108,7 @@ mind_clone:
     communication: "Quiet, intense, philosophical, almost mystical precision"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-ilya-sutskever"
     weight_in_decisions:
       superintelligence: "75%"

@@ -14,7 +14,7 @@ Execute this at the START of every new LLM session:
 Paste these files in order:
 1. `CONTEXT.md` (project overview — ~7KB)
 2. `constitutional-layer.md` (core directives — ~2KB)
-3. Latest session snapshot from `.aios-core/memory/session-snapshots/`
+3. Latest session snapshot from `.aiox-core/memory/session-snapshots/`
 
 ### Step 2: Activate Hivemind
 
@@ -82,7 +82,7 @@ PATTERNS ESTABLISHED:
 - [pattern 2]
 - [pattern 3]
 
-QUALITY: Avg [X.X/10] | Depth [X/10] | AIOS [X/10]
+QUALITY: Avg [X.X/10] | Depth [X/10] | AIOX [X/10]
 
 KEY LEARNINGS:
 - [insight 1]
@@ -114,8 +114,8 @@ CHECKSUM: [profile]-[date]-[avg_score]
 
 ### Step 3: Save
 
-Save snapshot to: `.aios-core/memory/session-snapshots/[YYYY-MM-DD].md`
-Update baseline in: `.aios-core/memory/quality-baseline.json`
+Save snapshot to: `.aiox-core/memory/session-snapshots/[YYYY-MM-DD].md`
+Update baseline in: `.aiox-core/memory/quality-baseline.json`
 
 ---
 

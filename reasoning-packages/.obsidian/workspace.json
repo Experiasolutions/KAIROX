@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "cc1825a433b52eb2",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1f966b7ab72a44b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d93f2e9ac250719d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/Como vender IA.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Como vender IA"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4de15f400778a05e",
+    "type": "split",
+    "children": [
+      {
+        "id": "9a54d6954391bbfa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bbb76066fdb02454",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "b9a3b4b927b72da6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "lab",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "d30ddabadc857a87",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6db0e1feb4835afa",
+    "type": "split",
+    "children": [
+      {
+        "id": "97320f821d1afa16",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3a26cdc291ea7bbd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "core/RP-20260304-BILHON-AIOX-FLOWS-CHRONICLES-v1.0-SEED.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos para RP-20260304-BILHON-AIOX-FLOWS-CHRONICLES-v1.0-SEED"
+            }
+          },
+          {
+            "id": "b1b65d1071dbf53e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "core/RP-20260304-BILHON-AIOX-FLOWS-CHRONICLES-v1.0-SEED.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída para RP-20260304-BILHON-AIOX-FLOWS-CHRONICLES-v1.0-SEED"
+            }
+          },
+          {
+            "id": "3258372ad168cb6e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "abcc818419f15a11",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "f9d647510a65ccb8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "core/RP-20260304-BILHON-AIOX-FLOWS-CHRONICLES-v1.0-SEED.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário de RP-20260304-BILHON-AIOX-FLOWS-CHRONICLES-v1.0-SEED"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "d93f2e9ac250719d",
+  "lastOpenFiles": [
+    "core/RP-20260304-BILHON-AIOX-FLOWS-CHRONICLES-v1.0-SEED.md",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/Como vender IA.md",
+    "tasks/3-Operacao_Vendas_Tatico/RP-20260224-MASTER-PUMPS-CONTEXT.md",
+    "Sem título",
+    "strategic/alan-nicolas-mindclone/refina-alan-ok.md",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/Roubando as mentes de experts.md",
+    "strategic/alan-nicolas-mindclone/RP-ALAN-NICOLAS-MINDCLONE-v5.0.md",
+    "strategic/alan-nicolas-mindclone/PROMPT-AUTO-EVOLUCAO-v2.md",
+    "strategic/alan-nicolas-mindclone/PROMPT-AUTO-EVOLUCAO-CLONE-OFICIAL.md",
+    "strategic/alan-nicolas-mindclone/ENRICHMENT-ROADMAP-MINDCLONE-v4.2-DEFINITIVO.md",
+    "strategic/alan-nicolas-mindclone/ENRICHMENT-ROADMAP-MINDCLONE-v4.2.md",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/Como criar um assistente de whatsapp.md",
+    "tasks/3-Operacao_Vendas_Tatico/RP-20260228-CACA-PADRONIZADA-MVP.md",
+    "strategic/RP-GABRIEL-OS-CONSOLIDATED-v4.0.md",
+    "strategic/RP-GABRIEL-OS-GAMIFICATION-AUDIT-v1.0.md",
+    "strategic/GABRIEL-OS-ICEBOX.md",
+    "strategic/alan-nicolas-mindclone/transcripts/5 tipos de negócios com IA.md",
+    "strategic/alan-nicolas-mindclone/transcripts/Como ter ideias geniais sem ser g~enio.md",
+    "strategic/alan-nicolas-mindclone/transcripts/RH por ia.md",
+    "strategic/alan-nicolas-mindclone/transcripts/Segredos de clonar mentes de experts.md",
+    "strategic/alan-nicolas-mindclone/transcripts/Segredos do segundo cérebro.md",
+    "strategic/alan-nicolas-mindclone/transcripts/Seu produto é bom, mas isso não basta.md",
+    "strategic/alan-nicolas-mindclone/transcripts/Sinal x ruído.md",
+    "strategic/alan-nicolas-mindclone/transcripts/Squad para saúde e´hábitos.md",
+    "strategic/alan-nicolas-mindclone/transcripts/Um comando = 12 horas de trabalho.md",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/AIOX - sistema que substitui um tiem.md",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/Claude mais caro.md",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/10-Designers-Tradicionais-Não-Sabem-Como-Competir-Com-Isso.pt.vtt",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/09-CLONEI-A-INTERFACE-DA-ANTHROPIC-EM-4-DIAS-e-vou-te-dar-de-gr.pt.vtt",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/08-Como-Criar-Designs-Profissionais-SEM-Saber-Design-O-Atalho-q.pt.vtt",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/07-Os-4-Comandos-que-Substituem-80-do-meu-Trabalho-com-IA.pt.vtt",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/06-Dei-1-Comando-e-a-IA-Trabalhou-13-HORAS-Sozinha.pt.vtt",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/05-O-novo-Chat-GPT-4o-vai-mudar-a-forma-de-usar-a-internet.pt.vtt",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/04-Como-Estudar-Inteligência-Artificial-do-Zero-Feat-Pedro-Sob.txt",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/04-Como-Estudar-Inteligência-Artificial-do-Zero-Feat-Pedro-Sob.pt.vtt",
+    "strategic/alan-nicolas-mindclone/transcripts/lives_e_aulas_longas/03-Criando-Agentes-IA-na-prática-sem-saber-programação.pt.vtt"
+  ]
+}

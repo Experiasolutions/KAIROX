@@ -9,7 +9,7 @@
 # Auto-apply corrections: simple find/replace, no context needed
 # These are ALWAYS wrong in this domain — safe to auto-correct
 corrections:
-  # AIOS & Tools
+  # AIOX & Tools
   - wrong: "cólica"
     correct: "Claude Code"
   - wrong: "colica"
@@ -19,11 +19,11 @@ corrections:
   - wrong: "Cloud Code"
     correct: "Claude Code"
   - wrong: "Ios"
-    correct: "AIOS"
+    correct: "AIOX"
   - wrong: "ios"
-    correct: "AIOS"
+    correct: "AIOX"
   - wrong: "qos"
-    correct: "AIOS"
+    correct: "AIOX"
   - wrong: "tokins"
     correct: "tokens"
   - wrong: "squats"

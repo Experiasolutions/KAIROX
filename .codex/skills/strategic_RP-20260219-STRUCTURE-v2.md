@@ -24,7 +24,7 @@ Este RP é desenhado para ser executado por DOIS modelos em SESSÕES DIFERENTES:
 ## 🎯 CONTEXT BLOCK
 
 ### O que é
-A reestruturação cirúrgica completa do AIOS para:
+A reestruturação cirúrgica completa do AIOX para:
 1. Resolver os 7 gaps identificados na execução parcial do RP-STRUCTURE v1
 2. Eliminar contaminação de domínio nos `squads/` universais
 3. Completar a separação ENGINE vs CLIENT PACKAGE
@@ -87,7 +87,7 @@ O RP-20260218-STRUCTURE foi parcialmente executado. Uma auditoria cirúrgica rev
 │   ├── evolution/                   ← ✅ 16 arquivos (Noesis + Evolution Engine)
 │   └── [51 scripts core]
 │
-├── .aios-core/                      ← ✅ ENGINE
+├── .aiox-core/                      ← ✅ ENGINE
 │   ├── noesis/                      ← ✅ (Noesis config)
 │   ├── opus-replicator/             ← ✅ (CL v3, PM Masters, SELF_CONTEXT)
 │   └── memory/                      ← ✅ (golden examples, anti-patterns)
@@ -317,7 +317,7 @@ ESTÁGIO 2 — DOCUMENTAÇÃO & VALIDAÇÃO (Gemini 3.1 Pro)
    ├── Scripts (51 scripts core)
    ├── Integrations (18 tools)
    ├── Client Packages (clients/experia/)
-   └── Data Layer (data/, .aios-core/memory/)
+   └── Data Layer (data/, .aiox-core/memory/)
    ```
 
 2. **Diagrama ENGINE vs CLIENT PACKAGE** (atualizado pós-movimentação)
@@ -329,7 +329,7 @@ ESTÁGIO 2 — DOCUMENTAÇÃO & VALIDAÇÃO (Gemini 3.1 Pro)
 
 ---
 
-### Step 2.3: ATUALIZAR .aios-core/development/ROADMAP.md
+### Step 2.3: ATUALIZAR .aiox-core/development/ROADMAP.md
 
 **Ação:** Reescrever ROADMAP.md com estado real:
 
@@ -382,7 +382,7 @@ ESTÁGIO 2 — DOCUMENTAÇÃO & VALIDAÇÃO (Gemini 3.1 Pro)
 **Ação:** Simulação de onboarding:
 1. Um novo agente lê `README.md`
 2. Consegue responder em 60 segundos:
-   - "O que é o motor?" → AIOS, motor universal de orquestração
+   - "O que é o motor?" → AIOX, motor universal de orquestração
    - "O que é a Experia?" → Primeiro client package (clínicas)
    - "Qual é o próximo passo?" → Ativar Time Machine Protocol
    - "Onde está o código de evolução?" → `scripts/evolution/` (16 arquivos)
@@ -438,7 +438,7 @@ ESTÁGIO 2 — DOCUMENTAÇÃO & VALIDAÇÃO (Gemini 3.1 Pro)
 
 ## 🚫 O QUE NÃO FAZER
 
-- **NÃO move scripts/ ou .aios-core/** — são ENGINE e os paths estão hardcoded
+- **NÃO move scripts/ ou .aiox-core/** — são ENGINE e os paths estão hardcoded
 - **NÃO apague nenhum squad** — apenas MOVA para `clients/experia/squads/`
 - **NÃO altere OPUS_ENGINEERING_BIBLE.md** — é imutável
 - **NÃO mova mind-clones/ para clients/** — clones são UNIVERSAIS

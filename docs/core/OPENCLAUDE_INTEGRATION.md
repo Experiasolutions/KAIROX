@@ -8,7 +8,7 @@ Ao iniciar o novo ambiente limpo, você deve chamar o workflow `/context`. Isso 
 ## 2. Inicialização KAIROX / OpenClaude
 Com o contexto central recuperado:
 - Certifique-se de que os MCP servers estejam rodando corretamente de acordo com o KAIROX_COGNITION_CORE e o `SELF_CONTEXT.md`.
-- Verifique a execução isolada sem dependências mortas (AIOX / AIOS antigas residuais no arquivo system do Gemini).
+- Verifique a execução isolada sem dependências mortas (AIOX / AIOX antigas residuais no arquivo system do Gemini).
 - Inicie os workflows pelo Hub central do OpenClaude orientando sua execução via regras estipuladas no God Pool local.
 
 ## 3. Proxy Routing no OpenClaude

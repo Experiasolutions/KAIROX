@@ -63,7 +63,7 @@ async function syncToCloud(filePath) {
         // DISPARO DE AGENTES PARA TASK BOARD!
         // Se houver uma flag #triage ou #kairos, podemos emitir pro Event Bus.
         if (content.includes('#triage') || content.includes('#kairos')) {
-            console.log(`[!] Tag Inteligente Detectada em (${relativePath}). Acordando AIOS via EventBus...`);
+            console.log(`[!] Tag Inteligente Detectada em (${relativePath}). Acordando AIOX via EventBus...`);
             // Exemplo de integração futura com os PINGs do Agente Jarvis
             await supabase.from('kairos_event_bus').insert({
                 event_type: 'vault_triage',

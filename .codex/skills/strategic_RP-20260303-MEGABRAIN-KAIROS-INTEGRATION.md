@@ -27,7 +27,7 @@
 | 1     | Browser AI (Cloud/ChatGPT)                     | ❌ Ultrapassado               |
 | 2     | Conecta IA a ferramentas (Google Drive, etc.)  | ✅ MCP Server, tools-bridge   |
 | 3     | Skills: IA navega browser, faz trabalho braçal | ✅ OpenClaw 398+ skills       |
-| 4     | **Cloud Code: multi-agents, workflows, tasks** | ✅ KAIROS (AIOS architecture) |
+| 4     | **Cloud Code: multi-agents, workflows, tasks** | ✅ KAIROS (AIOX architecture) |
 
 **Veredito:** KAIROS já opera no Nível 4. O diferencial de Finch é a **curadoria de dados proprietários** (Nível 4+).
 

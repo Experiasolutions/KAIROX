@@ -1,6 +1,6 @@
 # Monetization KPIs — Canonical Reference
 
-> **Origem:** DooMMasteRBot V5 Fusion → AIOS Core
+> **Origem:** DooMMasteRBot V5 Fusion → AIOX Core
 > **Versão:** 1.0.0
 > **Última atualização:** 2026-02-13
 

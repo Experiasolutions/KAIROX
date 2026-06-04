@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v3.3.0] — 2026-02-09
 
-### Changed — Full Upgrade to AIOS Standards v4.0
+### Changed — Full Upgrade to AIOX Standards v4.0
 
 **Story:** `plan/stories/story-curator-upgrade-v4.md`
 **Audit Source:** Squad Architect `*upgrade-squad curator` — Score: 8.2/10 → target 9.0+
@@ -690,7 +690,7 @@ that was not carried over to the squad — this version corrects that.
 ## [1.1.0] - 2026-02-05
 
 ### Upgraded
-- **All 11 agents upgraded to AIOS standards** (squad score 7.2 → 8.0)
+- **All 11 agents upgraded to AIOX standards** (squad score 7.2 → 8.0)
   - IDE-FILE-RESOLUTION block added to all 11 agents (was 2/11)
   - objection_algorithms added to 10 agents (was 5/11)
   - sentence_starters added to all 11 agents (was 8/11)

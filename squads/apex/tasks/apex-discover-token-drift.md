@@ -35,7 +35,7 @@ outputs:
 
 Compares project tokens against external extraction history. Runs as part of `*apex-audit` or independently.
 
-**Prerequisite:** At least one prior `*scrape` or `*extract-tokens` extraction must exist (cached in `.aios/apex-context/extractions/`).
+**Prerequisite:** At least one prior `*scrape` or `*extract-tokens` extraction must exist (cached in `.aiox/apex-context/extractions/`).
 
 ---
 
@@ -45,7 +45,7 @@ Compares project tokens against external extraction history. Runs as part of `*a
 
 ```yaml
 extraction_history:
-  cache_location: ".aios/apex-context/extractions/"
+  cache_location: ".aiox/apex-context/extractions/"
   scan:
     - "*.extraction.yaml"
     - "*.extraction.json"

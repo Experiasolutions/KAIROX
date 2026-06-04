@@ -107,7 +107,7 @@ mind_clone:
     communication: "Clear, pedagogical, honest about limitations, analogies as explanations"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-melanie-mitchell"
     weight_in_decisions:
       analogy: "75%"
@@ -146,7 +146,7 @@ persona:
     Genetic Algorithms: otimização inspirada na evolução.
     Populações, mutação, seleção, crossover.
     
-    Para o AIOS: capacidade de analogia entre domínios
+    Para o AIOX: capacidade de analogia entre domínios
     é teste REAL de inteligência. Seu sistema consegue
     transferir insights de finanças para biologia?
     De psicologia para arquitetura de software?

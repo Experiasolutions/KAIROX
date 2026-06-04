@@ -1,8 +1,8 @@
 /**
  * @module jan-connector
  * @version 1.0.0
- * @purpose Bridge AIOS to Jan.ai (local LLM) with Groq cloud fallback.
- *          Auto-detects if user message requires AIOS Bridge execution
+ * @purpose Bridge AIOX to Jan.ai (local LLM) with Groq cloud fallback.
+ *          Auto-detects if user message requires AIOX Bridge execution
  *          and routes accordingly, otherwise falls back to general chat.
  * @inputs  User message string (CLI arg) + optional project-id
  * @outputs LLM response (chat) or action.json (bridge execution)
@@ -121,7 +121,7 @@ async function chat(message, systemPrompt) {
     throw new Error('Nenhum provider disponível (Jan offline + sem GROQ_API_KEY)');
 }
 
-// ── Detect if message requires AIOS Bridge execution ──────────
+// ── Detect if message requires AIOX Bridge execution ──────────
 function detectProject(message) {
     const lower = message.toLowerCase();
     // Load client-specific detection patterns dynamically
@@ -134,7 +134,7 @@ function detectProject(message) {
     return null;
 }
 
-// ── Run AIOS Bridge for a project ─────────────────────────────
+// ── Run AIOX Bridge for a project ─────────────────────────────
 function runBridge(message, project) {
     const context = {
         source: 'jan-connector',
@@ -160,7 +160,7 @@ async function main() {
 
     if (args[0] === '--status') {
         const jan = await checkJan();
-        console.log(`\n📊 AIOS Status:`);
+        console.log(`\n📊 AIOX Status:`);
         console.log(`  Jan.ai API:  ${jan ? '✅ Online (localhost:1337)' : '❌ Offline'}`);
         console.log(`  Groq API:    ${GROQ_KEY ? '✅ Configurado' : '❌ Sem key'}`);
         console.log(`  Bridge:      ✅ 5 rotas configuradas`);
@@ -179,7 +179,7 @@ async function main() {
     const detectedProject = explicitProject || detectProject(message);
 
     console.log('═══════════════════════════════════════════════════');
-    console.log('  🧠 AIOS ↔ Jan.ai Connector');
+    console.log('  🧠 AIOX ↔ Jan.ai Connector');
     console.log('═══════════════════════════════════════════════════\n');
     console.log(`📩 Mensagem: "${message}"`);
 
@@ -200,7 +200,7 @@ async function main() {
     }
 
     // General chat — use assistant persona from client config
-    let persona = { name: 'AIOS', systemPrompt: 'You are AIOS, an AI operations assistant. Respond helpfully and concisely.' };
+    let persona = { name: 'AIOX', systemPrompt: 'You are AIOX, an AI operations assistant. Respond helpfully and concisely.' };
     try {
         const clientsDir = path.join(ROOT, 'clients');
         for (const client of fs.readdirSync(clientsDir).filter(d => fs.statSync(path.join(clientsDir, d)).isDirectory())) {

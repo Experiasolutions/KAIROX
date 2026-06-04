@@ -3,24 +3,24 @@
 /**
  * @module kernel-bridge
  * @version 1.1.0
- * @purpose Unified bridge connecting .aios-core kernel modules (Synapse, IDS, WIS)
+ * @purpose Unified bridge connecting .aiox-core kernel modules (Synapse, IDS, WIS)
  *          and tools arsenal to the scripts layer. Provides singleton API with
  *          lazy initialization and graceful degradation.
- * @inputs  .aios-core/core/, .synapse/, tools/ directory structures
+ * @inputs  .aiox-core/core/, .synapse/, tools/ directory structures
  * @outputs Unified bridge object with sub-bridges for each kernel module
  * @dependencies tools-bridge.js (lazy-loaded)
  */
 
-// AIOS Kernel Bridge — Thin wrapper connecting .aios-core modules to scripts layer
+// AIOX Kernel Bridge — Thin wrapper connecting .aiox-core modules to scripts layer
 // Provides unified API for Synapse, IDS, WIS, and Tools kernel modules.
 
 const path = require('path');
 const fs = require('fs');
 
-const AIOS_ROOT = path.join(__dirname, '..');
-const CORE_PATH = path.join(AIOS_ROOT, '.aios-core', 'core');
-const SYNAPSE_PATH = path.join(AIOS_ROOT, '.synapse');
-const DATA_PATH = path.join(AIOS_ROOT, '.aios-core', 'data');
+const AIOX_ROOT = path.join(__dirname, '..');
+const CORE_PATH = path.join(AIOX_ROOT, '.aiox-core', 'core');
+const SYNAPSE_PATH = path.join(AIOX_ROOT, '.synapse');
+const DATA_PATH = path.join(AIOX_ROOT, '.aiox-core', 'data');
 
 // ── Graceful Module Loader ───────────────────────────────────
 
@@ -157,7 +157,7 @@ function createIDSBridge() {
 
 function createWISBridge() {
     const wisModule = safeRequire(
-        path.join(AIOS_ROOT, '.aios-core', 'workflow-intelligence'),
+        path.join(AIOX_ROOT, '.aiox-core', 'workflow-intelligence'),
         'WorkflowIntelligence',
     );
 

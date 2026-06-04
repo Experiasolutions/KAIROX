@@ -1,12 +1,12 @@
 # Revenue Operations Framework
 
-> **Origem:** DooMMasteRBot V5 Fusion → AIOS Core
+> **Origem:** DooMMasteRBot V5 Fusion → AIOX Core
 > **Versão:** 1.0.0
 > **Última atualização:** 2026-02-13
 
 ## Propósito
 
-Framework de Revenue Operations disponível para QUALQUER agent e squad no AIOS.
+Framework de Revenue Operations disponível para QUALQUER agent e squad no AIOX.
 Define os sistemas, métricas e gates necessários para avaliar e otimizar outputs
 por impacto financeiro real.
 

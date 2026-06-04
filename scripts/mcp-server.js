@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════════════════════════════
-// AIOS MCP SERVER v5.0.1-security-patched
-// Exposes AIOS agents & squads as MCP tools for Antigravity & other MCP clients
+// AIOX MCP SERVER v5.0.1-security-patched
+// Exposes AIOX agents & squads as MCP tools for Antigravity & other MCP clients
 // 
 // SECURITY FIXES (2026-04-15):
 // - Path traversal defense: normalize + strip leading ../ + strict startsWith check
@@ -12,7 +12,7 @@
 /**
  * @module mcp-server
  * @version 5.0.1
- * @purpose Expose all AIOS agents and squads as MCP tools for any
+ * @purpose Expose all AIOX agents and squads as MCP tools for any
  *          compatible AI client (Claude Desktop, Cursor, Cline, etc.).
  *          Runs in stdio mode per the Model Context Protocol spec.
  * @inputs  MCP JSON-RPC requests via stdin (or --list / --test CLI flags)
@@ -25,13 +25,16 @@ const fs = require('fs');
 const path = require('path');
 const { getToolsBridge } = require('./tools-bridge');
 
-const AIOS_ROOT = path.resolve(__dirname, '..');
-const SQUADS_DIR = path.join(AIOS_ROOT, 'squads');
+const AIOX_ROOT = path.resolve(__dirname, '..');
+const SQUADS_DIR = path.join(AIOX_ROOT, 'squads');
+
+// OBRIGATÓRIO: Força carregamento do .env do KAIROS para o MCP Server
+require('dotenv').config({ path: path.join(AIOX_ROOT, '.env') });
 
 const toolsBridge = getToolsBridge();
 
 // ============================================================
-// SCAN AIOS FOR TOOLS
+// SCAN AIOX FOR TOOLS
 // ============================================================
 
 function scanTools() {
@@ -39,14 +42,14 @@ function scanTools() {
 
     // Tool: list-squads
     tools.push({
-        name: 'aios_list_squads',
-        description: 'List all AIOS squads with agent counts',
+        name: 'aiox_list_squads',
+        description: 'List all AIOX squads with agent counts',
         inputSchema: { type: 'object', properties: {}, required: [] },
     });
 
     // Tool: list-agents
     tools.push({
-        name: 'aios_list_agents',
+        name: 'aiox_list_agents',
         description: 'List all agents in a specific squad',
         inputSchema: {
             type: 'object',
@@ -59,8 +62,8 @@ function scanTools() {
 
     // Tool: get-agent
     tools.push({
-        name: 'aios_get_agent',
-        description: 'Get the full definition of an AIOS agent, including persona, KPIs, commands, and DNA sources',
+        name: 'aiox_get_agent',
+        description: 'Get the full definition of an AIOX agent, including persona, KPIs, commands, and DNA sources',
         inputSchema: {
             type: 'object',
             properties: {
@@ -73,8 +76,8 @@ function scanTools() {
 
     // Tool: search-agents
     tools.push({
-        name: 'aios_search_agents',
-        description: 'Search across all AIOS agents by keyword (searches in name, title, persona, KPIs)',
+        name: 'aiox_search_agents',
+        description: 'Search across all AIOX agents by keyword (searches in name, title, persona, KPIs)',
         inputSchema: {
             type: 'object',
             properties: {
@@ -86,14 +89,14 @@ function scanTools() {
 
     // Tool: get-status
     tools.push({
-        name: 'aios_status',
-        description: 'Get AIOS system status: version, squad count, agent count, health',
+        name: 'aiox_status',
+        description: 'Get AIOX system status: version, squad count, agent count, health',
         inputSchema: { type: 'object', properties: {}, required: [] },
     });
 
     // Tool: invoke-squad
     tools.push({
-        name: 'aios_invoke_squad',
+        name: 'aiox_invoke_squad',
         description: 'Invoke an entire squad for a task. Returns the squad definition and recommended workflow.',
         inputSchema: {
             type: 'object',
@@ -107,8 +110,8 @@ function scanTools() {
 
     // Tool: event-publish
     tools.push({
-        name: 'aios_publish_event',
-        description: 'Publish an event to the AIOS event bus for cross-squad communication',
+        name: 'aiox_publish_event',
+        description: 'Publish an event to the AIOX event bus for cross-squad communication',
         inputSchema: {
             type: 'object',
             properties: {
@@ -122,7 +125,7 @@ function scanTools() {
 
     // Tool: list-skills
     tools.push({
-        name: 'aios_list_skills',
+        name: 'aiox_list_skills',
         description: 'List available skills from the tools arsenal (tools/integrations). Limited by default, use search for specific skills.',
         inputSchema: {
             type: 'object',
@@ -135,8 +138,8 @@ function scanTools() {
 
     // Tool: search-skills
     tools.push({
-        name: 'aios_search_skills',
-        description: 'Search for specific skills in the AIOS tools arsenal by keyword',
+        name: 'aiox_search_skills',
+        description: 'Search for specific skills in the AIOX tools arsenal by keyword',
         inputSchema: {
             type: 'object',
             properties: {
@@ -148,7 +151,7 @@ function scanTools() {
 
     // Tool: read-skill
     tools.push({
-        name: 'aios_read_skill',
+        name: 'aiox_read_skill',
         description: 'Read the full instructional content of a specific skill (returns the SKILL.md content)',
         inputSchema: {
             type: 'object',
@@ -518,7 +521,7 @@ function scanTools() {
 
 async function handleTool(name, args) {
     switch (name) {
-        case 'aios_list_squads': {
+        case 'aiox_list_squads': {
             const squads = fs.readdirSync(SQUADS_DIR)
                 .filter(s => { try { return fs.statSync(path.join(SQUADS_DIR, s)).isDirectory(); } catch { return false; } })
                 .map(s => {
@@ -531,7 +534,7 @@ async function handleTool(name, args) {
             return { squads, totalSquads: squads.length, totalAgents: total };
         }
 
-        case 'aios_list_agents': {
+        case 'aiox_list_agents': {
             const ad = path.join(SQUADS_DIR, args.squad, 'agents');
             try {
                 const agents = fs.readdirSync(ad).filter(f => f.endsWith('.md')).map(f => f.replace('.md', ''));
@@ -541,7 +544,7 @@ async function handleTool(name, args) {
             }
         }
 
-        case 'aios_get_agent': {
+        case 'aiox_get_agent': {
             const fp = path.join(SQUADS_DIR, args.squad, 'agents', `${args.agent}.md`);
             try {
                 const content = fs.readFileSync(fp, 'utf8');
@@ -551,7 +554,7 @@ async function handleTool(name, args) {
             }
         }
 
-        case 'aios_search_agents': {
+        case 'aiox_search_agents': {
             const query = args.query.toLowerCase();
             const results = [];
             const squads = fs.readdirSync(SQUADS_DIR).filter(s => {
@@ -576,7 +579,7 @@ async function handleTool(name, args) {
             return { query: args.query, results, count: results.length };
         }
 
-        case 'aios_status': {
+        case 'aiox_status': {
             const squads = fs.readdirSync(SQUADS_DIR).filter(s => {
                 try { return fs.statSync(path.join(SQUADS_DIR, s)).isDirectory(); } catch { return false; }
             });
@@ -585,11 +588,11 @@ async function handleTool(name, args) {
                 try { totalAgents += fs.readdirSync(path.join(SQUADS_DIR, s, 'agents')).filter(f => f.endsWith('.md')).length; } catch { }
             });
             let version = 'unknown';
-            try { version = JSON.parse(fs.readFileSync(path.join(AIOS_ROOT, '.aios-core', 'version.json'), 'utf8')).version; } catch { }
+            try { version = JSON.parse(fs.readFileSync(path.join(AIOX_ROOT, '.aiox-core', 'version.json'), 'utf8')).version; } catch { }
             return { version, squads: squads.length, agents: totalAgents, status: 'online', timestamp: new Date().toISOString() };
         }
 
-        case 'aios_invoke_squad': {
+        case 'aiox_invoke_squad': {
             const yamlPath = path.join(SQUADS_DIR, args.squad, 'squad.yaml');
             try {
                 const yaml = fs.readFileSync(yamlPath, 'utf8');
@@ -605,11 +608,11 @@ async function handleTool(name, args) {
             }
         }
 
-        case 'aios_publish_event': {
+        case 'aiox_publish_event': {
             return { published: true, channel: args.channel, data: args.data, source: args.source || 'mcp-client', timestamp: new Date().toISOString() };
         }
 
-        case 'aios_list_skills': {
+        case 'aiox_list_skills': {
             const discovery = toolsBridge.getDiscovery();
             if (!discovery.available) return { error: 'Tools bridge is not available. Ensure the tools/ directory exists.' };
             const limit = args.limit || 50;
@@ -617,11 +620,11 @@ async function handleTool(name, args) {
                 total_skills: discovery.totalSkills,
                 integrations: discovery.integrations.length,
                 skills_preview: discovery.allSkills.slice(0, limit).map(s => ({ id: s.id, name: s.name })),
-                note: `Showing first ${Math.min(limit, discovery.totalSkills)} skills. Use aios_search_skills to find specific ones.`
+                note: `Showing first ${Math.min(limit, discovery.totalSkills)} skills. Use aiox_search_skills to find specific ones.`
             };
         }
 
-        case 'aios_search_skills': {
+        case 'aiox_search_skills': {
             if (!toolsBridge.available) return { error: 'Tools bridge is not available.' };
             const results = toolsBridge.searchSkills(args.query);
             return {
@@ -636,7 +639,7 @@ async function handleTool(name, args) {
             };
         }
 
-        case 'aios_read_skill': {
+        case 'aiox_read_skill': {
             if (!toolsBridge.available) return { error: 'Tools bridge is not available.' };
             const content = toolsBridge.loadSkillContent(args.skill_id);
             if (!content) return { error: `Skill '${args.skill_id}' not found or has no content.` };
@@ -655,7 +658,7 @@ async function handleTool(name, args) {
         // ============================================================
 
         case 'kairos_list_rps': {
-            const RP_DIR = path.join(AIOS_ROOT, 'reasoning-packages');
+            const RP_DIR = path.join(AIOX_ROOT, 'reasoning-packages');
             const categories = ['strategic', 'core', 'tasks'];
             const filterCat = args.category || 'all';
             const result = {};
@@ -678,7 +681,7 @@ async function handleTool(name, args) {
         }
 
         case 'kairos_read_rp': {
-            const RP_DIR = path.join(AIOS_ROOT, 'reasoning-packages');
+            const RP_DIR = path.join(AIOX_ROOT, 'reasoning-packages');
             const searchDirs = args.category ? [args.category] : ['strategic', 'core', 'tasks'];
             for (const dir of searchDirs) {
                 const fp = path.join(RP_DIR, dir, args.filename);
@@ -693,8 +696,8 @@ async function handleTool(name, args) {
         case 'kairos_read_doc': {
             // Security: prevent path traversal with strict validation
             const docPath = path.normalize(args.path).replace(/^(\.\.(\/|\\))+/g, '');
-            const resolved = path.resolve(AIOS_ROOT, docPath);
-            const rootResolved = path.resolve(AIOS_ROOT);
+            const resolved = path.resolve(AIOX_ROOT, docPath);
+            const rootResolved = path.resolve(AIOX_ROOT);
             if (!resolved.startsWith(rootResolved) || resolved.length < rootResolved.length) {
                 return { error: 'Access denied: path traversal detected' };
             }
@@ -722,7 +725,7 @@ async function handleTool(name, args) {
             } catch { health.subsystems.squads = { status: 'error' }; }
 
             // RPs
-            const rpDir = path.join(AIOS_ROOT, 'reasoning-packages');
+            const rpDir = path.join(AIOX_ROOT, 'reasoning-packages');
             try {
                 let rpTotal = 0;
                 for (const cat of ['strategic', 'core', 'tasks']) {
@@ -736,14 +739,14 @@ async function handleTool(name, args) {
             health.subsystems.tools = { status: toolsHealth.available ? 'ok' : 'error', ...toolsHealth };
 
             // Scripts
-            const scriptsDir = path.join(AIOS_ROOT, 'scripts');
+            const scriptsDir = path.join(AIOX_ROOT, 'scripts');
             try {
                 const scripts = fs.readdirSync(scriptsDir).filter(f => f.startsWith('kairos-'));
                 health.subsystems.kairos_scripts = { status: 'ok', count: scripts.length, files: scripts };
             } catch { health.subsystems.kairos_scripts = { status: 'error' }; }
 
             // Clients
-            const clientsDir = path.join(AIOS_ROOT, 'clients');
+            const clientsDir = path.join(AIOX_ROOT, 'clients');
             try {
                 const clients = fs.readdirSync(clientsDir).filter(c => {
                     try { return fs.statSync(path.join(clientsDir, c)).isDirectory(); } catch { return false; }
@@ -752,12 +755,12 @@ async function handleTool(name, args) {
             } catch { health.subsystems.clients = { status: 'error' }; }
 
             // AIOX Core
-            const corePath = path.join(AIOS_ROOT, '.aiox-core');
+            const corePath = path.join(AIOX_ROOT, '.aiox-core');
             health.subsystems.aiox_core = { status: fs.existsSync(corePath) ? 'ok' : 'missing' };
 
             // Context files
-            health.subsystems.self_context = { status: fs.existsSync(path.join(AIOS_ROOT, 'SELF_CONTEXT.md')) ? 'ok' : 'missing' };
-            health.subsystems.status_md = { status: fs.existsSync(path.join(AIOS_ROOT, 'STATUS.md')) ? 'ok' : 'missing' };
+            health.subsystems.self_context = { status: fs.existsSync(path.join(AIOX_ROOT, 'SELF_CONTEXT.md')) ? 'ok' : 'missing' };
+            health.subsystems.status_md = { status: fs.existsSync(path.join(AIOX_ROOT, 'STATUS.md')) ? 'ok' : 'missing' };
 
             // Overall
             const allOk = Object.values(health.subsystems).every(s => s.status === 'ok');
@@ -767,7 +770,7 @@ async function handleTool(name, args) {
         }
 
         case 'kairos_list_workflows': {
-            const wfDir = path.join(AIOS_ROOT, '.aiox-core', 'development', 'workflows');
+            const wfDir = path.join(AIOX_ROOT, '.aiox-core', 'development', 'workflows');
             try {
                 const files = fs.readdirSync(wfDir).filter(f => f.endsWith('.yaml') || f.endsWith('.yml'));
                 const workflows = files.map(f => {
@@ -786,7 +789,7 @@ async function handleTool(name, args) {
         // ============================================================
 
         case 'kairos_list_tasks': {
-            const tasksDir = path.join(AIOS_ROOT, '.aiox-core', 'development', 'tasks');
+            const tasksDir = path.join(AIOX_ROOT, '.aiox-core', 'development', 'tasks');
             try {
                 let files = fs.readdirSync(tasksDir).filter(f => f.endsWith('.md'));
                 if (args.filter) {
@@ -800,7 +803,7 @@ async function handleTool(name, args) {
         }
 
         case 'kairos_read_task': {
-            const taskPath = path.join(AIOS_ROOT, '.aiox-core', 'development', 'tasks', args.filename);
+            const taskPath = path.join(AIOX_ROOT, '.aiox-core', 'development', 'tasks', args.filename);
             try {
                 const content = fs.readFileSync(taskPath, 'utf8');
                 return { filename: args.filename, content, chars: content.length };
@@ -810,7 +813,7 @@ async function handleTool(name, args) {
         }
 
         case 'kairos_list_framework_agents': {
-            const agentsDir = path.join(AIOS_ROOT, '.aiox-core', 'development', 'agents');
+            const agentsDir = path.join(AIOX_ROOT, '.aiox-core', 'development', 'agents');
             try {
                 const files = fs.readdirSync(agentsDir).filter(f => f.endsWith('.md'));
                 const agents = files.map(f => {
@@ -833,7 +836,7 @@ async function handleTool(name, args) {
         }
 
         case 'kairos_read_framework_agent': {
-            const agentPath = path.join(AIOS_ROOT, '.aiox-core', 'development', 'agents', `${args.agent}.md`);
+            const agentPath = path.join(AIOX_ROOT, '.aiox-core', 'development', 'agents', `${args.agent}.md`);
             try {
                 const content = fs.readFileSync(agentPath, 'utf8');
                 return { agent: args.agent, content, chars: content.length };
@@ -843,7 +846,7 @@ async function handleTool(name, args) {
         }
 
         case 'kairos_list_clients': {
-            const clientsDir = path.join(AIOS_ROOT, 'clients');
+            const clientsDir = path.join(AIOX_ROOT, 'clients');
             try {
                 const dirs = fs.readdirSync(clientsDir).filter(c => {
                     try { return fs.statSync(path.join(clientsDir, c)).isDirectory(); } catch { return false; }
@@ -865,12 +868,12 @@ async function handleTool(name, args) {
             const result = {};
             if (target === 'self_context' || target === 'both') {
                 try {
-                    result.self_context = fs.readFileSync(path.join(AIOS_ROOT, 'SELF_CONTEXT.md'), 'utf8');
+                    result.self_context = fs.readFileSync(path.join(AIOX_ROOT, 'SELF_CONTEXT.md'), 'utf8');
                 } catch { result.self_context = null; }
             }
             if (target === 'status' || target === 'both') {
                 try {
-                    result.status = fs.readFileSync(path.join(AIOS_ROOT, 'STATUS.md'), 'utf8');
+                    result.status = fs.readFileSync(path.join(AIOX_ROOT, 'STATUS.md'), 'utf8');
                 } catch { result.status = null; }
             }
             return result;
@@ -907,13 +910,13 @@ async function handleTool(name, args) {
             if (cat === 'all') {
                 const roots = ['scripts', 'tools', 'packages'];
                 for (const r of roots) {
-                    const targetDir = path.join(AIOS_ROOT, r);
+                    const targetDir = path.join(AIOX_ROOT, r);
                     if (fs.existsSync(targetDir)) scanDir(targetDir, r);
                 }
             } else {
-                const targetDir = path.join(AIOS_ROOT, cat);
+                const targetDir = path.join(AIOX_ROOT, cat);
                 const resolvedTarget = path.resolve(targetDir);
-                if (!resolvedTarget.startsWith(path.resolve(AIOS_ROOT))) {
+                if (!resolvedTarget.startsWith(path.resolve(AIOX_ROOT))) {
                     return { error: 'Invalid category path' };
                 }
                 scanDir(targetDir, cat);
@@ -923,9 +926,9 @@ async function handleTool(name, args) {
         }
 
         case 'kairos_read_script': {
-            const scriptPath = path.join(AIOS_ROOT, args.path);
+            const scriptPath = path.join(AIOX_ROOT, args.path);
             const resolved = path.resolve(scriptPath);
-            const validRoots = ['scripts', 'tools', 'packages'].map(r => path.resolve(AIOS_ROOT, r));
+            const validRoots = ['scripts', 'tools', 'packages'].map(r => path.resolve(AIOX_ROOT, r));
             
             if (!validRoots.some(root => resolved.startsWith(root))) {
                 return { error: 'Access denied. You can only read files within scripts, tools, or packages directories.' };
@@ -939,7 +942,7 @@ async function handleTool(name, args) {
         }
 
         case 'kairos_read_synapse': {
-            const synapseDir = path.join(AIOS_ROOT, '.synapse');
+            const synapseDir = path.join(AIOX_ROOT, '.synapse');
             if (args.target === 'all') {
                 try {
                     const files = fs.readdirSync(synapseDir).filter(f => !f.startsWith('.'));
@@ -966,7 +969,7 @@ async function handleTool(name, args) {
             const mod = args.module || 'all';
             const result = {};
             if (mod === 'noesis' || mod === 'all') {
-                const noesisDir = path.join(AIOS_ROOT, 'engine', 'noesis');
+                const noesisDir = path.join(AIOX_ROOT, 'engine', 'noesis');
                 try {
                     const files = ['cognitive-state.json', 'identity-anchor.json', 'state-history.json'];
                     result.noesis = {};
@@ -979,7 +982,7 @@ async function handleTool(name, args) {
                 } catch { result.noesis = { error: 'not found' }; }
             }
             if (mod === 'memory' || mod === 'all') {
-                const memDir = path.join(AIOS_ROOT, 'engine', 'memory');
+                const memDir = path.join(AIOX_ROOT, 'engine', 'memory');
                 try {
                     const files = ['operator-profile.json', 'quality-baseline.json'];
                     result.memory = {};
@@ -997,8 +1000,8 @@ async function handleTool(name, args) {
         // ---- SKYROS Personal OS Handlers ----
 
         case 'skyros_triage': {
-            const roadmapPath = path.join(AIOS_ROOT, 'roadmap.md');
-            const anamnesisPath = path.join(AIOS_ROOT, 'docs', 'anamnesis');
+            const roadmapPath = path.join(AIOX_ROOT, 'roadmap.md');
+            const anamnesisPath = path.join(AIOX_ROOT, 'docs', 'anamnesis');
             const result = { timestamp: new Date().toISOString() };
 
             if (!fs.existsSync(roadmapPath)) {
@@ -1026,7 +1029,7 @@ async function handleTool(name, args) {
         }
 
         case 'skyros_isolation': {
-            const statusPath = path.join(AIOS_ROOT, 'STATUS.md');
+            const statusPath = path.join(AIOX_ROOT, 'STATUS.md');
             const action = (args.action || 'engage').toLowerCase();
             const isolationTag = '> \uD83D\uDD34 [SKYROS]: ISOLATION MODE ENGAGED. O operador está em Deep Work. Novas tarefas fora da SPRINT P0 devem ser TERMINANTEMENTE negadas.';
 
@@ -1060,7 +1063,7 @@ async function handleTool(name, args) {
         // ============================================================
 
         case 'hivemind_log_decision': {
-            const HIVEMIND_DIR = path.join(AIOS_ROOT, 'engine', 'hivemind');
+            const HIVEMIND_DIR = path.join(AIOX_ROOT, 'engine', 'hivemind');
             const logPath = path.join(HIVEMIND_DIR, 'decisions.jsonl');
             try {
                 if (!fs.existsSync(HIVEMIND_DIR)) fs.mkdirSync(HIVEMIND_DIR, { recursive: true });
@@ -1081,7 +1084,7 @@ async function handleTool(name, args) {
         }
 
         case 'hivemind_read_decisions': {
-            const HIVEMIND_DIR = path.join(AIOS_ROOT, 'engine', 'hivemind');
+            const HIVEMIND_DIR = path.join(AIOX_ROOT, 'engine', 'hivemind');
             const logPath = path.join(HIVEMIND_DIR, 'decisions.jsonl');
             try {
                 if (!fs.existsSync(logPath)) return { decisions: [], count: 0 };
@@ -1098,7 +1101,7 @@ async function handleTool(name, args) {
         }
 
         case 'hivemind_update_state': {
-            const HIVEMIND_DIR = path.join(AIOS_ROOT, 'engine', 'hivemind');
+            const HIVEMIND_DIR = path.join(AIOX_ROOT, 'engine', 'hivemind');
             const statePath = path.join(HIVEMIND_DIR, 'agent-states.json');
             try {
                 if (!fs.existsSync(HIVEMIND_DIR)) fs.mkdirSync(HIVEMIND_DIR, { recursive: true });
@@ -1122,7 +1125,7 @@ async function handleTool(name, args) {
         }
 
         case 'hivemind_read_states': {
-            const HIVEMIND_DIR = path.join(AIOS_ROOT, 'engine', 'hivemind');
+            const HIVEMIND_DIR = path.join(AIOX_ROOT, 'engine', 'hivemind');
             const statePath = path.join(HIVEMIND_DIR, 'agent-states.json');
             try {
                 if (!fs.existsSync(statePath)) return { agents: {}, count: 0 };
@@ -1134,7 +1137,7 @@ async function handleTool(name, args) {
         }
 
         case 'hivemind_assign_task': {
-            const HIVEMIND_DIR = path.join(AIOS_ROOT, 'engine', 'hivemind');
+            const HIVEMIND_DIR = path.join(AIOX_ROOT, 'engine', 'hivemind');
             const logPath = path.join(HIVEMIND_DIR, 'decisions.jsonl');
             try {
                 if (!fs.existsSync(HIVEMIND_DIR)) fs.mkdirSync(HIVEMIND_DIR, { recursive: true });
@@ -1158,8 +1161,11 @@ async function handleTool(name, args) {
         // ============================================================
 
         case 'railway_list_services': {
-            const token = process.env.RAILWAY_TOKEN || process.env.RAILWAY_API_TOKEN;
-            if (!token) return { error: 'RAILWAY_TOKEN não configurado no .env. Adicione: RAILWAY_TOKEN=seu_token_aqui' };
+            const fs = require('fs');
+            const envContent = fs.readFileSync(path.join(AIOX_ROOT, '.env'), 'utf8');
+            const match = envContent.match(/RAILWAY_TOKEN=(.+)/);
+            const token = process.env.RAILWAY_TOKEN || process.env.RAILWAY_API_TOKEN || (match ? match[1].trim() : null);
+            if (!token) return { error: 'DEBUG: RAILWAY_TOKEN missing. env keys: ' + Object.keys(process.env).join(',') };
 
             const projectId = args.project_id || process.env.RAILWAY_PROJECT_ID;
             if (!projectId) return { error: 'project_id não fornecido e RAILWAY_PROJECT_ID não está no .env' };
@@ -1447,7 +1453,7 @@ async function handleTool(name, args) {
 // ============================================================
 
 if (process.argv.includes('--list')) {
-    console.log('🔧 AIOS MCP Server — Available Tools\n');
+    console.log('🔧 AIOX MCP Server — Available Tools\n');
     const tools = scanTools();
     tools.forEach(t => {
         console.log(`  📌 ${t.name}`);
@@ -1461,16 +1467,16 @@ if (process.argv.includes('--list')) {
 }
 
 if (process.argv.includes('--test')) {
-    console.log('🧪 AIOS MCP Server — Self Test\n');
+    console.log('🧪 AIOX MCP Server — Self Test\n');
 
     const tests = [
-        ['aios_status', {}],
-        ['aios_list_squads', {}],
-        ['aios_list_agents', { squad: 'doombot' }],
-        ['aios_search_agents', { query: 'revenue' }],
-        ['aios_publish_event', { channel: 'test.ping', data: { msg: 'hello' } }],
-        ['aios_list_skills', { limit: 5 }],
-        ['aios_search_skills', { query: 'react' }],
+        ['aiox_status', {}],
+        ['aiox_list_squads', {}],
+        ['aiox_list_agents', { squad: 'doombot' }],
+        ['aiox_search_agents', { query: 'revenue' }],
+        ['aiox_publish_event', { channel: 'test.ping', data: { msg: 'hello' } }],
+        ['aiox_list_skills', { limit: 5 }],
+        ['aiox_search_skills', { query: 'react' }],
         // KAIROS v2.0 tests
         ['kairos_list_rps', { category: 'all' }],
         ['kairos_read_doc', { path: 'package.json' }],
@@ -1550,7 +1556,7 @@ if (!process.argv.includes('--list') && !process.argv.includes('--test')) {
                     jsonrpc: '2.0', id, result: {
                         protocolVersion: '2024-11-05',
                         capabilities: { tools: {} },
-                        serverInfo: { name: 'aios-kairos-mcp-server', version: '5.0.0-hivemind' },
+                        serverInfo: { name: 'aiox-kairos-mcp-server', version: '5.0.0-hivemind' },
                     }
                 };
 
@@ -1574,6 +1580,6 @@ if (!process.argv.includes('--list') && !process.argv.includes('--test')) {
     }
 
     // Log to stderr (MCP standard)
-    process.stderr.write('🔧 AIOS + KAIROS MCP Server v5.1.0-railway started (stdio mode)\n');
-    process.stderr.write(`   ${tools.length} tools exposed (10 AIOS + 13 KAIROS + 5 Hivemind + 5 Railway)\n`);
+    process.stderr.write('🔧 AIOX + KAIROS MCP Server v5.1.0-railway started (stdio mode)\n');
+    process.stderr.write(`   ${tools.length} tools exposed (10 AIOX + 13 KAIROS + 5 Hivemind + 5 Railway)\n`);
 }

@@ -7,7 +7,7 @@
 
 domains:
   ac_automation:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["activecampaign", "ac", "tag", "lista", "automação", "contato", "automation"]
       secondary: ["crm", "email marketing", "segment"]
@@ -17,14 +17,14 @@ domains:
       primary: "@ac-automation"
       squad: null
     kb_files:
-      - ".aios-core/context/ac-automation.md"
+      - ".aiox-core/context/ac-automation.md"
       - "MCPs/activecampaign/CLAUDE.md"
     enrichment: STANDARD
     default_model: haiku
     note: "MCP tasks must run foreground (MCP unavailable in background)"
 
   analyst:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["analisar", "analyze", "relatório", "report", "métrica", "dashboard", "benchmark"]
       secondary: ["dados", "data", "research", "insight"]
@@ -37,7 +37,7 @@ domains:
     default_model: sonnet
 
   architect:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["architecture", "PRD", "system design", "migration", "infrastructure", "database schema"]
       secondary: ["trade-off", "decision", "pattern", "microservice"]
@@ -51,7 +51,7 @@ domains:
     note: "Architecture tasks usually should NOT be dispatched — redirect to /architect"
 
   bh_automation:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["beehiiv", "bh", "subscriber", "post beehiiv", "segmento"]
       secondary: ["newsletter platform"]
@@ -135,7 +135,7 @@ domains:
       tasks: 12
 
   data_engineer:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["ETL", "pipeline", "schema", "database", "migration", "data model"]
       secondary: ["transform", "extract", "load", "SQL"]
@@ -173,7 +173,7 @@ domains:
       tasks: 33
 
   dev:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["code", "function", "refactor", "bug", "feature", "component", "API", "endpoint", "implement", "script"]
       secondary: ["class", "method", "module", "package", "import", "test"]
@@ -292,7 +292,7 @@ domains:
     note: "Worker scripts only, no agent needed"
 
   pm:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["PRD", "product", "roadmap", "prioritization"]
       secondary: ["requirement", "feature request", "backlog"]
@@ -306,7 +306,7 @@ domains:
     note: "PM tasks usually should NOT be dispatched — redirect to /pm"
 
   po:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["story", "user story", "acceptance criteria", "grooming"]
       secondary: ["epic", "backlog item", "sprint"]
@@ -320,7 +320,7 @@ domains:
     note: "PO tasks usually should NOT be dispatched — redirect to /po"
 
   qa:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["test", "QA", "validation", "coverage", "regression", "acceptance", "smoke test"]
       secondary: ["assert", "verify", "check", "audit"]
@@ -334,7 +334,7 @@ domains:
 
   ralph:
     source: "squads/ralph"
-    description: "Autonomous development loop with compound learning and AIOS agent delegation"
+    description: "Autonomous development loop with compound learning and AIOX agent delegation"
     triggers:
       primary: ["ralph", "ralph", "batch reprocess", "capture learnings", "convert to ralph", "prd", "generate book prd"]
       secondary: []
@@ -354,7 +354,7 @@ domains:
       tasks: 8
 
   sm:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["sprint", "retrospective", "standup", "facilitation"]
       secondary: ["blocker", "velocity", "burndown"]
@@ -392,7 +392,7 @@ domains:
       tasks: 45
 
   youtube:
-    source: ".aios-core"
+    source: ".aiox-core"
     triggers:
       primary: ["youtube", "transcrição", "transcript", "timestamp", "vídeo"]
       secondary: ["live", "mining", "video"]
@@ -428,4 +428,4 @@ business_context:
   max_tokens: 2000
   condition: "Load IF AND ONLY IF triggers present"
 
-# Summary: 22 domains (10 from squads, 11 from .aios-core)
+# Summary: 22 domains (10 from squads, 11 from .aiox-core)

@@ -4,7 +4,7 @@
 **Why golden:** Resolves ENGINE vs CLIENT separation with architectural evidence, maps kernel dependencies, identifies domain contamination as the #1 anti-pattern.
 
 ## THE TASK
-Architect the AIOS engine's cognitive reasoning layer (Noesis) as a domain-agnostic substrate that operates independently of any client implementation.
+Architect the AIOX engine's cognitive reasoning layer (Noesis) as a domain-agnostic substrate that operates independently of any client implementation.
 
 ## THE REASONING TRACE
 
@@ -36,7 +36,7 @@ The domain-specific vocabulary lives in:
 LAYER A: Build cognitive engine that powers any AI agent workforce
 LAYER B: Engine must be stateless regarding domain — no hardcoded patients, invoices, or appointments
 LAYER C: Architecture must allow N simultaneous clients with different squad configurations, all sharing the same Noesis engine
-LAYER D: Long-term, Noesis is the product — sold as the core differentiation of AIOS
+LAYER D: Long-term, Noesis is the product — sold as the core differentiation of AIOX
 
 TRADE-OFF RESOLVED: Domain-specific examples vs Universal rules
 Domain-specific golden examples: provide stronger anchoring but limit reusability
@@ -56,7 +56,7 @@ with strict domain isolation at each boundary. SELF_CONTEXT.md created as persis
 - Each component has clear input/output/risk documented at N3 level
 
 ## REUSE GUIDANCE
-Use this when: designing any new AIOS engine-level component that might
+Use this when: designing any new AIOX engine-level component that might
 accidentally absorb domain-specific logic.
 The C5 ✗→ C1 pattern applies to every kernel extension.
 The tagged-example pattern applies to any system that must be both

@@ -6,7 +6,7 @@
 
 ## Overview
 
-The Dispatch Squad is the **execution backbone** of AIOS. It receives stories, PRDs, or task lists, decomposes them into atomic sub-tasks, optimizes into DAG-based waves, routes to the correct agents/models, and executes in parallel via subagents — all while keeping the main Opus context clean.
+The Dispatch Squad is the **execution backbone** of AIOX. It receives stories, PRDs, or task lists, decomposes them into atomic sub-tasks, optimizes into DAG-based waves, routes to the correct agents/models, and executes in parallel via subagents — all while keeping the main Opus context clean.
 
 **Core philosophy:** "Never contaminate the main context. Always subagents. Always."
 
@@ -299,10 +299,10 @@ squads/dispatch/
 
 ## Integration
 
-- **Source:** Self-contained in `squads/dispatch/` (legacy `.aios-core/` dispatcher files have been removed)
+- **Source:** Self-contained in `squads/dispatch/` (legacy `.aiox-core/` dispatcher files have been removed)
 - **Auto-discovery:** `*discover` scans ecosystem and rebuilds registries automatically
 - **Backward compat:** `wf-dispatch-free.yaml` supports legacy free-text input
 
 ---
 
-*Dispatch Squad v1.0.0 — AIOS Framework*
+*Dispatch Squad v1.0.0 — AIOX Framework*

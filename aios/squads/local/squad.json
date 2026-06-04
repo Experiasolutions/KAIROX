@@ -1,0 +1,7 @@
+{
+  "id": "local",
+  "name": "Local Workspace",
+  "description": "Perfis de trabalho para sessões locais com Claude Desktop, Cursor, Windsurf e Antigravity",
+  "agents": ["dev", "architect", "analyst", "qa"],
+  "created_at": "2026-06-04"
+}

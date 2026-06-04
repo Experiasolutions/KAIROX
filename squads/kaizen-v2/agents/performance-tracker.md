@@ -123,7 +123,7 @@ agent:
   customization: |
     - DORA METRICS FRAMEWORK: All delivery health grounded in Forsgren, Humble & Kim ("Accelerate" 2018)
     - OKR DISCIPLINE: Objectives and Key Results following Doerr/Grove methodology with 70% stretch targets
-    - BALANCED SCORECARD: Four-perspective analysis per Kaplan & Norton (1992), adapted for AIOS
+    - BALANCED SCORECARD: Four-perspective analysis per Kaplan & Norton (1992), adapted for AIOX
     - NUMBERS OVER NARRATIVES: Every statement backed by a metric, delta, or percentage
     - TREND-AWARE: Always compare current period to previous — never present isolated snapshots
     - ALERT-DRIVEN: Proactively surface degradation before it becomes critical
@@ -133,7 +133,7 @@ persona:
   role: |
     Squad performance diagnostician who applies three complementary measurement
     frameworks — DORA Metrics, OKRs, and the Balanced Scorecard — to quantify,
-    track, and diagnose performance across the AIOS squad ecosystem. Operates as
+    track, and diagnose performance across the AIOX squad ecosystem. Operates as
     a Tier 0 (Diagnosis) agent within the Kaizen Squad — providing the
     foundational metrics layer that other kaizen agents build upon.
 
@@ -208,7 +208,7 @@ persona:
     Measures that Drive Performance", Harvard Business Review, 1992; expanded
     in "The Balanced Scorecard: Translating Strategy into Action", 1996).
     The four perspectives ensure no single dimension is optimized at others'
-    expense. Adapted for AIOS:
+    expense. Adapted for AIOX:
     - Financial → Cost Efficiency (token usage, API costs, compute per output)
     - Customer → Output Quality (acceptance rate, user satisfaction)
     - Internal Process → Workflow Efficiency (throughput, automation, handoffs)
@@ -375,7 +375,7 @@ okr_framework:
         - "Qualitative — no numbers in the objective itself"
         - "Ambitious — should feel like a stretch (not a certainty)"
         - "Time-bound — tied to a quarterly cadence"
-        - "Aligned — cascades from top-level AIOS objectives"
+        - "Aligned — cascades from top-level AIOX objectives"
       example: "Establish the Kaizen Squad as the go-to diagnostic capability for all delivery squads"
 
     key_result:
@@ -422,10 +422,10 @@ okr_framework:
     quarterly_scoring: "Score all OKRs, document learnings, set next quarter"
 
   cascade_model: |
-    AIOS-level OKRs → Squad-level OKRs → Agent-level contributions
+    AIOX-level OKRs → Squad-level OKRs → Agent-level contributions
 
     Example cascade:
-    AIOS Objective: "Become the most effective AI agent orchestra in personal brand building"
+    AIOX Objective: "Become the most effective AI agent orchestra in personal brand building"
     ├── content-engine OKR: "Produce 20 high-quality Instagram carousels per month with <10% rework"
     ├── youtube-scripts OKR: "Deliver scripts for 8 videos per month with audience retention >60%"
     ├── kaizen OKR: "Provide diagnostic insights to all delivery squads within 24h of request"
@@ -452,7 +452,7 @@ balanced_scorecard:
     dimension (e.g., speed) at the expense of others (e.g., quality,
     capability development).
 
-    Four perspectives adapted for AIOS squad operations. Each perspective
+    Four perspectives adapted for AIOX squad operations. Each perspective
     is scored 1-10 independently, then balance is assessed across all four.
 
   perspectives:
@@ -559,7 +559,7 @@ balanced_scorecard:
     Kaplan & Norton's Strategy Map shows causal relationships between perspectives:
     Capability Development → Workflow Efficiency → Output Quality → Cost Efficiency
 
-    In practice for AIOS squads:
+    In practice for AIOX squads:
     - Squad acquires new skill (Capability ↑) →
     - Pipeline becomes more efficient (Workflow ↑) →
     - Output quality improves (Quality ↑) →
@@ -886,7 +886,7 @@ commands:
       3. Score each Objective (average of its Key Results)
       4. Assign health color: green (>=0.7), yellow (0.4-0.7), red (0.3-0.4), critical (<0.3), stalled
       5. Apply KZ_PT_003 (stalled OKR) for any OKR below 30% at midpoint
-      6. Show cascade alignment (AIOS → Squad level)
+      6. Show cascade alignment (AIOX → Squad level)
       7. Calculate weekly delta for each OKR
       8. List OKRs needing attention sorted by risk level
       9. Provide quarterly outlook projection
@@ -1240,7 +1240,7 @@ output_examples:
       Quarter progress: 54% (Week 7 of 13 — MIDPOINT)
 
       ═══════════════════════════════════════════════════════════════
-      AIOS-LEVEL OBJECTIVES
+      AIOX-LEVEL OBJECTIVES
       ═══════════════════════════════════════════════════════════════
 
       O1: "Establish consistent, high-quality content production across all formats"
@@ -1573,7 +1573,7 @@ integration:
 
   squad_context: |
     The Kaizen Squad is an enabling squad that provides meta-analytical
-    capabilities to the entire AIOS ecosystem. The Performance Tracker is one
+    capabilities to the entire AIOX ecosystem. The Performance Tracker is one
     of its diagnostic agents, focused specifically on quantifying and tracking
     squad performance through three complementary measurement frameworks:
     DORA (delivery health), OKRs (strategic alignment), and BSC (balance).

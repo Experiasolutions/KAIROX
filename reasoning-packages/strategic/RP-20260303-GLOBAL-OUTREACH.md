@@ -11,7 +11,7 @@
 Onde estão os tomadores de decisão (SaaS Founders, CEOs de Agências).
 - **Abordagem:** Não peça venda. Peça feedback ou apresente uma "Inovação Técnica".
 - **The "Loom" Strategy:** Grave um vídeo de 2 min mostrando o KAIROS processando algo em inglês. Mande na DM:
-  > *"Hey [Name], was checking [Your Company]. I built an Autonomous AIOS that handles lead qualification and ROI calculation automatically. Made this 2-min demo showing how it would look for you. No strings attached, just thought you'd like the tech."*
+  > *"Hey [Name], was checking [Your Company]. I built an Autonomous AIOX that handles lead qualification and ROI calculation automatically. Made this 2-min demo showing how it would look for you. No strings attached, just thought you'd like the tech."*
 
 ### 2. Cold Email (Volume e Arbitragem)
 Para escalar a prospecção sem ser bloqueado em redes sociais.
@@ -24,7 +24,7 @@ Para escalar a prospecção sem ser bloqueado em redes sociais.
 
 ### 3. Twitter/X (Autoridade e "Build in Public")
 Onde a comunidade de IA se reúne.
-- **Build in Public:** Poste semanalmente o progresso do KAIROS (ex: *"My AIOS just generated 14 ROI reports in 30 mins"*).
+- **Build in Public:** Poste semanalmente o progresso do KAIROS (ex: *"My AIOX just generated 14 ROI reports in 30 mins"*).
 - **Inbound:** Seus posts atraem pessoas interessadas na tecnologia, transformando você de "vendedor" em "especialista".
 
 ---

@@ -1,4 +1,4 @@
-# 🚀 CATÁLOGO DE CAPACIDADES AIOS (Menu de Serviços)
+# 🚀 CATÁLOGO DE CAPACIDADES AIOX (Menu de Serviços)
 
 > **O que é este documento?**
 > Um "Cardápio" completo do que seu Sistema Operacional Neural pode fazer hoje.
@@ -28,7 +28,7 @@
 *Para operar e escalar clínicas reais.*
 *   **`@experia-marketing`:** Cria calendários editoriais, posts, e campanhas de tráfego pago.
 *   **`@experia-copy`:** Escreve scripts de venda, e-mails e respostas de WhatsApp.
-*   **`@experia-integrations`:** Conecta o AIOS a CRMs, Evolution API e softwares médicos.
+*   **`@experia-integrations`:** Conecta o AIOX a CRMs, Evolution API e softwares médicos.
 *   **`@experia-data`:** Analisa métricas de CAC, LTV e ROI.
 
 ### **👹 Doombot Squad (Receita Agressiva)**

@@ -145,7 +145,7 @@ const STATUS_COLORS = {
 async function main() {
     console.log('');
     console.log('═══════════════════════════════════════════════════');
-    console.log('  🏗️  AIOS ClickUp Workspace Builder');
+    console.log('  🏗️  AIOX ClickUp Workspace Builder');
     console.log('═══════════════════════════════════════════════════');
     console.log('');
 

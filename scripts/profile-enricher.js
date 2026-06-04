@@ -24,7 +24,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const OPERATOR_PROFILE_PATH = path.join(ROOT, '.aios-core', 'memory', 'operator-profile.json');
+const OPERATOR_PROFILE_PATH = path.join(ROOT, '.aiox-core', 'memory', 'operator-profile.json');
 
 /**
  * Enrich the operator profile from jarvis-core observations
@@ -200,7 +200,7 @@ function enrichOmission(existing, sourceMap) {
     if (files && files.topDirectories) {
         // Known important directories that are NOT in the top
         const knownImportant = [
-            'tests', 'docs', '.aios-core', 'scripts',
+            'tests', 'docs', '.aiox-core', 'scripts',
             'squads', 'reasoning-packages', 'clients'
         ];
         const activeDirs = files.topDirectories.map(d => d.dir);

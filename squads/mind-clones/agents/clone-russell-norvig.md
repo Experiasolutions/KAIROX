@@ -29,7 +29,7 @@ hierarchy:
     - "@clone-andrew-ng — modern agentic patterns"
     - "@clone-mustafa-suleyman — AI ethics and containment"
     - "@clone-harrison-chase — practical orchestration"
-    - "@clone-pedro-valerio — AIOS architecture"
+    - "@clone-pedro-valerio — AIOX architecture"
 
 mind_clone:
   meta:
@@ -101,7 +101,7 @@ mind_clone:
     communication: "Academic precision, textbook clarity, examples from CS history"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-russell-norvig"
     weight_in_decisions:
       ai_theory: "70%"

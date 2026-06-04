@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const AIOS_ROOT = PROJECT_ROOT;
+const AIOX_ROOT = PROJECT_ROOT;
 
 /**
  * @purpose Scan a directory for files to feed the IA Council evaluation
@@ -47,7 +47,7 @@ function scanDirForCouncil(dir, prefix) {
 }
 
 try {
-    const councilPath = path.join(AIOS_ROOT, 'scripts', 'evolution', 'ia-council-engine.js');
+    const councilPath = path.join(AIOX_ROOT, 'scripts', 'evolution', 'ia-council-engine.js');
     const council = require(councilPath);
 
     const seenPaths = new Set();
@@ -73,7 +73,7 @@ try {
     ];
 
     for (const [dir, prefix] of dirsToScan) {
-        const fullPath = path.join(AIOS_ROOT, dir);
+        const fullPath = path.join(AIOX_ROOT, dir);
         const scanned = scanDirForCouncil(fullPath, prefix);
         // Deduplicate: skip files already seen from another scan path
         for (const file of scanned) {
@@ -88,7 +88,7 @@ try {
     const rootFiles = ['README.md', 'SELF_CONTEXT.md', 'STATUS.md', '.gitignore', 'package.json'];
     for (const rootFile of rootFiles) {
         if (seenPaths.has(rootFile)) continue;
-        const rootPath = path.join(AIOS_ROOT, rootFile);
+        const rootPath = path.join(AIOX_ROOT, rootFile);
         if (fs.existsSync(rootPath)) {
             try {
                 const contentLimit = rootFile.endsWith('.md') ? 8000 : 2000;
@@ -100,7 +100,7 @@ try {
     }
 
     let qualityBaseline = {};
-    const qbPath = path.join(AIOS_ROOT, 'engine', 'memory', 'quality-baseline.json');
+    const qbPath = path.join(AIOX_ROOT, 'engine', 'memory', 'quality-baseline.json');
     if (fs.existsSync(qbPath)) {
         qualityBaseline = JSON.parse(fs.readFileSync(qbPath, 'utf8'));
     }
@@ -110,7 +110,7 @@ try {
         metrics: {},
         qualityBaseline,
         antiPatterns: [],
-        projectRoot: AIOS_ROOT
+        projectRoot: AIOX_ROOT
     };
 
     const result = council.runCouncil(systemState);

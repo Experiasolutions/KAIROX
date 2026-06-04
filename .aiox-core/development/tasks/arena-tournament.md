@@ -1,6 +1,6 @@
 ---
 task: arenaTournament()
-responsavel: "@aios-master"
+responsavel: "@aiox-master"
 responsavel_type: Agent
 atomic_layer: Task
 Entrada:
@@ -24,7 +24,7 @@ Checklist:
 ---
 # Task: Arena Tournament (Universal)
 
-> **Disponível para:** QUALQUER agent no AIOS
+> **Disponível para:** QUALQUER agent no AIOX
 
 ## Input
 - [ ] Lista de variantes para competição (mínimo 3)

@@ -97,7 +97,7 @@ squad_config:
       near_duplicate_hsl_distance: 5  # % distance for flagging
     output:
       schema: data/discovery-output-schema.yaml
-      storage_dir: ".aios/apex-context/discoveries/"
+      storage_dir: ".aiox/apex-context/discoveries/"
       format: json
       retention: 10  # Keep last 10 scans per type
       diff_enabled: true  # Enable *discover-{type} --diff
@@ -125,9 +125,9 @@ squad_config:
   # Integration
   # =========================================
   integration:
-    aios_handoff:
+    aiox_handoff:
       enabled: true
-      handoff_dir: .aios/handoffs/
+      handoff_dir: .aiox/handoffs/
       ship_delegates_to: devops
     git:
       allowed: [add, commit, status, diff, log, branch, checkout, merge, stash]

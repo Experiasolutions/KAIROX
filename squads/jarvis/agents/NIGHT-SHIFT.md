@@ -8,7 +8,7 @@ Início: 23h00 | Fim: 07h00 (configurável)
 ### 00h00 — Evolution Cycle
 node scripts/evolution/evolution-engine.js --auto
 Detecta gaps, propõe melhorias, aplica as aprovadas previamente.
-Salva relatório em .aios-core/night-reports/[data]-evolution.md
+Salva relatório em .aiox-core/night-reports/[data]-evolution.md
 
 ### 02h00 — Content Generation (Experia)
 Para cada cliente ativo:

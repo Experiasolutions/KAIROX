@@ -11,10 +11,10 @@
 
 A v1.0 é um documento extraordinário. Suas conclusões centrais permanecem:
 
-1. ✅ **"O AIOS é uma arquitetura brilhantemente documentada de um sistema que ainda não existe como organismo."**
+1. ✅ **"O AIOX é uma arquitetura brilhantemente documentada de um sistema que ainda não existe como organismo."**
 2. ✅ **"Zero aprendizado cross-session comprovado."**
 3. ✅ **"Metamind é uma definição, não uma entidade operacional."**
-4. ✅ **"Gabriel é a mente do AIOS."** (Ponto cego 2)
+4. ✅ **"Gabriel é a mente do AIOX."** (Ponto cego 2)
 5. ✅ **"A documentação é um anti-pattern."** (Ponto cego 3 — 170KB docs, 1:1 doc/code ratio)
 6. ✅ **As 3 ideias mais verdadeiras** estão corretas (Workers/Clones, Structure/Tone, Compression)
 7. ✅ **O fio que conecta tudo em ciclo contínuo está quebrado** — cada seta "→" existe isolada
@@ -86,7 +86,7 @@ snapshot() → gera boot context em markdown para injeção no SELF_CONTEXT
 - Afeta 10 squads: vendas, marketing, finance, facilities, analytics, cs, admin, doombot, olympus-governance, e **mind-clones** (via doombot templates)
 - Até templates "universais" como `micro-offer-tmpl.md` e `persuasion-script-tmpl.md` contêm referências a "clínicas" e "WhatsApp"
 
-**Implicação:** A contaminação não é um bug — é uma consequência de o AIOS ter nascido COMO Experia e depois ter sido promovido a ENGINE. Os 9 squads que o RP-STRUCTURE-v2 move são a parte fácil. Os templates e workflows que referenciam domínio dentro de squads ENGINE são a parte difícil.
+**Implicação:** A contaminação não é um bug — é uma consequência de o AIOX ter nascido COMO Experia e depois ter sido promovido a ENGINE. Os 9 squads que o RP-STRUCTURE-v2 move são a parte fácil. Os templates e workflows que referenciam domínio dentro de squads ENGINE são a parte difícil.
 
 ### DESCOBERTA D5 — O kernel-bridge é genuinamente bem arquitetado
 
@@ -98,7 +98,7 @@ snapshot() → gera boot context em markdown para injeção no SELF_CONTEXT
 - Cada bridge tem fallback patterns que retornam defaults sensatos
 - O Tools bridge é proxy-based com carga sob demanda
 
-**Implicação:** Layer 0 (Kernel) + Layer 1 (Bridge) são **sólidos**. A base do AIOS é real. O gap está em Layer 2 (Noesis) e Layer 3 (Workforce), não na fundação.
+**Implicação:** Layer 0 (Kernel) + Layer 1 (Bridge) são **sólidos**. A base do AIOX é real. O gap está em Layer 2 (Noesis) e Layer 3 (Workforce), não na fundação.
 
 ### DESCOBERTA D6 — A Cadeira 8 (Distillation Engineer) é o elo perdido
 
@@ -133,9 +133,9 @@ snapshot() → gera boot context em markdown para injeção no SELF_CONTEXT
 
 ## SÍNTESE: O que a v2.0 muda na narrativa
 
-A v1.0 disse: "O AIOS é um blueprint que não respira."
+A v1.0 disse: "O AIOX é um blueprint que não respira."
 
-A v2.0 refina: **"O AIOS é um organismo em estado de hibernação."**
+A v2.0 refina: **"O AIOX é um organismo em estado de hibernação."**
 
 A diferença é profunda:
 - Um blueprint precisa ser CONSTRUÍDO. Um organismo hibernando precisa ser ACORDADO.

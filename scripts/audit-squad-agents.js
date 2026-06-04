@@ -130,7 +130,7 @@ function formatReport(results) {
     const lines = [];
     lines.push('');
     lines.push('═══════════════════════════════════════════════════');
-    lines.push('  🔍 AIOS Squad Agent Audit Report');
+    lines.push('  🔍 AIOX Squad Agent Audit Report');
     lines.push('═══════════════════════════════════════════════════');
     lines.push('');
 

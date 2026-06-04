@@ -1,17 +1,17 @@
-# 📝 Post para Grupo da Comunidade AIOS
+# 📝 Post para Grupo da Comunidade AIOX
 
 ## Versão WhatsApp/Telegram (curta):
 
-Pessoal, montei 6 ferramentas usando o AIOS nos últimos 10 dias e quero devolver pra comunidade:
+Pessoal, montei 6 ferramentas usando o AIOX nos últimos 10 dias e quero devolver pra comunidade:
 
 🧬 Opus Replicant — protocolo que força profundidade real em qualquer LLM
 📋 RP-MCP Protocol — intent documents antes de tarefas complexas
 🔧 Engine/Client Separation — padrão pra múltiplos clientes sem misturar
-🧔 AIOS Father — mentor do zero ao operacional (5 níveis com exemplos reais)
+🧔 AIOX Father — mentor do zero ao operacional (5 níveis com exemplos reais)
 🤖 Agent Templates — 5 agentes prontos pra copiar (atendimento, conteúdo, PM...)
 📋 First Week Checklist — 7 dias do zero ao sistema funcionando
 
-Tudo MIT, funciona com AIOS v3.9+, qualquer LLM.
+Tudo MIT, funciona com AIOX v3.9+, qualquer LLM.
 Quem quiser testar, me chama que eu envio os arquivos.
 
 ---
@@ -20,7 +20,7 @@ Quem quiser testar, me chama que eu envio os arquivos.
 
 Fala pessoal! 👋
 
-Sou o Gabriel, operador AIOS no Grande ABC (SP). Nos últimos 10 dias montei um sistema em cima do AIOS chamado KAIROS e quero devolver 6 ferramentas que mais fizeram diferença no meu dia a dia.
+Sou o Gabriel, operador AIOX no Grande ABC (SP). Nos últimos 10 dias montei um sistema em cima do AIOX chamado KAIROS e quero devolver 6 ferramentas que mais fizeram diferença no meu dia a dia.
 
 ---
 
@@ -50,7 +50,7 @@ Padrão pra atender múltiplos clientes: motor (genérico) fica em squads/, apli
 
 ---
 
-### 🧔 4. AIOS Father — Mentor para Novos Operadores
+### 🧔 4. AIOX Father — Mentor para Novos Operadores
 O guia que eu queria ter quando comecei. 5 níveis progressivos:
 
 1. Seu Primeiro Agente (Dia 1)
@@ -61,7 +61,7 @@ O guia que eu queria ter quando comecei. 5 níveis progressivos:
 
 Cada nível tem o mindset shift (o que muda na sua cabeça), um exemplo prático, e um checkpoint de validação.
 
-Inclui seção honesta sobre o que o AIOS NÃO faz — porque ninguém mais vai ser honesto sobre isso.
+Inclui seção honesta sobre o que o AIOX NÃO faz — porque ninguém mais vai ser honesto sobre isso.
 
 ---
 
@@ -79,7 +79,7 @@ YAML completo com persona, princípios e comandos. Cola, ajusta o tom de voz, e 
 
 ### 📋 6. First Week Checklist
 7 dias, 1 ação por dia. No final da semana, você tem:
-- AIOS instalado ✅
+- AIOX instalado ✅
 - 1 agente personalizado ✅
 - 1 squad com 2+ agentes ✅
 - Separação engine/client ✅
@@ -90,7 +90,7 @@ Tempo total: ~8-10 horas na semana.
 
 ---
 
-Tudo MIT, funciona com AIOS v3.9+, qualquer LLM (Gemini, Claude, GPT, Groq).
+Tudo MIT, funciona com AIOX v3.9+, qualquer LLM (Gemini, Claude, GPT, Groq).
 
 Se quiser testar, me manda mensagem que compartilho os arquivos. Aceito feedback e contribuições.
 

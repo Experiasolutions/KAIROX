@@ -3,7 +3,7 @@ import re
 import datetime
 
 roots = [
-    r"C:\Users\Gabriel\Documents\My AIOS",
+    r"C:\Users\Gabriel\Documents\My AIOX",
     r"C:\Users\Gabriel\.gemini\antigravity"
 ]
 

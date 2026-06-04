@@ -17,7 +17,7 @@ Cross-squad A2A event bus with pub-sub channels wildcard matching and persistent
  *          Enables pub/sub event channels with wildcard matching,
  *          persistent event log, and demo mode.
  * @inputs  Channel name + event data (API), or --demo flag (CLI)
- * @outputs Event delivery to subscribers + .aios-core/data/event-log.json
+ * @outputs Event delivery to subscribers + .aiox-core/data/event-log.json
  * @exports { on, emit, channels, history, stats }
  * @emits   ops.*, quality.*, system.* channels
  */
@@ -26,12 +26,12 @@ const fs = require('fs');
 const path = require('path');
 const EventEmitter = require('events');
 
-class AIOSEventBus extends EventEmitter {
+class AIOXEventBus extends EventEmitter {
     constructor(options = {}) {
         super();
-        this.name = 'AIOS Event Bus';
+        this.name = 'AIOX Event Bus';
         this.version = '1.0.0';
-        this.logDir = options.logDir || path.join(__dirname, '..', '.aios-core', 'data', 'events');
+        this.logDir = options.logDir || path.join(__dirname, '..', '.aiox-core', 'data', 'events');
         this.subscriptions = new Map();
         this.eventLog = [];
         this.maxLogSize = options.maxLogSize || 1000;
@@ -212,9 +212,9 @@ const CHANNELS = {
 // ============================================================
 
 if (process.argv.includes('--demo')) {
-    console.log('🔗 AIOS Event Bus v1.0 — Demo Mode\n');
+    console.log('🔗 AIOX Event Bus v1.0 — Demo Mode\n');
 
-    const bus = new AIOSEventBus();
+    const bus = new AIOXEventBus();
 
     // Subscribe agents to channels
     bus.subscribe('ops.emergency', '@squad-ops-head', (event) => {
@@ -229,8 +229,8 @@ if (process.argv.includes('--demo')) {
         console.log(`  📊 @analytics-head (wildcard): Logging event ${event.channel}`);
     });
 
-    bus.subscribe('*', '@aios-auditor', (event) => {
-        console.log(`  🔬 @aios-auditor (global): ${event.channel} from ${event.meta.source}`);
+    bus.subscribe('*', '@aiox-auditor', (event) => {
+        console.log(`  🔬 @aiox-auditor (global): ${event.channel} from ${event.meta.source}`);
     });
 
     // Simulate events
@@ -279,10 +279,10 @@ if (process.argv.includes('--demo')) {
 // ============================================================
 
 // Singleton instance
-const globalBus = new AIOSEventBus();
+const globalBus = new AIOXEventBus();
 
 module.exports = {
-    AIOSEventBus,
+    AIOXEventBus,
     bus: globalBus,
     CHANNELS,
     subscribe: globalBus.subscribe.bind(globalBus),

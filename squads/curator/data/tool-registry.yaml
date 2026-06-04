@@ -241,7 +241,7 @@ cloud_apis:
     install: "pip install groq"
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# EXTERNAL AGENTS (AIOS ecosystem)
+# EXTERNAL AGENTS (AIOX ecosystem)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 external_agents:

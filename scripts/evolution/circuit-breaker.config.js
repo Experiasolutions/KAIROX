@@ -37,12 +37,12 @@ const FORBIDDEN_COMPONENTS = Object.freeze([
 // CYCLE BUDGET — Max changes per layer per cycle
 // ─────────────────────────────────────────────────────────────
 const CYCLE_BUDGET = Object.freeze({
-    constitutional_layer: 1,   // .aios-core/opus-replicator/constitutional-layer-v3.md
+    constitutional_layer: 1,   // .aiox-core/opus-replicator/constitutional-layer-v3.md
     critical_scripts: 2,   // scripts/*.js (kernel-bridge, event-bus, etc.)
     agent_manifests: 5,   // squads/**/agents/*.md, .antigravity/agents/*.md
     documentation: Infinity, // docs, README, reasoning-packages — no limit
-    golden_examples: Infinity, // .aios-core/memory/golden-examples/
-    anti_patterns: Infinity, // .aios-core/memory/anti-patterns.md
+    golden_examples: Infinity, // .aiox-core/memory/golden-examples/
+    anti_patterns: Infinity, // .aiox-core/memory/anti-patterns.md
 });
 
 // ─────────────────────────────────────────────────────────────
@@ -56,9 +56,9 @@ const RISK_CLASSIFICATION = Object.freeze({
         patterns: [
             /^docs\//,
             /^reasoning-packages\//,
-            /^\.aios-core\/memory\/golden-examples\//,
-            /^\.aios-core\/memory\/anti-patterns\.md$/,
-            /^\.aios-core\/memory\/quality-baseline\.json$/,
+            /^\.aiox-core\/memory\/golden-examples\//,
+            /^\.aiox-core\/memory\/anti-patterns\.md$/,
+            /^\.aiox-core\/memory\/quality-baseline\.json$/,
             /README\.md$/,
         ],
     },
@@ -70,7 +70,7 @@ const RISK_CLASSIFICATION = Object.freeze({
             /^scripts\/(?!evolution\/)/,  // scripts/ except evolution/
             /^squads\/.*\/agents\/.*\.md$/,
             /^\.antigravity\/agents\/.*\.md$/,
-            /^\.aios-core\/.*\.json$/,
+            /^\.aiox-core\/.*\.json$/,
         ],
     },
     HIGH: {
@@ -78,7 +78,7 @@ const RISK_CLASSIFICATION = Object.freeze({
         description: 'Constitutional layer, PM templates, input-refiner',
         behavior: 'Branch evolution/YYYYMMDD → notify → 24h observation',
         patterns: [
-            /^\.aios-core\/opus-replicator\//,
+            /^\.aiox-core\/opus-replicator\//,
             /^scripts\/input-refiner\.js$/,
             /^scripts\/self-correction\.js$/,
             /^KAIROS_ENGINEERING_BIBLE/,
@@ -151,7 +151,7 @@ const COUNCIL = Object.freeze({
             name: 'Alan (Creator)',
             chair: 7,
             domain: 'product-architecture',
-            question: 'From product and architecture perspective, does this change bring us closer or further from what AIOS needs for the real world?',
+            question: 'From product and architecture perspective, does this change bring us closer or further from what AIOX needs for the real world?',
             hasMinervaVote: true,
         },
         {
@@ -159,7 +159,7 @@ const COUNCIL = Object.freeze({
             name: 'Distillation Engineer (Hinton + Sutskever)',
             chair: 8,
             domain: 'distillation-dataset',
-            question: 'O que o AIOS está produzindo agora que poderia se tornar dataset de treino para um modelo local? Cada golden example gerado, cada ciclo evolutivo executado, cada decisão do Council documentada — estamos estruturando isso para que um modelo de 3B-7B parâmetros possa aprender com isso?',
+            question: 'O que o AIOX está produzindo agora que poderia se tornar dataset de treino para um modelo local? Cada golden example gerado, cada ciclo evolutivo executado, cada decisão do Council documentada — estamos estruturando isso para que um modelo de 3B-7B parâmetros possa aprender com isso?',
             responsibilities: [
                 'TRACE_STRUCTURING: Capture input → reasoning trace → output → PM3 score for fine-tuning',
                 'SYNTHETIC_DATASET_CURATION: Identify golden examples that teach PATTERNS, not just solve problems',
@@ -181,13 +181,13 @@ const COUNCIL = Object.freeze({
 // CRITICAL FILES TO HASH FOR BASELINE
 // ─────────────────────────────────────────────────────────────
 const CRITICAL_FILES = Object.freeze([
-    '.aios-core/opus-replicator/constitutional-layer-v3.md',
-    '.aios-core/opus-replicator/SELF_CONTEXT.md',
-    '.aios-core/opus-replicator/pm1-reasoning-master.md',
-    '.aios-core/opus-replicator/pm2-execution-master.md',
-    '.aios-core/opus-replicator/pm3-evaluation-master.md',
-    '.aios-core/memory/quality-baseline.json',
-    '.aios-core/memory/anti-patterns.md',
+    '.aiox-core/opus-replicator/constitutional-layer-v3.md',
+    '.aiox-core/opus-replicator/SELF_CONTEXT.md',
+    '.aiox-core/opus-replicator/pm1-reasoning-master.md',
+    '.aiox-core/opus-replicator/pm2-execution-master.md',
+    '.aiox-core/opus-replicator/pm3-evaluation-master.md',
+    '.aiox-core/memory/quality-baseline.json',
+    '.aiox-core/memory/anti-patterns.md',
     'scripts/kernel-bridge.js',
     'scripts/event-bus.js',
     'scripts/input-refiner.js',
@@ -205,18 +205,18 @@ const CRITICAL_FILES = Object.freeze([
 const PATHS = Object.freeze({
     PROJECT_ROOT,
     EVOLUTION_DIR: path.join(PROJECT_ROOT, 'scripts', 'evolution'),
-    REPORTS_DIR: path.join(PROJECT_ROOT, '.aios-core', 'data', 'evolution', 'reports'),
-    BACKUPS_DIR: path.join(PROJECT_ROOT, '.aios-core', 'data', 'evolution', 'backups'),
-    CYCLE_HISTORY: path.join(PROJECT_ROOT, '.aios-core', 'data', 'evolution', 'cycle-history.json'),
+    REPORTS_DIR: path.join(PROJECT_ROOT, '.aiox-core', 'data', 'evolution', 'reports'),
+    BACKUPS_DIR: path.join(PROJECT_ROOT, '.aiox-core', 'data', 'evolution', 'backups'),
+    CYCLE_HISTORY: path.join(PROJECT_ROOT, '.aiox-core', 'data', 'evolution', 'cycle-history.json'),
     BASELINE_FROZEN: path.join(PROJECT_ROOT, 'scripts', 'evolution', 'baseline-frozen.json'),
-    QUALITY_BASELINE: path.join(PROJECT_ROOT, '.aios-core', 'memory', 'quality-baseline.json'),
-    ANTI_PATTERNS: path.join(PROJECT_ROOT, '.aios-core', 'memory', 'anti-patterns.md'),
-    SELF_CONTEXT: path.join(PROJECT_ROOT, '.aios-core', 'opus-replicator', 'SELF_CONTEXT.md'),
+    QUALITY_BASELINE: path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'quality-baseline.json'),
+    ANTI_PATTERNS: path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'anti-patterns.md'),
+    SELF_CONTEXT: path.join(PROJECT_ROOT, '.aiox-core', 'opus-replicator', 'SELF_CONTEXT.md'),
     // Distillation Dataset (Chair 8)
-    DISTILLATION_DIR: path.join(PROJECT_ROOT, '.aios-core', 'memory', 'distillation-dataset'),
-    DISTILLATION_TRACES: path.join(PROJECT_ROOT, '.aios-core', 'memory', 'distillation-dataset', 'traces'),
-    DISTILLATION_CURATED: path.join(PROJECT_ROOT, '.aios-core', 'memory', 'distillation-dataset', 'curated'),
-    DISTILLATION_ROADMAP: path.join(PROJECT_ROOT, '.aios-core', 'memory', 'distillation-dataset', 'roadmap.json'),
+    DISTILLATION_DIR: path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'distillation-dataset'),
+    DISTILLATION_TRACES: path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'distillation-dataset', 'traces'),
+    DISTILLATION_CURATED: path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'distillation-dataset', 'curated'),
+    DISTILLATION_ROADMAP: path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'distillation-dataset', 'roadmap.json'),
 });
 
 // ─────────────────────────────────────────────────────────────
@@ -311,7 +311,7 @@ if (require.main === module) {
     console.log('\nRISK CLASSIFICATION TEST:');
     console.log(`  docs/README.md → ${classifyRisk('docs/README.md')}`);
     console.log(`  scripts/kernel-bridge.js → ${classifyRisk('scripts/kernel-bridge.js')}`);
-    console.log(`  .aios-core/opus-replicator/constitutional-layer-v3.md → ${classifyRisk('.aios-core/opus-replicator/constitutional-layer-v3.md')}`);
+    console.log(`  .aiox-core/opus-replicator/constitutional-layer-v3.md → ${classifyRisk('.aiox-core/opus-replicator/constitutional-layer-v3.md')}`);
     console.log('\nFORBIDDEN CHECK:');
     console.log(`  evolution-engine.js → ${isForbidden('scripts/evolution/evolution-engine.js')}`);
     console.log(`  kernel-bridge.js → ${isForbidden('scripts/kernel-bridge.js')}`);

@@ -38,7 +38,7 @@ At end of session, use PM#3 to evaluate and generate a 280-token snapshot.
 ## File Map
 
 ```
-.aios-core/opus-replicator/
+.aiox-core/opus-replicator/
 ├── README.md                      ← You are here
 ├── constitutional-layer.md        ← ALWAYS prepend (core directives)
 ├── pm1-reasoning.md               ← Advanced analysis & decomposition
@@ -47,7 +47,7 @@ At end of session, use PM#3 to evaluate and generate a 280-token snapshot.
 ├── calibration-profiles.json      ← 7 profiles with Hivemind mappings
 └── session-protocol.md            ← Start/end/pivot procedures
 
-.aios-core/memory/
+.aiox-core/memory/
 ├── quality-baseline.json          ← 7-dimension quality tracking
 └── session-snapshots/             ← 280-token handoff snapshots
     └── [YYYY-MM-DD].md

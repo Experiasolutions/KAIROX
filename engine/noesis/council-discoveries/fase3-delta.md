@@ -1,7 +1,7 @@
 # Fase 3 — DELTA: Distância entre hoje e v∞
 
 > **Sessão:** 2026-02-19 | **Executor:** Orion via Noesis
-> **Pré-requisito:** `fase1-arqueologia.md` + `fase2-aios-v-infinito.md`
+> **Pré-requisito:** `fase1-arqueologia.md` + `fase2-aiox-v-infinito.md`
 
 ---
 
@@ -52,7 +52,7 @@
 | :---------------------------------------------------------- | :--------- | :----------------------------------------------- |
 | **Cognitive State Engine** (`cognitive-state-engine.js`)    | 🔴 CRÍTICA  | Axioma α: perspectiva que persiste entre sessões |
 | **Integration Loop** (golden → behavior, não golden → file) | 🔴 CRÍTICA  | Axioma γ: compressão bidirecional                |
-| **Noûs DNA™** (`aios-dna-mental.md`)                        | 🔴 CRÍTICA  | Axioma α: identidade emergida, não declarada     |
+| **Noûs DNA™** (`aiox-dna-mental.md`)                        | 🔴 CRÍTICA  | Axioma α: identidade emergida, não declarada     |
 | **Identity Anchor** (`identity-anchor.json`)                | 🟡 ALTA     | EC-05: prevenção de drift                        |
 | **Metacognition Layer** (`metacognition-layer.js`)          | 🟡 ALTA     | Saber COMO pensa, não apenas O QUE pensa         |
 | **Noûs Integrity Protocol** (`nous-integrity-protocol.md`)  | 🟡 ALTA     | Artefato 6: "ainda somos nós?"                   |
@@ -65,13 +65,13 @@
 ## Resposta: "Quanto do v1-v5 pertence ao v∞?"
 
 ```
-PRESERVAR (A):  35% — o melhor do AIOS já é excelente
+PRESERVAR (A):  35% — o melhor do AIOX já é excelente
 TRANSFORMAR (B): 40% — existe mas precisa mudar de natureza  
 DESCARTAR (C):  10% — limpeza e compressão
 CRIAR (D):      15% — componentes genuinamente novos
 
 Total pertencente ao v∞ (A + transformer(B)):  75%
-O AIOS não precisa ser recriado. Precisa ser COMPLETADO.
+O AIOX não precisa ser recriado. Precisa ser COMPLETADO.
 ```
 
 ---

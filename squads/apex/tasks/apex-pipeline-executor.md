@@ -20,7 +20,7 @@ dependencies:
   - templates/pipeline-checkpoint-tmpl.md
   - tasks/apex-route-request.md
 outputs:
-  - Pipeline state file at .aios/apex-pipeline/{pipeline-id}.yaml
+  - Pipeline state file at .aiox/apex-pipeline/{pipeline-id}.yaml
   - Implemented components across target platforms
   - QA verdict (PASS | FAIL)
   - PR URL (if shipped)
@@ -44,7 +44,7 @@ This task handles 8 pipeline commands. All are triggered by the user through ape
 2. Set `mode: autonomous`
 3. Set `feature: "{description}"`
 4. Generate `pipeline.id: "apex-pipe-{timestamp}"`
-5. Create state file at `.aios/apex-pipeline/{pipeline-id}.yaml`
+5. Create state file at `.aiox/apex-pipeline/{pipeline-id}.yaml`
 6. Execute Phase 1 (Specify):
    - Run routing analysis using `apex-route-request.md` logic
    - Present **CP-01** (Feature Brief) — PAUSE for user input
@@ -155,7 +155,7 @@ Resume a paused or crashed pipeline from its last saved state.
 
 **Execution:**
 
-1. Look for pipeline state files in `.aios/apex-pipeline/`
+1. Look for pipeline state files in `.aiox/apex-pipeline/`
 2. If multiple exist, list them and ask user to select
 3. If one exists, load it automatically
 4. Read `pipeline.status` and `pipeline.current_phase`:
@@ -181,7 +181,7 @@ Show visual progress of the current or most recent pipeline.
 
 **Execution:**
 
-1. Load current pipeline state from `.aios/apex-pipeline/`
+1. Load current pipeline state from `.aiox/apex-pipeline/`
 2. Display progress using template from `pipeline-checkpoint-tmpl.md` (Progress Bar section)
 3. Show:
    - Pipeline ID, feature, mode, status
@@ -207,7 +207,7 @@ Cancel the current pipeline. Artifacts are preserved.
 Pipeline {pipeline.id} aborted.
 Feature: "{pipeline.feature}"
 Phase reached: {current_phase} ({phase_name})
-Artifacts preserved at: .aios/apex-pipeline/{pipeline-id}.yaml
+Artifacts preserved at: .aiox/apex-pipeline/{pipeline-id}.yaml
 
 Artifacts produced before abort are still available.
 To start a new pipeline: *apex-go "{feature}"
@@ -288,7 +288,7 @@ Emil: Running accessibility audit via @a11y-eng...
 When transitioning between phases, the executor:
 
 1. Generates a handoff artifact following `.claude/rules/agent-handoff.md` protocol
-2. Stores artifact at `.aios/handoffs/handoff-{from}-to-{to}-{timestamp}.yaml`
+2. Stores artifact at `.aiox/handoffs/handoff-{from}-to-{to}-{timestamp}.yaml`
 3. Artifact contains: story context, decisions, files modified, next action
 4. Incoming agent receives the handoff artifact (not the full previous agent persona)
 5. Logs handoff in pipeline state `handoff_log`
@@ -314,7 +314,7 @@ When evaluating a quality gate:
    - Create FIX sub-task for the responsible agent
    - Agent fixes the issue
    - Re-evaluate gate (max 3 fix attempts per gate)
-   - If max reached → escalate: agent → apex-lead → aios-master
+   - If max reached → escalate: agent → apex-lead → aiox-master
 5. Log all results in pipeline state `gate_results`
 6. Log any veto triggers in `veto_log`
 
@@ -335,7 +335,7 @@ The executor saves pipeline state on every significant event:
 | Error occurs | `pipeline.status: {error_status}` |
 | Pipeline aborted | `pipeline.status: aborted` |
 
-State file location: `.aios/apex-pipeline/{pipeline-id}.yaml`
+State file location: `.aiox/apex-pipeline/{pipeline-id}.yaml`
 Schema: `data/pipeline-state-schema.yaml`
 
 ---
@@ -349,7 +349,7 @@ Gate FAIL → Create FIX sub-task for responsible agent
          → Agent attempts fix (max 3 attempts)
          → Re-evaluate gate
          → If still failing after 3 → escalate to apex-lead
-         → apex-lead cannot resolve → escalate to aios-master
+         → apex-lead cannot resolve → escalate to aiox-master
 ```
 
 **Critical:** Flow is UNIDIRECTIONAL. A gate failure creates a FIX task for the current phase agent. It NEVER rolls back to a previous phase.
@@ -359,7 +359,7 @@ Gate FAIL → Create FIX sub-task for responsible agent
 ```
 Agent fails → Retry 1x
            → If still failing → escalate to apex-lead
-           → apex-lead assigns alternative approach or escalates to aios-master
+           → apex-lead assigns alternative approach or escalates to aiox-master
 ```
 
 ### Checkpoint Timeout
@@ -412,9 +412,9 @@ gate:
 ship_to_devops:
   description: >
     After Phase 7 (Ship) completes, Apex generates a handoff artifact at
-    .aios/handoffs/ for @devops (Gage). This handoff is MANUAL — the user
+    .aiox/handoffs/ for @devops (Gage). This handoff is MANUAL — the user
     must activate @devops and run *push. Apex CANNOT push to remote.
-  artifact_path: ".aios/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml"
+  artifact_path: ".aiox/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml"
   artifact_contents:
     from_agent: apex-lead
     to_agent: devops

@@ -99,7 +99,7 @@ const skillTree: SkillNode[] = [
     id: "agentification",
     name: "Agentificação",
     emoji: "🤖",
-    description: "KAIROS, AIOS, fluxos multi-agente. IA como equipe infinita.",
+    description: "KAIROS, AIOX, fluxos multi-agente. IA como equipe infinita.",
     zone: "excellence",
     maxLevel: 5,
     x: 450, y: 270,

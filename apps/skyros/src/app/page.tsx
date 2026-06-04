@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import MorningBrief from '@/components/MorningBrief';
 import StatsGrid from '@/components/StatsGrid';
 import ParetoCard from '@/components/ParetoCard';
+import DailyQuests from '@/components/DailyQuests';
 import styles from './page.module.css';
 
 interface Task {
@@ -36,6 +37,7 @@ export default function Dashboard() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [brief, setBrief] = useState<Brief | null>(null);
   const [stats, setStats] = useState<Stats | null>(null);
+  const [quests, setQuests] = useState<any>(null);
   const [taskStats, setTaskStats] = useState({ total: 0, pending: 0, active: 0, done: 0, avgScore: 0 });
   const [loading, setLoading] = useState(true);
 
@@ -45,10 +47,11 @@ export default function Dashboard() {
 
   async function loadDashboard() {
     try {
-      const [tasksRes, briefRes, statsRes] = await Promise.allSettled([
+      const [tasksRes, briefRes, statsRes, questsRes] = await Promise.allSettled([
         fetch('/api/tasks'),
         fetch('/api/morning-brief'),
         fetch('/api/tasks?stats=true'),
+        fetch('/api/quests'),
       ]);
 
       if (tasksRes.status === 'fulfilled' && tasksRes.value.ok) {
@@ -62,6 +65,11 @@ export default function Dashboard() {
         setBrief(data.brief || null);
         setStats(data.userStats || null);
       }
+
+      if (questsRes.status === 'fulfilled' && questsRes.value.ok) {
+        const data = await questsRes.value.json();
+        setQuests(data.quests || null);
+      }
     } catch (err) {
       console.error('Dashboard load error:', err);
     } finally {
@@ -74,6 +82,24 @@ export default function Dashboard() {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id }),
+    });
+    loadDashboard();
+  }
+
+  async function handleCompleteQuest(difficulty: string) {
+    await fetch('/api/quests', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ difficulty })
+    });
+    loadDashboard();
+  }
+
+  async function handleSaveQuests(easyTitle: string, mediumTitle: string, hardTitle: string) {
+    await fetch('/api/quests', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ easyTitle, mediumTitle, hardTitle })
     });
     loadDashboard();
   }
@@ -97,6 +123,15 @@ export default function Dashboard() {
           mission={brief?.pareto_mission || null}
           secondaryTasks={brief ? JSON.parse(brief.secondary_tasks || '[]') : []}
           isCompleted={brief?.is_completed === 1}
+        />
+      </section>
+
+      {/* Daily Quests GABLAB */}
+      <section className={`${styles.section} animate-in`} style={{ animationDelay: '0.05s' }}>
+        <DailyQuests 
+           quests={quests} 
+           onComplete={handleCompleteQuest} 
+           onSave={handleSaveQuests} 
         />
       </section>
 

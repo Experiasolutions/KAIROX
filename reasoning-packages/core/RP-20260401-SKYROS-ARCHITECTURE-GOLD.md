@@ -7,7 +7,7 @@ tags: [architecture, skyros, agent-loop, harness, claude-code-patterns]
 
 # SKYROS Architecture Gold: The Progressive Harness
 
-Este documento internaliza o "ouro" extraído da arquitetura do `claude-code` (via repo de pesquisa `lean-coding-agent`) e define o padrão oficial para o runtime do **SKYROS (Personal OS / AIOS)**.
+Este documento internaliza o "ouro" extraído da arquitetura do `claude-code` (via repo de pesquisa `lean-coding-agent`) e define o padrão oficial para o runtime do **SKYROS (Personal OS / AIOX)**.
 
 A fundação do SKYROS não é um prompt gigante bloqueante, mas sim um loop mínimo de query envolto por um "production-grade harness" progressivo.
 

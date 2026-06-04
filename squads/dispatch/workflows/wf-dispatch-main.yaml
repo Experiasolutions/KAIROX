@@ -7,7 +7,7 @@
 # Pipeline: Story -> Sufficiency Gate -> Decompose -> Route -> Optimize ->
 #           Enrich -> Quality Gate -> Execute -> Verify -> Report
 #
-# Author: AIOS Dispatch Squad
+# Author: AIOX Dispatch Squad
 # Created: 2026-02-10
 # ===============================================================================
 
@@ -1322,7 +1322,7 @@ workflow:
   metadata:
     created: "2026-02-10"
     version: "1.0.0"
-    author: "AIOS Dispatch Squad"
+    author: "AIOX Dispatch Squad"
     squad: "dispatch"
     entry_agent: "dispatch-chief"
     mind: "Gene Kim (The DevOps Handbook, The Phoenix Project, Accelerate)"
@@ -1382,6 +1382,6 @@ workflow:
       - "wave-planner v1.0.0"
       - "task-router v1.0.0"
       - "quality-gate v1.0.0"
-      - "All AIOS squads (via slash command routing)"
+      - "All AIOX squads (via slash command routing)"
 
     lines: "500+"

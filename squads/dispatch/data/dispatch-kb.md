@@ -6,7 +6,7 @@
 
 ## What is Dispatch?
 
-Dispatch is the **execution backbone** of AIOS — every parallelizable work goes through it. It receives stories/PRDs/tasks, decomposes them into atomic sub-tasks, optimizes into DAG-based waves, routes to correct agents/models, and executes in parallel via subagents.
+Dispatch is the **execution backbone** of AIOX — every parallelizable work goes through it. It receives stories/PRDs/tasks, decomposes them into atomic sub-tasks, optimizes into DAG-based waves, routes to correct agents/models, and executes in parallel via subagents.
 
 **Philosophy:** "Never contaminate the main context. Always subagents. Always."
 

@@ -10,7 +10,7 @@
 
 | Arquivo                  | Clareza | Utilidade | Completude |  Tom  | Média |
 | :----------------------- | :-----: | :-------: | :--------: | :---: | :---: |
-| AIOS-FATHER.md           |    9    |     9     |     8      |   9   | 8.75  |
+| AIOX-FATHER.md           |    9    |     9     |     8      |   9   | 8.75  |
 | TEMPLATES.md             |    9    |    10     |     7      |   9   | 8.75  |
 | CHECKLIST.md             |   10    |     9     |     7      |  10   |  9.0  |
 | GUIDE.md (Engine/Client) |    9    |     8     |     8      |   9   |  8.5  |
@@ -25,12 +25,12 @@
 
 ### Gaps encontrados:
 
-**AIOS-FATHER.md — SEV 3:**
+**AIOX-FATHER.md — SEV 3:**
 - L24: Diz "4 Fases Cognitivas" mas depois mostra 5 Níveis. Incoerência. O header diz 4 fases, os níveis são 5. Precisa alinhar: ou são 4 fases (as cognitivas) mapeadas a 5 níveis (os práticos), ou corrigir para 5 em ambos.
 - L71: O bloco de código tem backticks aninhados (markdown dentro de markdown). Vai quebrar a renderização. Precisa usar indentação ou remover o wrapper externo.
 
 **TEMPLATES.md — SEV 2:**
-- Faltam `whenToUse` e `icon` nos templates YAML. Esses campos existem no schema real do AIOS (vide aios-master.md). Se um novo operador copiar, pode estranhar que seus templates não têm esses campos.
+- Faltam `whenToUse` e `icon` nos templates YAML. Esses campos existem no schema real do AIOX (vide aiox-master.md). Se um novo operador copiar, pode estranhar que seus templates não têm esses campos.
 
 **Voto:** Corrigir todas ✅
 
@@ -40,17 +40,17 @@
 
 ### Gaps encontrados:
 
-**AIOS-FATHER.md — SEV 5:**
+**AIOX-FATHER.md — SEV 5:**
 - L218-226: O snippet de scheduler é genérico demais. O operador não sabe o que colocar no `// Executa seus agentes`. Precisa de pelo menos 1 exemplo real mínimo (ex: ler um arquivo, gerar resumo, enviar via Telegram).
 
 **CHECKLIST.md — SEV 4:**
-- L10: Referencia `node scripts/evolution/noesis-status.js` que é específico do KAIROS, não existe em uma instalação padrão do AIOS. Operador novo: "File not found". Precisa de um comando genérico alternativo.
+- L10: Referencia `node scripts/evolution/noesis-status.js` que é específico do KAIROS, não existe em uma instalação padrão do AIOX. Operador novo: "File not found". Precisa de um comando genérico alternativo.
 - L47: `grep -r` não funciona no Windows (maioria dos novos operadores está no Windows). Precisa de alternativa: `findstr /S /I` ou avisar que é bash/Linux/Mac.
 
 **TEMPLATES.md — SEV 3:**
 - Os templates estão em blocos YAML soltos dentro do markdown. Na prática, o operador precisa criar um arquivo .md com o YAML. Seria útil mostrar o arquivo completo como seria salvo.
 
-**Voto:** Corrigir AIOS Father snippet e referência noesis-status. Resto é nice-to-have. ✅
+**Voto:** Corrigir AIOX Father snippet e referência noesis-status. Resto é nice-to-have. ✅
 
 ---
 
@@ -58,10 +58,10 @@
 
 ### Gaps encontrados:
 
-**AIOS-FATHER.md — SEV 2:**
+**AIOX-FATHER.md — SEV 2:**
 - O "Mindset Shift" é o diferencial do documento. Está bem escrito. Mas falta um **diagrama visual** da progressão. Uma representação texto-art da jornada de 5 níveis tornaria mais intuitivo.
 
-**Observation positiva:** A seção "O que o AIOS NÃO faz" é excelente. É honesta e rara. Não mudar.
+**Observation positiva:** A seção "O que o AIOX NÃO faz" é excelente. É honesta e rara. Não mudar.
 
 **Voto:** Adicionar diagrama ✅ (nice-to-have)
 
@@ -74,7 +74,7 @@
 **CHECKLIST.md — SEV 4:**
 - Os dias estão rotulados como "segunda", "terça" etc. Isso assume que o operador vai começar na segunda. Melhor usar "Dia 1", "Dia 2" sem dia da semana fixo.
 
-**AIOS-FATHER.md — SEV 2:**
+**AIOX-FATHER.md — SEV 2:**
 - Os checkpoints são ótimos, mas são auto-avaliação. Não tem nenhum checkpoint que exija **validação externa** (ex: "peça para outra pessoa interagir com seu agente e avaliar"). Adicionar 1 checkpoint de feedback externo no Nível 2 seria poderoso.
 
 **Voto:** Remover dias da semana ✅. Checkpoint externo ✅.
@@ -110,11 +110,11 @@
 
 ### Gaps encontrados:
 
-**AIOS-FATHER.md — SEV 1:**
+**AIOX-FATHER.md — SEV 1:**
 - L278: "agente de marketing vai produzir conteúdo medíocre com confiança" — frase forte e honesta. Manter. Sem issues de rigor.
 
 **ENGINE-CLIENT GUIDE — SEV 2:**
-- L83: "O Evolution Engine pode auditar separação automaticamente" — isso é feature do KAIROS, não do AIOS base. Pode confundir o novo operador que não tem Evolution Engine. Remover ou marcar como "avançado / KAIROS only".
+- L83: "O Evolution Engine pode auditar separação automaticamente" — isso é feature do KAIROS, não do AIOX base. Pode confundir o novo operador que não tem Evolution Engine. Remover ou marcar como "avançado / KAIROS only".
 
 **Voto:** Corrigir referência ao Evolution Engine ✅
 
@@ -125,18 +125,18 @@
 **Priorização final das correções:**
 
 ### 🔴 CORRIGIR AGORA (impacto alto, bloqueiam publicação):
-1. **AIOS-FATHER L24**: "4 Fases" → "4 Fases Cognitivas" mapeadas a "5 Níveis Práticos" — esclarecer relação
-2. **AIOS-FATHER L71**: Backticks aninhados — corrigir markdown
-3. **CHECKLIST L10**: `noesis-status.js` não existe em AIOS padrão — substituir por comando genérico
+1. **AIOX-FATHER L24**: "4 Fases" → "4 Fases Cognitivas" mapeadas a "5 Níveis Práticos" — esclarecer relação
+2. **AIOX-FATHER L71**: Backticks aninhados — corrigir markdown
+3. **CHECKLIST L10**: `noesis-status.js` não existe em AIOX padrão — substituir por comando genérico
 4. **CHECKLIST dias da semana**: Remover "segunda", "terça" — usar só "Dia 1", "Dia 2"
 
 ### 🟡 CORRIGIR SE DER TEMPO (nice-to-have):
 5. **README**: Adicionar Quick Start no topo
 6. **ENGINE-CLIENT L83**: Remover referência ao Evolution Engine (proprietário KAIROS)
-7. **AIOS-FATHER L218**: Enriquecer snippet de scheduler com exemplo real mínimo
+7. **AIOX-FATHER L218**: Enriquecer snippet de scheduler com exemplo real mínimo
 8. **TEMPLATES**: Adicionar `icon` e `whenToUse` aos templates YAML
 9. **README**: Nota sobre Windows (`copy` em vez de `cp`)
-10. **AIOS-FATHER Nível 2**: Adicionar checkpoint de feedback externo
+10. **AIOX-FATHER Nível 2**: Adicionar checkpoint de feedback externo
 
 ---
 

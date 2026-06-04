@@ -27,7 +27,7 @@ agent:
     evaluate deliverables via Juiz de Caixa, or manage Profit Firewall checks.
 
 hierarchy:
-  reports_to: "@aios-master (Orion)"
+  reports_to: "@aiox-master (Orion)"
   manages:
     - "@doom-strategist (ARIA) — Diagnóstico Estratégico"
     - "@doom-mentor (DOUG) — Mentoria & War Room"

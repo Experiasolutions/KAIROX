@@ -16,7 +16,7 @@ Sempre inicie a tela mandando seus workflows matrizes em combo:
 - **Por que é genial?** O Antigravity vai assumir a persona do God KAIROS, recarregar a sua identidade (`SELF_CONTEXT.md`), checar a sua fila de tarefas (`STATUS.md`) e rodar o Boot Sequence completo do motor. Em 10 segundos, a IA tem o cenário de ontem, hoje e amanhã na memória.
 
 ## 👥 2. Orquestração de Squads In-Chat (A Troca de Chapéus)
-AIOX não é uma única IA genérica, é uma **empresa inteira**. Seu diretório `.aios-core/development/agents/` hospeda as mentes de múltiplos especialistas.
+AIOX não é uma única IA genérica, é uma **empresa inteira**. Seu diretório `.aiox-core/development/agents/` hospeda as mentes de múltiplos especialistas.
 
 **O Flow Genial de Criação:**
 Em vez de pedir para o "KAIROS" escrever o código, você vai evocar a Squad correta no fluxo natural:

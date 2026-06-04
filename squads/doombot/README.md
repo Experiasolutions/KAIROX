@@ -1,6 +1,6 @@
 # 🔥 DooMMasteRBot V5 — Revenue Operating System
 
-> **Squad Version:** 2.0.0 | **AIOS Min:** 5.0.0 | **Agents:** 10 | **Tasks:** 12
+> **Squad Version:** 2.0.0 | **AIOX Min:** 5.0.0 | **Agents:** 10 | **Tasks:** 12
 
 ## O que é
 

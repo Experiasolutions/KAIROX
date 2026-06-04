@@ -2,20 +2,20 @@ name: meta
 version: 1.0.0
 short-title: Meta Squad — Self-Audit, Evolution & System Health
 description: >
-  Agentes que monitoram e evoluem o próprio AIOS.
+  Agentes que monitoram e evoluem o próprio AIOX.
   Inclui auditor estrutural, motor de auto-evolução e health checks.
-author: Gabriel (AIOS Elite)
+author: Gabriel (AIOX Elite)
 license: UNLICENSED
 slashPrefix: meta
 
-aios:
+aiox:
   minVersion: "2.1.0"
   type: squad
 
 components:
   agents:
-    - aios-auditor.md
-    - aios-self-evolution.md
+    - aiox-auditor.md
+    - aiox-self-evolution.md
   tasks: []
   workflows: []
   templates: []

@@ -68,7 +68,7 @@ scan:
     - "Idempotent: running twice produces identical results"
 
   cache:
-    location: ".aios/apex-context/"
+    location: ".aiox/apex-context/"
     strategy: "hash-based invalidation (file content hash)"
     ttl: "Until next file change in scanned scope"
 

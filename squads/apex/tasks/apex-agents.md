@@ -9,7 +9,7 @@ List active agents for the current project profile.
 ## Steps
 
 1. **Load project context**
-   - Check `.aios/apex-context/scan-cache.yaml` for cached profile
+   - Check `.aiox/apex-context/scan-cache.yaml` for cached profile
    - If no cache, run `*apex-scan` silently to detect profile
 
 2. **Determine active profile**

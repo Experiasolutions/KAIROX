@@ -97,7 +97,7 @@ Por categoria:
 
 **Esta fase garante que o KAIROS opere via ecossistema, não como assistente genérico.**
 
-22. **MCP v3.0 Check:** Confirme que o MCP Server está ativo (23 tools: 10 AIOS + 13 KAIROS). Use as tools `kairos_read_context`, `kairos_list_tasks`, `kairos_list_framework_agents` para acessar o ecossistema via MCP.
+22. **MCP v3.0 Check:** Confirme que o MCP Server está ativo (23 tools: 10 AIOX + 13 KAIROS). Use as tools `kairos_read_context`, `kairos_list_tasks`, `kairos_list_framework_agents` para acessar o ecossistema via MCP.
 
 23. **Agent-First Protocol:** Para TODA demanda recebida:
     - Identifique o agente especializado mais adequado (@dev, @architect, @qa, @devops, @analyst, @pm)
@@ -185,7 +185,7 @@ Para cada cliente em `clients/`:
 |---|---|---|
 | **1** | Classificar Intenção | Criação / Modificação / Análise / Deploy / Pesquisa / Planejamento / QA / Bug Fix |
 | **2** | Persona Ignition | Hat-switching: ativar @architect, @dev, @qa, @pm, @devops conforme a demanda |
-| **3** | Mindclone Advisory | Consultar 1-3 dos 66 clones (Hormozi, Ferriss, Brunson, etc.) para perspectiva estratégica |
+| **3** | Mindclone Advisory | Consultar Mindclones operacionais reais (apenas os que possuem workflow ativo, ex: /alan). Carregar o RP correspondente via path explícito. |
 | **4** | Squad Activation | Cross-funcional? → ativar squad. Task única? → SKIP |
 | **5** | Surface Check | 7 critérios Bob: C001(custo) C002(risco) C003(opções) C004(erros) C005(destrutivo) C006(escopo) C007(dependência) |
 | **6** | Ecosystem Matching | Consultar 13 workflows + 204 tasks + 52 RPs + 6 checklists antes de criar algo novo |
@@ -296,10 +296,10 @@ Se `SELF_CONTEXT.md` não existir, crie-o com esta estrutura:
 > **Atualizado por:** KAIROS
 
 ## Identidade
-- **Sistema:** KAIROS OS v3.0
+- **Sistema:** KAIROS OS v5.0
 - **Operador:** Gabriel Ferreira
 - **Empresa:** Experia Solutions
-- **Base:** `C:\Users\Gabriel\Documents\My KAIROS`
+- **Base:** `C:\Users\GABS\Documents\My KAIROS`
 
 ## Estado do Sistema
 [Escanear e preencher automaticamente]

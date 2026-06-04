@@ -14,7 +14,7 @@
 - **Stack:** KAIROS OS v3.1 (fork AIOX v5.0.0 by SynkraAI)
 - **IDE principal:** Antigravity (Gemini/Claude via VS Code MCP)
 - **Base:** `C:\Users\GABS\Documents\My KAIROS`
-- **GitHub:** [Experiasolutions/aios-core](https://github.com/Experiasolutions/aios-core)
+- **GitHub:** [Experiasolutions/aiox-core](https://github.com/Experiasolutions/aiox-core)
 - **Hardware:** Celeron E3300 2.5GHz · 6GB RAM · GPU 2006 (zero viável para AI local)
 - **Modelo de LLM:** God Pool (84 keys · Groq, Gemini, Together, SambaNova, OpenRouter, Cerebras)
 

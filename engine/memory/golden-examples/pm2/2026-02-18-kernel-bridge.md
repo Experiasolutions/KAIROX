@@ -92,7 +92,7 @@ getSystemHealth() {
 6. Each sub-bridge (synapse/ids/wis) follows identical pattern — learnable
 
 ## REUSE GUIDANCE
-Use for: any bridge module connecting AIOS scripts to kernel components.
+Use for: any bridge module connecting AIOX scripts to kernel components.
 The safeRequire + graceful-fallback pattern should be in every bridge.
 The lazy initialization pattern prevents unnecessary resource consumption.
 The health aggregation pattern applies to any multi-module status endpoint.

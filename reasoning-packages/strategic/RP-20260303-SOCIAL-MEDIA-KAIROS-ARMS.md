@@ -125,7 +125,7 @@ Script padrão (PRODUTOR gera em 5 min):
 
 ```
 Post tipo "Today's metrics":
-"Day 12 of using my AIOS as my only employee:
+"Day 12 of using my AIOX as my only employee:
  → 340 messages answered automatically
  → 3 leads from LinkedIn (cold outreach by AI)
  → 0 hours spent on repetitive tasks

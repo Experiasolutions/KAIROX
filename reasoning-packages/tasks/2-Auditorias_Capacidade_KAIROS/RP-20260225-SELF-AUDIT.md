@@ -1,6 +1,6 @@
 # 👑 AUTO-AUDITORIA DO SISTEMA — Noesis Hivemind Council
 
-**Data:** 25/02/2026 10:12 | **Auditor:** Noesis (AIOS Master Orchestrator)
+**Data:** 25/02/2026 10:12 | **Auditor:** Noesis (AIOX Master Orchestrator)
 **Escopo:** Full stack — Persona Engine, Rules, Quiz, LP, Scripts, Configs, Infra
 
 ---
@@ -10,7 +10,7 @@
 | Área                                           | Score  |      Status       |
 | :--------------------------------------------- | :----: | :---------------: |
 | Persona Engine (`experia-persona-engine.json`) | 9.5/10 |     ✅ STRONG      |
-| AIOS Rules Integration (RULE FOUR)             |  9/10  |     ✅ STRONG      |
+| AIOX Rules Integration (RULE FOUR)             |  9/10  |     ✅ STRONG      |
 | Quiz Gamificado (webhook + segmentação)        |  7/10  | ⚠️ NEEDS ATTENTION |
 | Landing Page (`kairos-guardian`)               |  5/10  |  🔴 NOT DEPLOYED   |
 | Night Shift Scheduler                          |  7/10  |     ⚠️ PARTIAL     |

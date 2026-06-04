@@ -3,7 +3,7 @@ version: 1.0.0
 status: SPEC_DEFINED
 
 description: >-
-  Installation workflow. Auto-detects AIOS/AIOX project, merges hooks into
+  Installation workflow. Auto-detects AIOX/AIOX project, merges hooks into
   .claude/settings.json, initializes directories, and verifies setup.
 
 trigger:
@@ -17,9 +17,9 @@ phases:
     steps:
       - step: 1.1
         name: "Detect Project Type"
-        check: "test -d .aios-core/ || test -d .aiox/"
-        output: "PROJECT_TYPE = aios | aiox"
-        fail_action: "ERROR: Not an AIOS or AIOX project"
+        check: "test -d .aiox-core/ || test -d .aiox/"
+        output: "PROJECT_TYPE = aiox | aiox"
+        fail_action: "ERROR: Not an AIOX or AIOX project"
 
       - step: 1.2
         name: "Verify kaizen-v2 Directory"

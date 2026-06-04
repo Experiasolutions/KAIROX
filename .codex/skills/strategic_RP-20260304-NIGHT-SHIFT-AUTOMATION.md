@@ -23,13 +23,13 @@ Executar rotinas pesadas de manutenção e inteligência de forma 100% autônoma
 ### Fase 1: Workspace Sanitization
 - Remove logs com mais de 7 dias
 - Limpa diretório `tmp/`
-- Arquiva JSON dumps soltos na raiz para `.aios-core/archive/dumps/`
+- Arquiva JSON dumps soltos na raiz para `.aiox-core/archive/dumps/`
 
 ### Fase 2: Semantic Document Organizer (Groq API)
 - **Source:** `C:\Users\Gabriel\Documents` (apenas raiz, sem tocar em repositórios)
 - **Target:** `C:\Users\Gabriel\Documents\Organized_by_Groq\[Category]`
 - **Model:** `llama3-8b-8192` (gratuito, rápido)
-- **Categorias:** Financial, Personal, Work, KAIROS, AIOS, Megabrain, Other
+- **Categorias:** Financial, Personal, Work, KAIROS, AIOX, Megabrain, Other
 - **Lógica:** Extrai nome + snippet de ~1000 chars → envia ao Groq → recebe categoria → move arquivo
 - **Proteção:** Sanitiza caracteres não-ASCII antes do envio para evitar payloads quebrados
 

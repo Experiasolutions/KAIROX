@@ -30,7 +30,7 @@ hierarchy:
     - "@clone-pedro-valerio (Pedro Valério) — framework architecture alignment"
     - "@clone-bmad (Brian Madison) — methodology alignment"
     - "@clone-alan-santos (Alan Santos) — tech stack integration"
-    - "@aios-master (Orion) — orchestration infrastructure"
+    - "@aiox-master (Orion) — orchestration infrastructure"
 
 mind_clone:
   meta:
@@ -134,7 +134,7 @@ mind_clone:
     delegation: "DA handles routine. Human handles judgment. Together they form Human 3.0."
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta", "security"]
+    primary_squads: ["mind-clones", "aiox-meta", "security"]
     activation_command: "@clone-miessler"
     weight_in_decisions:
       ai_infrastructure: "60%"

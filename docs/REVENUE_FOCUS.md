@@ -1,7 +1,7 @@
 # 💰 REVENUE OPERATIONS: FROM "BUILDING" TO "BILLING"
 
 > **Mindset Shift:** You are no longer the "Engineer". You are the **CEO**.
-> **Goal:** $0 → $Revenue using the current AIOS Asset.
+> **Goal:** $0 → $Revenue using the current AIOX Asset.
 
 ---
 
@@ -43,7 +43,7 @@ Use the **Mind Clones** to handle the sales process for you.
 ## 3. DAILY CEO ROUTINE (15 Minutes)
 
 1.  **Morning:** Check `dashboard.js`. ensure system is "Listening".
-2.  **Noon:** Ask `@aios-master`: *"Any critical alerts from Doombot?"*
+2.  **Noon:** Ask `@aiox-master`: *"Any critical alerts from Doombot?"*
 3.  **Night:** Review `action.json` logs to see how the AI handled conversations.
 
 ---

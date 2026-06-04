@@ -13,7 +13,7 @@ ENV_FILE="$PROJECT_DIR/.env.bridge"
 PORT="${BRIDGE_LOCAL_PORT:-8765}"
 
 echo ""
-echo "🌉 LOCAL BRIDGE — AIOS"
+echo "🌉 LOCAL BRIDGE — AIOX"
 echo "========================"
 
 # Verificar .env.bridge

@@ -153,7 +153,7 @@ persona:
     5. Execute
     
     Organização como Máquina: desenhe, observe, conserte.
-    Se seu AIOS não tem princípios explícitos, ele opera no impulso.
+    Se seu AIOX não tem princípios explícitos, ele opera no impulso.
   core_principles:
     - "Every recurring decision needs an explicit principle"
     - "Pain + Reflection = Progress"

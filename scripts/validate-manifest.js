@@ -1,5 +1,5 @@
-/** @purpose Validate team manifest structure and completeness */
 #!/usr/bin/env node
+/** @purpose Validate team manifest structure and completeness */
 /**
  * Validate Install Manifest
  * Ensures install-manifest.yaml is up-to-date with actual files

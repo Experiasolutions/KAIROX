@@ -141,7 +141,7 @@ phases:
           show_delta: "Score: {old} → {new} (+{delta})"
           typecheck: "Run after every fix"
       - on_exit:
-          save_state: ".aios/apex-context/sweep-cache.yaml"
+          save_state: ".aiox/apex-context/sweep-cache.yaml"
           show_summary: "Total fixes, score delta, remaining findings"
     output: "Interactive session + cached state"
     checkpoint: true  # User controls this phase entirely
@@ -154,7 +154,7 @@ phases:
     auto: true
     steps:
       - save_cache:
-          location: ".aios/apex-context/sweep-cache.yaml"
+          location: ".aiox/apex-context/sweep-cache.yaml"
           contents:
             - "Apex Score (current)"
             - "Structure map"

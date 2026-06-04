@@ -15,7 +15,7 @@
 **Versão:** V1.0 — Dark Cockpit Edition
 **Construído com:** AIOX PRO
 **Feito em:** Florianópolis
-**GitHub:** github.com/SynkraAI/aios-core
+**GitHub:** github.com/SynkraAI/aiox-core
 **Redes:** @AIOXsquad (X, TikTok, Instagram, YouTube, LinkedIn)
 
 ---

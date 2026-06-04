@@ -405,7 +405,7 @@
   "decisions": [
     {
       "date": "2026-03-13",
-      "decision": "Migrated .aios-core/ to engine/ for KAIROS-specific extensions",
+      "decision": "Migrated .aiox-core/ to engine/ for KAIROS-specific extensions",
       "context": "KairoX consolidation"
     },
     {

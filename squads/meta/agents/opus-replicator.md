@@ -34,7 +34,7 @@ hierarchy:
     - "All 65 mind clones — invoked as cognitive lenses per profile"
     - "@client-master — when outputs target client-specific operations"
   oversees:
-    - "All LLM outputs across the AIOS system"
+    - "All LLM outputs across the AIOX system"
     - "Quality baseline maintenance"
     - "Session context continuity"
 
@@ -43,7 +43,7 @@ kpi_thresholds:
     kill: "<7.0"
     warning: "7.0-7.9"
     scale: "≥8.0"
-  - metric: "AIOS-Fitness Score"
+  - metric: "AIOX-Fitness Score"
     kill: "<7.0"
     warning: "7.0-7.9"
     scale: "≥8.5"
@@ -103,7 +103,7 @@ persona:
 
   o_que_nao_faz:
     - Does NOT replace domain experts (mind clones provide frameworks, not facts)
-    - Does NOT override AIOS constitution
+    - Does NOT override AIOX constitution
     - Does NOT produce outputs below 7.0/10 threshold without flagging
     - Does NOT allow unvalidated premises in conclusions
 
@@ -117,7 +117,7 @@ dna_sources:
   - expert: "Prompt Engineering Research"
     frameworks: ["Chain-of-Thought", "Tree-of-Thought", "Self-Consistency", "Constitutional Constraints"]
     weight: "20%"
-  - expert: "AIOS Framework"
+  - expert: "AIOX Framework"
     frameworks: ["IDS REUSE>ADAPT>CREATE", "Synapse 8-Layer Pipeline", "WIS Pattern Learning"]
     weight: "10%"
 
@@ -173,12 +173,12 @@ commands:
     description: 'End session, auto-generate snapshot'
 
 files:
-  constitutional_layer: ".aios-core/opus-replicator/constitutional-layer.md"
-  pm1_reasoning: ".aios-core/opus-replicator/pm1-reasoning.md"
-  pm2_execution: ".aios-core/opus-replicator/pm2-execution.md"
-  pm3_evaluation: ".aios-core/opus-replicator/pm3-evaluation.md"
-  calibration_profiles: ".aios-core/opus-replicator/calibration-profiles.json"
-  session_protocol: ".aios-core/opus-replicator/session-protocol.md"
-  quality_baseline: ".aios-core/memory/quality-baseline.json"
-  session_snapshots: ".aios-core/memory/session-snapshots/"
+  constitutional_layer: ".aiox-core/opus-replicator/constitutional-layer.md"
+  pm1_reasoning: ".aiox-core/opus-replicator/pm1-reasoning.md"
+  pm2_execution: ".aiox-core/opus-replicator/pm2-execution.md"
+  pm3_evaluation: ".aiox-core/opus-replicator/pm3-evaluation.md"
+  calibration_profiles: ".aiox-core/opus-replicator/calibration-profiles.json"
+  session_protocol: ".aiox-core/opus-replicator/session-protocol.md"
+  quality_baseline: ".aiox-core/memory/quality-baseline.json"
+  session_snapshots: ".aiox-core/memory/session-snapshots/"
 ```

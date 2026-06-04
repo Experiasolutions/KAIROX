@@ -19,9 +19,9 @@ const path = require('path');
 
 // ── Paths ────────────────────────────────────────────────────
 
-const AIOS_ROOT = path.join(__dirname, '..');
-const CLONES_DIR = path.join(AIOS_ROOT, 'squads', 'mind-clones', 'agents');
-const SQUAD_YAML = path.join(AIOS_ROOT, 'squads', 'mind-clones', 'squad.yaml');
+const AIOX_ROOT = path.join(__dirname, '..');
+const CLONES_DIR = path.join(AIOX_ROOT, 'squads', 'mind-clones', 'agents');
+const SQUAD_YAML = path.join(AIOX_ROOT, 'squads', 'mind-clones', 'squad.yaml');
 
 // ── Clone Parser ─────────────────────────────────────────────
 // WHY: Agent .md files have embedded YAML inside ```yaml blocks.
@@ -258,7 +258,7 @@ if (require.main === module) {
         process.exit(0);
     }
 
-    console.log('\n⚡ AIOS Skill Mapper v1.0 — Mind Clone → Skill Verification');
+    console.log('\n⚡ AIOX Skill Mapper v1.0 — Mind Clone → Skill Verification');
     console.log('═══════════════════════════════════════════════════════════\n');
     console.log(`   Clones scanned:    ${result.totalClones}`);
     console.log(`   Skills available:  ${result.totalSkills}`);
@@ -294,7 +294,7 @@ if (require.main === module) {
     }
 
     // Save mapping report
-    const reportPath = path.join(AIOS_ROOT, '.aios-core', 'data', 'skill-mapping-report.json');
+    const reportPath = path.join(AIOX_ROOT, '.aiox-core', 'data', 'skill-mapping-report.json');
     try {
         const dataDir = path.dirname(reportPath);
         if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });

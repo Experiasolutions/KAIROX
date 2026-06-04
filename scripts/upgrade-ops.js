@@ -28,7 +28,7 @@ agent:
   activation: "@ops-head"
 
 hierarchy:
-  reports_to: "@aios-master (Orion)"
+  reports_to: "@aiox-master (Orion)"
   manages:
     - "@ops-architect (Blueprint) \u2014 Desenho de Processos"
     - "@ops-automation (Clockwork) \u2014 Automa\u00e7\u00e3o"
@@ -102,7 +102,7 @@ commands:
   - command: "@audit {processo}"
     o_que_faz: "Auditar processo existente"
   - command: "@escalate {issue}"
-    o_que_faz: "Escalar para @aios-master"
+    o_que_faz: "Escalar para @aiox-master"
 
 skill_chains:
   process_improvement:

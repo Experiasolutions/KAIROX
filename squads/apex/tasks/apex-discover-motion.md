@@ -260,7 +260,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/motion-cache.yaml"
+  location: ".aiox/apex-context/motion-cache.yaml"
   ttl: "Until component files change"
   invalidate_on:
     - "Any .tsx/.jsx/.css file with animation patterns modified"

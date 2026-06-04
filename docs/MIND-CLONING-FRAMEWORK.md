@@ -1,4 +1,4 @@
-# 🧬 AIOS Mind Cloning Framework v1.0
+# 🧬 AIOX Mind Cloning Framework v1.0
 
 > **Conceito:** Replicar estruturas neurais de pensamento de experts reais —
 > não como role-play, mas como frameworks de decisão, análise e execução completos.
@@ -74,7 +74,7 @@ mind_clone:
 | # | Clone | Domínio | Status | Squads |
 |---|-------|---------|--------|--------|
 | 1 | Alex Hormozi | Ofertas, Scale, Revenue | ✅ Ativo | doombot, vendas |
-| 2 | Thiago Finch | Revenue OS, Copy, AIOS | 🔜 Próximo | doombot, marketing |
+| 2 | Thiago Finch | Revenue OS, Copy, AIOX | 🔜 Próximo | doombot, marketing |
 | 3 | Robert Cialdini | Persuasão, Influência | 🔜 Planejado | doom-persuader |
 | 4 | Naval Ravikant | Leverage, Strategy | 🔜 Planejado | decisões pessoais |
 | 5 | Dan Kennedy | Direct Response Marketing | 🔜 Planejado | marketing, vendas |

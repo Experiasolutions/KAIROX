@@ -24,7 +24,7 @@
 | Demonstração ao vivo            | Slides e promessas              |
 | Gabriel pessoalmente no ABC     | Vendedor remoto de SP capital   |
 | Custo zero, margem 95%          | Infraestrutura cara, margem 30% |
-| 12 dias de know-how AIOS real   | Revendedores sem profundidade   |
+| 12 dias de know-how AIOX real   | Revendedores sem profundidade   |
 
 **2. Vença sem lutar:**
 > Não ataque os concorrentes. Torne-os **irrelevantes**.

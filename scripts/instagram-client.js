@@ -154,7 +154,7 @@ async function main() {
         else if (args[0] === '--insights') await getInsights(parseInt(args[1]) || 7);
         else if (args[0] === '--publish') await publishPost(args[1], args[2]);
         else {
-            console.log('AIOS Instagram Client');
+            console.log('AIOX Instagram Client');
             console.log('  --profile                  Perfil e metricas');
             console.log('  --media                    Lista posts recentes');
             console.log('  --insights <days>          Insights do periodo');

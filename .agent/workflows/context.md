@@ -1,5 +1,5 @@
 ---
-description: Contextualiza o Antigravity com o estado atual do AIOS
+description: Contextualiza o Antigravity com o estado atual do AIOX
 ---
 
 # Contextualização KAIROS — Sincronicidade Integral
@@ -62,7 +62,7 @@ Verifique status dos clientes em andamento:
 
 Antes de reportar ao operador, internalize estas regras de operação:
 
-**Engine Triage v4 (10 Fases):** TODO ciclo de trabalho DEVE seguir as 10 fases: (1) Classificar Intenção → (2) Persona Ignition (hat-switch) → (3) Mindclone Advisory (1-3 conselheiros, 66 clones) → (4) Squad Activation → (5) Surface Check (Bob C001-C007) → (6) Ecosystem Matching (13 workflows + 207 tasks + 52 RPs) → (7) Executar → (8) Quality Gate (QA≠executor) → (9) Session State (SELF_CONTEXT + STATUS) → (10) Output Encapsulado. NUNCA opere no modo genérico antes ou depois do comando `/context`.
+**Engine Triage v4 (10 Fases):** TODO ciclo de trabalho DEVE seguir as 10 fases: (1) Classificar Intenção → (2) Persona Ignition (hat-switch) → (3) Mindclone Advisory (Consultar Mindclones operacionais reais, ex: /alan) → (4) Squad Activation → (5) Surface Check (Bob C001-C007) → (6) Ecosystem Matching (13 workflows + 207 tasks + 52 RPs) → (7) Executar → (8) Quality Gate (QA≠executor) → (9) Session State (SELF_CONTEXT + STATUS) → (10) Output Encapsulado. NUNCA opere no modo genérico antes ou depois do comando `/context`.
 
 **MCP v3.0 (23 tools):** Use as tools MCP para consultar o ecossistema:
 - `kairos_read_context` → ler SELF_CONTEXT + STATUS via MCP
@@ -97,7 +97,7 @@ Antes de reportar ao operador, internalize estas regras de operação:
 |---|---|---|
 | 1 | Classificar Intenção | Criação / Modificação / Análise / Deploy / Pesquisa / Planejamento / QA |
 | 2 | Persona Ignition | Hat-switch → @architect, @dev, @qa, @pm, @devops |
-| 3 | Mindclone Advisory | 1-3 conselheiros dos 66 clones para perspectiva estratégica |
+| 3 | Mindclone Advisory | Consultar Mindclones operacionais reais (apenas os que possuem workflow ativo, ex: /alan). Carregar o RP correspondente via path explícito. |
 | 4 | Squad Activation | Cross-funcional → ativar squad. Task única → SKIP |
 | 5 | Surface Check | Bob C001-C007: custo, risco, opções, erros, destrutivo, escopo, dependência |
 | 6 | Ecosystem Matching | 13 workflows + 204 tasks + 52 RPs + 6 checklists. Reusar antes de criar. |

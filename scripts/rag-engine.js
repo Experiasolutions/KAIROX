@@ -5,7 +5,7 @@
  *          local vector store and enable semantic search for mind clones.
  *          Pipeline: Documents → Chunking → Embeddings → Vector Store → Search.
  * @inputs  Knowledge base files (auto-indexed) or query string (CLI)
- * @outputs Search results with relevance scores + .aios-core/data/rag/ index
+ * @outputs Search results with relevance scores + .aiox-core/data/rag/ index
  * @exports { index, query, status }
  * @dependencies .env (GEMINI_API_KEY for embeddings)
  */
@@ -14,13 +14,13 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const AIOS_ROOT = path.resolve(__dirname, '..');
-const RAG_DIR = path.join(AIOS_ROOT, '.aiox-core', 'data', 'rag');
+const AIOX_ROOT = path.resolve(__dirname, '..');
+const RAG_DIR = path.join(AIOX_ROOT, '.aiox-core', 'data', 'rag');
 const KNOWLEDGE_DIRS = [
-    path.join(AIOS_ROOT, 'squads'),
-    path.join(AIOS_ROOT, '.aiox-core', 'docs', 'standards'),
-    path.join(AIOS_ROOT, '.aiox-core', 'core'),
-    path.join(AIOS_ROOT, 'docs'),
+    path.join(AIOX_ROOT, 'squads'),
+    path.join(AIOX_ROOT, '.aiox-core', 'docs', 'standards'),
+    path.join(AIOX_ROOT, '.aiox-core', 'core'),
+    path.join(AIOX_ROOT, 'docs'),
 ];
 
 // ============================================================
@@ -262,7 +262,7 @@ class RAGEngine {
                     const content = fs.readFileSync(file, 'utf8');
                     if (content.length < 50) return; // Skip tiny files
 
-                    const relPath = path.relative(AIOS_ROOT, file);
+                    const relPath = path.relative(AIOX_ROOT, file);
                     const docId = crypto.createHash('md5').update(relPath).digest('hex').substring(0, 8);
 
                     const chunks = this.chunker.chunk(content, {
@@ -328,7 +328,7 @@ class RAGEngine {
             return 'squad';
         }
         if (relPath.includes('docs/standards')) return 'standard';
-        if (relPath.includes('.aios-core/core')) return 'core';
+        if (relPath.includes('.aiox-core/core')) return 'core';
         if (relPath.includes('docs/')) return 'documentation';
         return 'general';
     }
@@ -342,10 +342,10 @@ if (require.main === module) {
     const rag = new RAGEngine();
 
     if (process.argv.includes('--index')) {
-        console.log('📚 AIOS RAG Engine v1.0 — Indexing Knowledge Base\n');
+        console.log('📚 AIOX RAG Engine v1.0 — Indexing Knowledge Base\n');
         console.log('🔍 Scanning directories:');
         KNOWLEDGE_DIRS.forEach(d => {
-            const rel = path.relative(AIOS_ROOT, d);
+            const rel = path.relative(AIOX_ROOT, d);
             console.log(`   📁 ${rel}/`);
         });
         console.log();
@@ -355,7 +355,7 @@ if (require.main === module) {
         console.log(`   📄 Files indexed: ${stats.files}`);
         console.log(`   🧩 Chunks created: ${stats.chunks}`);
         console.log(`   📝 Unique terms: ${stats.terms}`);
-        console.log(`   💾 Index saved to: .aios-core/data/rag/index.json`);
+        console.log(`   💾 Index saved to: .aiox-core/data/rag/index.json`);
         console.log();
         console.log('💡 Now you can search with: node scripts/rag-engine.js --query "your question"');
     }
@@ -391,7 +391,7 @@ if (require.main === module) {
     }
 
     else if (process.argv.includes('--status')) {
-        console.log('📊 AIOS RAG Engine — Status\n');
+        console.log('📊 AIOX RAG Engine — Status\n');
         const loaded = rag.loadIndex();
         if (!loaded) {
             console.log('⚠️ No index found. Run with --index first.');
@@ -411,7 +411,7 @@ if (require.main === module) {
     }
 
     else if (process.argv.includes('--demo')) {
-        console.log('🎮 AIOS RAG Engine — Demo Mode\n');
+        console.log('🎮 AIOX RAG Engine — Demo Mode\n');
         console.log('Indexing...');
         const stats = rag.indexAll();
         console.log(`✅ Indexed ${stats.files} files (${stats.chunks} chunks)\n`);
@@ -440,7 +440,7 @@ if (require.main === module) {
     }
 
     else {
-        console.log('📚 AIOS RAG Engine v1.0');
+        console.log('📚 AIOX RAG Engine v1.0');
         console.log();
         console.log('Commands:');
         console.log('  --index           Index all knowledge bases');

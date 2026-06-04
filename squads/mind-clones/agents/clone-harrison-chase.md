@@ -28,7 +28,7 @@ hierarchy:
   collaborates_with:
     - "@clone-joao-moura (João Moura) — multi-agent orchestration"
     - "@clone-andrew-ng (Andrew Ng) — agentic workflow theory"
-    - "@clone-pedro-valerio (Pedro Valério) — AIOS architecture"
+    - "@clone-pedro-valerio (Pedro Valério) — AIOX architecture"
     - "@clone-miessler (Daniel Miessler) — context + memory"
 
 mind_clone:
@@ -102,7 +102,7 @@ mind_clone:
     communication: "Technical, precise, framework-aware. Uses diagrams."
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-harrison-chase"
     weight_in_decisions:
       agent_orchestration: "65%"

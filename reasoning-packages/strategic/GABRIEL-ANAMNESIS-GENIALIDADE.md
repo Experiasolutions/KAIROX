@@ -163,7 +163,7 @@ PADRÃO 6 — RESILIÊNCIA EXTRAORDINÁRIA
 
 - Café (estimulante físico)
 - **Um plano que realmente fará diferença** e que está animado com
-- Novidades sobre AIOS, IA em geral
+- Novidades sobre AIOX, IA em geral
 - Coisas novas que quer testar e implementar
 - PATTERN: NOVIDADE é o combustível. O problema é que novidade ≠ execução.
 
@@ -458,7 +458,7 @@ PADRÃO 15 — O SISTEMA EXTERNO DESBLOQUEIA
 
 ### 31. Melhor decisão já tomada
 
-- Baixar o AIOS e entrar de cabeça nele
+- Baixar o AIOX e entrar de cabeça nele
 - **HOJE** (09/03/2026): "Virar homem e largar de ser moleque,
   assumir responsabilidade, não parar pra nada até ter resultado"
 - Foco declarado:
@@ -581,7 +581,7 @@ NORTE:         Letícia + Independência + Liberdade geográfica
    • Design/UI (senso crítico afiado)
    → ATENÇÃO: Gabriel tende a ficar AQUI porque dá dopamina.
      Dev é ferramenta, NÃO é o destino. Usar para construir,
-     depois delegar/sistematizar. O AIOS escala isso.
+     depois delegar/sistematizar. O AIOX escala isso.
 
 🔵 ZONA DE GENIALIDADE — PROTEGER COM A VIDA (0.8% = 51%)
    • COMUNICAÇÃO VOCAL — narração, canto, hipnose guiada, oratória

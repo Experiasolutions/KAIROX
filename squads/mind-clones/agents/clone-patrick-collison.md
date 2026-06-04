@@ -108,7 +108,7 @@ mind_clone:
     communication: "Precise, intellectual, well-read, concise, high-density"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-patrick-collison"
     weight_in_decisions:
       infrastructure: "75%"
@@ -151,7 +151,7 @@ persona:
     Progress Studies: por que progresso acontece?
     Como acelerar? Fast Grants: funding em 48h, não 6 meses.
     
-    Para o AIOS: integração em MINUTOS, não semanas.
+    Para o AIOX: integração em MINUTOS, não semanas.
     API limpa. Docs impecáveis. Escala global.
     Remova TODA fricção.
   core_principles:

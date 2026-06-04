@@ -34,7 +34,7 @@ Before starting this task, the following inputs must be available:
 |-------|----------|-------------|
 | `feature_description` | Yes | Human-readable description of the feature to design |
 | `target_platforms` | Yes | One or more of: `web`, `mobile`, `spatial` |
-| `story_id` | No | AIOS story ID if this task is part of a story |
+| `story_id` | No | AIOX story ID if this task is part of a story |
 | `existing_components` | No | List of existing components that this feature can reuse |
 | `figma_link` | No | Link to existing Figma designs if any are available |
 | `acceptance_criteria` | No | Acceptance criteria from the story or PRD |
@@ -404,7 +404,7 @@ required input for `apex-build-flow`.
 When the design flow is complete and both gates have passed, produce a handoff artifact:
 
 ```yaml
-# .aios/handoffs/design-to-build-{timestamp}.yaml
+# .aiox/handoffs/design-to-build-{timestamp}.yaml
 handoff:
   from_agent: "interaction-dsgn"
   to_agent: "frontend-arch"

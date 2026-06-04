@@ -26,7 +26,7 @@ const TASKS = [
         id: 'health-check',
         name: '🏥 Health Check',
         interval: 4 * 60 * 60 * 1000, // 4 hours
-        description: 'Verifica status de todos os sistemas AIOS',
+        description: 'Verifica status de todos os sistemas AIOX',
         action: async () => {
             const checks = {};
 
@@ -252,7 +252,7 @@ function scheduleTask(task) {
 
 function showStatus() {
     console.log('\n═══════════════════════════════════════════════════');
-    console.log('  ⏰ AIOS Scheduler — Status');
+    console.log('  ⏰ AIOX Scheduler — Status');
     console.log('═══════════════════════════════════════════════════\n');
 
     for (const task of TASKS) {
@@ -328,7 +328,7 @@ async function main() {
     // Start scheduler
     console.log('');
     console.log('═══════════════════════════════════════════════════');
-    console.log('  ⏰ AIOS Scheduler — Modo Autônomo');
+    console.log('  ⏰ AIOX Scheduler — Modo Autônomo');
     console.log('═══════════════════════════════════════════════════');
     console.log('');
     console.log(`  ${TASKS.length} tarefas agendadas:`);

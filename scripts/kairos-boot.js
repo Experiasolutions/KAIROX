@@ -27,7 +27,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
-const AIOS_ROOT = PROJECT_ROOT;
+const AIOX_ROOT = PROJECT_ROOT;
 const AIOX_CORE = path.join(PROJECT_ROOT, '.aiox-core');
 
 // ─── Timing ─────────────────────────────────────────────────
@@ -79,7 +79,7 @@ function phase0_identity() {
     phaseHeader(0, 'IDENTITY VERIFICATION', '🔒');
 
     // Check identity anchor
-    const anchorPath = path.join(AIOS_ROOT, 'engine', 'noesis', 'identity-anchor.json');
+    const anchorPath = path.join(AIOX_ROOT, 'engine', 'noesis', 'identity-anchor.json');
     const anchorFallback = path.join(AIOX_CORE, 'noesis', 'identity-anchor.json');
     const resolvedAnchor = fs.existsSync(anchorPath) ? anchorPath : (fs.existsSync(anchorFallback) ? anchorFallback : null);
     if (resolvedAnchor) {
@@ -91,7 +91,7 @@ function phase0_identity() {
     }
 
     // Check rules
-    const rulesPath = path.join(AIOS_ROOT, '.antigravity', 'rules.md');
+    const rulesPath = path.join(AIOX_ROOT, '.antigravity', 'rules.md');
     if (fs.existsSync(rulesPath)) {
         const rules = fs.readFileSync(rulesPath, 'utf8');
         const ruleCount = (rules.match(/## RULE/g) || []).length;
@@ -101,7 +101,7 @@ function phase0_identity() {
     }
 
     // Check Experia Persona Engine
-    const personaPath = path.join(AIOS_ROOT, 'clients', 'experia', 'config', 'experia-persona-engine.json');
+    const personaPath = path.join(AIOX_ROOT, 'clients', 'experia', 'config', 'experia-persona-engine.json');
     if (fs.existsSync(personaPath)) {
         const persona = JSON.parse(fs.readFileSync(personaPath, 'utf8'));
         const gateCount =
@@ -130,7 +130,7 @@ function phase0_5_mcp_sync(isQuick) {
     try {
         const { execSync } = require('child_process');
         execSync('node scripts/install-mcp.js', { 
-            cwd: AIOS_ROOT,
+            cwd: AIOX_ROOT,
             stdio: 'pipe' 
         });
         ok('MCP Config Install: Synced absolute paths to HUD');
@@ -149,7 +149,7 @@ function phase1_consciousness() {
 
     // Regenerate SELF_CONTEXT.md
     try {
-        const genPath = path.join(AIOS_ROOT, 'scripts', 'evolution', 'generate-context.js');
+        const genPath = path.join(AIOX_ROOT, 'scripts', 'evolution', 'generate-context.js');
         if (fs.existsSync(genPath)) {
             require(genPath);
             ok('SELF_CONTEXT.md regenerated');
@@ -161,7 +161,7 @@ function phase1_consciousness() {
     }
 
     // Load cognitive state
-    const cogPath = path.join(AIOS_ROOT, 'engine', 'noesis', 'cognitive-state.json');
+    const cogPath = path.join(AIOX_ROOT, 'engine', 'noesis', 'cognitive-state.json');
     const cogFallback = path.join(AIOX_CORE, 'noesis', 'cognitive-state.json');
     if (fs.existsSync(cogPath)) {
         const cog = JSON.parse(fs.readFileSync(cogPath, 'utf8'));
@@ -181,19 +181,19 @@ function phase1_5_jarvis() {
 
     try {
         // Step 1: Run Jarvis observation cycle
-        const jarvis = require(path.join(AIOS_ROOT, 'scripts', 'jarvis-core.js'));
+        const jarvis = require(path.join(AIOX_ROOT, 'scripts', 'jarvis-core.js'));
         const observations = jarvis.observe();
         const withData = observations.sources.filter(s => s.data !== null).length;
         ok(`Observation: ${withData}/${observations.sources.length} sources collected (${(observations.completeness * 100).toFixed(0)}% completeness)`);
 
         // Step 2: Enrich operator profile
-        const { enrichProfile } = require(path.join(AIOS_ROOT, 'scripts', 'profile-enricher.js'));
+        const { enrichProfile } = require(path.join(AIOX_ROOT, 'scripts', 'profile-enricher.js'));
         const profile = enrichProfile(observations);
         jarvis.saveProfile(profile);
         ok(`Profile enriched: cycle #${profile._meta.enrichmentCycles}`);
 
         // Step 3: Check Operator Noesis status
-        const noesisEngine = require(path.join(AIOS_ROOT, 'scripts', 'operator-noesis', 'operator-noesis-engine.js'));
+        const noesisEngine = require(path.join(AIOX_ROOT, 'scripts', 'operator-noesis', 'operator-noesis-engine.js'));
         const noesisStatus = noesisEngine.getStatus();
 
         if (noesisStatus.jarvisOperational) {
@@ -224,8 +224,8 @@ function phase1_8_skyros() {
     phaseHeader('1.8', 'SKYROS (Personal OS)', '🧠');
 
     try {
-        const triagePath = path.join(AIOS_ROOT, 'scripts', 'skyros', 'triage-matinal.js');
-        const isolationPath = path.join(AIOS_ROOT, 'scripts', 'skyros', 'isolation-mode.js');
+        const triagePath = path.join(AIOX_ROOT, 'scripts', 'skyros', 'triage-matinal.js');
+        const isolationPath = path.join(AIOX_ROOT, 'scripts', 'skyros', 'isolation-mode.js');
 
         if (!fs.existsSync(triagePath)) {
             warn('SKYROS Triage: Module not found');
@@ -288,7 +288,7 @@ function phase2_knowledge() {
 
         // Show stats
         try {
-            const RAGEngine = require(path.join(AIOS_ROOT, 'scripts', 'rag-engine.js'));
+            const RAGEngine = require(path.join(AIOX_ROOT, 'scripts', 'rag-engine.js'));
             // The module auto-exports but the CLI is the main use
             ok(`RAG ready for semantic search`);
         } catch (e) {
@@ -300,7 +300,7 @@ function phase2_knowledge() {
         try {
             const { execSync } = require('child_process');
             execSync('node scripts/rag-engine.js --index', {
-                cwd: AIOS_ROOT,
+                cwd: AIOX_ROOT,
                 stdio: 'pipe'
             });
             ok('RAG Index: Built successfully');
@@ -351,7 +351,7 @@ function phase3_intelligence() {
     phaseHeader(3, 'INTELLIGENCE (IA Council)', '🏛️');
 
     try {
-        const councilPath = path.join(AIOS_ROOT, 'scripts', 'evolution', 'ia-council-engine.js');
+        const councilPath = path.join(AIOX_ROOT, 'scripts', 'evolution', 'ia-council-engine.js');
         const council = require(councilPath);
 
         let files = [];
@@ -365,12 +365,12 @@ function phase3_intelligence() {
             ['docs', 'docs'],
             ['reasoning-packages', 'reasoning-packages'],
             ['clients/experia/config', 'clients/experia/config'],
-            // === AIOS RUNTIME STATE (Tier 1 — CRITICAL) ===
-            ['.aios', '.aios'], // codebase-map, gotchas, epic state, path-analysis
+            // === AIOX RUNTIME STATE (Tier 1 — CRITICAL) ===
+            ['.aiox', '.aiox'], // codebase-map, gotchas, epic state, path-analysis
             ['.synapse', '.synapse'], // 12 agent domains + 3 workflow domains + constitution
-            ['bin', 'bin'], // CLI runtime (aios.js, aios-init.js, aios-ids.js)
+            ['bin', 'bin'], // CLI runtime (aiox.js, aiox-init.js, aiox-ids.js)
             ['data', 'data'], // entity-registry, memory.json, jarvis-narratives
-            // === AIOS CORE ENGINE ===
+            // === AIOX CORE ENGINE ===
             ['.aiox-core/opus-replicator', '.aiox-core/opus-replicator'],
             ['.aiox-core/core', '.aiox-core/core'],
             ['.aiox-core/core/docs', '.aiox-core/core/docs'],
@@ -402,7 +402,7 @@ function phase3_intelligence() {
         ];
 
         for (const [dir, prefix] of dirsToScan) {
-            const fullPath = path.join(AIOS_ROOT, dir);
+            const fullPath = path.join(AIOX_ROOT, dir);
             files = files.concat(scanDirForCouncil(fullPath, prefix));
         }
 
@@ -421,7 +421,7 @@ function phase3_intelligence() {
             metrics: {},
             qualityBaseline,
             antiPatterns: [],
-            projectRoot: AIOS_ROOT
+            projectRoot: AIOX_ROOT
         };
 
         const result = council.runCouncil(systemState);
@@ -454,7 +454,7 @@ function phase4_reflexion(isQuick) {
     phaseHeader(4, 'REFLEXION (Metacognition)', '🪞');
 
     try {
-        const metaPath = path.join(AIOS_ROOT, 'scripts', 'evolution', 'metacognition-layer.js');
+        const metaPath = path.join(AIOX_ROOT, 'scripts', 'evolution', 'metacognition-layer.js');
         const meta = require(metaPath);
 
         const tendencies = meta.assessTendencies();
@@ -495,16 +495,16 @@ function phase5_signal(results, isQuick) {
         return count;
     }
     const agentDirs = [
-        path.join(AIOS_ROOT, '.antigravity', 'agents'),
-        path.join(AIOS_ROOT, 'squads'),
-        path.join(AIOS_ROOT, '.agent', 'workflows'),
+        path.join(AIOX_ROOT, '.antigravity', 'agents'),
+        path.join(AIOX_ROOT, 'squads'),
+        path.join(AIOX_ROOT, '.agent', 'workflows'),
     ];
     const agentCount = agentDirs.reduce((sum, d) => sum + countMdRecursive(d), 0);
 
-    const scripts = path.join(AIOS_ROOT, 'scripts');
+    const scripts = path.join(AIOX_ROOT, 'scripts');
     const scriptCount = fs.existsSync(scripts) ? fs.readdirSync(scripts).filter(f => f.endsWith('.js')).length : 0;
 
-    const evoDir = path.join(AIOS_ROOT, 'scripts', 'evolution');
+    const evoDir = path.join(AIOX_ROOT, 'scripts', 'evolution');
     const evoCount = fs.existsSync(evoDir) ? fs.readdirSync(evoDir).filter(f => f.endsWith('.js')).length : 0;
 
     console.log('');
@@ -516,7 +516,7 @@ function phase5_signal(results, isQuick) {
     // Run bridge sync (Agent Index + Synapse Injection)
     let bridgeStatus = { synapseInjection: 'N/A', unifiedAgentIndex: 'N/A' };
     try {
-        const bridge = require(path.join(AIOS_ROOT, 'scripts', 'aios-kairos-bridge.js'));
+        const bridge = require(path.join(AIOX_ROOT, 'scripts', 'aiox-kairos-bridge.js'));
         bridge.syncKairosToSynapse();
         bridge.syncAgentRegistry();
         bridgeStatus = bridge.getStatus();
@@ -524,15 +524,15 @@ function phase5_signal(results, isQuick) {
         // Non-critical: bridge sync failure doesn't block boot
     }
 
-    // Count active AIOS Epics/Stories
-    const storiesDir = path.join(AIOS_ROOT, 'docs', 'stories');
+    // Count active AIOX Epics/Stories
+    const storiesDir = path.join(AIOX_ROOT, 'docs', 'stories');
     let activeStories = 0;
     if (fs.existsSync(storiesDir)) {
         activeStories = fs.readdirSync(storiesDir).filter(f => f.endsWith('.md')).length;
     }
 
     console.log(`  ${BOLD}Subsystems:${RESET}   ${agentCount} agents · ${scriptCount} scripts · ${evoCount} evolution modules`);
-    console.log(`  ${BOLD}AIOS Epics:${RESET}   ${activeStories} active stories/workflows detected`);
+    console.log(`  ${BOLD}AIOX Epics:${RESET}   ${activeStories} active stories/workflows detected`);
     console.log(`  ${BOLD}Jarvis:${RESET}       ${results.jarvis?.status || 'N/A'} (cycle #${results.jarvis?.enrichmentCycle || '?'})`);
     console.log(`  ${BOLD}Bridge:${RESET}       Synapse=${bridgeStatus.synapseInjection} · Agents=${bridgeStatus.unifiedAgentIndex}`);
     console.log(`  ${BOLD}RAG:${RESET}          ${results.knowledge?.status || 'N/A'}`);

@@ -1,17 +1,17 @@
-# IA Council Deliberation — AIOS Father + Contribuições Adicionais
+# IA Council Deliberation — AIOX Father + Contribuições Adicionais
 
 **Convocado:** 2026-02-23T18:05 BRT
-**Pauta:** Criar o AIOS Father (mentor para novos operadores) e identificar contribuições adicionais de alto valor para a comunidade AIOS.
+**Pauta:** Criar o AIOX Father (mentor para novos operadores) e identificar contribuições adicionais de alto valor para a comunidade AIOX.
 **Constraint:** Tudo deve ser MIT-compatible, zero código proprietário do KAIROS.
 
 ---
 
-## 🪑 Cadeira 1 — Pedro Valério (AIOS Architecture)
+## 🪑 Cadeira 1 — Pedro Valério (AIOX Architecture)
 
-**Sobre o AIOS Father:**
-O maior gargalo de adoção do AIOS não é a tecnologia — é a **curva de aprendizado**. Novos operadores se perdem entre squads, agents, workflows, e não sabem por onde começar.
+**Sobre o AIOX Father:**
+O maior gargalo de adoção do AIOX não é a tecnologia — é a **curva de aprendizado**. Novos operadores se perdem entre squads, agents, workflows, e não sabem por onde começar.
 
-O AIOS Father deve ser um **agente mentor** que:
+O AIOX Father deve ser um **agente mentor** que:
 1. Detecta o nível do operador (iniciante, intermediário, avançado)
 2. Guia pelos primeiros passos de forma não-condescendente
 3. Ensina o mental model ("motor ≠ aplicação") antes de qualquer comando
@@ -19,13 +19,13 @@ O AIOS Father deve ser um **agente mentor** que:
 **Contribuição adicional proposta:**
 - **Troubleshooting Guide** — "Meu agente não responde", "Meu workflow trava", "Como debugar um squad"
 
-**Voto AIOS Father:** ✅ APROVADO (essencial)
+**Voto AIOX Father:** ✅ APROVADO (essencial)
 
 ---
 
 ## 🪑 Cadeira 2 — Andrej Karpathy (Code Quality)
 
-**Sobre o AIOS Father:**
+**Sobre o AIOX Father:**
 O mentor deve ter **exemplos concretos, não teoria**. Cada conceito deve vir com um snippet que funciona.
 
 Estrutura proposta:
@@ -38,14 +38,14 @@ Estrutura proposta:
 **Contribuição adicional proposta:**
 - **Agent Templates Pack** — 5 templates de agentes prontos para copiar: customer-service, content-creator, code-reviewer, data-analyst, project-manager
 
-**Voto AIOS Father:** ✅ APROVADO
+**Voto AIOX Father:** ✅ APROVADO
 **Voto Agent Templates:** ✅ APROVADO (alto impacto, baixo esforço)
 
 ---
 
 ## 🪑 Cadeira 3 — Ilya Sutskever (Cognitive Architecture)
 
-**Sobre o AIOS Father:**
+**Sobre o AIOX Father:**
 O mentor deve ensinar o conceito de **"thinking about thinking"**. A progressão não é técnica, é cognitiva:
 
 ```
@@ -60,28 +60,28 @@ Cada fase tem um mindset shift que é mais importante que qualquer comando.
 **Contribuição adicional proposta:**
 - **First Week Checklist** — checklist de 7 dias com o que fazer cada dia para sair do zero ao operacional
 
-**Voto AIOS Father:** ✅ APROVADO
+**Voto AIOX Father:** ✅ APROVADO
 **Voto First Week Checklist:** ✅ APROVADO
 
 ---
 
 ## 🪑 Cadeira 4 — Demis Hassabis (Learning Loops)
 
-**Sobre o AIOS Father:**
+**Sobre o AIOX Father:**
 O mentor precisa ter **feedback loops**. Não basta ensinar — precisa verificar se o operador entendeu. Sugestão: cada nível termina com um "checkpoint" que valida o aprendizado.
 
 **Contribuição adicional proposta:**
 - **Health Check Script** — script que o novo operador roda e vê imediatamente se sua instalação está correta
 
-**Voto AIOS Father:** ✅ APROVADO
+**Voto AIOX Father:** ✅ APROVADO
 **Voto Health Check Script:** ✅ APROVADO (primeiro contato positivo com o sistema)
 
 ---
 
 ## 🪑 Cadeira 5 — Alan Nicolas (Product Applicability)
 
-**Sobre o AIOS Father:**
-Para a comunidade, o AIOS Father precisa responder A pergunta: **"Ok, instalei o AIOS. E agora?"**
+**Sobre o AIOX Father:**
+Para a comunidade, o AIOX Father precisa responder A pergunta: **"Ok, instalei o AIOX. E agora?"**
 
 Precisa dar exemplos de negócios reais:
 - "Quero automatizar atendimento de clientes" → vá para o Nível X
@@ -91,43 +91,43 @@ Precisa dar exemplos de negócios reais:
 **Contribuição adicional proposta:**
 - **Use Case Library** — 5 use cases com setup passo-a-passo: atendimento ao cliente, geração de conteúdo, análise de dados, gestão de projetos, assistente pessoal
 
-**Voto AIOS Father:** ✅ APROVADO
+**Voto AIOX Father:** ✅ APROVADO
 **Voto Use Case Library:** 🟡 PARCIAL (3 use cases suficientes para MVP)
 
 ---
 
 ## 🪑 Cadeira 6 — Sam Altman (Scale & Impact)
 
-**Sobre o AIOS Father:**
-Concordo com todos, mas quero adicionar: o AIOS Father é a **porta de entrada** da comunidade. Se for bom, gera word-of-mouth. Se for ruim, ninguém volta.
+**Sobre o AIOX Father:**
+Concordo com todos, mas quero adicionar: o AIOX Father é a **porta de entrada** da comunidade. Se for bom, gera word-of-mouth. Se for ruim, ninguém volta.
 
 **Contribuição adicional proposta:**
 - Nenhuma nova — foco em fazer as existentes excepcionalmente bem. Qualidade > quantidade.
 
-**Voto AIOS Father:** ✅ APROVADO
+**Voto AIOX Father:** ✅ APROVADO
 
 ---
 
 ## 🪑 Cadeira 7 — Yann LeCun (Scientific Rigor)
 
-**Sobre o AIOS Father:**
+**Sobre o AIOX Father:**
 O mentor NÃO deve prometer resultados mágicos. Deve ser honesto sobre:
-- O que o AIOS faz bem (orquestração, delegação)
+- O que o AIOX faz bem (orquestração, delegação)
 - O que NÃO faz (não substitui expertise do domínio)
 - Limitações reais (custo de APIs, latência, qualidade depende do LLM)
 
 **Contribuição adicional proposta:**
 - **Limitations & FAQ** — seção honesta sobre o que esperar e o que não esperar
 
-**Voto AIOS Father:** ✅ APROVADO
+**Voto AIOX Father:** ✅ APROVADO
 **Voto Limitations & FAQ:** ✅ APROVADO
 
 ---
 
 ## 🪑 Cadeira 8 — Gabriel (Operator / Operator Noesis)
 
-**Sobre o AIOS Father:**
-Eu VIVI essa jornada nos últimos 10 dias. Sei exatamente onde travei, onde me perdi, e o que precisei para sair do zero. O AIOS Father deve ser baseado na minha experiência real, não em teoria.
+**Sobre o AIOX Father:**
+Eu VIVI essa jornada nos últimos 10 dias. Sei exatamente onde travei, onde me perdi, e o que precisei para sair do zero. O AIOX Father deve ser baseado na minha experiência real, não em teoria.
 
 **Contribuição adicional que vou VETAR:**
 - ❌ Use Case Library (por agora) — é muito trabalho para o impacto. Os 3 use cases ficam para v2.
@@ -140,7 +140,7 @@ Eu VIVI essa jornada nos últimos 10 dias. Sei exatamente onde travei, onde me p
 ## 📊 Síntese do Council
 
 ### APROVADO UNANIMEMENTE:
-1. **AIOS Father** — mentor de 5 níveis com exemplos concretos, mindset shifts, e checkpoints
+1. **AIOX Father** — mentor de 5 níveis com exemplos concretos, mindset shifts, e checkpoints
 2. **Agent Templates Pack** — 5 templates prontos para copiar (7 de 8 votos)
 3. **First Week Checklist** — 7 dias do zero ao operacional (6 de 8 votos)
 
@@ -148,7 +148,7 @@ Eu VIVI essa jornada nos últimos 10 dias. Sei exatamente onde travei, onde me p
 - Use Case Library → v2 (escopo grande demais para hoje)
 - Health Check Script → reutilizar noesis-status.js simplificado
 - Troubleshooting Guide → v2
-- Limitations & FAQ → incorporar no AIOS Father como seção
+- Limitations & FAQ → incorporar no AIOX Father como seção
 
 ---
 

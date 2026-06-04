@@ -1,6 +1,6 @@
-# AIOS — Arquitetura do Sistema
+# AIOX — Arquitetura do Sistema
 
-> Diagrama vivo da arquitetura do motor AIOS.
+> Diagrama vivo da arquitetura do motor AIOX.
 > Última atualização: 2026-02-18
 
 ---
@@ -42,7 +42,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│              AIOS ENGINE (este projeto)                   │
+│              AIOX ENGINE (este projeto)                   │
 │                                                           │
 │  Domain-agnostic. Sector: NONE.                           │
 │  Capability: orchestrate N agents for any operation.      │

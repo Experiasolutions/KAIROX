@@ -240,7 +240,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/dependency-cache.yaml"
+  location: ".aiox/apex-context/dependency-cache.yaml"
   ttl: "Until package.json or lock file changes"
   invalidate_on:
     - "package.json modified"

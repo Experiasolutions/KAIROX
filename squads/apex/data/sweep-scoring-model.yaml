@@ -289,4 +289,4 @@ delta_tracking:
 
   history:
     max_entries: 50
-    stored_at: ".aios/apex-context/score-history.yaml"
+    stored_at: ".aiox/apex-context/score-history.yaml"

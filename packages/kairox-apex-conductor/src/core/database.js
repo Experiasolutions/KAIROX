@@ -32,7 +32,10 @@ let _dbData = {
     total_checkins: 0,
     current_streak: 0,
     updated_at: new Date().toISOString()
-  }
+  },
+  daily_quests: [],
+  loot_shop: [],
+  punishments: []
 };
 
 export function getDB() {
@@ -184,17 +187,7 @@ export function saveNightCheckin({ id, targetDate, energyLevel, paretoScore, vic
   }
   stats.total_pareto_score = _dbData.night_checkins.length > 0 ? (totalScoreSum / _dbData.night_checkins.length) : 0;
 
-  if (stats.current_xp >= 1000) {
-    stats.level += 1;
-    stats.current_xp -= 1000;
-  }
-  
-  if (stats.level >= 10) stats.rank_title = 'Mestre';
-  else if (stats.level >= 7) stats.rank_title = 'Estrategista';
-  else if (stats.level >= 4) stats.rank_title = 'Executor';
-  else if (stats.level >= 2) stats.rank_title = 'Aprendiz';
-  else stats.rank_title = 'Iniciante';
-
+  checkLevelUp();
   stats.updated_at = new Date().toISOString();
   saveDB();
 
@@ -216,3 +209,117 @@ export function getUserStats() {
 export function closeDB() {
   // No-op for JSON
 }
+
+// ─── GAMIFICATION SYSTEM (GABLAB) ───────────────────────────
+
+export function getTodayQuests() {
+  if (!_dbData.daily_quests) _dbData.daily_quests = [];
+  const today = new Date().toISOString().split('T')[0];
+  let quests = _dbData.daily_quests.find(q => q.target_date === today);
+  if (!quests) {
+    quests = {
+      target_date: today,
+      easy: { title: '', completed: false, xp: 10 },
+      medium: { title: '', completed: false, xp: 25 },
+      hard: { title: '', completed: false, xp: 50 },
+      combo_completed: false
+    };
+    _dbData.daily_quests.push(quests);
+    saveDB();
+  }
+  return quests;
+}
+
+export function saveTodayQuests(easyTitle, mediumTitle, hardTitle) {
+  const quests = getTodayQuests();
+  quests.easy.title = easyTitle;
+  quests.medium.title = mediumTitle;
+  quests.hard.title = hardTitle;
+  saveDB();
+  return quests;
+}
+
+export function completeDailyQuest(difficulty) {
+  const quests = getTodayQuests();
+  if (quests[difficulty] && !quests[difficulty].completed) {
+    quests[difficulty].completed = true;
+    _dbData.user_stats.current_xp += quests[difficulty].xp;
+    
+    // Check combo bonus
+    if (quests.easy.completed && quests.medium.completed && quests.hard.completed && !quests.combo_completed) {
+      quests.combo_completed = true;
+      _dbData.user_stats.current_xp += 50; // Combo bonus
+      _dbData.user_stats.current_streak += 1;
+    }
+    checkLevelUp();
+    saveDB();
+  }
+  return quests;
+}
+
+export function getLootShop() {
+  if (!_dbData.loot_shop) _dbData.loot_shop = [];
+  if (_dbData.loot_shop.length === 0) {
+    _dbData.loot_shop = [
+      { id: '1', title: 'Comprar um Livro', cost: 200, category: 'Recompensa' },
+      { id: '2', title: 'Jogar Videogame (1h)', cost: 50, category: 'Lazer' },
+      { id: '3', title: 'Pedir Delivery', cost: 150, category: 'Recompensa' }
+    ];
+    saveDB();
+  }
+  return _dbData.loot_shop;
+}
+
+export function buyLoot(id) {
+  const item = getLootShop().find(i => i.id === id);
+  if (item && _dbData.user_stats.current_xp >= item.cost) {
+    _dbData.user_stats.current_xp -= item.cost;
+    saveDB();
+    return { success: true, item, remaining_xp: _dbData.user_stats.current_xp };
+  }
+  return { success: false, error: 'XP Insuficiente ou item inexistente' };
+}
+
+export function applyPunishment(amount, reason) {
+  if (!_dbData.punishments) _dbData.punishments = [];
+  _dbData.punishments.push({
+    date: new Date().toISOString(),
+    amount,
+    reason
+  });
+  
+  _dbData.user_stats.current_xp -= amount;
+  if (_dbData.user_stats.current_xp < 0) {
+    if (_dbData.user_stats.level > 1) {
+      _dbData.user_stats.level -= 1;
+      _dbData.user_stats.current_xp = 1000 + _dbData.user_stats.current_xp;
+    } else {
+      _dbData.user_stats.current_xp = 0;
+    }
+  }
+  checkLevelUp();
+  saveDB();
+  return _dbData.user_stats;
+}
+
+function checkLevelUp() {
+  const stats = _dbData.user_stats;
+  if (stats.current_xp >= 1000) {
+    stats.level += Math.floor(stats.current_xp / 1000);
+    stats.current_xp = stats.current_xp % 1000;
+    
+    if (stats.level >= 10) stats.rank_title = 'Mestre';
+    else if (stats.level >= 7) stats.rank_title = 'Estrategista';
+    else if (stats.level >= 4) stats.rank_title = 'Executor';
+    else if (stats.level >= 2) stats.rank_title = 'Aprendiz';
+    else stats.rank_title = 'Iniciante';
+  } else if (stats.current_xp < 0) {
+      if (stats.level > 1) {
+          stats.level -= 1;
+          stats.current_xp = 1000 + stats.current_xp;
+      } else {
+          stats.current_xp = 0;
+      }
+  }
+}
+

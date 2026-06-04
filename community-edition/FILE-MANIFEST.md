@@ -7,11 +7,11 @@
 
 ## PR Structure
 
-The PR will add files to the existing AIOS v4.2.13 repo in these locations:
+The PR will add files to the existing AIOX v4.2.13 repo in these locations:
 
 ```
-aios/                                    # AIOS root
-├── .aios-core/opus-replicator/          # NEW: 17 files (Opus Replicant Engine)
+aiox/                                    # AIOX root
+├── .aiox-core/opus-replicator/          # NEW: 17 files (Opus Replicant Engine)
 ├── scripts/evolution/                   # NEW: 17 files (Evolution Engine)
 ├── scripts/mcp-server.js               # NEW: MCP Server
 ├── scripts/tools-bridge.js             # NEW: Tools Bridge
@@ -23,11 +23,11 @@ aios/                                    # AIOS root
 
 ## File Checklist
 
-### Bundle 1: Opus Replicant Engine (.aios-core/opus-replicator/)
+### Bundle 1: Opus Replicant Engine (.aiox-core/opus-replicator/)
 
 |   #   | File                              | Sanitize? | Notes                                                                                                                    |
 | :---: | :-------------------------------- | :-------: | :----------------------------------------------------------------------------------------------------------------------- |
-|   1   | `OPUS-REPLICANT-SYSTEM-v2.md`     |  ⚠️ MINOR  | Line 6: remove "Projeto AIOS (178 agentes...)" → generic. Line 474: change `agent: 'experia-copy'` → `agent: 'my-agent'` |
+|   1   | `OPUS-REPLICANT-SYSTEM-v2.md`     |  ⚠️ MINOR  | Line 6: remove "Projeto AIOX (178 agentes...)" → generic. Line 474: change `agent: 'experia-copy'` → `agent: 'my-agent'` |
 |   2   | `IMPLEMENTATION-GUIDE-QUICK.md`   |  ⚠️ MINOR  | Check for domain-specific examples (scheduling, clinical)                                                                |
 |   3   | `constitutional-layer-v3.md`      |  ✅ Clean  | Universal guardrails                                                                                                     |
 |   4   | `constitutional-layer.md`         |  ✅ Clean  | v2 reference                                                                                                             |
@@ -103,7 +103,7 @@ aios/                                    # AIOS root
 
 ## Pre-PR Checklist
 
-- [ ] Fork AIOS v4.2.13 on GitHub
+- [ ] Fork AIOX v4.2.13 on GitHub
 - [ ] Create branch `feat/opus-replicant-engine`
 - [ ] Run sanitization on 12 flagged files
 - [ ] Copy 38 files to PR branch

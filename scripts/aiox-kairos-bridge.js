@@ -2,28 +2,28 @@
 #!/usr/bin/env node
 
 /**
- * aios-kairos-bridge.js — The Grand Unification Bridge
+ * aiox-kairos-bridge.js — The Grand Unification Bridge
  * 
- * Connects the AIOS Core development powerhouse with the KAIROS
+ * Connects the AIOX Core development powerhouse with the KAIROS
  * cognitive/evolution layer. This module provides:
  * 
  * 1. MasterOrchestrator Event Listener
- *    - Hooks into AIOS onStateChange, onEpicStart, onEpicComplete
+ *    - Hooks into AIOX onStateChange, onEpicStart, onEpicComplete
  *    - Forwards epic events to KAIROS HiveMind for cognitive review
  * 
  * 2. Synapse Context Injection Bridge
  *    - Exposes KAIROS Manifest data for SynapseEngine L1-Global to consume
- *    - Writes to .synapse/global domain file so the AIOS context pipeline
+ *    - Writes to .synapse/global domain file so the AIOX context pipeline
  *      naturally picks up KAIROS rules without modifying core source
  * 
  * 3. Agent Registry Synchronizer
- *    - Maps KAIROS squads/ agents to AIOS agent format
- *    - Maintains a unified agent index at .aios-core/data/unified-agent-index.json
+ *    - Maps KAIROS squads/ agents to AIOX agent format
+ *    - Maintains a unified agent index at .aiox-core/data/unified-agent-index.json
  * 
- * DESIGN PRINCIPLE: This bridge NEVER modifies .aios-core/core/ source code.
- * It uses the hooks, events, and domain files that the AIOS Core already exposes.
+ * DESIGN PRINCIPLE: This bridge NEVER modifies .aiox-core/core/ source code.
+ * It uses the hooks, events, and domain files that the AIOX Core already exposes.
  * 
- * @module aios-kairos-bridge
+ * @module aiox-kairos-bridge
  * @version 1.0.0
  */
 
@@ -35,15 +35,15 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SYNAPSE_DIR = path.join(ROOT, '.synapse');
 const KAIROS_MANIFEST = path.join(ROOT, 'docs', 'core', 'KAIROS-MANIFEST.md');
-const UNIFIED_INDEX = path.join(ROOT, '.aios-core', 'data', 'unified-agent-index.json');
-const BRIDGE_LOG = path.join(ROOT, '.aios-core', 'data', 'bridge-events.json');
+const UNIFIED_INDEX = path.join(ROOT, '.aiox-core', 'data', 'unified-agent-index.json');
+const BRIDGE_LOG = path.join(ROOT, '.aiox-core', 'data', 'bridge-events.json');
 
 // ─── 1. MasterOrchestrator Event Bridge ─────────────────────────
 
 /**
  * Create event listeners that can be passed to MasterOrchestrator options.
  * Usage:
- *   const bridge = require('./aios-kairos-bridge');
+ *   const bridge = require('./aiox-kairos-bridge');
  *   const orchestrator = new MasterOrchestrator(root, {
  *     onEpicStart: bridge.onEpicStart,
  *     onEpicComplete: bridge.onEpicComplete,
@@ -72,7 +72,7 @@ function onEpicComplete(epicNum, result) {
             const councilPath = path.join(ROOT, 'scripts', 'evolution', 'ia-council-engine.js');
             if (fs.existsSync(councilPath)) {
                 const council = require(councilPath);
-                // Fire-and-forget: don't block the AIOS pipeline
+                // Fire-and-forget: don't block the AIOX pipeline
                 setImmediate(() => {
                     try {
                         const systemState = {
@@ -127,7 +127,7 @@ function onStateChange(fromState, toState, context) {
  * Write KAIROS rules to the .synapse/global domain file
  * so the SynapseEngine L1-Global layer picks them up naturally.
  * 
- * This DOES NOT modify any .aios-core/core/ source code.
+ * This DOES NOT modify any .aiox-core/core/ source code.
  * It leverages the existing domain file loading mechanism.
  */
 function syncKairosToSynapse() {
@@ -149,18 +149,18 @@ function syncKairosToSynapse() {
 
     // KAIROS-injected rules
     const kairosRules = [
-        '# KAIROS ENGINE RULES (auto-injected by aios-kairos-bridge.js)',
-        '# These rules extend the AIOS constitution with KAIROS cognitive protocols.',
+        '# KAIROS ENGINE RULES (auto-injected by aiox-kairos-bridge.js)',
+        '# These rules extend the AIOX constitution with KAIROS cognitive protocols.',
         '',
         'OPUS Cognitive Protocol: Every output traverses 3 layers (Immediate, Structural, Strategic).',
         'Evidence Rule: No claim without citation. No code without rationale.',
         'Synthesis Rule: Every non-trivial output acknowledges tension and steel-mans rejected alternatives.',
-        'Modularity Rule: Every output is reusable by other AIOS agents.',
+        'Modularity Rule: Every output is reusable by other AIOX agents.',
         'Evolution Rule: The system gets better every session. Never the same mistake twice.',
         '',
         '# Operator Context',
         'The operator is Gabriel, founder of Experia Technologies.',
-        'AIOS serves Gabriel and his clients. It does not serve itself.',
+        'AIOX serves Gabriel and his clients. It does not serve itself.',
         'Honesty about limitations is more valuable than fabricated competence.',
     ];
 
@@ -175,15 +175,15 @@ function syncKairosToSynapse() {
 
 /**
  * Build a unified agent index that combines:
- * - .aios-core/agents/ (16 original AIOS agents)
+ * - .aiox-core/agents/ (16 original AIOX agents)
  * - squads/ (178+ KAIROS agents)
  * - .antigravity/agents/ (custom agents)
  * 
- * Writes to .aios-core/data/unified-agent-index.json
+ * Writes to .aiox-core/data/unified-agent-index.json
  */
 function syncAgentRegistry() {
     const agentSources = [
-        { dir: path.join(ROOT, '.aios-core', 'agents'), source: 'aios-core', type: 'core' },
+        { dir: path.join(ROOT, '.aiox-core', 'agents'), source: 'aiox-core', type: 'core' },
         { dir: path.join(ROOT, 'squads'), source: 'kairos-squads', type: 'extension' },
         { dir: path.join(ROOT, '.antigravity', 'agents'), source: 'antigravity', type: 'custom' },
     ];
@@ -308,7 +308,7 @@ module.exports = {
 // CLI execution
 if (require.main === module) {
     console.log('\n╔══════════════════════════════════════════════════╗');
-    console.log('║   🌉 AIOS-KAIROS Bridge — Manual Sync            ║');
+    console.log('║   🌉 AIOX-KAIROS Bridge — Manual Sync            ║');
     console.log('╚══════════════════════════════════════════════════╝\n');
 
     // Sync Synapse rules

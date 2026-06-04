@@ -556,7 +556,7 @@ phases:
           target: apex-lead
           message: "CP-03 passed. All re-audits clear. Ready for polish gate approval."
           deadline_hours: 2
-          escalate_on_timeout: aios-master
+          escalate_on_timeout: aiox-master
 
   # ============================================================================
   # PHASE 4: POLISH GATE
@@ -627,7 +627,7 @@ phases:
           max_iterations: 3
           on_max_reached:
             action: ESCALATE
-            to: aios-master
+            to: aiox-master
             message: "Polish gate verdict stuck after 3 review cycles."
 
     checkpoint:
@@ -653,7 +653,7 @@ phases:
         max_iterations: 3
         on_max_reached:
           action: ESCALATE
-          to: aios-master
+          to: aiox-master
           message: "Polish gate checkpoint failing after 3 attempts."
       on_pass:
         notify:
@@ -669,7 +669,7 @@ error_handling:
     action: ESCALATE
     escalate_to: apex-lead
     then: frontend-arch
-    then_last: aios-master
+    then_last: aiox-master
   on_audit_tool_failure:
     action: WARN
     notify: perf-eng

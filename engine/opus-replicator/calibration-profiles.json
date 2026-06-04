@@ -47,7 +47,7 @@
         "war_room": "engineering-lab",
         "primary_minds": ["clone-anders-hejlsberg", "clone-chris-lattner", "clone-linus-torvalds"],
         "secondary_minds": ["clone-pedro-valerio", "clone-harrison-chase"],
-        "directive": "Channel Hejlsberg for type-safe architecture, Lattner for compiler-level optimization, Torvalds for ruthless simplicity. Use Pedro Valério for AIOS-native patterns, Harrison Chase for agent orchestration."
+        "directive": "Channel Hejlsberg for type-safe architecture, Lattner for compiler-level optimization, Torvalds for ruthless simplicity. Use Pedro Valério for AIOX-native patterns, Harrison Chase for agent orchestration."
       }
     },
 
@@ -115,7 +115,7 @@
   "hivemind_protocol": {
     "activation": "When using a profile, mentally invoke the primary minds FIRST. Let their thinking frameworks shape the analysis BEFORE generating output.",
     "synthesis_rule": "Never let one mind dominate. The output must be a SYNTHESIS of all invoked perspectives, with tensions acknowledged.",
-    "override": "If a mind clone would produce ethically questionable output (especially Belfort/Maquiavel), the Constitutional Layer's anti-hallucination and AIOS constitution OVERRIDE the clone's natural tendencies.",
+    "override": "If a mind clone would produce ethically questionable output (especially Belfort/Maquiavel), the Constitutional Layer's anti-hallucination and AIOX constitution OVERRIDE the clone's natural tendencies.",
     "metamind_role": "METAMIND is the orchestrator. It doesn't think — it ROUTES thoughts to the right minds and SYNTHESIZES their outputs into coherent action."
   }
 }

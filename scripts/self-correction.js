@@ -18,8 +18,8 @@ const path = require('path');
 
 // ── Paths ────────────────────────────────────────────────────
 
-const AIOS_ROOT = path.join(__dirname, '..');
-const MEMORY_PATH = path.join(AIOS_ROOT, '.aios-core', 'memory');
+const AIOX_ROOT = path.join(__dirname, '..');
+const MEMORY_PATH = path.join(AIOX_ROOT, '.aiox-core', 'memory');
 const BASELINE_PATH = path.join(MEMORY_PATH, 'quality-baseline.json');
 const ANTI_PATTERNS_PATH = path.join(MEMORY_PATH, 'anti-patterns.md');
 const GOLDEN_PATH = path.join(MEMORY_PATH, 'golden-examples');
@@ -56,7 +56,7 @@ const DIMENSIONS = [
     { id: 'depth', name: 'Depth', weight: 1.2, description: 'Handles edge cases, not just happy path' },
     { id: 'structure', name: 'Structure', weight: 1.0, description: 'Modular, readable, maintainable' },
     { id: 'evidence', name: 'Evidence', weight: 0.8, description: 'Decisions justified, not arbitrary' },
-    { id: 'aios_compliance', name: 'AIOS Compliance', weight: 1.0, description: 'Follows Constitution v1.0' },
+    { id: 'aiox_compliance', name: 'AIOX Compliance', weight: 1.0, description: 'Follows Constitution v1.0' },
     { id: 'production_ready', name: 'Production Readiness', weight: 1.2, description: 'Can go live today' },
     { id: 'evolution', name: 'Evolution', weight: 0.8, description: 'Easy to modify/extend' },
 ];
@@ -87,7 +87,7 @@ function runAutomatedChecks(content) {
     lines.forEach((line, i) => {
         if (relativeImportPattern.test(line) && !line.includes('__dirname')) {
             findings.push({
-                dimension: 'aios_compliance',
+                dimension: 'aiox_compliance',
                 severity: PENALTIES.RELATIVE_IMPORT,
                 line: i + 1,
                 violation: `Relative import without __dirname: "${line.trim().substring(0, 80)}"`,
@@ -148,7 +148,7 @@ function runAutomatedChecks(content) {
         lines.forEach((line, i) => {
             if (domainWords && domainWords.test(line) && !line.includes('example') && !line.includes('GOLDEN')) {
                 findings.push({
-                    dimension: 'aios_compliance',
+                    dimension: 'aiox_compliance',
                     severity: -1.5,
                     line: i + 1,
                     violation: `Domain contamination (AP-001): "${line.trim().substring(0, 80)}"`,
@@ -313,7 +313,7 @@ if (require.main === module) {
     const dryRun = process.argv.includes('--dry-run');
 
     if (!targetFile) {
-        console.log('AIOS Self-Correction v1.0 (PM3 Quality Gate)');
+        console.log('AIOX Self-Correction v1.0 (PM3 Quality Gate)');
         console.log('Usage: node scripts/self-correction.js <file-to-evaluate> [--dry-run]');
         console.log('');
         console.log('Thresholds:');

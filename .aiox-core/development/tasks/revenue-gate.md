@@ -1,6 +1,6 @@
 ---
 task: revenueGate()
-responsavel: "@aios-master"
+responsavel: "@aiox-master"
 responsavel_type: Agent
 atomic_layer: Task
 Entrada:
@@ -24,7 +24,7 @@ Checklist:
 # Task: Revenue Gate (Universal)
 
 > **Princípio constitucional:** VII. Revenue-First (MUST)
-> **Disponível para:** QUALQUER agent no AIOS
+> **Disponível para:** QUALQUER agent no AIOX
 
 ## Input
 - [ ] Operação para avaliação (campanha, oferta, feature)

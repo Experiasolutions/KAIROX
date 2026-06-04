@@ -9,7 +9,7 @@ pack:
   description: >-
     Meta-squad de RH + Ferramentas. Analisa continuamente o ecossistema de agentes,
     squads, ferramentas e competências. Detecta gaps, monitora performance, recomenda
-    novos recursos (mind clones e ferramentas). O "sistema nervoso" do AIOS.
+    novos recursos (mind clones e ferramentas). O "sistema nervoso" do AIOX.
   author: {{YOUR_NAME}} (OPB)
   icon: "🧠"
   slashPrefix: kaizen

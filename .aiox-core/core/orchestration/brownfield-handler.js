@@ -72,16 +72,26 @@ const PhaseFailureAction = {
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 /**
- * BrownfieldHandler - Manages first execution behavior for existing projects
+ * BrownfieldHandler - Manages first execution behavior for existing projects.
+ *
+ * Owns the brownfield discovery handshake, workflow execution, idempotent
+ * artifact writes, phase progress tracking, and post-discovery routing for
+ * projects that have code but do not yet have AIOX documentation.
  */
 class BrownfieldHandler extends EventEmitter {
   /**
+   * Creates a new BrownfieldHandler instance.
+   *
+   * Dependencies can be injected by BobOrchestrator or lazily loaded on demand
+   * to keep standalone tests lightweight.
+   *
    * @param {string} projectRoot - Project root path
    * @param {Object} [options] - Configuration options
    * @param {boolean} [options.debug=false] - Enable debug logging
    * @param {Object} [options.workflowExecutor] - WorkflowExecutor instance
    * @param {Object} [options.surfaceChecker] - SurfaceChecker instance
    * @param {Object} [options.sessionState] - SessionState instance
+   * @throws {Error} If projectRoot is missing or not a string.
    */
   constructor(projectRoot, options = {}) {
     super();
@@ -118,7 +128,9 @@ class BrownfieldHandler extends EventEmitter {
   // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
   /**
-   * Get WorkflowExecutor instance
+   * Gets or lazily creates the WorkflowExecutor dependency.
+   *
+   * @returns {Object|null} WorkflowExecutor instance, or null when unavailable.
    * @private
    */
   _getWorkflowExecutor() {
@@ -136,7 +148,9 @@ class BrownfieldHandler extends EventEmitter {
   }
 
   /**
-   * Get SurfaceChecker instance
+   * Gets or lazily creates the SurfaceChecker dependency.
+   *
+   * @returns {Object|null} SurfaceChecker instance, or null when unavailable.
    * @private
    */
   _getSurfaceChecker() {
@@ -152,7 +166,9 @@ class BrownfieldHandler extends EventEmitter {
   }
 
   /**
-   * Get SessionState instance
+   * Gets or lazily creates the SessionState dependency.
+   *
+   * @returns {Object|null} SessionState instance, or null when unavailable.
    * @private
    */
   _getSessionState() {
@@ -454,7 +470,286 @@ Quer que eu comece?`;
 
     // Next step question
     const nextStepQuestion =
-      'Quer que eu monte um plano para r                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        TV¸<âOQ¨-_>                                             cÿ	O                                                                                                                                                                                                                                                                                                                                    ¬¶§„×/                                                      FHn‡ttÌ	                     –§µÛ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ¹÷”¦ŒÊ´Œ'ï2\ÙõÜk<Ó/R³“yZ¯3yvÊ¬ågŸÜóÎ›.Bõ4›u¢Òµ'Ï¤¬¸~ÑqJ ¶ ± õ€cÌÎ~åäÆÒ-(èa9q…ëi%ÙŒåïQ·°âeJ\^Üøn"ÕÛN*àK_ÂQú‰ç©                                                                                 …ˆŒtE3<b‘òëEQjî¯¸„L±†)İ2™ê                           ÛÄ¶               ù½F~èôle                           ñ\·xrz   È0ËY¢            È8Tˆ      Z]¥¥’e³›ËŒğb¼–|Uä¼ˆ<ã˜(Àæ5(ŠõÃ„x†æ¸eÆ:±¤	Z­E#½8}şOãß   ıBÍÆlò8²]ÅzgÉa”_ÏúÚµfÆ@J¥òŞm¶/[%tÎ‚aß:€!               AÜˆ   »¾P      ~'™Ş¦°rd™Ÿoñ¢Å6,ÔCf¹²"Ù[Œ         §fÈ ¥ŠØÙi,U‚÷èlJË…‡2{?Úf§gFDZCØ%ØóR«ÈÇ
-&ê±iæ9„/“uÁ¥õA•@L¯ÜøÈR®;‘Ş4&îù"ÉgT õ®¡ÖXj.Æ£J½;¼ÇO¤½^bpK¢‚'ÿÍ#*§§¡!Ï÷óÅ¢Óy~L%ÆÉ?ıGï’a4y@İX;Æ€Ç|K1Î                                          ‰åsŒÛÁN2æîĞ±TºjÖõÚb*ã1öór‘¨lÈ7Ø™ÖùâáÄ ì0a}Å›ìiÛ¯ız‹aøî¡ö®æŞK%¥?*$« éò’ËQó€¾¬ä/\ØÖé¶´ÌòŒì.Ö¹)±ìë‰a|Ìıw ÿ®Éco Ü~Rçãsk:M"Î]ÿã:İ±Xm\îÍ»áÊ‚Ê            «ûjl¦St¥7Ò“ÁüB™¸“É‰š	£H•:Ê;¾âå¬*S§ü¾¼v™ƒ^J4†kYÛmzW°XÕC³Ô"‹âIbkü˜ÛsB]§£9ª.W¾º>€ÌoM   A@Då\§OM	…J#dMLHhØJ¾‚¥_¬Ş÷ÓŸ“Tİk™%«Æ—ÏbI‡û[—                                    gĞünƒvxÉ‡Ç¢yØiHÁ2rV‡á»Š®wn]“|•Ê÷×˜lO×Ë9K\n‘ŒÚR‡¢ı‰•Èj¦ª¡»·ĞLÕ^@ğkº~                                                                                                                                                   ]Ép^Kzš“Ó‚°íßyà-!W|y’DÕ•›Ù÷¿ƒBu4²¬zb^J&¸–ÅÓ™İ¢=ikö>[Ëï_±Å@òû uk5_…Öú¾9´zj   ”Bh: €òO{åé   ?Á                                               –ì¾Ñ&(iz©üºáó¡8Ï“%é!ö=Q   ”¬.OjBàËwôæŞècC•Ë±gÛòuÛ‹àÑypø˜VğjÔ–Ş5cùÍõ(Eó[ïiv©’ğ½šgÑ+,	ş^Ü¤‡?mÀI[T:ºãË´ö›•YÛñ'kƒ	9ÆóÃı‚ˆ82[ÒıwÎCÜœ…•<nİ÷; ê1ÃpÒ²o[|m)İm™—0”û‘üù¨{µ+Ü¯Û                                                                                                                                            hbin á                        ¨ÿÿÿ{ d b 5 7 e b 6 1 - 1 a a 2 - 4 9 0 6 - 9 3 9 6 - 2 3 e 8 b 8 0 2 4 c 3 2 }      àÿÿÿvk   €
-       Type  àÿÿÿvk   €          Value   ˆÿÿÿnk  VnİÑŞ¬Õ   Ømá        @“á ÿÿÿÿ   p‘á Ğ  ÿÿÿÿL                 &   {EE1E4F72-E368-46b1-B3C6-5048B11C2DBD}  àÿÿÿvk    P‘á     YtNameIZ6ÊàÿÿÿC o n s t r a i n e d   o§xwğÿÿÿ0‘á €‘á     àÿÿÿvk   €         PriŒÄ   ˆÿÿÿnk  VnİÑŞ¬Õ   ¸á        ğ“á ÿÿÿÿ   ˜’á Ğ  ÿÿÿÿL          N       &   {9C1F0DBA-33E9-43af-9EDA-A607AA5139DA}8 Øÿÿÿvk	 N   @’á       Condition       ¨ÿÿÿ{ E C 8 B 0 5 1 5 - 7 A 9 A - 4 3 c 0 - 8 1 F 7 - 0 8 3 D B 9 3 6 6 8 B D }    ?  ğÿÿÿ’á ¨’á “á Øÿÿÿvk 0   Ğ’á       OwnerAppName 8 ÈÿÿÿC o n s t r a i n e d   P e r f o r m a n c e     Øÿÿÿvk    0“á       OwnerUserSid    ğÿÿÿ        ğÿÿÿlh  ‘á tšˆÿÿÿnk  VnİÑŞ¬Õ    ‘á        `•á ÿÿÿÿ   ø¿× Ğ  ÿÿÿÿL                  &   {EC8B0515-7A9A-43c0-81F7-083DB93668BD}  èÿÿÿvk     à“á        ğÿÿÿA N D       ğÿÿÿlh P“á ú=ú+ˆÿÿÿnk  -âßÑŞ¬Õ   P“á         ÿÿÿÿÿÿÿÿ   è”á Ğ  ÿÿÿÿ           N       &   {5B37E17A-9FD2-4b39-98C0-80A745DFAB81}  èÿÿÿvk  N   ”á        ¨ÿÿÿ{ d b 5 7 e b 6 1 - 1 a a 2 - 4 9 0 6 - 9 3 9 6 - 2 3 e 8 b 8 0 2 4 c 3 2 }    
-  èÿÿÿx”á  •á  •á @•á     àÿÿÿvk   €       PÑOperatoràÿÿÿvk   €1        Type   àÿÿÿvk   €          Value   èÿÿÿlh  ”á ÉÃox•á 7:zˆÿÿÿnk  -âßÑŞ¬Õ   P“á         ÿÿÿÿÿÿÿÿ   `–á Ğ  ÿÿÿÿ           N       &   {CEB0C263-7D90
+      'Quer que eu monte um plano para resolver os dÃ©bitos primeiro, ou prefere adicionar uma feature nova?';
+
+    return {
+      action: 'brownfield_complete',
+      phase: BrownfieldPhase.COMPLETE,
+      data: {
+        summary,
+        summaryMessage,
+        nextStepQuestion,
+        options: [
+          {
+            choice: PostDiscoveryChoice.RESOLVE_DEBTS,
+            label: '1. Resolver dÃ©bitos tÃ©cnicos',
+          },
+          {
+            choice: PostDiscoveryChoice.ADD_FEATURE,
+            label: '2. Adicionar feature nova',
+          },
+        ],
+        outputs: {
+          systemArchitecture: 'docs/architecture/system-architecture.md',
+          technicalDebtReport: 'docs/reports/TECHNICAL-DEBT-REPORT.md',
+        },
+        result,
+        context,
+      },
+    };
+  }
+
+  /**
+   * Builds summary from generated outputs
+   * @private
+   */
+  _buildDiscoverySummary() {
+    const summary = {
+      structureOk: false,
+      databaseIssues: 0,
+      testingConfigured: false,
+      estimatedDebt: 'N/A',
+      indicators: [],
+    };
+
+    // Check for generated files and extract info
+    const archPath = path.join(this.projectRoot, 'docs/architecture/system-architecture.md');
+    const debtReportPath = path.join(this.projectRoot, 'docs/reports/TECHNICAL-DEBT-REPORT.md');
+
+    if (fs.existsSync(archPath)) {
+      summary.structureOk = true;
+      summary.indicators.push({ type: 'success', message: 'Estrutura de pastas organizada' });
+    }
+
+    if (fs.existsSync(debtReportPath)) {
+      try {
+        const reportContent = fs.readFileSync(debtReportPath, 'utf8');
+
+        // Extract debt estimate from report (simple regex)
+        const debtMatch = reportContent.match(/Custo Estimado[:\s]*R\$\s*([\d.,]+)/i);
+        if (debtMatch) {
+          summary.estimatedDebt = `R$ ${debtMatch[1]}`;
+        }
+
+        // Count issues
+        const dbIssuesMatch = reportContent.match(/Database[:\s]*(\d+)\s*(?:issues?|problemas?)/i);
+        if (dbIssuesMatch) {
+          summary.databaseIssues = parseInt(dbIssuesMatch[1], 10);
+        }
+
+        // Check testing
+        if (reportContent.includes('testes configurados') || reportContent.includes('tests configured')) {
+          summary.testingConfigured = true;
+        }
+      } catch {
+        // Ignore read errors
+      }
+    }
+
+    // Build indicators based on findings
+    if (summary.databaseIssues > 0) {
+      summary.indicators.push({
+        type: 'warning',
+        message: `${summary.databaseIssues} problemas de banco de dados`,
+      });
+    }
+
+    if (!summary.testingConfigured) {
+      summary.indicators.push({
+        type: 'warning',
+        message: 'Sem testes configurados',
+      });
+    }
+
+    if (summary.estimatedDebt !== 'N/A') {
+      summary.indicators.push({
+        type: 'critical',
+        message: `${summary.estimatedDebt} estimados em dÃ©bito tÃ©cnico`,
+      });
+    }
+
+    return summary;
+  }
+
+  /**
+   * Formats summary message with indicators (PRD Â§3.2)
+   * @private
+   */
+  _formatSummaryMessage(summary) {
+    const lines = ['Encontrei algumas coisas:'];
+
+    for (const indicator of summary.indicators) {
+      let icon;
+      switch (indicator.type) {
+        case 'success':
+          icon = 'âœ…';
+          break;
+        case 'warning':
+          icon = 'âš ï¸';
+          break;
+        case 'critical':
+          icon = 'âŒ';
+          break;
+        default:
+          icon = 'â€¢';
+      }
+      lines.push(`- ${icon} ${indicator.message}`);
+    }
+
+    return lines.join('\n');
+  }
+
+  /**
+   * Handles post-discovery choice (AC5 - Task 2.6, 2.7)
+   *
+   * @param {string} choice - User choice (resolve_debts | add_feature)
+   * @param {Object} context - Execution context
+   * @returns {Promise<Object>} Routing result
+   * @private
+   */
+  async _handlePostDiscoveryChoice(choice, context) {
+    this._log(`Handling post-discovery choice: ${choice}`);
+
+    switch (choice) {
+      case PostDiscoveryChoice.RESOLVE_DEBTS:
+        // Route to brownfield-create-epic task
+        return {
+          action: 'route_to_debt_resolution',
+          data: {
+            message: 'Vou criar um plano para resolver os dÃ©bitos tÃ©cnicos.',
+            nextStep: 'brownfield_create_epic',
+            taskPath: '.aiox-core/development/tasks/brownfield-create-epic.md',
+            context,
+          },
+        };
+
+      case PostDiscoveryChoice.ADD_FEATURE:
+        // Route to existing project handler (enhancement workflow)
+        return {
+          action: 'route_to_enhancement',
+          data: {
+            message: 'Ok! Vamos adicionar uma feature nova.',
+            nextStep: 'existing_project_enhancement',
+            context,
+          },
+        };
+
+      default:
+        return {
+          action: 'invalid_choice',
+          error: `Unknown post-discovery choice: ${choice}`,
+        };
+    }
+  }
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  //                              IDEMPOTENCY (AC6)
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+
+  /**
+   * Checks if output file exists and prepares for idempotent update (AC6)
+   *
+   * @param {string} outputPath - Path to output file
+   * @returns {Object} Idempotency info
+   */
+  checkIdempotency(outputPath) {
+    const fullPath = path.join(this.projectRoot, outputPath);
+    const exists = fs.existsSync(fullPath);
+
+    if (exists) {
+      this._log(`ğŸ“„ Updating existing ${outputPath} (idempotent re-run)`);
+      try {
+        const existingContent = fs.readFileSync(fullPath, 'utf8');
+        return {
+          exists: true,
+          existingContent,
+          path: fullPath,
+        };
+      } catch {
+        return { exists: true, existingContent: null, path: fullPath };
+      }
+    }
+
+    return { exists: false, existingContent: null, path: fullPath };
+  }
+
+  /**
+   * Writes output file idempotently (AC6 - Task 5.3)
+   *
+   * @param {string} outputPath - Path to output file
+   * @param {string} content - Content to write
+   * @returns {boolean} Success
+   */
+  writeOutputIdempotent(outputPath, content) {
+    const fullPath = path.join(this.projectRoot, outputPath);
+
+    // Ensure directory exists
+    const dir = path.dirname(fullPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+
+    // Overwrite (not append) for idempotency
+    fs.writeFileSync(fullPath, content, 'utf8');
+    this._log(`ğŸ“„ Wrote ${outputPath}`);
+
+    return true;
+  }
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  //                              SESSION STATE TRACKING
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+
+  /**
+   * Records phase progress in session state (Task 3.4)
+   *
+   * @param {string} phase - Current phase
+   * @param {Object} context - Execution context
+   * @private
+   */
+  async _recordPhase(phase, context) {
+    const sessionState = this._getSessionState();
+    if (!sessionState) {
+      return;
+    }
+
+    try {
+      const exists = await sessionState.exists();
+      if (exists) {
+        await sessionState.loadSessionState();
+        await sessionState.recordPhaseChange(`brownfield_${phase}`, 'brownfield-discovery', '@architect');
+        this._log(`Phase recorded in session state: ${phase}`);
+      }
+    } catch (error) {
+      this._log(`Failed to record phase: ${error.message}`, 'warn');
+    }
+  }
+
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  //                              LOGGING
+  // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+
+  /**
+   * Debug logger
+   * @param {string} message - Log message
+   * @param {string} [level='info'] - Log level
+   * @private
+   */
+  _log(message, level = 'info') {
+    if (this.options.debug || level === 'error' || level === 'warn') {
+      const prefix = level === 'error' ? 'âŒ' : level === 'warn' ? 'âš ï¸' : 'ğŸ”';
+      console.log(`[BrownfieldHandler] ${prefix} ${message}`);
+    }
+  }
+}
+
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+//                              EXPORTS
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+
+module.exports = {
+  BrownfieldHandler,
+  BrownfieldPhase,
+  PostDiscoveryChoice,
+  PhaseFailureAction,
+};

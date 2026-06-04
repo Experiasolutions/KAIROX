@@ -438,5 +438,88 @@
       "3_intelligence": 30028,
       "4_reflexion": 28
     }
+  },
+  {
+    "timestamp": "2026-04-30T19:46:22.434Z",
+    "bootTimeMs": 27768,
+    "mode": "full",
+    "councilScore": 5.77,
+    "councilGaps": 124,
+    "phases": {
+      "0_identity": 5,
+      "0.5_mcp_sync": 726,
+      "1_consciousness": 11,
+      "1.5_jarvis": 10118,
+      "1.8_skyros": 22,
+      "2_knowledge": 31,
+      "3_intelligence": 16802,
+      "4_reflexion": 20
+    }
+  },
+  {
+    "timestamp": "2026-05-17T14:43:50.439Z",
+    "bootTimeMs": 150376,
+    "mode": "quick",
+    "councilScore": null,
+    "councilGaps": null,
+    "phases": {
+      "0_identity": 58,
+      "0.5_mcp_sync": 11,
+      "1_consciousness": 33,
+      "1.5_jarvis": 149099,
+      "1.8_skyros": 208,
+      "2_knowledge": 29
+    }
+  },
+  {
+    "timestamp": "2026-05-20T01:17:09.570Z",
+    "bootTimeMs": 47755,
+    "mode": "full",
+    "councilScore": 5.72,
+    "councilGaps": 131,
+    "phases": {
+      "0_identity": 6,
+      "0.5_mcp_sync": 1079,
+      "1_consciousness": 21,
+      "1.5_jarvis": 20013,
+      "1.8_skyros": 77,
+      "2_knowledge": 35,
+      "3_intelligence": 26402,
+      "4_reflexion": 95
+    }
+  },
+  {
+    "timestamp": "2026-05-20T01:19:46.994Z",
+    "bootTimeMs": 46793,
+    "mode": "full",
+    "councilScore": 5.72,
+    "councilGaps": 131,
+    "phases": {
+      "0_identity": 18,
+      "0.5_mcp_sync": 1688,
+      "1_consciousness": 16,
+      "1.5_jarvis": 18416,
+      "1.8_skyros": 61,
+      "2_knowledge": 65,
+      "3_intelligence": 26452,
+      "4_reflexion": 27
+    }
+  },
+  {
+    "timestamp": "2026-06-01T18:27:52.671Z",
+    "bootTimeMs": 11882,
+    "mode": "full",
+    "councilScore": 5.66,
+    "councilGaps": 132,
+    "phases": {
+      "0_identity": 10,
+      "0.5_mcp_sync": 274,
+      "1_consciousness": 12,
+      "1.5_jarvis": 1349,
+      "1.8_skyros": 20,
+      "2_knowledge": 132,
+      "3_intelligence": 10043,
+      "4_reflexion": 20
+    }
   }
 ]

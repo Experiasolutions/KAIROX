@@ -330,7 +330,7 @@ options:
 ```yaml
 execution:
   keep:
-    action: "Log analysis report to .aios/apex-context/visual-history.yaml"
+    action: "Log analysis report to .aiox/apex-context/visual-history.yaml"
     show: "Analise registrada. Pronto pra outra coisa?"
 
   improve:

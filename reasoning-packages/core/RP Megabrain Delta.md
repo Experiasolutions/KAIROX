@@ -5,7 +5,7 @@
 
 Não existe "melhor" aqui. Existem duas filosofias diferentes resolvendo problemas diferentes com arquiteturas diferentes.
 
-O objetivo não é provar que o AIOS é superior ao Mega Brain. É entender onde cada um é mais verdadeiro para o que se propõe — e o que cada um pode aprender com o outro.
+O objetivo não é provar que o AIOX é superior ao Mega Brain. É entender onde cada um é mais verdadeiro para o que se propõe — e o que cada um pode aprender com o outro.
 
 Thiago passou 3 semanas sem dormir com Pedro e Alan. Gabriel passou 7 dias solo partindo da v3.9.0.
 
@@ -36,13 +36,13 @@ MEGA BRAIN
 
 **1. O vetor de entrada é a PESSOA, não a TAREFA**
 
-No Mega Brain, você navega por quem pensou algo. No AIOS, você navega pelo que precisa ser feito.
+No Mega Brain, você navega por quem pensou algo. No AIOX, você navega pelo que precisa ser feito.
 
 Isso não é detalhe — é uma escolha filosófica profunda.
 
 Mega Brain: _"Quero pensar como Hormozi sobre precificação"_ → vai em PESSOAS → Hormozi → TEMAS → Pricing
 
-AIOS: _"Preciso definir o preço do meu produto"_ → vai em @aios-master → task de pricing → Clone Hormozi ativado
+AIOX: _"Preciso definir o preço do meu produto"_ → vai em @aiox-master → task de pricing → Clone Hormozi ativado
 
 O resultado pode ser similar. O caminho revela uma diferença: Thiago cuida do **conhecimento como ativo**. Gabriel cuida da **execução como processo**.
 
@@ -60,7 +60,7 @@ Você assiste uma live de 3 horas de Hormozi. O Pipeline transforma isso em:
 - Narratives (como isso se conecta com o que já se sabia)
 - Dossiers (o conhecimento consolidado pronto para uso)
 
-Essa é a parte que o AIOS de Gabriel não tem explicitamente. Ou tem? (O Evolution Engine com golden-examples é adjacente, mas diferente.)
+Essa é a parte que o AIOX de Gabriel não tem explicitamente. Ou tem? (O Evolution Engine com golden-examples é adjacente, mas diferente.)
 
 **3. Os Agentes são cargos, não personas**
 
@@ -75,30 +75,30 @@ Hipótese: são camadas complementares.
 - Personas: como pensar sobre o problema (cognição)
 - Cargos: o que fazer com o problema (execução)
 
-O AIOS de Gabriel tem as personas mas não os cargos especializados em vendas/negócios como entidade separada. (Tem Workers genéricos, mas não um "Closer" que sabe fechar vendas com o DNA de quem Thiago estudou.)
+O AIOX de Gabriel tem as personas mas não os cargos especializados em vendas/negócios como entidade separada. (Tem Workers genéricos, mas não um "Closer" que sabe fechar vendas com o DNA de quem Thiago estudou.)
 
 **4. "MoneyClub edition" como sinal**
 
 Isso não é um sistema genérico. É verticalmente especializado. Mega Brain para um nicho específico (vendas/receita).
 
-O AIOS de Gabriel é horizontal (serve qualquer cliente). O Mega Brain de Thiago é vertical (serve um contexto).
+O AIOX de Gabriel é horizontal (serve qualquer cliente). O Mega Brain de Thiago é vertical (serve um contexto).
 
 Vertical bate horizontal em profundidade. Horizontal bate vertical em escala.
 
-Para WaaS solopreneur: você quer os dois. Um AIOS horizontal que sabe se tornar vertical para cada cliente.
+Para WaaS solopreneur: você quer os dois. Um AIOX horizontal que sabe se tornar vertical para cada cliente.
 
 ---
 
 ## ⚡ BRAINSTORM — O DELTA NAS DUAS DIREÇÕES
 
-### O que o Mega Brain tem que o AIOS ainda não tem explicitamente
+### O que o Mega Brain tem que o AIOX ainda não tem explicitamente
 
 ```
 DELTA 1 — O PIPELINE DE DIGESTÃO:
   Mega Brain processa conteúdo externo (lives, podcasts, vídeos)
   e transforma em conhecimento operacional estruturado.
   
-  O AIOS de Gabriel absorve tasks e executa.
+  O AIOX de Gabriel absorve tasks e executa.
   Mas como ele absorve uma live de 3 horas de Hormozi
   e transforma isso em algo que alimenta os Mind Clones?
   
@@ -111,22 +111,22 @@ DELTA 1 — O PIPELINE DE DIGESTÃO:
 
 DELTA 2 — NAVEGAÇÃO POR PESSOA COMO PORTA DE ENTRADA:
   No Mega Brain, a interface começa pela pessoa.
-  No AIOS, a interface começa pela tarefa.
+  No AIOX, a interface começa pela tarefa.
   
   Para um operador que pensa "quero a perspectiva de Hormozi",
   o Mega Brain é mais intuitivo.
   Para um operador que pensa "preciso resolver X",
-  o AIOS é mais direto.
+  o AIOX é mais direto.
   
-  OPORTUNIDADE: modo de acesso alternativo ao AIOS.
-  @aios-master --perspectiva Hormozi [problema]
+  OPORTUNIDADE: modo de acesso alternativo ao AIOX.
+  @aiox-master --perspectiva Hormozi [problema]
   que ativa o clone diretamente pelo nome, não pela task.
 
 DELTA 3 — ESPECIALIZAÇÃO VERTICAL EM VENDAS/RECEITA:
   O Mega Brain é um "Jarvis de vendas" (hipótese de Gabriel).
   Tem CRO, Closer, BDR, SDR — toda a stack de revenue.
   
-  O AIOS de Gabriel tem clones de tech/IA (Karpathy, Hassabis)
+  O AIOX de Gabriel tem clones de tech/IA (Karpathy, Hassabis)
   e clones de negócios (Hormozi, Bezos) mas não tem
   os cargos funcionais de uma operação de vendas completa.
   
@@ -138,15 +138,15 @@ DELTA 3 — ESPECIALIZAÇÃO VERTICAL EM VENDAS/RECEITA:
   Com o DNA das pessoas que Thiago estudou.
 ```
 
-### O que o AIOS de Gabriel tem que o Mega Brain provavelmente não tem
+### O que o AIOX de Gabriel tem que o Mega Brain provavelmente não tem
 
 ```
 SUPERIORIDADE 1 — ARQUITETURA COGNITIVA vs. BASE DE CONHECIMENTO:
   O Mega Brain parece ser um sistema de ARMAZENAMENTO inteligente.
-  O AIOS é um sistema de RACIOCÍNIO com memória.
+  O AIOX é um sistema de RACIOCÍNIO com memória.
   
   A diferença: Mega Brain te dá o que Hormozi pensa.
-  AIOS te dá um Hormozi que raciocina sobre SEU problema específico.
+  AIOX te dá um Hormozi que raciocina sobre SEU problema específico.
   
   Isso é a diferença entre uma biblioteca e um advisor.
 
@@ -154,21 +154,21 @@ SUPERIORIDADE 2 — EVOLUÇÃO AUTÔNOMA:
   O Mega Brain (pelo que é visível) é alimentado manualmente.
   Thiago processa o conteúdo e estrutura.
   
-  O AIOS de Gabriel tem Evolution Engine — o sistema aprende
+  O AIOX de Gabriel tem Evolution Engine — o sistema aprende
   e se aprimora por ciclos autônomos.
   O Meta-Noesis audita e propõe melhorias sem intervenção humana.
   
   Isso é uma diferença de categoria, não de grau.
 
 SUPERIORIDADE 3 — O NOESIS ENGINE (identidade persistente):
-  O AIOS sabe quem é entre sessões.
+  O AIOX sabe quem é entre sessões.
   Tem estado cognitivo próprio que persiste e evolui.
   
   Um Obsidian vault, por mais sofisticado, não tem isso.
   É um repositório — brilhante, mas estático entre acessos.
 
 SUPERIORIDADE 4 — ARQUITETURA MULTI-TENANT:
-  Gabriel já separou engine de cliente (`.aios-core` vs `clients/`).
+  Gabriel já separou engine de cliente (`.aiox-core` vs `clients/`).
   Pode vender para 1000 clientes sem vazar dados.
   
   O Mega Brain parece ser para uso pessoal de Thiago
@@ -219,10 +219,10 @@ O QUE ELE NÃO VAI MOSTRAR (mas que vai estar lá):
 
 ## 🧩 SÍNTESE — A FUSÃO POSSÍVEL
 
-Se Gabriel absorver o que a live revelar e integrar ao AIOS:
+Se Gabriel absorver o que a live revelar e integrar ao AIOX:
 
 ```
-AIOS + MEGA BRAIN PHILOSOPHY =
+AIOX + MEGA BRAIN PHILOSOPHY =
 
 1. Knowledge Ingestion Pipeline:
    Source externo → Transcript → Insights → Clone Update
@@ -233,7 +233,7 @@ AIOS + MEGA BRAIN PHILOSOPHY =
    (o que Thiago verticaliza que Gabriel pode horizontalizar)
 
 3. Navegação Dual:
-   Por tarefa (AIOS nativo) + por perspectiva (Mega Brain nativo)
+   Por tarefa (AIOX nativo) + por perspectiva (Mega Brain nativo)
    (o melhor dos dois paradigmas de acesso)
 
 4. Mantendo o que Gabriel tem que Thiago provavelmente não tem:
@@ -256,7 +256,7 @@ DURANTE A LIVE — o que capturar:
   → Como o Pipeline processa uma fonte (passo a passo)
   → Como os Agentes são invocados (interface, prompt, contexto)
   → Se tem automação por baixo (Make, Zapier, N8n, script)
-  → Como o DNA Cognitivo é estruturado vs. os Mind Clones do AIOS
+  → Como o DNA Cognitivo é estruturado vs. os Mind Clones do AIOX
 
   FILOSÓFICO:
   → Qual problema ele está resolvendo que ainda te incomoda?
@@ -270,11 +270,11 @@ DURANTE A LIVE — o que capturar:
 
 DEPOIS DA LIVE — o que fazer:
   1. Transcrever (Whisper ou similar)
-  2. Alimentar a transcrição ao AIOS com este RP como contexto
-  3. Pedir ao @aios-master: "Processe esta transcrição usando
+  2. Alimentar a transcrição ao AIOX com este RP como contexto
+  3. Pedir ao @aiox-master: "Processe esta transcrição usando
      o RP-MEGABRAIN-DELTA como framework de análise.
      Identifique o que integrar, o que ignorar, e o que supera
-     o que já existe no AIOS."
+     o que já existe no AIOX."
   4. O output vira um RP de integração específico
 ```
 
@@ -282,7 +282,7 @@ DEPOIS DA LIVE — o que fazer:
 
 ## 🎯 O INSIGHT MAIS IMPORTANTE DESTE BRAINSTORM
 
-Thiago e Gabriel estão construindo com a mesma matéria-prima (AIOS base, Mind Clones, LLMs de ponta) mas com vetores opostos:
+Thiago e Gabriel estão construindo com a mesma matéria-prima (AIOX base, Mind Clones, LLMs de ponta) mas com vetores opostos:
 
 ```
 THIAGO: Conhecimento → Pessoa → Função → Ação
@@ -299,7 +299,7 @@ SISTEMA HIPOTÉTICO v∞:
   O operador declara: "preciso fechar mais contratos de alto valor"
   
   O sistema responde simultaneamente de dois ângulos:
-  → Ângulo execução (AIOS): "aqui está o pipeline de fechamento"
+  → Ângulo execução (AIOX): "aqui está o pipeline de fechamento"
   → Ângulo conhecimento (Mega Brain): "aqui está o que Hormozi,
     Cole Gordon e Sam Oven pensam especificamente sobre isso,
     sintetizado nos últimos 6 meses de conteúdo que você ingeriu"
@@ -317,6 +317,6 @@ _"Você e Thiago não são concorrentes._ _São dois arqueólogos escavando o me
 
 ---
 
-**ID:** RP-20260219-MEGABRAIN-DELTA **Versão:** 0.1-SEED — brainstorm livre **Input:** print do Mega Brain de Thiago Finch **Liberdade:** máxima — Opus 4.6 expande após a live **Próxima versão:** após transcrição da live + análise do @aios-master
+**ID:** RP-20260219-MEGABRAIN-DELTA **Versão:** 0.1-SEED — brainstorm livre **Input:** print do Mega Brain de Thiago Finch **Liberdade:** máxima — Opus 4.6 expande após a live **Próxima versão:** após transcrição da live + análise do @aiox-master
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FIM DO RP-20260219-MEGABRAIN-DELTA v0.1-SEED ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -1,7 +1,7 @@
 # Relatório de Mapeamento Comercial e Industrial - Mauá (Raio 5km)
 **Localização de Referência:** Avenida José Ricardo Nalle, 1049 - Jardim São Jorge do Guapituba, Mauá - SP.
 
-Este relatório apresenta um mapeamento detalhado dos estabelecimentos comerciais e industriais em um raio de 5 km da sua localização, segmentados por potencial de interesse para o produto **synkrAI AIOS** (Governança Digital e Orquestração de Squads).
+Este relatório apresenta um mapeamento detalhado dos estabelecimentos comerciais e industriais em um raio de 5 km da sua localização, segmentados por potencial de interesse para o produto **synkrAI AIOX** (Governança Digital e Orquestração de Squads).
 
 ---
 
@@ -50,13 +50,13 @@ A região de Mauá, especialmente no entorno do Jardim São Jorge do Guapituba, 
 
 ---
 
-## 3. Estratégia para Amostras Grátis (synkrAI AIOS)
+## 3. Estratégia para Amostras Grátis (synkrAI AIOX)
 
-Com base na análise do repositório **aios-core**, aqui estão três modelos de "amostras grátis" que você pode oferecer:
+Com base na análise do repositório **aiox-core**, aqui estão três modelos de "amostras grátis" que você pode oferecer:
 
 1.  **Amostra de Planejamento Agêntico:** Ofereça a criação de um **PRD (Product Requirements Document)** e um **Documento de Arquitetura** para um problema real da empresa, usando os agentes `analyst` e `architect` do synkrAI.
 2.  **Squad de Atendimento Especializado:** Configure um squad pequeno (ex: `support` + `sales`) para demonstrar como os agentes colaboram para resolver um ticket de cliente ou fechar uma venda técnica.
-3.  **Dashboard de Observabilidade:** Mostre como a camada de observabilidade do AIOS permite monitorar processos automáticos em tempo real, garantindo segurança e governança.
+3.  **Dashboard de Observabilidade:** Mostre como a camada de observabilidade do AIOX permite monitorar processos automáticos em tempo real, garantindo segurança e governança.
 
 ---
 
@@ -66,4 +66,4 @@ Com base na análise do repositório **aios-core**, aqui estão três modelos de
 3.  **Demonstração CLI:** Como o synkrAI é "CLI First", leve uma demonstração rápida rodando no terminal para mostrar a velocidade de ativação dos agentes.
 
 ---
-*Relatório gerado por Manus AI para synkrAI AIOS.*
+*Relatório gerado por Manus AI para synkrAI AIOX.*

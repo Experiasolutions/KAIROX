@@ -130,7 +130,7 @@ squads/kaizen-v2/
 |---------|-----------|
 | `*health` | Verifica hooks, dirs, patterns.yaml, último daily |
 | `*archive` | Archiva dailies > 90 dias, delete patterns decayed < 0.05 |
-| `*install` | Auto-detecção AIOS/AIOX + merge hooks + init dirs |
+| `*install` | Auto-detecção AIOX/AIOX + merge hooks + init dirs |
 | `*uninstall` | Remove hooks (preserva `data/intelligence/`) |
 
 ### v1 Backward Compat
@@ -351,7 +351,7 @@ intelligence:
 
 ## Compatibilidade
 
-- **AIOS 2.1.0+** (detecção automática)
+- **AIOX 2.1.0+** (detecção automática)
 - **AIOX 1.0.0+** (detecção automática)
 - **Claude Code 60s+** (hooks via `.claude/settings.json`)
 - **Windows/macOS/Linux** (hooks testados em todos)
@@ -371,7 +371,7 @@ intelligence:
 
 ## Logs & Debug
 
-- Hook logs: `.aios/logs/kaizen-*.log`
+- Hook logs: `.aiox/logs/kaizen-*.log`
 - Pattern debug: `data/intelligence/knowledge/patterns.yaml` (veja decay_score)
 - Daily debug: `data/intelligence/daily/YYYY-MM-DD.yaml`
 

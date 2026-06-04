@@ -3,9 +3,9 @@
 /**
  * @module noesis-pipeline
  * @version 2.2.0
- * @purpose Unified cognitive loop for AIOS. Orchestrates the 6-phase Noesis
+ * @purpose Unified cognitive loop for AIOX. Orchestrates the 6-phase Noesis
  *          reasoning cycle: Context → Evaluate → Reflect → Harvest → Trace → Signal.
- *          This is the "own mind" of the AIOS — a domain-agnostic reasoning
+ *          This is the "own mind" of the AIOX — a domain-agnostic reasoning
  *          substrate that evaluates, learns, and improves with every cycle.
  * @inputs  { input: string, output: string, mode?: string, taskDescription?: string }
  * @outputs { score, verdict, depthScore, harvested, traced, signal, phases }
@@ -58,8 +58,8 @@ const PROJECT_ROOT = path.join(__dirname, '..', '..');
 const TRACES_DIR = path.join(PROJECT_ROOT, 'distillation-dataset', 'traces');
 const CURATED_DIR = path.join(PROJECT_ROOT, 'distillation-dataset', 'curated');
 const ROADMAP_FILE = path.join(PROJECT_ROOT, 'distillation-dataset', 'roadmap.json');
-const BASELINE_FILE = path.join(PROJECT_ROOT, '.aios-core', 'data', 'quality-baseline.json');
-const HISTORY_FILE = path.join(PROJECT_ROOT, '.aios-core', 'data', 'noesis-history.json');
+const BASELINE_FILE = path.join(PROJECT_ROOT, '.aiox-core', 'data', 'quality-baseline.json');
+const HISTORY_FILE = path.join(PROJECT_ROOT, '.aiox-core', 'data', 'noesis-history.json');
 
 // ─────────────────────────────────────────────────────────────
 // CONSTANTS
@@ -75,7 +75,7 @@ const VERSION = '2.2.0';
 // ─────────────────────────────────────────────────────────────
 
 /**
- * @purpose Load AIOS context, golden examples, anti-patterns, and PM master
+ * @purpose Load AIOX context, golden examples, anti-patterns, and PM master
  * @inputs  {string} input - Raw user input
  * @outputs {Object} Refined context with all injections
  */
@@ -94,7 +94,7 @@ function phaseContext(input) {
             context: {
                 goldenExamplesLoaded: 0,
                 antiPatternsLoaded: false,
-                aiosContextLoaded: false,
+                aioxContextLoaded: false,
             },
             error: err.message,
         };
@@ -106,7 +106,7 @@ function phaseContext(input) {
         mode: refinedContext.mode,
         goldenExamples: refinedContext.context.goldenExamplesLoaded,
         antiPatternsLoaded: refinedContext.context.antiPatternsLoaded,
-        aiosContextLoaded: refinedContext.context.aiosContextLoaded,
+        aioxContextLoaded: refinedContext.context.aioxContextLoaded,
         refinedPrompt: refinedContext.refinedPrompt,
     };
 }
@@ -740,7 +740,7 @@ if (require.main === module) {
         const testInput = 'Implement a new bridge module with error handling and graceful degradation for long-term scalability';
         const testOutput = `/**
  * @module notification-bridge
- * @purpose Bridge between notification providers and AIOS event bus.
+ * @purpose Bridge between notification providers and AIOX event bus.
  *          Design decision: uses Map for O(1) provider lookup.
  *          Trade-off: memory vs speed — chose speed for real-time use.
  */

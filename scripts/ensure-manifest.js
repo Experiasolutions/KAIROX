@@ -1,5 +1,5 @@
-/** @purpose Ensure team manifest exists and is properly structured */
 #!/usr/bin/env node
+/** @purpose Ensure team manifest exists and is properly structured */
 'use strict';
 
 const { execSync } = require('child_process');

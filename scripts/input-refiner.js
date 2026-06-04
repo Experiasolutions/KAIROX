@@ -4,7 +4,7 @@
  * @module input-refiner
  * @version 2.0.0
  * @purpose Transform raw user intent into Opus-grade structured prompts with
- *          AIOS context injection and golden example anchoring.
+ *          AIOX context injection and golden example anchoring.
  * @inputs  Raw user string (CLI arg or programmatic call)
  * @outputs { original, mode, context, goldenExamples[], refinedPrompt }
  * @emits   prompt:refined (via event-bus)
@@ -18,11 +18,11 @@ const path = require('path');
 
 // ── Paths ────────────────────────────────────────────────────
 
-const AIOS_ROOT = path.join(__dirname, '..');
-const OPUS_PATH = path.join(AIOS_ROOT, '.aios-core', 'opus-replicator');
-const MEMORY_PATH = path.join(AIOS_ROOT, '.aios-core', 'memory');
+const AIOX_ROOT = path.join(__dirname, '..');
+const OPUS_PATH = path.join(AIOX_ROOT, '.aiox-core', 'opus-replicator');
+const MEMORY_PATH = path.join(AIOX_ROOT, '.aiox-core', 'memory');
 const GOLDEN_PATH = path.join(MEMORY_PATH, 'golden-examples');
-const DATA_PATH = path.join(AIOS_ROOT, '.aios-core', 'data');
+const DATA_PATH = path.join(AIOX_ROOT, '.aiox-core', 'data');
 
 // ── Mode Definitions ─────────────────────────────────────────
 // WHY: Each mode maps to a PM master file and has distinct trigger words.
@@ -143,11 +143,11 @@ function loadGoldenExamples(mode, input) {
     }).filter(ex => ex.content !== null);
 }
 
-// ── AIOS Context Loader ──────────────────────────────────────
-// WHY: Every prompt needs AIOS context to prevent hallucination.
+// ── AIOX Context Loader ──────────────────────────────────────
+// WHY: Every prompt needs AIOX context to prevent hallucination.
 // Loads the compressed self-context, not the full handbook.
 
-function loadAIOSContext() {
+function loadAIOXContext() {
     const selfContext = safeReadFile(
         path.join(OPUS_PATH, 'SELF_CONTEXT.md'),
         'SELF_CONTEXT.md'
@@ -156,7 +156,7 @@ function loadAIOSContext() {
     if (!selfContext) {
         // Fallback: minimal context
         return [
-            'AIOS CONTEXT:',
+            'AIOX CONTEXT:',
             '- Stack: Node.js, Express.js, YAML/Markdown agents, JSON storage',
             '- Kernel: Synapse + IDS + WIS (via kernel-bridge.js)',
             '- Events: event-bus.js (A2A pub/sub)',
@@ -228,7 +228,7 @@ function loadPMMaster(mode) {
 function refineInput(rawInput) {
     const mode = detectMode(rawInput);
     const goldenExamples = loadGoldenExamples(mode, rawInput);
-    const aiosContext = loadAIOSContext();
+    const aioxContext = loadAIOXContext();
     const antiPatterns = loadAntiPatterns();
     const pmMaster = loadPMMaster(mode);
 
@@ -248,8 +248,8 @@ function refineInput(rawInput) {
         `MODE: ${mode.id} — ${mode.name} (${mode.description})`,
         '═══════════════════════════════════════════════════════',
         '',
-        '## AIOS CONTEXT (compressed):',
-        aiosContext,
+        '## AIOX CONTEXT (compressed):',
+        aioxContext,
         '',
         '## PROTOCOL:',
         pmMaster,
@@ -275,7 +275,7 @@ function refineInput(rawInput) {
         context: {
             goldenExamplesLoaded: goldenExamples.length,
             antiPatternsLoaded: antiPatterns.length > 0,
-            aiosContextLoaded: aiosContext.length > 100,
+            aioxContextLoaded: aioxContext.length > 100,
         },
         goldenExamples: goldenExamples.map(e => ({ id: e.id, score: e.score })),
         refinedPrompt,
@@ -288,7 +288,7 @@ if (require.main === module) {
     const input = process.argv[2];
 
     if (!input) {
-        console.log('AIOS Input Refiner v2.0');
+        console.log('AIOX Input Refiner v2.0');
         console.log('Usage: node scripts/input-refiner.js "<your request>"');
         console.log('');
         console.log('Modes:');
@@ -305,7 +305,7 @@ if (require.main === module) {
     console.log(`   Mode: ${result.mode} (${result.modeName})`);
     console.log(`   Golden Examples: ${result.context.goldenExamplesLoaded}`);
     console.log(`   Anti-Patterns: ${result.context.antiPatternsLoaded ? 'loaded' : 'none'}`);
-    console.log(`   AIOS Context: ${result.context.aiosContextLoaded ? 'loaded' : 'minimal'}`);
+    console.log(`   AIOX Context: ${result.context.aioxContextLoaded ? 'loaded' : 'minimal'}`);
     console.log(`   Prompt length: ${result.refinedPrompt.length} chars\n`);
 
     // Save staged prompt for downstream consumption

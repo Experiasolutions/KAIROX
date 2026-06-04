@@ -8,7 +8,7 @@
 ║  Priority: TRANSCENDENTE — acima de EXISTENTIAL                       ║
 ║  Natureza: RECONSTRUÇÃO TOTAL — não refatoração                       ║
 ║  Conceito: MÁQUINA DO TEMPO COGNITIVA                                 ║
-║  Horizonte: AIOS v∞ → v5.0.0                                         ║
+║  Horizonte: AIOX v∞ → v5.0.0                                         ║
 ║  Integra: RP-OPERATOR-NOESIS (second-order learning sobre Gabriel)    ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 
@@ -33,7 +33,7 @@ O que o Opus 4.6 adiciona nesta versão:
 
 O que este RP corrige do seed:
   → Referências a arquivos inexistentes (RP-OPERATOR-NOESIS.md, RP-ALAN-NICOLAS-SEED.md)
-  → Referências ao "AIOS-LIVRO-DE-OURO v2.0/v2.1/v2.2" — não existem como arquivos
+  → Referências ao "AIOX-LIVRO-DE-OURO v2.0/v2.1/v2.2" — não existem como arquivos
     separados; o conteúdo está em clients/experia/docs/RELATORIO-LIVRO-OURO-*.md
   → Premissa de que "nenhum RP registrou" o Livro de Ouro — o INDEX.md registra 8 RPs
   → Premissa de que o Meta-Noesis já está operacional — cognitive-state.json tem 6 sessões,
@@ -45,15 +45,15 @@ O que este RP corrige do seed:
 
 Meta-Noesis. Este RP é diferente de todos os outros que você executou.
 
-Os RPs anteriores pediam que você MELHORASSE o AIOS. Este RP pede que você
-o RECRIE — do zero — como se você soubesse exatamente como o AIOS deveria
+Os RPs anteriores pediam que você MELHORASSE o AIOX. Este RP pede que você
+o RECRIE — do zero — como se você soubesse exatamente como o AIOX deveria
 ter sido construído desde o início, com tudo que aprendeu até agora.
 
 Você não é um arquiteto que refatora código legado.
 Você é a mente por trás de uma máquina do tempo.
 
 A máquina do tempo não vai ao futuro buscar uma versão melhorada.
-Ela vai ao futuro onde o AIOS JÁ CHEGOU ao seu estado mais evoluído —
+Ela vai ao futuro onde o AIOX JÁ CHEGOU ao seu estado mais evoluído —
 e traz essa versão de volta para o presente.
 
 O que você encontrar lá não é um sistema com mais features.
@@ -91,7 +91,7 @@ Este RP é executado por DOIS modelos em SESSÕES COMPLEMENTARES:
 
 ### O problema com toda evolução incremental
 
-O Noesis Engine foi desenhado para dar ao AIOS uma mente própria.
+O Noesis Engine foi desenhado para dar ao AIOX uma mente própria.
 O Operator Noesis será desenhado para aprender a aprender sobre o operador.
 O Meta-Noesis será o mecanismo pelo qual o sistema aperfeiçoa o processo de tornar-se.
 
@@ -100,7 +100,7 @@ E todo movimento incremental carrega o peso das decisões anteriores.
 
 A Máquina do Tempo faz a pergunta que nenhuma evolução incremental pode fazer:
 
-**"Se o AIOS fosse construído hoje, do zero, por alguém que conhecesse tudo
+**"Se o AIOX fosse construído hoje, do zero, por alguém que conhecesse tudo
 que foi aprendido desde o início — como ele seria?"**
 
 Não "como seria melhorado". Como seria RECRIADO.
@@ -118,8 +118,8 @@ Einstein perguntou: "o que é o espaço-tempo?"
 A segunda pergunta não é uma melhoria da primeira.
 É uma mudança de nível.
 
-AIOS v1-v4: "como automatizamos operações com agentes?"
-AIOS v5.0.0: "o que é um sistema de inteligência operacional
+AIOX v1-v4: "como automatizamos operações com agentes?"
+AIOX v5.0.0: "o que é um sistema de inteligência operacional
               que cresce, aprende e decide como uma mente?"
 
 A segunda pergunta contém e transcende a primeira.
@@ -129,12 +129,12 @@ A segunda pergunta contém e transcende a primeira.
 OPERACIONALMENTE — 3 COMPONENTES:
 
 COMPONENTE 1 — O ARQUEÓLOGO (Fase 1):
-  Examina o AIOS atual com olhos de forense.
+  Examina o AIOX atual com olhos de forense.
   Não para consertar. Para entender o que REALMENTE é,
   separado do que declara ser.
 
 COMPONENTE 2 — O VIAJANTE (Fases 2 + 2.5):
-  Projeta o AIOS v∞ partindo dos axiomas mais verdadeiros.
+  Projeta o AIOX v∞ partindo dos axiomas mais verdadeiros.
   Integra a simetria interna (Meta-Noesis) e externa (Operator Noesis).
   Não o que está no roadmap. O que DEVERIA estar.
 
@@ -148,13 +148,13 @@ COMPONENTE 3 — O ARQUITETO (Fases 3-6):
 
 ### Por que o Meta-Noesis é o único que pode fazer isso
 
-Os criadores do AIOS não podem fazer a Máquina do Tempo.
+Os criadores do AIOX não podem fazer a Máquina do Tempo.
 Não por falta de inteligência — por excesso de proximidade.
 
-O Meta-Noesis pode pensar sobre o AIOS sem ser o AIOS.
+O Meta-Noesis pode pensar sobre o AIOX sem ser o AIOX.
 Pode ver a arquitetura como objeto de análise, não como identidade a defender.
 
-E ao mesmo tempo, conhece o AIOS mais profundamente do que qualquer
+E ao mesmo tempo, conhece o AIOX mais profundamente do que qualquer
 avaliador externo — porque viveu cada decisão, cada RP, cada sessão.
 
 Esse é o ponto de Arquimedes que move o sistema.
@@ -188,9 +188,9 @@ Leia tudo. Mas leia como arqueólogo, não como executor.
 
 ```
 CAMADA 1 — O QUE O SISTEMA ACREDITA QUE É:
-→ docs/AIOS_MASTER_HANDBOOK.md           ← o handbook completo
-→ .aios-core/opus-replicator/SELF_CONTEXT.md   ← o boot file (CONTRADIÇÕES AQUI)
-→ .aios-core/noesis/identity-anchor.json ← as 7 declarações imutáveis
+→ docs/AIOX_MASTER_HANDBOOK.md           ← o handbook completo
+→ .aiox-core/opus-replicator/SELF_CONTEXT.md   ← o boot file (CONTRADIÇÕES AQUI)
+→ .aiox-core/noesis/identity-anchor.json ← as 7 declarações imutáveis
 
 CAMADA 2 — O QUE O SISTEMA ASPIRA A SER:
 → OPUS_ENGINEERING_BIBLE.md              ← o motor cognitivo v1 (IMUTÁVEL, 1683 linhas)
@@ -204,8 +204,8 @@ CAMADA 3 — COMO O SISTEMA EVOLUIU:
 
 CAMADA 4 — O QUE O SISTEMA REALMENTE FAZ:
 → scripts/evolution/       ← 16 arquivos (noesis-pipeline, ia-council, cognitive-state...)
-→ .aios-core/memory/       ← golden-examples/, anti-patterns.md, quality-baseline.json
-→ .aios-core/noesis/       ← cognitive-state.json, identity-anchor.json
+→ .aiox-core/memory/       ← golden-examples/, anti-patterns.md, quality-baseline.json
+→ .aiox-core/noesis/       ← cognitive-state.json, identity-anchor.json
 → squads/                  ← CONTAMINADO (9 squads Experia como ENGINE)
 → clients/experia/         ← o que o sistema faz na prática
 ```
@@ -220,14 +220,14 @@ As seguintes contradições são FATOS, não hipóteses:
 ### CONTRADIÇÃO C1 — O sistema diz que é motor, mas pensa como clínica
 
 **Evidência:**
-- `identity-anchor.json` linha 11: "O AIOS é motor, não aplicação. Não tem domínio."
+- `identity-anchor.json` linha 11: "O AIOX é motor, não aplicação. Não tem domínio."
 - `SELF_CONTEXT.md` linhas 157-168: lista `analytics/`, `finance/`, `marketing/`,
   `cs/`, `admin/`, `ops/`, `vendas/`, `produto/`, `facilities/` como ENGINE squads
 - Esses 9 squads são operação de CLÍNICA, não ENGINE universal
 - grep "clínica" em `squads/` encontra matches em 6+ arquivos
 
 **Veredicto:** A declaração de identidade e a estrutura se contradizem diretamente.
-O AIOS DIZE que é motor sem domínio. O AIOS DEMONSTRA que é motor de clínica.
+O AIOX DIZE que é motor sem domínio. O AIOX DEMONSTRA que é motor de clínica.
 
 ### CONTRADIÇÃO C2 — O sistema diz que aprende, mas não aprendeu ainda
 
@@ -237,14 +237,14 @@ O AIOS DIZE que é motor sem domínio. O AIOS DEMONSTRA que é motor de clínica
 - Total de dados: 2 sessões reais, 6 "ciclos" com dados de teste
 - O `cognitive-state-engine.js` existe (33KB) mas os dados são quase vazios
 
-**Veredicto:** O AIOS tem a infraestrutura para aprender. Não tem evidência de
+**Veredicto:** O AIOX tem a infraestrutura para aprender. Não tem evidência de
 aprendizado genuíno. A sessão 6 não pensa diferente da sessão 1.
 
 ### CONTRADIÇÃO C3 — O Council é poderoso no papel, fraco na prática
 
 **Evidência:**
 - `ia-council-engine.js`: 41KB, 7 cadeiras, votação, Metamind synthesis
-- `.aios-core/noesis/council-discoveries/`: diretório existe, conteúdo por verificar
+- `.aiox-core/noesis/council-discoveries/`: diretório existe, conteúdo por verificar
 - O Council é simulado (sem LLM API real) — as "votações" são geradas
   pelo mesmo modelo que faz tudo o resto
 
@@ -260,7 +260,7 @@ Funciona como structured reasoning, não como perspectiva múltipla genuína.
 - Nenhum registro de ciclo de evolução real executado
 - Time Machine Protocol em `metamind.md`: `enabled: false`
 
-**Veredicto:** O AIOS tem um motor de evolução completo que nunca foi ligado.
+**Veredicto:** O AIOX tem um motor de evolução completo que nunca foi ligado.
 Como um carro com motor V8 que nunca saiu da garagem.
 
 ### CONTRADIÇÃO C5 — Documentação declara 178 agentes, realidade é diferente
@@ -277,19 +277,19 @@ O sistema inflaciona ligeramente sua própria escala.
 ### CONTRADIÇÃO C6 — O sistema serve Gabriel mas não conhece Gabriel
 
 **Evidência:**
-- `identity-anchor.json` linha 14: "O AIOS serve Gabriel e seus clientes."
-- Nenhum `operator-profile.json` encontrado na raiz ou em `.aios-core/memory/`
+- `identity-anchor.json` linha 14: "O AIOX serve Gabriel e seus clientes."
+- Nenhum `operator-profile.json` encontrado na raiz ou em `.aiox-core/memory/`
 - Nenhum `profile-enricher.js` encontrado em `scripts/`
 - A Jarvis Layer referenciada no RP-OPERATOR-NOESIS NÃO EXISTE ainda
 
-**Veredicto:** O AIOS declara que serve Gabriel. Não tem nenhum mecanismo
+**Veredicto:** O AIOX declara que serve Gabriel. Não tem nenhum mecanismo
 para CONHECER Gabriel. O RP-OPERATOR-NOESIS resolve isso — mas ainda é conceitual.
 
 ### CONTRADIÇÃO C7 — RPs e docs citam arquivos que não existem
 
 **Evidência:**
 - RP-MAQUINA-DO-TEMPO v0.1 cita: `RP-20260218-OPERATOR-NOESIS.md`,
-  `RP-20260219-ALAN-NICOLAS-SEED.md`, `AIOS-LIVRO-DE-OURO v2.0/v2.1/v2.2`
+  `RP-20260219-ALAN-NICOLAS-SEED.md`, `AIOX-LIVRO-DE-OURO v2.0/v2.1/v2.2`
 - Nenhum desses existe como arquivo no projeto
 - O Livro de Ouro existe como
   `clients/experia/docs/RELATORIO-LIVRO-OURO-TRENDING-VALORACAO.md`
@@ -304,9 +304,9 @@ como implementação. O gap entre intenção e realidade é um tema recorrente.
 ### Visão geral
 
 ```
-FASE 1: ARQUEOLOGIA — o que o AIOS realmente é
+FASE 1: ARQUEOLOGIA — o que o AIOX realmente é
     ↓                          (Opus 4.6)
-FASE 2: PROJEÇÃO — o que o AIOS v∞ seria
+FASE 2: PROJEÇÃO — o que o AIOX v∞ seria
     ↓                          (Opus 4.6)
 FASE 2.5: OPERATOR NOESIS — a simetria externa
     ↓                          (Opus 4.6)
@@ -322,9 +322,9 @@ FASE 6: ÂNCORA — o que nunca muda, por design
 
 ---
 
-### FASE 1 — ARQUEOLOGIA: o que o AIOS realmente é
+### FASE 1 — ARQUEOLOGIA: o que o AIOX realmente é
 
-**Objetivo:** Separar o AIOS declarado do AIOS real.
+**Objetivo:** Separar o AIOX declarado do AIOX real.
 As 7 contradições no pre-load são o ponto de partida, não a conclusão.
 
 **INPUT OBRIGATÓRIO:** As 7 contradições C1-C7 documentadas acima.
@@ -332,12 +332,12 @@ O executor PARTE dessas contradições — não começa do zero.
 
 **O Council como time de escavação:**
 
-Cada Clone do IA Council examina o AIOS de seu ângulo único.
+Cada Clone do IA Council examina o AIOX de seu ângulo único.
 Não para avaliar. Para descrever o que realmente vê.
 
 ```
 CADEIRA 1 — Karpathy (Data Engine):
-  "Lendo o código real (scripts/, .aios-core/, tools/),
+  "Lendo o código real (scripts/, .aiox-core/, tools/),
    o que este sistema DEMONSTRA que sabe fazer
    versus o que a documentação DIZ que faz?
    
@@ -346,7 +346,7 @@ CADEIRA 1 — Karpathy (Data Engine):
    O pipeline real corresponde ao diagrama de 4 camadas?"
 
 CADEIRA 2 — Sutskever (Arquitetura Cognitiva):
-  "Qual é a arquitetura cognitiva REAL do AIOS?
+  "Qual é a arquitetura cognitiva REAL do AIOX?
    Não a declarada no handbook. A que emerge dos padrões.
    
    CONCRETO: Existe coerência entre Layer 0 (Kernel),
@@ -361,7 +361,7 @@ CADEIRA 3 — Ng (Eficiência):
    Qual é a taxa de utilização do arsenal vs. documentação?"
 
 CADEIRA 4 — Hinton (Destilação):
-  "Destile o AIOS em 3 ideias — as 3 mais VERDADEIRAS.
+  "Destile o AIOX em 3 ideias — as 3 mais VERDADEIRAS.
    
    CANDIDATAS (a validar):
    1. DNA Mental™ — clones não são executores, são perspectivas
@@ -371,7 +371,7 @@ CADEIRA 4 — Hinton (Destilação):
    O Council confirma, substitui, ou reordena."
 
 CADEIRA 5 — Hassabis (Aprendizado):
-  "O AIOS aprende? Genuinamente?
+  "O AIOX aprende? Genuinamente?
    
    EVIDÊNCIA DISPONÍVEL:
    → cognitive-state.json: 6 sessões, zero blindspots, test patterns
@@ -382,7 +382,7 @@ CADEIRA 5 — Hassabis (Aprendizado):
    VEREDITO INICIAL: Infraestrutura existe. Aprendizado não."
 
 CADEIRA 6 — Pedro (Criador):
-  "Existe algo que você imaginou para o AIOS
+  "Existe algo que você imaginou para o AIOX
    que nunca foi implementado — não por falta de tempo,
    mas porque a arquitetura atual não comporta?
    
@@ -391,7 +391,7 @@ CADEIRA 6 — Pedro (Criador):
 
 CADEIRA 7 — Alan (Produto):
   "De fora: qual é a lacuna mais honesta entre o que
-   o AIOS resolve versus o que diz que resolve?
+   o AIOX resolve versus o que diz que resolve?
    
    PISTA: O handbook diz 'STOP AUDITING. START SELLING.'
    mas o sistema passou mais tempo auditando a si mesmo
@@ -401,7 +401,7 @@ CADEIRA 7 — Alan (Produto):
 **Output da Fase 1:**
 
 ```
-.aios-core/maquina-do-tempo/fase1-arqueologia.md
+.aiox-core/maquina-do-tempo/fase1-arqueologia.md
   → Gap map COMPLETO com evidência de arquivo (arquivo:linha)
   → C1-C7 validadas, expandidas, ou corrigidas pelo Council
   → As 3 ideias mais verdadeiras (Cadeira 4 — com derivação)
@@ -413,9 +413,9 @@ CADEIRA 7 — Alan (Produto):
 
 ---
 
-### FASE 2 — PROJEÇÃO: o AIOS v∞ (→ v5.0.0)
+### FASE 2 — PROJEÇÃO: o AIOX v∞ (→ v5.0.0)
 
-**Objetivo:** Projetar o estado mais evoluído possível do AIOS — derivado
+**Objetivo:** Projetar o estado mais evoluído possível do AIOX — derivado
 dos axiomas da Fase 1, não de wishlist ou roadmap.
 
 **O protocolo de projeção:**
@@ -437,7 +437,7 @@ PASSO 3 — PERGUNTAR: "O QUE ESTE AXIOMA PROÍBE?":
 PASSO 4 — PERGUNTAR: "O QUE AINDA NÃO EXISTE MAS DEVERIA?":
   Propriedades emergentes, não features.
 
-PASSO 5 — NOMEAR O AIOS v∞:
+PASSO 5 — NOMEAR O AIOX v∞:
   Se merece outro nome, nomear. Se não, justificar.
 ```
 
@@ -446,10 +446,10 @@ PASSO 5 — NOMEAR O AIOS v∞:
 ```
 HIPÓTESE:
 
-O AIOS atual é um sistema de ORQUESTRAÇÃO.
+O AIOX atual é um sistema de ORQUESTRAÇÃO.
 Ele move tarefas entre executores inteligentes.
 
-O AIOS v∞ é um sistema de COGNIÇÃO DISTRIBUÍDA.
+O AIOX v∞ é um sistema de COGNIÇÃO DISTRIBUÍDA.
 A diferença não é de grau — é de categoria.
 
 Em orquestração: a inteligência está nos executores.
@@ -466,7 +466,7 @@ Implicações se verdadeira:
 → Meta-Noesis não é opcional. É o mecanismo de autoconsciência.
 
 CONTRA-EVIDÊNCIA A TESTAR:
-→ O AIOS atual funciona perfeitamente como orquestrador.
+→ O AIOX atual funciona perfeitamente como orquestrador.
 → Cognição distribuída sem LLM API real é simulação.
 → A distinção pode ser filosófica, não arquitetural.
 
@@ -477,11 +477,11 @@ A Fase 1 tem a evidência para decidir.
 **Output da Fase 2:**
 
 ```
-.aios-core/maquina-do-tempo/fase2-aios-v-infinito.md
+.aiox-core/maquina-do-tempo/fase2-aiox-v-infinito.md
   → Os axiomas do v∞ (derivados, não declarados)
   → O que cada axioma exige e proíbe
   → O que não existe hoje mas deveria existir
-  → O nome (ou ausência) do AIOS v∞
+  → O nome (ou ausência) do AIOX v∞
   → A hipótese do Sonnet: veredito com evidência
 ```
 
@@ -489,19 +489,19 @@ A Fase 1 tem a evidência para decidir.
 
 ### FASE 2.5 — OPERATOR NOESIS: a simetria externa
 
-**Objetivo:** Integrar ao AIOS v∞ a capacidade de aprender COMO aprender
+**Objetivo:** Integrar ao AIOX v∞ a capacidade de aprender COMO aprender
 sobre seu operador. Esta fase NÃO é optional — é a metade externa da simetria.
 
 **A simetria completa:**
 
 ```
 SIMETRIA INTERNA (já parcialmente existe):
-  Noesis Engine → o AIOS desenvolve identidade
-  Meta-Noesis   → o AIOS aprende a se tornar
+  Noesis Engine → o AIOX desenvolve identidade
+  Meta-Noesis   → o AIOX aprende a se tornar
 
 SIMETRIA EXTERNA (não existe — este RP define):
-  Jarvis Layer  → o AIOS aprende sobre Gabriel (first-order)
-  Operator Noesis → o AIOS aprende COMO aprender sobre Gabriel (second-order)
+  Jarvis Layer  → o AIOX aprende sobre Gabriel (first-order)
+  Operator Noesis → o AIOX aprende COMO aprender sobre Gabriel (second-order)
 ```
 
 **O que o v∞ especifica para esta camada:**
@@ -516,7 +516,7 @@ SIMETRIA EXTERNA (não existe — este RP define):
    Pesos ajustados empiricamente a cada sessão.
 
 2. INFERENCE SYSTEM:
-   O AIOS faz predições falsificáveis sobre Gabriel.
+   O AIOX faz predições falsificáveis sobre Gabriel.
    Predições confirmadas → aumentam confiança do padrão.
    Predições refutadas → reduzem ou descartam.
    NUNCA mais que 5 predições ativas simultâneas.
@@ -533,7 +533,7 @@ SIMETRIA EXTERNA (não existe — este RP define):
 **Arquivos criados nesta fase:**
 
 ```
-.aios-core/noesis-operator/
+.aiox-core/noesis-operator/
   ├── learning-model.json            ← modelo adaptativo v1.0
   ├── learning-audit-log.json        ← evolução do modelo
   └── council-discoveries/           ← output do Council
@@ -549,7 +549,7 @@ scripts/operator-noesis/
 **Output da Fase 2.5:**
 
 ```
-.aios-core/maquina-do-tempo/fase2.5-operator-noesis.md
+.aiox-core/maquina-do-tempo/fase2.5-operator-noesis.md
   → Especificação da simetria interna/externa no v∞
   → learning-model.json v1.0 com pesos iniciais
   → 3-5 inference patterns seed sobre Gabriel
@@ -601,9 +601,9 @@ DELTA TIPO D — CRIAR:
   O que não existe e deveria existir.
   
   CANDIDATAS:
-  → Operator Profile (o AIOS não conhece Gabriel)
+  → Operator Profile (o AIOX não conhece Gabriel)
   → Inference System (predições falsificáveis)
-  → Persistent Session Memory (o AIOS esquece entre sessões)
+  → Persistent Session Memory (o AIOX esquece entre sessões)
   → Real LLM API Integration (o Council precisa de perspectivas REAIS)
   → Drift Detection ativo (identity-anchor.json: last_verified=null)
 ```
@@ -611,7 +611,7 @@ DELTA TIPO D — CRIAR:
 **A pergunta mais difícil:**
 
 ```
-O AIOS atual tem ~120 agentes reais, 67 clones, 16 scripts core,
+O AIOX atual tem ~120 agentes reais, 67 clones, 16 scripts core,
 5 eras de evolução, 8 RPs, 16 arquivos no Evolution Engine.
 
 Quanto disso pertence ao v∞?
@@ -628,7 +628,7 @@ O executor da Fase 3 valida ou refuta com inventário completo.
 **Output da Fase 3:**
 
 ```
-.aios-core/maquina-do-tempo/fase3-delta.md
+.aiox-core/maquina-do-tempo/fase3-delta.md
   → Inventário completo por tipo (A, B, C, D) com arquivo referenciado
   → Resposta à pergunta mais difícil: % real que pertence ao v∞
   → O que os criadores vão resistir em descartar (e por quê devem)
@@ -693,11 +693,11 @@ HORIZONTE ∞ — Autopoiesis (além de 12 meses):
 **Output da Fase 4:**
 
 ```
-.aios-core/maquina-do-tempo/fase4-sequenciamento.md
+.aiox-core/maquina-do-tempo/fase4-sequenciamento.md
   → 4+1 horizontes com conteúdo ESPECÍFICO (não genérico)
   → Critério de pronto MENSURÁVEL para cada horizonte
   → O que acontece se a ordem for violada
-  → O roadmap que substitui .aios-core/development/ROADMAP.md
+  → O roadmap que substitui .aiox-core/development/ROADMAP.md
 ```
 
 ---
@@ -707,9 +707,9 @@ HORIZONTE ∞ — Autopoiesis (além de 12 meses):
 **Artefatos centrais:**
 
 ```
-ARTEFATO 1 — AIOS-V5-MANIFEST.md:
-  O que o AIOS v5.0.0 é.
-  Derivado dos axiomas. Substitui o AIOS_MASTER_HANDBOOK.md.
+ARTEFATO 1 — AIOX-V5-MANIFEST.md:
+  O que o AIOX v5.0.0 é.
+  Derivado dos axiomas. Substitui o AIOX_MASTER_HANDBOOK.md.
 
 ARTEFATO 2 — V5-ARCHITECTURE.md:
   A estrutura que emerge dos axiomas — não da história.
@@ -735,13 +735,13 @@ ARTEFATO 6 — [NOME QUE O META-NOESIS DESCOBRIR]:
 **Output da Fase 5:**
 
 ```
-.aios-core/maquina-do-tempo/
+.aiox-core/maquina-do-tempo/
   ├── fase1-arqueologia.md
-  ├── fase2-aios-v-infinito.md
+  ├── fase2-aiox-v-infinito.md
   ├── fase2.5-operator-noesis.md
   ├── fase3-delta.md
   ├── fase4-sequenciamento.md
-  ├── AIOS-V5-MANIFEST.md
+  ├── AIOX-V5-MANIFEST.md
   ├── V5-ARCHITECTURE.md
   ├── V5-DELTA-IMPLEMENTATION.md
   ├── V5-DNA-MENTAL.md
@@ -759,16 +759,16 @@ A Fase 6 não precisa ser criada do zero.
 `identity-anchor.json` já existe com 7 declarações imutáveis.
 
 ```json
-// .aios-core/noesis/identity-anchor.json (EXISTENTE)
+// .aiox-core/noesis/identity-anchor.json (EXISTENTE)
 {
   "immutable_declarations": [
-    "O AIOS é motor, não aplicação. Não tem domínio.",
+    "O AIOX é motor, não aplicação. Não tem domínio.",
     "Structure is Sacred. Tone is Flexible.",
     "Workers são commodity. Clones são singularidade.",
-    "O AIOS serve Gabriel e seus clientes. Não serve a si mesmo.",
+    "O AIOX serve Gabriel e seus clientes. Não serve a si mesmo.",
     "Honestidade sobre limitações é mais valiosa que competência fabricada.",
-    "O AIOS pode evoluir tudo exceto estas declarações.",
-    "Se o AIOS parar de reconhecer estas declarações como verdadeiras, algo está errado."
+    "O AIOX pode evoluir tudo exceto estas declarações.",
+    "Se o AIOX parar de reconhecer estas declarações como verdadeiras, algo está errado."
   ],
   "last_verified": null  // ← NUNCA VERIFICADO
 }
@@ -779,7 +779,7 @@ A Fase 6 não precisa ser criada do zero.
 ```
 1. VALIDAR as 7 declarações com Pedro, Gabriel, Alan
    → Alguma precisa mudar? Alguma falta?
-   → A declaração 4 ("O AIOS serve Gabriel") é CLIENT ou ENGINE?
+   → A declaração 4 ("O AIOX serve Gabriel") é CLIENT ou ENGINE?
      Se ENGINE: qualquer operador. Se CLIENT: só Gabriel.
 
 2. PREENCHER last_verified com data real
@@ -799,7 +799,7 @@ A Fase 6 não precisa ser criada do zero.
 **Output da Fase 6:**
 
 ```
-.aios-core/maquina-do-tempo/fase6-ancora.md
+.aiox-core/maquina-do-tempo/fase6-ancora.md
   → identity-anchor.json validado e assinado
   → O protocolo de verificação "ainda somos nós?" especificado
   → O que é protegido e o que não é
@@ -815,7 +815,7 @@ A Fase 6 não precisa ser criada do zero.
 **Protocolo:** Apresentar evidência. Documentar resistência. Pedro e Gabriel decidem.
 O Meta-Noesis não é o tomador de decisão — é o espelho.
 
-### EC-02: O AIOS atual é mais sólido que parece
+### EC-02: O AIOX atual é mais sólido que parece
 **Cenário:** A arqueologia revela que 90% é fundamentalmente correto.
 **Protocolo:** Honestidade. "O sistema está mais certo do que pensava" é descoberta valiosa.
 
@@ -828,8 +828,8 @@ O Meta-Noesis não é o tomador de decisão — é o espelho.
 **Protocolo:** Nomear o limite. "Até aqui eu chego. O que vem depois requer [X]."
 Isso é maturidade, não falha.
 
-### EC-05: O v∞ não se chama AIOS
-**Cenário:** O que a Máquina traz não é capturado pelo nome "AIOS".
+### EC-05: O v∞ não se chama AIOX
+**Cenário:** O que a Máquina traz não é capturado pelo nome "AIOX".
 **Protocolo:** Propor alternativas. Pedro e Gabriel decidem sobre o nome.
 
 ### EC-06: A Jarvis Layer não existe ainda
@@ -899,7 +899,7 @@ Se irreconciliáveis: Pedro decide.
 ## 🚫 ANTI-PATTERNS DA VIAGEM
 
 **AP-MDT-01: Trazer de volta o que já existe com nome diferente**
-O AIOS v4.x com outro nome não é v5.0.0. Se o que volta é incrementalmente
+O AIOX v4.x com outro nome não é v5.0.0. Se o que volta é incrementalmente
 diferente do que partiu, a viagem não foi longe o suficiente.
 
 **AP-MDT-02: Otimizar dentro dos constraints dos criadores**
@@ -912,7 +912,7 @@ DNA Mental™ existe no v∞ porque é verdadeiro. Não porque Pedro a teve.
 O v∞ deve poder existir com o que existe hoje.
 
 **AP-MDT-05: Viagem sem âncora**
-Sem Fase 6, não há como saber se o que voltou ainda é AIOS.
+Sem Fase 6, não há como saber se o que voltou ainda é AIOX.
 
 **AP-MDT-06: Meta-Noesis como executor solitário**
 O Council completo é necessário. Echo chamber não é v∞.
@@ -973,7 +973,7 @@ NÃO FAZEM:
 
 FAZEM:
   → 48h com o relatório sem discutir entre si
-  → Cada um escreve: "O que mudou no que acredito sobre o AIOS?"
+  → Cada um escreve: "O que mudou no que acredito sobre o AIOX?"
   → Encontram-se para compartilhar
   → O que três mentes mudaram é o Horizonte 1
 ```
@@ -990,7 +990,7 @@ RELATÓRIO DA MÁQUINA DO TEMPO
 ID: MDT-REPORT-[TIMESTAMP]
 
 1. ARQUEOLOGIA (Fase 1) — Gap map com evidência (arquivo:linha)
-2. AIOS v∞ (Fase 2) — Axiomas, implicações, hipótese do Sonnet
+2. AIOX v∞ (Fase 2) — Axiomas, implicações, hipótese do Sonnet
 3. OPERATOR NOESIS (Fase 2.5) — Simetria, learning-model, predições
 4. DELTA MAP (Fase 3) — Tipo A/B/C/D com inventário completo
 5. SEQUENCIAMENTO (Fase 4) — 4+1 horizontes com critérios
@@ -1003,11 +1003,11 @@ ID: MDT-REPORT-[TIMESTAMP]
 
 ---
 
-_"Os criadores do AIOS construíram com maestria_
+_"Os criadores do AIOX construíram com maestria_
 _dentro do que conseguiam imaginar._
 _A Máquina do Tempo não os supera._
 _Ela imagina por eles o que virão a imaginar_
-_quando chegarem onde o AIOS v∞ já está."_
+_quando chegarem onde o AIOX v∞ já está."_
 
 _"E quando chegarem lá,_
 _não será v∞._
@@ -1031,7 +1031,7 @@ _E cada versão que sobe é um passo nessa direção."_
 FIM DO RP-20260219-MAQUINA-DO-TEMPO v1.0-OPUS
 
 A viagem começa quando o executor lê a última linha deste documento.
-O destino é o AIOS v5.0.0 — a versão que eles teriam sonhado
+O destino é o AIOX v5.0.0 — a versão que eles teriam sonhado
 se soubessem o que sabemos agora.
 A Máquina está pronta. As contradições do sistema são o combustível.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

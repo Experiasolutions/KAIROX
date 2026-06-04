@@ -1,8 +1,8 @@
 # KAIROS — SELF CONTEXT (Consciência Viva)
 
-> **Última atualização:** 2026-04-29T12:42:00-03:00
-> **Atualizado por:** NOESIS (Engine Triage v4 — MVP AI OPS Sprint)
-> **Estado:** 🚀 MVP AI OPS EM ANDAMENTO. Estratégia: AI OPS solopreneur para validação de mão de obra. Novos cases: Leticia (esteticista) + Paulo (tapeceiro) — apresentação hoje. Triage Engine v4 embedded no core (sem /triage externo).
+> **Última atualização:** 2026-05-24T15:30:00-03:00
+> **Atualizado por:** NOESIS (KAIROS) · Hat: @devops (Deploy N8N HEAD 1)
+> **Estado:** 🚀 N8N DEPLOYED (HEAD 1). URL: https://n8n-production-e77a.up.railway.app conectada ao Postgres. Próximo: Deploy Evolution API (HEAD 4).
 > **Base Unificada:** PC PRINCIPAL (My KAIROS como workspace canônico)
 > **Protocolo:** Task-First + Engine Triage v4 EMBEDDED (10 Fases) + Hat-Switching + Full-Ecosystem
 
@@ -19,7 +19,7 @@
 - **Base Notebook (devolvido):** `C:\Users\maymo\OneDrive\Documentos\MY KAIROS`
 - **IDE Principal:** Claude Code CLI (Antigravity = complemento)
 - **Core Engine:** AIOX v5.0.0 (fork SynkraAI/aiox-core)
-- **GitHub Principal:** [aios-core](https://github.com/Experiasolutions/aios-core)
+- **GitHub Principal:** [aiox-core](https://github.com/Experiasolutions/aiox-core)
 - **GitHub Clientes:** [experiaghostwarrior](https://github.com/Experiaghostwarrior) (bots Railway)
 
 ## Estado do Sistema
@@ -31,7 +31,7 @@
 - **Task-First Protocol:** ✅ Internalizado em KAIROS.md + aiox-master.md + /context + /boot
 
 ### MCP Server v5.0.0-hivemind — ✅ OPERACIONAL
-- **28 tools** (10 AIOS + 13 KAIROS + 5 Hivemind) — key: `aiox-kairos`
+- **28 tools** (10 AIOX + 13 KAIROS + 5 Hivemind) — key: `aiox-kairos`
 - **Self-test:** 28/28 passaram
 - **Arquivo:** `scripts/mcp-server.js`
 - **Antigravity config:** `~/.gemini/antigravity/mcp_config.json`
@@ -45,7 +45,7 @@
 - **Token Routing:** Complexidade 1-2 → Groq | 3-4 → Gemini | 5 → Opus
 
 ### KAIROS ORCHESTRATOR / HYDRA — 4 HEADS (Cross-Sessão)
-- **HEAD 1: N8N + POSTGRES** — Workflow automation, state mgmt (Deploy pendente VPS)
+- **HEAD 1: N8N + POSTGRES** — Workflow automation, state mgmt (✅ Ativo no Railway)
 - **HEAD 2: OPENCLAW SERVER** — Personal AI com 15 Railway Skills (Deploy pendente)
 - **HEAD 3: SKY PYTHON BACKEND** — 55+ tools, Squad runner (crewAI), Telegram bot (✅ Ativo no Railway)
 - **HEAD 4: EVOLUTION API** — WhatsApp gateway (✅ Ativo, instância hortifruti-elaine: open)
@@ -57,17 +57,20 @@
 ### API Keys — ✅ Todas Configuradas
 | API                        | Status                          |
 | -------------------------- | ------------------------------- |
-| GEMINI API KEYS (5 keys)   | ✅ Pool round-robin em api-keys.yaml |
-| GROQ API KEYS (2 keys)     | ✅ Fallback em api-keys.yaml    |
-| TELEGRAM_BOT_TOKEN (SKY)   | ✅ 8636246952                    |
-| SUPABASE_URL + SERVICE_KEY | ✅                              |
-| EVOLUTION_GLOBAL_APIKEY    | ✅ 34e7614b...                  |
+| RAILWAY_TOKEN | ✅ b1b1cf54... (Account Token — 24/05/2026) |
+| RAILWAY_PROJECT_ID | ✅ a1f1f21c (selfless-education) |
+| RAILWAY_ENVIRONMENT_ID | ✅ 50f5ff64 (production) |
+| GEMINI API KEYS (5 keys) | ✅ Pool round-robin em api-keys.yaml |
+| GROQ API KEYS (2 keys) | ✅ Fallback em api-keys.yaml |
+| TELEGRAM_BOT_TOKEN (SKY) | ✅ 8636246952 |
+| SUPABASE_URL + SERVICE_KEY | ✅ |
+| EVOLUTION_GLOBAL_APIKEY | ✅ 34e7614b... |
 
-### AIOS → AIOX Cleanup — ✅ COMPLETO (25/03)
-- `.aios-core/` → `.aios-core-deprecated/` (conteúdo exclusivo migrado)
-- MCP config key: `aios-kairos` → `aiox-kairos`
+### AIOX → AIOX Cleanup — ✅ COMPLETO (25/03)
+- `.aiox-core/` → `.aiox-core-deprecated/` (conteúdo exclusivo migrado)
+- MCP config key: `aiox-kairos` → `aiox-kairos`
 - Squads corrigidos: agents movidos para `agents/` subdir
-- Zero referências residuais a `.aios-core`
+- Zero referências residuais a `.aiox-core`
 
 ### KAIROX / OpenClaude Engine — ✅ ATIVADO
 - Motor Soberano ativado via feature-flag no build do OpenClaude local.
@@ -108,9 +111,9 @@
 | Cliente               | Status                               | Próximo                                         |
 | --------------------- | ------------------------------------ | ----------------------------------------------- |
 | Leticia (esteticista) | 🔴 NOVO — Apresentação HOJE          | Case MVP: agendamento, reativação, lembretes    |
-| Paulo (tapeceiro)     | 🔴 NOVO — Apresentação HOJE          | Case MVP: triagem pedidos, status serviço, WA   |
+| Paulo (tapeceiro)     | 🟡 Migração Infra (Railway)          | Isolar em repo `commercial-ai-bots` e deployar  |
 | Hortifruti (Elaine)   | 🟢 Bot Trial Ativo                   | Calibrar persona, Morning Report                |
-| Porto Alemão          | 🟡 Mapeado (Bot Inativo)             | Reconectar QR Code                              |
+| Porto Alemão          | ⚪ Em Espera (Cliente Ocupado)       | Retomar setup na próxima semana                 |
 | Felix Cell            | 🟡 Mapeado (Trial 15 dias aprovado)  | Setup Onboarding, Bot Clone & IG Posts          |
 | Master Pumps          | 🟡 Pipeline                          | Trojan Horse via RH                             |
 | Experia (próprio)     | ⏸️ POSTERGADA (agência)              | Reabrir após ter autoridade via cases           |
@@ -144,7 +147,7 @@
 2. **Infraestrutura P2P & Backend:** Sincronização hard-sync via Syncthing unindo memórias PC/Notebook. Implementação de Supabase para engine do Morning Brief / Night Check-in e centralização MCP.
 3. **Hardware Recovery:** Resolução de quebras de driver WiFi (5G drop off) e otimização de gargalos de memória/espaço no PC.
 4. **Deploy Environment:** Restauração do KAIROS na nova máquina. Transição concluída para o modelo Sovereign Engine (OpenClaude + God Pool).
-5. **AIOX Migration & AIOS Restructure:** Migração do framework original completa. Codebase separado perfeitamente entre core engines e Experia-clients na matriz.
+5. **AIOX Migration & AIOX Restructure:** Migração do framework original completa. Codebase separado perfeitamente entre core engines e Experia-clients na matriz.
 
 ## Problemas Abertos
 

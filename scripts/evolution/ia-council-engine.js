@@ -227,7 +227,7 @@ function evaluateNg(systemState) {
     // Skip scripts that have @purpose — they are documented standalone tools, not dead code
     const standaloneExclusions = ['mcp-server', 'kairos-boot', 'dump-council', 'distill-trace',
         'night-shift-scheduler', 'night-shift-automator', 'jarvis-core', 'keep-alive',
-        'squad-router', 'semantic-lint', 'profile-enricher', 'harvest-gold', 'aios-kairos-bridge',
+        'squad-router', 'semantic-lint', 'profile-enricher', 'harvest-gold', 'aiox-kairos-bridge',
         'code-intel-health-check', 'activate-kernel', 'activate-registry', 'ensure-manifest',
         'validate-manifest', 'validate-aiox-core-deps', 'validate-package-completeness',
         'audit-squad-agents', 'input-refiner', 'skill-mapper', 'rag-engine', 'jan-connector',
@@ -485,7 +485,7 @@ function evaluatePedro(systemState) {
     }
 
     // Check 2: Structure is Sacred compliance
-    // .aiox-core is the KAIROS-specific equivalent of .aios-core/ (migrated in v3.1)
+    // .aiox-core is the KAIROS-specific equivalent of .aiox-core/ (migrated in v3.1)
     const requiredDirs = ['scripts', 'squads', 'docs', 'reasoning-packages'];
     const alternativeDirs = { '.aiox-core': 'engine' };
     for (const dir of requiredDirs) {
@@ -496,21 +496,21 @@ function evaluatePedro(systemState) {
                 description: `Required directory "${dir}" not found in project structure`,
                 severity: 7,
                 evidence: 'No files found with this prefix',
-                impact30d: 'Breaks the "Structure is Sacred" principle from AIOS philosophy',
+                impact30d: 'Breaks the "Structure is Sacred" principle from AIOX philosophy',
             });
             score -= 1;
         }
     }
     // Check .aiox-core OR engine/ (both are valid)
-    const hasAiosCore = (systemState.files || []).some(f => f.path.startsWith('.aiox-core/'));
+    const hasAioxCore = (systemState.files || []).some(f => f.path.startsWith('.aiox-core/'));
     const hasEngine = (systemState.files || []).some(f => f.path.startsWith('engine/'));
-    if (!hasAiosCore && !hasEngine) {
+    if (!hasAioxCore && !hasEngine) {
         gaps.push({
             id: 'PED-STRUCT-engine',
             description: 'Neither ".aiox-core" nor "engine/" directory found in project structure',
             severity: 7,
             evidence: 'No files found with either prefix',
-            impact30d: 'Breaks the "Structure is Sacred" principle from AIOS philosophy',
+            impact30d: 'Breaks the "Structure is Sacred" principle from AIOX philosophy',
         });
         score -= 1;
     }
@@ -554,7 +554,7 @@ function evaluateAlan(systemState) {
     if (clientFiles.length === 0) {
         gaps.push({
             id: 'ALN-CLIENTS-EMPTY',
-            description: 'No client packages found — AIOS has no real-world deployment',
+            description: 'No client packages found — AIOX has no real-world deployment',
             severity: 6,
             evidence: 'clients/ directory empty or missing',
             impact30d: 'Engine exists in theory but generates zero revenue',
@@ -574,7 +574,7 @@ function evaluateAlan(systemState) {
             description: 'No integration scripts found (bridges, clients, connectors)',
             severity: 5,
             evidence: 'No files matching bridge/client/connector pattern in scripts/',
-            impact30d: 'AIOS cannot connect to external systems; remains isolated',
+            impact30d: 'AIOX cannot connect to external systems; remains isolated',
         });
         score -= 0.8;
     }
@@ -584,7 +584,7 @@ function evaluateAlan(systemState) {
 
 /**
  * @purpose Chair 8 — Distillation Engineer (Hinton + Sutskever collaboration):
- *          Evaluates whether AIOS outputs are being structured for future
+ *          Evaluates whether AIOX outputs are being structured for future
  *          fine-tuning of a 3B-7B parameter local model.
  *          Runs after Phase 5 (verification), before cycle close.
  *          4 responsibilities: trace structuring, dataset curation,
@@ -982,7 +982,7 @@ function evaluateProposal(member, proposal, systemState) {
             if (proposal.targetFile && CONFIG.isForbidden(proposal.targetFile)) {
                 return { memberId: member.id, vote: 'REJECT', justification: `FORBIDDEN: ${proposal.targetFile} is in the protected list.` };
             }
-            return { memberId: member.id, vote: 'APPLY', justification: 'Aligned with original AIOS vision.' };
+            return { memberId: member.id, vote: 'APPLY', justification: 'Aligned with original AIOX vision.' };
 
         case 'alan':
             // Alan checks product applicability
@@ -1336,9 +1336,9 @@ if (require.main === module && process.argv.includes('--test')) {
     const mockState = {
         files: [
             { path: 'scripts/kernel-bridge.js', content: '/** @purpose Bridge */\ntry { require("./event-bus"); } catch(e) {}' },
-            { path: 'scripts/event-bus.js', content: '/** @purpose Event Bus */\nclass AIOSEventBus {}' },
-            { path: '.aios-core/opus-replicator/constitutional-layer-v3.md', content: 'RULE 1: DEPTH\nRULE 2: EVIDENCE\nRULE 3: SYNTHESIS\nRULE 4: MODULARITY\nRULE 5: EVOLUTION\nP1: EXAMPLE\nP2: AGENTIC\nP3: INTERMEDIATE\nP4: SIGNAL\nP5: ALIGNMENT' },
-            { path: 'README.md', content: '# AIOS\n'.repeat(50) },
+            { path: 'scripts/event-bus.js', content: '/** @purpose Event Bus */\nclass AIOXEventBus {}' },
+            { path: '.aiox-core/opus-replicator/constitutional-layer-v3.md', content: 'RULE 1: DEPTH\nRULE 2: EVIDENCE\nRULE 3: SYNTHESIS\nRULE 4: MODULARITY\nRULE 5: EVOLUTION\nP1: EXAMPLE\nP2: AGENTIC\nP3: INTERMEDIATE\nP4: SIGNAL\nP5: ALIGNMENT' },
+            { path: 'README.md', content: '# AIOX\n'.repeat(50) },
             { path: 'clients/experia/README.md', content: '# Experia' },
             { path: 'reasoning-packages/INDEX.md', content: '# Index' },
         ],

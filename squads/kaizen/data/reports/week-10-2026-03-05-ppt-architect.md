@@ -252,7 +252,7 @@ Phase 1 (20%) → Phase 2 (15%) → Phase 3 (30%) → Phase 4 (30%) → Phase 5 
 |---|--------|--------|--------|-------------|-----|
 | 1 | **Expandir KBs industria (09-15)** de stubs para 150+ linhas com slide patterns | 9/10 | Medium | N=4 (capability-mapper, topology, radar, task analysis) | Alto — habilita decks especificos por setor |
 | 2 | **Adicionar objection_algorithms ao ppt-chief** para error handling robusto | 8/10 | Low | N=3 (capability-mapper, topology, bottleneck) | Alto — previne falhas em cascata |
-| 3 | **Expandir nancy-duarte e edward-tufte** para >= 300 linhas com output_examples adicionais | 7/10 | Low | N=3 (capability-mapper, fitness functions, AIOS standard) | Medio — compliance com AIOS standard |
+| 3 | **Expandir nancy-duarte e edward-tufte** para >= 300 linhas com output_examples adicionais | 7/10 | Low | N=3 (capability-mapper, fitness functions, AIOX standard) | Medio — compliance com AIOX standard |
 | 4 | **Explicitar Phase 3 como paralela** no workflow e config | 6/10 | Very Low | N=3 (topology, bottleneck, pipeline analysis) | Medio — remove ambiguidade |
 | 5 | **Integrar design system com tokens.json** externo como source-of-truth | 6/10 | Low | N=3 (capability-mapper, radar, design tokens rule) | Medio — single source of truth |
 

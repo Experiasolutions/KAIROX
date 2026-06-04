@@ -20,7 +20,7 @@
 - **Alignment:** Eliezer Yudkowsky (MIRI)
 
 ## The Problem
-**User:** "Keep developing AIOS with Opus quality, without Opus limitations."
+**User:** "Keep developing AIOX with Opus quality, without Opus limitations."
 **Sutskever:** "Prediction is compression. If Gemini can't predict Opus's next token, it doesn't *understand* Opus's reasoning. We need to compress Opus's world model into Gemini's context."
 **Hassabis:** "Don't just prompt. Build a *simulation* of Opus. Use a 'World Model' approach where Gemini simulates Opus's thinking steps before acting."
 **Russell-Norvig:** "Define the agent. PEAS (Performance, Environment, Actuators, Sensors). If the Performance Measure is 'Opus Parity', the Agent must have the architecture to achieve it."
@@ -37,7 +37,7 @@ We are shifting from **Prompt Engineering** to **Cognitive Distillation** (Hinto
 1.  **Theory:** Sutskever's "Compression = Understanding."
 2.  **Action:** Use Opus 4.6 *solely* to generate high-density "Golden Examples" (compressed reasoning traces).
 3.  **Mechanism:**
-    - Store examples in `.aios-core/memory/golden-examples/`.
+    - Store examples in `.aiox-core/memory/golden-examples/`.
     - Inject 3 examples into Gemini context.
     - Gemini performs *In-Context Learning* (the poor man's fine-tuning).
     > *Karpathy:* "Don't write rules. Feed data. The examples ARE the software."

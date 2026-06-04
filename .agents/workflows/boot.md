@@ -49,9 +49,25 @@ node scripts/kairos-boot.js --status
 | 3    | 🏛️ Intelligence  | Roda IA Council (8 cadeiras) — score + gaps     |
 | 4    | 🪞 Reflexion     | Metacognição — tendências e anti-patterns       |
 | 5    | 📡 Signal        | Sumário + boot log salvo                        |
+| 5.5  | 👓 MindClone     | Carrega RP-ALAN-NICOLAS-MINDCLONE-v3.1 como mentor ativo da sessão |
+
+## MindClone Alan — Integrado ao Boot (v3.1)
+
+A fase 5.5 internaliza o workflow `/alan` diretamente no boot. A partir desta versão:
+
+- O **clone mental do Alan Nicolas** é carregado automaticamente como mentor disponível em toda sessão
+- Não é necessário invocar `/alan` separadamente — ele já está ativo após o `/boot`
+- O RP completo (`RP-ALAN-NICOLAS-MINDCLONE-v3.1.md`) é o contexto do clone
+- Para acionar o modo mentor explicitamente: use `*diagnose`, `*pareto`, `*workflow` como comandos de sessão
+
+**Localização do RP:**
+```
+C:\Users\GABS\Documents\My KAIROS\reasoning-packages\strategic\alan-nicolas-mindclone\RP-ALAN-NICOLAS-MINDCLONE-v3.0.md
+```
 
 ## Quando usar
 
 - **Início de cada sessão de trabalho** → `/boot` (full)
 - **Sessões curtas / rápidas** → `node scripts/kairos-boot.js --quick`
 - **Verificar saúde do sistema** → `node scripts/kairos-boot.js --status`
+- **Mentoria com Alan** → `/boot` → clone já disponível, use `*diagnose` para iniciar

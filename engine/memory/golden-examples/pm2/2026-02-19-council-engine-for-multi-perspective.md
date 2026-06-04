@@ -438,7 +438,7 @@ function evaluatePedro(systemState) {
     }
 
     // Check 2: Structure is Sacred compliance
-    const requiredDirs = ['scripts', 'squads', 'docs', 'reasoning-packages', '.aios-core'];
+    const requiredDirs = ['scripts', 'squads', 'docs', 'reasoning-packages', '.aiox-core'];
     for (const dir of requiredDirs) {
         const hasDir = (systemState.files || []).some(f => f.path.startsWith(dir + '/'));
         if (!hasDir) {
@@ -447,7 +447,7 @@ function evaluatePedro(systemState) {
                 description: `Required directory "${dir}" not found in project structure`,
                 severity: 7,
                 evidence: 'No files found with this prefix',
-                impact30d: 'Breaks the "Structure is Sacred" principle from AIOS philosophy',
+                impact30d: 'Breaks the "Structure is Sacred" principle from AIOX philosophy',
             });
             score -= 1;
         }
@@ -492,7 +492,7 @@ function evaluateAlan(systemState) {
     if (clientFiles.length === 0) {
         gaps.push({
             id: 'ALN-CLIENTS-EMPTY',
-            description: 'No client packages found — AIOS has no real-world deployment',
+            description: 'No client packages found — AIOX has no real-world deployment',
             severity: 6,
             evidence: 'clients/ directory empty or missing',
             impact30d: 'Engine exists in theory but generates zero revenue',
@@ -512,7 +512,7 @@ function evaluateAlan(systemState) {
             description: 'No integration scripts found (bridges, clients, connectors)',
             severity: 5,
             evidence: 'No files matching bridge/client/connector pattern in scripts/',
-            impact30d: 'AIOS cannot connect to external systems; remains isolated',
+            impact30d: 'AIOX cannot connect to external systems; remains isolated',
         });
         score -= 0.8;
     }
@@ -522,7 +522,7 @@ function evaluateAlan(systemState) {
 
 /**
  * @purpose Chair 8 — Distillation Engineer (Hinton + Sutskever collaboration):
- *          Evaluates whether AIOS outputs are being structured for future
+ *          Evaluates whether AIOX outputs are being structured for future
  *          fine-tuning of a 3B-7B parameter local model.
  *          Runs after Phase 5 (verification), before cycle close.
  *          4 responsibilities: trace structuring, dataset curation,
@@ -555,7 +555,7 @@ function evaluateDistillation(systemState, cycleContext = {}) {
             id: 'DST-TRACES-MISSING',
             description: 'Distillation traces directory not found — reasoning traces not being captured',
             severity: 7,
-            evidence: '.aios-core/memory/distillation-dataset/traces/ not found',
+            evidence: '.aiox-core/memory/distillation-dataset/traces/ not found',
             impact30d: 'Every cycle produces reasoning traces that are lost forever. Zero progress toward local model independence.',
         });
         score -= 1.5;
@@ -566,7 +566,7 @@ function evaluateDistillation(systemState, cycleContext = {}) {
             id: 'DST-CURATED-MISSING',
             description: 'Curated dataset directory not found — high-quality examples not being collected',
             severity: 6,
-            evidence: '.aios-core/memory/distillation-dataset/curated/ not found',
+            evidence: '.aiox-core/memory/distillation-dataset/curated/ not found',
             impact30d: 'Golden examples exist but are not structured for fine-tuning. Model training impossible.',
         });
         score -= 1;
@@ -665,7 +665,7 @@ function evaluateDistillation(systemState, cycleContext = {}) {
             id: 'DST-ROADMAP-MISSING',
             description: 'Independence roadmap not found — no progress tracking toward local model',
             severity: 5,
-            evidence: '.aios-core/memory/distillation-dataset/roadmap.json not found',
+            evidence: '.aiox-core/memory/distillation-dataset/roadmap.json not found',
             impact30d: 'No visibility into how close system is to model independence',
         });
         score -= 0.8;
@@ -871,7 +871,7 @@ function evaluateProposal(member, proposal, systemState) {
             if (proposal.targetFile && CONFIG.isForbidden(proposal.targetFile)) {
                 return { memberId: member.id, vote: 'REJECT', justification: `FORBIDDEN: ${proposal.targetFile} is in the protected list.` };
             }
-            return { memberId: member.id, vote: 'APPLY', justification: 'Aligned with original AIOS vision.' };
+            return { memberId: member.id, vote: 'APPLY', justification: 'Aligned with original AIOX vision.' };
 
         case 'alan':
             // Alan checks product applicability
@@ -917,9 +917,9 @@ if (require.main === module && process.argv.includes('--test')) {
     const mockState = {
         files: [
             { path: 'scripts/kernel-bridge.js', content: '/** @purpose Bridge */\ntry { require("./event-bus"); } catch(e) {}' },
-            { path: 'scripts/event-bus.js', content: '/** @purpose Event Bus */\nclass AIOSEventBus {}' },
-            { path: '.aios-core/opus-replicator/constitutional-layer-v3.md', content: 'RULE 1: DEPTH\nRULE 2: EVIDENCE\nRULE 3: SYNTHESIS\nRULE 4: MODULARITY\nRULE 5: EVOLUTION\nP1: EXAMPLE\nP2: AGENTIC\nP3: INTERMEDIATE\nP4: SIGNAL\nP5: ALIGNMENT' },
-            { path: 'README.md', content: '# AIOS\n'.repeat(50) },
+            { path: 'scripts/event-bus.js', content: '/** @purpose Event Bus */\nclass AIOXEventBus {}' },
+            { path: '.aiox-core/opus-replicator/constitutional-layer-v3.md', content: 'RULE 1: DEPTH\nRULE 2: EVIDENCE\nRULE 3: SYNTHESIS\nRULE 4: MODULARITY\nRULE 5: EVOLUTION\nP1: EXAMPLE\nP2: AGENTIC\nP3: INTERMEDIATE\nP4: SIGNAL\nP5: ALIGNMENT' },
+            { path: 'README.md', content: '# AIOX\n'.repeat(50) },
             { path: 'clients/experia/README.md', content: '# Experia' },
             { path: 'reasoning-packages/INDEX.md', content: '# Index' },
         ],

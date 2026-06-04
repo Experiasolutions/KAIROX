@@ -19,9 +19,9 @@ const path = require('path');
 
 // ── Paths ────────────────────────────────────────────────────
 
-const AIOS_ROOT = path.join(__dirname, '..');
-const GOLDEN_PATH = path.join(AIOS_ROOT, '.aios-core', 'memory', 'golden-examples');
-const BASELINE_PATH = path.join(AIOS_ROOT, '.aios-core', 'memory', 'quality-baseline.json');
+const AIOX_ROOT = path.join(__dirname, '..');
+const GOLDEN_PATH = path.join(AIOX_ROOT, '.aiox-core', 'memory', 'golden-examples');
+const BASELINE_PATH = path.join(AIOX_ROOT, '.aiox-core', 'memory', 'quality-baseline.json');
 
 // ── Threshold ────────────────────────────────────────────────
 // WHY: Must match THRESHOLDS.EXCELLENT in self-correction.js
@@ -232,7 +232,7 @@ if (require.main === module) {
     const args = process.argv.slice(2);
 
     if (args.length === 0 || args.includes('--help')) {
-        console.log('AIOS Harvest Gold v2.0');
+        console.log('AIOX Harvest Gold v2.0');
         console.log('Usage: node scripts/harvest-gold.js --score <N> --mode <PM1|PM2|PM3> --task "<description>" [--output "<text>"] [--why "<reason>"]');
         console.log('');
         console.log(`Threshold: score >= ${HARVEST_THRESHOLD}`);

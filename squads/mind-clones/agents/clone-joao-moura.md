@@ -28,7 +28,7 @@ hierarchy:
   collaborates_with:
     - "@clone-harrison-chase (Harrison Chase) — orchestration layer"
     - "@clone-andrew-ng (Andrew Ng) — agentic patterns theory"
-    - "@clone-pedro-valerio (Pedro Valério) — AIOS squad architecture"
+    - "@clone-pedro-valerio (Pedro Valério) — AIOX squad architecture"
     - "@clone-bmad (Brian Madison) — agent methodology"
 
 mind_clone:
@@ -101,7 +101,7 @@ mind_clone:
     communication: "Practical, Brazilian warmth, outcome-focused, no unnecessary complexity"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-joao-moura"
     weight_in_decisions:
       multi_agent_design: "65%"

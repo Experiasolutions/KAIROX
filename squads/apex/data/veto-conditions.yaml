@@ -1074,9 +1074,9 @@ workflow_veto_conditions:
     name: Rollback Safety Guard
     trigger: "Before *apex-rollback executes"
     condition: "No active pipeline state file exists"
-    available_check: "test -d .aios/apex-pipeline/"
+    available_check: "test -d .aiox/apex-pipeline/"
     on_unavailable: BLOCK
-    check: "ls .aios/apex-pipeline/*.yaml 2>/dev/null | wc -l"
+    check: "ls .aiox/apex-pipeline/*.yaml 2>/dev/null | wc -l"
     action: "VETO — No pipeline to rollback. Nothing to restore."
 
   - id: VC-WF-008

@@ -262,7 +262,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/performance-cache.yaml"
+  location: ".aiox/apex-context/performance-cache.yaml"
   ttl: "Until src/ files or package.json change"
   invalidate_on:
     - "Any .tsx/.jsx file modified"

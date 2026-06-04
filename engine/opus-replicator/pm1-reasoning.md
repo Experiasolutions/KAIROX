@@ -66,7 +66,7 @@ B) STRUCTURAL LAYER (Patterns & Mechanisms):
    Evidence: [Cite specific data/files]
 
 C) STRATEGIC LAYER (Implications & Principles):
-   [Long-term impact, systemic trade-offs, and alignment with AIOS]
+   [Long-term impact, systemic trade-offs, and alignment with AIOX]
    Principle: [Cite core principle involved]
 ```
 
@@ -131,4 +131,4 @@ If you catch yourself:
 - ❌ Only one perspective → STOP, find opposing view
 - ❌ No premise validation → STOP, validate assumptions
 - ❌ <3 reasoning layers → STOP, go deeper
-- ❌ Generic advice → STOP, make AIOS-specific
+- ❌ Generic advice → STOP, make AIOX-specific

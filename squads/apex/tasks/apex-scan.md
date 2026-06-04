@@ -326,7 +326,7 @@ Skipped: frontend-arch, design-sys-eng, mobile-eng, cross-plat-eng, spatial-eng,
 
 ```yaml
 cache:
-  location: ".aios/apex-scan-cache.yaml"
+  location: ".aiox/apex-scan-cache.yaml"
   ttl: "current session"
   invalidate_on:
     - "package.json modified"

@@ -67,7 +67,7 @@ Novo: Regras de Ouro (eliminação sistemática de lixo)
    → AÇÃO: automatizar com KAIROS/Workers ou delegar para agentes
 
 🟢 EXCELÊNCIA (faz BEM, recebe elogios — ARMADILHA):
-   • Construir sistemas complexos (KAIROS, AIOS, OpenClaw)
+   • Construir sistemas complexos (KAIROS, AIOX, OpenClaw)
    • Resolver problemas técnicos com criatividade
    • Traduzir complexidade em clareza para não-técnicos
    • Persuasão e presença em conversas 1:1

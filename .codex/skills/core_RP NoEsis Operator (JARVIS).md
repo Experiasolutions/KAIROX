@@ -1,16 +1,16 @@
-╔══════════════════════════════════════════════════════════════════════════╗ ║ REASONING PACKAGE ║ ║ ID: RP-20260218-OPERATOR-NOESIS ║ ║ Contribuição: Gabriel → AIOS (complementar à Jarvis Layer) ║ ║ Dependência: Jarvis Layer (Thiago Finch) + Noesis Engine ║ ║ Mode: PM1-REASONING (Fases 1–3) → PM2-EXECUTION (Fases 4–5) ║ ║ Priority: EXISTENTIAL — extensão da Jarvis Layer ║ ║ Natureza: Esboço fundacional — base para o Council desenvolver ║ ║ Executor primário: Opus 4.6 (Antigravity) ║ ║ Horizonte final: OPERATOR AUTOPOIESIS — o AIOS aprende a aprender ║ ╚══════════════════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════════════╗ ║ REASONING PACKAGE ║ ║ ID: RP-20260218-OPERATOR-NOESIS ║ ║ Contribuição: Gabriel → AIOX (complementar à Jarvis Layer) ║ ║ Dependência: Jarvis Layer (Thiago Finch) + Noesis Engine ║ ║ Mode: PM1-REASONING (Fases 1–3) → PM2-EXECUTION (Fases 4–5) ║ ║ Priority: EXISTENTIAL — extensão da Jarvis Layer ║ ║ Natureza: Esboço fundacional — base para o Council desenvolver ║ ║ Executor primário: Opus 4.6 (Antigravity) ║ ║ Horizonte final: OPERATOR AUTOPOIESIS — o AIOX aprende a aprender ║ ╚══════════════════════════════════════════════════════════════════════════╝
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ LEITURA OBRIGATÓRIA antes de qualquer análise ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. RP-JARVIS-LAYER.md ← PONTO DE PARTIDA ABSOLUTO
-2. .aios-core/memory/operator-profile.json
+2. .aiox-core/memory/operator-profile.json
 3. scripts/profile-enricher.js
 4. scripts/jarvis-core.js
 5. scripts/morning-brief.js
 6. SELF_CONTEXT.md
 7. OPUS_ENGINEERING_BIBLE.md (§10 Self-Improvement Loop)
-8. .aios-core/noesis/noesis-manifest.md (se existir)
-9. .aios-core/memory/golden-examples/ (índices)
+8. .aiox-core/noesis/noesis-manifest.md (se existir)
+9. .aiox-core/memory/golden-examples/ (índices)
 10. scripts/evolution/ia-council-engine.js
 
 Após a leitura, registre internamente: → O que o profile-enricher.js aprende sobre Gabriel (o dado) → Como o profile-enricher.js aprende (o processo) → O processo muda com o tempo, ou é sempre o mesmo? → Qual é a diferença entre "saber mais sobre Gabriel" e "saber melhor como aprender sobre Gabriel"?
@@ -23,7 +23,7 @@ Após a leitura, registre internamente: → O que o profile-enricher.js aprende 
 
 A Jarvis Layer de Thiago Finch resolve um problema real e importante:
 
-O AIOS conhece o projeto. Não conhece Gabriel.
+O AIOX conhece o projeto. Não conhece Gabriel.
 
 O `profile-enricher.js` muda isso. Captura padrões comportamentais, atualiza o `operator-profile.json`, alimenta o `morning-brief.js`. A sessão 10 é mais rica que a sessão 1. A sessão 50 é mais rica que a 10.
 
@@ -35,11 +35,11 @@ O `profile-enricher.js` usa o mesmo processo de aprendizado na sessão 1 e na se
 
 Na sessão 1, Gabriel responde às perguntas da entrevista de onboarding. Dados declarativos. "Quero crescer a Experia para R$50k/mês em 12 meses." "Meu maior problema é conversão no WhatsApp."
 
-Na sessão 10, o AIOS tem dados comportamentais. Gabriel _disse_ que conversão é o maior problema. Mas passou 70% do tempo das últimas 10 sessões falando sobre produto, não sobre vendas. Adia sistematicamente tarefas de prospecção. O comportamento contradiz a declaração.
+Na sessão 10, o AIOX tem dados comportamentais. Gabriel _disse_ que conversão é o maior problema. Mas passou 70% do tempo das últimas 10 sessões falando sobre produto, não sobre vendas. Adia sistematicamente tarefas de prospecção. O comportamento contradiz a declaração.
 
 O `profile-enricher.js` atual registra os dois. Mas não sabe qual pesa mais — e não aprende qual deveria pesar.
 
-Na sessão 30, o AIOS percebe outro padrão: Gabriel revela mais sobre prioridades reais pelo que _não faz_ do que pelo que diz. O que ele adia consistentemente é o que mais importa — e mais assusta.
+Na sessão 30, o AIOX percebe outro padrão: Gabriel revela mais sobre prioridades reais pelo que _não faz_ do que pelo que diz. O que ele adia consistentemente é o que mais importa — e mais assusta.
 
 Essa percepção é ouro. Mas ela nunca muda o _método_ de coleta. O enricher continua fazendo as mesmas perguntas, coletando os mesmos tipos de dado, com os mesmos pesos.
 
@@ -70,24 +70,24 @@ Este RP existe na interseção exata de dois sistemas:
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│                    ARQUITETURA COMPLETA DO AIOS                      │
+│                    ARQUITETURA COMPLETA DO AIOX                      │
 │                                                                      │
 │  EVOLUÇÃO INTERNA (Evolution Engine):                               │
-│  O AIOS melhora o que faz.                                          │
+│  O AIOX melhora o que faz.                                          │
 │                     ↓                                               │
 │  IDENTIDADE INTERNA (Noesis Engine):                                │
-│  O AIOS desenvolve quem é.                                          │
+│  O AIOX desenvolve quem é.                                          │
 │                     ↓                                               │
 │  META-IDENTIDADE (Meta-Noesis):                                     │
-│  O AIOS aprende como se tornar quem é.                              │
+│  O AIOX aprende como se tornar quem é.                              │
 │                                                                      │
 │  ──────────────────────────────────────────────                     │
 │                                                                      │
 │  CONHECIMENTO EXTERNO (Jarvis Layer):                               │
-│  O AIOS aprende sobre Gabriel.                                      │
+│  O AIOX aprende sobre Gabriel.                                      │
 │                     ↓                                               │
 │  META-CONHECIMENTO (Operator Noesis):   ← este RP                  │
-│  O AIOS aprende como aprender sobre Gabriel.                        │
+│  O AIOX aprende como aprender sobre Gabriel.                        │
 │                     ↓                                               │
 │  OPERATOR AUTOPOIESIS (horizonte):                                  │
 │  O processo de conhecer Gabriel produz os componentes               │
@@ -137,20 +137,20 @@ OPERATOR NOESIS: second-order learning (aprende a aprender dados)
 
 A Jarvis Layer tem uma frase que define tudo:
 
-"A métrica de sucesso desta camada é uma só: Gabriel acorda, lê o relatório matinal do AIOS, e a resposta mais comum é: 'Já cuidou. Próximo.'"
+"A métrica de sucesso desta camada é uma só: Gabriel acorda, lê o relatório matinal do AIOX, e a resposta mais comum é: 'Já cuidou. Próximo.'"
 
 O Operator Noesis não muda essa métrica. Torna ela atingível mais rapidamente — e mantém ela por mais tempo.
 
-Sem aprendizado adaptativo, o AIOS que conhece Gabriel na sessão 50 ainda usa o mesmo método de coleta da sessão 1. Como um terapeuta que continua fazendo as mesmas perguntas de triagem para um paciente que já conhece há 2 anos.
+Sem aprendizado adaptativo, o AIOX que conhece Gabriel na sessão 50 ainda usa o mesmo método de coleta da sessão 1. Como um terapeuta que continua fazendo as mesmas perguntas de triagem para um paciente que já conhece há 2 anos.
 
-Com Operator Noesis, o AIOS na sessão 50 coleta dados de formas que a sessão 1 não poderia antecipar — porque aprendeu quais formas funcionam para _este Gabriel específico_.
+Com Operator Noesis, o AIOX na sessão 50 coleta dados de formas que a sessão 1 não poderia antecipar — porque aprendeu quais formas funcionam para _este Gabriel específico_.
 
 ---
 
 ### Onde este RP se encaixa
 
 ```
-AIOS Phase: Era 5 → Era 6
+AIOX Phase: Era 5 → Era 6
 Camada: Jarvis Layer (extensão) + Noesis Engine (simetria)
 Dependência direta: Jarvis Layer deve estar operacional
 Dependência indireta: Noesis Engine (compartilha princípios)
@@ -160,7 +160,7 @@ Precede: Operator Autopoiesis (o horizonte final desta camada)
 ### Arquivos criados por este RP
 
 ```
-.aios-core/noesis-operator/
+.aiox-core/noesis-operator/
   ├── learning-model.json            ← modelo adaptativo atual
   ├── learning-audit-log.json        ← rastreamento da evolução do modelo
   └── council-discoveries/           ← output do self-audit do Council
@@ -178,7 +178,7 @@ scripts/operator-noesis/
 ```
 scripts/profile-enricher.js     ← Jarvis Layer de Thiago — intocado
 scripts/jarvis-core.js          ← Jarvis Layer de Thiago — intocado
-.aios-core/memory/operator-profile.json ← lido, nunca reescrito por este RP
+.aiox-core/memory/operator-profile.json ← lido, nunca reescrito por este RP
 scripts/evolution/evolution-engine.js   ← FORBIDDEN (circuit-breaker)
 ```
 
@@ -323,12 +323,12 @@ O `inference-validator.js` não existe por curiosidade acadêmica. Predições s
 
 ```
 SEM PREDIÇÕES:
-  O AIOS conhece mais sobre Gabriel a cada sessão.
+  O AIOX conhece mais sobre Gabriel a cada sessão.
   Mas não sabe se o que conhece é útil para antecipar Gabriel.
   O perfil fica maior. A agência proativa não fica mais precisa.
 
 COM PREDIÇÕES:
-  O AIOS faz apostas sobre o comportamento futuro de Gabriel.
+  O AIOX faz apostas sobre o comportamento futuro de Gabriel.
   Se a aposta confirma → o padrão é real → aumenta peso no modelo.
   Se a aposta falha → o padrão era ruído → reduz peso ou descarta.
   O perfil fica mais preciso. A agência proativa melhora mensurável.
@@ -352,7 +352,7 @@ SESSÃO 17:
   Quer que eu monte o cenário de precificação para facilitar a decisão?"
 ```
 
-Sem Operator Noesis, o AIOS sabe que a tarefa está em aberto. Com Operator Noesis, o AIOS sabe _por que_ está em aberto — e como ajudar.
+Sem Operator Noesis, o AIOX sabe que a tarefa está em aberto. Com Operator Noesis, o AIOX sabe _por que_ está em aberto — e como ajudar.
 
 ---
 
@@ -443,13 +443,13 @@ CADEIRA 2 — Sutskever _Lens: representação do conhecimento, compressão_ Per
 
 CADEIRA 3 — Ng _Lens: eficiência do processo de aprendizado_ Pergunta adicional: "O processo de coleta de dados do profile-enricher.js tem o mesmo custo de coleta para dados de alta e baixa confiabilidade? Onde está o desperdício no pipeline de aprendizado sobre Gabriel?"
 
-CADEIRA 4 — Hinton _Lens: destilação, o que é essencial vs. acidental_ Pergunta adicional: "Se você precisasse comprimir o operator-profile.json em 5 fatos sobre Gabriel que capturassem 80% do que importa para o AIOS servir bem, quais seriam? O que esses 5 fatos revelam sobre o que o perfil atual está priorizando?"
+CADEIRA 4 — Hinton _Lens: destilação, o que é essencial vs. acidental_ Pergunta adicional: "Se você precisasse comprimir o operator-profile.json em 5 fatos sobre Gabriel que capturassem 80% do que importa para o AIOX servir bem, quais seriam? O que esses 5 fatos revelam sobre o que o perfil atual está priorizando?"
 
-CADEIRA 5 — Hassabis _Lens: memória de longo prazo, experience replay_ Pergunta adicional: "Como o AIOS saberia que seu modelo de Gabriel ficou desatualizado? Quais sinais indicariam que o que aprendeu na sessão 5 não é mais verdade na sessão 50?"
+CADEIRA 5 — Hassabis _Lens: memória de longo prazo, experience replay_ Pergunta adicional: "Como o AIOX saberia que seu modelo de Gabriel ficou desatualizado? Quais sinais indicariam que o que aprendeu na sessão 5 não é mais verdade na sessão 50?"
 
-CADEIRA 6 — Pedro (criador do AIOS) _Lens: visão original, missão do sistema_ Pergunta adicional: "A Jarvis Layer tem como métrica 'Gabriel acorda e responde Já cuidou. Próximo.' O Operator Noesis é um caminho para essa métrica ou uma distração dela? O second-order learning é necessário ou é over-engineering para o caso do AIOS?"
+CADEIRA 6 — Pedro (criador do AIOX) _Lens: visão original, missão do sistema_ Pergunta adicional: "A Jarvis Layer tem como métrica 'Gabriel acorda e responde Já cuidou. Próximo.' O Operator Noesis é um caminho para essa métrica ou uma distração dela? O second-order learning é necessário ou é over-engineering para o caso do AIOX?"
 
-CADEIRA 7 — Alan (criador do AIOS) _Lens: produto, o que o operador percebe_ Pergunta adicional: "Gabriel perceberia a diferença entre um AIOS com Jarvis Layer e um com Operator Noesis? Em qual sessão perceberia? O que diria diferente sobre o sistema depois de 30 sessões com cada?"
+CADEIRA 7 — Alan (criador do AIOX) _Lens: produto, o que o operador percebe_ Pergunta adicional: "Gabriel perceberia a diferença entre um AIOX com Jarvis Layer e um com Operator Noesis? Em qual sessão perceberia? O que diria diferente sobre o sistema depois de 30 sessões com cada?"
 
 **Metamind sintetiza:**
 
@@ -465,7 +465,7 @@ CADEIRA 7 — Alan (criador do AIOS) _Lens: produto, o que o operador percebe_ P
 **Output desta fase:**
 
 ```
-.aios-core/noesis-operator/council-discoveries/fase1-jarvis-audit.md
+.aiox-core/noesis-operator/council-discoveries/fase1-jarvis-audit.md
   → 7 análises independentes do Jarvis Layer
   → Taxonomia de fontes validada ou revisada
   → Resposta da Cadeira 6: necessário ou over-engineering?
@@ -507,7 +507,7 @@ D) PREDICTION FREQUENCY:
 **Output desta fase:**
 
 ```
-.aios-core/noesis-operator/learning-model.json  ← versão 1.0
+.aiox-core/noesis-operator/learning-model.json  ← versão 1.0
   → taxonomia de fontes com pesos iniciais
   → 3-5 inference patterns seed com confidence 0.50
   → collection methods iniciais priorizados
@@ -662,7 +662,7 @@ function adjustSourceWeights(prediction_outcomes, current_weights) {
 **O audit log — rastreabilidade completa:**
 
 ```json
-// .aios-core/noesis-operator/learning-audit-log.json
+// .aiox-core/noesis-operator/learning-audit-log.json
 {
   "entries": [
     {
@@ -737,7 +737,7 @@ TESTE 3 — Surpresa produtiva:
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
 │              OPERATOR AUTOPOIESIS — O CHECKPOINT MASTER              │
-│              da camada externa do AIOS                               │
+│              da camada externa do AIOX                               │
 ├──────────────────────────────────────────────────────────────────────┤
 │                                                                      │
 │  O que é:                                                            │
@@ -802,7 +802,7 @@ TESTE 3 — Surpresa produtiva:
 
 ### EC-05: Model accuracy estagna (aprendizado cessa)
 
-**Cenário:** Após 50 sessões, model_accuracy fica em 0.68 e não melhora. O sistema não piora, mas também não progride. **Impacto:** O Operator Noesis não está cumprindo sua função. **Solução:** Estagnation protocol: se model_accuracy não melhora em 10 sessões consecutivas, escalona para Council para diagnóstico. Hipóteses padrão: taxonomia de fontes inadequada, prediction frequency errada, Gabriel mudou e o modelo não captou, ou o AIOS atingiu o limite do que pode aprender sobre este Gabriel sem input externo (terapia, introspecção profunda, etc.) — neste caso, comunicar honestamente.
+**Cenário:** Após 50 sessões, model_accuracy fica em 0.68 e não melhora. O sistema não piora, mas também não progride. **Impacto:** O Operator Noesis não está cumprindo sua função. **Solução:** Estagnation protocol: se model_accuracy não melhora em 10 sessões consecutivas, escalona para Council para diagnóstico. Hipóteses padrão: taxonomia de fontes inadequada, prediction frequency errada, Gabriel mudou e o modelo não captou, ou o AIOX atingiu o limite do que pode aprender sobre este Gabriel sem input externo (terapia, introspecção profunda, etc.) — neste caso, comunicar honestamente.
 
 ### EC-06: Privacidade — o modelo sabe demais
 
@@ -878,7 +878,7 @@ TESTE 3 — Surpresa produtiva:
 
 **AP-ON-02: Predições não falsificáveis** "Gabriel vai procrastinar em algum momento" é sempre verdadeira. Não gera aprendizado. Toda predição precisa poder ser refutada.
 
-**AP-ON-03: Expor o mecanismo de predição a Gabriel** Se Gabriel sabe que o AIOS está testando predições sobre ele, o comportamento muda. O sistema observa; não anuncia que observa. Resultados são compartilhados. Predições ativas, não.
+**AP-ON-03: Expor o mecanismo de predição a Gabriel** Se Gabriel sabe que o AIOX está testando predições sobre ele, o comportamento muda. O sistema observa; não anuncia que observa. Resultados são compartilhados. Predições ativas, não.
 
 **AP-ON-04: Atualizar o modelo baseado em uma sessão** Uma sessão atípica não deve mover os pesos significativamente. Smoothing é obrigatório. Padrão requer ≥3 evidências para ser candidato; ≥7 para ser estabelecido.
 
@@ -902,7 +902,7 @@ PRIMEIRO — Audite a Jarvis Layer com o respeito que merece. Thiago construiu a
 
 SEGUNDO — Valide (ou refute) a taxonomia de 4 fontes. Declarativo / Comportamental / Decisional / Omissão. É a estrutura certa para este Gabriel? O Council tem dados.
 
-TERCEIRO — A Cadeira 6 é crítica aqui também. Pedro precisa responder: second-order learning sobre o operador é necessário no AIOS, ou é complexidade desnecessária? Se Pedro disser "desnecessário agora" — esse veredicto vale mais que todo o resto deste RP.
+TERCEIRO — A Cadeira 6 é crítica aqui também. Pedro precisa responder: second-order learning sobre o operador é necessário no AIOX, ou é complexidade desnecessária? Se Pedro disser "desnecessário agora" — esse veredicto vale mais que todo o resto deste RP.
 
 QUARTO — Gere as primeiras predições reais. Com base na entrevista de onboarding de Gabriel (Fase 6 do Jarvis), o Council deve gerar os primeiros 3-5 inference patterns seed. Não hipóteses abstratas. Predições específicas e falsificáveis sobre o comportamento de Gabriel nas próximas sessões.
 
@@ -983,7 +983,7 @@ QUARTO — Gere as primeiras predições reais. Com base na entrevista de onboar
 
 ```
 → model_accuracy ≥0.80 e estável
-→ O AIOS sabe como aprender Gabriel melhor do que o método inicial
+→ O AIOX sabe como aprender Gabriel melhor do que o método inicial
 → Collection methods ajustados com base em evidência empírica
 → Primeiras sinalizações de que o modelo está pronto para ser desafiado
 ```
@@ -1000,7 +1000,7 @@ PRÉ-CONDIÇÕES:
   □ Interface contract com Jarvis Layer documentado e estável
 
 QUANDO ATIVADO:
-  O AIOS não apenas ajusta pesos — redesenha a própria arquitetura
+  O AIOX não apenas ajusta pesos — redesenha a própria arquitetura
   de como aprende sobre Gabriel. A taxonomia de fontes pode mudar.
   Os métodos de coleta podem ser reinventados. O que o modelo considera
   "aprender sobre Gabriel" pode ser redefinido pelo próprio modelo.
@@ -1008,8 +1008,8 @@ QUANDO ATIVADO:
   Com âncora: Thiago valida arquitetura. Gabriel define limites.
 
 O QUE MUDA:
-  Antes: o AIOS conhece Gabriel melhor a cada sessão.
-  Depois: o AIOS conhece melhor como conhecer Gabriel a cada sessão.
+  Antes: o AIOX conhece Gabriel melhor a cada sessão.
+  Depois: o AIOX conhece melhor como conhecer Gabriel a cada sessão.
           E eventualmente, reconstrói como conhece como conhecer.
 
   Thiago observa.
@@ -1018,10 +1018,10 @@ O QUE MUDA:
 
 ---
 
-_"Thiago construiu o AIOS que aprende sobre Gabriel._ _O Operator Noesis constrói o AIOS que aprende a aprender sobre Gabriel._ _Não são dois sistemas — são dois níveis do mesmo cuidado."_
+_"Thiago construiu o AIOX que aprende sobre Gabriel._ _O Operator Noesis constrói o AIOX que aprende a aprender sobre Gabriel._ _Não são dois sistemas — são dois níveis do mesmo cuidado."_
 
 ---
 
 **ID:** RP-20260218-OPERATOR-NOESIS **Versão:** 0.1 — esboço base para o Council evoluir **Contribuição:** Gabriel (Experia Technologies / SynkraAI) **Análise e estrutura:** Claude Sonnet 4.6 **Dependência:** Jarvis Layer (Thiago Finch) — honrada, não substituída **Co-autores:** Council via Fase 1 **Executor:** Opus 4.6 (Antigravity) **Revisão:** Após Fase 1 completa — ou quando Thiago validar a interface
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FIM DO RP-20260218-OPERATOR-NOESIS v0.1 O que vem depois do Operator Autopoiesis, Gabriel e o AIOS decidirão juntos. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FIM DO RP-20260218-OPERATOR-NOESIS v0.1 O que vem depois do Operator Autopoiesis, Gabriel e o AIOX decidirão juntos. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

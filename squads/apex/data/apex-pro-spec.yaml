@@ -81,7 +81,7 @@ capabilities:
       - "FIXING → NAVIGATING_* (on: fix_complete, re-score)"
       - "NAVIGATING_* → NAVIGATING_* (on: navigate, back, overview)"
       - "Any → IDLE (on: done, exit)"
-    persistence: "State serialized to .aios/apex-context/navigator-state.json"
+    persistence: "State serialized to .aiox/apex-context/navigator-state.json"
     undo_depth: 10
 
   # ─── 3. Bayesian Scoring ────────────────────────────────────
@@ -100,7 +100,7 @@ capabilities:
       - "User always fixes a11y first → a11y weight increases"
     prior: "Base Apex Score weights as initial prior"
     update_frequency: "After each fix decision"
-    storage: ".aios/apex-context/scoring-model.json"
+    storage: ".aiox/apex-context/scoring-model.json"
     reset: "*apex-score --reset returns to base weights"
 
   # ─── 4. Preference Engine ───────────────────────────────────
@@ -127,7 +127,7 @@ capabilities:
       - category: "Communication verbosity"
         signal: "How much detail user reads before acting"
         effect: "Adjust output verbosity"
-    storage: ".aios/apex-context/user-preferences.json"
+    storage: ".aiox/apex-context/user-preferences.json"
     privacy: "All data local, never transmitted"
 
   # ─── 5. Industry Benchmarks ─────────────────────────────────

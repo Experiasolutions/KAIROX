@@ -70,7 +70,7 @@ INDEX_CONFIG = {
         "description": "Workflows de ativação de agentes",
     },
     "aiox_core": {
-        "paths": [".aios-core/", "packages/", "bin/", "tools/", "releases/"],
+        "paths": [".aiox-core/", "packages/", "bin/", "tools/", "releases/"],
         "extensions": [".md", ".json", ".js", ".ts", ".py"],
         "description": "Núcleo atualizado do KAIROS (AIOX, Opus Replicator, Codex, OpenClaw)",
     },

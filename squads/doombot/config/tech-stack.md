@@ -4,7 +4,7 @@
 
 | Category | Technology | Purpose |
 |----------|-----------|---------|
-| Runtime | AIOS v5.0.0 | Agent orchestration framework |
+| Runtime | AIOX v5.0.0 | Agent orchestration framework |
 | Language | Markdown + YAML | Agent/task/workflow definitions |
 | Validation | JSON Schema | squad.yaml manifest validation |
 | Config | YAML | Core and squad configuration |

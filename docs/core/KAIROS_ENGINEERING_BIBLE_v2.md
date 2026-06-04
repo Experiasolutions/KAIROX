@@ -12,7 +12,7 @@
 
 ## 1. THE CORE CORRECTION
 
-Bible v1 was written during Experia implementation (the first AIOS client).
+Bible v1 was written during Experia implementation (the first AIOX client).
 Consequently, engine-level sections contain domain-specific vocabulary:
 
 **Lines contaminated in v1:**
@@ -49,7 +49,7 @@ Bible v1 seeds are replaced by domain-agnostic versions already installed:
 
 **PM1 seed (Engine Architecture):**
 - v1 analyzed a WhatsApp webhook system → useful only for messaging integrations
-- v2 analyzes the AIOS engine architecture itself → useful for ANY engine-level design
+- v2 analyzes the AIOX engine architecture itself → useful for ANY engine-level design
 - v2 identifies the ENGINE/CLIENT separation as a first-class architectural principle
 - v2 maps kernel module dependencies that apply to every extension
 
@@ -60,13 +60,13 @@ Bible v1 seeds are replaced by domain-agnostic versions already installed:
   - Lazy initialization for resource efficiency
   - Singleton for memory management
   - Health aggregation for dashboard integration
-- These patterns apply to every new bridge module in AIOS
+- These patterns apply to every new bridge module in AIOX
 
 ---
 
 ## 3. CORRECTED ANTI-PATTERNS
 
-Bible v1 anti-patterns are replaced by domain-agnostic versions in `.aios-core/memory/anti-patterns.md`.
+Bible v1 anti-patterns are replaced by domain-agnostic versions in `.aiox-core/memory/anti-patterns.md`.
 
 | AP | v1 Name (contaminated) | v2 Name (corrected) |
 |:---|:---|:---|
@@ -92,11 +92,11 @@ Bible v1 described the tools conceptually. v2 documents what's actually implemen
 
 | Tool | v1 Status | v2 Status | Location |
 |:---|:---|:---|:---|
-| input-refiner.js | Basic trigger detection | **v2.0**: golden example injection, AIOS context loading, anti-pattern injection, PM master loading, event-bus emission | `scripts/input-refiner.js` |
+| input-refiner.js | Basic trigger detection | **v2.0**: golden example injection, AIOX context loading, anti-pattern injection, PM master loading, event-bus emission | `scripts/input-refiner.js` |
 | self-correction.js | Not implemented | **v1.0**: 6 automated checks, 7-dim scoring, quality-baseline update, Nakajima session signal, event-bus emission | `scripts/self-correction.js` |
 | harvest-gold.js | Conceptual | v1.0 exists | `scripts/harvest-gold.js` |
-| Constitutional Layer | v1 in opus-replicator | **v3.0** with ENGINE domain correction | `.aios-core/opus-replicator/constitutional-layer-v3.md` |
-| PM1/PM2/PM3 | Previous versions | **Masters installed** from Bible §7 | `.aios-core/opus-replicator/pm[1-3]-*.md` |
+| Constitutional Layer | v1 in opus-replicator | **v3.0** with ENGINE domain correction | `.aiox-core/opus-replicator/constitutional-layer-v3.md` |
+| PM1/PM2/PM3 | Previous versions | **Masters installed** from Bible §7 | `.aiox-core/opus-replicator/pm[1-3]-*.md` |
 
 ### Self-Correction Scores on Bootstrap Output
 
@@ -174,14 +174,14 @@ Bible v1 described 4 layers. v2 adds LAYER 4 (Tools):
 ## 7. ACTIVATION CHECKLIST (v2)
 
 ```
-[✅] Save Constitutional Layer v3.0    → .aios-core/opus-replicator/
-[✅] Save PM1/PM2/PM3 Masters          → .aios-core/opus-replicator/
-[✅] Install golden example seeds      → .aios-core/memory/golden-examples/
-[✅] Initialize quality-baseline.json  → .aios-core/memory/
-[✅] Install anti-patterns catalog     → .aios-core/memory/
+[✅] Save Constitutional Layer v3.0    → .aiox-core/opus-replicator/
+[✅] Save PM1/PM2/PM3 Masters          → .aiox-core/opus-replicator/
+[✅] Install golden example seeds      → .aiox-core/memory/golden-examples/
+[✅] Initialize quality-baseline.json  → .aiox-core/memory/
+[✅] Install anti-patterns catalog     → .aiox-core/memory/
 [✅] Deploy input-refiner v2           → scripts/input-refiner.js
 [✅] Deploy self-correction v1         → scripts/self-correction.js
-[✅] Create SELF_CONTEXT.md boot file  → .aios-core/opus-replicator/
+[✅] Create SELF_CONTEXT.md boot file  → .aiox-core/opus-replicator/
 [✅] Map tools arsenal (LAYER 4)       → SELF_CONTEXT.md architecture section
 [✅] Create Bible v2 addendum          → this file
 [ ] Wire tools into kernel-bridge discovery

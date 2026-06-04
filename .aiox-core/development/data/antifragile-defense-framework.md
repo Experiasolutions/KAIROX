@@ -1,12 +1,12 @@
 # Antifragile Defense Framework
 
-> **Origem:** DooMMasteRBot V5 Fusion → AIOS Core
+> **Origem:** DooMMasteRBot V5 Fusion → AIOX Core
 > **Versão:** 1.0.0
 > **Última atualização:** 2026-02-13
 
 ## Propósito
 
-Framework de segurança antifrágil disponível para QUALQUER agent e squad no AIOS.
+Framework de segurança antifrágil disponível para QUALQUER agent e squad no AIOX.
 Define as camadas de proteção, compliance, e governança de dados que todo output
 deve respeitar.
 

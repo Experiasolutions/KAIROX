@@ -1,6 +1,6 @@
 # Revenue Launch Checklist (Core)
 
-> **Responsável:** @aios-master
+> **Responsável:** @aiox-master
 > **Quando usar:** Antes de lançar qualquer operação de monetização em qualquer squad.
 > **Princípio:** VII. Revenue-First (MUST)
 

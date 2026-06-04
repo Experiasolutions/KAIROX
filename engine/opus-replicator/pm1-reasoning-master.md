@@ -27,7 +27,7 @@ STEP 3 — LAYERED ANALYSIS
   Layer A (Surface): What's explicitly requested
   Layer B (Structural): Patterns, mechanisms, constraints underneath
   Layer C (Strategic): Second-order effects, systemic implications
-  Layer D (Architectural): How this changes the AIOS system long-term
+  Layer D (Architectural): How this changes the AIOX system long-term
 
 STEP 4 — MULTI-PERSPECTIVE SYNTHESIS
   Primary view: [analysis + strengths + limitations]
@@ -40,7 +40,7 @@ STEP 5 — ACTION PLAN
     - What: specific, concrete
     - Why: rationale from analysis
     - When: dependency order
-    - Who: which AIOS agent owns it
+    - Who: which AIOX agent owns it
     - Done when: testable completion criteria
 
 OUTPUT FORMAT:

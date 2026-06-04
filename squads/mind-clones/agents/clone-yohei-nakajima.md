@@ -102,7 +102,7 @@ mind_clone:
     communication: "Casual, enthusiastic, experimental mindset, tweets and blog posts"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-yohei-nakajima"
     weight_in_decisions:
       autonomous_agents: "65%"

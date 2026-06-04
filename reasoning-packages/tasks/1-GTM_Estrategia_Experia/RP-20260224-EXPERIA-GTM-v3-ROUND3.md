@@ -121,7 +121,7 @@ const clientSetup = {
 | **Reciprocidade**              | "Vou fazer uma análise GRATUITA de 5 minutos do seu atendimento via WhatsApp agora. Zero compromisso." Gabriel analisa, mostra os gaps, e entrega valor ANTES de pedir algo. |
 | **Compromisso e consistência** | Na demo, fazer o dono dizer em voz alta: "Sim, eu perco leads por demora." Depois disso, psicologicamente ele já admitiu o problema — mais fácil aceitar a solução.          |
 | **Prova social**               | "3 clínicas aqui no [bairro] já estão usando. A Dra. Maria disse que..." — Prova local é 10x mais forte que prova genérica.                                                  |
-| **Autoridade**                 | Contribuidor oficial no repositório AIOS (PR no SynkraAI). Bio no Instagram: "Contribuidor AIOS                                                                              | Governança Digital Autônoma". |
+| **Autoridade**                 | Contribuidor oficial no repositório AIOX (PR no SynkraAI). Bio no Instagram: "Contribuidor AIOX                                                                              | Governança Digital Autônoma". |
 | **Afinidade**                  | Gabriel é do ABC. Os donos são do ABC. "Sou daqui, conheço a realidade daqui." Confiança instantânea.                                                                        |
 | **Escassez**                   | "Eu implemento no máximo 3 clientes por mês porque cada sistema é personalizado. Esse mês tenho [X] vagas." — Isso é VERDADE, não artifício.                                 |
 
@@ -186,13 +186,13 @@ Antes de qualquer pitch, Gabriel oferece:
 | :----------------------- | :---------: | :----------------------------------------------------------------------------------------------------- |
 | **Custo de troca**       |    ⭐⭐⭐⭐⭐    | Depois de 3 meses, o sistema conhece os pacientes, os padrões, as preferências. Trocar = resetar tudo. |
 | **Efeito de rede local** |    ⭐⭐⭐⭐     | Cada clínica no bairro que usa → prova social → mais clínicas aderem. First mover ganha.               |
-| **Ativo intangível**     |    ⭐⭐⭐⭐     | Know-how de 12+ dias de operação AIOS. Templates maduros. Ninguém copia isso sem investir meses.       |
+| **Ativo intangível**     |    ⭐⭐⭐⭐     | Know-how de 12+ dias de operação AIOX. Templates maduros. Ninguém copia isso sem investir meses.       |
 | **Economia de escala**   |     ⭐⭐⭐     | Motor é 1 só. Cada cliente novo = custo marginal quase zero. Margem sobe com volume.                   |
 
 ### A Regra Buffett: "Circle of Competence"
 
 **O que Gabriel DOMINA:**
-- AIOS / KAIROS — 12 dias de operação intensa, contribuidor oficial
+- AIOX / KAIROS — 12 dias de operação intensa, contribuidor oficial
 - Grande ABC — conhece o território, a cultura, as pessoas
 - Clínicas de estética — primeiro nicho dominado
 

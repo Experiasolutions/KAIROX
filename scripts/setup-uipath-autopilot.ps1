@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS
-  AIOS — Abre UiPath Studio, copia o prompt do Autopilot para o clipboard.
+  AIOX — Abre UiPath Studio, copia o prompt do Autopilot para o clipboard.
 .NOTES
-  Chamado por: OpenClaw aios-uipath skill
+  Chamado por: OpenClaw aiox-uipath skill
 #>
 
 param(
@@ -10,9 +10,9 @@ param(
 )
 
 $UiPathExe = "C:\Program Files\UiPathPlatform\Studio\26.0.186-cloud.22084\UiPath.Studio.exe"
-$ProjectRoot = "C:\Users\Gabriel\Downloads\aios-core-main\aios-core\meu-projeto-ai"
+$ProjectRoot = "C:\Users\Gabriel\Downloads\aiox-core-main\aiox-core\meu-projeto-ai"
 
-$AutopilotPrompt = 'Crie um workflow chamado "AIOS WhatsApp AutoReply" que faz o seguinte:
+$AutopilotPrompt = 'Crie um workflow chamado "AIOX WhatsApp AutoReply" que faz o seguinte:
 
 1. MONITORAMENTO:
    - Abra o Google Chrome no site "web.whatsapp.com"
@@ -39,7 +39,7 @@ $AutopilotPrompt = 'Crie um workflow chamado "AIOS WhatsApp AutoReply" que faz o
      }
    - Salve esse JSON no arquivo: ' + $ProjectRoot + '\context.json
 
-4. CHAMAR O AIOS:
+4. CHAMAR O AIOX:
    - Use "Start Process":
      FileName: "node"
      Arguments: "' + $ProjectRoot + '\scripts\experia_bridge.js ' + $ProjectRoot + '\context.json whatsapp-autoreply"
@@ -69,13 +69,13 @@ CONFIGURACOES:
 - O workflow deve rodar em foreground (precisa do browser visivel)
 - Use Chrome como browser padrao
 - Adicione tratamento de erro: se qualquer passo falhar, logue o erro e volte ao monitoramento
-- Timeout de 15 segundos para a chamada ao AIOS'
+- Timeout de 15 segundos para a chamada ao AIOX'
 
 Add-Type -AssemblyName System.Windows.Forms
 
 Write-Host ""
 Write-Host "====================================================" -ForegroundColor Cyan
-Write-Host "  AIOS - UiPath Autopilot Configurator" -ForegroundColor Cyan
+Write-Host "  AIOX - UiPath Autopilot Configurator" -ForegroundColor Cyan
 Write-Host "====================================================" -ForegroundColor Cyan
 Write-Host ""
 

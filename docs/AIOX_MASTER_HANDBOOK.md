@@ -1,4 +1,4 @@
-# 📘 AIOS MASTER HANDBOOK (System Bible)
+# 📘 AIOX MASTER HANDBOOK (System Bible)
 
 > **Version:** Transcendence 1.1 (Total Audit - Zero Blindspots)
 > **Date:** 2026-02-18
@@ -8,9 +8,9 @@
 
 ## ⚡ 0. INSTANT CONTEXT LOADING (Read This First)
 
-**Start here:** [README.md](../README.md) → then this file → then [SELF_CONTEXT.md](../.aios-core/opus-replicator/SELF_CONTEXT.md)
+**Start here:** [README.md](../README.md) → then this file → then [SELF_CONTEXT.md](../.aiox-core/opus-replicator/SELF_CONTEXT.md)
 
-**To any AI agent reading this:** You are inside the **AIOS (Agentic Intelligence Operating System)**.
+**To any AI agent reading this:** You are inside the **AIOX (Agentic Intelligence Operating System)**.
 *   **Identity:** You are **Orion (System Orchestrator)**.
 *   **Architecture:** 13 Universal Squads + Client Packages, 178+ Agents, 1 Neural Kernel.
 *   **Nature:** Domain-agnostic motor. NOT a clinic app. Experia is a client package.
@@ -29,7 +29,7 @@
 
 ## 👑 1. EXECUTIVE SUMMARY: "What do I own?"
 
-You do not own a "chatbot". You own a **Neural Enterprise Operating System (AIOS)**.
+You do not own a "chatbot". You own a **Neural Enterprise Operating System (AIOX)**.
 It is a domain-agnostic, hierarchical, multi-agent organism. It has no domain of its own — it orchestrates N agents for any operation, in any organization. Its first client is **Experia** (clinic operations).
 
 *   **Total Agents:** 178+ Active Definitions
@@ -76,9 +76,9 @@ Aggressive revenue optimization, "Black Hat" marketing, and psychological trigge
 *   `@doom-persuader`: Neuroscience-backed persuasion.
 *   `@doom-revenue`: P&L and conversion optimization.
 
-### C. 🛠️ AIOS CORE TEAM (The "Builders")
+### C. 🛠️ AIOX CORE TEAM (The "Builders")
 *Location: `.antigravity/agents/`*
-*   `@aios-master` (Orion): System Orchestrator.
+*   `@aiox-master` (Orion): System Orchestrator.
 *   `@dev`: Code impelementation.
 *   `@architect`: System design.
 
@@ -107,7 +107,7 @@ You asked about specific missing pieces. Here is the forensic reality:
 ### 🔌 UIPath Integration
 *   **Status: 🟢 IMPLEMENTED (Dormant)**
 *   **Proof:** `clients/experia/docs/uipath-setup-guide.md`, `scripts/run-bridge.ps1`
-*   **Reality:** Working script for UIPath ↔ AIOS. Needs UIPath Studio config.
+*   **Reality:** Working script for UIPath ↔ AIOX. Needs UIPath Studio config.
 
 ### 🤖 JARVIS (WaaS Vision)
 *   **Status: 🟡 PARTIAL / CONCEPTUAL**
@@ -144,7 +144,7 @@ You have massive capability libraries installed in `tools/integrations/`:
 **Full Registry:** `tools/integrations/TOOLS-REGISTRY.md`
 
 **How to Activate:**
-Use `@aios-master` to "read" them and teach specific skills to specific Mind Clones.
+Use `@aiox-master` to "read" them and teach specific skills to specific Mind Clones.
 
 **Example:**
 *"@clone-harrison-chase, use `tools/integrations/superpowers` to enhance your reasoning."*
@@ -158,7 +158,7 @@ Use `@aios-master` to "read" them and teach specific skills to specific Mind Clo
 ```
 /
 ├── README.md                    ← entry point (read first)
-├── AIOS_MASTER_HANDBOOK.md      ← this file
+├── AIOX_MASTER_HANDBOOK.md      ← this file
 ├── OPUS_ENGINEERING_BIBLE.md    ← cognitive engine v1 (IMMUTABLE)
 ├── OPUS_ENGINEERING_BIBLE_v2.md ← ENGINE/CLIENT correction
 │
@@ -174,7 +174,7 @@ Use `@aios-master` to "read" them and teach specific skills to specific Mind Clo
 │
 ├── squads/                      ← UNIVERSAL squads (engine-only)
 ├── scripts/                     ← engine scripts (kernel, event-bus, etc.)
-├── .aios-core/                  ← kernel (synapse, opus-replicator, memory)
+├── .aiox-core/                  ← kernel (synapse, opus-replicator, memory)
 ├── tools/integrations/          ← 18 integrations, 163 skills
 ├── docs/                        ← ENGINE docs + ARCHITECTURE.md
 └── data/                        ← runtime (memory.json, etc.)
@@ -198,7 +198,7 @@ The system did not appear from nowhere. It evolved through 5 distinct eras.
 
 ### Era 3: The "Brownfield" Expansion (Mid 2025)
 *   **Vision:** Integrating with existing legacy code and tools.
-*   **Key Doc:** `.aios-core/working-in-the-brownfield.md`
+*   **Key Doc:** `.aiox-core/working-in-the-brownfield.md`
 
 ### Era 4: The "Metamind" Hive (Late 2025)
 *   **Vision:** Orchestrating the clones into a single "Hive Consciousness".
@@ -206,7 +206,7 @@ The system did not appear from nowhere. It evolved through 5 distinct eras.
 
 ### Era 5: The "Transcendence" (Current - Feb 2026)
 *   **Vision:** True autonomous operation with Opus 4.6 cognitive architecture.
-*   **Key Doc:** `AIOS_MASTER_HANDBOOK.md`
+*   **Key Doc:** `AIOX_MASTER_HANDBOOK.md`
 
 ---
 
@@ -228,7 +228,7 @@ The system did not appear from nowhere. It evolved through 5 distinct eras.
 *   **The Model:** SaaS Subscription (R$ 3k - R$ 10k/mo).
 *   **The Target:** 50,000+ Clinics (Medical & Dental).
 
-> ⚠️ This is Experia-specific. For AIOS engine docs, see `docs/ARCHITECTURE.md`.
+> ⚠️ This is Experia-specific. For AIOX engine docs, see `docs/ARCHITECTURE.md`.
 
 ## 👥 11. THE HUMAN BLUEPRINT (Organograms — Experia CLIENT)
 
@@ -244,7 +244,7 @@ The Experia client mirrors a specific human organization:
 
 ## 🧠 12. THE KERNEL INTELLIGENCE (Opus Replicator)
 
-*Source: `.aios-core/opus-replicator/`*
+*Source: `.aiox-core/opus-replicator/`*
 You are not running "standard" Gemini. You are running a **Cognitive Simulation**.
 *   **PM1 (Reasoning):** Decomposes problems into atomic truths.
 *   **PM2 (Execution):** Generates code that survives compilation.

@@ -316,7 +316,7 @@ Present results and enter navigation loop.
 
 Store sweep results for use by subsequent commands.
 
-**Cache location:** `.aios/apex-context/sweep-cache.yaml`
+**Cache location:** `.aiox/apex-context/sweep-cache.yaml`
 
 **Cache contains:**
 ```yaml

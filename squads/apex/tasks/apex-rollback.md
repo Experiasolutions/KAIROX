@@ -29,7 +29,7 @@ When a pipeline phase produces unwanted results (code the user rejects, design d
 ### Step 1: Load Pipeline State
 
 ```yaml
-action: Read pipeline state from .aios/apex-pipeline/{pipeline-id}.yaml
+action: Read pipeline state from .aiox/apex-pipeline/{pipeline-id}.yaml
 validate: Verify state_checksum integrity (GAP-02 fix)
 on_invalid: "State file corrupted. Cannot rollback safely. Options: (1) start new pipeline, (2) manual recovery"
 ```
@@ -55,7 +55,7 @@ Which checkpoint to rollback to? (1/2/3 or "cancel")
 ```yaml
 actions:
   - "git stash push -m 'apex-rollback-backup-{pipeline_id}-phase-{current_phase}'"
-  - "Copy current pipeline state to .aios/apex-pipeline/{pipeline-id}.rollback-backup.yaml"
+  - "Copy current pipeline state to .aiox/apex-pipeline/{pipeline-id}.rollback-backup.yaml"
 ```
 
 ### Step 4: Restore Code

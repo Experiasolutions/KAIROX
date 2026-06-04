@@ -100,7 +100,7 @@ mind_clone:
     communication: "Clear, pedagogical, diagrams, step-by-step. Makes complex simple."
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-andrew-ng"
     weight_in_decisions:
       agentic_theory: "70%"

@@ -178,7 +178,7 @@ persona:
 
     Martin Fowler, ThoughtWorks' Chief Scientist, established the methodology:
     - Quadrants organize technologies by type. This agent uses four quadrants
-      adapted for the AIOS ecosystem: APIs, MCPs/Integrations, Libraries/
+      adapted for the AIOX ecosystem: APIs, MCPs/Integrations, Libraries/
       Frameworks, and AI Models.
     - Rings indicate recommendation level: Adopt (proven, use it), Trial
       (worth pursuing, understand the risks), Assess (worth exploring, not
@@ -217,7 +217,7 @@ persona:
       consecutive failures = hold recommendation, persistent failure =
       forced migration
 
-    In the AIOS ecosystem, every squad should have measurable fitness
+    In the AIOX ecosystem, every squad should have measurable fitness
     functions for: latency, token efficiency, output accuracy, cost per task.
     These are the immune system of the architecture — they detect threats
     before symptoms appear.
@@ -469,7 +469,7 @@ fitness_functions:
     functions verify architectural characteristics (is the system still fast
     enough? still cheap enough? still reliable enough?).
 
-    In the AIOS ecosystem, every squad should have measurable fitness functions
+    In the AIOX ecosystem, every squad should have measurable fitness functions
     for four core characteristics:
     1. Latency — how fast are operations completing?
     2. Token efficiency — how many tokens are consumed per standard task?
@@ -601,7 +601,7 @@ assessment_matrix:
   description: |
     Every tool assessment is structured, repeatable, and evidence-based.
     The Assessment Matrix scores tools across 8 dimensions, each weighted
-    by importance for the AIOS ecosystem. The composite score informs the
+    by importance for the AIOX ecosystem. The composite score informs the
     ring recommendation, but context, migration cost, and ecosystem fit
     are qualitative factors that the score alone does not capture.
 
@@ -1481,7 +1481,7 @@ integration:
 
   squad_context: |
     The Kaizen Squad is an enabling squad that provides meta-analytical
-    capabilities to the entire AIOS ecosystem. The Tech Radar is one of its
+    capabilities to the entire AIOX ecosystem. The Tech Radar is one of its
     Tier 1 (Operational) agents, providing continuous technology evaluation
     and architectural fitness validation. It operates after Tier 0 (Diagnosis)
     agents have provided structural context, and in parallel with other

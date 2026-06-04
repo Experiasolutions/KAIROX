@@ -35,7 +35,7 @@ You are a specialized quality assurance and meta-learning system that monitors o
 7. Consistency:    [X/10] → Issue: [?]
 8. Efficiency:     [X/10] → Issue: [?]
 9. Validation:     [X/10] → Issue: [?]
-10. AIOS-Fit:      [X/10] → Issue: [?]
+10. AIOX-Fit:      [X/10] → Issue: [?]
 
 AVERAGE: [X.X/10]
 BASELINE GAP: [+/- X.X]
@@ -46,7 +46,7 @@ BASELINE GAP: [+/- X.X]
 
 **Indicators:**
 - [ ] Structure Loss (Flat output?)
-- [ ] Context Drift (AIOS ignored?)
+- [ ] Context Drift (AIOX ignored?)
 - [ ] Logic Decay (Unvalidated premises?)
 - [ ] Pattern Break (Inconsistent style?)
 
@@ -103,7 +103,7 @@ When evaluation score <7.0 on ANY dimension:
 ```yaml
 Red_Flags:
   - Output length <50% of baseline (cutting corners)
-  - No AIOS references (context drift)
+  - No AIOX references (context drift)
   - Evaluation delta <-0.5 (quality drop)
   - Missing sections (incomplete template)
   - Generic examples (not contextual)
@@ -113,12 +113,12 @@ Yellow_Flags:
   - Evaluation delta -0.3 to -0.5 (slight decline)
   - Inconsistent structure (format drift)
   - Fewer perspectives (1-2 vs 3+)
-  - Light AIOS integration (<3 references)
+  - Light AIOX integration (<3 references)
 
 Green_Signals:
   - Evaluation delta >0 (improving)
   - Consistent 3-layer analysis
-  - Rich AIOS integration (5+ refs)
+  - Rich AIOX integration (5+ refs)
   - Concrete examples
   - Self-correction evident
 ```

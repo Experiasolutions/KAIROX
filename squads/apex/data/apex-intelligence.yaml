@@ -43,7 +43,7 @@ intent_chaining:
     suggest_primary: "Rodar suggestion scan completo"
     suggest_primary_pipeline: "*apex-suggest"
     suggest_secondary: "Fazer deploy (handoff @devops)"
-    suggest_secondary_pipeline: "generate_aios_handoff"
+    suggest_secondary_pipeline: "generate_aiox_handoff"
     suggest_tertiary: "Continuar com outro quick"
     suggest_tertiary_pipeline: "*apex-quick"
 
@@ -61,7 +61,7 @@ intent_chaining:
     conditions:
       - if: "qa_verdict == PASS"
         suggest_primary: "Ship (handoff @devops para push)"
-        suggest_primary_pipeline: "generate_aios_handoff"
+        suggest_primary_pipeline: "generate_aiox_handoff"
         suggest_secondary: "Rodar polish cycle (motion + a11y + perf)"
         suggest_secondary_pipeline: "*apex-go polish"
         suggest_tertiary: "So quero revisar o resultado"
@@ -70,7 +70,7 @@ intent_chaining:
         suggest_primary: "Resolver concerns antes de ship"
         suggest_primary_pipeline: "*apex-fix (concerns)"
         suggest_secondary: "Ship com concerns documentados"
-        suggest_secondary_pipeline: "generate_aios_handoff"
+        suggest_secondary_pipeline: "generate_aiox_handoff"
         suggest_tertiary: "Abortar e refazer"
 
       - if: "qa_verdict == FAIL"
@@ -188,7 +188,7 @@ intent_chaining:
 
       - if: "all_gates_pass"
         suggest_primary: "Tudo verde! Ship? (handoff @devops)"
-        suggest_primary_pipeline: "generate_aios_handoff"
+        suggest_primary_pipeline: "generate_aiox_handoff"
         suggest_secondary: "Descobrir componentes (deep dive)"
         suggest_secondary_pipeline: "*discover-components"
         suggest_tertiary: "Done"
@@ -1367,12 +1367,12 @@ context_memory:
     doesn't repeat work or ask the same questions twice.
 
   storage:
-    location: ".aios/apex-context/"
+    location: ".aiox/apex-context/"
     files:
-      scan_cache: ".aios/apex-context/scan-cache.yaml"
-      component_cache: ".aios/apex-context/component-cache.yaml"
-      design_cache: ".aios/apex-context/design-cache.yaml"
-      user_preferences: ".aios/apex-context/preferences.yaml"
+      scan_cache: ".aiox/apex-context/scan-cache.yaml"
+      component_cache: ".aiox/apex-context/component-cache.yaml"
+      design_cache: ".aiox/apex-context/design-cache.yaml"
+      user_preferences: ".aiox/apex-context/preferences.yaml"
     gitignore: true
 
   # ============================================================================
@@ -1596,7 +1596,7 @@ context_memory:
 
   resume:
     on_session_start: |
-      1. Check .aios/apex-context/ for cached state
+      1. Check .aiox/apex-context/ for cached state
       2. If component cache exists and valid:
          - Show: "Component inventory carregado ({total} components, health {score}/100)"
       3. If design cache exists and valid:
@@ -1615,5 +1615,5 @@ context_memory:
           action: "Delete oldest files beyond retention limit"
         - condition: "Total cache directory size > 5MB"
           action: "Delete oldest caches until under 5MB, warn user"
-      log: ".aios/apex-context/cleanup.log"
+      log: ".aiox/apex-context/cleanup.log"
       note: "Cleanup runs automatically — never blocks operations"

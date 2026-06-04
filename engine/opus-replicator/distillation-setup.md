@@ -7,7 +7,7 @@
 
 ## 🏗️ INFRASTRUCTURE MAP
 
-1.  **Golden Data Store:** `.aios-core/memory/golden-examples/`
+1.  **Golden Data Store:** `.aiox-core/memory/golden-examples/`
     - `/reasoning`: For complex analysis & strategy (PM#1)
     - `/execution`: For code, content, & specs (PM#2)
     - `/evaluation`: For self-correction & grading (PM#3)
@@ -25,7 +25,7 @@
 Use Opus 4.6 to solve these 5 diverse tasks. Save the FULL output (reasoning + result) to the corresponding folder.
 
 **Task 1: Deep Architecture (Reasoning)**
-> "Analyze the AIOS file system structure and propose a 3-phase refactoring plan for maximum modularity, citing Torvalds' principles."
+> "Analyze the AIOX file system structure and propose a 3-phase refactoring plan for maximum modularity, citing Torvalds' principles."
 > *Save to:* `golden-examples/reasoning/001-architecture-refactor.md`
 
 **Task 2: Viral Copywriting (Execution)**

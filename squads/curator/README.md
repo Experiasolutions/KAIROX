@@ -398,7 +398,7 @@ squads/curator/
 - **Squad Version:** 3.4.0
 - **Created:** 2026-02-04
 - **Updated:** 2026-02-18
-- **Framework:** AIOS
+- **Framework:** AIOX
 
 ---
 

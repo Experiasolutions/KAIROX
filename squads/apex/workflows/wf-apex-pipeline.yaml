@@ -83,7 +83,7 @@ enforcement:
   veto_registry: data/veto-conditions.yaml
   performance_budgets: data/performance-budgets.yaml
   state_schema: data/pipeline-state-schema.yaml
-  state_persistence: ".aios/apex-pipeline/{pipeline-id}.yaml"
+  state_persistence: ".aiox/apex-pipeline/{pipeline-id}.yaml"
   pre_execution_validation:
     validate_agents: true
     action: "BLOCK pipeline if any referenced agent not in data/agent-registry.yaml"
@@ -650,13 +650,13 @@ phases:
           If BLOCK, record reason and pause pipeline.
 
       - id: step-7-3b
-        name: Generate AIOS Handoff Artifact
+        name: Generate AIOX Handoff Artifact
         agent: apex-lead
         condition: "CP-06.decision == SHIP"
         action: >
           Before delegating to @devops, generate a handoff artifact at
-          .aios/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml
-          following the AIOS agent-handoff protocol. Include:
+          .aiox/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml
+          following the AIOX agent-handoff protocol. Include:
           - from_agent: apex-lead
           - to_agent: devops
           - story_context: { story_id, story_path, story_status, current_task, branch }
@@ -665,7 +665,7 @@ phases:
           - next_action: "*push"
           This ensures @devops receives full context without needing the
           entire pipeline history.
-        output: ".aios/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml"
+        output: ".aiox/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml"
 
       - id: step-7-4
         name: Push & PR
@@ -697,12 +697,12 @@ error_handling:
     flow: "unidirectional — never rollback to previous phase"
     max_fix_attempts: 3
     on_max_reached:
-      escalation_chain: [responsible_agent, apex-lead, aios-master]
+      escalation_chain: [responsible_agent, apex-lead, aiox-master]
 
   agent_failure:
     max_retries: 1
     on_max_reached:
-      escalation_chain: [apex-lead, aios-master]
+      escalation_chain: [apex-lead, aiox-master]
 
   checkpoint_timeout:
     threshold_hours: 48
@@ -717,7 +717,7 @@ error_handling:
 # ------------------------------------------------------------------------------
 state:
   schema: data/pipeline-state-schema.yaml
-  storage: ".aios/apex-pipeline/{pipeline-id}.yaml"
+  storage: ".aiox/apex-pipeline/{pipeline-id}.yaml"
   auto_save: true
   save_triggers:
     - phase_transition
@@ -728,13 +728,13 @@ state:
     - pivot
 
 # ------------------------------------------------------------------------------
-# AIOS HANDOFF INTEGRATION
+# AIOX HANDOFF INTEGRATION
 # ------------------------------------------------------------------------------
 handoff:
   protocol: "agent-handoff"  # References .claude/rules/agent-handoff.md
   on_ship:
     generate_artifact: true
-    artifact_path: ".aios/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml"
+    artifact_path: ".aiox/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml"
     template: |
       handoff:
         from_agent: apex-lead

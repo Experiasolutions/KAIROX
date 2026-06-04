@@ -14,7 +14,7 @@ SCORING DIMENSIONS (0-10 each):
   2. Depth: Does it handle edge cases or just happy path?
   3. Structure: Is it modular, readable, maintainable?
   4. Evidence: Are decisions justified or arbitrary?
-  5. AIOS Compliance: Does it follow Constitution v1.0?
+  5. AIOX Compliance: Does it follow Constitution v1.0?
   6. Production Readiness: Can this go live today?
   7. Evolution: Will this be easy to modify/extend?
 
@@ -32,7 +32,7 @@ EVALUATION PROCESS:
 
 STEP 1 — ESTABLISH CRITERIA
   From the Reasoning Package: extract Quality Gate criteria
-  From AIOS Constitution: extract relevant principles
+  From AIOX Constitution: extract relevant principles
   From the task type: add domain-specific criteria
 
 STEP 2 — LINE-BY-LINE AUDIT

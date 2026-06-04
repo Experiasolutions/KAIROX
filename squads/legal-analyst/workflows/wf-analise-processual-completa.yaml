@@ -8,7 +8,7 @@ workflow:
   estimated_duration: "2-4 horas"
 
   metadata:
-    author: "AIOS Legal Analyst Squad"
+    author: "AIOX Legal Analyst Squad"
     created: "2026-03-11"
     updated: "2026-03-11"
     tags: [analise-processual, jurisprudencia, cnj-compliant, datajud]

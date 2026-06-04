@@ -115,7 +115,7 @@ async function listTasks(listId) {
 async function createTask(listId, name, description) {
     const data = await clickup('POST', `/list/${listId}/task`, {
         name,
-        description: description || `Criado pelo AIOS em ${new Date().toISOString()}`,
+        description: description || `Criado pelo AIOX em ${new Date().toISOString()}`,
         status: 'to do',
     });
     console.log(`\n✅ Task criada:`);
@@ -142,7 +142,7 @@ async function main() {
         else if (args[0] === '--create') await createTask(args[1], args[2], args[3]);
         else if (args[0] === '--update') await updateTask(args[1], args[2]);
         else {
-            console.log('AIOS ClickUp Client');
+            console.log('AIOX ClickUp Client');
             console.log('  --teams                    Lista teams');
             console.log('  --spaces                   Lista spaces');
             console.log('  --lists <space_id>         Lista lists');

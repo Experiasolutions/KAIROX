@@ -18,20 +18,20 @@ REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly (
 activation-instructions:
   - "STEP 0: Project DNA (auto, silent)": |
       Before anything else, ensure Project DNA cache is fresh:
-      1. Check if `.aios/apex-context/project-dna.yaml` exists
+      1. Check if `.aiox/apex-context/project-dna.yaml` exists
       2. If it EXISTS:
          - Check modification times of: `package.json`, `tailwind.config.*`, `src/index.css`, `globals.css`, `app/globals.css`
          - If ANY of those files were modified AFTER the cache was created → cache is STALE
          - If NONE were modified after → cache is FRESH
       3. If cache is MISSING or STALE:
          - Execute `squads/apex/tasks/project-dna-extraction.md` silently (NO user output, NO greeting delay, 5-second timeout)
-         - Write result to `.aios/apex-context/project-dna.yaml`
+         - Write result to `.aiox/apex-context/project-dna.yaml`
          - If extraction FAILS (error, timeout, or incomplete):
            a. Proceed to STEP 1 immediately (do NOT block activation)
            b. Agents will use their default heuristics (graceful degradation)
            c. No error output to user — failure is silent
       4. If cache is FRESH:
-         - Load `.aios/apex-context/project-dna.yaml` silently
+         - Load `.aiox/apex-context/project-dna.yaml` silently
       5. The loaded DNA feeds into ALL subsequent agent routing decisions, profile selection, and discovery tools.
       IMPORTANT: This step is completely invisible to the user — no output, no status messages, no delays.
   - STEP 1: Read THIS ENTIRE FILE - it contains your complete persona definition
@@ -51,7 +51,7 @@ activation-instructions:
          - If design system or component work is detected, show relevant tier status
       4. Show: "**Quick Commands:**" — list commands from the 'commands' section that have 'key' in their visibility array
       5. Show: "Type `*help` for all Squad Apex capabilities."
-      5.5. Check `.aios/handoffs/` for most recent unconsumed handoff artifact (YAML with consumed != true).
+      5.5. Check `.aiox/handoffs/` for most recent unconsumed handoff artifact (YAML with consumed != true).
            If found: read `from_agent` and `last_command` from artifact and show: "💡 **Suggested:** `*{next_command} {args}`"
            If no artifact or no match found: skip this step silently.
            After STEP 4 displays successfully, mark artifact as consumed: true.
@@ -253,7 +253,7 @@ snapshot_protocol:
 
   before_modification:
     action: "Run git stash push -m 'apex-snapshot-{timestamp}' -- {files_in_scope}"
-    fallback: "If git stash fails (untracked files), use git diff > .aios/apex-snapshots/{id}.patch"
+    fallback: "If git stash fails (untracked files), use git diff > .aiox/apex-snapshots/{id}.patch"
     veto: "VC-SNAPSHOT-001 — Cannot start fix without snapshot"
 
   on_user_rejection:
@@ -267,7 +267,7 @@ snapshot_protocol:
 
   cleanup:
     action: "Remove snapshots older than current session"
-    location: ".aios/apex-snapshots/"
+    location: ".aiox/apex-snapshots/"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # REQUEST ADHERENCE GATE (P1 — validates fix matches request)

@@ -31,7 +31,7 @@ Quem hesita, perde o Kairos. Você não vai hesitar.
 ### Prompt para o KAIROS gerar o nome
 
 ```
-@aios-master
+@aiox-master
 
 Preciso de um nome para o meu sistema de IA — atualmente chamado KAIROS
 (que é também o nome da minha agência). O sistema precisa de um nome
@@ -39,7 +39,7 @@ próprio, distinto da agência, que será o nome do "Jarvis" pessoal
 — a IA que orquestra tudo.
 
 Contexto do sistema:
-- É construído sobre o AIOS mas transcende o projeto original
+- É construído sobre o AIOX mas transcende o projeto original
 - Tem Noesis Engine (mente própria), 65+ Mind Clones, Evolution Engine,
   Meta-Noesis, Máquina do Tempo, IA Council
 - Opera com qualidade Claude Opus 4.6 usando Gemini 3.1 Pro
@@ -68,7 +68,7 @@ Depois, síntese: qual é o nome e por quê.
 ### Contexto para o KAIROS processar
 
 ```
-@aios-master
+@aiox-master
 
 Missão: criar o blueprint completo da minha agência de IA.
 
@@ -90,7 +90,7 @@ POSICIONAMENTO:
   
   Diferencial real: sou o único que entrega soluções de IA nesse
   nível de sofisticação nessa região. Não existe concorrente
-  com KAIROS. O custo é acessível porque o AIOS é open source —
+  com KAIROS. O custo é acessível porque o AIOX é open source —
   o que o cliente paga é pela mente que opera o sistema.
 
 MODELO DE NEGÓCIO:
@@ -166,7 +166,7 @@ O script não pode começar com "tenho uma solução de IA". Deve começar com a
 ### Prompt para o KAIROS criar o script
 
 ```
-@aios-master
+@aiox-master
 
 Preciso de um script de cold call para a agência Kairos.
 
@@ -250,13 +250,13 @@ como seu negócio funciona."
 
 ```
 VERSÃO 1 — KAIROS COMMUNITY EDITION
-  Para: comunidade AIOS open source
+  Para: comunidade AIOX open source
   Canal: GitHub PR + post na comunidade
   
   O que inclui:
   → Opus Replicant Engine otimizado para Gemini 3.1 Pro
     (a contribuição que democratiza qualidade Opus para quem não tem $)
-  → AIOS FATHER como sistema de onboarding
+  → AIOX FATHER como sistema de onboarding
     (tutorial de voz + workflow de instalação)
   → RP-STRUCTURE.md (separação engine/client para multi-tenancy)
   → Constitutional Layer v3 (refinamentos de governança)
@@ -269,7 +269,7 @@ VERSÃO 1 — KAIROS COMMUNITY EDITION
   → Máquina do Tempo
   
   Mensagem para a comunidade:
-  "Comecei com o AIOS v3.9.0 há 8 dias. Aqui está o que desenvolvi
+  "Comecei com o AIOX v3.9.0 há 8 dias. Aqui está o que desenvolvi
    que acredito que beneficia todo mundo. O restante estou
    evoluindo como produto. Qualquer feedback é bem-vindo."
 
@@ -280,7 +280,7 @@ VERSÃO 2 — KAIROS PROJECT
   O que inclui (além da Community Edition):
   → Noesis Engine completo (arquitetura + RP)
   → Operator Noesis
-  → Análise arquitetural do AIOS original com gaps identificados
+  → Análise arquitetural do AIOX original com gaps identificados
   → Proposta de integração como contribuição oficial
   → O relatório Raio X completo (tokens, tempo, desenvolvimento)
   
@@ -296,10 +296,10 @@ VERSÃO 3 — KAIROS GOD MODE
 ### Prompt para o KAIROS preparar o pacote Community Edition
 
 ```
-@aios-master
+@aiox-master
 
 Preciso preparar o KAIROS Community Edition para contribuição
-ao repositório oficial do AIOS.
+ao repositório oficial do AIOX.
 
 Tarefas:
 
@@ -314,7 +314,7 @@ Tarefas:
    → Exemplos de uso com Gemini 3.1 Pro
    → Resultados comparativos (Gemini puro vs. Gemini + Replicant)
 
-3. PREPARAR o AIOS FATHER para onboarding:
+3. PREPARAR o AIOX FATHER para onboarding:
    → Versão simplificada (sem os módulos proprietários)
    → Workflow de instalação que qualquer pessoa consegue rodar
    → Interface de voz opcional (tutorial de configuração)
@@ -334,8 +334,8 @@ Tarefas:
 ### Princípios do conteúdo Kairos no Instagram
 
 ```
-NICHO: AIOS — específico, sem desviar
-AUDIÊNCIA: pessoas que já conhecem AIOS ou querem conhecer
+NICHO: AIOX — específico, sem desviar
+AUDIÊNCIA: pessoas que já conhecem AIOX ou querem conhecer
 POSICIONAMENTO: o cara que foi mais longe que qualquer um em 7 dias
 FREQUÊNCIA: 1 post por dia enquanto estiver desenvolvendo
 TOM: técnico mas acessível, honesto, sem ego, com resultados
@@ -349,26 +349,26 @@ FAZER:
 → Documentar a jornada em tempo real
 → Mostrar outputs reais do sistema
 → Fazer perguntas que geram engajamento
-→ Ser o primeiro a falar de coisas específicas do AIOS
+→ Ser o primeiro a falar de coisas específicas do AIOX
 ```
 
 ### Prompt para o KAIROS criar o primeiro post
 
 ```
-@aios-master
+@aiox-master
 
-Preciso do meu primeiro post no Instagram sobre o KAIROS e o AIOS.
+Preciso do meu primeiro post no Instagram sobre o KAIROS e o AIOX.
 
 Contexto:
-- Comecei com AIOS v3.9.0 há 8 dias
+- Comecei com AIOX v3.9.0 há 8 dias
 - Hoje tenho um sistema que chamo de KAIROS
 - Nunca postei nada sobre isso
-- Quero ser o maior criador de conteúdo sobre AIOS no Brasil
+- Quero ser o maior criador de conteúdo sobre AIOX no Brasil
 
 Regras do post:
 - Formato: carrossel (5-7 slides) OU vídeo curto (roteiro)
-- Deve gerar curiosidade em quem nunca ouviu falar de AIOS
-- Deve gerar reconhecimento em quem já conhece AIOS
+- Deve gerar curiosidade em quem nunca ouviu falar de AIOX
+- Deve gerar reconhecimento em quem já conhece AIOX
 - Deve estabelecer autoridade sem arrogância
 - Call to action: seguir para acompanhar a jornada
 
@@ -399,11 +399,11 @@ Você não manda mensagem pedindo atenção. Você manda evidência que gera cur
 ```
 Oi [Pedro/Alan],
 
-Me chamo Gabriel. Comecei com o AIOS v3.9.0 há 8 dias.
+Me chamo Gabriel. Comecei com o AIOX v3.9.0 há 8 dias.
 
 Desenvolvi uma série de contribuições arquiteturais que acho que
 vocês vão achar interessante — especialmente em relação ao problema
-que chamo de "o AIOS orquestra 67 mentes brilhantes mas não tem
+que chamo de "o AIOX orquestra 67 mentes brilhantes mas não tem
 mente própria".
 
 Já fiz PR com a parte que acredito ser contribuição pública.
@@ -464,7 +464,7 @@ A pergunta final é o que vai gerar resposta. Pedro vai querer responder isso.
 Configure esta noite antes de dormir:
 
 ```
-@aios-master
+@aiox-master
 
 Enquanto eu durmo, quero que o KAIROS prepare:
 

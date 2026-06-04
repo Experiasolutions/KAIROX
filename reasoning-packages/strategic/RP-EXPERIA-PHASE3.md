@@ -14,7 +14,7 @@
 ## O que é este pacote
 
 Este é o pacote de **Phase 3: WhatsApp Webhook Revenue Bridge** —
-a ponte entre o AIOS Engine e receita real via WhatsApp.
+a ponte entre o AIOX Engine e receita real via WhatsApp.
 
 O objetivo é transformar o `whatsapp-server.js` existente (v1, 113 linhas)
 em um sistema de produção completo com:
@@ -50,7 +50,7 @@ constitutional layer automaticamente.
 - `scripts/whatsapp-server.js` ← v1 → v2 (integrar session store, classifier, auto-reply)
 
 ## Arquivos a LER (para contextualização):
-- `.aios-core/opus-replicator/SELF_CONTEXT.md` ← boot context
+- `.aiox-core/opus-replicator/SELF_CONTEXT.md` ← boot context
 - `scripts/kernel-bridge.js` ← bridge pattern reference
 - `scripts/event-bus.js` ← event emission pattern
 - `scripts/tools-bridge.js` ← tools discovery (skill search)
@@ -83,7 +83,7 @@ seguindo o padrão kernel-bridge (graceful degradation, event emission).
 ## Trade-offs aceitos
 
 - **JSON Storage vs Database:** Usaremos JSON Storage para sessions
-  (arquivo em `.aios-core/data/sessions/`). Simples para MVP.
+  (arquivo em `.aiox-core/data/sessions/`). Simples para MVP.
   Migrar para SQLite/Redis quando volume > 100 sessões ativas.
 
 - **Rule-Based vs ML Intent Classification:** Rule-based com regex
@@ -122,7 +122,7 @@ seguindo o padrão kernel-bridge (graceful degradation, event emission).
 // - cleanup() → { expired: number }
 // - TTL: 24 hours (configurable via SESSION_TTL env var)
 // - Auto-cleanup interval: every 10 minutes
-// - Storage: .aios-core/data/sessions/{phone}.json
+// - Storage: .aiox-core/data/sessions/{phone}.json
 // - Session schema:
 //   {
 //     phone: string,
@@ -260,7 +260,7 @@ seguindo o padrão kernel-bridge (graceful degradation, event emission).
 //
 // Spec:
 // - build(intent, entities, session, config) → { text, quickReplies?, buttons? }
-// - Config loaded from: squads/experia/config/ or .aios-core/data/clinic-config.json
+// - Config loaded from: squads/experia/config/ or .aiox-core/data/clinic-config.json
 // - Graceful degradation: if no config, use generic templates
 // - WhatsApp formatting: bold (*text*), italic (_text_), emoji, line breaks
 // - Max message length: 4096 chars (WhatsApp limit)
@@ -403,7 +403,7 @@ WHATSAPP_PORT=3005                            # Server port (optional, default)
 - Scenario: API retorna 500 ou timeout
 - Impact: Mensagem processada mas resposta não entregue
 - Solution: Retry 1x com 2s delay. Se falha: salvar reply pendente
-  em `.aios-core/data/pending-replies/`. Cron retenta a cada 5 min.
+  em `.aiox-core/data/pending-replies/`. Cron retenta a cada 5 min.
 
 ## EC-06: Números de teste vs produção
 - Scenario: Dev testa com próprio número, polui sessões

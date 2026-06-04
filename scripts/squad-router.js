@@ -139,7 +139,7 @@ function main() {
     const args = process.argv.slice(2);
 
     if (args[0] === '--squads') {
-        console.log('\n🏢 AIOS Squads — FigJam Blueprint\n');
+        console.log('\n🏢 AIOX Squads — FigJam Blueprint\n');
         console.log('┌──────────────────┬──────────────────────┬────────────────────────────────────────┬──────────┐');
         console.log('│ Squad            │ AI Head              │ Agentes                                │ Status   │');
         console.log('├──────────────────┼──────────────────────┼────────────────────────────────────────┼──────────┤');
@@ -209,7 +209,7 @@ function main() {
 
     const message = args[0];
     console.log('═══════════════════════════════════════════════════');
-    console.log('  🏢 AIOS Multi-Squad Router');
+    console.log('  🏢 AIOX Multi-Squad Router');
     console.log('═══════════════════════════════════════════════════\n');
     console.log(`📩 "${message}"\n`);
 

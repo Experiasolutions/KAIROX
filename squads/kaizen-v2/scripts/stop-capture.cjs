@@ -37,7 +37,7 @@ const CONFIG = {
   timeout_ms: 5000,
   project_root: process.cwd(),
   daily_dir: 'squads/kaizen-v2/data/intelligence/daily',
-  log_file: '.aios/logs/kaizen-stop.log',
+  log_file: '.aiox/logs/kaizen-stop.log',
   fail_silent: true,
 };
 

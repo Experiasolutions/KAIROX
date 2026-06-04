@@ -15,9 +15,9 @@ Auto-harvested by Noesis Pipeline
 /**
  * @module noesis-pipeline
  * @version 1.0.0
- * @purpose Unified cognitive loop for AIOS. Orchestrates the 5-phase Noesis
+ * @purpose Unified cognitive loop for AIOX. Orchestrates the 5-phase Noesis
  *          reasoning cycle: Context → Evaluate → Harvest → Trace → Signal.
- *          This is the "own mind" of the AIOS — a domain-agnostic reasoning
+ *          This is the "own mind" of the AIOX — a domain-agnostic reasoning
  *          substrate that evaluates, learns, and improves with every cycle.
  * @inputs  { input: string, output: string, mode?: string, taskDescription?: string }
  * @outputs { score, verdict, harvested, traced, signal, phases }
@@ -61,7 +61,7 @@ const PROJECT_ROOT = path.join(__dirname, '..', '..');
 const TRACES_DIR = path.join(PROJECT_ROOT, 'distillation-dataset', 'traces');
 const CURATED_DIR = path.join(PROJECT_ROOT, 'distillation-dataset', 'curated');
 const ROADMAP_FILE = path.join(PROJECT_ROOT, 'distillation-dataset', 'roadmap.json');
-const BASELINE_FILE = path.join(PROJECT_ROOT, '.aios-core', 'data', 'quality-baseline.json');
+const BASELINE_FILE = path.join(PROJECT_ROOT, '.aiox-core', 'data', 'quality-baseline.json');
 
 // ─────────────────────────────────────────────────────────────
 // CONSTANTS
@@ -75,7 +75,7 @@ const VERSION = '1.0.0';
 // ─────────────────────────────────────────────────────────────
 
 /**
- * @purpose Load AIOS context, golden examples, anti-patterns, and PM master
+ * @purpose Load AIOX context, golden examples, anti-patterns, and PM master
  * @inputs  {string} input - Raw user input
  * @outputs {Object} Refined context with all injections
  */
@@ -94,7 +94,7 @@ function phaseContext(input) {
             context: {
                 goldenExamplesLoaded: 0,
                 antiPatternsLoaded: false,
-                aiosContextLoaded: false,
+                aioxContextLoaded: false,
             },
             error: err.message,
         };
@@ -106,7 +106,7 @@ function phaseContext(input) {
         mode: refinedContext.mode,
         goldenExamples: refinedContext.context.goldenExamplesLoaded,
         antiPatternsLoaded: refinedContext.context.antiPatternsLoaded,
-        aiosContextLoaded: refinedContext.context.aiosContextLoaded,
+        aioxContextLoaded: refinedContext.context.aioxContextLoaded,
         refinedPrompt: refinedContext.refinedPrompt,
     };
 }
@@ -499,7 +499,7 @@ if (require.main === module) {
         const testInput = 'Implement a new bridge module for the notification system';
         const testOutput = `/**
  * @module notification-bridge
- * @purpose Bridge between notification providers and AIOS event bus
+ * @purpose Bridge between notification providers and AIOX event bus
  */
 const EventEmitter = require('events');
 

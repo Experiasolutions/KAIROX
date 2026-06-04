@@ -22,7 +22,7 @@ O motor KAIROS foi codificado em inglês. Noesis pensa em inglês.
 
 ### 3. Camada Estratégica: Posicionamento "Autonomous Governance"
 Lá fora, "AI Automation Agency" (AAA) está saturado de pessoas vendendo bots simples de GPT. 
-O diferencial do KAIROS é a **Governança**. Você não vende um bot; você vende um **Sistema Operacional Cognitivo** que gerencia a empresa (AIOS).
+O diferencial do KAIROS é a **Governança**. Você não vende um bot; você vende um **Sistema Operacional Cognitivo** que gerencia a empresa (AIOX).
 
 ---
 

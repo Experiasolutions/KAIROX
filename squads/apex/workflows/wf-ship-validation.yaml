@@ -743,8 +743,8 @@ phases:
           max_iterations: 2
           on_max_reached:
             action: ESCALATE
-            to: aios-master
-            message: "Ship validation rejected 2x. Requires aios-master intervention."
+            to: aiox-master
+            message: "Ship validation rejected 2x. Requires aiox-master intervention."
 
     checkpoint:
       id: checkpoint-4
@@ -799,7 +799,7 @@ error_handling:
   on_unrecoverable_error:
     action: ESCALATE
     escalate_to: apex-lead
-    then: aios-master
+    then: aiox-master
   on_all_phases_pass_lead_unavailable:
     action: PAUSE
     timeout_hours: 24

@@ -3,7 +3,7 @@
 # data/pipeline-state-schema.yaml
 # ==============================================================================
 # Purpose:  Defines the schema for persistent pipeline state stored at
-#           .aios/apex-pipeline/{pipeline-id}.yaml. Enables resume between
+#           .aiox/apex-pipeline/{pipeline-id}.yaml. Enables resume between
 #           sessions, progress tracking, and audit trail.
 #
 # Used by:  apex-pipeline-executor.md, wf-apex-pipeline.yaml
@@ -449,12 +449,12 @@ defaults:
 error_handling:
   gate_failure:
     max_fix_attempts: 3
-    escalation_chain: [responsible_agent, apex-lead, aios-master]
+    escalation_chain: [responsible_agent, apex-lead, aiox-master]
     action: "Create FIX sub-task for responsible agent (unidirectional — never rollback)"
 
   agent_failure:
     max_retries: 1
-    escalation_chain: [apex-lead, aios-master]
+    escalation_chain: [apex-lead, aiox-master]
 
   checkpoint_timeout:
     threshold_hours: 48
@@ -462,4 +462,4 @@ error_handling:
 
   pipeline_crash:
     action: "State persisted — restore via *apex-resume"
-    state_path: ".aios/apex-pipeline/{pipeline-id}.yaml"
+    state_path: ".aiox/apex-pipeline/{pipeline-id}.yaml"

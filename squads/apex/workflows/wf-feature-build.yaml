@@ -675,7 +675,7 @@ phases:
           target: apex-lead
           message: "CP-05 passed. All QA gates clear. Ready for final review and ship."
           deadline_hours: 2
-          escalate_on_timeout: aios-master
+          escalate_on_timeout: aiox-master
 
   # ============================================================================
   # PHASE 6: SHIP
@@ -715,15 +715,15 @@ phases:
         on_error: Fix story file before proceeding
 
       - id: step-6-2b
-        name: Generate AIOS Handoff Artifact
+        name: Generate AIOX Handoff Artifact
         agent: apex-lead
         action: >
           Before delegating to @devops, generate a handoff artifact at
-          .aios/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml
-          following the AIOS agent-handoff protocol (see .claude/rules/agent-handoff.md).
+          .aiox/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml
+          following the AIOX agent-handoff protocol (see .claude/rules/agent-handoff.md).
           Include from_agent, to_agent, story_context, decisions, files_modified,
           and next_action: "*push". This ensures @devops receives full context.
-        output: ".aios/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml"
+        output: ".aiox/handoffs/handoff-apex-lead-to-devops-{timestamp}.yaml"
 
       - id: step-6-3
         name: Push & PR
@@ -736,7 +736,7 @@ phases:
           - git push origin {branch}
           - gh pr create --title "feat: {story_title} [{story_id}]" --body "..."
         output: PR URL stored in workflow outputs.pr_url
-        on_error: Retry once, escalate to @aios-master on second failure
+        on_error: Retry once, escalate to @aiox-master on second failure
 
       - id: step-6-4
         name: Story Done
@@ -794,7 +794,7 @@ error_handling:
   on_unrecoverable_error:
     action: ESCALATE
     escalate_to: apex-lead
-    then: aios-master
+    then: aiox-master
   on_timeout:
     threshold_minutes: 120
     action: PAUSE_AND_NOTIFY

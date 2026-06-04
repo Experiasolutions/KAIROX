@@ -565,7 +565,7 @@ Assim como você compra um iPhone, não um "ARM A17 Bionic".
 
 4. **Switching cost alto.** O sistema está entranhado nos processos. O Jarvis vira indispensável. Cancelar = voltar para o caos.
 
-5. **Inovação contínua.** Gabriel está na comunidade AIOS, contribuindo com o repo oficial. Cada update do AIOS melhora o KAIROS. O motor nunca para de evoluir.
+5. **Inovação contínua.** Gabriel está na comunidade AIOX, contribuindo com o repo oficial. Cada update do AIOX melhora o KAIROS. O motor nunca para de evoluir.
 
 ---
 

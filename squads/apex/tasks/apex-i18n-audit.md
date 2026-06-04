@@ -211,7 +211,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/i18n-cache.yaml"
+  location: ".aiox/apex-context/i18n-cache.yaml"
   ttl: "Until src/ files change"
   invalidate_on:
     - "Any .tsx/.jsx file modified"

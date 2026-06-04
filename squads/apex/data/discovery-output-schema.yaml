@@ -17,7 +17,7 @@ version: "1.0.0"
 # OUTPUT STORAGE
 # ==============================================================================
 output:
-  directory: ".aios/apex-context/discoveries/"
+  directory: ".aiox/apex-context/discoveries/"
   format: json
   naming: "{discovery_type}-{ISO8601_date}.json"
   retention: "Keep last 10 scans per type for diff capability"
@@ -348,7 +348,7 @@ diff:
     Compare two discovery outputs of the same type to show what changed.
     Triggered by: *discover-{type} --diff or *apex-audit --diff
   algorithm:
-    - step: "Load latest and previous scan from .aios/apex-context/discoveries/"
+    - step: "Load latest and previous scan from .aiox/apex-context/discoveries/"
       fallback: "If no previous scan exists, show 'First scan — no baseline for comparison'"
     - step: "Compare health_score delta"
       output: "Health: {prev_score} → {new_score} ({delta})"

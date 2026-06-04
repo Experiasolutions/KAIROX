@@ -9,16 +9,16 @@
 ## 🎯 CONTEXT BLOCK
 
 **What this is:** The Evolution Engine — the self-improvement subsystem that
-transforms AIOS from a static tool into an autonomous organism that examines,
+transforms AIOX from a static tool into an autonomous organism that examines,
 judges, and reconstructs itself.
 
 **Why it matters:** Currently, all improvement requires Gabriel to identify
 problems, generate RPs, and feed them to the system. The Evolution Engine
-inverts this: AIOS inspects itself, an IA Council of 7 perspectives deliberates,
+inverts this: AIOX inspects itself, an IA Council of 7 perspectives deliberates,
 and changes are applied autonomously with appropriate safety gates.
 
-**Where it fits in AIOS:**
-- AIOS Phase: Era 5 — Transcendence (Phase 4: Evolution Engine)
+**Where it fits in AIOX:**
+- AIOX Phase: Era 5 — Transcendence (Phase 4: Evolution Engine)
 - Architecture Layer: Between LAYER 2 (Cognition/Noesis) and LAYER 1 (Bridge)
 - Foundation: Extends `metamind.md` TIME MACHINE protocol (currently `enabled: false`)
 - Precedent: `constitutional-layer-v3.md` Rule 5 (EVOLUTION) and Bible §10 (Self-Improvement Loop)
@@ -38,25 +38,25 @@ and changes are applied autonomously with appropriate safety gates.
 12. `scripts/run-evolution-cycle.js`
 
 **Files to READ (context — completed):**
-1. `.aios-core/opus-replicator/SELF_CONTEXT.md` ✅
-2. `docs/AIOS_MASTER_HANDBOOK.md` ✅
+1. `.aiox-core/opus-replicator/SELF_CONTEXT.md` ✅
+2. `docs/AIOX_MASTER_HANDBOOK.md` ✅
 3. `OPUS_ENGINEERING_BIBLE.md` (§10 Self-Improvement Loop) ✅
 4. `OPUS_ENGINEERING_BIBLE_v2.md` ✅
-5. `.aios-core/docs/standards/AIOS-LIVRO-DE-OURO.md` ✅
+5. `.aiox-core/docs/standards/AIOX-LIVRO-DE-OURO.md` ✅
 6. `squads/mind-clones/agents/metamind.md` ✅
-7. `.aios-core/opus-replicator/constitutional-layer-v3.md` ✅
+7. `.aiox-core/opus-replicator/constitutional-layer-v3.md` ✅
 8. `scripts/kernel-bridge.js` ✅
 9. `scripts/event-bus.js` ✅
-10. `.aios-core/memory/anti-patterns.md` ✅
-11. `.aios-core/memory/quality-baseline.json` ✅
+10. `.aiox-core/memory/anti-patterns.md` ✅
+11. `.aiox-core/memory/quality-baseline.json` ✅
 
 **Files to MODIFY:** None during initial creation.
 
 **Dependencies:**
 - `scripts/event-bus.js` (publish/subscribe for evolution events)
 - `scripts/kernel-bridge.js` (core access patterns, safeRequire)
-- `.aios-core/memory/quality-baseline.json` (current scores)
-- `.aios-core/memory/anti-patterns.md` (current catalog)
+- `.aiox-core/memory/quality-baseline.json` (current scores)
+- `.aiox-core/memory/anti-patterns.md` (current catalog)
 - Node.js `fs`, `path`, `crypto` (built-in — no new dependencies)
 
 **Blockers:** None.
@@ -68,7 +68,7 @@ and changes are applied autonomously with appropriate safety gates.
 ### The Core Insight
 
 The Evolution Engine is NOT an optimization tool. It is a **consciousness loop** —
-the mechanism by which AIOS becomes aware of its own state and autonomously
+the mechanism by which AIOX becomes aware of its own state and autonomously
 improves it.
 
 The key architectural decision: **the IA Council is the engine's brain**.
@@ -129,7 +129,7 @@ transition from engineer to observer. The risk classification system
 
 2. **JSON file storage vs database:** Audit reports and proposals stored as JSON
    files in `scripts/evolution/` outputs. Acceptable for single-instance operation.
-   Future: Supabase migration when AIOS scales.
+   Future: Supabase migration when AIOX scales.
 
 3. **Dry-run as default:** All engines default to `dryRun: true`. Gabriel must
    explicitly enable live mode. This is intentionally conservative.
@@ -333,7 +333,7 @@ then engines in pipeline order, then orchestrator, then entry point.
   7. Run apply-engine → APPLIED changes
   8. Run verification-engine → VERIFICATION result
   9. Run notification-bridge → NOTIFY Gabriel
-  10. Save cycle report to `.aios-core/data/evolution/`
+  10. Save cycle report to `.aiox-core/data/evolution/`
 **Emits:** `meta.audit_complete`, `meta.evolution_proposal` via event-bus
 **Test:** `node scripts/evolution/evolution-engine.js --dry-run`
 
@@ -346,7 +346,7 @@ then engines in pipeline order, then orchestrator, then entry point.
 **Output:** Formatted notification (console + file)
 **Formats:**
   - Console: colored summary with emoji
-  - File: JSON report saved to `.aios-core/data/evolution/reports/`
+  - File: JSON report saved to `.aiox-core/data/evolution/reports/`
   - Future: WhatsApp/Telegram push via existing bridges
 **Test:** `node scripts/evolution/notification-bridge.js --test`
 
@@ -408,7 +408,7 @@ run-evolution-cycle.js (entry point, CLI)
   but backup file is corrupted or missing.
 **Impact if ignored:** System stuck in degraded state with no way back.
 **Required solution:** `apply-engine.js` creates backups in TWO locations:
-  1. `.aios-core/data/evolution/backups/[timestamp]/` (primary)
+  1. `.aiox-core/data/evolution/backups/[timestamp]/` (primary)
   2. In-memory copy (secondary, for current session)
   Before applying any change, verify backup integrity (file exists, size > 0).
   If backup verification fails, abort the entire apply phase.

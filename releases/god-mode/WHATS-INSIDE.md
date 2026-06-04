@@ -13,7 +13,7 @@
 | Opus Replicant Engine          |         ✅         |       ✅        |    ✅     |
 | RP-MCP Protocol                |         ✅         |       ✅        |    ✅     |
 | Engine/Client Separation       |         ✅         |       ✅        |    ✅     |
-| AIOS Father (mentor)           |         ✅         |       ✅        |    ✅     |
+| AIOX Father (mentor)           |         ✅         |       ✅        |    ✅     |
 | Noesis Engine (5 layers)       |         ❌         |  📄 Described   |  ✅ Full  |
 | Evolution Engine (17 scripts)  |         ❌         |  📄 Described   |  ✅ Full  |
 | IA Council (8 chairs)          |         ❌         |  📄 Described   |  ✅ Full  |
@@ -34,12 +34,12 @@
 
 ### 🧠 Layer 1 — The Mind
 - `scripts/evolution/` — 17 self-improving scripts (~295 KB)
-- `.aios-core/noesis/` — Identity anchor, cognitive state, state history
+- `.aiox-core/noesis/` — Identity anchor, cognitive state, state history
 - `SELF_CONTEXT.md` — Auto-generated consciousness
 - `CODEX-GIGAS.md` — Complete system X-ray
 
 ### 🎭 Layer 2 — The Thinking Protocol
-- `.aios-core/opus-replicator/` — 19 documents, OPUS 4.6 rules
+- `.aiox-core/opus-replicator/` — 19 documents, OPUS 4.6 rules
 - PM1/PM2/PM3 reasoning modes
 
 ### ⚔️ Layer 3 — The Army
@@ -61,7 +61,7 @@
 - `scripts/kernel-bridge.js` — Synapse/IDS/WIS API
 
 ### 📡 Layer 6 — Infrastructure
-- `.aios-core/integrations/` — 5 API configs
+- `.aiox-core/integrations/` — 5 API configs
 - `scripts/telegram-bridge.js` — Mobile ↔ KAIROS bridge
 - `scripts/night-shift-scheduler.js` — Autonomous overnight execution
 - `.env` — API keys for LLM providers, Telegram, etc.

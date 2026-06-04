@@ -27,7 +27,7 @@
     {
       "name": "T5: MCP Bridge connect + tool sync",
       "status": "✅",
-      "detail": "27 MCP tools bridged: aios_list_squads, aios_list_agents, aios_get_agent, aios_search_agents, aios_status, aios_invoke_squad..."
+      "detail": "27 MCP tools bridged: aiox_list_squads, aiox_list_agents, aiox_get_agent, aiox_search_agents, aiox_status, aiox_invoke_squad..."
     },
     {
       "name": "T6: Session store (JSONL append + load)",

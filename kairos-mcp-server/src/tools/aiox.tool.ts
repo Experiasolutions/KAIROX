@@ -2,12 +2,12 @@ import { aioxService } from "../services/aiox.service.js";
 
 export const aioxTools = [
   {
-    name: "aios_list_squads",
+    name: "aiox_list_squads",
     description: "Lista todos os squads disponíveis",
     inputSchema: { type: "object", properties: {} },
   },
   {
-    name: "aios_list_agents",
+    name: "aiox_list_agents",
     description: "Lista todos os agentes (opcionalmente por squad)",
     inputSchema: {
       type: "object",
@@ -16,7 +16,7 @@ export const aioxTools = [
     },
   },
   {
-    name: "aios_get_agent",
+    name: "aiox_get_agent",
     description: "Lê todo o conteúdo de um agente específico",
     inputSchema: {
       type: "object",
@@ -25,12 +25,12 @@ export const aioxTools = [
     },
   },
   {
-    name: "aios_list_skills",
+    name: "aiox_list_skills",
     description: "Lista as integrações (skills) disponíveis em tools/integrations",
     inputSchema: { type: "object", properties: {} },
   },
   {
-    name: "aios_read_skill",
+    name: "aiox_read_skill",
     description: "Lê a documentação SKILL.md de uma skill específica",
     inputSchema: {
       type: "object",
@@ -41,9 +41,9 @@ export const aioxTools = [
 ];
 
 export const aioxHandlers: Record<string, Function> = {
-  aios_list_squads: async () => await aioxService.listSquads(),
-  aios_list_agents: async (args: any) => await aioxService.listAgents(args.squad),
-  aios_get_agent: async (args: any) => await aioxService.getAgent(args.squad, args.agent),
-  aios_list_skills: async () => await aioxService.listSkills(),
-  aios_read_skill: async (args: any) => await aioxService.readSkill(args.skill_id),
+  aiox_list_squads: async () => await aioxService.listSquads(),
+  aiox_list_agents: async (args: any) => await aioxService.listAgents(args.squad),
+  aiox_get_agent: async (args: any) => await aioxService.getAgent(args.squad, args.agent),
+  aiox_list_skills: async () => await aioxService.listSkills(),
+  aiox_read_skill: async (args: any) => await aioxService.readSkill(args.skill_id),
 };

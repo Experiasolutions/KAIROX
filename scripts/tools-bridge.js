@@ -18,8 +18,8 @@ const path = require('path');
 
 // ── Paths ────────────────────────────────────────────────────
 
-const AIOS_ROOT = path.join(__dirname, '..');
-const TOOLS_PATH = path.join(AIOS_ROOT, 'tools');
+const AIOX_ROOT = path.join(__dirname, '..');
+const TOOLS_PATH = path.join(AIOX_ROOT, 'tools');
 const INTEGRATIONS_PATH = path.join(TOOLS_PATH, 'integrations');
 const REGISTRY_PATH = path.join(INTEGRATIONS_PATH, 'TOOLS-REGISTRY.md');
 
@@ -324,7 +324,7 @@ if (require.main === module) {
     const discovery = bridge.getDiscovery();
 
     if (action === 'summary') {
-        console.log('\n⚡ AIOS Tools Bridge v1.0');
+        console.log('\n⚡ AIOX Tools Bridge v1.0');
         console.log(`   Available: ${discovery.available}`);
         console.log(`   Top-level repos: ${discovery.repos.length}`);
         console.log(`   Integrations: ${discovery.integrations.length}`);

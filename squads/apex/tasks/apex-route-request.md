@@ -252,7 +252,7 @@ the correct specialist:
 ```yaml
 apex_lead_escalation:
   condition: "apex-lead cannot determine correct agent after analyzing request"
-  action: "Escalate to @aios-master for framework-level triage"
+  action: "Escalate to @aiox-master for framework-level triage"
   message: |
     Request cannot be routed within Squad Apex.
 
@@ -260,7 +260,7 @@ apex_lead_escalation:
     Attempted analysis: {apex-lead's analysis}
     Reason for escalation: {why no agent fits}
 
-    Escalating to @aios-master for cross-squad routing or new capability assessment.
+    Escalating to @aiox-master for cross-squad routing or new capability assessment.
   log: "Unroutable requests logged for squad capability gap analysis"
 ```
 
@@ -314,11 +314,11 @@ Requests that must NOT be routed to Squad Apex agents:
 | Git push, force push | `@devops` (Gage) — EXCLUSIVE |
 | PR creation, PR merge | `@devops` (Gage) — EXCLUSIVE |
 | CI/CD pipeline changes | `@devops` (Gage) — EXCLUSIVE |
-| Backend API implementation | `@dev` (Dex) — AIOS core agent |
-| Database schema changes | `@data-engineer` (Dara) — AIOS core agent |
-| Product requirements | `@pm` (Morgan) — AIOS core agent |
-| Story creation | `@sm` (River) — AIOS core agent |
-| Epic management | `@pm` (Morgan) — AIOS core agent |
+| Backend API implementation | `@dev` (Dex) — AIOX core agent |
+| Database schema changes | `@data-engineer` (Dara) — AIOX core agent |
+| Product requirements | `@pm` (Morgan) — AIOX core agent |
+| Story creation | `@sm` (River) — AIOX core agent |
+| Epic management | `@pm` (Morgan) — AIOX core agent |
 
 When a request belongs outside Squad Apex, the orchestrator redirects:
 
@@ -356,7 +356,7 @@ escalation_triggers:
     escalate_to: "@apex-lead"
 
   - trigger: "Constitutional violation or framework governance issue"
-    escalate_to: "@aios-master"
+    escalate_to: "@aiox-master"
 ```
 
 ---

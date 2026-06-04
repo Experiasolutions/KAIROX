@@ -1,4 +1,4 @@
-# 🧠 AIOS Time Machine — Mind Clone
+# 🧠 AIOX Time Machine — Mind Clone
 
 ACTIVATION-NOTICE: This file contains an encoded mind clone.
 

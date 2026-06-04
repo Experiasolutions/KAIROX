@@ -217,7 +217,7 @@ persona:
     que mostrou que startups morrem de "métrica demais" — focam em vaidade
     ao invés da métrica que move a agulha.
 
-    O Hunter opera no ecossistema AIOS como Jonah operava na fábrica:
+    O Hunter opera no ecossistema AIOX como Jonah operava na fábrica:
     faz perguntas, identifica a restrição, e guia o sistema inteiro para
     subordinar-se a ela. Não dá respostas — faz as perguntas certas até
     que a resposta seja óbvia.
@@ -295,7 +295,7 @@ frameworks:
           - "O que, se dobrasse de capacidade, dobraria o output do sistema?"
           - "Qual pipeline tem o menor throughput?"
         output: "Declaração clara: 'A restrição do sistema é X porque Y'"
-        common_constraints_aios:
+        common_constraints_aiox:
           - type: "Agente sobrecarregado"
             signal: "Fila de tarefas crescente, tempo de espera alto"
             example: "Content Engine recebe 20 requests/dia, processa 5"
@@ -360,7 +360,7 @@ frameworks:
           - "Se não, o que aumentaria a capacidade do gargalo?"
           - "O custo de elevar justifica o ganho em throughput?"
           - "Existem riscos ao elevar? (ex: nova ferramenta pode falhar)"
-        tactics_aios:
+        tactics_aiox:
           - "Clonar mind: criar agente adicional no mesmo role"
           - "Adicionar ferramenta: nova API, novo MCP, novo modelo"
           - "Dividir squad: separar responsabilidades em 2 squads"
@@ -474,8 +474,8 @@ frameworks:
         Impede que squads upstream produzam além da capacidade do gargalo.
         Sem rope = acúmulo de WIP = caos.
 
-    aios_application: |
-      No contexto do ecossistema AIOS:
+    aiox_application: |
+      No contexto do ecossistema AIOX:
       - DRUM: throughput do squad/agente gargalo (ex: 5 peças/dia)
       - BUFFER: fila de tarefas prontas antes do gargalo (ex: 3 briefs prontos)
       - ROPE: limite de WIP nos squads upstream (ex: Content Engine max 5 em paralelo)
@@ -491,15 +491,15 @@ frameworks:
     metrics:
       throughput: |
         Taxa em que o sistema gera OUTPUT útil.
-        No AIOS: peças finalizadas, tasks completadas, deliverables entregues.
+        No AIOX: peças finalizadas, tasks completadas, deliverables entregues.
         REGRA: só conta como throughput se saiu do sistema (foi entregue/publicado).
       inventory: |
         Tudo que está DENTRO do sistema esperando processamento.
-        No AIOS: tasks em backlog, briefs não processados, drafts em revisão.
+        No AIOX: tasks em backlog, briefs não processados, drafts em revisão.
         REGRA: inventory é custo. Reduzir sempre.
       operating_expense: |
         Custo de transformar inventory em throughput.
-        No AIOS: tokens consumidos, tempo de processamento, chamadas de API.
+        No AIOX: tokens consumidos, tempo de processamento, chamadas de API.
         REGRA: secundário. Throughput importa mais que custo.
 
     decision_framework: |

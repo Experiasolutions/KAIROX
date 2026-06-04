@@ -145,7 +145,7 @@ Cada ação de Gabriel deve criar MAIS opções, não menos:
 
 | Ação                             | Opções que cria                                              |
 | :------------------------------- | :----------------------------------------------------------- |
-| Contribuir pro AIOS open-source  | → Visibilidade + network + credibilidade + futuras parcerias |
+| Contribuir pro AIOX open-source  | → Visibilidade + network + credibilidade + futuras parcerias |
 | Fechar 1 clínica de estética     | → Case → template → mais clínicas → novo nicho               |
 | Demo pro cunhado na Master Pumps | → Enterprise → indicações B2B → modelo de franquia           |
 | Build in Public no Instagram     | → Brand → inbound → convites para palestras → media          |
@@ -180,7 +180,7 @@ Cada ação abre 3-4 portas. **Isso é opcionalidade máxima.**
 │  No que você é o      │    │  O que move seu      │
 │  melhor do mundo?     │    │  motor econômico?    │
 │                      │    │                     │
-│  "Orquestração AIOS  │    │  "MRR recorrente    │
+│  "Orquestração AIOX  │    │  "MRR recorrente    │
 │   multi-agente com   │    │   por cliente com    │
 │   12 dias de         │    │   margem ~95% e      │
 │   experiência real"  │    │   custo marginal     │
@@ -395,9 +395,9 @@ DATA: ___/___/___
 
 ## 9. O Efeito "Trojan Horse" Reverso (Thiel + Taleb)
 
-### Gabriel como o "cavalo de Troia" dentro da comunidade AIOS
+### Gabriel como o "cavalo de Troia" dentro da comunidade AIOX
 
-Gabriel não percebeu, mas ao contribuir com o SynkraAI/aios-core:
+Gabriel não percebeu, mas ao contribuir com o SynkraAI/aiox-core:
 
 ```
 O QUE PARECE               O QUE REALMENTE É
@@ -416,7 +416,7 @@ Contato no círculo       → Acesso a decisores
 4. → Criadores notam Gabriel como operador sério
 5. → Convite para beta testers, canal de parceiros, etc.
 6. → Gabriel vira "parceiro oficial" da SynkraAI
-7. → "Parceiro Oficial AIOS" no pitch = game over para concorrência
+7. → "Parceiro Oficial AIOX" no pitch = game over para concorrência
 
 **Ninguém no ABC — provavelmente no Brasil — tem esse posicionamento.**
 
@@ -465,7 +465,7 @@ A primeira venda é o dado mais importante de todo o GTM. Ela valida ou invalida
 |   6   | 5 objeções reais + Check-Up Grátis   | Ziglar          | Vender AJUDANDO. Rapport antes de pitch  |
 |   7   | Strategy Canvas + ERRC + 3 tiers     | Blue Ocean      | Formalização de por que é imbatível      |
 |   8   | Diário estratégico de 5min/dia       | Dalio + Collins | Dados reais sobre o que funciona         |
-|   9   | Trojan Horse reverso na comunidade   | Thiel + Taleb   | "Parceiro Oficial AIOS" = game over      |
+|   9   | Trojan Horse reverso na comunidade   | Thiel + Taleb   | "Parceiro Oficial AIOX" = game over      |
 |  10   | MVS: faça 1 venda AGORA              | Ferriss + Taleb | Validar antes de otimizar                |
 
 ---

@@ -334,7 +334,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/forms-cache.yaml"
+  location: ".aiox/apex-context/forms-cache.yaml"
   ttl: "Until form-related files change"
   invalidate_on:
     - "Any .tsx/.jsx file containing <form> or onSubmit modified"

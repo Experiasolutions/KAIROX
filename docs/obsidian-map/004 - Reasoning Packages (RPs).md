@@ -14,15 +14,15 @@ Ditam "O que vamos construir e como ganhar com isso":
 
 ## 2. CORE (O Padrão de Sistemas, 7 RPs)
 Ditam a mecânica de como o OS se move sob o capô:
-- `RP NOesis Engine.md` (DNA Mental do AIOS).
+- `RP NOesis Engine.md` (DNA Mental do AIOX).
 - `RP-20260401-SKYROS-ARCHITECTURE-GOLD.md` — Documenta o design progressivo e limpo do painel SKYROS.
-- `RP-20260303-KAIROS-AIOS-INTEGRATION-PLAN.md` — A Grande Unificação, o fluxo do núcleo AIOX mesclando API multi-provider na Engine do God Pool.
+- `RP-20260303-KAIROS-AIOX-INTEGRATION-PLAN.md` — A Grande Unificação, o fluxo do núcleo AIOX mesclando API multi-provider na Engine do God Pool.
 
 ## 3. TASKS (O Raciocínio Tático, 1+ RPs puros de Output)
 - `RP-20260227-AMOSTRA-GRATIS-POWERHOUSE-v0.1-SEED` — Racional vital de *vendas outbound*. Instrui aos clones de Commerce a montar aquele E-mail de quebra-gelo que funciona e reage perfeitamente a leads.
 
 > [!TIP] Desbloqueio Cognitivo
-> Se você sentir que sua visão da Experia ou sua organização estagnou, autorize o AIOS a consumir e executar novamente uma leitura tática de `EXPERIA-ESTRATEGIA-TOTAL`. Isso vai recolocar o agente como protagonista gerando leads num passe de mágica.
+> Se você sentir que sua visão da Experia ou sua organização estagnou, autorize o AIOX a consumir e executar novamente uma leitura tática de `EXPERIA-ESTRATEGIA-TOTAL`. Isso vai recolocar o agente como protagonista gerando leads num passe de mágica.
 
 ---
 

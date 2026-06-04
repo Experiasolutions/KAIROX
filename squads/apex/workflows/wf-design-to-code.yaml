@@ -671,7 +671,7 @@ error_handling:
     action: ESCALATE
     escalate_to: interaction-dsgn
     then: apex-lead
-    then_last: aios-master
+    then_last: aiox-master
   on_figma_unavailable:
     action: PAUSE
     notify: interaction-dsgn

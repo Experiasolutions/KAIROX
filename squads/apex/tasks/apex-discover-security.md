@@ -361,7 +361,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/security-cache.yaml"
+  location: ".aiox/apex-context/security-cache.yaml"
   ttl: "Until source files change"
   invalidate_on:
     - "Any .ts/.tsx/.js/.jsx file created, deleted, or modified"

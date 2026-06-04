@@ -33,7 +33,7 @@ Exit codes:
   1 — Error (missing input, file not found, invalid YAML)
 
 Version: 1.0.0
-Author: AIOS Dispatch Squad
+Author: AIOX Dispatch Squad
 """
 
 import argparse

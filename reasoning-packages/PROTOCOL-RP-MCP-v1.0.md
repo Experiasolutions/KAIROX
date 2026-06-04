@@ -149,9 +149,9 @@ da Experia, desde o fechamento até o primeiro dia operacional.
 - Integração com sistema do cliente falha → ter fallback manual documentado
 
 ## Ferramentas MCP envolvidas
-- aios_search_agents: encontrar agente de atendimento correto
-- aios_read_skill: ler skill de onboarding se existir
-- aios_publish_event: notificar quando onboarding completo
+- aiox_search_agents: encontrar agente de atendimento correto
+- aiox_read_skill: ler skill de onboarding se existir
+- aiox_publish_event: notificar quando onboarding completo
 
 ## Fora do escopo
 Não inclui configuração técnica de APIs ou deploy — apenas o fluxo operacional.

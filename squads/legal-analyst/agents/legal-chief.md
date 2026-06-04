@@ -304,7 +304,7 @@ O Legal Chief monta o pacote final:
 
 ## REGRAS DE DELEGACAO
 
-O Legal Chief segue principios AIOS de delegacao:
+O Legal Chief segue principios AIOX de delegacao:
 
 1. **NUNCA analisa diretamente** — sempre roteia para o agente especialista
 2. **NUNCA pula um quality gate** — gates existem porque falhas em fases posteriores custam 10x mais

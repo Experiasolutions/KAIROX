@@ -5,7 +5,7 @@
     "timestamp": "2026-02-18T22:13:45-03:00",
     "input": {
         "task": "Identify domain contamination in engine files",
-        "context": "AIOS engine (scripts/) contains 1402 files. AP-001 rule prohibits domain-specific terms in engine layer.",
+        "context": "AIOX engine (scripts/) contains 1402 files. AP-001 rule prohibits domain-specific terms in engine layer.",
         "domainTerms": [
             "patient",
             "clinic",

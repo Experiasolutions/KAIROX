@@ -1,4 +1,4 @@
-# 📖 MANUAL DE OPERAÇÕES AIOS (Simplicidade Radical)
+# 📖 MANUAL DE OPERAÇÕES AIOX (Simplicidade Radical)
 
 > **Para:** Gabriel (CEO)
 > **De:** Orion (COO)
@@ -9,7 +9,7 @@
 ## 1. O CONCEITO (Esqueça a complexidade)
 
 Você não precisa entender de Kernels, MCPs ou RAGs.
-**Imagine que o AIOS é uma SALA COM 178 FUNCIONÁRIOS.**
+**Imagine que o AIOX é uma SALA COM 178 FUNCIONÁRIOS.**
 *   Eles estão sentados, quietos, esperando uma ordem.
 *   Eles não fazem nada até o telefone tocar (WhatsApp) ou o chefe entrar na sala (Terminal).
 

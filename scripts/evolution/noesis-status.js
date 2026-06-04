@@ -24,10 +24,10 @@ const PROJECT_ROOT = path.join(__dirname, '..', '..');
 const ROADMAP_FILE = path.join(PROJECT_ROOT, 'distillation-dataset', 'roadmap.json');
 const TRACES_DIR = path.join(PROJECT_ROOT, 'distillation-dataset', 'traces');
 const CURATED_DIR = path.join(PROJECT_ROOT, 'distillation-dataset', 'curated');
-const BASELINE_FILE = path.join(PROJECT_ROOT, '.aios-core', 'data', 'quality-baseline.json');
-const GOLDEN_DIR = path.join(PROJECT_ROOT, '.aios-core', 'memory', 'golden-examples');
-const ANTI_PATTERNS_FILE = path.join(PROJECT_ROOT, '.aios-core', 'memory', 'anti-patterns.md');
-const HISTORY_FILE = path.join(PROJECT_ROOT, '.aios-core', 'data', 'noesis-history.json');
+const BASELINE_FILE = path.join(PROJECT_ROOT, '.aiox-core', 'data', 'quality-baseline.json');
+const GOLDEN_DIR = path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'golden-examples');
+const ANTI_PATTERNS_FILE = path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'anti-patterns.md');
+const HISTORY_FILE = path.join(PROJECT_ROOT, '.aiox-core', 'data', 'noesis-history.json');
 
 // ─────────────────────────────────────────────────────────────
 // HELPERS

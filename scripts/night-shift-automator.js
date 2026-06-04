@@ -62,7 +62,7 @@ function sanitizeWorkspace() {
             if (stat.isFile() && stat.size < 500000) {
                 logWarn(`Suspicious standalone JSON found. Archiving: ${file}`);
                 // Instead of deleting, we move to a 'dumps-archive' folder just in case
-                const archiveDir = path.join(ROOT_DIR, '.aios-core', 'archive', 'dumps');
+                const archiveDir = path.join(ROOT_DIR, '.aiox-core', 'archive', 'dumps');
                 if (!IS_DRY_RUN) {
                     if (!fs.existsSync(archiveDir)) fs.mkdirSync(archiveDir, { recursive: true });
                     fs.renameSync(path.join(ROOT_DIR, file), path.join(archiveDir, file));
@@ -79,7 +79,7 @@ async function semanticOrganizer() {
 
     logInfo('Initializing Sovereign SKORTEX Router for Night Shift...');
 
-    const categories = ['Financial', 'Personal', 'Work', 'KAIROS', 'AIOS', 'Megabrain', 'Other'];
+    const categories = ['Financial', 'Personal', 'Work', 'KAIROS', 'AIOX', 'Megabrain', 'Other'];
     const destBase = path.join(DOCS_DIR, 'Organized_by_Groq');
 
     if (!IS_DRY_RUN && !fs.existsSync(destBase)) {

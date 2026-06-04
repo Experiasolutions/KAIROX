@@ -1,4 +1,4 @@
-# Schemas de Integração: UiPath ↔ Experia AIOS
+# Schemas de Integração: UiPath ↔ Experia AIOX
 
 ## 1. Contexto (Entrada)
 O UiPath deve gerar este JSON e salvar como `context.json` antes de chamar o script.
@@ -25,7 +25,7 @@ O UiPath deve gerar este JSON e salvar como `context.json` antes de chamar o scr
 ```
 
 ## 2. Ação (Saída)
-O AIOS vai gerar este JSON como `action.json` para o UiPath ler e executar.
+O AIOX vai gerar este JSON como `action.json` para o UiPath ler e executar.
 
 ### Cenário A: Responder Texto
 ```json

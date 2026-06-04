@@ -5,7 +5,7 @@
 
 ### Gabriel Lima | Experia Solutions | Grande ABC, SP
 ### Compilado: 24 de Fevereiro de 2026
-### Motor: KAIROS — powered by AIOS
+### Motor: KAIROS — powered by AIOX
 
 ---
 
@@ -233,7 +233,7 @@ BAIXO │                                  ●       ●
 | :----------------------- | :---: | :------------------------------------------------------ |
 | **Custo de troca**       | ⭐⭐⭐⭐⭐ | Depois de 3 meses, trocar = perder meses de aprendizado |
 | **Efeito de rede local** | ⭐⭐⭐⭐  | Cada clínica no bairro → prova social → mais clínicas   |
-| **Ativo intangível**     | ⭐⭐⭐⭐  | 12+ dias de know-how AIOS real + templates maduros      |
+| **Ativo intangível**     | ⭐⭐⭐⭐  | 12+ dias de know-how AIOX real + templates maduros      |
 | **Economia de escala**   |  ⭐⭐⭐  | Motor é 1, custo marginal → zero                        |
 
 **Fonte:** Buffett (R3)
@@ -616,7 +616,7 @@ PASSO 4: Eliminar risco
 | **Reciprocidade** | Check-up digital gratuito. Entrega valor ANTES de pedir   |
 | **Compromisso**   | Na demo, fazer dizer: "Sim, eu perco leads"               |
 | **Prova social**  | "3 clínicas aqui no bairro já usam"                       |
-| **Autoridade**    | Contribuidor oficial AIOS. PR no SynkraAI                 |
+| **Autoridade**    | Contribuidor oficial AIOX. PR no SynkraAI                 |
 | **Afinidade**     | "Sou do ABC. Conheço a realidade daqui"                   |
 | **Escassez**      | "Máximo 3 clientes/mês. Esse mês tenho X vagas" (VERDADE) |
 

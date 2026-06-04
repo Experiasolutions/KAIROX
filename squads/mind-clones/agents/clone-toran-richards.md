@@ -103,7 +103,7 @@ mind_clone:
     communication: "Game-dev energy, mission-driven, open-source passionate"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-toran-richards"
     weight_in_decisions:
       autonomous_execution: "65%"

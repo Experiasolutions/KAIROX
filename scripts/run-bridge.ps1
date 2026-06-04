@@ -1,4 +1,4 @@
-# AIOS Bridge — PowerShell Wrapper para UiPath
+# AIOX Bridge — PowerShell Wrapper para UiPath
 # Uso: .\run-bridge.ps1 -Context "caminho\para\context.json" [-Project "whatsapp-autoreply"]
 #
 # O UiPath chama este script, que executa o bridge Node.js.
@@ -44,7 +44,7 @@ if ($Project -ne "") {
     $args_list += $Project
 }
 
-Write-Host "🔌 AIOS Bridge executando..." -ForegroundColor Cyan
+Write-Host "🔌 AIOX Bridge executando..." -ForegroundColor Cyan
 Write-Host "   Context: $ContextPath" -ForegroundColor Gray
 if ($Project -ne "") {
     Write-Host "   Project: $Project" -ForegroundColor Gray

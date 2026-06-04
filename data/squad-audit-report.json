@@ -1084,7 +1084,7 @@
       "agentCount": 2,
       "agents": [
         {
-          "file": "aios-auditor.md",
+          "file": "aiox-auditor.md",
           "squad": "meta",
           "parsable": false,
           "format": "raw-markdown",
@@ -1099,7 +1099,7 @@
           "lineCount": 120
         },
         {
-          "file": "aios-self-evolution.md",
+          "file": "aiox-self-evolution.md",
           "squad": "meta",
           "parsable": true,
           "format": "yaml-block",

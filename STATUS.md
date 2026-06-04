@@ -1,11 +1,189 @@
 > 🔴 [SKYROS]: ISOLATION MODE ENGAGED. O operador está em Deep Work. Novas tarefas, brainstorms paralelos ou pesquisas que fujam da SPRINT atual devem ser TERMINANTEMENTE negadas até o término da sessão.
 
-# KAIROS — STATUS (Fila de Trabalho)
+# ╔══════════════════════════════════════════════════════════════════╗
+# ║          GABRIEL OS — SEASON 1: FUNDAÇÃO                        ║
+# ║          "Da Sobrevivência à Construção"                         ║
+# ║          Data: 2026-05-12 | Dia 1 / 90                          ║
+# ╚══════════════════════════════════════════════════════════════════╝
 
-> **Última atualização:** 2026-04-29T12:42:00-03:00
-> **Estado Operacional:** 🚀 MVP AI OPS SPRINT | Engine Triage v4 EMBEDDED | God Pool 84 keys ATIVO | IA Council: 6.9/10
-> **Agente:** NOESIS (KAIROS) · Hat: @aiox-master (Orchestrator)
-> **Sprint:** MVP Template → Cases Leticia + Paulo (HOJE) → Squads Internos → Dashboard 360
+> **Última atualização:** 2026-05-24T15:30:00-03:00
+> **Estado Operacional:** 🔴 MONEY RUSH MODE | MVP AI OPS | God Pool 84 keys ATIVO
+> **Agente:** NOESIS (KAIROS) · Hat: @devops (Infra)
+> **Objetivo da Temporada:** Primeiro Contrato Pago — Boss Final da T1
+
+> [!IMPORTANT]
+> 🧪 **GABLAB v1.0 ATIVO** — Hub de governança pessoal consolidado em 17/05
+> Localização: `c:\Users\GABS\Documents\Haha²\GABLAB\GABLAB_ROOT.md`
+> **KAIROS executa. GABLAB governa.** Para estado do personagem/bosses/finanças → consultar GABLAB.
+
+---
+
+## 🎮 IDENTIDADE DO PERSONAGEM
+
+```
+CLASSE:    AI Ops Solopreneur — "O Condutor"
+ARQUÉTIPO: Dragonborn (Voice of the Dragonborn)
+LEVEL:     1  ████░░░░░░░░░░░░░░░░░░  35/100 XP
+STREAK:    0 dias 🔥  [Streak Shield: 1 disponível]
+TEMPORADA: T1 — FUNDAÇÃO | Dia 1/90
+PARETO:    🔵 0% hoje (nenhuma missão iniciada)
+```
+
+### 📊 ATRIBUTOS ATUAIS
+| Skill | Nível | Desbloqueado |
+|---|---|---|
+| 🎙️ Voz | 2 | Narrar demos da Experia |
+| 🏗️ Arquitetura | 2 | Montar stacks N8N + Evolution |
+| 🤖 Agentificação | 3 | God Pool 84 keys operacional |
+| 💰 Vendas | 1 | Script de abordagem pronto |
+| ⚡ Execução | 1 | *Desbloqueado ao completar 1ª entrega* |
+| 🧠 Hipnose | 1 | Ritual matinal 10min |
+| 📈 Crescimento | 1 | *Desbloqueado ao fechar 1º cliente pagante* |
+
+---
+
+## 🗺️ MAPA DA TEMPORADA T1 — FUNDAÇÃO
+
+```
+BOSS FINAL T1: Primeiro Contrato Pago
+        ↑
+[DUNGEON 4] Proposta + Negociação (semana 2-3)
+        ↑
+[DUNGEON 3] Entrega + Semana de Ouro (dias 5-12)
+        ↑
+[DUNGEON 2] MVP Funcional (HOJE — dia 1)    ← VOCÊ ESTÁ AQUI
+        ↑
+[DUNGEON 1] Infraestrutura Deployada (HOJE — dia 1)
+        ↑
+[SPAWN]    God Pool Validada ✅ | Railway Token ✅ | WA Business ✅
+```
+
+---
+
+## ⚔️ BOSS FIGHTS — T1 FUNDAÇÃO
+
+### 🔴 BOSS 1 — MVP Infrastructure (HOJE)
+> *"O Golem de Ferro ainda dorme no Railway. Acorde-o."*
+
+**Objetivo:** N8N + Evolution API deployados e funcionais
+**Recompensa:** +40 XP | Unlock: DUNGEON 3
+
+- [x] **[MISSÃO 🔵]** Deploy N8N no Railway (~20 min)
+- [ ] **[MISSÃO 🔵]** Deploy Evolution API no Railway (~15 min)
+- [ ] **[MISSÃO 🔵]** Conectar WhatsApp 11976162450 via QR Code (~10 min)
+- [ ] **[MISSÃO 🔵]** Workflow base: WA → Groq (Llama 3.3) → resposta (~30 min)
+- [ ] **[MISSÃO 🔵]** Teste ao vivo com mensagem real (~20 min)
+
+**Stack:** Railway Free Tier · Evolution API · N8N · Groq (14 keys) · llama-3.3-70b-versatile
+
+---
+
+### 🟠 BOSS 2 — Técnico do Celular (Permuta) [SEMANA 1]
+> *"O Arauto da Permuta aguarda uma mensagem. Uma. Só uma."*
+
+**Objetivo:** Free Trial entregue → Case Study 0 → Celular consertado
+**Recompensa:** +60 XP | Unlock: DUNGEON 4 | Item: 📱 Celular Funcional
+
+**Perfil da dor:** Assistência técnica. WA cheio de "meu celular ficou pronto?", orçamentos, status de conserto. MVP 1 resolve isso em 2-4 dias.
+
+- [ ] **[MISSÃO 🔴]** Mandar mensagem de permuta (mensagem pronta no Plano de Ataque §11.1)
+- [ ] **[MISSÃO 🔵]** Conversa de diagnóstico 30min
+- [ ] **[MISSÃO 🔵]** Coletar: 10 perguntas frequentes + horários + tom de voz
+- [ ] **[MISSÃO 🔵]** Configurar prompt base no N8N
+- [ ] **[MISSÃO 🔵]** Testar + ajustar (Dia 4)
+- [ ] **[MISSÃO 🔵]** Apresentar ao vivo (Dia 5)
+- [ ] **[MISSÃO 🔵]** Semana de acompanhamento
+- [ ] **[MISSÃO 🔵]** Documentar Case Study (template §11.5 do Plano de Ataque)
+
+---
+
+### 🟡 BOSS 3 — Alvo 2: Empreendedor com Dor Óbvia [SEMANA 2]
+> *"A segunda batalha é mais rápida. O template já existe."*
+
+**Objetivo:** 2º Free Trial → 2º Case → Validação do modelo
+**Recompensa:** +60 XP | Unlock: Precificação com confiança
+
+- [ ] Listar 10+ empreendedores da rede
+- [ ] Aplicar matriz de priorização (Plano de Ataque §2.2)
+- [ ] Abordar top 2 com script personalizado
+- [ ] Entregar MVP (template já pronto do Boss 2)
+
+---
+
+### 🟡 BOSS 4 — Paulo (Tapeceiro) [ARQUITETURA DEDICADA]
+> *"O Tapeceiro não pode morar no monolito. Construa um domínio novo para os bots."*
+
+**Status:** 🔄 Plano `commercial-ai-bots` aprovado
+**Ação:** Criar repositório limpo, integrar WhatsApp e deployar no Railway
+
+---
+
+### ⚪ BOSS 5 — Leticia (Esteticista) [EM ESPERA]
+> *"A Esteticista não vê o valor ainda. Deixe o case do Técnico falar por você."*
+
+**Status:** 🧊 Em espera — sem iniciativa suficiente agora
+**Ação:** Retomar com case study pronto em mãos
+
+---
+
+### 🟡 BOSS 6 — Hortifruti (Elaine) 🥦 [TRIAL ATIVO]
+**Status:** Trial rodando
+**Ação:** Calibrar persona bot + Morning Report
+
+---
+
+## 📋 MISSÃO DO DIA — 12/05
+
+> *"Movimento antes de clareza. O primeiro passo é menor do que parece."*
+
+**UMA tarefa:** Confirmar arquitetura Railway (1 projeto ou 2?) e iniciar deploy do N8N.
+
+```
+[ ] MISSÃO PRINCIPAL: MVP Infra deployada (Boss 1)
+[ ] MISSÃO SECUNDÁRIA: Mensagem enviada ao técnico (Boss 2)
+[ ] RITUAL: 10min autohipnose matinal
+```
+
+---
+
+## 💰 DASHBOARD FINANCEIRO — T1
+
+| Meta | Valor | Status |
+|---|---|---|
+| Mês 1 | R$ 1.000 (permuta + primeiros pagtos) | 🔴 R$ 0/1.000 |
+| Mês 2 | R$ 2.500 | ⚪ Pendente |
+| Mês 3 | R$ 4.000 | ⚪ Pendente |
+
+**Passivos a quitar (em ordem):**
+1. 🔴 Água + Luz (~R$ 3.000) — risco de corte
+2. 🟠 Financiamento apê (~R$ 5.000) — quitar = bem livre
+3. 🟡 IPTU (~R$ 12.000) — parcelar, não pagar tudo
+4. ⚪ Serasa (~R$ 5.000) — Limpa Nome (até 90% desconto)
+
+---
+
+## 🏆 CONQUISTAS
+
+| Conquista | Status | Desbloqueio |
+|---|---|---|
+| MARCO-G0: God Pool 84 keys | ✅ DESBLOQUEADO | 2026-04-25 |
+| MARCO-I1: Squad experia-commerce AIOX L3 | ✅ DESBLOQUEADO | 2026-05-07 |
+| MARCO-D1: Deploy N8N Railway | ✅ DESBLOQUEADO | 2026-05-24 |
+| MARCO-C0: Mensagem para Técnico enviada | ⏳ HOJE | Completar missão 🔴 |
+| MARCO-F0: Primeiro Free Trial entregue | ⬜ | Semana 1 |
+| MARCO-F1: Primeiro R$100 faturado | ⬜ | Mês 1 |
+| MARCO-P1: Primeiro case documentado | ⬜ | Semana 2 |
+| MARCO-G1: 7 dias de ritual consecutivos | ⬜ | Semana 1-2 |
+
+---
+
+## 🔴 BLOQUEIOS ATUAIS
+
+| Bloqueio | Impacto | Ação |
+|---|---|---|
+| Evolution API não deployada | WA desconectado | **Resolver HOJE (Boss 1)** |
+| Paulo — Arquitetura | Boss 4 travado em deploy monolítico | Executar extração para `commercial-ai-bots` |
+| Leticia — baixa iniciativa | Boss 5 em espera | Retomar com case em mãos |
 
 ---
 
@@ -47,12 +225,12 @@
 - **Entrega MVP:** Script de atendimento WhatsApp + lembretes automáticos + reativação de sumidas
 - **Owner:** @commerce-sales + @commerce-clone + Operador
 
-### BOSS FIGHT 2 — Paulo (Tapeceiro / Ateliê) 🧵 [APRESENTAÇÃO HOJE]
-- **Objetivo:** Brief completo + scripts adaptados para ateliê artesanal
-- **Contexto:** Em transição para WhatsApp Business
+### BOSS FIGHT 2 — Paulo (Tapeceiro / Ateliê) 🧵 [REFINAMENTO TEMPLATE]
+- **Objetivo:** Refinar persona e infraestrutura para servir de template Multi-Tenant
+- **Contexto:** Novo repo `commercial-ai-bots` criado. Bot vivo no Railway.
 - **Dores mapeadas:** Triagem de pedidos no WA, status de serviço, combinar entrega/retirada
-- **Entrega MVP:** Script triagem + acompanhamento de status + confirmação de entrega
-- **Owner:** @commerce-sales + @commerce-clone + Operador
+- **Entrega MVP:** Script triagem refinado + stack de replicação ágil
+- **Owner:** @dev + @commerce-clone
 
 ### BOSS FIGHT 3 — Hortifruti (Elaine) 🥦 [TRIAL ATIVO]
 - **Objetivo:** Manter trial ativo + calibrar persona bot
@@ -60,8 +238,8 @@
 - **Ticket alvo:** R$ 497–997/mês
 - **Owner:** @commerce-clone + Operador
 
-### BOSS FIGHT 4 — Porto Alemão 🍺 [MAPEADO]
-- **Objetivo:** Reconectar QR Code + retomar atendimento
+### BOSS FIGHT 4 — Porto Alemão 🍺 [POSTERGADO]
+- **Objetivo:** Retomar deploy e QR Code semana que vem (Cliente sobrecarregado)
 - **Owner:** @commerce-sales
 
 ### BOSS FIGHT 5 — Felix Cell 📱 [MAPEADO]
@@ -74,7 +252,7 @@
 
 - **Bun Build:** Inviável pelo hardware atual (6GB RAM). Usar `node scripts/mcp-server.js`.
 - **RAILWAY_API_TOKEN:** Pendente — HEAD 1 (N8N + Postgres) não deployado.
-- **Cases Leticia/Paulo:** Briefing não capturado ainda. Coletar antes das apresentações hoje.
+- **Cases Leticia/Paulo:** Monolito encavalando rotas de WhatsApp. Repo `commercial-ai-bots` aprovado.
 
 ---
 
@@ -116,14 +294,14 @@
 - [x] boot.md FASE 5.5: Subsistemas sempre ativos
 - [x] boot.md FASE 5.6: Ruflo ecosystem documentado
 
-### Limpeza AIOS → AIOX — ✅ COMPLETO
-- [x] `.aios-core/` → `.aios-core-deprecated/` (conteúdo exclusivo migrado)
-- [x] Docs AIOS_* renomeados para AIOX_*
-- [x] MCP config: `aios-kairos` → `aiox-kairos`
+### Limpeza AIOX → AIOX — ✅ COMPLETO
+- [x] `.aiox-core/` → `.aiox-core-deprecated/` (conteúdo exclusivo migrado)
+- [x] Docs AIOX_* renomeados para AIOX_*
+- [x] MCP config: `aiox-kairos` → `aiox-kairos`
 - [x] Squads c-level/sales/jarvis corrigidos (agents em `agents/` subdir)
 - [x] Squad `_example` removido
 - [x] Task `load-reasoning-package.md` criada no AIOX
-- [x] Zero referências residuais a `.aios-core` no codebase
+- [x] Zero referências residuais a `.aiox-core` no codebase
 
 ### ✅ EXECUÇÃO SOBERANA KAIROX (God Pool VALIDADO — 84 keys)
 
@@ -166,7 +344,7 @@
 ### Arquitetura
 | Head | Componente | Status |
 |---|---|---|
-| HEAD 1 | N8N + PostgreSQL | ⏳ Código pronto, deploy pendente |
+| HEAD 1 | N8N + PostgreSQL | ✅ Deployed (URL: n8n-production-e77a.up.railway.app) |
 | HEAD 2 | OpenClaw Server (15 Railway Skills) | ⏳ Código pronto, deploy pendente |
 | HEAD 3 | SKY Python Backend (55+ tools, CrewAI, Composio) | ✅ Deploy Railway ativo |
 | HEAD 4 | Evolution API (WhatsApp gateway) | 🟡 Parcial (hortifruti OK, porto-alemao close) |
@@ -198,7 +376,7 @@
 - [ ] MCP Server Python health check OK (port 3001)
 
 **FASE 3: Railway Deployments (4 Heads)**
-- [ ] HEAD 1: N8N + Postgres
+- [x] HEAD 1: N8N + Postgres
 - [ ] HEAD 2: OpenClaw Server
 - [x] HEAD 3: SKY Python Backend
 - [ ] HEAD 4: Evolution API (full)
@@ -228,7 +406,7 @@
 ### Credenciais (status)
 | Credencial | Status |
 |---|---|
-| RAILWAY_API_TOKEN | ❌ PENDENTE |
+| RAILWAY_API_TOKEN | ✅ b1b1cf54... |
 | MCP_API_KEY | ⏳ Definir |
 | N8N_API_KEY | ❌ PENDENTE |
 | COMPOSIO_API_KEY | ✅ ak_6pj-rP1ExkVjlQu91M3n |
@@ -309,7 +487,7 @@
 
 | Métrica | Valor |
 |---|---|
-| MCP Tools (JS local) | **28** (10 AIOS + 13 KAIROS + 5 Hivemind) |
+| MCP Tools (JS local) | **28** (10 AIOX + 13 KAIROS + 5 Hivemind) |
 | MCP Tools (Python/HYDRA) | **18** (pendente deploy) |
 | OpenClaude Skills (migradas) | **17** (analyst→ux-design, workflows nativos) |
 | Tasks AIOX | 204 |

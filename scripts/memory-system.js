@@ -1,7 +1,7 @@
 /**
  * @module memory-system
  * @version 1.0.0
- * @purpose Persistent memory layer for AIOS. Stores, searches, and retrieves
+ * @purpose Persistent memory layer for AIOX. Stores, searches, and retrieves
  *          memories in JSON with keyword-based relevance scoring.
  * @inputs  Category + content string (API) or CLI commands
  * @outputs Stored memory objects { id, category, content, metadata, timestamp, tags }
@@ -179,7 +179,7 @@ if (require.main === module) {
     }
     else if (args[0] === '--stats') {
         const s = stats();
-        console.log('\n📊 Memória AIOS:\n');
+        console.log('\n📊 Memória AIOX:\n');
         console.log(`  Total: ${s.total} memórias`);
         console.log(`  Hoje: ${s.today}`);
         console.log(`  Categorias:`);
@@ -198,7 +198,7 @@ if (require.main === module) {
         console.log(JSON.stringify(data, null, 2));
     }
     else {
-        console.log('AIOS Memory System');
+        console.log('AIOX Memory System');
         console.log('  --store <category> "text" [metadata_json]  Armazenar');
         console.log('  --search "query"                           Buscar');
         console.log('  --recent [n]                               Últimas N');

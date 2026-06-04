@@ -1,0 +1,80 @@
+.questsContainer {
+  background-color: var(--surface-color, #1a1a1a);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color, #333);
+  margin-top: 1rem;
+}
+
+.questsContainer h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-color, #fff);
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  color: var(--text-muted, #aaa);
+  margin-bottom: 0.3rem;
+}
+
+.inputGroup input {
+  padding: 0.8rem;
+  background-color: #222;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.saveBtn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.questItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #222;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+  border-left: 4px solid #555;
+}
+
+.questItem.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+  border-left-color: #4CAF50;
+}
+
+.questItem button {
+  background-color: transparent;
+  border: 1px solid #4CAF50;
+  color: #4CAF50;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.comboBadge {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.8rem;
+  background-color: #333;
+  border-radius: 4px;
+  color: #ffd700;
+}

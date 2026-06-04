@@ -188,7 +188,7 @@ project_dna:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/project-dna.yaml"
+  location: ".aiox/apex-context/project-dna.yaml"
   ttl: "Until package.json, CSS entry, or tailwind config changes"
   invalidation:
     - "package.json modified"

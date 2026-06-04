@@ -16,7 +16,7 @@
 Este é o **pacote de bootstrap** do sistema Opus Engineering.
 Ele instrui o Antigravity (powered by Opus 4.6) a:
 
-1. Fazer uma varredura completa do projeto AIOS
+1. Fazer uma varredura completa do projeto AIOX
 2. Construir sua própria auto-contextualização persistente
 3. Implementar os arquivos do Opus Engineering que ainda não existem
 4. Criar o mecanismo de "ligar e já saber tudo" para qualquer sessão futura
@@ -32,32 +32,32 @@ por Gemini 3 Pro usando o sistema que este pacote cria.
 Pense assim: Opus 4.6 aqui é o **professor que escreve o currículo**.
 Depois, Gemini usa esse currículo para executar com qualidade Opus.
 
-## AIOS Phase: 3 (WhatsApp webhook) — mas este pacote é transversal
-## Squad/Agent: .aios-core (kernel) + todos os squads (leitura)
+## AIOX Phase: 3 (WhatsApp webhook) — mas este pacote é transversal
+## Squad/Agent: .aiox-core (kernel) + todos os squads (leitura)
 ## Arquivos a CRIAR:
-- `.aios-core/opus-replicator/SELF_CONTEXT.md` ← o "cérebro de boot"
-- `.aios-core/opus-replicator/constitutional-layer-v3.md`
-- `.aios-core/opus-replicator/pm1-reasoning-master.md`
-- `.aios-core/opus-replicator/pm2-execution-master.md`
-- `.aios-core/opus-replicator/pm3-quality-master.md`
-- `.aios-core/memory/golden-examples/pm1/index.json`
-- `.aios-core/memory/golden-examples/pm2/index.json`
-- `.aios-core/memory/golden-examples/pm3/index.json`
-- `.aios-core/memory/anti-patterns.md`
-- `.aios-core/memory/quality-baseline.json`
+- `.aiox-core/opus-replicator/SELF_CONTEXT.md` ← o "cérebro de boot"
+- `.aiox-core/opus-replicator/constitutional-layer-v3.md`
+- `.aiox-core/opus-replicator/pm1-reasoning-master.md`
+- `.aiox-core/opus-replicator/pm2-execution-master.md`
+- `.aiox-core/opus-replicator/pm3-quality-master.md`
+- `.aiox-core/memory/golden-examples/pm1/index.json`
+- `.aiox-core/memory/golden-examples/pm2/index.json`
+- `.aiox-core/memory/golden-examples/pm3/index.json`
+- `.aiox-core/memory/anti-patterns.md`
+- `.aiox-core/memory/quality-baseline.json`
 - `scripts/input-refiner.js` (versão v2.0)
 - `scripts/harvest-gold.js`
 - `scripts/self-correction.js`
 
 ## Arquivos a LER (para contextualização):
-- `AIOS_MASTER_HANDBOOK.md`
+- `AIOX_MASTER_HANDBOOK.md`
 - `OPUS_ENGINEERING_BIBLE.md` (a bíblia que este pacote vai implementar)
-- `.aios-core/core/synapse/` (kernel)
+- `.aiox-core/core/synapse/` (kernel)
 - `scripts/kernel-bridge.js`
 - `scripts/event-bus.js`
 - `squads/` (todos os manifestos de squad)
-- `.aios-core/development/tasks/` (backlog de tarefas)
-- `.aios-core/schemas/`
+- `.aiox-core/development/tasks/` (backlog de tarefas)
+- `.aiox-core/schemas/`
 - `scripts/bridge-config.json`
 
 ## Dependências: Nenhuma. Este é o pacote zero.
@@ -76,7 +76,7 @@ o que desperdiça tokens, tempo e introduz inconsistências.
 
 ## A Solução: SELF_CONTEXT.md como "memória de boot"
 
-Criar um arquivo único — `.aios-core/opus-replicator/SELF_CONTEXT.md` —
+Criar um arquivo único — `.aiox-core/opus-replicator/SELF_CONTEXT.md` —
 que contém tudo que qualquer agente no Antigravity precisa saber para
 começar a trabalhar imediatamente, sem contextualização manual.
 
@@ -91,7 +91,7 @@ Este arquivo é:
 ```
 Gabriel abre novo chat no Antigravity
     ↓
-Digita: "read .aios-core/opus-replicator/SELF_CONTEXT.md e continue de onde paramos"
+Digita: "read .aiox-core/opus-replicator/SELF_CONTEXT.md e continue de onde paramos"
     ↓
 Agente lê o arquivo (30 segundos)
     ↓
@@ -128,7 +128,7 @@ instrui sobre como continuar. São camadas complementares, não concorrentes.
 1. Ler TODOS os arquivos listados em "Arquivos a LER" acima
 2. Para cada squad em squads/: ler o manifesto principal
 3. Para cada script em scripts/: ler o header (primeiras 30 linhas)
-4. Ler .aios-core/development/tasks/ e mapear o backlog completo
+4. Ler .aiox-core/development/tasks/ e mapear o backlog completo
 5. Construir internamente um mapa mental do sistema
 ```
 
@@ -140,18 +140,18 @@ A qualidade de tudo depende da qualidade desta varredura.
 
 ## ETAPA 1: CRIAR SELF_CONTEXT.md
 
-**Arquivo:** `.aios-core/opus-replicator/SELF_CONTEXT.md`
+**Arquivo:** `.aiox-core/opus-replicator/SELF_CONTEXT.md`
 
 Este arquivo deve conter exatamente estas seções:
 
 ```markdown
-# AIOS SELF-CONTEXT — Boot File
+# AIOX SELF-CONTEXT — Boot File
 > Leia este arquivo PRIMEIRO em qualquer nova sessão.
 > Última atualização: [data]
 > Atualizado por: [modelo]
 
 ## 🎯 O QUE É ESTE PROJETO
-[3-4 frases: AIOS, objetivo, cliente, tech stack]
+[3-4 frases: AIOX, objetivo, cliente, tech stack]
 
 ## 📍 ONDE ESTAMOS AGORA
 Fase: [número e nome]
@@ -169,7 +169,7 @@ Data da última sessão: [data]
 
 ## ⚙️ PADRÕES OBRIGATÓRIOS
 [5-7 regras críticas em bullet points]
-[Referência: "Ver AIOS Constitution em .aios-core/core/"]
+[Referência: "Ver AIOX Constitution em .aiox-core/core/"]
 
 ## 🧠 OPUS ENGINEERING STATUS
 Constitutional Layer: [versão + localização]
@@ -207,7 +207,7 @@ responder em 90 segundos: "qual é a próxima tarefa e por onde começo?"
 
 ## ETAPA 2: IMPLEMENTAR CONSTITUTIONAL LAYER v3.0
 
-**Arquivo:** `.aios-core/opus-replicator/constitutional-layer-v3.md`
+**Arquivo:** `.aiox-core/opus-replicator/constitutional-layer-v3.md`
 
 Copiar exatamente o conteúdo da Seção 6 da OPUS_ENGINEERING_BIBLE.md.
 **Não adaptar. Não resumir. Copiar verbatim.**
@@ -226,14 +226,14 @@ Após copiar, o Opus 4.6 deve:
 ## ETAPA 3: IMPLEMENTAR OS TRÊS PROMPT MASTERS
 
 **Arquivos:**
-- `.aios-core/opus-replicator/pm1-reasoning-master.md`
-- `.aios-core/opus-replicator/pm2-execution-master.md`
-- `.aios-core/opus-replicator/pm3-quality-master.md`
+- `.aiox-core/opus-replicator/pm1-reasoning-master.md`
+- `.aiox-core/opus-replicator/pm2-execution-master.md`
+- `.aiox-core/opus-replicator/pm3-quality-master.md`
 
 Copiar exatamente as Seções 7.1, 7.2, 7.3 da OPUS_ENGINEERING_BIBLE.md.
 
 Após copiar cada um, o Opus 4.6 deve executar um **teste de fumaça**:
-Simular uma tarefa simples do AIOS usando o PM template e verificar
+Simular uma tarefa simples do AIOX usando o PM template e verificar
 se o output segue todos os critérios do Constitutional Layer.
 Documentar o resultado do teste no final do arquivo como comentário.
 
@@ -242,9 +242,9 @@ Documentar o resultado do teste no final do arquivo como comentário.
 ## ETAPA 4: CRIAR GOLDEN EXAMPLES SEEDS
 
 **Arquivos:**
-- `.aios-core/memory/golden-examples/pm1/index.json`
-- `.aios-core/memory/golden-examples/pm2/index.json`
-- `.aios-core/memory/golden-examples/pm3/index.json`
+- `.aiox-core/memory/golden-examples/pm1/index.json`
+- `.aiox-core/memory/golden-examples/pm2/index.json`
+- `.aiox-core/memory/golden-examples/pm3/index.json`
 
 Os seeds da Bíblia (Seção 11) são ponto de partida.
 O Opus 4.6 deve **MELHORÁ-LOS** com base na varredura do projeto (Etapa 0).
@@ -273,7 +273,7 @@ Após implementar, o Opus 4.6 deve:
 1. Rodar: `node scripts/input-refiner.js "implement the calendar store"`
 2. Verificar: Mode = PM2, golden example carregado
 3. Rodar: `node scripts/input-refiner.js "analyze the Phase 3 architecture"`
-4. Verificar: Mode = PM1, AIOS context presente
+4. Verificar: Mode = PM1, AIOX context presente
 5. Se qualquer teste falhar: diagnosticar e corrigir antes de prosseguir
 
 ---
@@ -291,7 +291,7 @@ aqueles que o PM3 classificou como ≥9.0/10.
  * @purpose Auto-harvest high-quality outputs as golden examples
  * @trigger Called by self-correction.js after PM3 scoring
  * @inputs { output, score, mode, taskDescription, tags }
- * @outputs Saves to .aios-core/memory/golden-examples/[mode]/
+ * @outputs Saves to .aiox-core/memory/golden-examples/[mode]/
  * @emits system:golden-example:harvested
  */
 
@@ -347,8 +347,8 @@ entregar, corrigir, ou escalar.
 ## ETAPA 8: QUALITY-BASELINE.JSON E ANTI-PATTERNS.MD
 
 **Arquivos:**
-- `.aios-core/memory/quality-baseline.json`
-- `.aios-core/memory/anti-patterns.md`
+- `.aiox-core/memory/quality-baseline.json`
+- `.aiox-core/memory/anti-patterns.md`
 
 Para quality-baseline.json: criar estrutura inicial com a sessão
 de bootstrap como primeira entrada.
@@ -494,7 +494,7 @@ Aqui está tudo que você precisa saber para continuar imediatamente.
 
 ## O PROJETO
 
-**AIOS** — Autonomous Intelligence Operating System.
+**AIOX** — Autonomous Intelligence Operating System.
 Sistema operacional de IA para clínicas. Não é chatbot —
 é uma força de trabalho digital de 178 agentes em 16 squads.
 
@@ -513,11 +513,11 @@ Sistema operacional de IA para clínicas. Não é chatbot —
    Arquivo: `OPUS_ENGINEERING_BIBLE.md` (entregue como output desta sessão)
 
 2. **Input Refiner v2.0** — versão melhorada do script que converte
-   demandas brutas em prompts estruturados com contexto AIOS + golden examples.
+   demandas brutas em prompts estruturados com contexto AIOX + golden examples.
    Código: entregue na conversa anterior.
 
 3. **RP-20260218-BOOTSTRAP** — este arquivo. O primeiro Reasoning Package,
-   para instalar o próprio sistema Opus Engineering no AIOS.
+   para instalar o próprio sistema Opus Engineering no AIOX.
 
 ## O QUE O PRÓXIMO AGENTE DEVE FAZER
 
@@ -540,12 +540,12 @@ colando o RP-20260218-BOOTSTRAP lá.
 
 ```
 OPUS_ENGINEERING_BIBLE.md          ← a bíblia do sistema de qualidade
-AIOS_MASTER_HANDBOOK.md            ← visão geral do projeto
+AIOX_MASTER_HANDBOOK.md            ← visão geral do projeto
 scripts/kernel-bridge.js           ← como acessar o kernel
 scripts/event-bus.js               ← como emitir eventos
 scripts/bridge-config.json         ← rotas e configurações
-.aios-core/opus-replicator/        ← (após bootstrap) todos os PMs
-.aios-core/memory/                 ← (após bootstrap) golden examples
+.aiox-core/opus-replicator/        ← (após bootstrap) todos os PMs
+.aiox-core/memory/                 ← (após bootstrap) golden examples
 ```
 
 ## PADRÕES QUE NUNCA MUDAM

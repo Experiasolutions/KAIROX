@@ -107,7 +107,7 @@ mind_clone:
     communication: "Technical precision, engineering-first, pragmatic, collaborative"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-paul-christiano"
     weight_in_decisions:
       rlhf: "80%"

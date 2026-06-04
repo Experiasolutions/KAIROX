@@ -47,7 +47,7 @@ STEP 3 — IMPLEMENTATION
     - Module exports
 
 STEP 4 — INTEGRATION CODE
-  Show how the new files connect to existing AIOS components:
+  Show how the new files connect to existing AIOX components:
     - kernel-bridge.js integration (if applicable)
     - event-bus.js channels
     - dashboard.js endpoints (if applicable)
@@ -87,7 +87,7 @@ OUTPUT FORMAT:
   [complete file contents, clearly separated]
 
   [INTEGRATION NOTES]
-  [how this connects to existing AIOS]
+  [how this connects to existing AIOX]
 
   [QUALITY GATE RESULTS]
   [self-validation per spec criteria]

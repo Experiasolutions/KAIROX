@@ -1,8 +1,8 @@
-# 🔧 Engine/Client Separation — Multi-Tenancy Pattern for AIOS
+# 🔧 Engine/Client Separation — Multi-Tenancy Pattern for AIOX
 
 ## O Problema
 
-Quando você usa o AIOS para um negócio específico (clínica, agência, e-commerce), é natural colocar tudo junto: agentes genéricos e agentes específicos do domínio no mesmo lugar. Isso funciona no começo, mas quando você quer atender **2 clientes diferentes**, o sistema quebra:
+Quando você usa o AIOX para um negócio específico (clínica, agência, e-commerce), é natural colocar tudo junto: agentes genéricos e agentes específicos do domínio no mesmo lugar. Isso funciona no começo, mas quando você quer atender **2 clientes diferentes**, o sistema quebra:
 
 - Agentes do Cliente A veem dados do Cliente B
 - Um deploy pode derrubar todos os clientes
@@ -10,7 +10,7 @@ Quando você usa o AIOS para um negócio específico (clínica, agência, e-comm
 
 ## A Solução
 
-Separar o **motor** (engine) da **aplicação** (client). O AIOS é o motor. O negócio do cliente é a aplicação que roda no motor.
+Separar o **motor** (engine) da **aplicação** (client). O AIOX é o motor. O negócio do cliente é a aplicação que roda no motor.
 
 ```
 project-root/
@@ -37,16 +37,16 @@ project-root/
 │       └── data/
 │
 ├── scripts/                     ← ENGINE scripts
-├── .aios-core/                  ← ENGINE configuration
+├── .aiox-core/                  ← ENGINE configuration
 └── tools/                       ← ENGINE tools
 ```
 
 ## Regras
 
-### ✅ O que fica no ENGINE (squads/, scripts/, .aios-core/):
+### ✅ O que fica no ENGINE (squads/, scripts/, .aiox-core/):
 - Agentes genéricos (dev, QA, PM, analytics, etc.)
 - Scripts de orquestração
-- Configuração do AIOS
+- Configuração do AIOX
 - Tools e skills
 - **NUNCA** referência a um cliente específico
 
@@ -109,7 +109,7 @@ grep -r "joana\|clinica" squads/ scripts/
 
 ## Princípio Imutável
 
-> **"O AIOS é motor, não aplicação. Não tem domínio."**
+> **"O AIOX é motor, não aplicação. Não tem domínio."**
 
 O mesmo motor que atende uma clínica de estética pode atender um pet shop, uma imobiliária, ou uma fintech. A inteligência está no motor. O domínio está no cliente.
 

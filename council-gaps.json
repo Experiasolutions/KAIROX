@@ -26,7 +26,7 @@
     },
     {
       "id": "ALN-CLIENTS-EMPTY",
-      "description": "No client packages found — AIOS has no real-world deployment",
+      "description": "No client packages found — AIOX has no real-world deployment",
       "severity": 6,
       "evidence": "clients/ directory empty or missing",
       "impact30d": "Engine exists in theory but generates zero revenue",

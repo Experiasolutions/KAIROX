@@ -5,22 +5,22 @@
     "created_by": "Evolution Engine Bootstrap",
     "total_components": 11,
     "components": {
-        ".aios-core/opus-replicator/constitutional-layer-v3.md": {
+        ".aiox-core/opus-replicator/constitutional-layer-v3.md": {
             "hash": "6cd5a3b5d3285b129d9624ac4bfe3934d0ac825ff5f6f13c17a9f362576286a7",
             "size": 8082,
             "exists": true
         },
-        ".aios-core/opus-replicator/SELF_CONTEXT.md": {
+        ".aiox-core/opus-replicator/SELF_CONTEXT.md": {
             "hash": "c1cf953183606b4941d326fb611a9ff0507c3d0fb6acfd3d76de3e783b7789f8",
             "size": 14363,
             "exists": true
         },
-        ".aios-core/memory/quality-baseline.json": {
+        ".aiox-core/memory/quality-baseline.json": {
             "hash": "d72381ff045f15e3e30d1866445c15ce54b59483c7413ba413fb072594f55d0f",
             "size": 446,
             "exists": true
         },
-        ".aios-core/memory/anti-patterns.md": {
+        ".aiox-core/memory/anti-patterns.md": {
             "hash": "f4c3c78e9ce30f694eafa3877018445dee247a32267d9d54e8518d521c949258",
             "size": 4019,
             "exists": true

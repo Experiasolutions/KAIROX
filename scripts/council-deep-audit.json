@@ -12,7 +12,7 @@
     {
       "id": "PED-DOMAIN-pm2-execution-master.md-evolution.api",
       "sev": 8,
-      "desc": "Domain contamination: \"evolution.api\" found in engine file .aios-core/opus-replicator/pm2-execution-"
+      "desc": "Domain contamination: \"evolution.api\" found in engine file .aiox-core/opus-replicator/pm2-execution-"
     },
     {
       "id": "ALN-README-MISSING",

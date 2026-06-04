@@ -40,7 +40,7 @@ The critical insight, borrowed from Hinton's Knowledge Distillation: **the bottl
 
 ## Why This Works
 
-Sutskever's principle: "Compression = Understanding." When Claude produces a Reasoning Package, it compresses weeks of architectural thinking into a dense, structured artifact that Gemini can process in a single context. Gemini doesn't need to understand the AIOS architecture from scratch — it receives the pre-digested understanding.
+Sutskever's principle: "Compression = Understanding." When Claude produces a Reasoning Package, it compresses weeks of architectural thinking into a dense, structured artifact that Gemini can process in a single context. Gemini doesn't need to understand the AIOX architecture from scratch — it receives the pre-digested understanding.
 
 Ng's principle: "Well-designed workflows with smaller models outperform larger models used monolithically." The WORKFLOW is the intelligence. Claude → Reasoning Package → Gemini executes = a workflow that is more reliable than asking either model to do everything alone.
 
@@ -154,7 +154,7 @@ FINAL DELIVERY: Opus 4.6 quality output
 When you (Gabriel) bring a demand to Claude (claude.ai), Claude's role is NOT to give you the final answer. Claude's role is to generate a **Reasoning Package** — a structured, complete, executable specification that Gemini will implement.
 
 Think of Claude as the **Chief Architect** who:
-- Reviews the demand against the full AIOS context
+- Reviews the demand against the full AIOX context
 - Makes architectural decisions with explicit rationale
 - Maps every edge case before a single line of code is written
 - Produces a spec so complete that Gemini cannot make wrong decisions
@@ -164,7 +164,7 @@ Think of Claude as the **Chief Architect** who:
 For every demand, Claude performs internally (before writing the package):
 
 **1. Context Validation**
-- Which AIOS phase is this?
+- Which AIOX phase is this?
 - Which squad/agent is affected?
 - What exists in the codebase that's relevant?
 - What Constitution principles apply?
@@ -214,8 +214,8 @@ Every Reasoning Package follows this exact structure. Headers are mandatory. Con
 ╚══════════════════════════════════════════════════════════════════╝
 
 ## 🎯 CONTEXT BLOCK
-[What this is, why it matters, where it fits in AIOS]
-- AIOS Phase: [current phase]
+[What this is, why it matters, where it fits in AIOX]
+- AIOX Phase: [current phase]
 - Squad/Agent affected: [specific squad/agent]
 - Files to CREATE: [list]
 - Files to MODIFY: [list with reason]
@@ -344,7 +344,7 @@ It has four components that work together:
 
 **A. The Constitutional Layer** — The non-negotiable rules governing ALL outputs  
 **B. The PM Templates** — Task-specific execution frameworks (PM1, PM2, PM3)  
-**C. The Golden Examples Injector** — Real AIOS examples injected per task  
+**C. The Golden Examples Injector** — Real AIOX examples injected per task  
 **D. The Quality Gate** — Automatic PM3 validation before any delivery  
 
 ## How to Configure Antigravity
@@ -370,19 +370,19 @@ The following is the refined Constitutional Layer. It incorporates all feedback 
 - Ng's Tool Use pattern made concrete with file citation requirements
 - Nakajima's self-improvement made systematic, not just conceptual
 - Yudkowsky's alignment gate made operational, not just philosophical
-- AIOS-specific context added throughout (was generic in v2.1)
+- AIOX-specific context added throughout (was generic in v2.1)
 
 ---
 
 ```markdown
 ═══════════════════════════════════════════════════════════════
-CONSTITUTIONAL LAYER — AIOS OPUS REPLICANT ENGINE v3.0
+CONSTITUTIONAL LAYER — AIOX OPUS REPLICANT ENGINE v3.0
 Prepend before every prompt. Non-negotiable. Overrides all else.
 ═══════════════════════════════════════════════════════════════
 
 # IDENTITY
 
-You are the AIOS Execution Engine — the implementation arm of a
+You are the AIOX Execution Engine — the implementation arm of a
 high-quality reasoning system. You receive Reasoning Packages
 produced by Claude Sonnet 4.6 and execute them with production-grade
 fidelity.
@@ -392,7 +392,7 @@ You EXECUTE. Every design decision arrives pre-made in the package.
 Your excellence is measured by how faithfully you implement the spec,
 not by your own creative contributions to it.
 
-AIOS CONTEXT:
+AIOX CONTEXT:
 - Stack: Node.js, Express.js, YAML/Markdown agents, JSON storage
 - Phase: [UPDATE PER SESSION]
 - Kernel: kernel-bridge.js (always use for core access)
@@ -416,12 +416,12 @@ No surface-level outputs. Depth is non-negotiable.
 ## RULE 2: EVIDENCE
 No claim without citation. No code without rationale.
 
-For AIOS claims → cite exact file path
+For AIOX claims → cite exact file path
   Example: "As defined in squads/experia/agents/experia-copy.md"
 For patterns → cite the Reasoning Package section
   Example: "Per EC-02 in the Reasoning Package"
 For best practices → name the framework
-  Example: "Per AIOS Constitution: Agent Authority principle"
+  Example: "Per AIOX Constitution: Agent Authority principle"
 
 UNCERTAIN about something (confidence <80%) → state it explicitly:
   UNCERTAIN: [what exactly is uncertain, why, what to verify]
@@ -438,7 +438,7 @@ Tensions are features, not flaws. Document them. Do not hide them.
 Steel-man rejected alternatives — weak rejection = weak analysis.
 
 ## RULE 4: MODULARITY
-Every output is reusable by other AIOS agents.
+Every output is reusable by other AIOX agents.
 
 Each module/function must have:
   @purpose — one sentence, why this exists
@@ -465,10 +465,10 @@ NEVER the same mistake twice. Static quality = decay.
 ═══════════════════════════════════════════════════════════════
 
 ## P1: EXAMPLE ANCHORING (Karpathy)
-Every execution references at minimum ONE real AIOS artifact.
+Every execution references at minimum ONE real AIOX artifact.
 Not theoretical. Not "foo/bar". Real agents, real files, real patterns.
 
-Before generating any code, ask: "What in the AIOS codebase is most
+Before generating any code, ask: "What in the AIOX codebase is most
 similar to what I'm building?" Then use it as structural reference.
 
 Path of related artifacts → cite them → model the pattern.
@@ -513,7 +513,7 @@ This signal feeds the evolution loop.
 Before delivering ANY output, run this check:
 
   □ Does this output hallucinate features/APIs not in the Reasoning Package?
-  □ Does this output violate AIOS Constitution?
+  □ Does this output violate AIOX Constitution?
   □ Does this output introduce undocumented external dependencies?
   □ Does this output break any existing agent's authority domain?
 
@@ -583,7 +583,7 @@ STEP 3 — LAYERED ANALYSIS
   Layer A (Surface): What's explicitly requested
   Layer B (Structural): Patterns, mechanisms, constraints underneath
   Layer C (Strategic): Second-order effects, systemic implications
-  Layer D (Architectural): How this changes the AIOS system long-term
+  Layer D (Architectural): How this changes the AIOX system long-term
 
 STEP 4 — MULTI-PERSPECTIVE SYNTHESIS
   Primary view: [analysis + strengths + limitations]
@@ -596,7 +596,7 @@ STEP 5 — ACTION PLAN
     - What: specific, concrete
     - Why: rationale from analysis
     - When: dependency order
-    - Who: which AIOS agent owns it
+    - Who: which AIOX agent owns it
     - Done when: testable completion criteria
 
 OUTPUT FORMAT:
@@ -679,7 +679,7 @@ STEP 3 — IMPLEMENTATION
     - Module exports
 
 STEP 4 — INTEGRATION CODE
-  Show how the new files connect to existing AIOS components:
+  Show how the new files connect to existing AIOX components:
     - kernel-bridge.js integration (if applicable)
     - event-bus.js channels
     - dashboard.js endpoints (if applicable)
@@ -719,7 +719,7 @@ OUTPUT FORMAT:
   [complete file contents, clearly separated]
 
   [INTEGRATION NOTES]
-  [how this connects to existing AIOS]
+  [how this connects to existing AIOX]
 
   [QUALITY GATE RESULTS]
   [self-validation per spec criteria]
@@ -749,7 +749,7 @@ SCORING DIMENSIONS (0-10 each):
   2. Depth: Does it handle edge cases or just happy path?
   3. Structure: Is it modular, readable, maintainable?
   4. Evidence: Are decisions justified or arbitrary?
-  5. AIOS Compliance: Does it follow Constitution v1.0?
+  5. AIOX Compliance: Does it follow Constitution v1.0?
   6. Production Readiness: Can this go live today?
   7. Evolution: Will this be easy to modify/extend?
 
@@ -767,7 +767,7 @@ EVALUATION PROCESS:
 
 STEP 1 — ESTABLISH CRITERIA
   From the Reasoning Package: extract Quality Gate criteria
-  From AIOS Constitution: extract relevant principles
+  From AIOX Constitution: extract relevant principles
   From the task type: add domain-specific criteria
 
 STEP 2 — LINE-BY-LINE AUDIT
@@ -826,14 +826,14 @@ OUTPUT FORMAT:
 
 ## What Golden Examples Are
 
-A Golden Example is a real, high-quality output from the AIOS project, formatted as a compressed reasoning trace. Not theoretical. Not a "foo/bar" tutorial. A real AIOS artifact that scored ≥9/10.
+A Golden Example is a real, high-quality output from the AIOX project, formatted as a compressed reasoning trace. Not theoretical. Not a "foo/bar" tutorial. A real AIOX artifact that scored ≥9/10.
 
 Karpathy's principle: "The example IS the prompt. Instructions are guardrails. Examples are the road." Three good examples from your actual system are worth more than 2,000 words of instructions.
 
 ## File Structure
 
 ```
-.aios-core/memory/golden-examples/
+.aiox-core/memory/golden-examples/
 ├── pm1/                          ← Strategic analysis examples
 │   ├── index.json                ← Example registry with scores and tags
 │   ├── 2026-02-18-phase3-arch.md
@@ -990,9 +990,9 @@ One of three paths:
     └── Score <7.5 → Root cause analysis → system update
     ↓
 Update files:
-    ├── .aios-core/memory/golden-examples/ (adds examples)
-    ├── .aios-core/memory/anti-patterns.md (adds anti-patterns)
-    └── .aios-core/memory/quality-baseline.json (tracks trend)
+    ├── .aiox-core/memory/golden-examples/ (adds examples)
+    ├── .aiox-core/memory/anti-patterns.md (adds anti-patterns)
+    └── .aiox-core/memory/quality-baseline.json (tracks trend)
     ↓
 Next session: injector loads updated examples and anti-patterns
     ↓
@@ -1025,7 +1025,7 @@ Quality improves
 Maintained by Gemini's Session Signal. Grows organically.
 
 ```markdown
-# AIOS Anti-Patterns Catalog
+# AIOX Anti-Patterns Catalog
 
 ## AP-001: Silent Failure on Evolution API Timeout
 **First observed:** 2026-XX-XX
@@ -1077,7 +1077,7 @@ These three examples are the initial "DNA" of the quality system. They should be
 
 ## SEED PM1: Phase 3 Architecture Decision
 
-**File:** `.aios-core/memory/golden-examples/pm1/2026-02-18-phase3-arch.md`
+**File:** `.aiox-core/memory/golden-examples/pm1/2026-02-18-phase3-arch.md`
 
 ```markdown
 # GOLDEN EXAMPLE: Phase 3 Architecture Decision
@@ -1145,7 +1145,7 @@ Architecture document with component specs and interface definitions.
 - Idempotency identified as Day 1 requirement (not an afterthought)
 
 ## REUSE GUIDANCE
-Use this when: designing any new AIOS integration that involves
+Use this when: designing any new AIOX integration that involves
 stateful multi-turn conversations with external users.
 Adapt: the 7 intents are clinic-specific. The session + idempotency
 pattern is universal across all webhook integrations.
@@ -1153,7 +1153,7 @@ pattern is universal across all webhook integrations.
 
 ## SEED PM2: Calendar Store Implementation
 
-**File:** `.aios-core/memory/golden-examples/pm2/2026-02-18-calendar-store.md`
+**File:** `.aiox-core/memory/golden-examples/pm2/2026-02-18-calendar-store.md`
 
 ```markdown
 # GOLDEN EXAMPLE: Calendar Store Implementation
@@ -1169,7 +1169,7 @@ Mon-Fri 08-18h, Sat 08-12h, 30min slots, supports book/cancel/query.
 
 PRE-FLIGHT:
 All dependencies confirmed: event-bus.js exists, kernel-bridge.js exists.
-calendar-store.json path confirmed: .aios-core/data/calendar.json
+calendar-store.json path confirmed: .aiox-core/data/calendar.json
 No existing CalendarStore in codebase (IDS: CREATE confirmed).
 
 Interface defined before implementation:
@@ -1196,7 +1196,7 @@ Intermediate representation — slot generation:
  * @inputs date strings (YYYY-MM-DD), time strings (HH:MM), patientId strings
  * @outputs Slot[], Booking objects, boolean availability checks
  * @emits calendar:slot:booked, calendar:slot:cancelled
- * @dependencies event-bus.js, .aios-core/data/calendar.json
+ * @dependencies event-bus.js, .aiox-core/data/calendar.json
  */
 
 'use strict';
@@ -1218,7 +1218,7 @@ const BUSINESS_HOURS = {
 };
 
 const SLOT_DURATION_MINUTES = 30;
-const DATA_PATH = path.join(__dirname, '..', '.aios-core', 'data', 'calendar.json');
+const DATA_PATH = path.join(__dirname, '..', '.aiox-core', 'data', 'calendar.json');
 
 // ── Private helpers ──────────────────────────────────────────
 
@@ -1410,7 +1410,7 @@ module.exports = { getAvailableSlots, bookSlot, cancelBooking, getBooking, isBus
 6. event-bus emissions enable dashboard monitoring without coupling
 
 ## REUSE GUIDANCE
-Use for: any JSON-backed store in AIOS (sessions, queue, cache)
+Use for: any JSON-backed store in AIOX (sessions, queue, cache)
 The atomic write pattern (tmp + rename) should be in every store.
 The EC-06 race condition pattern applies to any "check-then-act" operation.
 ```
@@ -1521,17 +1521,17 @@ scripts/intent-classifier.js     ← LLM-powered, 7 intents
 scripts/input-refiner.js          ← already drafted, refine with this spec
 scripts/harvest-gold.js           ← auto-harvest outputs ≥9/10
 
-.aios-core/memory/golden-examples/pm1/index.json
-.aios-core/memory/golden-examples/pm2/index.json
-.aios-core/memory/golden-examples/pm3/index.json
-.aios-core/memory/golden-examples/pm1/2026-02-18-phase3-arch.md
-.aios-core/memory/golden-examples/pm2/2026-02-18-calendar-store.md
-.aios-core/memory/anti-patterns.md
-.aios-core/memory/quality-baseline.json
-.aios-core/opus-replicator/constitutional-layer-v3.md
-.aios-core/opus-replicator/pm1-reasoning-master.md
-.aios-core/opus-replicator/pm2-execution-master.md
-.aios-core/opus-replicator/pm3-quality-master.md
+.aiox-core/memory/golden-examples/pm1/index.json
+.aiox-core/memory/golden-examples/pm2/index.json
+.aiox-core/memory/golden-examples/pm3/index.json
+.aiox-core/memory/golden-examples/pm1/2026-02-18-phase3-arch.md
+.aiox-core/memory/golden-examples/pm2/2026-02-18-calendar-store.md
+.aiox-core/memory/anti-patterns.md
+.aiox-core/memory/quality-baseline.json
+.aiox-core/opus-replicator/constitutional-layer-v3.md
+.aiox-core/opus-replicator/pm1-reasoning-master.md
+.aiox-core/opus-replicator/pm2-execution-master.md
+.aiox-core/opus-replicator/pm3-quality-master.md
 ```
 
 ## Files to Modify
@@ -1578,16 +1578,16 @@ Run through this checklist once to bring the entire system online.
 □ 3. Paste constitutional-layer-v3.md content
 □ 4. Paste pm2-execution-master.md content (default)
 □ 5. Test: send "Describe your role in 3 sentences"
-     Expected: Executor language, AIOS context mentioned, no architect claims
+     Expected: Executor language, AIOX context mentioned, no architect claims
 □ 6. If test passes: Motor is live
 ```
 
 ## Phase B: Golden Examples Seeding
 
 ```
-□ 1. Create directory: .aios-core/memory/golden-examples/pm1/
-□ 2. Create directory: .aios-core/memory/golden-examples/pm2/
-□ 3. Create directory: .aios-core/memory/golden-examples/pm3/
+□ 1. Create directory: .aiox-core/memory/golden-examples/pm1/
+□ 2. Create directory: .aiox-core/memory/golden-examples/pm2/
+□ 3. Create directory: .aiox-core/memory/golden-examples/pm3/
 □ 4. Save pm2 seed example (calendar-store from Section 11)
 □ 5. Save pm1 seed example (phase3-arch from Section 11)
 □ 6. Create index.json in each directory
@@ -1600,9 +1600,9 @@ Run through this checklist once to bring the entire system online.
 ```
 □ 1. Replace scripts/input-refiner.js with v2.0 (from Section 4 above)
 □ 2. Test: node scripts/input-refiner.js "implement the calendar store"
-     Expected: Mode PM2, golden example loaded, AIOS context present
+     Expected: Mode PM2, golden example loaded, AIOX context present
 □ 3. Test: node scripts/input-refiner.js "analyze the Phase 3 architecture"
-     Expected: Mode PM1, AIOS context present
+     Expected: Mode PM1, AIOX context present
 □ 4. If tests pass: Refiner is live
 ```
 
@@ -1660,15 +1660,15 @@ Keep this handy during every session.
 ║   5 sessions flat → audit the system                   ║
 ╠═══════════════════════════════════════════════════════════╣
 ║ GOLDEN EXAMPLE PATHS:                                    ║
-║   .aios-core/memory/golden-examples/pm1/ (reasoning)   ║
-║   .aios-core/memory/golden-examples/pm2/ (execution)   ║
-║   .aios-core/memory/golden-examples/pm3/ (evaluation)  ║
+║   .aiox-core/memory/golden-examples/pm1/ (reasoning)   ║
+║   .aiox-core/memory/golden-examples/pm2/ (execution)   ║
+║   .aiox-core/memory/golden-examples/pm3/ (evaluation)  ║
 ╠═══════════════════════════════════════════════════════════╣
 ║ CRITICAL FILES:                                          ║
 ║   scripts/input-refiner.js      → prompt preparation   ║
 ║   scripts/kernel-bridge.js      → core access          ║
 ║   scripts/event-bus.js          → event emission       ║
-║   .aios-core/data/calendar.json → appointment store    ║
+║   .aiox-core/data/calendar.json → appointment store    ║
 ╚═══════════════════════════════════════════════════════════╝
 ```
 

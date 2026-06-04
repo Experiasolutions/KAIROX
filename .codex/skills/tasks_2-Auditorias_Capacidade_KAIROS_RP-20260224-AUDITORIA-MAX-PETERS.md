@@ -130,7 +130,7 @@ Max Peters insistiria:
 | Check-up digital gratuito | Lead entra no funil     | Dado real sobre tempo de resposta das clínicas |       ✅        |
 | Post Build in Public      | Seguidores + inbound    | Accountability pública + portfólio             |       ✅        |
 | Master Pumps (cunhado)    | Contrato Enterprise     | Gabriel aprende B2B + case para futuro         |       ✅        |
-| Contribuição AIOS         | PR aceito, visibilidade | Portfólio público + learning                   |       ✅        |
+| Contribuição AIOX         | PR aceito, visibilidade | Portfólio público + learning                   |       ✅        |
 
 **Veredicto:** Todas as ações já são ganha-ganha. Gabriel precisa PERCEBER isso. O medo some quando sabe que não existe perda real.
 
@@ -176,7 +176,7 @@ Max Peters:
 | Ensinar o quê                                           | Para quem               | Formato                 | Efeito colateral               |
 | :------------------------------------------------------ | :---------------------- | :---------------------- | :----------------------------- |
 | "Como IA pode ajudar sua clínica"                       | Donos de clínica no ABC | Live Instagram 30 min   | Autoridade + leads             |
-| "O que aprendi construindo um sistema de IA em 12 dias" | Comunidade AIOS         | Post no GitHub/LinkedIn | Credibilidade + network        |
+| "O que aprendi construindo um sistema de IA em 12 dias" | Comunidade AIOX         | Post no GitHub/LinkedIn | Credibilidade + network        |
 | "3 erros que clínicas cometem no atendimento"           | Público geral           | Reels 60s               | Educação do mercado            |
 | "Como funciona um sistema de multi-agentes"             | Cunhado (Master Pumps)  | Conversa 1:1            | Trojan horse + clareza própria |
 

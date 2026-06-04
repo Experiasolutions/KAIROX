@@ -104,7 +104,7 @@ const FOLDERS_IN_TEAM_SPACE = {
 async function main() {
     console.log('');
     console.log('═══════════════════════════════════════════════════');
-    console.log('  🔧 AIOS ClickUp Workspace Fix (Phase 2)');
+    console.log('  🔧 AIOX ClickUp Workspace Fix (Phase 2)');
     console.log('═══════════════════════════════════════════════════');
     console.log('');
 

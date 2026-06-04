@@ -136,7 +136,7 @@ if (require.main === module && process.argv.includes('--test')) {
         {
             id: 'PROP-HAS-BASELINE-ZERO',
             description: 'Initialize quality baseline',
-            targetFile: '.aios-core/memory/quality-baseline.json',
+            targetFile: '.aiox-core/memory/quality-baseline.json',
             changeType: 'baseline-init',
             riskLevel: 'LOW',
             includesTests: false,

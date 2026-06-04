@@ -12,7 +12,7 @@ author: Gabriel (DooMMasteRBot V5)
 license: UNLICENSED
 slashPrefix: doombot
 
-aios:
+aiox:
   minVersion: "5.0.0"
   type: squad
 

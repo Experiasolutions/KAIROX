@@ -9,9 +9,9 @@
 
 ## Contexto
 
-Gabriel construiu ~10 dias de inovação em cima do AIOS v3.9.0 (agora v4.2.13). Essa contribuição precisa ser versionada em **duas trilhas**:
+Gabriel construiu ~10 dias de inovação em cima do AIOX v3.9.0 (agora v4.2.13). Essa contribuição precisa ser versionada em **duas trilhas**:
 
-1. **Community Edition** — contribuição ao projeto AIOS open-source (GitHub PR)
+1. **Community Edition** — contribuição ao projeto AIOX open-source (GitHub PR)
 2. **Project Kairos** — versão estratégica própria com tudo que é diferencial competitivo
 
 A pergunta central: **o que compartilhar com a comunidade vs. o que manter como vantagem?**
@@ -35,7 +35,7 @@ A pergunta central: **o que compartilhar com a comunidade vs. o que manter como 
 
 ## 🟢 Community Edition — O que vai para o GitHub PR
 
-Estas contribuições melhoram o AIOS para todos, sem expor vantagem competitiva:
+Estas contribuições melhoram o AIOX para todos, sem expor vantagem competitiva:
 
 ### Opus Replicant Engine (Protocol)
 
@@ -52,7 +52,7 @@ O **protocolo** de pensamento (PM1/PM2/PM3, Constitutional Layer, calibration pr
 | `calibration-profiles.json`                    | Model calibration data    | Universal                            |
 | `session-protocol.md`                          | Session management        | Universal                            |
 
-**PR Title:** `feat: Opus Replicant Engine — multi-model cognitive protocol for AIOS`
+**PR Title:** `feat: Opus Replicant Engine — multi-model cognitive protocol for AIOX`
 
 ---
 
@@ -78,7 +78,7 @@ O **framework** de auto-evolução é genérico — funciona para qualquer opera
 | `generate-context.js`       | SELF_CONTEXT generator         | ✅ Universal                              |
 | `noesis-status.js`          | Dashboard                      | ✅ Universal                              |
 
-**PR Title:** `feat: Evolution Engine — autonomous self-improvement framework for AIOS`
+**PR Title:** `feat: Evolution Engine — autonomous self-improvement framework for AIOX`
 
 ---
 
@@ -92,7 +92,7 @@ O **formato** e o **sistema** de Reasoning Packages é contribuição universal.
 | RP Naming Convention               | `RP-{DATA}-{DESCRIÇÃO}.md` pattern |
 | RP Format (from Engineering Bible) | Quality gate structure             |
 
-**PR Title:** `feat: Reasoning Package system — structured action planning for AIOS`
+**PR Title:** `feat: Reasoning Package system — structured action planning for AIOX`
 
 ---
 
@@ -107,16 +107,16 @@ O **formato** e o **sistema** de Reasoning Packages é contribuição universal.
 
 ---
 
-### AIOS Father Protocol (Mentor Framework)
+### AIOX Father Protocol (Mentor Framework)
 
 O conceito de um agente-mentor que guia o operador é universal:
 
 | Componente           | O que contribui                          |
 | :------------------- | :--------------------------------------- |
-| AIOS Father concept  | Mentor agent template                    |
+| AIOX Father concept  | Mentor agent template                    |
 | Human OS integration | Self-development framework for operators |
 
-**PR Title:** `feat: AIOS Father — mentor agent protocol`
+**PR Title:** `feat: AIOX Father — mentor agent protocol`
 
 ---
 
@@ -140,8 +140,8 @@ Estes componentes são o **diferencial competitivo** de Gabriel:
 | Componente                             | Por que retém                                     |
 | :------------------------------------- | :------------------------------------------------ |
 | `distillation-dataset/`                | 8 traces curadas — dados de treinamento para LoRA |
-| `.aios-core/memory/golden-examples/`   | Golden examples auto-colhidos                     |
-| `.aios-core/memory/session-snapshots/` | Snapshots de sessão                               |
+| `.aiox-core/memory/golden-examples/`   | Golden examples auto-colhidos                     |
+| `.aiox-core/memory/session-snapshots/` | Snapshots de sessão                               |
 
 ### Strategic Documents (NEVER share)
 
@@ -193,7 +193,7 @@ Estes componentes são o **diferencial competitivo** de Gabriel:
 │  │ PM1/PM2/PM3       │  │ Self-improve │  │ Tools Bridge │  │
 │  └──────────────────┘  └──────────────┘  └──────────────┘  │
 │  ┌──────────────────┐  ┌──────────────┐                    │
-│  │ RP System         │  │ AIOS Father  │                    │
+│  │ RP System         │  │ AIOX Father  │                    │
 │  │ (format + index)  │  │ (concept)    │                    │
 │  └──────────────────┘  └──────────────┘                    │
 └────────────────────────────────────────────────────────────┘
@@ -207,7 +207,7 @@ Estes componentes são o **diferencial competitivo** de Gabriel:
 
 | Step  | Action                                                                       | Output                 |
 | :---: | :--------------------------------------------------------------------------- | :--------------------- |
-|   1   | Fork o AIOS v4.2.13 oficial (GitHub)                                         | Repositório limpo      |
+|   1   | Fork o AIOX v4.2.13 oficial (GitHub)                                         | Repositório limpo      |
 |   2   | Criar branch `feat/opus-replicant-engine`                                    | PR branch              |
 |   3   | Copiar arquivos do Opus Replicant (sanitizados — sem refs a Gabriel/Experia) | 10 files               |
 |   4   | Copiar Evolution Engine scripts (sanitizados)                                | 15 files               |
@@ -236,7 +236,7 @@ Estes componentes são o **diferencial competitivo** de Gabriel:
 1. **Quais PRs abrir primeiro?** Recomendo Opus Replicant Engine como flagship — é o mais impressionante e genérico.
 2. **Sanitizar ou não os Mind Clones?** Se sim, poderiam ir como "example DNA templates" na Community Edition de forma anônima.
 3. **Timing do one-pager:** enviar antes ou depois do PR? (Recomendo *depois* — o PR prova competência técnica e dá credibilidade ao pitch.)
-4. **O conteúdo do AIOS Father RP:** Gabriel precisa fornecer este RP do session anterior para incluí-lo na Community Edition.
+4. **O conteúdo do AIOX Father RP:** Gabriel precisa fornecer este RP do session anterior para incluí-lo na Community Edition.
 
 ---
 

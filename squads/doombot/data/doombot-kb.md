@@ -14,7 +14,7 @@ Avançada Antifrágil** (segurança enterprise). O V5 herdou e superou o legado 
 7 personas do Masterbot original.
 
 ### Personas (Heritage)
-| Persona | Agente AIOS | Especialidade |
+| Persona | Agente AIOX | Especialidade |
 |---------|-------------|---------------|
 | ARIA 🎯 | @doom-strategist | Análise estratégica, diagnóstico, NMI, CCR++ |
 | DOUG ⚡ | @doom-mentor | Mentoria implacável, War Room, LTV Lift |

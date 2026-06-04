@@ -70,7 +70,7 @@ async function main() {
         if (args[0] === '--info') await getInfo(args[1]);
         else if (args[0] === '--read') await readRange(args[1], args[2] || 'Sheet1!A:Z');
         else {
-            console.log('AIOS Google Sheets Client');
+            console.log('AIOX Google Sheets Client');
             console.log('  --info <spreadsheet_id>           Info da planilha');
             console.log('  --read <spreadsheet_id> [range]    Ler dados (default: Sheet1!A:Z)');
             console.log('');

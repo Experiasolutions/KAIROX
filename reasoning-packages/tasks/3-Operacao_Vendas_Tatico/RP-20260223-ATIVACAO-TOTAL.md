@@ -115,7 +115,7 @@ BLOCO 6 (desktop voice) → ABSORVIDO pelo Bloco 4.5
 - Google Calendar e ClickUp são **NICE-TO-HAVE**, não bloqueantes
 - OpenClaw + Telegram são os únicos bloqueantes
 - Se OpenClaw falhar: fallback para `node-telegram-bot-api` standalone
-- Criação de configs de integração `.aios-core/integrations/` é bom mas secundário
+- Criação de configs de integração `.aiox-core/integrations/` é bom mas secundário
 
 **BLOCO 4.5 — NOVO (substitui Bloco 6):**
 - Adicionar ao `TELEGRAM-BRIDGE.md`: processamento de mensagens de voz

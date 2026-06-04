@@ -12,11 +12,11 @@ pack:
   version: 1.0.0
   short-title: Dispatch Squad
   description: >-
-    Parallel execution engine for AIOS. Receives stories/PRDs/tasks, decomposes
+    Parallel execution engine for AIOX. Receives stories/PRDs/tasks, decomposes
     into atomic sub-tasks, optimizes into DAG-based waves, routes to correct
     agents/models, and executes in parallel via subagents. Enforces CODE > LLM,
     story-driven input, and zero main context contamination.
-  author: AIOS
+  author: AIOX
   icon: "⚡"
   slashPrefix: dispatch
 
@@ -326,7 +326,7 @@ dependencies:
     - script: "scripts/wave-optimizer.py"
       purpose: "DAG topological sort (Kahn's algorithm)"
     - script: "scripts/build-command-registry.py"
-      purpose: "Scan all squads + .aios-core → command-registry.yaml"
+      purpose: "Scan all squads + .aiox-core → command-registry.yaml"
     - script: "scripts/build-domain-registry.py"
       purpose: "Auto-discover ecosystem → domain-registry.yaml"
     - script: "scripts/cost-tracker.py"

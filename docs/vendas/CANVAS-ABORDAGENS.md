@@ -113,7 +113,7 @@
 
 ## 📝 CANAL 4 — LINKEDIN CONTENT (Authority Building)
 
-> Conteúdo que posiciona Gabriel como referência em "IA para negócios locais" e "AIOS engineering".
+> Conteúdo que posiciona Gabriel como referência em "IA para negócios locais" e "AIOX engineering".
 
 - **Frequência:** 3-5 posts/semana
 - **Tipos de conteúdo:**

@@ -1,5 +1,5 @@
-/** @purpose Generate installation manifest for AIOX deployments */
 #!/usr/bin/env node
+/** @purpose Generate installation manifest for AIOX deployments */
 /**
  * Generate Install Manifest
  * Dynamically generates install-manifest.yaml with file hashes for brownfield upgrades

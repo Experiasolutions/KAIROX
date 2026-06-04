@@ -8,7 +8,7 @@ description: >-
 slashPrefix: kaizen
 cadence: "semanal (domingo 20:00 BRT)"
 
-aios:
+aiox:
   minVersion: "2.1.0"
   type: squad
 

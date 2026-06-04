@@ -164,7 +164,7 @@ def select_top(moments, n=50, total_dur_sec=17344):
 def detect_themes(moments):
     """Group moments into thematic clusters based on assunto keywords."""
     theme_keywords = {
-        'AIOS Framework': ['aios', 'ios', 'framework', 'sistema', 'system'],
+        'AIOX Framework': ['aiox', 'ios', 'framework', 'sistema', 'system'],
         'Produtividade & ROI': ['produtividade', 'roi', 'custo', 'token', 'dolar', '$', 'investimento', 'time'],
         'Claude Code & Ferramentas': ['claude', 'code', 'ferramenta', 'tool', 'mcp', 'github', 'rabbit'],
         'Workflows & Processos': ['workflow', 'processo', 'story', 'task', 'sprint', 'agil', 'methodology'],

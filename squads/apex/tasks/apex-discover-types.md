@@ -327,7 +327,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/types-cache.yaml"
+  location: ".aiox/apex-context/types-cache.yaml"
   ttl: "Until TypeScript files change"
   invalidate_on:
     - "Any .ts/.tsx file created, deleted, or modified"

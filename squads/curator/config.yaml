@@ -16,7 +16,7 @@ pack:
     identifica momentos de alto impacto, monta roteiros de corte com timestamps
     EXATOS, e enriquece com dados/notícias relevantes. NUNCA inventa texto -
     apenas MONTA o que já existe.
-  author: AIOS
+  author: AIOX
   icon: "🎬"
   slashPrefix: curator
 

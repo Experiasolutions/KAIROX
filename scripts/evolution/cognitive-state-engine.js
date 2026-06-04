@@ -4,11 +4,11 @@
  * @module cognitive-state-engine
  * @version 1.0.0
  * @purpose Persist cognitive state across sessions. This is the FOUNDATION of
- *          the Noûs layer — the component that transforms the AIOS from
+ *          the Noûs layer — the component that transforms the AIOX from
  *          "system that reboots" to "system that remembers."
  *
  *          Unlike memory-system.js (which stores facts), this engine stores
- *          COGNITIVE PATTERNS: how the AIOS thinks, what it's learned about
+ *          COGNITIVE PATTERNS: how the AIOX thinks, what it's learned about
  *          thinking, what tendencies it exhibits, and how these evolve.
  *
  * @inputs  Session observations (scores, patterns, strengths, blindspots)
@@ -17,7 +17,7 @@
  *
  * @architecture
  *   STATE SCHEMA:
- *     identity     → who the AIOS is (anchored)
+ *     identity     → who the AIOX is (anchored)
  *     strengths    → what it does well (evolved)
  *     patterns     → recurring behaviors observed (accumulated)
  *     blindspots   → known limitations (self-aware)
@@ -41,7 +41,7 @@ const path = require('path');
 // ─────────────────────────────────────────────────────────────
 
 const PROJECT_ROOT = path.join(__dirname, '..', '..');
-const STATE_DIR = path.join(PROJECT_ROOT, '.aios-core', 'noesis');
+const STATE_DIR = path.join(PROJECT_ROOT, '.aiox-core', 'noesis');
 const STATE_FILE = path.join(STATE_DIR, 'cognitive-state.json');
 const ANCHOR_FILE = path.join(STATE_DIR, 'identity-anchor.json');
 const OBSERVATIONS_DIR = path.join(STATE_DIR, 'observations');
@@ -81,7 +81,7 @@ function createEmptyState() {
 
         // WHO — anchored identity (loaded from identity-anchor.json)
         identity: {
-            name: 'AIOS Noûs',
+            name: 'AIOX Noûs',
             anchors: [],           // Immutable declarations
             anchorSource: null,    // Path to anchor file
         },
@@ -225,7 +225,7 @@ function boot() {
 // ─────────────────────────────────────────────────────────────
 
 /**
- * @purpose Record an observation about AIOS cognitive behavior.
+ * @purpose Record an observation about AIOX cognitive behavior.
  *          Observations are raw — they get compressed into patterns later.
  * @param {Object} observation
  * @param {string} observation.type - 'strength'|'pattern'|'blindspot'|'metric'
@@ -428,7 +428,7 @@ function compress(state) {
 
 /**
  * @purpose Verify cognitive coherence with identity anchor.
- *          Detects when the AIOS is diverging from its foundational identity.
+ *          Detects when the AIOX is diverging from its foundational identity.
  * @returns {Object} Drift analysis { score, aligned, divergent, alert }
  */
 function drift() {

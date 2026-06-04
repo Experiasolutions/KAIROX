@@ -270,7 +270,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/route-cache.yaml"
+  location: ".aiox/apex-context/route-cache.yaml"
   ttl: "Until router config or pages/ directory changes"
   invalidate_on:
     - "Router config file modified"

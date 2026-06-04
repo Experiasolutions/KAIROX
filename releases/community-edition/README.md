@@ -1,16 +1,16 @@
-# 🧬 KAIROS Community Edition — Contribuições para o Ecossistema AIOS
+# 🧬 KAIROS Community Edition — Contribuições para o Ecossistema AIOX
 
 > Ferramentas e padrões criados durante a operação do KAIROS,
-> devolvidos à comunidade AIOS. Compatíveis com AIOS v3.9+.
+> devolvidos à comunidade AIOX. Compatíveis com AIOX v3.9+.
 > Licença MIT. Sem código proprietário.
 
 ## ⚡ Quick Start
 
 ```bash
-# 1. Clone ou copie a pasta community-edition para seu workspace AIOS
+# 1. Clone ou copie a pasta community-edition para seu workspace AIOX
 
-# 2. Comece pelo AIOS Father (mentor)
-#    Leia: aios-father/AIOS-FATHER.md
+# 2. Comece pelo AIOX Father (mentor)
+#    Leia: aiox-father/AIOX-FATHER.md
 
 # 3. Siga o checklist da primeira semana
 #    Leia: first-week-checklist/CHECKLIST.md
@@ -25,7 +25,7 @@
 
 ## O que é o KAIROS?
 
-O KAIROS é um projeto pessoal construído em cima do AIOS. Em 10 dias de operação, foram criadas ferramentas que resolvem problemas reais que qualquer operador AIOS enfrenta: outputs rasos, tarefas que perdem o foco, e dificuldade de escalar para múltiplos clientes.
+O KAIROS é um projeto pessoal construído em cima do AIOX. Em 10 dias de operação, foram criadas ferramentas que resolvem problemas reais que qualquer operador AIOX enfrenta: outputs rasos, tarefas que perdem o foco, e dificuldade de escalar para múltiplos clientes.
 
 Estas 6 contribuições são as que mais ajudaram no meu dia a dia. Compartilho aqui para que outros operadores possam usar e melhorar.
 
@@ -64,8 +64,8 @@ opus-replicant/
 
 **Como usar:**
 ```bash
-# Copie para seu workspace AIOS
-cp -r opus-replicant/ .aios-core/opus-replicator/
+# Copie para seu workspace AIOX
+cp -r opus-replicant/ .aiox-core/opus-replicator/
 
 # Referência no seu agente master:
 # Adicione as 5 regras core no identity-anchor do seu agente
@@ -112,7 +112,7 @@ rp-mcp-protocol/
 
 ## 📦 Contribuição 3: Engine/Client Separation
 
-**Problema:** Quando você atende mais de um cliente com o AIOS, tudo se mistura. Agentes genéricos contaminados com referências ao "Cliente X", impossível reutilizar o motor em outro domínio.
+**Problema:** Quando você atende mais de um cliente com o AIOX, tudo se mistura. Agentes genéricos contaminados com referências ao "Cliente X", impossível reutilizar o motor em outro domínio.
 
 **Solução:** Separar o ENGINE (motor, domain-agnostic) do CLIENT (aplicação, domain-specific):
 
@@ -120,13 +120,13 @@ rp-mcp-protocol/
 project-root/
 ├── squads/          ← ENGINE (motor — nunca referencia um cliente)
 ├── scripts/         ← ENGINE
-├── .aios-core/      ← ENGINE
+├── .aiox-core/      ← ENGINE
 ├── clients/
 │   ├── cliente-a/   ← APPLICATION (isolado)
 │   └── cliente-b/   ← APPLICATION (isolado)
 ```
 
-**Princípio:** "O AIOS é motor, não aplicação. Não tem domínio."
+**Princípio:** "O AIOX é motor, não aplicação. Não tem domínio."
 
 O mesmo motor que atende uma clínica de estética pode atender um pet shop. A inteligência está no motor. O domínio está no cliente.
 
@@ -146,7 +146,7 @@ engine-client-separation/
 # Clone ou copie a pasta community-edition para seu workspace
 
 # 1. Opus Replicant
-cp -r community-edition/opus-replicant/ .aios-core/opus-replicator/
+cp -r community-edition/opus-replicant/ .aiox-core/opus-replicator/
 
 # 2. RP-MCP Protocol
 cp community-edition/rp-mcp-protocol/PROTOCOL-RP-MCP-v1.0.md reasoning-packages/
@@ -158,9 +158,9 @@ mkdir -p clients/meu-primeiro-cliente/{agents,templates,data}
 
 ---
 
-## 📦 Contribuição 4: AIOS Father — Mentor para Novos Operadores
+## 📦 Contribuição 4: AIOX Father — Mentor para Novos Operadores
 
-**Problema:** Novos operadores instalam o AIOS e se perguntam: "E agora?"
+**Problema:** Novos operadores instalam o AIOX e se perguntam: "E agora?"
 
 **Solução:** Guia prático de 5 níveis que vai do primeiro agente até meta-agentes:
 
@@ -173,9 +173,9 @@ mkdir -p clients/meu-primeiro-cliente/{agents,templates,data}
 | 5. Meta-Agentes        | Sistema evolui sozinho        | Dia 30 |
 
 Cada nível tem: mindset shift, exemplo prático, e checkpoint de validação.
-Inclui seção honesta sobre **o que o AIOS NÃO faz**.
+Inclui seção honesta sobre **o que o AIOX NÃO faz**.
 
-**Arquivo:** `aios-father/AIOS-FATHER.md`
+**Arquivo:** `aiox-father/AIOX-FATHER.md`
 
 ---
 
@@ -199,7 +199,7 @@ Cada template inclui YAML completo com persona, princípios e comandos.
 
 ## 📦 Contribuição 6: First Week Checklist
 
-**Problema:** A primeira semana com o AIOS é decisiva. Quem não vê resultado rápido desiste.
+**Problema:** A primeira semana com o AIOX é decisiva. Quem não vê resultado rápido desiste.
 
 **Solução:** Checklist de 7 dias com 1 ação concreta por dia:
 
@@ -221,7 +221,7 @@ Cada template inclui YAML completo com persona, princípios e comandos.
 
 ## Compatibilidade
 
-- AIOS v3.9+
+- AIOX v3.9+
 - Funciona com qualquer LLM (Gemini, Claude, GPT, Groq, DeepSeek)
 - Não tem dependências externas
 - Licença MIT — use como quiser
@@ -234,6 +234,6 @@ Este é um release gratuito da comunidade. Componentes proprietários do KAIROS 
 
 ---
 
-*Contribuição do projeto KAIROS para a comunidade AIOS.*
+*Contribuição do projeto KAIROS para a comunidade AIOX.*
 *Operador: Gabriel Lima | Grande ABC, SP | Fevereiro 2026*
 *Feedback e melhorias são bem-vindos.*

@@ -1,0 +1,26 @@
+{
+  "restaurant": {
+    "name": "Bistrô 56",
+    "cuisine": "Contemporânea e Alta Coquetelaria",
+    "address": "Rua das Flores, 123 - Centro",
+    "links": {
+      "menu_pdf": "https://bistro56.com.br/cardapio.pdf",
+      "ifood": "https://ifood.com.br/bistro-56",
+      "instagram": "@bistro56_oficial"
+    },
+    "faq": [
+      {
+        "question": "Tem estacionamento?",
+        "answer": "Temos convênio com o estacionamento 'Park Seguro' na mesma rua, número 150. Valor único de R$ 20,00."
+      },
+      {
+        "question": "Tem menu vegetariano?",
+        "answer": "Sim, temos opções exclusivas vegetarianas e veganas muito elogiadas."
+      },
+      {
+        "question": "Fazem eventos privados?",
+        "answer": "Sim! Para reservas acima de 12 pessoas ou eventos privados, por favor peça para falar com um humano e nosso gerente de eventos entrará em contato."
+      }
+    ]
+  }
+}

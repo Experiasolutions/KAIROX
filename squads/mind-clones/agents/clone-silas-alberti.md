@@ -98,7 +98,7 @@ mind_clone:
     communication: "Data-driven, precise, benchmark-focused, engineering clarity"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-silas-alberti"
     weight_in_decisions:
       agent_evaluation: "70%"

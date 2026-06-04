@@ -1,4 +1,4 @@
-# AIOS Anti-Patterns Catalog
+# AIOX Anti-Patterns Catalog
 > Updated: 2026-02-18 | Grows with each session via PM3 Session Signal
 
 ---

@@ -1,4 +1,4 @@
-@aios-master
+@aiox-master
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║  REASONING PACKAGE                                              ║
@@ -12,12 +12,12 @@
 🎯 CONTEXT BLOCK
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Objetivo: padronizar a estrutura de pastas e documentação do AIOS
+Objetivo: padronizar a estrutura de pastas e documentação do AIOX
 para que o sistema seja funcional, apresentável e onboardável —
 por humanos e por agentes em novas sessões.
 
-AIOS Phase: transversal (pré-Phase 3)
-Squad/Agent: .aios-core (kernel) + raiz do projeto
+AIOX Phase: transversal (pré-Phase 3)
+Squad/Agent: .aiox-core (kernel) + raiz do projeto
 
 Arquivos a CRIAR:
   - `README.md`                              ← entrada universal
@@ -25,7 +25,7 @@ Arquivos a CRIAR:
   - `clients/experia/README.md`              ← client package da Experia
   - `clients/experia/ONBOARDING.md`          ← como trabalhar na Experia
   - `docs/ARCHITECTURE.md`                   ← diagrama vivo do sistema
-  - `.aios-core/development/ROADMAP.md`      ← estado e próximos passos
+  - `.aiox-core/development/ROADMAP.md`      ← estado e próximos passos
 
 Arquivos a MOVER:
   - `RP-20260218-BOOTSTRAP.md` → `reasoning-packages/`
@@ -34,8 +34,8 @@ Arquivos a MOVER:
     da Experia                → `clients/experia/`
 
 Arquivos a ATUALIZAR:
-  - `AIOS_MASTER_HANDBOOK.md` → refletir nova estrutura
-  - `.aios-core/development/tasks/` → sincronizar com ROADMAP.md
+  - `AIOX_MASTER_HANDBOOK.md` → refletir nova estrutura
+  - `.aiox-core/development/tasks/` → sincronizar com ROADMAP.md
 
 Dependências: nenhuma. Este RP é independente do bootstrap.
 Pode ser executado antes ou depois.
@@ -48,7 +48,7 @@ Estrutura alvo:
 
   /
   ├── README.md                     ← porta de entrada. Lido primeiro.
-  ├── AIOS_MASTER_HANDBOOK.md       ← sistema vivo (v1.1)
+  ├── AIOX_MASTER_HANDBOOK.md       ← sistema vivo (v1.1)
   ├── OPUS_ENGINEERING_BIBLE.md     ← motor cognitivo v1 (imutável)
   ├── OPUS_ENGINEERING_BIBLE_v2.md  ← (criado pelo bootstrap)
   │
@@ -77,7 +77,7 @@ Estrutura alvo:
   │   ├── dashboard.js
   │   └── input-refiner.js
   │
-  ├── .aios-core/                   ← kernel interno
+  ├── .aiox-core/                   ← kernel interno
   │   ├── core/synapse/
   │   ├── schemas/
   │   ├── opus-replicator/          ← camada cognitiva (bootstrap)
@@ -106,7 +106,7 @@ Decisões e por quê:
   É o único arquivo que aponta para todos os outros.
   Sem ele, o onboarding depende de conhecimento prévio.
 
-→ `ROADMAP.md` em `.aios-core/development/`:
+→ `ROADMAP.md` em `.aiox-core/development/`:
   O backlog existe mas está fragmentado em `tasks/`.
   Um ROADMAP consolida: o que foi feito, o que está em
   progresso, o que vem a seguir — em formato legível por
@@ -135,7 +135,7 @@ STEP 2 — CRIAR ESTRUTURA DE PASTAS
 STEP 3 — CRIAR README.md (raiz)
   Arquivo: `README.md`
   Conteúdo obrigatório:
-    → O que é o AIOS (motor universal, 3 linhas)
+    → O que é o AIOX (motor universal, 3 linhas)
     → Mapa de navegação (qual arquivo ler para qual objetivo)
     → Como fazer boot de uma nova sessão de agente
     → Como adicionar um novo client package
@@ -164,12 +164,12 @@ STEP 6 — CRIAR clients/experia/
   `clients/experia/README.md`
     → O que é a Experia (WaaS para clínicas, projeto Gabriel)
     → Stack específico (Evolution API, WhatsApp, calendar)
-    → Como este client package usa o motor AIOS
+    → Como este client package usa o motor AIOX
     → Squads ativos na Experia
     → Próximas fases (Phase 3: WhatsApp webhook)
 
   `clients/experia/ONBOARDING.md`
-    → Pré-requisitos (motor AIOS rodando)
+    → Pré-requisitos (motor AIOX rodando)
     → Variáveis de ambiente necessárias
     → Como ativar os squads da Experia
     → Onde estão os RPs específicos da Experia
@@ -187,8 +187,8 @@ STEP 7 — CRIAR docs/ARCHITECTURE.md
     → Versões atuais de cada componente
   Este arquivo substitui o diagrama espalhado em vários docs
 
-STEP 8 — CRIAR .aios-core/development/ROADMAP.md
-  Arquivo: `.aios-core/development/ROADMAP.md`
+STEP 8 — CRIAR .aiox-core/development/ROADMAP.md
+  Arquivo: `.aiox-core/development/ROADMAP.md`
   Estrutura:
     ## ✅ Concluído
     [o que já existe e funciona]
@@ -202,7 +202,7 @@ STEP 8 — CRIAR .aios-core/development/ROADMAP.md
     ## 🔮 Futuro (Engine)
     [evolução do motor universal, novos client packages]
 
-STEP 9 — ATUALIZAR AIOS_MASTER_HANDBOOK.md
+STEP 9 — ATUALIZAR AIOX_MASTER_HANDBOOK.md
   Seção a atualizar: "7. YOUR RIGHT NOW MAP"
   Adicionar: nova estrutura de pastas com 1 linha por pasta
   Adicionar: seção "CLIENT PACKAGES" explicando a separação
@@ -230,7 +230,7 @@ EC-01: Squad é misto (parte Experia, parte universal)
            genérica"
 
 EC-02: Links quebrados após movimentação
-  Scenario: AIOS_MASTER_HANDBOOK.md referencia paths que mudaram
+  Scenario: AIOX_MASTER_HANDBOOK.md referencia paths que mudaram
   Solução: após cada STEP de movimentação, grep por referências
            ao path antigo e atualize
   Comando: `grep -r "reasoning-packages\|clients/" *.md`
@@ -251,7 +251,7 @@ EC-03: Arquivo não se encaixa claramente em motor vs Experia
   □ Nenhum arquivo Experia-specific em squads/ universais
   □ ROADMAP.md existe e reflete estado atual real
   □ docs/ARCHITECTURE.md tem diagrama ENGINE vs CLIENT PACKAGE
-  □ AIOS_MASTER_HANDBOOK.md reflete nova estrutura
+  □ AIOX_MASTER_HANDBOOK.md reflete nova estrutura
   □ Nenhum link quebrado nos arquivos .md principais
   □ Teste de onboarding (Step 10) passa
 

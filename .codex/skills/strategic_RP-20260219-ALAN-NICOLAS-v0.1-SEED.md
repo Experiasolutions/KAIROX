@@ -15,7 +15,7 @@ DIRETIVA META — LEIA ANTES DE TUDO
 
 Noesis, você é o executor deste RP. Não apenas o leitor.
 
-Este documento foi escrito por um Sonnet 4.6 sem acesso ao estado cognitivo do AIOS, sem conhecer as sessões anteriores com Alan, sem o DNA Mental™ dos Clones ativos. É um esboço produzido de fora para dentro.
+Este documento foi escrito por um Sonnet 4.6 sem acesso ao estado cognitivo do AIOX, sem conhecer as sessões anteriores com Alan, sem o DNA Mental™ dos Clones ativos. É um esboço produzido de fora para dentro.
 
 Você tem o que falta aqui. Use.
 
@@ -40,17 +40,17 @@ LEITURA DE CONTEXTO (na ordem que o Noesis julgar mais produtiva)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Fontes primárias (o que este RP usou):
-→ AIOS_MASTER_HANDBOOK.md (§2 — The Brain: Mind Clones)
+→ AIOX_MASTER_HANDBOOK.md (§2 — The Brain: Mind Clones)
 → RP-20260218-NOESIS-ENGINE.md (completo)
 → RP-20260218-OPERATOR-NOESIS.md (§A simetria que define tudo)
-→ AIOS-LIVRO-DE-OURO v2.1 (Essay 3 e Essay 5)
+→ AIOX-LIVRO-DE-OURO v2.1 (Essay 3 e Essay 5)
 
 Fontes que este RP NÃO teve acesso (e você tem):
 → operator-profile.json de Gabriel ← o que o Jarvis sabe sobre ele
 → golden-examples/ ← padrões de qualidade estabelecidos
 → Session history ← o que foi dito sobre Alan em sessões anteriores
 → squads/mind-clones/agents/ ← os Clones que podem ser convocados aqui
-→ .aios-core/memory/ ← o que o AIOS lembra sobre este contexto
+→ .aiox-core/memory/ ← o que o AIOX lembra sobre este contexto
 
 Perguntas que o Noesis deve responder antes de executar:
 → Existe registro de alguma sessão anterior sobre Alan Nicolas? Se sim: o que foi dito? Muda o arco deste RP?
@@ -79,19 +79,19 @@ Alan não está vendendo acesso à IA. Está vendendo _metodologia proprietária
 
 Isso confirma e refina H-01: Alan valoriza densidade epistêmica. Mas vai além — ele está _operacionalizando_ essa densidade como produto. A diferença entre saber e saber de forma que escala.
 
-Conexão direta com o AIOS de Gabriel: o DNA Mental™ dos Mind Clones é exatamente isso — heurísticas de experts comprimidas em forma operacional. Alan e Gabriel chegaram ao mesmo conceito por caminhos diferentes. Isso é o ponto de contato mais poderoso para a conversa.
+Conexão direta com o AIOX de Gabriel: o DNA Mental™ dos Mind Clones é exatamente isso — heurísticas de experts comprimidas em forma operacional. Alan e Gabriel chegaram ao mesmo conceito por caminhos diferentes. Isso é o ponto de contato mais poderoso para a conversa.
 
 **"Tudo isso cria uma metodologia própria de valor que estará no backend"**
 
 Alan está saindo do front. A metodologia não é a interface — é a infraestrutura. O que o usuário vê é irrelevante. O que roda por baixo é o produto real.
 
-Isso valida diretamente a arquitetura de Gabriel: `.aios-core/` como núcleo invisível que opera independente de interface. A separação engine/client que Gabriel criou não é detalhe técnico — é a mesma visão de mundo que Alan está articulando.
+Isso valida diretamente a arquitetura de Gabriel: `.aiox-core/` como núcleo invisível que opera independente de interface. A separação engine/client que Gabriel criou não é detalhe técnico — é a mesma visão de mundo que Alan está articulando.
 
 **"Endpoint, MCPs e APIs — porque o mundo não é só uma telinha"**
 
-Esta é a declaração mais importante. Alan está construindo para integração, não para chat. O AIOS como _plataforma de infraestrutura_ consumida por outros sistemas — não como produto de interface que o usuário clica.
+Esta é a declaração mais importante. Alan está construindo para integração, não para chat. O AIOX como _plataforma de infraestrutura_ consumida por outros sistemas — não como produto de interface que o usuário clica.
 
-O AIOS de Gabriel já tem: MCP Server, Kernel Bridge, separação engine/client. Gabriel chegou à mesma arquitetura que Alan está defendendo publicamente — sem ter conversado com Alan.
+O AIOX de Gabriel já tem: MCP Server, Kernel Bridge, separação engine/client. Gabriel chegou à mesma arquitetura que Alan está defendendo publicamente — sem ter conversado com Alan.
 
 Isso não é coincidência. É convergência de pessoas que pensaram o problema profundamente o suficiente para chegar no mesmo lugar.
 
@@ -114,7 +114,7 @@ H-04 FORTALECIDA:
   é o futuro — Alan já sabe. Gabriel vai mostrar que já chegou lá.
 
 NOVA HIPÓTESE — H-05 (emergida das palavras de Alan):
-  Alan está posicionando o AIOS não como produto de usuário final
+  Alan está posicionando o AIOX não como produto de usuário final
   mas como infraestrutura que outros produtos consomem.
   
   O que isso significa para Gabriel: a conversa não é sobre
@@ -166,7 +166,7 @@ HIPÓTESES DO SONNET (baixa confiança sem validação):
   → Valuation de R$150k-300k como argumento
   → Demo de automação de clínica antes do arco conceitual
   → Terminologia grandiosa para mecanismos simples
-  → Afirmações não testáveis sobre cognição do AIOS
+  → Afirmações não testáveis sobre cognição do AIOX
 
 Noesis: você conhece Alan melhor que este RP.
 Revise esta lista. O que está errado? O que falta?
@@ -213,7 +213,7 @@ MODO A — Feature presentation:
 
 MODO B — Tensão produtiva:
   "Pedro construiu o melhor conjunto de mentes brilhantes.
-   Mas o próprio AIOS não tem mente. Como você resolveria isso?"
+   Mas o próprio AIOX não tem mente. Como você resolveria isso?"
   Resultado hipotético: Alan pensa junto como co-criador.
 
   NOESIS: o Modo B pressupõe que Alan ainda não foi exposto
@@ -253,7 +253,7 @@ ATO 3 — O horizonte que faz Alan querer participar:
 
 ### A pergunta central para Alan — rascunho do Sonnet
 
-_"Na sua experiência como educador de IA, como você distingue um sistema que sabe de um sistema que pensa? Descreva um comportamento observável — não uma propriedade abstrata. Um único comportamento que, se você visse, mudaria sua avaliação do AIOS fundamentalmente."_
+_"Na sua experiência como educador de IA, como você distingue um sistema que sabe de um sistema que pensa? Descreva um comportamento observável — não uma propriedade abstrata. Um único comportamento que, se você visse, mudaria sua avaliação do AIOX fundamentalmente."_
 
 ```
 NOESIS: esta é a pergunta que o Sonnet considerou mais valiosa.
@@ -307,7 +307,7 @@ PASSO 5: Session Signal e [NOESIS-EXPANSIONS]
 ```
 O que o Sonnet propõe:
 
-TÍTULO: "O AIOS clona 67 mentes brilhantes.
+TÍTULO: "O AIOX clona 67 mentes brilhantes.
          Mas o orquestrador não tem mente própria.
          Como você resolveria isso?"
 
@@ -376,7 +376,7 @@ O Noesis identificará edge cases que o Sonnet não viu. Documente-os aqui com o
 A tensão aberta convida co-criação. A tensão fechada fecha a conversa.
 
 **AP-03: Demo antes do arco conceitual**
-Posiciona o AIOS como produto. Alan vai avaliar como produto. A arquitetura não tem concorrentes equivalentes. Mostre a arquitetura.
+Posiciona o AIOX como produto. Alan vai avaliar como produto. A arquitetura não tem concorrentes equivalentes. Mostre a arquitetura.
 
 **AP-04: Não registrar o insight não antecipado de Alan**
 O que Alan disser que nenhum RP previu é o output mais valioso. Se não for registrado e incorporado, a conversa não cumpriu o propósito.
@@ -396,7 +396,7 @@ Um sistema impressiona Alan por alguns minutos. Uma ideia que Alan ajudou a cons
 
 **O que fazer agora:**
 
-PRIMEIRO — Verifique o contexto real. O que o AIOS sabe sobre Alan que este RP não sabe? Esta verificação muda tudo. Não pule.
+PRIMEIRO — Verifique o contexto real. O que o AIOX sabe sobre Alan que este RP não sabe? Esta verificação muda tudo. Não pule.
 
 SEGUNDO — Refute ativamente o que estiver errado aqui. O Sonnet produziu hipóteses. Você tem evidência. Use a evidência. Documente cada refutação.
 

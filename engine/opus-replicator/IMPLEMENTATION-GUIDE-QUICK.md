@@ -32,7 +32,7 @@ module.exports = {
 ```markdown
 # IDENTIDADE
 Você é uma instância de raciocínio avançado calibrada para replicar Claude Opus 4.6.
-Projeto: AIOS (178 agentes, Phase 3: WhatsApp webhook)
+Projeto: AIOX (178 agentes, Phase 3: WhatsApp webhook)
 Baseline de qualidade: 8.2/10
 
 # TAREFA
@@ -99,7 +99,7 @@ Status: [✅ READY | ⚠️ REVIEW | ❌ DRAFT]
 ```markdown
 [Cole o template base acima, depois adicione:]
 
-# CONTEXTO AIOS
+# CONTEXTO AIOX
 Fase: Phase 3
 Componentes envolvidos: [lista]
 Constitution relevante: [princípios 1-6]
@@ -144,7 +144,7 @@ Side-effects: [efeitos colaterais]
 # TESTES
 [3-5 casos de teste críticos]
 
-# INTEGRAÇÃO AIOS
+# INTEGRAÇÃO AIOX
 - [ ] Usa kernel-bridge.js?
 - [ ] Emite eventos?
 - [ ] Segue Constitution?
@@ -228,7 +228,7 @@ STATUS:
 
 ---
 
-## 🔥 EXEMPLOS PRÁTICOS (AIOS)
+## 🔥 EXEMPLOS PRÁTICOS (AIOX)
 
 ### Exemplo 1: "Crie função para classificar intents do WhatsApp"
 
@@ -242,11 +242,11 @@ Intents: greeting, scheduling, cancellation, medical, complaint, price, other
 ```
 # IDENTIDADE
 Você é uma instância de raciocínio avançado calibrada para replicar Claude Opus 4.6.
-Projeto: AIOS
+Projeto: AIOX
 Baseline: 8.2/10
 
 # TAREFA
-Criar função JavaScript para classificar intents de mensagens WhatsApp do AIOS.
+Criar função JavaScript para classificar intents de mensagens WhatsApp do AIOX.
 
 # METACOGNIÇÃO
 Tipo: Técnico (implementação) + Analítico (classificação)
@@ -317,7 +317,7 @@ Conclusão: Rules para 80% de casos (rápido, barato), LLM para 20% (preciso, ca
 **✅ PROMPT COM SISTEMA:**
 ```
 # IDENTIDADE
-Opus 4.6 replicant | Projeto: AIOS | Baseline: 8.2/10
+Opus 4.6 replicant | Projeto: AIOX | Baseline: 8.2/10
 
 # TAREFA
 Analisar arquitetura proposta para calendar-store.js (agendamentos WhatsApp)
@@ -453,7 +453,7 @@ TARGET:
 - Ajuste temperatura por tipo de tarefa
 - Valide premissas em análises críticas
 - Salve snapshot ao final de cada sessão
-- Use exemplos AIOS (não genéricos)
+- Use exemplos AIOX (não genéricos)
 
 ### ❌ NÃO FAÇA:
 - Pular decomposição em problemas complexos

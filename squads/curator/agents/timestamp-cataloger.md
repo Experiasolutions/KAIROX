@@ -480,7 +480,7 @@ output_examples:
       3. Pass to content-miner-pro for moment extraction
       4. Other
 
-  - input: "*catalog [WebVTT transcript - AIOS launch day 1]"
+  - input: "*catalog [WebVTT transcript - AIOX launch day 1]"
     output: |
       Format detected: webvtt (YouTube/transcription standard)
       Parsing cues... Skipping WEBVTT header...
@@ -512,7 +512,7 @@ output_examples:
 
       ```yaml
       metadata:
-        source: "claude-aios-dia1"
+        source: "claude-aiox-dia1"
         total_duration: "01:23:45"
         total_utterances: 245
         speakers: ["Alan"]

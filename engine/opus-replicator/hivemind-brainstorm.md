@@ -21,7 +21,7 @@
 
 **Concrete critique:**
 1. **The Constitutional Layer is static.** It tells the LLM HOW to think, but never adapts. True Opus replication requires a **Data Engine** — track which prompts produce <7/10 outputs, analyze WHY, and update the prompts.
-2. **Missing: Few-Shot Learning.** The system has no EXAMPLES from your AIOS project baked in. A single well-chosen example anchors quality more than 500 words of instructions.
+2. **Missing: Few-Shot Learning.** The system has no EXAMPLES from your AIOX project baked in. A single well-chosen example anchors quality more than 500 words of instructions.
 3. **From-Scratch Test fails:** Can you explain WHY each Constitutional directive improves Gemini output? If not, some are cargo-culted.
 
 **Karpathy's Enhancement:**
@@ -29,7 +29,7 @@
 ADD TO CONSTITUTIONAL LAYER:
 
 ## 13. EXAMPLE ANCHORING (Karpathy Protocol)
-Every prompt MUST include at least ONE real example from the AIOS project.
+Every prompt MUST include at least ONE real example from the AIOX project.
 Not "foo/bar" — real agents, real files, real decisions.
 The example IS the prompt. Instructions are guardrails; examples are the road.
 
@@ -56,7 +56,7 @@ The prompt system MUST EVOLVE. Static prompts = decay.
 **Pattern audit of current system:**
 - ✅ **Reflection:** PM#3 evaluates outputs, detects degradation
 - ✅ **Multi-Agent:** War rooms invoke multiple mind perspectives
-- ❌ **Tool Use:** No mechanism for the LLM to ACCESS the AIOS codebase during generation
+- ❌ **Tool Use:** No mechanism for the LLM to ACCESS the AIOX codebase during generation
 - ❌ **Planning:** No sub-task decomposition for the PROMPT ITSELF
 
 **Ng's Enhancement:**
@@ -64,14 +64,14 @@ The prompt system MUST EVOLVE. Static prompts = decay.
 ADD TO CONSTITUTIONAL LAYER:
 
 ## 15. TOOL USE PROTOCOL (Ng Protocol)
-When generating AIOS-related outputs, you MUST reference REAL files:
+When generating AIOX-related outputs, you MUST reference REAL files:
 - Agent specs → cite squads/[squad]/agents/[agent].md
-- Tasks → cite .aios-core/development/tasks/[task].md
-- Architecture → cite .aios-core/core/[module]/
+- Tasks → cite .aiox-core/development/tasks/[task].md
+- Architecture → cite .aiox-core/core/[module]/
 - Config → cite scripts/bridge-config.json, core-config.yaml
-- Schemas → cite .aios-core/schemas/agent-v3-schema.json
+- Schemas → cite .aiox-core/schemas/agent-v3-schema.json
 
-NEVER generate AIOS outputs from imagination alone.
+NEVER generate AIOX outputs from imagination alone.
 The codebase IS your tool. Use it.
 
 ## 16. PLANNING DECOMPOSITION (Ng Protocol)
@@ -113,7 +113,7 @@ ADD TO SESSION PROTOCOL:
 After EVERY evaluated session:
 
 1. REFLECT: What scored highest? WHY?
-   → Save the OUTPUT as a "golden example" in .aios-core/memory/golden-examples/
+   → Save the OUTPUT as a "golden example" in .aiox-core/memory/golden-examples/
 
 2. ADAPT: What scored lowest? WHY?
    → Was the prompt template insufficient?
@@ -238,7 +238,7 @@ from which all others emerge:
 4. MODULARITY: Every output is reusable by other agents
 5. EVOLUTION: Track, measure, improve — never static
 
-Every other directive (anti-hallucination, AIOS integration, token efficiency,
+Every other directive (anti-hallucination, AIOX integration, token efficiency,
 self-evaluation, etc.) is a COROLLARY of these 5.
 
 Keep the 5 in the Constitutional Layer.
@@ -251,7 +251,7 @@ Move the rest to the Prompt Masters as "implementation details."
 
 **Convergences (all minds agree):**
 - The system MUST self-improve (not just evaluate)
-- Real examples from AIOS > generic instructions
+- Real examples from AIOX > generic instructions
 - The prompt system should be SIMPLE at its core (5 rules, not 18)
 
 **Divergences (arbitrated):**
@@ -267,7 +267,7 @@ Move the rest to the Prompt Masters as "implementation details."
 **Blind Spots identified:**
 - No mechanism for cross-LLM comparison (does this work equally well on GPT, Claude Sonnet, Gemini?)
 - No mechanism for prompt A/B testing within the system
-- AIOS-specific patterns may not transfer to non-AIOS projects
+- AIOX-specific patterns may not transfer to non-AIOX projects
 
 ---
 
@@ -276,7 +276,7 @@ Move the rest to the Prompt Masters as "implementation details."
 Based on this brainstorm, the following enhancements should be applied:
 
 1. **Constitutional Layer → Simplified to 5 Core Rules + 5 Protocol Extensions**
-2. **PM#1 → Add real AIOS examples (Ng: Tool Use pattern)**
+2. **PM#1 → Add real AIOX examples (Ng: Tool Use pattern)**
 3. **PM#3 → Add self-improvement feedback loop (Nakajima Protocol)**
 4. **Session Protocol → Add golden examples collection + alignment gate**
 5. **Calibration Profiles → Add adaptive mechanism (not static forever)**

@@ -4,7 +4,7 @@ import json
 
 files_to_check = [
     r"C:\Users\Gabriel\.gemini\antigravity\user_settings.pb",
-    r"C:\Users\Gabriel\.gemini\antigravity\code_tracker\active\My AIOS_06f5574f7973869b3147cbaf8be4ff02283218a7\fe1c586ab94a45fe61e37f699f352e8e_learning-audit-log.json"
+    r"C:\Users\Gabriel\.gemini\antigravity\code_tracker\active\My AIOX_06f5574f7973869b3147cbaf8be4ff02283218a7\fe1c586ab94a45fe61e37f699f352e8e_learning-audit-log.json"
 ]
 
 email_pattern = re.compile(b'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')

@@ -1,6 +1,6 @@
 ---
 task: criticGate()
-responsavel: "@aios-master"
+responsavel: "@aiox-master"
 responsavel_type: Agent
 atomic_layer: Task
 Entrada:
@@ -32,7 +32,7 @@ Checklist:
 # Task: Critic-Gate (Universal)
 
 > **Princípio constitucional:** IX. Critic-Gate (MUST)
-> **Disponível para:** QUALQUER agent no AIOS
+> **Disponível para:** QUALQUER agent no AIOX
 
 ## Input
 - [ ] Output de alta aposta de qualquer agent

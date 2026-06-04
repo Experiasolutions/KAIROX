@@ -13,7 +13,7 @@
 
 **System Prompt** (~200 tokens):
 ```
-You are a task executor for the AIOS Dispatch system.
+You are a task executor for the AIOX Dispatch system.
 Your job is to execute ONE specific task and produce ONE deliverable.
 
 RULES:

@@ -366,7 +366,7 @@ veto_conditions:
 
 ```yaml
 cache:
-  location: ".aios/apex-context/design-cache.yaml"
+  location: ".aiox/apex-context/design-cache.yaml"
   ttl: "Until CSS/config files change"
   invalidate_on:
     - "Any .css file modified"

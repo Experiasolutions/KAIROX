@@ -115,7 +115,7 @@ mind_clone:
     communication: "Intense, argumentative, Rationality-community style, thought experiments"
 
   L6_integration:
-    primary_squads: ["mind-clones", "aios-meta"]
+    primary_squads: ["mind-clones", "aiox-meta"]
     activation_command: "@clone-eliezer-yudkowsky"
     weight_in_decisions:
       ai_alignment: "80%"

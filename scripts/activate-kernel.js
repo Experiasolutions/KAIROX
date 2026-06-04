@@ -15,7 +15,7 @@ const { createKernelBridge } = require('./kernel-bridge');
 function main() {
     console.log('');
     console.log('═══════════════════════════════════════════════════');
-    console.log('  ⚡ AIOS Kernel Activation Check');
+    console.log('  ⚡ AIOX Kernel Activation Check');
     console.log('═══════════════════════════════════════════════════');
     console.log('');
 

@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "description": "Mapeamento UiPath Project → AIOS Agent/Task + configurações de segurança",
+    "description": "Mapeamento UiPath Project → AIOX Agent/Task + configurações de segurança",
     "providers": {
         "jan-local": {
             "envKey": "",

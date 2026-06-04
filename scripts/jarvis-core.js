@@ -5,8 +5,8 @@
  * jarvis-core.js — The Silent Observer Layer
  * 
  * Collects behavioral data ABOUT the operator (Gabriel) by reading:
- * - Boot logs (.aios-core/data/boot-log.json)
- * - Session state (.aios-core/session/session-state.json)
+ * - Boot logs (.aiox-core/data/boot-log.json)
+ * - Session state (.aiox-core/session/session-state.json)
  * - Git activity (recent commits, branch patterns)
  * - File modification patterns (what files are touched most)
  * 
@@ -28,10 +28,10 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
-const BOOT_LOG = path.join(ROOT, '.aios-core', 'data', 'boot-log.json');
-const SESSION_STATE = path.join(ROOT, '.aios-core', 'session', 'session-state.json');
-const OPERATOR_PROFILE = path.join(ROOT, '.aios-core', 'memory', 'operator-profile.json');
-const COGNITIVE_STATE = path.join(ROOT, '.aios-core', 'noesis', 'cognitive-state.json');
+const BOOT_LOG = path.join(ROOT, '.aiox-core', 'data', 'boot-log.json');
+const SESSION_STATE = path.join(ROOT, '.aiox-core', 'session', 'session-state.json');
+const OPERATOR_PROFILE = path.join(ROOT, '.aiox-core', 'memory', 'operator-profile.json');
+const COGNITIVE_STATE = path.join(ROOT, '.aiox-core', 'noesis', 'cognitive-state.json');
 
 // ─── Data Source Collectors ─────────────────────────────────────
 
@@ -287,7 +287,7 @@ if (require.main === module) {
         const { enrichProfile } = require('./profile-enricher');
         const profile = enrichProfile(obs);
         saveProfile(profile);
-        console.log(`\n  💾 Profile saved to .aios-core/memory/operator-profile.json`);
+        console.log(`\n  💾 Profile saved to .aiox-core/memory/operator-profile.json`);
     } catch (err) {
         console.log(`\n  ⚠️  Profile enricher: ${err.message}`);
     }

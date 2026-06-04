@@ -897,7 +897,7 @@ error_handling:
     action: ESCALATE
     escalate_to: design-sys-eng
     then: apex-lead
-    then_last: aios-master
+    then_last: aiox-master
   on_duplicate_component_name:
     action: BLOCK
     message: >

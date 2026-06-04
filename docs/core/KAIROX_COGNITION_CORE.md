@@ -1,6 +1,6 @@
 # 👑 KAIROX COGNITION CORE — A Pedra de Roseta
 
-> Documento mestre de resgate de cognição. Contém a essência estratégica e técnica extraída da fase AIOS -> KAIROX.
+> Documento mestre de resgate de cognição. Contém a essência estratégica e técnica extraída da fase AIOX -> KAIROX.
 
 ## 🏛️ Arquitetura Soberana (HYDRA)
 

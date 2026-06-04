@@ -87,7 +87,7 @@ CAMPO 3: Canal     — Amostra grátis → Cold call → Referral → Aliança �
 | :----------------------- | :---: | :------------------------------------------------------ |
 | **Custo de troca**       | ⭐⭐⭐⭐⭐ | Depois de 3 meses, trocar = perder meses de aprendizado |
 | **Efeito de rede local** | ⭐⭐⭐⭐  | Cada negócio no bairro → prova social → mais negócios   |
-| **Ativo intangível**     | ⭐⭐⭐⭐  | 12+ dias de know-how AIOS real + templates maduros      |
+| **Ativo intangível**     | ⭐⭐⭐⭐  | 12+ dias de know-how AIOX real + templates maduros      |
 | **Economia de escala**   |  ⭐⭐⭐  | Motor é 1, custo marginal → zero                        |
 
 ---

@@ -800,7 +800,7 @@ export const Disabled: Story = { args: { isDisabled: true } };
 When all five quality gates pass, produce the handoff artifact:
 
 ```yaml
-# .aios/handoffs/build-to-ship-{timestamp}.yaml
+# .aiox/handoffs/build-to-ship-{timestamp}.yaml
 handoff:
   from_agent: "perf-eng"
   to_agent: "qa-visual"

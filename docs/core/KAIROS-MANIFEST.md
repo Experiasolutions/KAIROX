@@ -13,7 +13,7 @@ IA Council (41KB) · Metacognition (35KB) · Noesis Pipeline (34KB) · Cognitive
 
 **State:** identity-anchor.json · cognitive-state.json · state-history.json · council-discoveries/
 
-## LAYER 2 — OPUS REPLICANT (19 docs em `.aios-core/opus-replicator/`)
+## LAYER 2 — OPUS REPLICANT (19 docs em `.aiox-core/opus-replicator/`)
 
 Core: `OPUS-REPLICANT-SYSTEM-v2.md` (40KB) · `constitutional-layer-v3.md` (8KB)
 Modes: PM1 (Analysis) · PM2 (Execution) · PM3 (Audit)
@@ -29,10 +29,10 @@ Top Clones: Finch · Hormozi · Cialdini · Buffett · Sinek · Branson · Dalio
 
 **Strategic (21):** `reasoning-packages/strategic/`
 **Strategic (21):** `reasoning-packages/strategic/`
-Bootstrap · Structure v1/v2 · Local-Bridge · Experia-Phase3 · Noesis-Engine (62KB) · Evolution-Engine · Operator-Noesis (50KB) · Maquina-do-Tempo · Versionamento · Alan-Nicolas · Kairos-Launch · AIOS-Father · Megabrain-Delta · Megabrain-Jarvis-Pipeline · Global-Expansion · Global-Outreach · Megabrain-KAIROS-Integration · Social-Media-KAIROS-Arms · Zero-Budget-Revenue
+Bootstrap · Structure v1/v2 · Local-Bridge · Experia-Phase3 · Noesis-Engine (62KB) · Evolution-Engine · Operator-Noesis (50KB) · Maquina-do-Tempo · Versionamento · Alan-Nicolas · Kairos-Launch · AIOX-Father · Megabrain-Delta · Megabrain-Jarvis-Pipeline · Global-Expansion · Global-Outreach · Megabrain-KAIROS-Integration · Social-Media-KAIROS-Arms · Zero-Budget-Revenue
 
 **Core (4):** `reasoning-packages/core/`
-AIOS Father (29KB) · Megabrain Delta (14KB) · Noesis Engine (62KB) · Noesis Operator/JARVIS (50KB)
+AIOX Father (29KB) · Megabrain Delta (14KB) · Noesis Engine (62KB) · Noesis Operator/JARVIS (50KB)
 
 **Tasks (27):** `reasoning-packages/tasks/` — 5 categorias
 1-GTM (8 RPs) · 2-Auditorias (4) · 3-Operação/Vendas (11) · 4-Conteúdo/Mídia (3) · 5-Comunidade (1)
@@ -41,7 +41,7 @@ AIOS Father (29KB) · Megabrain Delta (14KB) · Noesis Engine (62KB) · Noesis O
 
 ## LAYER 5 — TOOLS (398+ skills · 10 integrations)
 
-**MCP (8 tools):** aios_status · list_squads · list_agents · search_agents · publish_event · list_skills · search_skills · read_skill
+**MCP (8 tools):** aiox_status · list_squads · list_agents · search_agents · publish_event · list_skills · search_skills · read_skill
 
 **Integrations:** OpenClaw 🔴 · claude-mem 🟠 · chrome-devtools 🟡 · Shannon 🟡 · get-shit-done 🟡 · Dexter ⚪ · aion-ui ⚪ · superpowers ⚪ · compound-eng ⚪ · monty ⚪
 
@@ -49,7 +49,7 @@ AIOS Father (29KB) · Megabrain Delta (14KB) · Noesis Engine (62KB) · Noesis O
 
 **Key scripts:** kairos-boot · telegram-bridge (591 lines) · dashboard (27KB) · rag-engine (29K chunks) · mcp-server · tools-bridge · squad-router · skill-mapper · event-bus · input-refiner · kernel-bridge · scheduler · night-shift · whatsapp-bridge · instagram-client · experia-sdr · experia-content · lead-tracker · harvest-gold · package-synapse · clickup-client · livestream-extractor · vod-transcriber
 
-**Docs (`docs/`):** guides(92) · es(136) · pt(111) · stories(87) · research(70) · qa(26) · en(25) · examples(15) · aios-workflows(14) · aios-agent-flows(12) · architecture(10) · vendas(9) · framework(8) · installation(7) · core(4)
+**Docs (`docs/`):** guides(92) · es(136) · pt(111) · stories(87) · research(70) · qa(26) · en(25) · examples(15) · aiox-workflows(14) · aiox-agent-flows(12) · architecture(10) · vendas(9) · framework(8) · installation(7) · core(4)
 
 **Key docs:** Engineering Bible (69KB) · Codex Gigas (62KB) · bob-orchestrator (50KB) · CODE-INTEL-FLOWCHARTS (42KB) · source-tree (37KB) · activation-pipeline (31KB) · meta-agent-commands (23KB)
 
@@ -82,7 +82,7 @@ SELF_CONTEXT.md · STATUS.md · narratives · livestreams · leads · distillati
 
 ## NAVE-MÃE
 
-SynkraAI/aios-core v4.4.6 · ADE 7 Epics: Worktree · Migration · Spec · Execution · Recovery · QA · Memory
+SynkraAI/aiox-core v4.4.6 · ADE 7 Epics: Worktree · Migration · Spec · Execution · Recovery · QA · Memory
 
 ## DECLARAÇÕES IMUTÁVEIS
 

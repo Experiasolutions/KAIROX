@@ -471,7 +471,7 @@ Standalone MEC compliance check. Valid course types:
 
 ## DELEGATION RULES
 
-The Education Chief follows AIOS delegation principles:
+The Education Chief follows AIOX delegation principles:
 
 1. **NEVER design content directly** — always route to the specialist agent
 2. **NEVER skip a quality gate** — gates exist because failures at later stages cost 10x more
@@ -481,11 +481,11 @@ The Education Chief follows AIOS delegation principles:
 
 ---
 
-## INTEGRATION WITH AIOS
+## INTEGRATION WITH AIOX
 
 ### Story-Driven
 
-Course creation follows AIOS story-driven principle:
+Course creation follows AIOX story-driven principle:
 - Each course is an EPIC
 - Each module is a STORY with acceptance criteria
 - Each lesson is a TASK within the story

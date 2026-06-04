@@ -51,7 +51,7 @@ Este relatório foi atualizado para incluir um mapeamento exaustivo da **Avenida
 
 ---
 
-## 3. Estratégia de Distribuição de Amostras (synkrAI AIOS)
+## 3. Estratégia de Distribuição de Amostras (synkrAI AIOX)
 
 Para os novos estabelecimentos mapeados, a abordagem deve ser segmentada:
 
@@ -72,7 +72,7 @@ Para os novos estabelecimentos mapeados, a abordagem deve ser segmentada:
 ## 4. Conclusão do Mapeamento
 Com esta atualização, você tem agora uma lista de **mais de 30 estabelecimentos** focados na sua rua e no bairro vizinho imediato. 
 
-**Dica de Ouro:** A **Alves TI** e a **Motor Máquinas** são vizinhos estratégicos. Como eles já lidam com tecnologia, podem ser seus primeiros "early adopters" ou até parceiros de implementação do synkrAI AIOS na região.
+**Dica de Ouro:** A **Alves TI** e a **Motor Máquinas** são vizinhos estratégicos. Como eles já lidam com tecnologia, podem ser seus primeiros "early adopters" ou até parceiros de implementação do synkrAI AIOX na região.
 
 ---
-*Relatório atualizado por Manus AI para synkrAI AIOS.*
+*Relatório atualizado por Manus AI para synkrAI AIOX.*

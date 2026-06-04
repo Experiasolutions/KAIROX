@@ -63,14 +63,14 @@
 - [x] boot.md FASE 5.5: Subsistemas sempre ativos
 - [x] boot.md FASE 5.6: Ruflo ecosystem documentado
 
-### Limpeza AIOS → AIOX — ✅ COMPLETO
-- [x] `.aios-core/` → `.aios-core-deprecated/` (conteúdo exclusivo migrado)
-- [x] Docs AIOS_* renomeados para AIOX_*
-- [x] MCP config: `aios-kairos` → `aiox-kairos`
+### Limpeza AIOX → AIOX — ✅ COMPLETO
+- [x] `.aiox-core/` → `.aiox-core-deprecated/` (conteúdo exclusivo migrado)
+- [x] Docs AIOX_* renomeados para AIOX_*
+- [x] MCP config: `aiox-kairos` → `aiox-kairos`
 - [x] Squads c-level/sales/jarvis corrigidos (agents em `agents/` subdir)
 - [x] Squad `_example` removido
 - [x] Task `load-reasoning-package.md` criada no AIOX
-- [x] Zero referências residuais a `.aios-core` no codebase
+- [x] Zero referências residuais a `.aiox-core` no codebase
 
 ### 🔴 RED HAT AI STACK (Trials ATIVADOS ✅)
 
@@ -251,7 +251,7 @@
 
 | Métrica | Valor |
 |---|---|
-| MCP Tools (JS local) | **28** (10 AIOS + 13 KAIROS + 5 Hivemind) |
+| MCP Tools (JS local) | **28** (10 AIOX + 13 KAIROS + 5 Hivemind) |
 | MCP Tools (Python/HYDRA) | **18** (pendente deploy) |
 | OpenClaw Skills | **15** (pendente deploy) |
 | Tasks AIOX | 204 |

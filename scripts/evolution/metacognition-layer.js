@@ -3,7 +3,7 @@
 /**
  * @module metacognition-layer
  * @version 1.0.0
- * @purpose The AIOS thinks about how it thinks. This layer monitors reasoning
+ * @purpose The AIOX thinks about how it thinks. This layer monitors reasoning
  *          quality, detects anti-patterns BEFORE they are committed, identifies
  *          cognitive tendencies, and recommends adjustments.
  *
@@ -38,8 +38,8 @@ const path = require('path');
 // ─────────────────────────────────────────────────────────────
 
 const PROJECT_ROOT = path.join(__dirname, '..', '..');
-const ANTI_PATTERNS_FILE = path.join(PROJECT_ROOT, '.aios-core', 'memory', 'anti-patterns.md');
-const HISTORY_FILE = path.join(PROJECT_ROOT, '.aios-core', 'data', 'noesis-history.json');
+const ANTI_PATTERNS_FILE = path.join(PROJECT_ROOT, '.aiox-core', 'memory', 'anti-patterns.md');
+const HISTORY_FILE = path.join(PROJECT_ROOT, '.aiox-core', 'data', 'noesis-history.json');
 const DOMAIN_WORDS_FILE = path.join(PROJECT_ROOT, 'scripts', 'evolution', 'domain-words.config.json');
 
 // ─────────────────────────────────────────────────────────────

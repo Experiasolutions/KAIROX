@@ -1,14 +1,14 @@
-# 🧬 AIOS Community Contribution — Opus Replicant Engine + Evolution Engine
+# 🧬 AIOX Community Contribution — Opus Replicant Engine + Evolution Engine
 
 > **Contributor:** Gabriel ([@experiasolutions](https://github.com/experiasolutions))
-> **AIOS Version:** v4.2.13 → KAIROS fork
+> **AIOX Version:** v4.2.13 → KAIROS fork
 > **Date:** 2026-02-21
 
 ---
 
 ## What This Contribution Adds
 
-Four interconnected systems that give AIOS **cognitive depth, self-improvement, quality enforcement, and tool discovery**:
+Four interconnected systems that give AIOX **cognitive depth, self-improvement, quality enforcement, and tool discovery**:
 
 ### 1. Opus Replicant Engine — Multi-Model Cognitive Protocol
 
@@ -23,7 +23,7 @@ A structured prompt engineering system that elevates any LLM to produce outputs 
 
 **Files added:**
 ```
-.aios-core/opus-replicator/
+.aiox-core/opus-replicator/
 ├── OPUS-REPLICANT-SYSTEM-v2.md       # Core system spec (40K)
 ├── IMPLEMENTATION-GUIDE-QUICK.md     # Quick start for operators
 ├── constitutional-layer-v3.md        # Safety guardrails
@@ -47,7 +47,7 @@ A structured prompt engineering system that elevates any LLM to produce outputs 
 
 ### 2. Evolution Engine — Autonomous Self-Improvement
 
-A 17-script framework that enables AIOS to autonomously detect gaps, propose improvements, and evolve over time.
+A 17-script framework that enables AIOX to autonomously detect gaps, propose improvements, and evolve over time.
 
 **Core features:**
 - **Gap Detection** — Scans codebase for structural/quality issues
@@ -83,7 +83,7 @@ scripts/evolution/
 
 ### 3. MCP Server + Tools Bridge — Skills Discovery
 
-An MCP (Model Context Protocol) server that exposes AIOS capabilities to external tools, plus a skills discovery engine.
+An MCP (Model Context Protocol) server that exposes AIOX capabilities to external tools, plus a skills discovery engine.
 
 **Core features:**
 - **8 MCP Tools** — status, squads, agents, events, skills (list/search/read)
@@ -159,7 +159,7 @@ node scripts/mcp-server.js --self-test
 
 ```
                     ┌──────────────────────────────────┐
-                    │       AIOS + Opus Replicant       │
+                    │       AIOX + Opus Replicant       │
                     │    PM1 → PM2 → PM3 (quality)      │
                     └──────────┬───────────────────────┘
                                │
@@ -204,8 +204,8 @@ node scripts/evolution/evolution-engine.js --dry-run
 
 ## License
 
-This contribution follows the same license as the AIOS project.
+This contribution follows the same license as the AIOX project.
 
 ## Credits
 
-Built on top of AIOS v4.2.13 by Pedro Valério. Cognitive protocols inspired by Claude Opus 4.6 meta-analysis.
+Built on top of AIOX v4.2.13 by Pedro Valério. Cognitive protocols inspired by Claude Opus 4.6 meta-analysis.
