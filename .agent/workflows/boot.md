@@ -97,7 +97,7 @@ Por categoria:
 
 **Esta fase garante que o KAIROS opere via ecossistema, não como assistente genérico.**
 
-22. **MCP v3.0 Check:** Confirme que o MCP Server está ativo (23 tools: 10 AIOX + 13 KAIROS). Use as tools `kairos_read_context`, `kairos_list_tasks`, `kairos_list_framework_agents` para acessar o ecossistema via MCP.
+22. **MCP v3.0 Check:** Confirme que o MCP Server está ativo (**23 tools: 5 AIOX + 4 HYDRA + 9 KAIROS + 5 HIVEMIND**). Use as tools `kairos_read_context`, `kairos_health`, `aiox_list_agents`, `hivemind_read_decisions` para acessar o ecossistema via MCP.
 
 23. **Agent-First Protocol:** Para TODA demanda recebida:
     - Identifique o agente especializado mais adequado (@dev, @architect, @qa, @devops, @analyst, @pm)

@@ -66,10 +66,14 @@ Antes de reportar ao operador, internalize estas regras de operação:
 
 **MCP v3.0 (23 tools):** Use as tools MCP para consultar o ecossistema:
 - `kairos_read_context` → ler SELF_CONTEXT + STATUS via MCP
-- `kairos_list_tasks` → consultar 204 tasks disponíveis
-- `kairos_list_framework_agents` → consultar 12 agentes AIOX
-- `kairos_read_engine` → acessar noesis (cognitive-state) e memory
-- `kairos_read_synapse` → acessar sysânapse de memória dos agentes
+- `kairos_health` → health check completo dos subsistemas KAIROS
+- `aiox_list_agents` → listar 12 agentes AIOX disponíveis
+- `aiox_list_skills` → listar skills do framework
+- `kairos_explore_arsenal` → explorar scripts do arsenal KAIROS
+- `kairos_log_artifact` / `kairos_list_artifacts` → registrar e consultar artefatos
+- `hivemind_read_decisions` → consultar memória de decisões
+- `hivemind_read_states` → status de todos os nós do sistema
+- `hydra_spawn_agent` / `hydra_queue_task` → orquestrar sub-agentes e Night Shift
 
 **Agent-First Protocol:** Para TODA demanda:
 1. Identifique o agente especializado mais adequado
