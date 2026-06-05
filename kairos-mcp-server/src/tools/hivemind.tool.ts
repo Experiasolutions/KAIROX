@@ -7,11 +7,12 @@ export const hivemindTools = [
     inputSchema: {
       type: "object",
       properties: {
-        limit: { type: "number" },
-        filter_agent: { type: "string" },
-        filter_type: { type: "string" }
+        limit: { type: "number", description: "Número máximo de decisões a retornar (padrão: 20)", default: 20 },
+        filter_agent: { type: "string", description: "Filtrar por ID de agente (opcional, ex: 'skortex-main')" },
+        filter_type: { type: "string", description: "Filtrar por tipo de entrada no log (opcional, ex: 'decision', 'artifact', 'event')" }
       }
-    }
+    },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false }
   },
   {
     name: "hivemind_log_decision",
@@ -19,14 +20,15 @@ export const hivemindTools = [
     inputSchema: {
       type: "object",
       properties: {
-        agent: { type: "string" },
-        type: { type: "string" },
-        summary: { type: "string" },
-        context: { type: "string" },
-        affects: { type: "array", items: { type: "string" } }
+        agent: { type: "string", description: "ID do agente que está registrando a entrada (ex: 'skortex-main', 'spawn-qa-001')" },
+        type: { type: "string", enum: ["decision", "artifact", "event", "task", "config", "other"], description: "Categoria da entrada no log. Use 'decision' para escolhas arquiteturais, 'artifact' para artefatos produzidos, 'event' para eventos relevantes" },
+        summary: { type: "string", description: "Descrição concisa da decisão, artefato ou evento (1-2 frases objetivas)" },
+        context: { type: "string", description: "Contexto adicional, markdown aceito. Use para detalhes que não cabem no summary (opcional)" },
+        affects: { type: "array", items: { type: "string" }, description: "Lista de módulos, arquivos ou sistemas afetados (opcional, ex: ['auth.ts', 'supabase'])" }
       },
       required: ["agent", "type", "summary"]
-    }
+    },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false }
   },
   {
     name: "hivemind_assign_task",
@@ -34,18 +36,20 @@ export const hivemindTools = [
     inputSchema: {
       type: "object",
       properties: {
-        from_agent: { type: "string" },
-        to_agent: { type: "string" },
-        task: { type: "string" },
-        priority: { type: "string" }
+        from_agent: { type: "string", description: "ID do agente que está delegando a tarefa (ex: 'skortex-main', 'orchestrator')" },
+        to_agent: { type: "string", description: "ID do agente que receberá e executará a tarefa (ex: 'spawn-qa-001', 'analyst-01')" },
+        task: { type: "string", description: "Descrição detalhada da tarefa a ser executada pelo agente destinatário" },
+        priority: { type: "string", enum: ["P0", "P1", "P2"], description: "Prioridade da tarefa: P0 (crítico/urgente), P1 (normal, padrão), P2 (baixo)", default: "P1" }
       },
       required: ["from_agent", "to_agent", "task"]
-    }
+    },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false }
   },
   {
     name: "hivemind_read_states",
     description: "Lê o estado atual de todos os agentes",
-    inputSchema: { type: "object", properties: {} }
+    inputSchema: { type: "object", properties: {} },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false }
   },
   {
     name: "hivemind_update_state",
@@ -53,14 +57,15 @@ export const hivemindTools = [
     inputSchema: {
       type: "object",
       properties: {
-        agent_id: { type: "string" },
-        status: { type: "string" },
-        focus: { type: "string" },
-        chat_id: { type: "string" },
-        machine: { type: "string" }
+        agent_id: { type: "string", description: "Identificador único do agente a atualizar (ex: 'skortex-main', 'spawn-refactor-001')" },
+        status: { type: "string", description: "Estado atual do agente. Valores convencionais: 'idle' | 'working' | 'blocked' | 'done'" },
+        focus: { type: "string", description: "Descrição concisa da tarefa atual do agente (ex: 'Refactoring auth module', 'idle')" },
+        chat_id: { type: "string", description: "ID da conversa Claude associada a este agente (opcional)" },
+        machine: { type: "string", description: "Identificador da máquina onde o agente roda (opcional, ex: 'win-main', 'railway')" }
       },
       required: ["agent_id", "status", "focus"]
-    }
+    },
+    annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: false }
   }
 ];
 

@@ -65,6 +65,7 @@ export const hydraTools = [
       },
       required: ["task"],
     },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true },
   },
   {
     name: "hydra_queue_task",
@@ -97,6 +98,7 @@ export const hydraTools = [
       },
       required: ["title", "prompt"],
     },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true },
   },
   {
     name: "hydra_list_tasks",
@@ -112,11 +114,13 @@ export const hydraTools = [
         limit: { type: "number", description: "Número máximo de tasks a retornar (padrão: 10)" },
       },
     },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
   },
   {
     name: "hydra_agent_status",
     description: "Retorna o status atual de todos os agentes HYDRA: spawns locais ativos e status do Night Shift remoto.",
     inputSchema: { type: "object", properties: {} },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
   },
 ];
 

@@ -5,6 +5,7 @@ export const kairosTools = [
     name: "kairos_health",
     description: "Full KAIROS system health check — verifica subsistemas reais (context, hivemind, aios, arsenal, hydra)",
     inputSchema: { type: "object", properties: {} },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
   },
   {
     name: "kairos_read_context",
@@ -19,6 +20,7 @@ export const kairosTools = [
         },
       },
     },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
   },
   {
     name: "kairos_write_context",
@@ -47,6 +49,7 @@ export const kairosTools = [
       },
       required: ["file"],
     },
+    annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: false },
   },
   {
     name: "kairos_explore_arsenal",
@@ -55,6 +58,7 @@ export const kairosTools = [
       type: "object",
       properties: { category: { type: "string", description: "Subcategoria (opcional). 'all' lista tudo." } },
     },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
   },
   {
     name: "kairos_read_script",
@@ -64,6 +68,7 @@ export const kairosTools = [
       properties: { path: { type: "string", description: "Nome ou caminho relativo do script" } },
       required: ["path"],
     },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
   },
   {
     name: "kairos_log_artifact",
@@ -85,6 +90,7 @@ export const kairosTools = [
       },
       required: ["title", "summary"],
     },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
   },
   {
     name: "kairos_list_artifacts",
@@ -92,12 +98,13 @@ export const kairosTools = [
     inputSchema: {
       type: "object",
       properties: {
-        project: { type: "string" },
-        type: { type: "string", enum: ["code", "doc", "spec", "decision", "config", "other"] },
-        produced_by: { type: "string" },
-        limit: { type: "number", description: "Máximo de resultados (padrão 50)" },
+        project: { type: "string", description: "Filtrar por nome do projeto relacionado ao artefato" },
+        type: { type: "string", enum: ["code", "doc", "spec", "decision", "config", "other"], description: "Filtrar por tipo de artefato" },
+        produced_by: { type: "string", description: "Filtrar por ferramenta que produziu o artefato (ex: 'cursor', 'claude', 'antigravity')" },
+        limit: { type: "number", description: "Máximo de resultados a retornar (padrão: 50)", default: 50 },
       },
     },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
   },
   {
     name: "skyros_isolation",
@@ -112,11 +119,13 @@ export const kairosTools = [
         },
       },
     },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: false },
   },
   {
     name: "skyros_triage",
     description: "Executa a Triage Matinal — consolida dados reais de SELF_CONTEXT.md, STATUS.md, hivemind decisions/states/tasks e kairos_health em um briefing estruturado",
     inputSchema: { type: "object", properties: {} },
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
   },
 ];
 

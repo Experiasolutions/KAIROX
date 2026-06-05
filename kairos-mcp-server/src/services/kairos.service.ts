@@ -35,13 +35,13 @@ export class KairosService {
       hivemindStatus = hivemindDecisions === 0 ? "empty" : "missing";
     }
 
-    // AIOS / AIOX squads
+    // AIOX squads
     let squadsCount = 0;
     let agentsCount = 0;
     let skillsCount = 0;
-    let aiosStatus: string;
+    let aioxStatus: string;
     try {
-      const squadsDir = path.join(KAIROS_ROOT, "aios", "squads");
+      const squadsDir = path.join(KAIROS_ROOT, "aiox", "squads");
       const squads = await fs.readdir(squadsDir);
       squadsCount = squads.length;
       for (const squad of squads) {
@@ -52,9 +52,9 @@ export class KairosService {
       const intDir = path.join(KAIROS_ROOT, "integrations");
       const skills = await fs.readdir(intDir).catch(() => []);
       skillsCount = skills.filter((f) => f.endsWith(".md")).length;
-      aiosStatus = squadsCount > 0 ? "ok" : "empty";
+      aioxStatus = squadsCount > 0 ? "ok" : "empty";
     } catch {
-      aiosStatus = "empty";
+      aioxStatus = "empty";
     }
 
     // Arsenal
@@ -70,7 +70,7 @@ export class KairosService {
 
     // Status geral
     const criticalIssues = contextStatus === "missing";
-    const degradedIssues = aiosStatus === "empty" || arsenalStatus === "empty" || hivemindStatus === "empty";
+    const degradedIssues = aioxStatus === "empty" || arsenalStatus === "empty" || hivemindStatus === "empty";
     const overallStatus = criticalIssues ? "critical" : degradedIssues ? "degraded" : "ok";
 
     return {
@@ -88,8 +88,8 @@ export class KairosService {
           decisions_count: hivemindDecisions,
           states_count: hivemindStates,
         },
-        aios: {
-          status: aiosStatus,
+        aiox: {
+          status: aioxStatus,
           squads_count: squadsCount,
           agents_count: agentsCount,
           skills_count: skillsCount,
