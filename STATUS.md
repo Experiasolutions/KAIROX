@@ -136,11 +136,12 @@ BOSS FINAL T1: Primeiro Contrato Pago
 
 > *"Movimento antes de clareza. O primeiro passo é menor do que parece."*
 
-**UMA tarefa:** Confirmar arquitetura Railway (1 projeto ou 2?) e iniciar deploy do N8N.
+**UMA tarefa:** Selecionar 3 ex-alunos quentes e enviar a mensagem de reativação (MANA - Trilha A).
 
 ```
-[ ] MISSÃO PRINCIPAL: MVP Infra deployada (Boss 1)
-[ ] MISSÃO SECUNDÁRIA: Mensagem enviada ao técnico (Boss 2)
+[x] MISSÃO PRINCIPAL: PRD MANA Lingua AI finalizado
+[ ] MISSÃO PRINCIPAL: Selecionar 3 alunos quentes e enviar msg WA (Trilha A)
+[ ] MISSÃO SECUNDÁRIA: Falar sobre o MANA com quem encontrar pessoalmente
 [ ] RITUAL: 10min autohipnose matinal
 ```
 
