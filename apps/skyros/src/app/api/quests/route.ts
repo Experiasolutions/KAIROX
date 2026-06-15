@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getTodayQuests, saveTodayQuests, completeDailyQuest } from '@kairox/apex-conductor';
+import { getTodayQuests, saveTodayQuests, completeDailyQuest } from '@/lib/apex-conductor';
 
 export async function GET() {
   try {

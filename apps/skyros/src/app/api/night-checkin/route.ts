@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { saveNightCheckin, getRecentCheckins } from '@kairox/apex-conductor';
+import { saveNightCheckin, getRecentCheckins } from '@/lib/apex-conductor';
 
 export async function GET() {
   try {
