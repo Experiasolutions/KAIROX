@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { apexConductor, getBacklog, completeTask, getTaskStats } from '@/lib/apex-conductor';
+import { apexConductor, getBacklog, completeTask, getTaskStats } from '@kairox/apex-conductor';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
