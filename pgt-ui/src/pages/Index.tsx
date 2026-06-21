@@ -13,6 +13,7 @@ import { Sidebar } from "@/components/layout/Sidebar";
 import { FinancesPage } from "@/components/finances/FinancesPage";
 import { CharSheetPage } from "@/components/charsheet/CharSheetPage";
 import { BattlePassPage } from "@/components/battlepass/BattlePassPage";
+import { AdminStudio } from "@/components/studio/AdminStudio";
 
 const sectionLabels: Record<string, string> = {
   hub: "Gabriel OS",
@@ -27,6 +28,7 @@ const sectionLabels: Record<string, string> = {
   finances: "Finances & Treasury",
   charsheet: "Character Sheet",
   battlepass: "Battle Pass",
+  studio: "Mechanics Studio",
 };
 
 const Index = () => {
@@ -72,6 +74,8 @@ const Index = () => {
         return <CharSheetPage />;
       case "battlepass":
         return <BattlePassPage />;
+      case "studio":
+        return <AdminStudio />;
       default:
         return <Dashboard onQuestlineClick={handleQuestlineClick} />;
     }

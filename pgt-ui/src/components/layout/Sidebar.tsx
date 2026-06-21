@@ -10,7 +10,8 @@ import {
   Wallet,
   UserCircle,
   Home,
-  Trophy
+  Trophy,
+  Settings
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,6 +32,7 @@ const navItems = [
   { id: "finances", icon: Wallet, label: "Finances" },
   { id: "loot", icon: ShoppingBag, label: "Arsenal" },
   { id: "sanctuary", icon: Sparkles, label: "Santuário" },
+  { id: "studio", icon: Settings, label: "Mechanics Studio" },
 ];
 
 export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {

@@ -1,4 +1,4 @@
-import { Shield, Brain, Heart, Wallet, Target, Activity } from "lucide-react";
+import { Shield, Brain, Heart, Wallet, Target, Activity, Zap, Coins } from "lucide-react";
 import { useSharedBrain } from "@/hooks/useSharedBrain";
 import { cn } from "@/lib/utils";
 
@@ -9,9 +9,14 @@ const dimensions = [
   { id: "purpose", label: "Missão", score: 80, icon: Target, color: "text-orange-400" },
 ];
 
+const coreAttributes = [
+  { id: "energia", label: "Energia", icon: Zap, color: "text-yellow-400", value: 50, max: 100, type: "pool" },
+  { id: "foco", label: "Foco", icon: Brain, color: "text-blue-400", value: 72, max: null, type: "stat" },
+  { id: "prosperidade", label: "Prosperidade", icon: Coins, color: "text-amber-400", value: 0, max: null, type: "currency" },
+];
+
 export function CharSheetPage() {
-  const brain = useSharedBrain();
-  const { skyrosScore, level, attributes } = brain;
+  const { skyrosScore, level, xp, streak, focoGems } = useSharedBrain();
 
   return (
     <div className="space-y-8 max-w-5xl mx-auto animate-fade-in">
@@ -31,10 +36,10 @@ export function CharSheetPage() {
             Gabriel OS
           </h2>
           <p className="text-muted-foreground font-mono text-sm mt-1">
-            Classe: Arquiteto / Fundador
+            Classe: Arquiteto / Fundador · {xp} XP · 🔥 {streak}d streak
           </p>
         </div>
-        
+
         <div className="ml-auto text-right">
           <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">
             Life Score Global
@@ -43,20 +48,20 @@ export function CharSheetPage() {
             {skyrosScore}
           </div>
           <div className="text-xs text-green-400 font-mono mt-1">
-            ↑ +5 pts esta semana
+            {focoGems} 💎 Gemas de Foco
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        {/* Dimensões da Vida (AlfaLab Inspired) */}
+
+        {/* Dimensões da Vida */}
         <div className="glass-card p-6 border-primary/20">
           <h3 className="font-serif text-xl mb-6 text-foreground flex items-center gap-2">
             <Activity className="w-5 h-5 text-primary" />
             Performance Dimensional
           </h3>
-          
+
           <div className="space-y-6">
             {dimensions.map(dim => (
               <div key={dim.id}>
@@ -68,7 +73,7 @@ export function CharSheetPage() {
                   <span className={cn("font-bold font-mono", dim.color)}>{dim.score}/100</span>
                 </div>
                 <div className="h-2 w-full bg-muted/30 rounded-full overflow-hidden">
-                  <div 
+                  <div
                     className={cn("h-full rounded-full transition-all duration-1000", dim.color.replace('text', 'bg'))}
                     style={{ width: `${dim.score}%` }}
                   />
@@ -78,36 +83,42 @@ export function CharSheetPage() {
           </div>
         </div>
 
-        {/* Atributos Básicos (RPG) */}
+        {/* Atributos do Personagem */}
         <div className="glass-card p-6 border-blue-500/20">
           <h3 className="font-serif text-xl mb-6 text-blue-400 flex items-center gap-2">
             <Brain className="w-5 h-5" />
-            Atributos de Personagem
+            Atributos do Personagem
           </h3>
 
           <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 rounded-lg border border-border/50 bg-muted/10">
-              <span className="font-mono font-medium text-sm">Força (STR)</span>
-              <span className="font-bold text-lg">{attributes.str}</span>
-            </div>
-            <div className="flex items-center justify-between p-3 rounded-lg border border-border/50 bg-muted/10">
-              <span className="font-mono font-medium text-sm">Inteligência (INT)</span>
-              <span className="font-bold text-lg">{attributes.int}</span>
-            </div>
-            <div className="flex items-center justify-between p-3 rounded-lg border border-border/50 bg-muted/10">
-              <span className="font-mono font-medium text-sm">Destreza (DEX)</span>
-              <span className="font-bold text-lg">{attributes.dex}</span>
-            </div>
-            <div className="flex items-center justify-between p-3 rounded-lg border border-border/50 bg-muted/10">
-              <span className="font-mono font-medium text-sm">Vontade (WIL)</span>
-              <span className="font-bold text-lg">{attributes.wil}</span>
-            </div>
+            {coreAttributes.map(attr => (
+              <div key={attr.id} className="flex flex-col p-3 rounded-lg border border-border/50 bg-muted/10">
+                <div className="flex items-center justify-between mb-1">
+                  <span className={cn("font-mono font-medium text-sm flex items-center gap-2", attr.color)}>
+                    <attr.icon className="w-4 h-4" />
+                    {attr.label}
+                  </span>
+                  <span className="font-bold text-lg">
+                    {attr.value}{attr.max ? ` / ${attr.max}` : ""}
+                  </span>
+                </div>
+                {attr.type === "pool" && attr.max && (
+                  <div className="h-1.5 w-full bg-muted/30 rounded-full overflow-hidden mt-2">
+                    <div
+                      className={cn("h-full rounded-full transition-all duration-500", attr.color.replace('text-', 'bg-'))}
+                      style={{ width: `${(attr.value / attr.max) * 100}%` }}
+                    />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
-          
-          <div className="mt-6 pt-6 border-t border-border/50">
-            <div className="text-xs text-muted-foreground font-mono text-center">
-              Você possui <span className="text-primary font-bold">2</span> pontos de atributo não distribuídos.
-            </div>
+
+          <div className="mt-4 pt-4 border-t border-border/50">
+            <p className="text-xs text-muted-foreground font-mono text-center">
+              Personalize atributos no{" "}
+              <span className="text-primary font-bold">⚙ Mechanics Studio</span>
+            </p>
           </div>
         </div>
 

@@ -16,6 +16,32 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // ─── Types ────────────────────────────────────────────────
 
+export interface DynamicAttribute {
+  id: string;
+  name: string; // e.g. "Ouro", "Criatividade"
+  type: "currency" | "stat" | "pool";
+  value: number;
+  max_value?: number;
+  icon: string;
+  color: string;
+}
+
+export interface DynamicSkill {
+  id: string;
+  name: string; // e.g. "Programação"
+  level: number;
+  xp: number;
+  xp_next_level: number;
+  icon: string;
+  color: string;
+  linked_attributes: string[]; // IDs of attributes that this skill might affect
+}
+
+export interface GameMechanics {
+  attributes: DynamicAttribute[];
+  skills: DynamicSkill[];
+}
+
 export interface Profile {
   id: string;
   name: string;
@@ -29,6 +55,7 @@ export interface Profile {
   streak_best: number;
   season: string;
   season_day: number;
+  // Deprecated fixed attributes:
   attr_energia: number;
   attr_foco: number;
   attr_forca: number;
@@ -38,6 +65,8 @@ export interface Profile {
   attr_pareto: number;
   genius_zone_minutes: number;
   genius_zone_target: number;
+  // Dynamic Engine:
+  game_mechanics?: GameMechanics | null;
 }
 
 export interface Quest {
