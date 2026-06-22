@@ -1,7 +1,7 @@
 # Story 1.5 — Tradução Parcial: Suporte Contextual por Nível
 
 ## Status
-`Ready` (aguarda Story 1.4)
+`Done`
 
 ## Epic
 Epic 1 — Fundação e Agente de Imersão MVP

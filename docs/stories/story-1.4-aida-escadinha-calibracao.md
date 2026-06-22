@@ -1,7 +1,7 @@
 # Story 1.4 — Calibração Gradual: "A Escadinha" para Iniciantes
 
 ## Status
-`Ready` (aguarda Story 1.3 em produção)
+`Done`
 
 ## Epic
 Epic 1 — Fundação e Agente de Imersão MVP
